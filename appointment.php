@@ -67,12 +67,10 @@
             $patient_n = $row['patient_name'];
             $p_result = mysqli_query($con, "SELECT * FROM appointment WHERE patient_id LIKE '$patient' AND appointment_status = 'Inqueue' " );
         ?>
-        <!-- navigation -->
-        <?php 
+        <?php
             include 'include/pt-nav-start.php';
         ?>
-                    <ul class="nav navbar-nav">
-                        <li class="dropdown active">
+                        <li class="active dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Appointments <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="appointment.php">Today</a></li>
@@ -83,10 +81,32 @@
                         </li>
                         <li><a href="notifications.php">Notifications <span class="badge">22</span></a></li>
                         <li><a href="history.php">History</a></li>
-        <?php 
+                        <form class="navbar-form navbar-right" method="post" role="search">
+                            <div class="input-group search-bar">
+                                <div id="divResult"></div>
+                                <input type="text" class="form-control" name="search" placeholder="search doctor" id="inputSearch">
+                                <span class="input-group-btn">
+                                    <button type="submit" class="btn"><i class="fa fa-search"></i></button>
+                                </span>
+                            </div>
+                        </form>
+                    </ul>
+                    <div class="btn-group navbar-right signedin">
+                        <button type="button" class="btn btn-default btn-lg btn-noborder dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                            <?php echo $patient_n ?>
+                            <span class="caret"></span>
+                        </button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Edit Profile</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li><a href="logout.php"><i class="fa fa-power-off"></i>    logout</a></li>
+                            </ul>
+                    </div>
+        <?php
             include 'include/pt-nav-end.php';
-        ?>     
-        <!-- /navigation -->           
+        ?>
         <div class="container-fluid" id="appointments-user">
             <div class="row">
                 <div class="col-md-12">
@@ -96,7 +116,7 @@
                     while ($d_row = mysqli_fetch_array($p_result)){
                     $app_id = $d_row['appointment_id'];
                     $doctor = $d_row['doctor_id'];
-                    $date = $d_row['date'];
+                    $date = $d_row['appoint_date'];
 
                     $d_result = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_id LIKE '$doctor'" );
                     $doc =  mysqli_fetch_array($d_result);
@@ -109,7 +129,7 @@
                             echo '<br/>Status: '; 
                             echo $doc['doctor_status'] . '<br/> ' . $date;
                             echo '</div><div class="appmnt-pnl-btn">
-                                <a href="edit.php"><i class="fa fa-edit fa-lg"></i> Edit</a>
+                                <a href="#"><i class="fa fa-edit fa-lg"></i> Edit</a>
                             </div>
                         </div>';
                     echo '</div>';
@@ -124,5 +144,6 @@
         <script type="text/javascript" src="js/search.js"></script>
         <script type="text/javascript" src="js/scrolltop.js"></script>
     </div> <!-- /container -->
+
   </body>
 </html>
