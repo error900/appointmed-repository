@@ -83,6 +83,12 @@
                             <li><?php echo $row['email']; ?></li>
                             <li>Status: <?php echo strtoupper($row['doctor_status']);?></li>
                         </ul>
+                        <form action="subscribe.php" method="post" class="subs">
+                            <input type="hidden" name="doctor" value="<?php echo $row['doctor_id']?>">
+                            <input type="hidden" name="patient" value="<?php echo $p_row['patient_id']?>">
+                            <input type="submit" class="btn btn-default btn-noborder" name="subs" value="Subscribe">
+                            <input type="submit" class="btn btn-default btn-noborder" name="unsubs" value="Unsubscribe">
+                        </form>
                     </div>
                 </div>            
             </div>
