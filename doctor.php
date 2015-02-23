@@ -1,6 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<head>
+    <style>
+    #divResult
+        {
+            position:absolute;
+            width:210px;
+            display:none;
+            margin-top:40px;
+            border:solid 1px #dedede;
+            border-top:0px;
+            overflow:hidden;
+            border-bottom-right-radius: 6px;
+            border-bottom-left-radius: 6px;
+            -moz-border-bottom-right-radius: 6px;
+            -moz-border-bottom-left-radius: 6px;
+            box-shadow: 0px 0px 5px #999;
+            border-width: 3px 1px 1px;
+            border-style: solid;
+            border-color: #333 #DEDEDE #DEDEDE;
+            background-color: white;
+        }
+        .display_box
+        {
+            padding:4px; border-top:solid 1px #dedede; 
+            font-size:12px;
+        
+        }
+        .display_box:hover
+        {
+            background:#3bb998;
+            color:#FFFFFF;
+            cursor:pointer;
+        }
+        a
+        {
+            text-decoration: none;
+ 
+            background: #3bb998;
+            color:#FFFFFF;
+            cursor: pointer;
+        }
+    </style>
+    </style>
+</head>
     <?php
         $title = "Doctor Profile";
         include 'include/head.php';
@@ -34,10 +77,10 @@
 
             //doctor
             $result = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_id LIKE '$doctor_id'" );
-            $row =  mysqli_fetch_array($result);
-            $doctor = $row['doctor_name'];
-            $email = $row['email'];
-            $specialization = $row['specialization'];
+            $d_row =  mysqli_fetch_array($result);
+            $doctor = $d_row['doctor_name'];
+            $email = $d_row['email'];
+            $specialization = $d_row['specialization'];
         ?>
         <!-- navigation -->
         <?php 
@@ -62,7 +105,7 @@
         <div class="container-fluid" id="doctor-info">
             <div class="row">
                 <div class="col-md-4 d-pic">
-                    <img src="img/profile/abe.jpg">
+                      <img src="img/profile/<?php echo $doctor_id ?>.jpg">
                 </div>
                 <div class="col-md-5">
                     <div class="d-info">
@@ -78,14 +121,14 @@
                 <div class="col-md-3 text-right">
                     <div class="d-info">
                         <ul>
-                            <li><?php echo strtoupper($row['doctor_name']); ?></li>
-                            <li><?php echo $row['specialization']; ?></li>
-                            <li><?php echo $row['email']; ?></li>
-                            <li>Status: <?php echo strtoupper($row['doctor_status']);?></li>
+                            <li><?php echo strtoupper($d_row['doctor_name']); ?></li>
+                            <li><?php echo $d_row['specialization']; ?></li>
+                            <li><?php echo $d_row['email']; ?></li>
+                            <li>Status: <?php echo strtoupper($d_row['doctor_status']);?></li>
                         </ul>
                         <form action="subscribe.php" method="post" class="subs">
-                            <input type="hidden" name="doctor" value="<?php echo $row['doctor_id']?>">
-                            <input type="hidden" name="patient" value="<?php echo $p_row['patient_id']?>">
+                            <input type="hidden" name="doctor" value="<?php echo $d_row['doctor_id']?>">
+                            <input type="hidden" name="patient" value="<?php echo $row['patient_id']?>">
                             <input type="submit" class="btn btn-default btn-noborder" name="subs" value="Subscribe">
                             <input type="submit" class="btn btn-default btn-noborder" name="unsubs" value="Unsubscribe">
                         </form>
@@ -125,21 +168,25 @@
                   </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <div class="form-input">
+                            <form class="form-input"  method="post" action="addappointment.php">
                                 <label for="inputDate">Set Date</label>
                                 <div class="input-group date" id="datetimepicker1">
                                     <span class="input-group-addon">
                                         <span class="fui-calendar-solid"></span>
                                     </span>
-                                    <input type="text" class="form-control" />
+                                    <input type="text" class="form-control" name="date" />
                                 </div>
-                            </div>
+                                    <input type="hidden" value="<?php echo $patient?>" name="patient_id">
+                                    <input type="hidden" value="<?php echo $doctor_id?>" name="doctor_id">
                         </div>
                     </div>
-                    <div class="modal-footer" action="addappointment.php">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" onClick="addappointment.php">Appoint Me</button>
-                    </div>
+                    <?php
+                    echo '<div class="modal-footer">';
+                        echo '<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>';
+                        echo "<button type=\"submit\" class=\"btn btn-primary\" name=\"submit\">Appoint Me</button>";
+                    echo '</div>';
+                    ?>
+                    </form>
                 </div>
               </div>
             </div>
@@ -148,6 +195,7 @@
             include 'include/scripts.php';
             include 'include/datepicker.php';
         ?>
+               <script type="text/javascript" src="js/search.js"></script>
     </div>
   </body>
 </html>

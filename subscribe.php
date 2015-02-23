@@ -12,8 +12,9 @@
         $sql = "INSERT INTO subscribe (doctor_id, patient_id) 
         VALUES ('$doc', '$pat')";
         mysqli_query($con, $sql) or die (mysqli_error());
-        header("location: profile.php");
+
         echo "<script> alert('you are subscribed');</script>";
+                header("location: doctor.php?id=".$doc);
     }
     mysqli_close($con);
     
