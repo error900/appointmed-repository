@@ -19,8 +19,13 @@
         $result = mysqli_query($con, "SELECT * FROM doctor WHERE username LIKE '$username'" );
         $row =  mysqli_fetch_array($result);
         $doctor = $row['doctor_name'];
+        $specialization = $row['specialization'];
         $email = $row['email'];
-
+        $doctor_id = $row['doctor_id'];
+        $c_result = mysqli_query($con, "SELECT * FROM clinic WHERE doctor_id LIKE '$doctor_id'");
+        $c_row = mysqli_fetch_array($c_result);
+        $a_result = mysqli_query($con, "SELECT * FROM appointment WHERE doctor_id = '$doctor_id' AND appointment_status = 'inqueue' ORDER BY appointment_id");
+        $sqls = mysqli_query($con, "SELECT * FROM doctor WHERE specialization LIKE '$specialization' AND doctor_id <> '$doctor_id'" );
     ?>
   <body class="fff-bg">
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -48,7 +53,7 @@
                         </ul>
                     </li>
                     <li><a href="#">Notifications <span class="badge">1</span></a></li>
-                    <li><a href="#">Completed</a></li>
+                    <li><a href="completed.php">Completed</a></li>
                     <li><a href="#">Removed</a></li>
                     <li><a href="#">Referred</a></li>
                 </ul>
@@ -62,33 +67,49 @@
                         <li><a href="#">Another action</a></li>
                         <li><a href="#">Something else here</a></li>
                         <li class="divider"></li>
-                        <li><a href="logout.php"><i class="fa fa-power-off"></i>    logout</a></li>
+                        <li><a href="admin/logout.php"><i class="fa fa-power-off"></i>logout</a></li>
                         </ul>
                 </div>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
-
-    <div class="container-fluid" id="user-md-frw">
+ <div class="container-fluid" id="user-md-frw">
         <div class="row">
             <div class="col-md-12 col-md-6 user-md">
-                <h1><?php echo $doctor?></h1>
-                <span>Benguet Laboratories</span>
-                <p>Philippines or sa puso ni macam <3</p>
-                <p><?php echo $email?></p>
-                <p>+639 0593 493 93</p>
+                <h1><?php echo $doctor; ?></h1>
+                <span><?php echo $row['specialization']; ?></span>
+                <p><?php echo $c_row['clinic_location']; ?></p>
+                <p><?php echo $row['email']; ?></p>
+                <p><?php echo $c_row['clinic_contact']; ?></p>
             </div>
             <div class="col-xs-6 col-md-2">
                 <div class="text-center circle inqueue">
-                    <p>19</p>
+                    <?php 
+                        $count_row = mysqli_query($con, "SELECT COUNT(*) AS Appointments FROM appointment WHERE doctor_id = '$doctor_id' AND appointment_status = 'Inqueue' ");
+                        $count = mysqli_fetch_assoc($count_row);
+                        if($count == 0)
+                            echo '<p>'.'0'.'</p>';
+                        else
+                            echo '<p>'. $count['Appointments'] . '</p>';
+                     ?>
                     <span>inqueue</span>
                 </div>
             </div>
             <div class="col-xs-6 col-md-2">
                 <div class="text-center circle served">
-                    <p>05</p>
+                     <?php 
+                        $count_row1 = mysqli_query($con, "SELECT COUNT(*) AS Appointments FROM appointment WHERE doctor_id = '$doctor_id' AND appointment_status = 'Completed' ");
+                        $count1 = mysqli_fetch_assoc($count_row);
+                        if($count1 == 0)
+                            echo '<p>'.'0'.'</p>';
+                        else
+                            echo '<p>'.$count1['Appointments'].'</p>';
+                     ?>
                     <span>served</span>
                 </div>
+            </div>
+            <div>
+
             </div>
         </div>
     </div>
@@ -98,42 +119,74 @@
             <div class="col-md-12">
                 <h2 class="text-center text-turquoise sched-h">&mdash; Today &mdash;</h2>
             </div>
-            <div class="col-xs-12 col-md-6 col-lg-3">
-                <div class="panel panel-default sched-panel">
-                    <div class="panel-heading">DR JUAN DELA CRUZ</div>
-                    <div class="panel-body">
-                        <p>Benguet Laboratories</p>
-                        <p>Clinic Info</p>
-                        <p>Queue Number</p>
-                    </div>
-                    <div class="appmnt-pnl-btn">
+
+        <?php
+            while($row = mysqli_fetch_array($a_result)){
+               $patient = $row['patient_id'];
+               $p_result = mysqli_query($con, "SELECT * FROM patient WHERE patient_id LIKE '$patient'");
+               $pat = mysqli_fetch_array($p_result);
+               echo '<div class="col-xs-12 col-md-6 col-lg-3">
+                <div class="panel panel-default sched-panel">';
+                echo'<div class="panel-heading">';
+                echo $pat['patient_name'];
+                echo "<a href=\"doctor_close.php?id=$row[appointment_id]&doc=$doctor_id&pat=$patient\" onclick='return confirm(\"Do you want to cancel this appointment?\")' title=\"Cancel\"><i class=\"fa fa-remove fa-lg delete-btn\"></i></a></div>
+                <div class=\"panel-body\">";
+                echo '</div>';
+                echo' <div class="panel-body">';
+                echo $pat['patient_contact'];
+                echo '<p>' . $c_row['clinic_location'] . '</p>';
+                echo '<p> Queue Number: ' . $row['appointment_id'] . '</p>';
+                
+             
+                 echo ' <button type="button" class="btn btn-block btn-inverse" data-toggle="modal" data-target=".bs-example-modal-sm">
+                            <span class="fui-new"> </span>Refer to Other Doctor</button>';
+                         echo'</div>';
+    
+
+                 echo'  <div class="appmnt-pnl-btn">
                         <a href="#"><i class="fa fa-comment"></i> Remarks</a>
                     </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-md-6 col-lg-3">
-                <div class="panel panel-default sched-panel">
-                    <div class="panel-heading">DR JUAN DELA CRUZ</div>
-                    <div class="panel-body">
-                        <p>Benguet Laboratories</p>
-                        <p>Clinic Info</p>
-                        <p>Queue Number</p>
-                    </div>
-                    <div class="appmnt-pnl-btn">
-                        <a href="#"><i class="fa fa-comment"></i> Remarks</a>
-                    </div>
-                </div>
-            </div>
+                 </div>
+               </div>';
+            }
+        ?>
 
         </div>
     </div>
+    <?php 
 
-    <?php
-        include 'include/footer.php';
     ?>
-    <?php
-        include 'include/scripts.php';
-    ?>
+            <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Refer</h4>
+                  </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <form class="form-input"  method="post" action="addappointment.php">
+                                <label for="inputDate">Choose Doctor: </label>
+                                    <select name="doctors" required>
+
+                                        <?php 
+   
+
+                                           while ($row2 = mysqli_fetch_array($sqls)){
+                                                 echo '<option>'.$row2['doctor_name'].'</option>' ;
+                                            }
+                                        ?>
+
+                                    </select>                                      
+                             <!--       <input type="hidden" value="<?php //echo $patient?>" name="patient_id">
+                                    <input type="hidden" value="<?php //echo $doctor_id?>" name="doctor_id">-->
+                        </div>
+                    </div>
+
+ <?php
+            include 'include/scripts.php';
+            include 'include/scrolltop.php';
+        ?>
 
   </body>
 </html>

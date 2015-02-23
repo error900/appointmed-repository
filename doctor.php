@@ -154,6 +154,7 @@
                             <span class="fui-new"> </span>Create Appointment</button>';
                                                echo '</div>';
                         echo '</div>';
+                        $clinic = $c_row['clinic_id'];
                     }
                 ?>
             </div>
@@ -178,6 +179,7 @@
                                 </div>
                                     <input type="hidden" value="<?php echo $patient?>" name="patient_id">
                                     <input type="hidden" value="<?php echo $doctor_id?>" name="doctor_id">
+                                    <input type="hidden" value="<?php echo $clinic?>" name="clinic_id">
                         </div>
                     </div>
                     <?php

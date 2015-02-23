@@ -8,6 +8,7 @@
 	<?php   
 		session_start();
 		$loggedIn = $_SESSION['loggedIn'];
+		$account_type = $_SESSION['account_type'];
 		if($loggedIn == false )
 			header("location: index.php");
 		else if($account_type != 'Admin')
