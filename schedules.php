@@ -99,7 +99,7 @@
                 <div class="text-center circle served">
                      <?php 
                         $count_row1 = mysqli_query($con, "SELECT COUNT(*) AS Appointments FROM appointment WHERE doctor_id = '$doctor_id' AND appointment_status = 'Completed' ");
-                        $count1 = mysqli_fetch_assoc($count_row);
+                        $count1 = mysqli_fetch_assoc($count_row1);
                         if($count1 == 0)
                             echo '<p>'.'0'.'</p>';
                         else
@@ -125,17 +125,18 @@
                $patient = $row['patient_id'];
                $p_result = mysqli_query($con, "SELECT * FROM patient WHERE patient_id LIKE '$patient'");
                $pat = mysqli_fetch_array($p_result);
+               $appointment_id = $row['appointment_id'];
                echo '<div class="col-xs-12 col-md-6 col-lg-3">
                 <div class="panel panel-default sched-panel">';
                 echo'<div class="panel-heading">';
                 echo $pat['patient_name'];
-                echo "<a href=\"doctor_close.php?id=$row[appointment_id]&doc=$doctor_id&pat=$patient\" onclick='return confirm(\"Do you want to cancel this appointment?\")' title=\"Cancel\"><i class=\"fa fa-remove fa-lg delete-btn\"></i></a></div>
-                <div class=\"panel-body\">";
+              //  echo "<a href=\"doctor_close.php?id=$row[appointment_id]&doc=$doctor_id&pat=$patient\" onclick='return confirm(\"Do you want to cancel this appointment?\")' title=\"Cancel\"><i class=\"fa fa-remove fa-lg delete-btn\"></i></a></div>
+               // <div class=\"panel-body\">";
                 echo '</div>';
                 echo' <div class="panel-body">';
                 echo $pat['patient_contact'];
                 echo '<p>' . $c_row['clinic_location'] . '</p>';
-                echo '<p> Queue Number: ' . $row['appointment_id'] . '</p>';
+                echo '<p> Queue Number: ' . $appointment_id . '</p>';
                 
              
                  echo ' <button type="button" class="btn btn-block btn-inverse" data-toggle="modal" data-target=".bs-example-modal-sm">
@@ -153,9 +154,7 @@
 
         </div>
     </div>
-    <?php 
 
-    ?>
             <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-sm">
                 <div class="modal-content">
@@ -165,21 +164,28 @@
                   </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <form class="form-input"  method="post" action="addappointment.php">
+                            <form class="form-input"  method="post" action="referral.php">
                                 <label for="inputDate">Choose Doctor: </label>
-                                    <select name="doctors" required>
+                                    <select name="referred_id" required>
 
                                         <?php 
-   
-
                                            while ($row2 = mysqli_fetch_array($sqls)){
-                                                 echo '<option>'.$row2['doctor_name'].'</option>' ;
-                                            }
                                         ?>
+                                <option value='<?php echo $row2['doctor_id']?>' ><?php echo $row2['doctor_name']?></option> ;
+                                          <?php   } ?>
 
                                     </select>                                      
-                             <!--       <input type="hidden" value="<?php //echo $patient?>" name="patient_id">
-                                    <input type="hidden" value="<?php //echo $doctor_id?>" name="doctor_id">-->
+                                <input type="hidden" value="<?php echo $patient?>" name="patient_id">
+                                <input type="hidden" value="<?php echo $doctor_id?>" name="doctor_id">
+                                <input type="hidden" value="<?php echo $appointment_id?>" name="appointment_id">
+                    
+                           <?php            
+                                echo '<div class="modal-footer">';
+                                echo '<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>';
+                                echo "<button type=\"submit\" class=\"btn btn-primary\" name=\"submit\">Refer</button>";
+                                echo '</div>';
+                            ?>
+                            </form>
                         </div>
                     </div>
 
