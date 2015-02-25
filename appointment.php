@@ -65,7 +65,7 @@
             $row =  mysqli_fetch_array($result);
             $patient = $row['patient_id'];
             $patient_n = $row['patient_name'];
-            $p_result = mysqli_query($con, "SELECT * FROM appointment WHERE patient_id LIKE '$patient' AND appointment_status = 'Inqueue' " );
+            $p_result = mysqli_query($con, "SELECT * FROM appointment WHERE patient_id LIKE '$patient' AND appointment_status = 'Inqueue' OR appointment_status = 'Referred' " );
         ?>
         <!-- navigation -->
         <?php 
@@ -96,7 +96,7 @@
                     while ($d_row = mysqli_fetch_array($p_result)){
                     $app_id = $d_row['appointment_id'];
                     $doctor = $d_row['doctor_id'];
-                    $date = $d_row['date'];
+                    $date = $d_row['appoint_date'];
 
                     $d_result = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_id LIKE '$doctor'" );
                     $doc =  mysqli_fetch_array($d_result);

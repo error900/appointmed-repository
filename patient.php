@@ -47,7 +47,7 @@
         <div class="container-fluid" id="patient-info">
             <div class="row">
                 <div class="col-md-4 p-pic">
-                    <img src="img/profile/yan.jpg">
+                     <img src="img/profile/<?php echo $patient ?>.jpg">
                 </div>
                 <div class="col-md-5">
                     <div class="p-info">
