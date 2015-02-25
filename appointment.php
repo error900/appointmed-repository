@@ -65,7 +65,7 @@
             $row =  mysqli_fetch_array($result);
             $patient = $row['patient_id'];
             $patient_n = $row['patient_name'];
-            $p_result = mysqli_query($con, "SELECT * FROM appointment WHERE patient_id LIKE '$patient' AND appointment_status = 'Inqueue' " );
+            $p_result = mysqli_query($con, "SELECT * FROM appointment WHERE patient_id LIKE '$patient' AND appointment_status = 'Inqueue' OR appointment_status = 'Referred' " );
         ?>
         <!-- navigation -->
         <?php 

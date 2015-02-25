@@ -9,7 +9,7 @@ if(isset($_POST['submit'])){
 
 	echo $referred_id. $doctor_id . $patient_id;
 
-	$update_appointment = "UPDATE appointment SET doctor_id = '$referred_id' WHERE appointment_id = '$appointment_id'";
+	$update_appointment = "UPDATE appointment SET doctor_id = '$referred_id', appointment_status = 'Referred' WHERE appointment_id = '$appointment_id'";
 
 	$sql = "INSERT INTO referred (doctor_id, patient_id, referred_id) VALUES('$doctor_id', '$patient_id', '$referred_id')";
 
