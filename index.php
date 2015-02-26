@@ -146,97 +146,97 @@
                     <div class="doctor-list">
                         <ul class="nav">
                             <li class="specialization">
-                                <label><i class="fa fa-caret-down"></i> Cardiology</label>
+                                <label>Cardiology</label>
                                 <ul class="nav d-list">
-                                    <li>Dr. Karla Posadas</li>
-                                    <li>Dr. Genuino*</li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Karla Posadas</a></li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Genuino*</a></li>
                                 </ul>
                             </li>
                             <li class="specialization">
-                                <label><i class="fa fa-caret-down"></i> CFP/ PCOM</label>
+                                <label>CFP/ PCOM</label>
                                 <ul class="nav d-list">
-                                    <li>Dr. Florence Dela Pena</li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Florence Dela Pena</a></li>
                                 </ul>
                             </li>
                             <li class="specialization">
-                                <label><i class="fa fa-caret-down"></i> Constructive Surgery</label>
+                                <label>Constructive Surgery</label>
                                 <ul class="nav d-list">
-                                    <li>Dr. Gene Estandian</li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Gene Estandian</a></li>
                                 </ul>
                             </li>
                             <li class="specialization">
-                                <label><i class="fa fa-caret-down"></i> Dermatology</label>
+                                <label>Dermatology</label>
                                 <ul class="nav d-list">
-                                    <li>Dr. Aurora Hidalgo</li>
-                                    <li>Dr. Faith Kishi Generao</li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Aurora Hidalgo</a></li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Faith Kishi Generao</a></li>
                                 </ul>
                             </li>
                             <li class="specialization">
-                                <label><i class="fa fa-caret-down"></i> Endocrinology</label>
+                                <label>Endocrinology</label>
                                 <ul class="nav d-list">
-                                    <li>Dr. Erickson Madronio</li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Erickson Madronio</a></li>
                                 </ul>
                             </li>
                             <li class="specialization">
-                                <label><i class="fa fa-caret-down"></i> ENT</label>
+                                <label>ENT</label>
                                 <ul class="nav d-list">
-                                    <li>Dr. Vanadero*</li>
-                                    <li>Dr. Julio Eming</li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Vanadero*</a></li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Julio Eming</a></li>
                                 </ul>
                             </li>
                             <li class="specialization">
-                                <label><i class="fa fa-caret-down"></i> Epidemiology</label>
+                                <label>Epidemiology</label>
                                 <ul class="nav d-list">
-                                    <li>Dr. Donnabel Tubera</li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Donnabel Tubera</a></li>
                                 </ul>
                             </li>
                             <li class="specialization">
-                                <label><i class="fa fa-caret-down"></i> FM/ GP/ IM</label>
+                                <label>FM/ GP/ IM</label>
                                 <ul class="nav d-list">
-                                    <li>Dr. Eva Quiano</li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Eva Quiano</a></li>
                                 </ul>
                             </li>
                             <li class="specialization">
-                                <label><i class="fa fa-caret-down"></i> FM/ GP/PCOM</label>
+                                <label>FM/ GP/PCOM</label>
                                 <ul class="nav d-list">
-                                    <li>Dr. Sheila Villanueva</li>
-                                    <li>Dr. Melanie Clemente</li>
-                                    <li>Dr. Ana Claire Pagnas</li>
-                                    <li>Dr. Hosanna Mae Pajela</li>
-                                    <li>Dr. Josie Rivera</li>
-                                    <li>Dr. Sheila Mapalo</li>
-                                    <li>Dr. Bernadette Arzadon</li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Sheila Villanueva</a></li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Melanie Clemente</a></li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Ana Claire Pagnas</a></li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Hosanna Mae Pajela</a></li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Josie Rivera</a></li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Sheila Mapalo</a></li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Bernadette Arzadon</a></li>
                                 </ul>
                             </li>
                             <li class="specialization">
-                                <label><i class="fa fa-caret-down"></i> Gastroeneterology</label>
+                                <label>Gastroeneterology</label>
                                 <ul class="nav d-list">
-                                    <li>Dr. Marie Ellaine Velasquez</li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Marie Ellaine Velasquez</a></li>
                                 </ul>
                             </li>
                             <li class="specialization">
-                                <label><i class="fa fa-caret-down"></i> GP</label>
+                                <label>GP</label>
                                 <ul class="nav d-list">
-                                    <li>Dr. Hosanna Mae Pajela</li>
-                                    <li>Dr. Mark Valdez</li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Hosanna Mae Pajela</a></li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Mark Valdez</a></li>
                                 </ul>
                             </li>
                             <li class="specialization">
-                                <label><i class="fa fa-caret-down"></i> GP/Animal Bite</label>
+                                <label>GP/Animal Bite</label>
                                 <ul class="nav d-list">
-                                    <li>Dr. Pakoy</li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Pakoy</a></li>
                                 </ul>
                             </li>
                             <li class="specialization">
-                                <label><i class="fa fa-caret-down"></i> Internal Medicine</label>
+                                <label>Internal Medicine</label>
                                 <ul class="nav d-list">
-                                    <li>Dr. Jeane Quibin</li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Jeane Quibin</a></li>
                                 </ul>
                             </li>
                             <li class="specialization">
-                                <label><i class="fa fa-caret-down"></i> Infectious Diseasee</label>
+                                <label>Infectious Diseasee</label>
                                 <ul class="nav d-list">
-                                    <li>Dr. Margaret Apolinar</li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Margaret Apolinar</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -246,104 +246,104 @@
                     <div class="doctor-list">
                         <ul class="nav">
                             <li class="specialization">
-                                <label><i class="fa fa-caret-down"></i> Nephrology</label>
+                                <label>Nephrology</label>
                                 <ul class="nav d-list">
-                                    <li>Dr. Baby Ria Requiero*</li>
-                                    <li>Dr. Gemma Pinlac</li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Baby Ria Requiero*</a></li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Gemma Pinlac</a></li>
                                 </ul>
                             </li>
                             <li class="specialization">
-                                <label><i class="fa fa-caret-down"></i> Neurology</label>
+                                <label>Neurology</label>
                                 <ul class="nav d-list">
-                                    <li>Dr. Neil Ambasing</li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Neil Ambasing</a></li>
                                 </ul>
                             </li>
                             <li class="specialization">
-                                <label><i class="fa fa-caret-down"></i> OB Gyne</label>
+                                <label>OB Gyne</label>
                                 <ul class="nav d-list">
-                                    <li>Dr. Ranelyn Lozanes</li>
-                                    <li>Dr. Bernadette Lizada</li>
-                                    <li>Dr. Fedelina Suanding</li>
-                                    <li>Dr. Wilma Lee</li>
-                                    <li>Dr. Cherrie Ann Moreno</li>
-                                    <li>Dr. Pamela Chu</li>
-                                    <li>Dr. Rosario Laranang</li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Ranelyn Lozanes</a></li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Bernadette Lizada</a></li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Fedelina Suanding</a></li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Wilma Lee</a></li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Cherrie Ann Moreno</a></li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Pamela Chu</a></li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Rosario Laranang</a></li>
                                 </ul>
                             </li>
                             <li class="specialization">
-                                <label><i class="fa fa-caret-down"></i> Oncology</label>
+                                <label>Oncology</label>
                                 <ul class="nav d-list">
-                                    <li>Dr. Mary Gay Buliyat</li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Mary Gay Buliyat</a></li>
                                 </ul>
                             </li>
                             <li class="specialization">
-                                <label><i class="fa fa-caret-down"></i> Opthalmology</label>
+                                <label>Opthalmology</label>
                                 <ul class="nav d-list">
-                                    <li>Dr. Julieta Calaycay</li>
-                                    <li>Dr. Nadine Tello</li>
-                                    <li>Dr. James Luz*</li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Julieta Calaycay</a></li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Nadine Tello</a></li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. James Luz*</a></li>
                                 </ul>
                             </li>
                             <li class="specialization">
-                                <label><i class="fa fa-caret-down"></i> Orthopedics</label>
+                                <label>Orthopedics</label>
                                 <ul class="nav d-list">
-                                    <li>Dr. Justiniano Bai*</li>
-                                    <li>Dr. Antonio B. Suero</li>
-                                    <li>Dr. Jean Pierre Leung</li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Justiniano Bai*</a></li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Antonio B. Suero</a></li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Jean Pierre Leung</a></li>
                                 </ul>
                             </li>
                             <li class="specialization">
-                                <label><i class="fa fa-caret-down"></i> Orthopedics/ GP</label>
+                                <label>Orthopedics/ GP</label>
                                 <ul class="nav d-list">
-                                    <li>Dr. Ma Victoria Palor</li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Ma Victoria Palor</a></li>
                                 </ul>
                             </li>
                             <li class="specialization">
-                                <label><i class="fa fa-caret-down"></i> Pediatrician</label>
+                                <label>Pediatrician</label>
                                 <ul class="nav d-list">
-                                    <li>Dr. Arlene Baguilat</li>
-                                    <li>Dr. Mari Grace Yabut</li>
-                                    <li>Dr. Rosemarie Raper</li>
-                                    <li>Dr. Efren Balanag</li>
-                                    <li>Dr. Melissa Ompico</li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Arlene Baguilat</a></li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Mari Grace Yabut</a></li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Rosemarie Raper</a></li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Efren Balanag</a></li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Melissa Ompico</a></li>
                                 </ul>
                             </li>
                             <li class="specialization">
-                                <label><i class="fa fa-caret-down"></i> Neuro-Psychiatry</label>
+                                <label>Neuro-Psychiatry</label>
                                 <ul class="nav d-list">
-                                    <li>Dr.Sylva Tsuchiya</li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr.Sylva Tsuchiya</a></li>
                                 </ul>
                             </li>
                             <li class="specialization">
-                                <label><i class="fa fa-caret-down"></i> Psychology</label>
+                                <label>Psychology</label>
                                 <ul class="nav d-list">
-                                    <li>Dr. Jean Jeanette Sibayan</li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Jean Jeanette Sibayan</a></li>
                                 </ul>
                             </li>
                             <li class="specialization">
-                                <label><i class="fa fa-caret-down"></i> Pulmunology</label>
+                                <label>Pulmunology</label>
                                 <ul class="nav d-list">
-                                    <li>Dr. Damaso Bangaoet*</li>
-                                    <li>Dr. Agaton Yaranon</li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Damaso Bangaoet*</a></li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Agaton Yaranon</a></li>
                                 </ul>
                             </li>
                             <li class="specialization">
-                                <label><i class="fa fa-caret-down"></i> Surgery</label>
+                                <label>Surgery</label>
                                 <ul class="nav d-list">
-                                    <li>Dr. Annie Rita Del Rosario</li>
-                                    <li>Dr. Matthew Bawayan</li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Annie Rita Del Rosario</a></li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Matthew Bawayan</a></li>
                                 </ul>
                             </li>
                             <li class="specialization">
-                                <label><i class="fa fa-caret-down"></i> Urology</label>
+                                <label>Urology</label>
                                 <ul class="nav d-list">
-                                    <li>Dr. Francis Yabut</li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Francis Yabut</a></li>
                                 </ul>
                             </li>
                             <li class="specialization">
-                                <label><i class="fa fa-caret-down"></i> UTZ</label>
+                                <label>UTZ</label>
                                 <ul class="nav d-list">
-                                    <li>Dr. Orlando Aragon</li>
+                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Orlando Aragon</a></li>
                                 </ul>
                             </li>
                         </ul>
