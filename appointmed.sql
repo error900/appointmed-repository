@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `appointmed` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `appointmed`;
 -- phpMyAdmin SQL Dump
 -- version 4.1.14
 -- http://www.phpmyadmin.net
