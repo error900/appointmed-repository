@@ -31,11 +31,11 @@ else{
 	$_SESSION['username'] = $username;
 	$_SESSION['account_type'] = $row['account_type'];
 	if($row['account_type'] == 'Admin')
-		header("location: dashboard.php");
+		header("location: admin/index.php");
 	else if($row['account_type'] == 'Patient')
 		header("location: appointment.php");
 	else 
-		header("location: ../schedules.php");
+		header("location: admin/index.php");
 }
 if (!(mysqli_query($con, $result))) {
   	die('Error: ' . mysqli_error($con));

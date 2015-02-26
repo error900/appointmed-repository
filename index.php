@@ -5,12 +5,14 @@
         include 'include/head.php';
   
     ?>
-    <?
+    <?php
+        session_start();
+        if(isset($_SESSION['loggedIn']) ){
+            $loggedIn = $_SESSION['loggedIn']; 
 
-        $loggedIn = $_SESSION['loggedIn'];
-        $account_type = $_SESSION['account_type'];
-        if($loggedIn == true )
-            header("location: appointment.php");
+            if($loggedIn == true )
+                header("location: appointment.php");
+        }
     ?>
 
   <body class="ecf0f1-bg">
