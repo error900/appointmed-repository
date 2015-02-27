@@ -76,7 +76,7 @@
             include 'include/pt-nav-start.php';
         ?>
                     <ul class="nav navbar-nav">
-                        <li class="dropdown active">
+                        <li>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Appointments <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="appointment.php">Today</a></li>
@@ -85,7 +85,7 @@
                                 <li><a href="#">This Month</a></li>
                             </ul>
                         </li>
-                        <li><a href="notifications.php">Notifications <span class="badge">22</span></a></li>
+                        <li class="dropdown active"><a href="notifications.php">Notifications <span class="badge">22</span></a></li>
                         <li><a href="history.php">History</a></li>
         <?php 
             include 'include/pt-nav-end.php';

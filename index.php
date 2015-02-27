@@ -3,6 +3,7 @@
     <?php
         $title = "appoint.med | Home";
         include 'include/head.php';
+        include 'connectdatabase.php';
   
     ?>
     <?php
@@ -12,6 +13,8 @@
 
             if($loggedIn == true )
                 header("location: appointment.php");
+            else 
+                die();
         }
     ?>
 
@@ -144,28 +147,66 @@
                 <div class="col-xs-12 col-md-12">
                     <h2 class="text-center doctor-h">Doctors</h2>
                 </div>
+                  <?php 
+                    $doclist = mysqli_query($con, "SELECT * FROM doctor ORDER BY specialization");
+
+
+               //     switch($doclist)
+                ?>
                 <div class="col-xs-12 col-md-6">
                     <div class="doctor-list">
                         <ul class="nav">
-                            <li class="specialization">
-                                <label>Cardiology</label>
-                                <ul class="nav d-list">
-                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Karla Posadas</a></li>
-                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Genuino*</a></li>
-                                </ul>
-                            </li>
-                            <li class="specialization">
-                                <label>CFP/ PCOM</label>
-                                <ul class="nav d-list">
-                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Florence Dela Pena</a></li>
-                                </ul>
-                            </li>
-                            <li class="specialization">
-                                <label>Constructive Surgery</label>
-                                <ul class="nav d-list">
-                                    <li><a href="#"><i class="fa fa-user-md"></i>Dr. Gene Estandian</a></li>
-                                </ul>
-                            </li>
+                            <?php /*
+                                   while($fetch = mysqli_fetch_array($doclist)){
+                                    switch($fetch['specialization']){
+                                        case "Cardiology":
+                                            echo '<li class="specialization">
+                                                   <label>Cardiology</label>
+                                                    <ul class="nav d-list">';
+                                            echo '<li><a href="doctor.php?id='.$fetch['doctor_id'].'"><i class="fa fa-user-md"></i> Dr. '.$fetch['doctor_name'].'</a></li>';
+                                            echo '</ul>';
+                                    }
+                                          /*  if($fetch['specialization'] == 'Cardiology'){
+                                                echo '<li><a href="doctor.php?id='.$fetch['doctor_id'].'"><i class="fa fa-user-md"></i> Dr. '.$fetch['doctor_name'].'</a></li>';
+                                          }
+                                }*/
+?>
+                                 <?php
+                            echo '<ul class="nav">
+                                <li class="specialization">
+                                    <label>Cardiology</label>
+                                    <ul class="nav d-list">';
+                                            while($fetch = mysqli_fetch_array($doclist)){
+                                                if($fetch['specialization'] == 'Cardiology'){
+                                                    echo '<li><a href="doctor.php?id='.$fetch['doctor_id'].'"><i class="fa fa-user-md"></i> Dr. '.$fetch['doctor_name'].'</a></li>';
+                                                }
+                                            }
+                                echo '</ul></li>';    
+                                     ?>     
+                             
+                             <?php 
+                             echo '<li class="specialization">
+                                    <label>CFP/ PCOM</label>
+                                    <ul class="nav d-list">';     
+                                            while($fetch1 = mysqli_fetch_array($doclist)){
+                                                if($fetch1['specialization'] == 'Pcom'){
+                                                    echo '<li><a href="doctor.php?id='.$fetch1['doctor_id'].'"><i class="fa fa-user-md"></i> Dr. '.$fetch1['doctor_name'].'</a></li>';
+                                                }
+                                            }
+                                echo '</ul></li>';
+                            ?>
+                            <?php 
+                             echo '<li class="specialization">
+                                    <label>CFP/ Constructive Surgery</label>
+                                    <ul class="nav d-list">';     
+                                            while($fetch2 = mysqli_fetch_array($doclist)){
+                                                if($fetch2['specialization'] == 'Constructive Surgery'){
+                                                    echo '<li><a href="doctor.php?id='.$fetch2['doctor_id'].'"><i class="fa fa-user-md"></i> Dr. '.$fetch2['doctor_name'].'</a></li>';
+                                                }
+                                            }
+                                echo '</ul></li>';
+                            ?>
+
                             <li class="specialization">
                                 <label>Dermatology</label>
                                 <ul class="nav d-list">
@@ -173,6 +214,7 @@
                                     <li><a href="#"><i class="fa fa-user-md"></i>Dr. Faith Kishi Generao</a></li>
                                 </ul>
                             </li>
+                            
                             <li class="specialization">
                                 <label>Endocrinology</label>
                                 <ul class="nav d-list">

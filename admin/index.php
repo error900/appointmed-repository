@@ -5,6 +5,17 @@
         include 'include/head.php';
 
     ?>
+    <?php
+        session_start();
+        if(isset($_SESSION['loggedIn']) ){
+            $loggedIn = $_SESSION['loggedIn']; 
+
+            if($loggedIn == true )
+                header("location: appointment.php");
+            else 
+                die();
+        }
+    ?>
   <body class="ecf0f1-bg">
     <div class="container-fluid">
         <div class="row">
