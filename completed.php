@@ -70,6 +70,9 @@
                 </div>
             </div><!-- /.navbar-collapse -->
         </nav>
+           <div class="col-md-12">
+                <h2 class="text-center text-turquoise sched-h">&mdash; Completed &mdash;</h2>
+            </div>
         <?php
             while($row = mysqli_fetch_array($a_result)){
                $patient = $row['patient_id'];

@@ -29,14 +29,13 @@ if(isset($_POST['submit'])){
 	include 'connectdatabase.php';
 	//include 'Mail.php';
 			
-	/*$sqln = mysqli_query($con, "SELECT username FROM account WHERE username ='" .$username."' ");
+	$sqln = mysqli_query($con, "SELECT username FROM account WHERE username ='" .$username."' ");
 	if(mysqli_num_rows($sqln) != 0){
 
 		mysqli_close($con);
-		echo "<script>alert('Userame exists')</script>";
-	} else{
-	*/
-
+		echo "<script>alert('Username exists. Change the username')</script>";
+		echo "<script> location.replace('signup.php') </script>";
+	}
 	//hash
 	$password = hash('sha256', $password);
 

@@ -13,8 +13,24 @@
             header("location: appointment.php");
     ?>
     <head>
+        <script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $("#username").keyup(function (e) {
 
+                    $(this).val($(this).val().replace(/\s/g, ''));
+                    
+                    var username = $(this).val();
+                    
+                        $("#result").html('<img src="img/ajax-loader.gif" />');
+                        $.post('checkusername.php', {'username':username}, function(data) {
+                          $("#result").html(data);
+                        });
+                }); 
+            });
+        </script>
     </head>
+
     <body class="ecf0f1-bg">
     <div class="container">
         <nav class="navbar navbar-default navbar-fixed-top">
@@ -102,13 +118,14 @@
                                             <?php } ?>
                                     </select>
                                 
-                                <input type="text" class="form-control" name="username" placeholder="Username" required=""/>                    
+                                <input type="text" class="form-control" name="username" placeholder="Username" id="username" required=""/>  
+                                <span id="result"></span>        
                                 <input type="password" class="form-control" name="password" placeholder="Password"  
                                 required pattern="(?=.*[a-z])(?=.*[A-Z]).{6,}" 
                                 onchange="this.setCustomValidity(this.validity.patternMismatch ? this.title : '');
-                                if(this.checkValidity()) form1.password2.pattern = this.value;" required=""/>
+                                if(this.checkValidity()) form1.password2.pattern = this.value;" required=""/>  
                                 <p class="passwordReq">*Your password must contain uppercase and lowercase letters, and it should not be lower than 6 characters. </p>
-
+                                
                                 <input type="password" title="Passwords do not matcch" class="form-control" name="password2" placeholder="Confirm Password" 
                                 onchange=" this.setCustomValidity(this.validity.patternMismatch ? this.title : '');"
                                 />
