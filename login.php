@@ -12,7 +12,7 @@ $password = mysqli_real_escape_string($con, $password);
 
 //$password = hash('sha256', $password);
 
-$result = mysqli_query($con,"SELECT * FROM account WHERE BINARY username = '$username' AND BINARY password = '$password' ");
+$result = mysqli_query($con,"SELECT * FROM account WHERE BINARY username = '$username' AND BINARY password = '$password' AND account_status = 'active'");
 $count=mysqli_num_rows($result);
 $row = mysqli_fetch_array($result);
 
@@ -27,15 +27,19 @@ if(!($count ==1)){
 	$_SESSION['loggedIn'] = false;
 }	
 else{
-	$_SESSION['loggedIn'] = true;
+
 	$_SESSION['username'] = $username;
 	$_SESSION['account_type'] = $row['account_type'];
-	if($row['account_type'] == 'Admin')
+	if($row['account_type'] == 'Admin'){
+			$_SESSION['loggedIn'] = false;
 		header("location: admin/index.php");
-	else if($row['account_type'] == 'Patient')
+	}else if($row['account_type'] == 'Patient'){
+			$_SESSION['loggedIn'] = true;
 		header("location: appointment.php");
-	else 
+	}else {
+			$_SESSION['loggedIn'] = false;
 		header("location: admin/index.php");
+	}
 }
 if (!(mysqli_query($con, $result))) {
   	die('Error: ' . mysqli_error($con));

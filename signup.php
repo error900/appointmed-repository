@@ -65,7 +65,7 @@
                     <div class="signup-form">
                         
 
-                         <form method='post' name='form1'>
+                         <form method='post' name='form1' action="register.php">
                             <div class="input-group">
                                 <input type="text" class="form-control" name="firstname" placeholder="First Name" required=""/>
                                 <input type="text" class="form-control" name="lastname" placeholder="Last Name" required=""/>
@@ -73,28 +73,28 @@
                                 <input type="text" class="form-control" name="contact" placeholder="Contact Number" required=""/>
                                 <input type="text" class="form-control" name="occupation" placeholder="Occupation" required=""/>
                           
-                                Month:<select name=birth_month>
-                                    <option selected value=1>January
-                                    <option value=2> February
-                                    <option value=3>March
-                                    <option value=4>April
-                                    <option value=5>May
-                                    <option value=6>June
-                                    <option value=7>July
-                                    <option value=8>August
-                                    <option value=9>September
-                                    <option value=10>October
-                                    <option value=11>November
-                                    <option value=12>December 
-                              </select>
-                               Day:<select name=birth_day>
+                                Month: <select name=birth_month>
+                                        <option selected value=1>January
+                                        <option value=2> February
+                                        <option value=3>March
+                                        <option value=4>April
+                                        <option value=5>May
+                                        <option value=6>June
+                                        <option value=7>July
+                                        <option value=8>August
+                                        <option value=9>September
+                                        <option value=10>October
+                                        <option value=11>November
+                                        <option value=12>December 
+                                    </select>
+                               Day: <select name=birth_day>
                                         <?php for($i=1; $i<=31; $i++){ ?>
                                         <option value="<?php echo $i; ?>">
                                             <?php echo $i; ?>
                                         </option> 
                                             <?php } ?>
                                     </select>
-                            Year:<select name=birth_year>
+                               Year: <select name=birth_year>
                                         <?php for($i=1900; $i<=2015; $i++){ ?>
                                         <option value="<?php echo $i; ?>">
                                             <?php echo $i; ?>

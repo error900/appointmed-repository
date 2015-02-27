@@ -9,11 +9,13 @@
         session_start();
         if(isset($_SESSION['loggedIn']) ){
             $loggedIn = $_SESSION['loggedIn']; 
+            $account_type = $_SESSION['account_type'];
 
-            if($loggedIn == true )
-                header("location: appointment.php");
-            else 
-                die();
+            if($loggedIn == true && $account_type == 'Doctor')
+                header("location: ../schedules.php");
+            else if($loggedIn == true && $account_type == 'Admin')
+                header("location: dashboard.php");
+
         }
     ?>
   <body class="ecf0f1-bg">

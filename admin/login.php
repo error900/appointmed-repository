@@ -33,7 +33,6 @@
 			header("location: dashboard.php");
 		}else if($row['account_type'] == 'Patient'){
 			header("location: index.php");
-			echo "<script> alert('Please login here'); </script>";
 		}else 
 			header("location: ../schedules.php");
 
