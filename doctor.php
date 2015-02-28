@@ -105,7 +105,13 @@
         <div class="container-fluid" id="doctor-info">
             <div class="row">
                 <div class="col-md-4 d-pic">
-                      <img src="img/profile/<?php echo $doctor_id ?>.jpg">
+                      <img src="img/profile/<?php 
+                            $file = "img/profile/".$doctor_id.".jpg";
+                            if(file_exists($file)){
+                                echo $doctor_id;
+                            }else{
+                                echo 'profile';
+                            } ?>.jpg">
                 </div>
                 <div class="col-md-5">
                     <div class="d-info">
