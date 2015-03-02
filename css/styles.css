@@ -200,6 +200,19 @@ nav > div > div > ul > li > a:hover {
 	font-weight: 700;
 }
 
+.logo-text {
+	color: transparent !important;
+}
+
+.navbar-logo {
+	background: url('../img/logo.png') no-repeat;
+	height: 118px;
+	width: 128px;
+	position: absolute;
+	z-index: 999999;
+	margin: 0 25px;
+}
+
 .input-group-btn .btn {
 	background-color: #fff;
 	border: 2px solid #bdc3c7;
@@ -232,11 +245,7 @@ nav > div > div > ul > li > a:hover {
 	background-color: #2C3E50;
 }
 
-.appmnt-h,
-.sched-h,
-.clinic-h,
-.doctor-h,
-.about-h {
+.row-header {
 	font-family: 'Montserrat', sans-serif;
 	margin: 30px 0 35px 0;
 	font-size: 24px;
@@ -567,6 +576,12 @@ nav > div > div > ul > li > a:hover {
 	text-transform: uppercase;
 }
 
+.login-modal-btn:hover,
+.login-modal-btn:focus {
+	color: #fff !important;
+	background: #1ABC9C !important;
+}
+
 .btn-default.create-btn {
 	width: 100%;
 	padding: 10px 19px;
@@ -583,7 +598,7 @@ nav > div > div > ul > li > a:hover {
 
 #index-frw {
 	height: 305px;
-	background: url('../img/beng-labs.png') no-repeat;
+	background: url('../img/beng-labs.jpg') no-repeat;
 	margin:	10px 0 40px 0;
 }
 
@@ -649,6 +664,14 @@ nav > div > div > ul > li > a:hover {
 	font-size: 14px;
 	-webkit-columns: 100px 2;
 	-moz-columns: 100px 2;
+}
+
+.company-profile span {
+	font-weight: 600;
+}
+
+.company-profile-img {
+	margin-top: 15px;
 }
 
 .about-icons img {

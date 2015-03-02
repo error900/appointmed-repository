@@ -30,14 +30,17 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">appoint.med</a>
+                    <a class="navbar-brand hidden-lg hidden-md" href="#">benguet labs</a>
+                    <a class="navbar-brand logo-text hidden-sm hidden-xs" href="#">appoint.med</a>
+                    <div class="navbar-logo hidden-sm hidden-xs">
+                    </div>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#about">About</a></li>
+                        <li><a href="companyprofile.php">About</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Clinics &amp; Hospitals <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
@@ -85,7 +88,7 @@
         <div class="container-fluid" id="clinics">
             <div class="row">
                 <div class="col-xs-12 col-md-12">
-                    <h1 class="text-center clinic-h">Benguet Laboratories</h1>
+                    <h1 class="text-center row-header">Benguet Laboratories</h1>
                 </div>
                 <div class="col-xs-12 col-md-8">
                     <div class="g-map">
@@ -118,11 +121,10 @@
                 </div>
             </div>
         </div>
-        <a name="profile"></a>
         <div class="container-fluid" id="about">
             <div class="row">
                 <div class="col-xs-12 col-md-12">
-                    <h1 class="text-center about-h">About</h1>
+                    <h1 class="text-center row-header">About</h1>
                 </div>
                 <div class="col-xs-6 col-md-3">
                     <div class="about-icons text-center">
@@ -164,7 +166,7 @@
         <div class="container-fluid" id="doctors">
             <div class="row">
                 <div class="col-xs-12 col-md-12">
-                    <h2 class="text-center doctor-h">Doctors</h2>
+                    <h2 class="text-center row-header">Doctors</h2>
                 </div>
                   <?php 
                     $doclist = mysqli_query($con, "SELECT * FROM doctor ORDER BY specialization");
