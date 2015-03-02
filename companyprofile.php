@@ -38,6 +38,9 @@
                         <li><a href="#">Doctors</a></li>
                         <li><a href="signup.php">Signup</a></li>
                     </ul>
+                    <ul class="nav navbar-nav navbar-right hidden-xs hidden-sm">
+                        <button type="button" class="btn btn-default login-modal-btn btn-noborder" data-toggle="modal" data-target=".bs-example-modal-sm">Login</button>
+                    </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
@@ -62,6 +65,7 @@
             </div>
         </div>
         <?php
+            include 'include/user-login.php';
             include 'include/footer.php';
             include 'include/scrolltop.php';
             include 'include/scripts.php';
