@@ -186,10 +186,8 @@
                             <form class="form-input"  method="post" action="addappointment.php">
                                 <label for="inputDate">Set Date</label>
                                 <div class="input-group date" id="datetimepicker1">
-                                    <span class="input-group-addon">
-                                        <span class="fui-calendar-solid"></span>
-                                    </span>
-                                    <input type="text" class="form-control" name="date" required/>
+                          
+                                    <input type="date" class="form-control" name="date" required/>
                                 </div>
                                     <input type="hidden" value="<?php echo $patient?>" name="patient_id">
                                     <input type="hidden" value="<?php echo $doctor_id?>" name="doctor_id">

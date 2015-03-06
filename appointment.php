@@ -108,10 +108,10 @@
                             echo $doc['specialization'];
                             echo '<br/>Status: '; 
                             echo $doc['doctor_status'] . '<br/> ' . $date;
-                            echo '</div><div class="appmnt-pnl-btn">
-                                <a href="edit.php"><i class="fa fa-edit fa-lg"></i> Edit</a>
-                            </div>
-                        </div>';
+                            echo "</div><div class='appmnt-pnl-btn'>
+                                                            <a href=\"edit.php?appid=$app_id\"><i class='fa fa-edit fa-lg'></i> Edit</a>
+                                                        </div>
+                                                    </div>";
                     echo '</div>';
                     }
                 ?>

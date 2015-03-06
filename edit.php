@@ -1,10 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+    <style>
+
+#divResult
+        {
+            position:absolute;
+            width:210px;
+            display:none;
+            margin-top:40px;
+            border:solid 1px #dedede;
+            border-top:0px;
+            overflow:hidden;
+            border-bottom-right-radius: 6px;
+            border-bottom-left-radius: 6px;
+            -moz-border-bottom-right-radius: 6px;
+            -moz-border-bottom-left-radius: 6px;
+            box-shadow: 0px 0px 5px #999;
+            border-width: 3px 1px 1px;
+            border-style: solid;
+            border-color: #333 #DEDEDE #DEDEDE;
+            background-color: white;
+        }
+        .display_box
+        {
+            padding:4px; border-top:solid 1px #dedede; 
+            font-size:12px;
+        
+        }
+        .display_box:hover
+        {
+            background:#3bb998;
+            color:#FFFFFF;
+            cursor:pointer;
+        }
+        a
+        {
+            text-decoration: none;
+ 
+            background: #3bb998;
+            color:#FFFFFF;
+            cursor: pointer;
+        }
+    </style>
     <?php
         $title = "Edit Appointment";
         include 'include/head.php';
         include 'connectdatabase.php';
     ?>
+
   <body>
     <div class="container">
         <?php 
@@ -51,13 +94,13 @@
                 <div class="col-md-4">
                     <div class="this-appointment">
                         <h2 class="current-date"><span>Today:</span>dd/mm/yyyy</h2>
-                        <form>
-                            <input type="text" class="form-control" name="doctor_name" value="Juan Dela Cruz" readonly />
-                            <input type="text" class="form-control" name="specialization" value="Janitor" readonly />
-                            <input type="date" name="date" value="01/01/2001" />
-
-                            <input class="btn btn-default login-btn" type="submit" value="Save" name="submit"/>
-                        </form>
+                      <form class="form-input"  method="post" action="editappointment.php">
+                                <label for="inputDate">Choose a new date: </label>
+                                  <?php $app_id= mysqli_real_escape_string($con, $_GET['appid']); ?>
+                                  <input type="date" name="appdate" value="<?php echo date('m/d/Y');?>" required/>
+                                  <input type="hidden" name="appointment_id" value="<?php echo $app_id; ?>">
+                                <input class="btn btn-default login-btn btn-noborder" type="submit" name="submit"/>";
+                            </form>
                     </div>
                 </div>
                 <div class="col-md-6 col-md-offset-2">

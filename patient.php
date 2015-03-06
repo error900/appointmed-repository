@@ -1,6 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <style>
 
+#divResult
+        {
+            position:absolute;
+            width:210px;
+            display:none;
+            margin-top:40px;
+            border:solid 1px #dedede;
+            border-top:0px;
+            overflow:hidden;
+            border-bottom-right-radius: 6px;
+            border-bottom-left-radius: 6px;
+            -moz-border-bottom-right-radius: 6px;
+            -moz-border-bottom-left-radius: 6px;
+            box-shadow: 0px 0px 5px #999;
+            border-width: 3px 1px 1px;
+            border-style: solid;
+            border-color: #333 #DEDEDE #DEDEDE;
+            background-color: white;
+        }
+        .display_box
+        {
+            padding:4px; border-top:solid 1px #dedede; 
+            font-size:12px;
+        
+        }
+        .display_box:hover
+        {
+            background:#3bb998;
+            color:#FFFFFF;
+            cursor:pointer;
+        }
+        a
+        {
+            text-decoration: none;
+ 
+            background: #3bb998;
+            color:#FFFFFF;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
     <?php
         $title = "Patient Profile";
         include 'include/head.php';
@@ -108,6 +152,7 @@
         <?php
             include 'include/scripts.php';
         ?>
+        <script type="text/javascript" src="js/search.js"></script>
     </div>
   </body>
 </html>

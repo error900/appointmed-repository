@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+     <script type="text/javascript">
+        $(".btn btn-block btn-inverse").on("click", function (e) {
+            e.preventDefault();
+            var referralid;
+
+            referralid = $(this).data("id");
+             $(".modal-body #app_id").val( 'referralid' );
+        });
+    </script>
+
     <?php
         $title = "Schedules";
         include 'include/head.php';
@@ -139,7 +149,7 @@
                 echo '<p> Queue Number: ' . $appointment_id . '</p>';
                 
              
-                 echo ' <button type="button" class="btn btn-block btn-inverse" data-toggle="modal" data-target=".bs-example-modal-sm">
+                 echo ' <button type="button" class="btn btn-block btn-inverse" data-toggle="modal" data-target=".bs-example-modal-sm" data-id="'.$appointment_id.'">
                             <span class="fui-new"> </span>Refer to Other Doctor</button>';
                          echo'</div>';
     
@@ -177,7 +187,7 @@
                                     </select>                                      
                                 <input type="hidden" value="<?php echo $patient?>" name="patient_id">
                                 <input type="hidden" value="<?php echo $doctor_id?>" name="doctor_id">
-                                <input type="hidden" value="<?php echo $appointment_id?>" name="appointment_id">
+                                <input type="text" id="app_id" value="" name="appointment_id">
                     
                            <?php            
                                 echo '<div class="modal-footer">';
