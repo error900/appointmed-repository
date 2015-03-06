@@ -770,6 +770,15 @@ nav > div > div > ul > li > a:hover {
 	line-height: 24px;
 }
 
+.doctors-full-list img {
+	height: 96px !important;
+	width: 96px !important;
+}
+
+.doctors-full-list ul li {
+	list-style: none;
+}
+
 #doctor-info,
 #patient-info {
 	margin: 20px 0;
@@ -778,7 +787,8 @@ nav > div > div > ul > li > a:hover {
 }
 
 #doctor-info img,
-#patient-info img {
+#patient-info img,
+.doctors-full-list img {
 	height: 136px;
 	width: 136px;
 	margin: 0 auto;
@@ -815,6 +825,13 @@ nav > div > div > ul > li > a:hover {
 }
 .email {
 	text-transform: lowercase;
+}
+
+.specialization-header {
+	margin: 20px;
+	font-size: 18px;
+	font-weight: 800;
+	text-transform: uppercase;
 }
 
 .specialization {
