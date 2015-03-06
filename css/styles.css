@@ -102,8 +102,9 @@ h1, h2, h3, h4 {
 	background-color: #fff !important;
 }
 
-.ecf0f1-bg {
-	background-color: #ecf0f1 !important;
+.e4e8e9-bg {
+	/* background-color: #ecf0f1 !important; */
+	background: #e4e8e9 url('../img/background_opcion2.jpg') repeat left top !important;
 }
 
 .text-turquoise {
@@ -199,6 +200,19 @@ nav > div > div > ul > li > a:hover {
 	font-weight: 700;
 }
 
+.logo-text {
+	color: transparent !important;
+}
+
+.navbar-logo {
+	background: url('../img/logo.png') no-repeat;
+	height: 118px;
+	width: 128px;
+	position: absolute;
+	z-index: 999999;
+	margin: 0 25px;
+}
+
 .input-group-btn .btn {
 	background-color: #fff;
 	border: 2px solid #bdc3c7;
@@ -231,14 +245,16 @@ nav > div > div > ul > li > a:hover {
 	background-color: #2C3E50;
 }
 
-.appmnt-h,
-.sched-h,
-.clinic-h,
-.doctor-h {
+.row-header,
+.row-header2 {
 	font-family: 'Montserrat', sans-serif;
 	margin: 30px 0 35px 0;
 	font-size: 24px;
 	text-transform: uppercase;
+}
+
+.row-header2 {
+	color: #95A5A6;
 }
 
 .notif-h {
@@ -445,7 +461,7 @@ nav > div > div > ul > li > a:hover {
 
 .usr-login {
 	position: relative;
-	padding: 24px 23px 20px;
+	padding: 10px;
 	background-color: transparent;
 	border-radius: 6px;
 }
@@ -556,6 +572,21 @@ nav > div > div > ul > li > a:hover {
 	border-color: #E67E22;
 }
 
+.login-modal-btn {
+	margin-top: 10px;
+	background: #16A085 !important;
+	color: #fff;
+	font-size: 12px;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.login-modal-btn:hover,
+.login-modal-btn:focus {
+	color: #fff !important;
+	background: #1ABC9C !important;
+}
+
 .btn-default.create-btn {
 	width: 100%;
 	padding: 10px 19px;
@@ -631,6 +662,21 @@ nav > div > div > ul > li > a:hover {
 
 #about {
 	margin: 50px 0;
+}
+
+.company-profile {
+	padding: 20px 40px;
+	font-size: 14px;
+	-webkit-columns: 100px 2;
+	-moz-columns: 100px 2;
+}
+
+.company-profile span {
+	font-weight: 600;
+}
+
+.company-profile-img {
+	margin-top: 15px;
 }
 
 .about-icons img {
@@ -726,7 +772,7 @@ nav > div > div > ul > li > a:hover {
 
 #doctor-info,
 #patient-info {
-	margin: 40px 0;
+	margin: 20px 0;
 	color: #ECF0F1;
 	font-size: 14px;
 }
@@ -746,13 +792,29 @@ nav > div > div > ul > li > a:hover {
 
 .d-info ul,
 .p-info ul {
+	margin: 10px 0;
 	list-style: none;
-}
-
-.d-info .specs,
-.p-info .specs {
 	text-transform: uppercase;
 	font-weight: 600;
+}
+
+.p-info ul i,
+.d-info ul i {
+	padding-right: 10px;
+}
+
+.p-info ul li,
+.d-info ul li {
+	margin: 0 10px;
+	padding: 0 10px;
+}
+
+.p-info ul li:hover,
+.d-info ul li:hover {
+	background: #34495E;
+}
+.email {
+	text-transform: lowercase;
 }
 
 .specialization {
@@ -821,4 +883,11 @@ nav > div > div > ul > li > a:hover {
 }
 
 #notification {
+}
+
+footer {
+}
+
+.footer-links {
+	padding: 10px;
 }

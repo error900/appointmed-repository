@@ -18,7 +18,7 @@
         }
     ?>
 
-  <body class="ecf0f1-bg">
+  <body class="e4e8e9-bg">
     <div class="container">
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container">
@@ -30,14 +30,17 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">appoint.med</a>
+                    <a class="navbar-brand hidden-lg hidden-md" href="#">benguet labs</a>
+                    <a class="navbar-brand logo-text hidden-sm hidden-xs" href="#">appoint.med</a>
+                    <div class="navbar-logo hidden-sm hidden-xs">
+                    </div>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
+                        <li><a href="companyprofile.php">About</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Clinics &amp; Hospitals <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
@@ -49,39 +52,43 @@
                         <li><a href="#">Doctors</a></li>
                         <li><a href="signup.php">Signup</a></li>
                     </ul>
+                    <ul class="nav navbar-nav navbar-right hidden-xs hidden-sm">
+                        <button type="button" class="btn btn-default login-modal-btn btn-noborder" data-toggle="modal" data-target=".bs-example-modal-sm">Login</button>
+                    </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
 
         <div class="container-fluid" id="index-frw">
             <div class="row">
-                <div class="col-xs-12 col-md-7">
+                <div class="col-xs-12 col-md-7 visible-md visible-lg">
                 <p class="login-text"><span>appoint.med</span> ... your online scheduling system that allows you to create appointments to a doctor chorva chorva.</p>
                 </div>
-                <div class="col-xs-12 col-md-4">
+                <div class="col-xs-12 col-md-4 visible-xs visible-sm">
                     <div class="usr-login">
                      <form method="post" action="login.php">
                         <div class="input-group">
                             <input type="text" class="form-control login-field" name="username" placeholder="Username" required>
                             <i class="fa fa-user field-icon"></i>
                         </div>
-
                         <div class="input-group">
                             <input type="password" class="form-control login-field" name="password" placeholder="Password" required>
                             <i class="fa fa-lock field-icon"></i>
                         </div>
-
                         <input class="btn btn-default login-btn btn-noborder" type="submit" value="Login" name="login"/>
                     </form>
                         <a class="login-link" href="signup.php">Don't have an account?</a>
                     </div>
                 </div>
+                <?php 
+                    include 'include/user-login.php'
+                 ?>
             </div>
         </div>
         <div class="container-fluid" id="clinics">
             <div class="row">
                 <div class="col-xs-12 col-md-12">
-                    <h1 class="text-center clinic-h">Benguet Laboratories</h1>
+                    <h1 class="text-center row-header">Benguet Laboratories</h1>
                 </div>
                 <div class="col-xs-12 col-md-8">
                     <div class="g-map">
@@ -116,6 +123,9 @@
         </div>
         <div class="container-fluid" id="about">
             <div class="row">
+                <div class="col-xs-12 col-md-12">
+                    <h1 class="text-center row-header">About</h1>
+                </div>
                 <div class="col-xs-6 col-md-3">
                     <div class="about-icons text-center">
                         <img src="img/startup.png" alt="">
@@ -140,12 +150,23 @@
                         <p><span>Online</span> make appointments anywhere</p>
                     </div>
                 </div>
+                <div class="col-xs-12 col-md-7 company-profile">
+                    <h2>Company Profile</h2>
+                    <p>BenguetCorp Laboratories Inc. Is a wholly owned subsidiary of publicly listed company Benguet Corporation. Benguet Corporation has more than a 100 year old history and tradition in the mining industry and is considered the industry leader. It has since branched into non-mining concerns, foremost of which is its foray into the healthcare industry.</p>
+                    <p>BenguetCorp Laboratories Inc. Operates a chain of outpatient medical and health facilities under the trade name Med Central. Med Central has three operating healthcare clinics: SM Baguio, Centermall Baguio and SM San Fernando, Pampanga.</p>
+                    <p class="text-right more-btn">
+                        <a href="companyprofile.php" class="btn btn-default btn-noborder">read more</a>
+                    </p>
+                </div>
+                <div class="col-xs-12 col-md-5 ">
+                    <img src="img/lab.jpg" class="img-responsive" alt="Responsive image">
+                </div>
             </div>
         </div>
         <div class="container-fluid" id="doctors">
             <div class="row">
                 <div class="col-xs-12 col-md-12">
-                    <h2 class="text-center doctor-h">Doctors</h2>
+                    <h2 class="text-center row-header">Doctors</h2>
                 </div>
                   <?php 
                     $doclist = mysqli_query($con, "SELECT * FROM doctor ORDER BY specialization");

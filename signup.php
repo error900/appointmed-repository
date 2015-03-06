@@ -31,7 +31,7 @@
         </script>
     </head>
 
-    <body class="ecf0f1-bg">
+    <body class="e4e8e9-bg">
     <div class="container">
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container">
@@ -43,14 +43,17 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">appoint.med</a>
+                    <a class="navbar-brand hidden-lg hidden-md" href="#">benguet labs</a>
+                    <a class="navbar-brand logo-text hidden-sm hidden-xs" href="#">appoint.med</a>
+                    <div class="navbar-logo hidden-sm hidden-xs">
+                    </div>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li><a href="index.php">Home</a></li>
-                        <li><a href="#">About</a></li>
+                        <li><a href="companyprofile.php">About</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Clinics &amp; Hospitals <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
@@ -61,6 +64,9 @@
                         </li>
                         <li><a href="#">Doctors</a></li>
                         <li class="active"><a href="signup.php">Signup</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right hidden-xs hidden-sm">
+                        <button type="button" class="btn btn-default login-modal-btn btn-noborder" data-toggle="modal" data-target=".bs-example-modal-sm">Login</button>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
@@ -140,6 +146,8 @@
             </div>
         </div>
         <?php
+            include 'include/user-login.php';
+            include 'include/footer.php';
             include 'include/scrolltop.php';
             include 'include/scripts.php';
         ?>

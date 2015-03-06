@@ -46,34 +46,61 @@
         <!-- /navigation -->
         <div class="container-fluid" id="patient-info">
             <div class="row">
-                <div class="col-md-4 p-pic">
-                     <img src="img/profile/<?php echo $patient ?>.jpg">
+                <div class="col-xs-12 col-md-2 col-md-offset-2">
+                     <img src="img/profile/<?php echo $patient ?>.jpg" class="img-responsive">
                 </div>
-                <div class="col-md-5">
-                    <div class="p-info">
-                        <ul class="specs">
-                            <li><?php echo $row['patient_name']; ?></li>
-                            <li><?php echo $row['birthdate'];?></li>
-                            <li><?php echo $row['age'];?></li>
-                            <li><?php echo $row['occupation'];?></li>
-                            
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-3">
+                <div class="col-xs-12 col-md-5">
                     <div class="p-info">
                         <ul>
-                            <li><?php echo $row['patient_contact']; ?></li>
-                            <li><?php echo $row['email']; ?></li>
+                            <li><i class="fa fa-user"></i><?php echo $row['patient_name']; ?></li>
+                            <li><i class="fa fa-birthday-cake"></i><?php echo $row['birthdate'];?> &mdash; <?php echo $row['age'];?> years old</li>
+                            <li><i class="fa fa-briefcase"></i><?php echo $row['occupation'];?></li>
+                            <li><i class="fa fa-phone"></i><?php echo $row['patient_contact']; ?></li>
+                            <li class="email"><i class="fa fa-envelope"></i><?php echo $row['email']; ?></li>
                         </ul>
                     </div>
-                </div>    
+                </div>   
             </div>
         </div>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-4 col-md-offset-4">
-                    <ul></ul>
+                <div class="col-md-6 col-md-offset-3">
+                    <h1 class="text-center row-header2">Recent Activity</h1>
+                </div>
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="panel panel-default">
+                      <div class="panel-body">
+                        Activity 1
+                      </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="panel panel-default">
+                      <div class="panel-body">
+                        Activity 2
+                      </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="panel panel-default">
+                      <div class="panel-body">
+                        Activity 3
+                      </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="panel panel-default">
+                      <div class="panel-body">
+                        Activity 4
+                      </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="panel panel-default">
+                      <div class="panel-body">
+                        Activity 5
+                      </div>
+                    </div>
                 </div>
             </div>
         </div>

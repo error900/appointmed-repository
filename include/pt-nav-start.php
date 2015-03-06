@@ -8,7 +8,10 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">appoint.med</a>
+                    <a class="navbar-brand hidden-lg hidden-md" href="#">benguet labs</a>
+                    <a class="navbar-brand logo-text hidden-sm hidden-xs" href="#">appoint.med</a>
+                    <div class="navbar-logo hidden-sm hidden-xs">
+                    </div>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
