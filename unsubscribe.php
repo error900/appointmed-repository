@@ -10,9 +10,8 @@
 
     mysqli_close($con);
     echo "<script> alert('you unsubscribed to the doctor');</script>";
-<<<<<<< HEAD
+
     header("location: doctor.php");    
-=======
+
     header("location: profile.php");    
->>>>>>> origin/master
 ?>

@@ -11,15 +11,13 @@
     } else {
         $sql = "INSERT INTO subscribe (doctor_id, patient_id) 
         VALUES ('$doc', '$pat')";
+        
         mysqli_query($con, $sql) or die (mysqli_error());
-<<<<<<< HEAD
         header("location: doctor.php");
         echo "<script> alert('you are subscribed');</script>";
-=======
 
         echo "<script> alert('you are subscribed');</script>";
                 header("location: doctor.php?id=".$doc);
->>>>>>> origin/master
     }
     mysqli_close($con);
     
