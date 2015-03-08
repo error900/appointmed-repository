@@ -105,13 +105,7 @@
         <div class="container-fluid" id="doctor-info">
             <div class="row">
                 <div class="col-md-4 d-pic">
-                      <img src="img/profile/<?php 
-                            $file = "img/profile/".$doctor_id.".jpg";
-                            if(file_exists($file)){
-                                echo $doctor_id;
-                            }else{
-                                echo 'profile';
-                            } ?>.jpg">
+                      <img src="img/profile/<?php echo $doctor_id ?>.jpg">
                 </div>
                 <div class="col-md-5">
                     <div class="d-info">
@@ -132,29 +126,15 @@
                             <li><?php echo $d_row['email']; ?></li>
                             <li>Status: <?php echo strtoupper($d_row['doctor_status']);?></li>
                         </ul>
-<<<<<<< HEAD
                         <form action="unsubscribe.php" method="post" class="subs">
                             <input type="hidden" name="doctor" value="<?php echo $d_row['doctor_id']?>">
                             <input type="hidden" name="patient" value="<?php echo $p_row['patient_id']?>">
                             <input type="submit" class="btn btn-default" name="subs" value="Subscribe">
                             <input type="submit" class="btn btn-default" name="unsubs" value="Unsubscribe">
-=======
-                        <form action="subscribe.php" method="post" class="subs">
-<<<<<<< HEAD
-                            <input type="hidden" name="doctor" value="<?php echo $row['doctor_id']?>">
-                            <input type="hidden" name="patient" value="<?php echo $p_row['patient_id']?>">
-                            <input type="submit" class="btn btn-default" name="subs" value="Subscribe">
-                            <input type="submit" class="btn btn-default" name="unsubs" value="Unsubscribe">
-=======
->>>>>>> origin/master
                             <input type="hidden" name="doctor" value="<?php echo $d_row['doctor_id']?>">
                             <input type="hidden" name="patient" value="<?php echo $p_row['patient_id']?>">
                             <input type="submit" class="btn btn-default btn-noborder" name="subs" value="Subscribe">
                             <input type="submit" class="btn btn-default btn-noborder" name="unsubs" value="Unsubscribe">
-<<<<<<< HEAD
-=======
->>>>>>> origin/master
->>>>>>> origin/master
                         </form>
                     </div>
                 </div>            

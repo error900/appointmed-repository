@@ -38,7 +38,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">appoint.med</a>
+                <a class="navbar-brand" href="schedules.php">appoint.med</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -52,7 +52,7 @@
                             <li><a href="#">This Month</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Notifications <span class="badge">1</span></a></li>
+                    <li><a href="doc_notifications.php">Notifications <span class="badge">1</span></a></li>
                     <li><a href="completed.php">Completed</a></li>
                     <li><a href="#">Removed</a></li>
                     <li><a href="#">Referred</a></li>
@@ -189,7 +189,7 @@
                         </div>
                     </div>
 
- <?php
+        <?php
             include 'include/scripts.php';
             include 'include/scrolltop.php';
         ?>
