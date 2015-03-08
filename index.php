@@ -166,7 +166,7 @@
         <div class="container-fluid" id="doctors">
             <div class="row">
                 <div class="col-xs-12 col-md-12">
-                    <h2 class="text-center row-header">Doctors</h2>
+                    <h1 class="text-center row-header">Doctors</h1>
                 </div>
                   <?php 
                     $doclist = mysqli_query($con, "SELECT * FROM doctor ORDER BY specialization");

@@ -7,7 +7,7 @@
     ?>
     <?php
         session_start();
-        if(isset($_SESSION['loggedIn']) ){
+        if(isset($_SESSION['loggedIn']) && isset($_SESSION['account_type'])){
             $loggedIn = $_SESSION['loggedIn']; 
             $account_type = $_SESSION['account_type'];
 
