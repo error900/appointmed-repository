@@ -2,20 +2,14 @@
 include 'connectdatabase.php';
 if(isset($_POST['submit'])){
 	$date = $_POST['date'];
-	$date = date('m/d/Y', strtotime($date));
-	
 	$patient_id = $_POST['patient_id'];
 	$doctor_id = $_POST['doctor_id'];
 	$clinic_id = $_POST['clinic_id'];
 	$appointment_status="Inqueue";
-<<<<<<< HEAD
 	$remarks='';
 	$message="A patient has requested an appointment.";
 	$n_id="n1004";
 	$indicator="patient";
-=======
-	$remarks='';	
->>>>>>> origin/master
 
 
 	$sql = "INSERT INTO appointment (doctor_id, patient_id, appoint_date, appointment_status, remarks, clinic_id) 

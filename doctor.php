@@ -126,22 +126,11 @@
                             <li><?php echo $d_row['email']; ?></li>
                             <li>Status: <?php echo strtoupper($d_row['doctor_status']);?></li>
                         </ul>
-<<<<<<< HEAD
                         <form action="unsubscribe.php" method="post" class="subs">
-=======
-         
-
-                        <form action="subscribe.php" method="post" class="subs">
-
->>>>>>> origin/master
                             <input type="hidden" name="doctor" value="<?php echo $d_row['doctor_id']?>">
                             <input type="hidden" name="patient" value="<?php echo $p_row['patient_id']?>">
                             <input type="submit" class="btn btn-default" name="subs" value="Subscribe">
                             <input type="submit" class="btn btn-default" name="unsubs" value="Unsubscribe">
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
                             <input type="hidden" name="doctor" value="<?php echo $d_row['doctor_id']?>">
                             <input type="hidden" name="patient" value="<?php echo $p_row['patient_id']?>">
                             <input type="submit" class="btn btn-default btn-noborder" name="subs" value="Subscribe">
@@ -187,8 +176,10 @@
                             <form class="form-input"  method="post" action="addappointment.php">
                                 <label for="inputDate">Set Date</label>
                                 <div class="input-group date" id="datetimepicker1">
-                          
-                                    <input type="date" class="form-control" name="date" required/>
+                                    <span class="input-group-addon">
+                                        <span class="fui-calendar-solid"></span>
+                                    </span>
+                                    <input type="text" class="form-control" name="date" required/>
                                 </div>
                                     <input type="hidden" value="<?php echo $patient?>" name="patient_id">
                                     <input type="hidden" value="<?php echo $doctor_id?>" name="doctor_id">
