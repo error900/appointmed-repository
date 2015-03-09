@@ -35,7 +35,7 @@
                                 <li><a href="#">SLU Hospital</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Doctors</a></li>
+                        <li><a href="doctors.php">Doctors</a></li>
                         <li><a href="signup.php">Signup</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right hidden-xs hidden-sm">

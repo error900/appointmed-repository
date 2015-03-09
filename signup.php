@@ -62,7 +62,7 @@
                                 <li><a href="#">SLU Hospital</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Doctors</a></li>
+                        <li><a href="doctors.php">Doctors</a></li>
                         <li class="active"><a href="signup.php">Signup</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right hidden-xs hidden-sm">
@@ -94,7 +94,7 @@
                                 <input type="email" class="form-control" name="email" placeholder="Email Address" required=""/>
                                 <input type="text" class="form-control" name="contact" placeholder="Contact Number" required=""/>
                                 <input type="text" class="form-control" name="occupation" placeholder="Occupation" required=""/>
-                          
+                          <div>Birthdate</div>
                                 Month: <select name=birth_month>
                                         <option selected value=1>January
                                         <option value=2> February
@@ -147,7 +147,7 @@
         </div>
         <?php
             include 'include/user-login.php';
-            include 'include/footer.php';
+        //    include 'include/footer.php';
             include 'include/scrolltop.php';
             include 'include/scripts.php';
         ?>

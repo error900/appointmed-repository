@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-     <script type="text/javascript">
-        $(document).on("click", ".btn btn-block btn-inverse", function () {
-            var appointment_id = $(this).data('id');
-             $(".modal-body #appointment_id").val(appointment_id);
-        });
-    </script>
+
 
     <?php
         $title = "Schedules";
         include 'include/head.php';
         include 'connectdatabase.php';
+              include 'include/scripts.php';
+            include 'include/scrolltop.php';
     ?>
+    <script type="text/javascript">
+     $(document).ready(function(){
+           $(".appo").click(function(){ // Click to only happen on announce links
+             $("#appo_id").val($(this).data('id'));
+             $("#pat_id").val($(this).data('patient-id'));
+           });
+     });
+    </script>
     <?php 
         session_start();
         $loggedIn = $_SESSION['loggedIn'];
@@ -45,7 +50,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="schedules.php">appoint.med</a>
+                <a class="navbar-brand" href="#">appoint.med</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -59,7 +64,7 @@
                             <li><a href="#">This Month</a></li>
                         </ul>
                     </li>
-                    <li><a href="doc_notifications.php">Notifications <span class="badge">1</span></a></li>
+                    <li><a href="#">Notifications <span class="badge">1</span></a></li>
                     <li><a href="completed.php">Completed</a></li>
                     <li><a href="#">Removed</a></li>
                     <li><a href="#">Referred</a></li>
@@ -137,6 +142,7 @@
                 <div class="panel panel-default sched-panel">';
                 echo'<div class="panel-heading">';
                 echo $pat['patient_name'];
+                echo '<input type="hidden" id="appointment_id" value="'.$appointment_id.'" name="appointment_id">';
               //  echo "<a href=\"doctor_close.php?id=$row[appointment_id]&doc=$doctor_id&pat=$patient\" onclick='return confirm(\"Do you want to cancel this appointment?\")' title=\"Cancel\"><i class=\"fa fa-remove fa-lg delete-btn\"></i></a></div>
                // <div class=\"panel-body\">";
                 echo '</div>';
@@ -146,9 +152,9 @@
                 echo '<p> Queue Number: ' . $appointment_id . '</p>';
                 
              
-                 echo ' <button type="button" class="btn btn-block btn-inverse" data-toggle="modal" data-target=".bs-example-modal-sm" data-id="'.$appointment_id.'">
-                            <span class="fui-new"> </span>Refer to Other Doctor</button>';
-                         echo'</div>';
+                 echo ' <button type="button" class="btn btn-block btn-inverse appo" data-toggle="modal" data-target=".bs-example-modal-sm" data-id="'.$appointment_id.'" data-patient-id="'.$patient.'">
+                            <span class="fui-new"> </span>Refer to Other Doctor</button>
+                         </div>';
     
 
                  echo'  <div class="appmnt-pnl-btn">
@@ -173,7 +179,7 @@
                         <div class="form-group">
                             <form class="form-input"  method="post" action="referral.php">
                                 <label for="inputDate">Choose Doctor: </label>
-                                    <select name="referred_id" required>
+                                <select name="referred_id" required>
 
                                         <?php 
                                            while ($row2 = mysqli_fetch_array($sqls)){
@@ -181,24 +187,23 @@
                                 <option value='<?php echo $row2['doctor_id']?>' ><?php echo $row2['doctor_name']?></option> ;
                                           <?php   } ?>
 
-                                    </select>                                      
-                                <input type="hidden" value="<?php echo $patient?>" name="patient_id">
+                                </select>                                      
+                                <input type="hidden" id="pat_id" value="" name="patient_id">
                                 <input type="hidden" value="<?php echo $doctor_id?>" name="doctor_id">
-                                <input type="text" id="appointment_id" value="" name="appointment_id">
+                                <input type="hidden" id="appo_id" value="" name="appointment_id">
                     
                            <?php            
-                                echo '<div class="modal-footer">';
-                                echo '<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>';
-                                echo "<button type=\"submit\" class=\"btn btn-primary\" name=\"submit\">Refer</button>";
-                                echo '</div>';
+                                echo '<div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>';
+                                echo "<button type=\"submit\" class=\"btn btn-primary\" name=\"submit\">Refer</button>
+                                </div>";
                             ?>
                             </form>
                         </div>
                     </div>
 
-        <?php
-            include 'include/scripts.php';
-            include 'include/scrolltop.php';
+ <?php
+      
         ?>
 
   </body>
