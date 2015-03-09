@@ -66,7 +66,7 @@
         </div>
         <?php
             include 'include/user-login.php';
-            include 'include/footer.php';
+   //         include 'include/footer.php';
             include 'include/scrolltop.php';
             include 'include/scripts.php';
         ?>

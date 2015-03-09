@@ -62,7 +62,7 @@
         <div class="container-fluid" id="index-frw">
             <div class="row">
                 <div class="col-xs-12 col-md-7 visible-md visible-lg">
-                <p class="login-text"><span>appoint.med</span> ... your online scheduling system that allows you to create appointments to a doctor chorva chorva.</p>
+                <p class="login-text"><span>appoint.med</span> ... an online scheduling system that allows you to create appointments to a doctor anywhere, anytime.</p>
                 </div>
                 <div class="col-xs-12 col-md-4 visible-xs visible-sm">
                     <div class="usr-login">
