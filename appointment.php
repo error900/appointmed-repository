@@ -48,7 +48,17 @@
         $title = "Appointments";
         include 'include/head.php';
         include 'connectdatabase.php';
+        include 'include/scripts.php';
+        include 'include/scrolltop.php';
     ?>
+    
+     <script type="text/javascript">
+     $(document).ready(function(){
+           $(".appo").click(function(){ // Click to only happen on announce links
+             $("#appo_id").val($(this).data('id'));
+           });
+     });
+    </script>
   <body>
     <div class="container">
         <?php 
@@ -109,7 +119,7 @@
                             echo '<br/>Status: '; 
                             echo $doc['doctor_status'] . '<br/> ' . $date;
                             echo "</div><div class='appmnt-pnl-btn'>
-                                                            <a href=\"edit.php?appid=$app_id\"><i class='fa fa-edit fa-lg'></i> Edit</a>
+                            <a class='btn btn-block btn-inverse appo' data-toggle='modal' data-target='.bs-example-modal-sm' data-id='".$app_id."'><i class='fa fa-edit fa-lg'></i> Edit</a>
                                                         </div>
                                                     </div>";
                     echo '</div>';
@@ -117,9 +127,34 @@
                 ?>
             </div>
         </div>
+               <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Edit</h4>
+                  </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                    
+                            <form class="form-input"  method="post" action="editappointment.php">
+                               
+                                   <label for="inputDate">Choose new date: </label>                                
+                                  <input type="date" name="appdate" value="<?php echo date('m/d/Y');?>" required/>
+                                  <input type="hidden" id="appo_id" name="appointment_id" value="">
+            
+
+                           <?php            
+                                echo '<div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>';
+                                echo "<button type=\"submit\" class=\"btn btn-primary\" name=\"submit\">Save</button>
+                                </div>";
+                            ?>
+                            </form>
+                        </div>
+                    </div>
         <?php
-            include 'include/scripts.php';
-            include 'include/scrolltop.php';
+
         ?>
         <script type="text/javascript" src="js/search.js"></script>
         <script type="text/javascript" src="js/scrolltop.js"></script>
