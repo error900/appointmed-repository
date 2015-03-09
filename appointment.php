@@ -54,7 +54,7 @@
     
      <script type="text/javascript">
      $(document).ready(function(){
-           $(".appo").click(function(){ // Click to only happen on announce links
+           $(".appo").click(function(){
              $("#appo_id").val($(this).data('id'));
            });
      });
