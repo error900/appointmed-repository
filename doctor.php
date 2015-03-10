@@ -104,7 +104,7 @@
         <!-- /navigation -->
         <div class="container-fluid" id="doctor-info">
             <div class="row">
-                <div class="col-md-4 d-pic">
+                <div class="col-xs-12 col-md-2 col-md-offset-2 d-pic">
                       <img src="img/profile/<?php 
                             $file = "img/profile/".$doctor_id.".jpg";
                             if(file_exists($file)){
@@ -113,34 +113,34 @@
                                 echo 'profile';
                             } ?>.jpg">
                 </div>
-                <div class="col-md-5">
+                <div class="col-xs-12 col-md-5">
                     <div class="d-info">
-                        <ul class="specs">
-                            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit</li>
-                            <li>LUt enim ad minim veniam nostrud exercitation ullamco laboris nisi</li>
+                        <ul>
+                            <li><i class="fa fa-user-md"></i>Dr. <?php echo strtoupper($d_row['doctor_name']); ?></li>
+                            <li><i class="fa fa-medkit"></i><?php echo $d_row['specialization']; ?>y</li>
                             <br>
-                            <li>Hospital Affiliations: Benguet Laboratory Incorporated</li>
-                            <li>Specialties: Plastic Surgery, Cosmetic Surgery</li>
+                            <li><i class="fa fa-h-square"></i>Benguet Laboratory Incorporated</li>
+                            <li><i class="fa fa-angle-double-right"></i> Plastic Surgery, Cosmetic Surgery</li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-md-3 text-right">
                     <div class="d-info">
                         <ul>
-                            <li><?php echo strtoupper($d_row['doctor_name']); ?></li>
-                            <li><?php echo $d_row['specialization']; ?></li>
                             <li><?php echo $d_row['email']; ?></li>
                             <li>Status: <?php echo strtoupper($d_row['doctor_status']);?></li>
                         </ul>
-         
 
                         <form action="subscribe.php" method="post" class="subs">
-
                             <input type="hidden" name="doctor" value="<?php echo $d_row['doctor_id']?>">
                             <input type="hidden" name="patient" value="<?php echo $p_row['patient_id']?>">
                             <input type="submit" class="btn btn-default" name="subs" value="Subscribe">
                             <input type="submit" class="btn btn-default" name="unsubs" value="Unsubscribe">
 
+                            <input type="hidden" name="doctor" value="<?php echo $d_row['doctor_id']?>">
+                            <input type="hidden" name="patient" value="<?php echo $p_row['patient_id']?>">
+                            <input type="submit" class="btn btn-default btn-noborder" name="subs" value="Subscribe">
+                            <input type="submit" class="btn btn-default btn-noborder" name="unsubs" value="Unsubscribe">
                         </form>
                     </div>
                 </div>            
@@ -160,7 +160,7 @@
                         echo '<p>'. $c_row['clinic_name']. '</p>' ;
                         echo '<p>'. $c_row['clinic_location']. '</p>' ;
                         echo '<p>'. $c_row['clinic_contact'] .'</p>';
-                        echo ' <button type="button" class="btn btn-default create-btn" data-toggle="modal" data-target=".bs-example-modal-sm">
+                        echo ' <button type="button" class="btn btn-default create-btn btn-noborder" data-toggle="modal" data-target=".bs-example-modal-sm">
                             <span class="fui-new"> </span>Create Appointment</button>';
                                                echo '</div>';
                         echo '</div>';
