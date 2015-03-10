@@ -8,9 +8,13 @@
                                 </span>
                             </div>
                         </form>
+                        <li class="visible-xs visible-sm"><a href="patient.php">Profile</a></li>
+                        <li class="visible-xs visible-sm"><a href="#">Another action</a></li>
+                        <li class="divider visible-xs visible-sm"></li>
+                        <li class="visible-xs visible-sm"><a href="logout.php"><i class="fa fa-power-off"></i>    logout</a></li>
                     </ul>
                     <div class="btn-group navbar-right signedin">
-                        <button type="button" class="btn btn-default btn-lg btn-noborder dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        <button type="button" class="btn btn-default btn-lg btn-noborder dropdown-toggle hidden-xs hidden-sm" data-toggle="dropdown" aria-expanded="false">
                             <?php echo $patient_n ?>
                             <span class="caret"></span>
                         </button>

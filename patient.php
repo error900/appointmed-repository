@@ -65,8 +65,11 @@
             $username = $_SESSION['username'];
             $result = mysqli_query($con, "SELECT * FROM patient WHERE username LIKE '$username'" );
             $row =  mysqli_fetch_array($result);
-            $patient = $row['patient_id'];
+            $patient_id = $row['patient_id'];
             $patient_n = $row['patient_name'];
+            $p_result = mysqli_query($con, "SELECT * FROM appointment WHERE patient_id LIKE '$patient_id'" );
+            $p_row =  mysqli_fetch_array($p_result);
+            $n_result = mysqli_query($con, "SELECT * FROM notification WHERE patient_id LIKE '$patient_id'" );
         ?>
         <!-- navigation -->
         <?php 
@@ -91,7 +94,7 @@
         <div class="container-fluid" id="patient-info">
             <div class="row">
                 <div class="col-xs-12 col-md-2 col-md-offset-2">
-                     <img src="img/profile/<?php echo $patient ?>.jpg" class="img-responsive">
+                     <img src="img/profile/<?php echo $patient_id ?>.jpg" class="img-responsive">
                 </div>
                 <div class="col-xs-12 col-md-5">
                     <div class="p-info">
@@ -111,41 +114,35 @@
                 <div class="col-md-6 col-md-offset-3">
                     <h1 class="text-center row-header2">Recent Activity</h1>
                 </div>
-                <div class="col-md-6 col-md-offset-3">
-                    <div class="panel panel-default">
-                      <div class="panel-body">
-                        Activity 1
-                      </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-md-offset-3">
-                    <div class="panel panel-default">
-                      <div class="panel-body">
-                        Activity 2
-                      </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-md-offset-3">
-                    <div class="panel panel-default">
-                      <div class="panel-body">
-                        Activity 3
-                      </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-md-offset-3">
-                    <div class="panel panel-default">
-                      <div class="panel-body">
-                        Activity 4
-                      </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-md-offset-3">
-                    <div class="panel panel-default">
-                      <div class="panel-body">
-                        Activity 5
-                      </div>
-                    </div>
-                </div>
+                <?php
+                while ($n_row =  mysqli_fetch_array($n_result)){
+                    if($n_row['indicator'] == 'patient'){
+                    if($n_row['patient_id'] == $patient_id){
+                        $n_id = $n_row['notif_id'];
+                        $n_did = $n_row['doctor_id'];
+
+                        $n_legend = mysqli_query($con, "SELECT * FROM notif_legend WHERE notif_id LIKE '$n_id'" );
+                        $n_color =  mysqli_fetch_array($n_legend);
+
+                        $d_result = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_id LIKE '$n_did'" );
+                        $doc =  mysqli_fetch_array($d_result);
+
+                        if ($n_color['color'] == 'blue'){
+                        echo '<div class="col-xs-12 col-md-8 col-md-offset-2">
+                            <div class="panel panel-notif panel-info">
+                                <div class="panel-heading">'.$doc['doctor_name'].'
+                                    <a href="#" title="cancel"><i class="fa fa-remove delete-btn"></i></a>
+                                </div>
+                                <div class="panel-body">
+                                    '.$n_row['notification'].'
+                                </div>
+                            </div>
+                        </div>';
+                        }
+                    }
+                }
+                }
+                ?>
             </div>
         </div>
 
