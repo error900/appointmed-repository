@@ -115,7 +115,7 @@
                         //$n_name =  mysqli_fetch_array($n_patient);
  
                         if($n_color['color'] == 'red'){
-                        echo '<div class="col-md-12">
+                        echo '<div class="col-xs-12 col-md-8 col-md-offset-2">
                             <div class="panel panel-notif panel-danger">
                                 <div class="panel-heading">'.$doc['doctor_name'].'
                                     <a href="#" title="cancel"><i class="fa fa-remove delete-btn"></i></a>
@@ -126,7 +126,7 @@
                             </div>
                         </div>';
                         } else if ($n_color['color'] == 'orange'){
-                        echo '<div class="col-md-12">
+                        echo '<div class="col-xs-12 col-md-8 col-md-offset-2">
                             <div class="panel panel-notif panel-warning">
                                 <div class="panel-heading">'.$doc['doctor_name'].'
                                     <a href="#" title="cancel"><i class="fa fa-remove delete-btn"></i></a>
@@ -137,7 +137,7 @@
                             </div>
                         </div>';
                         }else if ($n_color['color'] == 'green'){
-                        echo '<div class="col-md-12">
+                        echo '<div class="col-xs-12 col-md-8 col-md-offset-2">
                             <div class="panel panel-notif panel-success">
                                 <div class="panel-heading">'.$doc['doctor_name'].'
                                     <a href="#" title="cancel"><i class="fa fa-remove delete-btn"></i></a>
@@ -148,7 +148,7 @@
                             </div>
                         </div>';
                         } else if ($n_color['color'] == 'blue'){
-                        echo '<div class="col-md-12">
+                        echo '<div class="col-xs-12 col-md-8 col-md-offset-2">
                             <div class="panel panel-notif panel-info">
                                 <div class="panel-heading">'.$doc['doctor_name'].'
                                     <a href="#" title="cancel"><i class="fa fa-remove delete-btn"></i></a>

@@ -104,7 +104,7 @@
         <!-- /navigation -->
         <div class="container-fluid" id="doctor-info">
             <div class="row">
-                <div class="col-xs-12 col-md-2 col-md-offset-2 d-pic">
+                <div class="col-xs-12 col-md-2 col-md-offset-3 d-pic">
                       <img src="img/profile/<?php 
                             $file = "img/profile/".$doctor_id.".jpg";
                             if(file_exists($file)){
@@ -113,7 +113,7 @@
                                 echo 'profile';
                             } ?>.jpg">
                 </div>
-                <div class="col-xs-12 col-md-5">
+                <div class="col-xs-12 col-md-4 col-md-offset-1">
                     <div class="d-info">
                         <ul>
                             <li><i class="fa fa-user-md"></i>Dr. <?php echo strtoupper($d_row['doctor_name']); ?></li>
@@ -124,10 +124,10 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-3 text-right">
+                <div class="col-md-2 text-right">
                     <div class="d-info">
                         <ul>
-                            <li><?php echo $d_row['email']; ?></li>
+                            <li class="email"><?php echo $d_row['email']; ?></li>
                             <li>Status: <?php echo strtoupper($d_row['doctor_status']);?></li>
                         </ul>
 
@@ -136,11 +136,6 @@
                             <input type="hidden" name="patient" value="<?php echo $p_row['patient_id']?>">
                             <input type="submit" class="btn btn-default" name="subs" value="Subscribe">
                             <input type="submit" class="btn btn-default" name="unsubs" value="Unsubscribe">
-
-                            <input type="hidden" name="doctor" value="<?php echo $d_row['doctor_id']?>">
-                            <input type="hidden" name="patient" value="<?php echo $p_row['patient_id']?>">
-                            <input type="submit" class="btn btn-default btn-noborder" name="subs" value="Subscribe">
-                            <input type="submit" class="btn btn-default btn-noborder" name="unsubs" value="Unsubscribe">
                         </form>
                     </div>
                 </div>            
@@ -188,6 +183,7 @@
                                     <input type="hidden" value="<?php echo $patient?>" name="patient_id">
                                     <input type="hidden" value="<?php echo $doctor_id?>" name="doctor_id">
                                     <input type="hidden" value="<?php echo $clinic?>" name="clinic_id">
+                            </form>
                         </div>
                     </div>
                     <?php
@@ -196,16 +192,14 @@
                         echo "<button type=\"submit\" class=\"btn btn-primary\" name=\"submit\">Appoint Me</button>";
                     echo '</div>';
                     ?>
-                    </form>
                 </div>
               </div>
             </div>
-
         <?php
             include 'include/scripts.php';
             include 'include/datepicker.php';
         ?>
-               <script type="text/javascript" src="js/search.js"></script>
+            <script type="text/javascript" src="js/search.js"></script>
     </div>
   </body>
 </html>

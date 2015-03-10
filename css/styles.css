@@ -393,11 +393,17 @@ nav > div > div > ul > li > a:hover {
 }
 
 #user-md-frw {
-	background-color: #fff;
 }
 
-.user-md {
+.user-md h1 {
+	font-size: 20px;
+ }
 
+.user-md p {
+	  margin-top: 10px;
+	  line-height: 1;
+	  font-size: 14px;
+	  text-transform: uppercase;
 }
 
 .circle {
@@ -430,31 +436,7 @@ nav > div > div > ul > li > a:hover {
 	background-color: #E67E22;
 }
 
-.user-md {
-	padding: 0 0 0% 10%;
-}
-
-.user-md h1 {
-	font-size: 20px;
- }
-
-.user-md span, .user-md p {
-	font-size: 16px;
-}
-
-.user-md span {
-	font-weight: 600;
-}
-
-.user-md p {
-	  margin-top: 10px;
-	  line-height: 1;
-	  font-size: 12px;
-	  text-transform: uppercase;
-}
-
 #schedules-md {
-	background-color: #ECF0F1;
 }
 
 .sched-panel {

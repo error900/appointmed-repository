@@ -42,125 +42,100 @@
 
         ?>
 
-  <body class="fff-bg">
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">appoint.med</a>
-            </div>
+  <body class="e4e8e9-bg">
+    <div class="container">
+        <?php 
+            include 'include/dc-nav-start.php';
+        ?>
+                    <ul class="nav navbar-nav">
+                        <li >
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Today <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="schedules.php">Tomorrow</a></li>
+                                <li><a href="#">This Week</a></li>
+                                <li><a href="#">This Month</a></li>
+                            </ul>
+                        </li>
+                        <li class="active dropdown"><a href="#">Notifications <span class="badge">1</span></a></li>
+                        <li><a href="completed.php">Completed</a></li>
+                        <li><a href="#">Removed</a></li>
+                        <li><a href="#">Referred</a></li>
+        <?php 
+            include 'include/dc-nav-end.php';
+        ?>
+            <div class="container-fluid" id="notification">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="text-center row-header">Your Notifications</h1>
+                    </div>
+                    <div class="col-md-12">
+                        <h2 class="text-left notif-h">Today</h2>
+                    </div>
+                    <?php
+                    while ($n_row =  mysqli_fetch_array($n_result)){
+                        if($n_row['indicator'] == 'patient'){
+                        if($n_row['doctor_id'] == $doctor_id){
+                            $n_id = $n_row['notif_id'];
+                            $n_pid = $n_row['patient_id'];
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li >
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Today <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Tomorrow</a></li>
-                            <li><a href="#">This Week</a></li>
-                            <li><a href="#">This Month</a></li>
-                        </ul>
-                    </li>
-                    <li class="active dropdown"><a href="#">Notifications <span class="badge">1</span></a></li>
-                    <li><a href="completed.php">Completed</a></li>
-                    <li><a href="#">Removed</a></li>
-                    <li><a href="#">Referred</a></li>
-                </ul>
-                <div class="btn-group navbar-right signedin">
-                    <button type="button" class="btn btn-default btn-lg btn-noborder dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                        <?php echo $doctor?>
-                        <span class="caret"></span>
-                    </button>
-                        <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li><a href="admin/logout.php"><i class="fa fa-power-off"></i>logout</a></li>
-                        </ul>
-                </div>
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-    </nav>
-        <div class="container-fluid" id="notification">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1 class="text-center text-turquoise appmnt-h">Your Notifications</h1>
-                </div>
-                <div class="col-md-12">
-                    <h2 class="text-left notif-h">Today</h2>
-                </div>
-                <?php
-                while ($n_row =  mysqli_fetch_array($n_result)){
-                    if($n_row['indicator'] == 'patient'){
-                    if($n_row['doctor_id'] == $doctor_id){
-                        $n_id = $n_row['notif_id'];
-                        $n_pid = $n_row['patient_id'];
+                            $n_legend = mysqli_query($con, "SELECT * FROM notif_legend WHERE notif_id LIKE '$n_id'" );
+                            $n_color =  mysqli_fetch_array($n_legend);
 
-                        $n_legend = mysqli_query($con, "SELECT * FROM notif_legend WHERE notif_id LIKE '$n_id'" );
-                        $n_color =  mysqli_fetch_array($n_legend);
-
-                        $n_patient = mysqli_query($con, "SELECT * FROM patient WHERE patient_id LIKE '$n_pid'" );
-                        $n_name =  mysqli_fetch_array($n_patient);
- 
-                        if($n_color['color'] == 'red'){
-                        echo '<div class="col-md-12">
-                            <div class="panel panel-notif panel-danger">
-                                <div class="panel-heading">'.$n_name['patient_name'].'
-                                    <a href="#" title="cancel"><i class="fa fa-remove delete-btn"></i></a>
+                            $n_patient = mysqli_query($con, "SELECT * FROM patient WHERE patient_id LIKE '$n_pid'" );
+                            $n_name =  mysqli_fetch_array($n_patient);
+     
+                            if($n_color['color'] == 'red'){
+                            echo '<div class="col-xs-12 col-md-8 col-md-offset-2">
+                                <div class="panel panel-notif panel-danger">
+                                    <div class="panel-heading">'.$n_name['patient_name'].'
+                                        <a href="#" title="cancel"><i class="fa fa-remove delete-btn"></i></a>
+                                    </div>
+                                    <div class="panel-body">
+                                        '.$n_row['notification'].'
+                                    </div>
                                 </div>
-                                <div class="panel-body">
-                                    '.$n_row['notification'].'
+                            </div>';
+                            } else if ($n_color['color'] == 'orange'){
+                            echo '<div class="col-xs-12 col-md-8 col-md-offset-2">
+                                <div class="panel panel-notif panel-warning">
+                                    <div class="panel-heading">'.$n_name['patient_name'].'
+                                        <a href="#" title="cancel"><i class="fa fa-remove delete-btn"></i></a>
+                                    </div>
+                                    <div class="panel-body">
+                                        '.$n_row['notification'].'
+                                    </div>
                                 </div>
-                            </div>
-                        </div>';
-                        } else if ($n_color['color'] == 'orange'){
-                        echo '<div class="col-md-12">
-                            <div class="panel panel-notif panel-warning">
-                                <div class="panel-heading">'.$n_name['patient_name'].'
-                                    <a href="#" title="cancel"><i class="fa fa-remove delete-btn"></i></a>
+                            </div>';
+                            }else if ($n_color['color'] == 'green'){
+                            echo '<div class="col-xs-12 col-md-8 col-md-offset-2">
+                                <div class="panel panel-notif panel-success">
+                                    <div class="panel-heading">'.$n_name['patient_name'].'
+                                        <a href="#" title="cancel"><i class="fa fa-remove delete-btn"></i></a>
+                                    </div>
+                                    <div class="panel-body">
+                                        '.$n_row['notification'].'
+                                    </div>
                                 </div>
-                                <div class="panel-body">
-                                    '.$n_row['notification'].'
+                            </div>';
+                            } else if ($n_color['color'] == 'blue'){
+                            echo '<div class="col-xs-12 col-md-8 col-md-offset-2">
+                                <div class="panel panel-notif panel-info">
+                                    <div class="panel-heading">'.$n_name['patient_name'].'
+                                        <a href="#" title="cancel"><i class="fa fa-remove delete-btn"></i></a>
+                                    </div>
+                                    <div class="panel-body">
+                                        '.$n_row['notification'].'
+                                    </div>
                                 </div>
-                            </div>
-                        </div>';
-                        }else if ($n_color['color'] == 'green'){
-                        echo '<div class="col-md-12">
-                            <div class="panel panel-notif panel-success">
-                                <div class="panel-heading">'.$n_name['patient_name'].'
-                                    <a href="#" title="cancel"><i class="fa fa-remove delete-btn"></i></a>
-                                </div>
-                                <div class="panel-body">
-                                    '.$n_row['notification'].'
-                                </div>
-                            </div>
-                        </div>';
-                        } else if ($n_color['color'] == 'blue'){
-                        echo '<div class="col-md-12">
-                            <div class="panel panel-notif panel-info">
-                                <div class="panel-heading">'.$n_name['patient_name'].'
-                                    <a href="#" title="cancel"><i class="fa fa-remove delete-btn"></i></a>
-                                </div>
-                                <div class="panel-body">
-                                    '.$n_row['notification'].'
-                                </div>
-                            </div>
-                        </div>';
+                            </div>';
+                            }
                         }
                     }
-                }
-                }
-                ?>
+                    }
+                    ?>
+                </div>
             </div>
-        </div>
-         </div> <!-- /container -->
+        </div> <!-- /container -->
   </body>
 </html>
    
