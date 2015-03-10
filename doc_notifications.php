@@ -1,55 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
- <style>
+  <head>
 
-#divResult
-        {
-            position:absolute;
-            width:210px;
-            display:none;
-            margin-top:40px;
-            border:solid 1px #dedede;
-            border-top:0px;
-            overflow:hidden;
-            border-bottom-right-radius: 6px;
-            border-bottom-left-radius: 6px;
-            -moz-border-bottom-right-radius: 6px;
-            -moz-border-bottom-left-radius: 6px;
-            box-shadow: 0px 0px 5px #999;
-            border-width: 3px 1px 1px;
-            border-style: solid;
-            border-color: #333 #DEDEDE #DEDEDE;
-            background-color: white;
-        }
-        .display_box
-        {
-            padding:4px; border-top:solid 1px #dedede; 
-            font-size:12px;
-        
-        }
-        .display_box:hover
-        {
-            background:#3bb998;
-            color:#FFFFFF;
-            cursor:pointer;
-        }
-        a
-        {
-            text-decoration: none;
- 
-            background: #3bb998;
-            color:#FFFFFF;
-            cursor: pointer;
-        }
-    </style>
+
     <?php
-        $title = "Notifications";
+        $title = "Schedules";
         include 'include/head.php';
         include 'connectdatabase.php';
+              include 'include/scripts.php';
+            include 'include/scrolltop.php';
     ?>
-    <body>
-        <div class="container">
-        <?php
+    <script type="text/javascript">
+     $(document).ready(function(){
+           $(".appo").click(function(){ // Click to only happen on announce links
+             $("#appo_id").val($(this).data('id'));
+             $("#pat_id").val($(this).data('patient-id'));
+           });
+     });
+    </script>
+    <?php
             session_start();
         $loggedIn = $_SESSION['loggedIn'];
         $account_type = $_SESSION['account_type'];
@@ -72,7 +41,11 @@
         $n_result = mysqli_query($con, "SELECT * FROM notification WHERE doctor_id LIKE '$doctor_id'" );
 
         ?>
-        <nav class="navbar navbar-default navbar-fixed-top">
+
+  <body class="fff-bg">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
@@ -80,22 +53,26 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="schedules.php">appoint.med</a>
+                <a class="navbar-brand" href="#">appoint.med</a>
             </div>
-        <ul class="nav navbar-nav">
-            <li class="dropdown active">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Appointments <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="schedules.php">Today</a></li>
-                        <li><a href="#">Tomorrow</a></li>
-                        <li><a href="#">This Week</a></li>
-                        <li><a href="#">This Month</a></li>
-                    </ul>
-            </li>
-            <li><a href="doc_notifications.php">Notifications <span class="badge">22</span></a></li>
-            <li><a href="history.php">History</a></li>
-        </ul>
-            <div class="btn-group navbar-right signedin">
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Today <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Tomorrow</a></li>
+                            <li><a href="#">This Week</a></li>
+                            <li><a href="#">This Month</a></li>
+                        </ul>
+                    </li>
+                    <li class="active dropdown"><a href="#">Notifications <span class="badge">1</span></a></li>
+                    <li><a href="completed.php">Completed</a></li>
+                    <li><a href="#">Removed</a></li>
+                    <li><a href="#">Referred</a></li>
+                </ul>
+                <div class="btn-group navbar-right signedin">
                     <button type="button" class="btn btn-default btn-lg btn-noborder dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                         <?php echo $doctor?>
                         <span class="caret"></span>
@@ -107,8 +84,10 @@
                         <li class="divider"></li>
                         <li><a href="admin/logout.php"><i class="fa fa-power-off"></i>logout</a></li>
                         </ul>
-            </div><!-- /.container-fluid -->
-        </nav>
+                </div>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
         <div class="container-fluid" id="notification">
             <div class="row">
                 <div class="col-md-12">
@@ -181,11 +160,7 @@
                 ?>
             </div>
         </div>
-        <?php
-            include 'include/scripts.php';
-            include 'include/scrolltop.php';
-        ?>
-        <script type="text/javascript" src="js/search.js"></script>
-    </div> <!-- /container -->
+         </div> <!-- /container -->
   </body>
 </html>
+   
