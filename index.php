@@ -62,22 +62,22 @@
         <div class="container-fluid" id="index-frw">
             <div class="row">
                 <div class="col-xs-12 col-md-7 visible-md visible-lg">
-                <p class="login-text"><span>appoint.med</span> ... an online scheduling system that allows you to create appointments to a doctor anywhere, anytime.</p>
+                    <p class="login-text"><span>appoint.med</span> ... an online scheduling system that allows you to create appointments to a doctor anywhere, anytime.</p>
                 </div>
-                <div class="col-xs-12 col-md-4 visible-xs visible-sm">
+                <div class="col-xs-12 col-md-4 visible-xs visible-sm ">
                     <div class="usr-login">
-                     <form method="post" action="login.php">
-                        <div class="input-group">
-                            <input type="text" class="form-control login-field" name="username" placeholder="Username" required>
-                            <i class="fa fa-user field-icon"></i>
-                        </div>
-                        <div class="input-group">
-                            <input type="password" class="form-control login-field" name="password" placeholder="Password" required>
-                            <i class="fa fa-lock field-icon"></i>
-                        </div>
-                        <input class="btn btn-default login-btn btn-noborder" type="submit" value="Login" name="login"/>
-                    </form>
-                        <a class="login-link" href="signup.php">Don't have an account?</a>
+                        <form method="post" action="login.php">
+                            <div class="input-group">
+                                <input type="text" class="form-control login-field" name="username" placeholder="Username" required>
+                                <i class="fa fa-user field-icon"></i>
+                            </div>
+                            <div class="input-group">
+                                <input type="password" class="form-control login-field" name="password" placeholder="Password" required>
+                                <i class="fa fa-lock field-icon"></i>
+                            </div>
+                            <input class="btn btn-default login-btn btn-noborder" type="submit" value="Login" name="login"/>
+                        </form>
+                    <a class="login-link" href="signup.php">Don't have an account?</a>
                     </div>
                 </div>
                 <?php 
