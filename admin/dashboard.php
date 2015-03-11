@@ -11,9 +11,9 @@
 		$loggedIn = $_SESSION['loggedIn'];
 		$account_type = $_SESSION['account_type'];
 		if($loggedIn == false )
-			header("location: admin/index.php");
+			header("location: index.php");
 		else if($account_type != 'Admin')
-            header("location: admin/index.php");
+            header("location: index.php");
 
         $account_sql = mysqli_query($con, "SELECT * FROM account ");
     //    $account_row = mysqli_fetch_array($account_sql);
@@ -119,13 +119,14 @@
 				<?php 
 				while($row = mysqli_fetch_array($account_sql)){
 					$username  = $row['username'];
-					$d_result = mysqli_query($con, "SELECT * FROM doctor WHERE username LIKE '$username'" );
-					$p_result = mysqli_query($con, "SELECT * FROM patient WHERE username LIKE '$username'" );
+					$d_result = mysqli_query($con, "SELECT patient_id, email, patient_name FROM patient WHERE username LIKE '$username' 
+						UNION (SELECT doctor_id, email, doctor_name FROM doctor WHERE username LIKE '$username') 
+						UNION (SELECT secretary_id, email, secretary_name FROM secretary WHERE username LIKE '$username')" );
                     $doc =  mysqli_fetch_array($d_result);
 					echo '<tr>';
-					echo '<td>'.$doc['doctor_id'].'</td>';
+					echo '<td>'.$doc['patient_id'].'</td>';
 					echo '<td>'.$row['username'].'</td>';
-					echo '<td>'.$doc['doctor_name'].'</td>';
+					echo '<td>'.$doc['patient_name'].'</td>';
 					echo '<td>'.$doc['email'].'</td>';
 					echo '<td>'.$row['account_status'].'</td>';
 					echo '<td>'.$row['account_type'].'</td>';

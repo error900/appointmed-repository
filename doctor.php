@@ -48,7 +48,16 @@
         $title = "Doctor Profile";
         include 'include/head.php';
         include 'connectdatabase.php';
+        include 'include/scripts.php';
+        include 'include/datepicker.php';
     ?>
+    <script type="text/javascript">
+     $(document).ready(function(){
+           $(".clinic").click(function(){
+             $("#clinic_id").val($(this).data('id'));
+           });
+     });
+    </script>
   <body>
     <div class="container">
         <?php 
@@ -155,7 +164,7 @@
                         echo '<p>'. $c_row['clinic_name']. '</p>' ;
                         echo '<p>'. $c_row['clinic_location']. '</p>' ;
                         echo '<p>'. $c_row['clinic_contact'] .'</p>';
-                        echo ' <button type="button" class="btn btn-default create-btn btn-noborder" data-toggle="modal" data-target=".bs-example-modal-sm">
+                        echo ' <button type="button" class="btn btn-default create-btn btn-noborder clinic" data-toggle="modal" data-target=".bs-example-modal-sm" data-id="'.$c_row['clinic_id'].'">
                             <span class="fui-new"> </span>Create Appointment</button>';
                                                echo '</div>';
                         echo '</div>';
@@ -181,7 +190,7 @@
                                 </div>
                                 <input type="hidden" value="<?php echo $patient?>" name="patient_id">
                                 <input type="hidden" value="<?php echo $doctor_id?>" name="doctor_id">
-                                <input type="hidden" value="<?php echo $clinic?>" name="clinic_id">
+                                <input type="hidden" value="" id="clinic_id" name="clinic_id">
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -194,10 +203,7 @@
                 </div>
             </div>
         </div>
-        <?php
-            include 'include/scripts.php';
-            include 'include/datepicker.php';
-        ?>
+     
             <script type="text/javascript" src="js/search.js"></script>
     </div>
   </body>
