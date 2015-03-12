@@ -131,12 +131,13 @@
                 echo '<p> Queue Number: ' . $appointment_id . '</p>';
                 
              
-                 echo ' <button type="button" class="btn btn-block btn-inverse appo" data-toggle="modal" data-target=".bs-example-modal-sm" data-id="'.$appointment_id.'" data-patient-id="'.$patient.'">
-                            <span class="fui-new"> </span>Refer to Other Doctor</button>
+                 echo ' 
                          </div>';
     
 
                  echo'  <div class="appmnt-pnl-btn">
+                 <button type="button" class="btn btn-block btn-inverse appo" data-toggle="modal" data-target=".bs-example-modal-sm" data-id="'.$appointment_id.'" data-patient-id="'.$patient.'">
+                            <span class="fui-new"> </span>Refer</button>
                         <a href="#"><i class="fa fa-comment"></i> Remarks</a>
                     </div>
                  </div>

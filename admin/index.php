@@ -35,6 +35,7 @@
                             <i class="fa fa-lock field-icon"></i>
                         </div>
                         <input type="submit" name="login" class="btn btn-default login-btn" value="LogIn">
+                        <a class="login-link" href="../index.php">Return to HOMEPAGE</a>
                     </form>
                 </div>
             </div>
