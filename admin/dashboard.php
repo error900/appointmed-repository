@@ -64,7 +64,7 @@
 			<li><a href="#">Export</a></li>
 		  </ul>
 		  <ul class="nav nav-sidebar">
-			<li><a href="">Add user</a></li>
+			<li><a href="popdoc.php">Add Doctor</a></li>
 			<li><a href="">Remove user</a></li>
 			<li><a href="">Notification</a></li>
 		  </ul>
