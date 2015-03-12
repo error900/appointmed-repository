@@ -105,18 +105,6 @@ h1, h2, h3, h4 {
 	background: #e4e8e9 url('../img/background_opcion2.jpg') repeat left top !important;
 }
 
-.text-turquoise {
-	color: #1ABC9C;
-}
-
-.text-green-sea {
-	color: #16A085;
-}
-
-.text-pumpkin {
-	color: #D35400;
-}
-
 i.fa.fa-power-off {
 	padding-right: 7px;
 }
@@ -366,6 +354,17 @@ nav > div > div > ul > li > a:hover {
 	padding: 0 10px 5px 10px;
 }
 
+.appmnt-pnl-btn button {
+	position: absolute;
+	bottom: 23px;
+	left: 18px;
+	width: 30%;
+	background: transparent;
+	text-transform: lowercase;
+	font-size: 16px;
+	margin: 0;
+}
+
 .appmnt-pnl-btn a {
 	color: #fff !important;
 	font-size: 16px;
@@ -374,12 +373,17 @@ nav > div > div > ul > li > a:hover {
 	margin: 5px;
 }
 
-.appmnt-pnl-btn a:hover {
+.appmnt-pnl-btn a:hover,
+.appmnt-pnl-btn button:hover {
 	color: #2C3E50 !important;
 	-webkit-transition-duration: 0.5s;
 	  -moz-transition-duration: 0.5s;
 	  -o-transition-duration: 0.5s;
 	  transition-duration: 0.5s;
+}
+
+.appmnt-pnl-btn i {
+	padding-right: 3px;
 }
 
 .panel-arrows {
@@ -415,7 +419,7 @@ nav > div > div > ul > li > a:hover {
 .circle {
 	height: 90px;
 	width: 90px;
-	margin: 30px;
+	margin: 15px;
 	border-radius: 50%;
 	background-color: #1ABC9C;
 }
@@ -425,8 +429,8 @@ nav > div > div > ul > li > a:hover {
 	font-weight: bold;
 	color: #ECF0F1;
 	float: left;
-	margin: 23px;
-	line-height: 44px;
+	margin: 20px 34px;
+	line-height: 50px;
 }
 
 .circle > span {
@@ -516,21 +520,31 @@ nav > div > div > ul > li > a:hover {
 }
 
 .signup-form,
-.edit-form {
+.edit-form,
+.add-form {
 	padding: 10px;
 }
 
 .signup-form input.form-control,
 .signup-form select.form-control,
 .edit-form input.form-control,
-.edit-form select.form-control {
+.edit-form select.form-control,
+.add-form input.form-control,
+.add-form select.form-control {
 	height: 42px;
 	margin-bottom: 15px;
 	border-radius: 4px !important;
 }
 
-.signup-form select.form-control {
+.signup-form select.form-control,
+.add-form select.form-control {
 	width: 33%;
+	float: right;
+}
+
+.add-form label {
+	float: left;
+	line-height: 40px;
 }
 
 .input-group {
@@ -569,7 +583,8 @@ nav > div > div > ul > li > a:hover {
 	border-color: #E67E22;
 }
 
-.login-modal-btn {
+.login-modal-btn,
+.export-btn {
 	margin-top: 10px;
 	background: #16A085 !important;
 	color: #fff;
@@ -579,7 +594,9 @@ nav > div > div > ul > li > a:hover {
 }
 
 .login-modal-btn:hover,
-.login-modal-btn:focus {
+.login-modal-btn:focus,
+.export-btn:hover,
+.export-btn:focus {
 	color: #fff !important;
 	background: #1ABC9C !important;
 }
@@ -609,6 +626,9 @@ nav > div > div > ul > li > a:hover {
 	font-weight: 600;
 }
 
+ {
+
+}
 .login-text {
 	padding: 190px 50px 0 40px;
 	color: #ECF0F1;
@@ -655,6 +675,10 @@ nav > div > div > ul > li > a:hover {
 
 .search-bar {
 	width: 195px;
+}
+
+.export-schedules {
+	padding-left: 10px;
 }
 
 #about {

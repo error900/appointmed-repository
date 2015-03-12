@@ -72,27 +72,29 @@
 			<li><a href="">More navigation</a></li>
 		  </ul>
 		</div>
-			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-		  <h1 class="page-header">Add Doctor</h1>
-			<form method="post" action="adddoc.php">
-				<input type="text" name="firstname" placeholder="Firstname" required="">
-				<input type="text" name="lastname" placeholder="Lastname" required=""><br/>
-				<input type="text" name="specialization" placeholder="Specialization" required="">
-				Doctor Status:
-				<select name="status">
-			
-					echo '<option value="In">In</option>';
-					echo '<option value="Emergency">Emergency</option>';
-					echo '<option value="On Leave">On Leave</option>';
-					echo '<option value="Out">Out</option>';
-					echo '<option value="Sick Leave">Sick Leave</option>';
+		<div class="col-sm-9 col-sm-offset-3 col-md-4 col-md-offset-2 main">
+			<h1 class="page-header">Add Doctor</h1>
+			<div class="add-form">
+				<form method="post" action="adddoc.php">
+					<div class="input-group">
+						<input type="text" class="form-control" name="firstname" placeholder="Firstname" required="">
+						<input type="text" class="form-control" name="lastname" placeholder="Lastname" required=""><br/>
+						<input type="text" class="form-control" name="specialization" placeholder="Specialization" required="">
+						<label>Doctor Status:</label>
+						<select name="status" class="form-control">
+							echo '<option value="In">In</option>';
+							echo '<option value="Emergency">Emergency</option>';
+							echo '<option value="On Leave">On Leave</option>';
+							echo '<option value="Out">Out</option>';
+							echo '<option value="Sick Leave">Sick Leave</option>';
+						</select>
+						<input type="email" class="form-control" name="email" placeholder="Email" required="">   
+						<input type="text" class="form-control" name="username" placeholder="Username" required="" id="username">
 
-				</select>
-				<input type="email" name="email" placeholder="Email" required="">   
-				<input type="text" name="username" placeholder="Username" required="" id="username">
-				
-				<input type="submit" value="Submit" name="submit">
-			</form>
+						<input type="submit" class="btn btn-default login-btn" value="Submit" name="submit">
+					</div>
+				</form>
+			</div>
 		</div>
 	</div>
 </div>

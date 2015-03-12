@@ -57,6 +57,12 @@
                     <li><a href="completed.php">Completed</a></li>
                     <li><a href="#">Removed</a></li>
                     <li><a href="#">Referred</a></li>
+                    <li class="export-schedules">
+                        <form action="export.php" method="post">
+                            <input type="hidden" name="doctor_id" value="<?php echo $doctor_id?>">
+                            <input type="submit" class="btn btn-default export-btn btn-noborder" value="Export" name="submit">
+                        </form>
+                    </li>
     <?php 
         include 'include/dc-nav-end.php';
     ?>
@@ -95,20 +101,13 @@
                     <span>served</span>
                 </div>
             </div>
-            <div>
-                <form action="export.php" method="post">
-                    <input type="hidden" name="doctor_id" value="<?php echo $doctor_id?>">
-                    <input type="submit" value="Export List" name="submit">
-                </form>
-            </div>
-
         </div>
     </div>
 
     <div class="container-fluid" id="schedules-md">
         <div class="row">
             <div class="col-md-12">
-                <h2 class="text-center text-turquoise sched-h">&mdash; Today &mdash;</h2>
+                <h2 class="text-center row-header">&mdash; Today &mdash;</h2>
             </div>
 
         <?php
@@ -136,9 +135,9 @@
     
 
                  echo'  <div class="appmnt-pnl-btn">
-                 <button type="button" class="btn btn-block btn-inverse appo" data-toggle="modal" data-target=".bs-example-modal-sm" data-id="'.$appointment_id.'" data-patient-id="'.$patient.'">
-                            <span class="fui-new"> </span>Refer</button>
                         <a href="#"><i class="fa fa-comment"></i> Remarks</a>
+                        <button type="button" class="btn btn-block btn-inverse appo byn-noborder" data-toggle="modal" data-target=".bs-example-modal-sm" data-id="'.$appointment_id.'" data-patient-id="'.$patient.'">
+                        <i class="fa fa-mail-forward"></i>Refer</button>
                     </div>
                  </div>
                </div>';
