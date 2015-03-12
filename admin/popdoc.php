@@ -4,6 +4,7 @@
 		$title = "Admin | Dashboard";
 		include 'include/head.php';
 		include '../connectdatabase.php';
+				include 'include/scripts.php';
    ?>
 
 	<?php   
@@ -15,12 +16,8 @@
 		else if($account_type != 'Admin')
             header("location: index.php");
 
-    //    $account_sql = mysqli_query($con, "SELECT * FROM account ");
-    //    $account_row = mysqli_fetch_array($account_sql);
 
       ?>
-
-
 	<nav class="navbar navbar-default navbar-fixed-top">
 	  <div class="container-fluid">
 		<div class="navbar-header">
@@ -75,32 +72,30 @@
 			<li><a href="">More navigation</a></li>
 		  </ul>
 		</div>
-		<?php
-
-			$spec = mysqli_query($con, "SELECT * FROM doctor") or die(mysqli_error());
-			$row = mysqli_fetch_array($spec);
-			$enum_list = explode(",",$row['doctor_status']);
-		?>
 			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 		  <h1 class="page-header">Add Doctor</h1>
 			<form method="post" action="adddoc.php">
-				Firstname: <input type="text" name="firstname" required="">
-				Lastname: <input type="text" name="lastname" required=""><br/>
-				Specialization: <input type="text" name="specialization" required="">
+				<input type="text" name="firstname" placeholder="Firstname" required="">
+				<input type="text" name="lastname" placeholder="Lastname" required=""><br/>
+				<input type="text" name="specialization" placeholder="Specialization" required="">
 				Doctor Status:
-				<select name="select">
-				<?php 
-				foreach($enum_list as $value)
-					echo '<option value='.$value.'>'.$value.'</option>';
-				?>
+				<select name="status">
+			
+					echo '<option value="In">In</option>';
+					echo '<option value="Emergency">Emergency</option>';
+					echo '<option value="On Leave">On Leave</option>';
+					echo '<option value="Out">Out</option>';
+					echo '<option value="Sick Leave">Sick Leave</option>';
+
 				</select>
-				Email: <input type="text" name="email">
-				Username: <input type="text" name="username">
+				<input type="email" name="email" placeholder="Email" required="">   
+				<input type="text" name="username" placeholder="Username" required="" id="username">
 				
 				<input type="submit" value="Submit" name="submit">
 			</form>
 		</div>
 	</div>
 </div>
+
 </body>
 </html>

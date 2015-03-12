@@ -6,8 +6,10 @@ if(isset($_POST['submit'])){
 	$email = $_POST['email'];
 	$contact = $_POST['contact'];
 	$occupation = $_POST['occupation'];
-	$firstname = ucfirst($_POST['firstname']);
-	$lastname = ucfirst($_POST['lastname']);
+	$firstname = strtolower($_POST['firstname']);
+	$lastname = strtolower($_POST['lastname']);
+	$firstname = ucfirst($firstname);
+	$lastname = ucfirst($lastname);
 	$patientname = $firstname . ' ' .$lastname;
 	$month = $_POST['birth_month'];
 	$day = $_POST['birth_day'];
@@ -52,7 +54,6 @@ if(isset($_POST['submit'])){
 	  	die('Error: ' . mysqli_error($con));
 	  }
 
-	mysqli_close($con);
 	echo "<script> alert('Your account is to be activated'); </script>";
 	echo "<script> location.replace('index.php') </script>";
 	
@@ -60,5 +61,5 @@ if(isset($_POST['submit'])){
 	header("location: signup.php");
 	die();
 }
-
+	mysqli_close($con);
 ?>

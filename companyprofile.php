@@ -4,6 +4,17 @@
         $title = "appoint.med | Company Profile";
         include 'include/head.php';
     ?>
+      <?php
+        session_start();
+        if(isset($_SESSION['loggedIn']) && isset($_SESSION['account_type'])){
+            $loggedIn = $_SESSION['loggedIn']; 
+            $account_type = $_SESSION['account_type'];
+            if($loggedIn == true && $account_type == 'Patient')
+                header("location: appointment.php");
+            else 
+                header("companyprofile.php");
+        }
+    ?>
     <body class="e4e8e9-bg">
     <div class="container">
         <nav class="navbar navbar-default navbar-fixed-top">

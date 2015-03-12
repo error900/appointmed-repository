@@ -5,31 +5,17 @@
         include 'include/head.php';
   		include 'connectdatabase.php';
     ?>
-    <?
-    	
-        $loggedIn = $_SESSION['loggedIn'];
-        $account_type = $_SESSION['account_type'];
-        if($loggedIn == true )
-            header("location: appointment.php");
+      <?php
+        session_start();
+        if(isset($_SESSION['loggedIn']) && isset($_SESSION['account_type'])){
+            $loggedIn = $_SESSION['loggedIn']; 
+            $account_type = $_SESSION['account_type'];
+            if($loggedIn == true && $account_type == 'Patient')
+                header("location: appointment.php");
+            else 
+                header("signup.php");
+        }
     ?>
-    <head>
-        <script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
-        <script type="text/javascript">
-            $(document).ready(function() {
-                $("#username").keyup(function (e) {
-
-                    $(this).val($(this).val().replace(/\s/g, ''));
-                    
-                    var username = $(this).val();
-                    
-                        $("#result").html('<img src="img/ajax-loader.gif" />');
-                        $.post('checkusername.php', {'username':username}, function(data) {
-                          $("#result").html(data);
-                        });
-                }); 
-            });
-        </script>
-    </head>
 
     <body class="e4e8e9-bg">
     <div class="container">

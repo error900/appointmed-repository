@@ -7,16 +7,17 @@
     ?>
     <body class="e4e8e9-bg">
     <div class="container">
-           <?php 
-            session_start();
-            if(isset($_SESSION['loggedIn']) && isset($_SESSION['account_type'])){
-                $loggedIn = $_SESSION['loggedIn'];
-                $account_type = $_SESSION['account_type'];
-                }
-                //doctor
-              
-        
-        ?>
+    <?php
+        session_start();
+        if(isset($_SESSION['loggedIn']) && isset($_SESSION['account_type'])){
+            $loggedIn = $_SESSION['loggedIn']; 
+            $account_type = $_SESSION['account_type'];
+            if($loggedIn == true && $account_type == 'Patient')
+                header("location: appointment.php");
+            else 
+                header("doctors.php");
+        }
+    ?>
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
