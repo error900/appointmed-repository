@@ -126,7 +126,7 @@ i.fa.fa-user-md {
 }
 
 nav > div > div > ul > li > a {
-	font-size: 18px;
+	font-size: 16px;
 	letter-spacing: 0.5px;
 	text-transform: lowercase;
 	border-bottom: 3px solid #f8f8f8;
@@ -219,6 +219,14 @@ nav > div > div > ul > li > a:hover {
 
 .signedin {
 	margin-top: 5px;
+}
+
+.signedin button {
+	font-size: 16px;
+}
+
+.signedin button i {
+  padding-right: 7px;
 }
 
 .signedin .btn-noborder {
@@ -507,12 +515,15 @@ nav > div > div > ul > li > a:hover {
 	margin-bottom: 20px;
 }
 
-.signup-form {
+.signup-form,
+.edit-form {
 	padding: 10px;
 }
 
 .signup-form input.form-control,
-.signup-form select.form-control {
+.signup-form select.form-control,
+.edit-form input.form-control,
+.edit-form select.form-control {
 	height: 42px;
 	margin-bottom: 15px;
 	border-radius: 4px !important;
