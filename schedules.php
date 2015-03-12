@@ -46,7 +46,7 @@
     ?>
                 <ul class="nav navbar-nav">
                     <li class="active dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Today <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Appointments <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="schedules.php">Tomorrow</a></li>
                             <li><a href="#">This Week</a></li>
@@ -96,8 +96,12 @@
                 </div>
             </div>
             <div>
-
+                <form action="export.php" method="post">
+                    <input type="hidden" name="doctor_id" value="<?php echo $doctor_id?>">
+                    <input type="submit" value="Export List" name="submit">
+                </form>
             </div>
+
         </div>
     </div>
 
