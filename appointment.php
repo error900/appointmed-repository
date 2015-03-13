@@ -98,7 +98,7 @@
         <div class="container-fluid" id="appointments-user">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="text-center text-turquoise row-header">&mdash; Appointments &mdash;</h1>
+                    <h1 class="text-center row-header">&mdash; Appointments &mdash;</h1>
                 </div>
                 <?php
                     while ($d_row = mysqli_fetch_array($p_result)){

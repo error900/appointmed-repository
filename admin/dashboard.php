@@ -30,7 +30,7 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		  </button>
-		  <a class="navbar-brand" href="#">appoint.med</a>
+		  <a class="navbar-brand" href="#">BenguetLabs</a>
 		</div>
 		<div id="navbar" class="navbar-collapse collapse">
 		  <ul class="nav navbar-nav navbar-right">
@@ -41,11 +41,11 @@
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">Settings</a></li>
-                <li><a href="#">Help</a></li>
-                <li class="divider"></li>
-                <li><a href="logout.php"><i class="fa fa-power-off"></i>    logout</a></li>
+	                <li><a href="#">Profile</a></li>
+	                <li><a href="#">Settings</a></li>
+	                <li><a href="#">Help</a></li>
+	                <li class="divider"></li>
+	                <li><a href="logout.php"><i class="fa fa-power-off"></i>    logout</a></li>
                 </ul>
             </div>
 		  </ul>

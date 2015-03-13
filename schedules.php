@@ -120,14 +120,14 @@
                 <div class="panel panel-default sched-panel">';
                 echo'<div class="panel-heading">';
                 echo $pat['patient_name'];
+                echo '<p class="queue-num">' . $appointment_id . '</p>';
                 echo '<input type="hidden" id="appointment_id" value="'.$appointment_id.'" name="appointment_id">';
               //  echo "<a href=\"doctor_close.php?id=$row[appointment_id]&doc=$doctor_id&pat=$patient\" onclick='return confirm(\"Do you want to cancel this appointment?\")' title=\"Cancel\"><i class=\"fa fa-remove fa-lg delete-btn\"></i></a></div>
                // <div class=\"panel-body\">";
                 echo '</div>';
                 echo' <div class="panel-body">';
                 echo $pat['patient_contact'];
-                echo '<p>' . $c_row['clinic_location'] . '</p>';
-                echo '<p> Queue Number: ' . $appointment_id . '</p>';
+                echo '<p> Queue Number: <span>' . $appointment_id . '</span></p>';
                 
              
                  echo ' 

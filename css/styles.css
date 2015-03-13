@@ -8,6 +8,7 @@
 
  /* font */
 
+
 @font-face {
   font-family: 'Lato';
   font-style: normal;
@@ -211,6 +212,7 @@ nav > div > div > ul > li > a:hover {
 
 .signedin button {
 	font-size: 16px;
+	margin-left: 10px;
 }
 
 .signedin button i {
@@ -241,7 +243,7 @@ nav > div > div > ul > li > a:hover {
 
 .row-header,
 .row-header2 {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Lato', sans-serif;
 	margin: 30px 0 35px 0;
 	font-size: 24px;
 	text-transform: uppercase;
@@ -290,6 +292,14 @@ nav > div > div > ul > li > a:hover {
 .panel-heading .delete-btn:hover {
 	color: #34495E;
 	transition: 0.4s;
+}
+
+.queue-num {
+	color: #fff;
+	position: absolute;
+	right: 30px;
+	top: 1px;
+	font-size: 26px;
 }
 
 .panel-default .panel-body p {
@@ -451,6 +461,24 @@ nav > div > div > ul > li > a:hover {
 
 .sched-panel {
 	border: 2px solid #ECF0F1;
+	background-color: rgba(236, 240, 241, 0.3);
+}
+
+.sched-panel .panel-body,
+.sched-panel .appmnt-pnl-btn button,
+.sched-panel .appmnt-pnl-btn a {
+	color: #2C3E50 !important;
+	font-weight: 600;
+}
+
+.sched-panel .appmnt-pnl-btn button:hover,
+.sched-panel .appmnt-pnl-btn a:hover {
+	color: #16A085 !important;
+}
+
+.appmnt-pnl-btn button,
+.appmnt-pnl-btn a {
+	font-weight: normal !important;
 }
 
 .sched-h {
