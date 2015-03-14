@@ -4,8 +4,23 @@
 		$title = "Admin | Dashboard";
 		include 'include/head.php';
 		include '../connectdatabase.php';
-				include 'include/scripts.php';
+		include 'include/scripts.php';
    ?>
+   <script type="text/javascript">
+   		checked=false;
+		function checkAll (form1) {
+			var aa= document.getElementById('form1');
+			if (checked == false){
+				checked = true
+			} else {
+				checked = false
+			}
+			for (var i =0; i < aa.elements.length; i++){ 
+				aa.elements[i].checked = checked;
+			}
+		}
+
+   </script>
 
 	<?php   
 		session_start();
@@ -80,9 +95,12 @@
 		  	<thead>
 		  		<tr>
 		  			<th>Name</th>
-		  			<th>Approve</th>
+		  			<th>Contact #</th>
+		  			<th>Occupation</th>
+		  			<th><input type="checkbox" value="Check All" id="checkall" onClick="checkAll(form1)"></th>
 		  		</tr>
 		  	</thead>
+		  	<form method="post" action="approve_request.php" id="form1">
 			 <?php
 			   		while($row = mysqli_fetch_array($sql)){
 			   			$username = $row['username'];
@@ -91,10 +109,14 @@
 			   			$fetch_patient = mysqli_fetch_array($select_patient);
 			   			echo '<tr>';
 			   			echo '<td>' .$fetch_patient['patient_name'].'</td>';
-			   			echo '<td>' .'asdljadj'.'</td>';
+			   			echo '<td>' .$fetch_patient['patient_contact'].'</td>';
+			   			echo '<td>' .$fetch_patient['occupation'].'</td>';
+			   			echo "<td><input type='checkbox' name='select[]' id='select' value='$row[username]'></td>";
 			   			echo '</tr>';
 			   		}
+			   			echo '<input type="submit" value="Approve" name="submit">';
 			  ?>
+			</form>
 		</table>
 	</div>
 </body>
