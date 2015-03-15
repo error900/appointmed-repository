@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 09, 2015 at 02:31 AM
+-- Generation Time: Mar 16, 2015 at 12:11 AM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.9
 
@@ -27,55 +27,37 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `notification` (
+  `notification_id` int(11) NOT NULL AUTO_INCREMENT,
   `indicator` varchar(100) NOT NULL,
   `doctor_id` varchar(100) NOT NULL,
   `patient_id` varchar(100) NOT NULL,
-  `notif_id` varchar(100) NOT NULL,
+  `legend_id` varchar(100) NOT NULL,
+  `notification_date` date NOT NULL,
   `notification` text NOT NULL,
+  PRIMARY KEY (`notification_id`),
   KEY `patient_id` (`patient_id`),
-  KEY `notif_id` (`notif_id`),
+  KEY `notif_id` (`legend_id`),
   FULLTEXT KEY `doctor_id` (`doctor_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `notification`
---
-
-INSERT INTO `notification` (`indicator`, `doctor_id`, `patient_id`, `notif_id`, `notification`) VALUES
-('patient', '2015Macion', 'a376802', 'n1004', 'A patient has cancelled his appointment.'),
-('patient', '2015Macion', 'a376802', 'n1004', 'A patient has requested an appointment.'),
-('patient', '2015Macion', 'a376802', 'n1004', 'A patient has requested an appointment.'),
-('patient', '2015Macion', 'a376802', 'n1004', 'A patient has requested an appointment.'),
-('doctor', '2015Macion', 'a376802', 'n1002', 'You have been referred by Bernabe Macion to doctor Sarah Geronimo'),
-('patient', '2015Macion', '2015Macam', 'n1004', 'A patient has requested an appointment.'),
-('patient', '2015Quinitip', '2015Macam', 'n1004', 'A patient has requested an appointment.'),
-('patient', '2015Geronimo', '2015Macam', 'n1004', 'A patient has requested an appointment.'),
-('doctor', '2015Macion', '2015Macam', 'n1002', 'You have been referred by Bernabe Macion to doctor Sarah Geronimo'),
-('patient', '2015Geronimo', '2015Macam', 'n1004', 'A patient has cancelled his appointment.'),
-('patient', '2015Macion', '2015Macam', 'n1004', 'A patient has requested an appointment.'),
-('doctor', '2015Macion', '2015Macam', 'n1002', 'You have been referred by Bernabe Macion to doctor Sarah Geronimo'),
-('patient', '2015Macion', '2015Macam', 'n1004', 'A patient has requested an appointment.'),
-('doctor', '2015Macion', '2015Macam', 'n1002', 'You have been referred by Bernabe Macion to doctor KingCobra'),
-('patient', '2015Macion', 'a376802', 'n1004', 'A patient has requested an appointment.');
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `notif_legend`
+-- Table structure for table `notification_legend`
 --
 
-CREATE TABLE IF NOT EXISTS `notif_legend` (
-  `notif_id` varchar(100) NOT NULL,
+CREATE TABLE IF NOT EXISTS `notification_legend` (
+  `legend_id` varchar(100) NOT NULL,
   `color` text NOT NULL,
-  `explaination` text NOT NULL,
-  PRIMARY KEY (`notif_id`)
+  `explanation` text NOT NULL,
+  PRIMARY KEY (`legend_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `notif_legend`
+-- Dumping data for table `notification_legend`
 --
 
-INSERT INTO `notif_legend` (`notif_id`, `color`, `explaination`) VALUES
+INSERT INTO `notification_legend` (`legend_id`, `color`, `explanation`) VALUES
 ('n1001', 'red', ''),
 ('n1002', 'orange', ''),
 ('n1003', 'green', ''),
