@@ -193,8 +193,8 @@ nav > div > div > ul > li > a:hover {
 
 .navbar-logo {
 	background: url('../img/logo.png') no-repeat;
-	height: 118px;
-	width: 128px;
+	height: 129px;
+	width: 156px;
 	position: absolute;
 	z-index: 999999;
 	margin: 0 25px;
@@ -242,7 +242,8 @@ nav > div > div > ul > li > a:hover {
 }
 
 .row-header,
-.row-header2 {
+.row-header2,
+.row-header-lc {
 	font-family: 'Lato', sans-serif;
 	margin: 30px 0 35px 0;
 	font-size: 24px;
@@ -251,6 +252,10 @@ nav > div > div > ul > li > a:hover {
 
 .row-header2 {
 	color: #95A5A6;
+}
+
+.row-header-lc {
+	text-transform: none;
 }
 
 .notif-h {
@@ -553,6 +558,10 @@ nav > div > div > ul > li > a:hover {
 	padding: 10px;
 }
 
+.signup-ad {
+	font-size: 16px;
+}
+
 .signup-form input.form-control,
 .signup-form select.form-control,
 .edit-form input.form-control,
@@ -564,15 +573,37 @@ nav > div > div > ul > li > a:hover {
 	border-radius: 4px !important;
 }
 
-.signup-form select.form-control,
+.signup-form input.form-control {
+	margin-bottom: 8px;
+}
+
+.signup-form select.form-control {
+	width: 33.3%;
+	float: right;
+}
+
 .add-form select.form-control {
 	width: 33%;
 	float: right;
 }
 
+.signup-form label {
+	width: 100%;
+}
+
+.signup-form i {
+	padding-right: 10px;
+}
+
 .add-form label {
 	float: left;
 	line-height: 40px;
+}
+
+.passwordReq {
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 14px;
 }
 
 .input-group {
