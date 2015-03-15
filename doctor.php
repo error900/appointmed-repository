@@ -60,17 +60,21 @@
     <div class="container">
         <?php 
             session_start();
-            $loggedIn = $_SESSION['loggedIn'];
+            if(isset($_SESSION['loggedIn']) && isset($_SESSION['account_type']) && isset($_SESSION['username'])){
+                $loggedIn = $_SESSION['loggedIn'];
+                $account_type = $_SESSION['account_type'];
+                $username = $_SESSION['username'];
 
+                if($loggedIn == false)
+                    header("location: index.php");
+                else if($account_type != 'Patient')
+                    header("location: index.php");   
+            }else{
+                header("location: index.php");
+                die();
+            }
             $doctor_id= mysqli_real_escape_string($con, $_GET['id']);
-            $account_type = $_SESSION['account_type'];
-            if($loggedIn == false)
-                header("location: index.php");
-            else if($account_type != 'Patient')
-                header("location: index.php");
-            
             //patient
-            $username = $_SESSION['username'];
             $result = mysqli_query($con, "SELECT * FROM patient WHERE username LIKE '$username'" );
             $p_row =  mysqli_fetch_array($result);
             $patient = $p_row['patient_id'];

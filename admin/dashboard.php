@@ -61,7 +61,7 @@
 			<li><a href="#">Reports</a></li>
 			<li><a href="#">Analytics</a></li>
 			<li><a href="#">Import</a></li>
-			<li><a href="#">Export</a></li>
+			<li><a href="exportall.php">Export</a></li>
 		  </ul>
 		  <ul class="nav nav-sidebar">
 			<li><a href="popdoc.php">Add Doctor</a></li>
@@ -102,7 +102,7 @@
 			</div>
 		  </div>
 
-		  <h2 class="sub-header">Section title</h2>
+		  <h2 class="sub-header">Users List</h2>
 		  <div class="table-responsive">
 			<table class="table table-striped">
 			  <thead>
@@ -130,7 +130,7 @@
 					echo '<td>'.$doc['email'].'</td>';
 					echo '<td>'.$row['account_status'].'</td>';
 					echo '<td>'.$row['account_type'].'</td>';
-					echo '<tr>';
+					echo '</tr>';
 					 }
 				?>
 			  </tbody>

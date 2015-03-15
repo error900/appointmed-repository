@@ -72,7 +72,7 @@
 			<li><a href="#">Reports</a></li>
 			<li><a href="#">Analytics</a></li>
 			<li><a href="#">Import</a></li>
-			<li><a href="#">Export</a></li>
+			<li><a href="exportall.php">Export</a></li>
 		  </ul>
 		  <ul class="nav nav-sidebar">
 			<li><a href="popdoc.php">Add Doctor</a></li>

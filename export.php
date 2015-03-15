@@ -34,7 +34,8 @@ if(isset($_POST['submit'])){
 	echo '</table>';
 
 } else{
-	echo "<script>alert('Error')</script>";
+	header("location: schedules.php");
+	die();
 
 }
 mysqli_close($con);
