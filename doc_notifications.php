@@ -75,10 +75,10 @@
                     while ($n_row =  mysqli_fetch_array($n_result)){
                         if($n_row['indicator'] == 'patient'){
                         if($n_row['doctor_id'] == $doctor_id){
-                            $n_id = $n_row['notif_id'];
+                            $n_id = $n_row['legend_id'];
                             $n_pid = $n_row['patient_id'];
 
-                            $n_legend = mysqli_query($con, "SELECT * FROM notif_legend WHERE notif_id LIKE '$n_id'" );
+                            $n_legend = mysqli_query($con, "SELECT * FROM notification_legend WHERE legend_id LIKE '$n_id'" );
                             $n_color =  mysqli_fetch_array($n_legend);
 
                             $n_patient = mysqli_query($con, "SELECT * FROM patient WHERE patient_id LIKE '$n_pid'" );
