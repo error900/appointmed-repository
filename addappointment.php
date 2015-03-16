@@ -8,17 +8,17 @@ if(isset($_POST['submit'])){
 	$appointment_status="Inqueue";
 	$remarks='';
 	$message="A patient has requested an appointment.";
-	$n_id="n1004";
+	$legend_id="n1004";
 	$indicator="patient";
-	$date = date('m/d/Y', strtotime($date));
-	$date_today = date('m/d/Y');
+	$date = date('Y-m-d', strtotime($date));
+	$date_today = date('Y-m-d');
 	
 	if($date >= $date_today){
 		$sql = "INSERT INTO appointment (doctor_id, patient_id, appoint_date, appointment_status, remarks, clinic_id) 
 		VALUES('$doctor_id', '$patient_id', '$date', '$appointment_status', '$remarks','$clinic_id')";
 
-		$notif = "INSERT INTO notification (indicator, doctor_id, patient_id, notif_id, notification) 
-		VALUES('$indicator', '$doctor_id', '$patient_id', '$n_id', '$message')";
+		$notif = "INSERT INTO notification (indicator, doctor_id, patient_id, legend_id, notification_date, notification) 
+		VALUES('$indicator', '$doctor_id', '$patient_id', '$legend_id', '$date','$message')";
 
 		if (!(mysqli_query($con, $sql)) & !(mysqli_query($con, $notif)) ) {
 		  	die('Error: ' . mysqli_error($con));
