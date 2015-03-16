@@ -1,7 +1,7 @@
 <?php
 include 'connectdatabase.php';
 if(isset($_POST['submit'])){
-
+	$date = date('Y-m-d');
 	$patient_id = $_POST['patient_id'];
 	$doctor_id = $_POST['doctor_id'];
 	$referred_id = $_POST['referred_id'];
@@ -14,11 +14,11 @@ if(isset($_POST['submit'])){
 	$rd_row =  mysqli_fetch_array($rd_result);
 
 
-	$message="You have been referred by ".$d_row['doctor_name']." to doctor ".$rd_row['doctor_name'];
+	$message="You have been referred by Dr. ".$d_row['doctor_name']." to Dr. ".$rd_row['doctor_name'];
 	$n_id="n1002";
 	$indicator="doctor";
-	$notif = "INSERT INTO notification (indicator, doctor_id, patient_id, notif_id, notification) 
-	VALUES('$indicator','$doctor_id', '$patient_id', '$n_id', '$message')";
+	$notif = "INSERT INTO notification (indicator, doctor_id, patient_id, legend_id, noticaion_date, notification) 
+	VALUES('$indicator','$doctor_id', '$patient_id', '$n_id', '$date', '$message')";
 	mysqli_query($con, $notif) or die (mysqli_error($con));
 
 
