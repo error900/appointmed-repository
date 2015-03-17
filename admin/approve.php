@@ -19,7 +19,17 @@
 				aa.elements[i].checked = checked;
 			}
 		}
-
+		function checkAllA (form2) {
+			var aa= document.getElementById('form2');
+			if (checked == false){
+				checked = true
+			} else {
+				checked = false
+			}
+			for (var i =0; i < aa.elements.length; i++){ 
+				aa.elements[i].checked = checked;
+			}
+		}
    </script>
 
 	<?php   
@@ -32,6 +42,7 @@
             header("location: index.php");
 
    		$sql = mysqli_query($con, "SELECT * FROM account WHERE account_type='Patient' AND account_status = 'inactive' ") or die(mysqli_error());
+   		$sql_doctor = mysqli_query($con, "SELECT * FROM account WHERE account_type='Doctor' AND account_status = 'inactive' ") or die(mysqli_error());
       ?>
 	<nav class="navbar navbar-default navbar-fixed-top">
 	  <div class="container-fluid">
@@ -76,15 +87,11 @@
 		  </ul>
 		  <ul class="nav nav-sidebar">
 			<li><a href="popdoc.php">Add Doctor</a></li>
-			<li><a href="">Remove user</a></li>
+			<li><a href="remove_user.php">Activate user</a></li>
 			<li><a href="">Notification</a></li>
 		  </ul>
 		  <ul class="nav nav-sidebar">
 			<li class="active"><a href="#">Approve Users</a></li>
-			<li><a href="">Nav item again</a></li>
-			<li><a href="">One more nav</a></li>
-			<li><a href="">Another nav item</a></li>
-			<li><a href="">More navigation</a></li>
 		  </ul>
 		</div>
 		</div>
@@ -92,6 +99,7 @@
 	<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 		  <h1 class="page-header">Approve Users</h1>
 		  <table class = "table table-striped">
+		  	<h2>Patient</h2>
 		  	<thead>
 		  		<tr>
 		  			<th>Name</th>
@@ -118,6 +126,34 @@
 			  ?>
 			</form>
 		</table>
+		  <table class = "table table-striped">
+		  	<h2>Doctor</h2>
+		  	 	<thead>
+		  		<tr>
+		  			<th>Name</th>
+		  			<th>Specialization</th>
+		  			<th>Status</th>
+		  			<th><input type="checkbox" value="Check All" id="checkallA" onClick="checkAllA(form2)"></th>
+		  		</tr>
+		  	</thead>
+		  	<form method="post" action="doctor_request.php" id="form2">
+		  	 <?php
+			   		while($row = mysqli_fetch_array($sql_doctor)){
+			   			$username = $row['username'];
+			   		
+			   			$select_doctor = mysqli_query($con, "SELECT * FROM doctor WHERE username LIKE '$username'");
+			   			$fetch_doctor = mysqli_fetch_array($select_doctor);
+			   			echo '<tr>';
+			   			echo '<td>' .$fetch_doctor['doctor_name'].'</td>';
+			   			echo '<td>' .$fetch_doctor['specialization'].'</td>';
+			   			echo '<td>' .$fetch_doctor['doctor_status'].'</td>';
+			   			echo "<td><input type='checkbox' name='select[]' id='select' value='$row[username]'></td>";
+			   			echo '</tr>';
+			   		}
+			   			echo '<input type="submit" value="Approve" name="submit">';
+			  ?>
+			</form>
+			</table>
 	</div>
 </body>
 </html>

@@ -6,7 +6,20 @@
 		include '../connectdatabase.php';
 				include 'include/scripts.php';
    ?>
-
+<script type="text/javascript">
+   		checked=false;
+		function checkAll (form1) {
+			var aa= document.getElementById('form1');
+			if (checked == false){
+				checked = true
+			} else {
+				checked = false
+			}
+			for (var i =0; i < aa.elements.length; i++){ 
+				aa.elements[i].checked = checked;
+			}
+		}
+   </script>
 	<?php   
 		session_start();
 		$loggedIn = $_SESSION['loggedIn'];
@@ -15,7 +28,7 @@
 			header("location: index.php");
 		else if($account_type != 'Admin')
             header("location: index.php");
-
+        $sql = mysqli_query($con, "SELECT * FROM account WHERE account_status = 'Inactive' ");
 
       ?>
 	<nav class="navbar navbar-default navbar-fixed-top">
@@ -53,47 +66,55 @@
 	  <div class="row">
 		<div class="col-sm-3 col-md-2 sidebar">
 		  <ul class="nav nav-sidebar">
-			<li ><a href="dashboard.php">Overview <span class="sr-only">(current)</span></a></li>
+			<li><a href="dashboard.php">Overview <span class="sr-only">(current)</span></a></li>
 			<li><a href="#">Reports</a></li>
 			<li><a href="#">Analytics</a></li>
 			<li><a href="#">Import</a></li>
-			<li><a href="exportall.php">Export</a></li>
+			<li><a href="#">Export</a></li>
 		  </ul>
 		  <ul class="nav nav-sidebar">
-			<li class="active"><a href="popdoc.php">Add Doctor</a></li>
-			<li><a href="remove_user.php">Activate user</a></li>
+			<li><a href="popdoc.php">Add Doctor</a></li>
+			<li class="active"><a href="#">Activate user</a></li>
 			<li><a href="">Notification</a></li>
 		  </ul>
 		  <ul class="nav nav-sidebar">
 			<li><a href="approve.php">Approve Users</a></li>
 		  </ul>
 		</div>
-		<div class="col-sm-9 col-sm-offset-3 col-md-4 col-md-offset-2 main">
-			<h1 class="page-header">Add Doctor</h1>
-			<div class="add-form">
-				<form method="post" action="adddoc.php">
-					<div class="input-group">
-						<input type="text" class="form-control" name="firstname" placeholder="Firstname" required="">
-						<input type="text" class="form-control" name="lastname" placeholder="Lastname" required=""><br/>
-						<input type="text" class="form-control" name="specialization" placeholder="Specialization" required="">
-						<label>Doctor Status:</label>
-						<select name="status" class="form-control">
-							echo '<option value="In">In</option>';
-							echo '<option value="Emergency">Emergency</option>';
-							echo '<option value="On Leave">On Leave</option>';
-							echo '<option value="Out">Out</option>';
-							echo '<option value="Sick Leave">Sick Leave</option>';
-						</select>
-						<input type="email" class="form-control" name="email" placeholder="Email" required="">   
-						<input type="text" class="form-control" name="username" placeholder="Username" required="" id="username">
-
-						<input type="submit" class="btn btn-default login-btn" value="Submit" name="submit">
-					</div>
-				</form>
-			</div>
-		</div>
 	</div>
-</div>
-
+	</div>
+	<div class="col-sm-9 col-sm-offset-3 col-md-4 col-md-offset-2 main">
+		<h1 class="page-header">Activate User</h1>
+			<div class="table-responsive">
+			<table class="table table-striped">
+			  <thead>
+				<tr>
+			      <th>ID</th>
+				  <th>Username</th>
+				  <th>Name</th>
+				  <th>Account Type</th>
+				  <th><input type="checkbox" value="Check All" id="checkallA" onClick="checkAll(form1)"></th>
+				</tr>
+			  </thead>
+			  <form method="post" action="activate_user.php" id="form1">
+			<?php
+				while($row = mysqli_fetch_array($sql)){
+					$username  = $row['username'];
+					$result = mysqli_query($con, "SELECT patient_id, patient_name FROM patient WHERE username LIKE '$username' 
+						UNION (SELECT doctor_id, doctor_name FROM doctor WHERE username LIKE '$username') 
+						UNION (SELECT secretary_id, secretary_name FROM secretary WHERE username LIKE '$username')" );
+                    $account=  mysqli_fetch_array($result);
+                    echo '<tr>';
+                    echo '<td>'.$account['patient_id'].'</td>';
+					echo '<td>'.$row['username'].'</td>';
+					echo '<td>'.$account['patient_name'].'</td>';
+					echo '<td>'.$row['account_type'].'</td>';
+					echo "<td><input type='checkbox' name='select[]' id='select' value='$row[username]'></td>";
+					echo '</tr>';
+				}
+			?>
+			<input type="submit" name="submit" value="Activate">
+		</form>
+	</div>
 </body>
 </html>

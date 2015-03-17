@@ -66,15 +66,11 @@
 		  </ul>
 		  <ul class="nav nav-sidebar">
 			<li><a href="popdoc.php">Add Doctor</a></li>
-			<li><a href="">Remove user</a></li>
+			<li><a href="remove_user.php">Activate user</a></li>
 			<li><a href="">Notification</a></li>
 		  </ul>
 		  <ul class="nav nav-sidebar">
 			<li><a href="approve.php">Approve Users</a></li>
-			<li><a href="">Nav item again</a></li>
-			<li><a href="">One more nav</a></li>
-			<li><a href="">Another nav item</a></li>
-			<li><a href="">More navigation</a></li>
 		  </ul>
 		</div>
 	</div>

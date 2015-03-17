@@ -46,8 +46,8 @@ if(isset($_POST['submit'])){
 	 
 
 	$sqlaccount = "INSERT INTO account (username, password, account_type, account_status) VALUES('$username','$password', '$account_type','inactive')";
-	$sqlpatient = "INSERT INTO patient (patient_id, username, email, patient_contact, occupation, birthdate, age, patient_name, patient_category) 
-		VALUES('$patientid','$username','$email', '$contact','$occupation','$birthdate','$age','$patientname','$patientcategory')";
+	$sqlpatient = "INSERT INTO patient (patient_id, username, email, patient_contact, occupation, birthdate, patient_name) 
+		VALUES('$patientid','$username','$email', '$contact','$occupation','$birthdate','$patientname')";
 
 
 	if (!(mysqli_query($con, $sqlaccount)) || !(mysqli_query($con, $sqlpatient))) {

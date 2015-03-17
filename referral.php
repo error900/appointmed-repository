@@ -19,6 +19,13 @@ if(isset($_POST['submit'])){
 	$indicator="doctor";
 	$notif = "INSERT INTO notification (indicator, doctor_id, patient_id, legend_id, notification_date, notification) 
 	VALUES('$indicator','$doctor_id', '$patient_id', '$n_id', '$date' , '$message')";
+
+	$message="You have been referred by Dr. ".$d_row['doctor_name']." to Dr. ".$rd_row['doctor_name'];
+	$n_id="n1002";
+	$indicator="doctor";
+	$notif = "INSERT INTO notification (indicator, doctor_id, patient_id, legend_id, noticaion_date, notification) 
+	VALUES('$indicator','$doctor_id', '$patient_id', '$n_id', '$date', '$message')";
+
 	mysqli_query($con, $notif) or die (mysqli_error($con));
 
 
