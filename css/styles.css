@@ -241,9 +241,29 @@ nav > div > div > ul > li > a:hover {
 	background-color: #2C3E50;
 }
 
-.row-header,
+.appointment-date {
+	margin: 0;
+	font-size: 18px !important;
+	font-weight: 600 !important;
+}
+
+.appointment-dr-name {
+	font-size: 14px !important;
+	font-weight: 600;
+}
+
+.appointment-specs {
+	margin: 0 0 0 5px;
+	font-style: italic;
+	font-weight: 600;
+	font-size: 18px;
+	text-transform: lowercase;
+}
+
 .row-header2,
-.row-header-lc {
+.row-header2,
+.row-header-lc,
+.row-header-fff {
 	font-family: 'Lato', sans-serif;
 	margin: 30px 0 35px 0;
 	font-size: 24px;
@@ -256,6 +276,11 @@ nav > div > div > ul > li > a:hover {
 
 .row-header-lc {
 	text-transform: none;
+}
+
+.row-header-fff {
+	color: #ECF0F1;
+	font-size: 18px;
 }
 
 .notif-h {
@@ -290,6 +315,7 @@ nav > div > div > ul > li > a:hover {
 .panel-heading .delete-btn {
 	color: #fff;
 	position: absolute;
+	top: 13px;
 	right: 30px;
 	font-size: 26px;
 }
@@ -365,7 +391,6 @@ nav > div > div > ul > li > a:hover {
 }
 
 .appmnt-pnl-btn {
-	text-align: right;
 	padding: 0 10px 5px 10px;
 }
 
@@ -382,15 +407,15 @@ nav > div > div > ul > li > a:hover {
 
 .appmnt-pnl-btn a {
 	color: #fff !important;
-	font-size: 16px;
+	font-size: 14px;
 	text-transform: lowercase;
 	text-decoration: none;
-	margin: 5px;
+	width: 30%;
+	float: right;
 }
 
 .appmnt-pnl-btn a:hover,
 .appmnt-pnl-btn button:hover {
-	color: #2C3E50 !important;
 	-webkit-transition-duration: 0.5s;
 	  -moz-transition-duration: 0.5s;
 	  -o-transition-duration: 0.5s;
@@ -479,11 +504,6 @@ nav > div > div > ul > li > a:hover {
 .sched-panel .appmnt-pnl-btn button:hover,
 .sched-panel .appmnt-pnl-btn a:hover {
 	color: #16A085 !important;
-}
-
-.appmnt-pnl-btn button,
-.appmnt-pnl-btn a {
-	font-weight: normal !important;
 }
 
 .sched-h {

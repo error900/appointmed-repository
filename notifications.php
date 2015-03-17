@@ -93,7 +93,7 @@
         <div class="container-fluid" id="notification">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="text-center text-turquoise appmnt-h">Your Notifications</h1>
+                    <h1 class="text-center row-header-fff">&mdash; Your Notifications &mdash;</h1>
                 </div>
                 <div class="col-md-12">
                     <h2 class="text-left notif-h">Today</h2>
