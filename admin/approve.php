@@ -87,7 +87,7 @@
 		  </ul>
 		  <ul class="nav nav-sidebar">
 			<li><a href="popdoc.php">Add Doctor</a></li>
-			<li><a href="remove_user.php">Activate user</a></li>
+			<li><a href="remove_user.php">Remove user</a></li>
 			<li><a href="">Notification</a></li>
 		  </ul>
 		  <ul class="nav nav-sidebar">
@@ -100,45 +100,51 @@
 		  <h1 class="page-header">Approve Users</h1>
 		  <table class = "table table-striped">
 		  	<h2>Patient</h2>
-		  	<thead>
-		  		<tr>
-		  			<th>Name</th>
-		  			<th>Contact #</th>
-		  			<th>Occupation</th>
-		  			<th><input type="checkbox" value="Check All" id="checkall" onClick="checkAll(form1)"></th>
-		  		</tr>
-		  	</thead>
 		  	<form method="post" action="approve_request.php" id="form1">
 			 <?php
-			   		while($row = mysqli_fetch_array($sql)){
-			   			$username = $row['username'];
-			   		
-			   			$select_patient = mysqli_query($con, "SELECT * FROM patient WHERE username LIKE '$username'");
-			   			$fetch_patient = mysqli_fetch_array($select_patient);
-			   			echo '<tr>';
-			   			echo '<td>' .$fetch_patient['patient_name'].'</td>';
-			   			echo '<td>' .$fetch_patient['patient_contact'].'</td>';
-			   			echo '<td>' .$fetch_patient['occupation'].'</td>';
-			   			echo "<td><input type='checkbox' name='select[]' id='select' value='$row[username]'></td>";
-			   			echo '</tr>';
+			 		if(mysqli_num_rows($sql) >=1){
+						echo '<thead>';
+						echo '<tr>';
+						echo '<th>Name</th>';
+						echo '<th>Contact #</th>';
+						echo '<th>Occupation</th>';
+						echo '<th><input type="checkbox" value="Check All" id="checkall" onClick="checkAll(form1)"></th>';
+						echo '</tr>';
+						echo '</thead>';
+				   		while($row = mysqli_fetch_array($sql)){
+				   			$username = $row['username'];
+				   		
+				   			$select_patient = mysqli_query($con, "SELECT * FROM patient WHERE username LIKE '$username'");
+				   			$fetch_patient = mysqli_fetch_array($select_patient);
+				   			echo '<tr>';
+				   			echo '<td>' .$fetch_patient['patient_name'].'</td>';
+				   			echo '<td>' .$fetch_patient['patient_contact'].'</td>';
+				   			echo '<td>' .$fetch_patient['occupation'].'</td>';
+				   			echo "<td><input type='checkbox' name='select[]' id='select' value='$row[username]'></td>";
+				   			echo '</tr>';
+				   		}
+				   			echo '<input type="submit" value="Approve" name="submit">';
+			   		}else{
+			   			echo '<p>No patient account to be activated</p>';
 			   		}
-			   			echo '<input type="submit" value="Approve" name="submit">';
 			  ?>
 			</form>
 		</table>
 		  <table class = "table table-striped">
 		  	<h2>Doctor</h2>
-		  	 	<thead>
-		  		<tr>
-		  			<th>Name</th>
-		  			<th>Specialization</th>
-		  			<th>Status</th>
-		  			<th><input type="checkbox" value="Check All" id="checkallA" onClick="checkAllA(form2)"></th>
-		  		</tr>
-		  	</thead>
 		  	<form method="post" action="doctor_request.php" id="form2">
 		  	 <?php
+		  	 		if(mysqli_num_rows($sql_doctor) >=1){
+						echo '<thead>';
+						echo '<tr>';
+						echo '<th>Name</th>';
+						echo '<th>Specialization</th>';
+						echo '<th>Status</th>';
+						echo '<th><input type="checkbox" value="Check All" id="checkallA" onClick="checkAllA(form2)"></th>';
+						echo '</tr>';
+						echo '</thead>';
 			   		while($row = mysqli_fetch_array($sql_doctor)){
+
 			   			$username = $row['username'];
 			   		
 			   			$select_doctor = mysqli_query($con, "SELECT * FROM doctor WHERE username LIKE '$username'");
@@ -151,6 +157,9 @@
 			   			echo '</tr>';
 			   		}
 			   			echo '<input type="submit" value="Approve" name="submit">';
+			   		}else{
+			   			echo '<p>No doctor account to be activated</p>';
+			   		}
 			  ?>
 			</form>
 			</table>

@@ -61,13 +61,13 @@
             
             //patient
             $username = $_SESSION['username'];
-            $result = mysqli_query($con, "SELECT * FROM patient WHERE username LIKE '$username'" );
+            $result = mysqli_query($con, "SELECT * FROM patient WHERE username LIKE '$username'" ) or die(mysqli_error());
             $row =  mysqli_fetch_array($result);
             $patient_id = $row['patient_id'];
             $patient_n = $row['patient_name'];
-            $p_result = mysqli_query($con, "SELECT * FROM appointment WHERE patient_id LIKE '$patient_id'" );
+            $p_result = mysqli_query($con, "SELECT * FROM appointment WHERE patient_id LIKE '$patient_id'" ) or die(mysqli_error());
             $p_row =  mysqli_fetch_array($p_result);
-            $n_result = mysqli_query($con, "SELECT * FROM notification WHERE patient_id LIKE '$patient_id'" );
+            $n_result = mysqli_query($con, "SELECT * FROM notification WHERE patient_id LIKE '$patient_id'" ) or die(mysqli_error());
         ?>
         <!-- navigation -->
         <?php 
@@ -98,7 +98,13 @@
                     <div class="p-info">
                         <ul>
                             <li><i class="fa fa-user"></i><?php echo $row['patient_name']; ?></li>
-                            <li><i class="fa fa-birthday-cake"></i><?php echo $row['birthdate'];?> &mdash; <?php echo $row['age'];?> years old</li>
+                            <?php 
+                                $birthday = explode("-", $row['birthdate']);
+                                $age = (date("md", date("U", mktime(0, 0, 0, $birthday[1], $birthday[2], $birthday[0]))) > date("md")
+                                  ? ((date("Y") - $birthday[0]) - 1)
+                                  : (date("Y") - $birthday[0]));
+                            ?>
+                            <li><i class="fa fa-birthday-cake"></i><?php echo $row['birthdate'];?> &mdash; <?php echo $age;?> years old</li>
                             <li><i class="fa fa-briefcase"></i><?php echo $row['occupation'];?></li>
                             <li><i class="fa fa-phone"></i><?php echo $row['patient_contact']; ?></li>
                             <li class="email"><i class="fa fa-envelope"></i><?php echo $row['email']; ?></li>

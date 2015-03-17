@@ -28,7 +28,7 @@
 			header("location: index.php");
 		else if($account_type != 'Admin')
             header("location: index.php");
-        $sql = mysqli_query($con, "SELECT * FROM account WHERE account_status = 'Inactive' ");
+        $sql = mysqli_query($con, "SELECT * FROM account WHERE account_status = 'Active' AND username <> 'Admin' ");
 
       ?>
 	<nav class="navbar navbar-default navbar-fixed-top">
@@ -70,11 +70,11 @@
 			<li><a href="#">Reports</a></li>
 			<li><a href="#">Analytics</a></li>
 			<li><a href="#">Import</a></li>
-			<li><a href="#">Export</a></li>
+			<li><a href="exportall.php">Export</a></li>
 		  </ul>
 		  <ul class="nav nav-sidebar">
 			<li><a href="popdoc.php">Add Doctor</a></li>
-			<li class="active"><a href="#">Activate user</a></li>
+			<li class="active"><a href="#">Remove user</a></li>
 			<li><a href="">Notification</a></li>
 		  </ul>
 		  <ul class="nav nav-sidebar">
@@ -84,8 +84,7 @@
 	</div>
 	</div>
 	<div class="col-sm-9 col-sm-offset-3 col-md-4 col-md-offset-2 main">
-		<h1 class="page-header">Activate User</h1>
-			<div class="table-responsive">
+		<h1 class="page-header">Remove User(s)</h1>
 			<table class="table table-striped">
 			  <thead>
 				<tr>
@@ -96,7 +95,7 @@
 				  <th><input type="checkbox" value="Check All" id="checkallA" onClick="checkAll(form1)"></th>
 				</tr>
 			  </thead>
-			  <form method="post" action="activate_user.php" id="form1">
+			  <form method="post" action="removal.php" id="form1">
 			<?php
 				while($row = mysqli_fetch_array($sql)){
 					$username  = $row['username'];
@@ -113,8 +112,9 @@
 					echo '</tr>';
 				}
 			?>
-			<input type="submit" name="submit" value="Activate">
+			<input type="submit" name="submit" value="Set as Inactive">
 		</form>
+	</table>
 	</div>
 </body>
 </html>

@@ -15,19 +15,20 @@ if(isset($_POST['submit'])){
 	$day = $_POST['birth_day'];
 	$year = $_POST['birth_year'];
 
-	$birthdate = $month .'/'.$day .'/'.$year;
+//	$birthdate = $month .'/'.$day .'/'.$year;
+	$birthdate = $year . '-'.$month.'-'.$day;
 	$birthday = explode("/", $birthdate);
-	$age = (date("md", date("U", mktime(0, 0, 0, $birthday[0], $birthday[1], $birthday[2]))) > date("md")
+/*	$age = (date("md", date("U", mktime(0, 0, 0, $birthday[0], $birthday[1], $birthday[2]))) > date("md")
 		  ? ((date("Y") - $birthday[2]) - 1)
 		  : (date("Y") - $birthday[2]));
-
+*/
 	$account_type = 'Patient';
-	if($age <= 12){
+/*	if($age <= 12){
 		$patientcategory = 'Child';
 	}else{
 		$patientcategory = 'Adult';
 	}
-
+*/
 	include 'connectdatabase.php';
 	//include 'Mail.php';
 			
