@@ -54,9 +54,12 @@
      $(document).ready(function(){
            $(".appo").click(function(){
              $("#appo_id").val($(this).data('id'));
+            $("#doc_id").val($(this).data('doctor-id'));
            });
+
      });
     </script>
+ 
   <body>
     <div class="container">
         <?php 
@@ -79,6 +82,8 @@
             $patient = $row['patient_id'];
             $patient_n = $row['patient_name'];
             $p_result = mysqli_query($con, "SELECT * FROM appointment WHERE patient_id LIKE '$patient' AND (appointment_status = 'Inqueue' OR appointment_status = 'Referred') " );
+            //$p_row =  mysqli_fetch_array($p_result);
+            $doctor_id = '';         
         ?>
         <!-- navigation -->
         <?php 
@@ -103,7 +108,7 @@
         <div class="container-fluid" id="appointments-user">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="text-center row-header-fff">&mdash; Today &mdash;</h1>
+                    <h1 class="text-center row-header">&mdash; Appointments &mdash;</h1>
                 </div>
                 <?php
                     while ($d_row = mysqli_fetch_array($p_result)){
@@ -114,14 +119,17 @@
                     $d_result = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_id LIKE '$doctor'" );
                     $doc =  mysqli_fetch_array($d_result);
                     echo '<div class="col-xs-12 col-md-6 col-lg-3" id="'.$d_row['appointment_id'].'">';
-                    echo "<div class='panel panel-default' id='asd'><div class='panel-heading appointment-date' >";
-                            echo $date;
-                            echo "<a href=\"close.php?id=$d_row[appointment_id]&doc=$doctor&pat=$patient\" onclick='return confirm(\"Do you want to cancel this appointment?\")' title=\"Cancel\"><i class=\"fa fa-remove fa-lg delete-btn\"></i></a></div>
-                            <div class=\"panel-body\">";
-                            echo '<p class="appointment-dr-name">Dr. ' . $doc['doctor_name'] . '</p>';
-                            echo "</div><div class='appmnt-pnl-btn'>
-                            <a class='btn btn-block btn-inverse appo tooltip' data-toggle='modal' data-target='.bs-example-modal-sm' data-id='".$app_id."' title='edit this appointment'><i class='fa fa-edit fa-lg'></i> Edit</a>";
-                            echo '<p class="appointment-specs">' . $doc['specialization'] . '</p></div></div>';
+                    echo "<div class='panel panel-default' id='asd'><div class='panel-heading' >";
+                    echo  $doc['doctor_name'];
+                    echo "<a href=\"close.php?id=$d_row[appointment_id]&doc=$doctor&pat=$patient\" onclick='return confirm(\"Do you want to cancel this appointment?\")' title=\"Cancel\"><i class=\"fa fa-remove fa-lg delete-btn\"></i></a></div>
+                        <div class=\"panel-body\">";
+                    echo $doc['specialization'];
+                    echo '<br/>Status: '; 
+                    echo $doc['doctor_status'] . '<br/> ' . $date;
+                    echo "</div><div class='appmnt-pnl-btn'>
+                        <a class='btn btn-block btn-inverse appo' data-toggle='modal' data-target='.bs-example-modal-sm' data-id='".$app_id."' data-doctor-id='".$doctor."'><i class='fa fa-edit fa-lg'></i> Edit</a>
+                                </div>
+                            </div>";
                     echo '</div>';
                     }
                 ?>
@@ -139,10 +147,11 @@
                     
                             <form class="form-input"  method="post" action="editappointment.php">
                                
-                                   <label for="inputDate">Choose new date: </label>                                
-                                  <input type="date" name="appdate" value="<?php echo date('m/d/Y');?>" required/>
-                                  <input type="hidden" id="appo_id" name="appointment_id" value="">
-            
+                                <label for="inputDate">Choose new date: </label>                                
+                                <input type="date" name="appdate" value="<?php echo date('m/d/Y');?>" required/>
+                                <input type="hidden" id="appo_id" name="appointment_id" value="">
+                                <input type="hidden" id="doc_id"  name="doctor_id" value="">
+                                <input type="hidden" name="patient_id" value="<?php echo $patient; ?>">
 
                            <?php            
                                 echo '<div class="modal-footer">
