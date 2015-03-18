@@ -7,17 +7,18 @@
     $count=mysqli_num_rows($sql2);
 
     if($count >= 1){
-        echo "<script> alert('you are already subscribed to this doctor');</script>";
+        //echo "<script> alert('you are already subscribed to this doctor');</script>";
+        header("location: doctor.php?id=".$doc);
     } else {
         $sql = "INSERT INTO subscribe (doctor_id, patient_id) 
         VALUES ('$doc', '$pat')";
         
         mysqli_query($con, $sql) or die (mysqli_error());
         header("location: doctor.php");
-        echo "<script> alert('you are subscribed');</script>";
+        //echo "<script> alert('you are subscribed');</script>";
 
-        echo "<script> alert('you are subscribed');</script>";
-                header("location: doctor.php?id=".$doc);
+        //echo "<script> alert('you are subscribed');</script>";
+                //header("location: doctor.php?id=".$doc);
     }
     mysqli_close($con);
     

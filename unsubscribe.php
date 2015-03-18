@@ -9,7 +9,7 @@
     mysqli_query($con, $sql) or die (mysqli_error());
 
     mysqli_close($con);
-    echo "<script> alert('you unsubscribed to the doctor');</script>";
+    //echo "<script> alert('you unsubscribed to the doctor');</script>";
 
     header("location: doctor.php");    
 

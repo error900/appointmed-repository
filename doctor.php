@@ -116,7 +116,7 @@
         <div class="container-fluid" id="doctor-info">
             <div class="row">
                 <div class="col-xs-12 col-md-2 col-md-offset-3 d-pic">
-                      <img src="img/profile/<?php 
+                      <img class="img-responsive" src="img/profile/<?php 
                             $file = "img/profile/".$doctor_id.".jpg";
                             if(file_exists($file)){
                                 echo $doctor_id;
@@ -138,15 +138,15 @@
                 <div class="col-md-2 text-right">
                     <div class="d-info">
                         <ul>
+                            <li class="doc-status">The Doctor is: <span><?php echo($d_row['doctor_status']);?></span></li>
                             <li class="email"><?php echo $d_row['email']; ?></li>
-                            <li>Status: <?php echo strtoupper($d_row['doctor_status']);?></li>
                         </ul>
 
                         <form action="subscribe.php" method="post" class="subs">
                             <input type="hidden" name="doctor" value="<?php echo $d_row['doctor_id']?>">
                             <input type="hidden" name="patient" value="<?php echo $p_row['patient_id']?>">
-                            <input type="submit" class="btn btn-default" name="subs" value="Subscribe">
-                            <input type="submit" class="btn btn-default" name="unsubs" value="Unsubscribe">
+                            <input type="submit" class="btn btn-default subscribe-btn btn-noborder" name="subs" value="Subscribe">
+                            <input type="submit" class="btn btn-default subscribe-btn btn-noborder hide" name="unsubs" value="Unsubscribe">
                         </form>
                     </div>
                 </div>            
@@ -162,8 +162,7 @@
                         $count++;
                         echo '<div class="col-xs-12 col-md-3">';
                         echo '<div class="clinic-box">';
-                        echo '<h4> Clinic '.$count.'</h4>';
-                        echo '<p>'. $c_row['clinic_name']. '</p>' ;
+                        echo '<h2>' . $c_row['clinic_name'] . '<span>' .$count. '</span></h2>';
                         echo '<p>'. $c_row['clinic_location']. '</p>' ;
                         echo '<p>'. $c_row['clinic_contact'] .'</p>';
                         echo ' <button type="button" class="btn btn-default create-btn btn-noborder clinic" data-toggle="modal" data-target=".bs-example-modal-sm" data-id="'.$c_row['clinic_id'].'">
@@ -205,8 +204,12 @@
                 </div>
             </div>
         </div>
-     
-            <script type="text/javascript" src="js/search.js"></script>
+        <?php
+          //  include 'include/footer.php';
+            include 'include/scrolltop.php';
+            include 'include/scripts.php';
+        ?>
+        <script type="text/javascript" src="js/subscribeButton.js"></script>
     </div>
   </body>
 </html>

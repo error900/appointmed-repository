@@ -17,8 +17,8 @@
                             </button>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="patient.php">Profile</a></li>
-                                <li><a href="editprofile.php">Settings</a></li>
-                                <li><a href="#">Help</a></li>
+                                <li><a href="editprofile.php">Edit Profile</a></li>
+                                <li><a href="help.php">Help</a></li>
                                 <li class="divider"></li>
                                 <li><a href="logout.php"><i class="fa fa-power-off"></i>logout</a></li>
                             </ul>

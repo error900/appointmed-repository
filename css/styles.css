@@ -687,6 +687,26 @@ nav > div > div > ul > li > a:hover {
 	background-color: #E74C3C;
 	font-weight: 800;
 	text-transform: uppercase;
+	text-shadow: 1px 1px 1px #34495E;
+}
+
+.btn-default.create-btn:hover {
+	background-color: #C0392B;
+}
+
+.subscribe-btn {
+	background-color: #27AE60 !important;
+	color: #ECF0F1;
+	width: 100px;
+	font-size: 14px;
+	font-weight: 600;
+	text-transform: lowercase;
+	text-shadow: 1px 1px 1px #34495E;
+}
+
+.subscribe-btn:hover {
+	color: #fff;
+	background-color: #2ECC71 !important;
 }
 
 .btn-noborder {
@@ -882,8 +902,10 @@ nav > div > div > ul > li > a:hover {
 #doctor-info,
 #patient-info {
 	margin: 20px 0;
+	padding-bottom: 20px;
 	color: #ECF0F1;
 	font-size: 14px;
+	border-bottom: 2px solid #95A5A6;
 }
 
 #doctor-info img,
@@ -923,8 +945,21 @@ nav > div > div > ul > li > a:hover {
 .d-info ul li:hover {
 	background: #34495E;
 }
+
+.d-info span {
+	background-color: #2ECC71;
+	padding: 5px;
+	border-radius: 2px;
+	font-size: 14px;
+	text-shadow: 1px 1px 1px #34495E;
+}
+
 .email {
 	text-transform: lowercase !important;
+}
+
+.doc-status {
+	font-size: 12px;
 }
 
 .specialization-header {
@@ -977,7 +1012,7 @@ nav > div > div > ul > li > a:hover {
 }
 
 #clinics {
-	margin: 20px 0;
+	margin: 30px 0;
 	font-size: 14px;
 }
 
@@ -989,15 +1024,23 @@ nav > div > div > ul > li > a:hover {
 	border-radius: 4px;
 }
 
-.clinic-box h4 {
-	color: rgb(212, 93, 14);
-	text-align: center;
+.clinic-box h2 {
+	margin: 0 0 15px 0;
+	color: #E74C3C;
+	font-size: 16px;
 	text-transform: uppercase;
+}
+
+.clinic-box span {
+	float: right;
+	color: #ECF0F1;
+	font-weight: 800;
 }
 
 .clinic-box p {
 	color: #fff;
 	line-height: 12px;
+	text-transform: uppercase;
 }
 
 .hide {
