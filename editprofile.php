@@ -16,9 +16,7 @@
             border-bottom-left-radius: 6px;
             -moz-border-bottom-right-radius: 6px;
             -moz-border-bottom-left-radius: 6px;
-            box-shadow: 0px 0px 5px #999;
             border-width: 3px 1px 1px;
-            border-style: solid;
             border-color: #333 #DEDEDE #DEDEDE;
             background-color: white;
         }
@@ -98,9 +96,21 @@
                 </div>
                 <div class="col-xs-12 col-md-4 col-md-offset-4">
                     <div class="edit-form">
+                    <form method="post" action="edit_data.php" enctype="multipart/form-data">
+                    <img src="img/profile/<?php 
+                            $file = "img/profile/".$patient_id.".jpg";
+                            if(file_exists($file)){
+                                echo $patient_id;
+                            }else{
+                                echo 'profile_patient';
+                            } ?>.jpg" class="img-responsive">
+                            
+                        <input type="file" name="profile_pic">
+                        <input type="hidden" value="<?php echo $patient_id?>" name="patient_id">
+                        <input type="submit" value="Upload" name="submit">
+                    </form>
                         <form method='post' action="">
                             <div class="input-group">
-                                <input type="text" class="form-control" name="firstname" placeholder="First Name" required=""/>
                                 <input type="text" class="form-control" name="lastname" placeholder="Last Name" required=""/>
                                 <input type="text" class="form-control" name="contact" placeholder="Contact Number" required=""/>
                                 <input type="text" class="form-control" name="occupation" placeholder="Occupation" required=""/>

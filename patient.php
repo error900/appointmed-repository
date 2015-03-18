@@ -92,7 +92,13 @@
         <div class="container-fluid" id="patient-info">
             <div class="row">
                 <div class="col-xs-12 col-md-2 col-md-offset-3">
-                     <img src="img/profile/<?php echo $patient_id ?>.jpg" class="img-responsive">
+                     <img src="img/profile/<?php 
+                            $file = "img/profile/".$patient_id.".jpg";
+                            if(file_exists($file)){
+                                echo $patient_id;
+                            }else{
+                                echo 'profile_patient';
+                            } ?>.jpg" class="img-responsive">
                 </div>
                 <div class="col-xs-12 col-md-5 col-md-offset-1">
                     <div class="p-info">
