@@ -43,7 +43,7 @@
         }
     </style>
     <?php
-        $title = "Appointments";
+        $title = "Notifications";
         include 'include/head.php';
         include 'connectdatabase.php';
     ?>
@@ -70,7 +70,7 @@
             //$date = $p_row['appoint_date'];
             //$d_result = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_id LIKE '$doctor'" );
             //$doc =  mysqli_fetch_array($d_result);
-            $n_result = mysqli_query($con, "SELECT * FROM notification WHERE patient_id LIKE '$patient_id'" );
+            $n_result = mysqli_query($con, "SELECT * FROM notification WHERE patient_id LIKE '$patient_id' ORDER BY 6 DESC" );
         ?>
         <?php 
             include 'include/pt-nav-start.php';
@@ -117,7 +117,7 @@
                         if($n_color['color'] == 'red'){
                         echo '<div class="col-xs-12 col-md-8 col-md-offset-2">
                             <div class="panel panel-notif panel-danger">
-                                <div class="panel-heading">'.$doc['doctor_name'].'
+                                <div class="panel-heading">'.$doc['doctor_name'].' '.$n_row['notification_date'].'
                                     <a href="#" title="cancel"><i class="fa fa-remove delete-btn"></i></a>
                                 </div>
                                 <div class="panel-body">
@@ -128,7 +128,7 @@
                         } else if ($n_color['color'] == 'orange'){
                         echo '<div class="col-xs-12 col-md-8 col-md-offset-2">
                             <div class="panel panel-notif panel-warning">
-                                <div class="panel-heading">'.$doc['doctor_name'].'
+                                <div class="panel-heading">'.$doc['doctor_name'].' '.$n_row['notification_date'].'
                                     <a href="#" title="cancel"><i class="fa fa-remove delete-btn"></i></a>
                                 </div>
                                 <div class="panel-body">
@@ -139,7 +139,7 @@
                         }else if ($n_color['color'] == 'green'){
                         echo '<div class="col-xs-12 col-md-8 col-md-offset-2">
                             <div class="panel panel-notif panel-success">
-                                <div class="panel-heading">'.$doc['doctor_name'].'
+                                <div class="panel-heading">'.$doc['doctor_name'].' '.$n_row['notification_date'].'
                                     <a href="#" title="cancel"><i class="fa fa-remove delete-btn"></i></a>
                                 </div>
                                 <div class="panel-body">
@@ -150,7 +150,7 @@
                         } else if ($n_color['color'] == 'blue'){
                         echo '<div class="col-xs-12 col-md-8 col-md-offset-2">
                             <div class="panel panel-notif panel-info">
-                                <div class="panel-heading">'.$doc['doctor_name'].'
+                                <div class="panel-heading">'.$doc['doctor_name'].' '.$n_row['notification_date'].'
                                     <a href="#" title="cancel"><i class="fa fa-remove delete-btn"></i></a>
                                 </div>
                                 <div class="panel-body">

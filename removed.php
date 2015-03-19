@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <?php
-        $title = "Schedules";
+        $title = "Removed";
         include 'include/head.php';
         include 'connectdatabase.php';
     ?>
@@ -23,7 +23,7 @@
         $doctor_id = $row['doctor_id'];
         $c_result = mysqli_query($con, "SELECT * FROM clinic WHERE doctor_id LIKE '$doctor_id'");
         $c_row = mysqli_fetch_array($c_result);
-        $a_result = mysqli_query($con, "SELECT * FROM appointment WHERE doctor_id LIKE '$doctor_id' AND appointment_status = 'Completed' ORDER BY appointment_id")
+        $a_result = mysqli_query($con, "SELECT * FROM appointment WHERE doctor_id LIKE '$doctor_id' AND appointment_status = 'Cancelled' ORDER BY appointment_id")
     ?>
      <body class="fff-bg">
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -51,8 +51,8 @@
                         </ul>
                     </li>
                     <li><a href="doc_notifications.php">Notifications <span class="badge">1</span></a></li>
-                    <li class="active dropdown"><a href="completed.php">Completed</a></li>
-                    <li><a href="removed.php">Removed</a></li>
+                    <li><a href="completed.php">Completed</a></li>
+                    <li class="active dropdown"><a href="removed.php">Removed</a></li>
                     <li><a href="referred.php">Referred</a></li>
                 </ul>
                 <div class="btn-group navbar-right signedin">
@@ -71,7 +71,7 @@
             </div><!-- /.navbar-collapse -->
         </nav>
            <div class="col-md-12">
-                <h2 class="text-center text-turquoise sched-h">&mdash; Completed &mdash;</h2>
+                <h2 class="text-center text-turquoise sched-h">&mdash; Removed &mdash;</h2>
             </div>
         <?php
             while($row = mysqli_fetch_array($a_result)){

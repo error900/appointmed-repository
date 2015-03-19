@@ -14,6 +14,10 @@ if(isset($_POST['submit'])){
 	$month = $_POST['birth_month'];
 	$day = $_POST['birth_day'];
 	$year = $_POST['birth_year'];
+	$date = date('Y-m-d');
+	$message="A user has registered to the system.";
+	$n_id="n1002";
+	$indicator="admin";
 
 //	$birthdate = $month .'/'.$day .'/'.$year;
 	$birthdate = $year . '-'.$month.'-'.$day;
@@ -49,6 +53,10 @@ if(isset($_POST['submit'])){
 	$sqlaccount = "INSERT INTO account (username, password, account_type, account_status) VALUES('$username','$password', '$account_type','inactive')";
 	$sqlpatient = "INSERT INTO patient (patient_id, username, email, patient_contact, occupation, birthdate, patient_name) 
 		VALUES('$patientid','$username','$email', '$contact','$occupation','$birthdate','$patientname')";
+
+	$notif = "INSERT INTO notification (indicator, doctor_id, patient_id, legend_id, notification_date, notification) 
+	VALUES('$indicator','$doc', '$pat', '$n_id', '$date', '$message')";
+	mysqli_query($con, $notif) or die (mysqli_error($con));
 
 
 	if (!(mysqli_query($con, $sqlaccount)) || !(mysqli_query($con, $sqlpatient))) {

@@ -53,8 +53,8 @@
                     </li>
                     <li><a href="doc_notifications.php">Notifications <span class="badge">1</span></a></li>
                     <li><a href="completed.php">Completed</a></li>
-                    <li><a href="#">Removed</a></li>
-                    <li><a href="#">Referred</a></li>
+                    <li><a href="removed.php">Removed</a></li>
+                    <li><a href="referred.php">Referred</a></li>
                     <li class="export-schedules">
                         <form action="export.php" method="post">
                             <input type="hidden" name="doctor_id" value="<?php echo $doctor_id?>">
