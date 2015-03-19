@@ -7,8 +7,6 @@
         $title = "Schedules";
         include 'include/head.php';
         include 'connectdatabase.php';
-              include 'include/scripts.php';
-            include 'include/scrolltop.php';
     ?>
     <script type="text/javascript">
      $(document).ready(function(){
@@ -60,7 +58,7 @@
                     <li class="export-schedules">
                         <form action="export.php" method="post">
                             <input type="hidden" name="doctor_id" value="<?php echo $doctor_id?>">
-                            <input type="submit" class="btn btn-default export-btn btn-noborder" value="Export" name="submit">
+                            <input type="submit" class="btn btn-default export-btn btn-noborder" value="Export Todays Schedule" name="submit">
                         </form>
                     </li>
     <?php 
@@ -148,6 +146,8 @@
     </div>
     <?php 
         include 'include/refer-modal.php';
+        include 'include/scripts.php';
+        include 'include/scrolltop.php';
     ?>
     </div>
   </body>
