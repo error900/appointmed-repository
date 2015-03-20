@@ -64,7 +64,7 @@
                 $loggedIn = $_SESSION['loggedIn'];
                 $account_type = $_SESSION['account_type'];
                 $username = $_SESSION['username'];
-                $date_today = date('Y-m-d');
+                $tomorrow = date("Y-m-d", time()+86400);
 
                 if($loggedIn == false)
                     header("location: index.php");
@@ -78,7 +78,7 @@
             $row =  mysqli_fetch_array($result);
             $patient = $row['patient_id'];
             $patient_n = $row['patient_name'];
-            $p_result = mysqli_query($con, "SELECT * FROM appointment WHERE patient_id LIKE '$patient' AND (appointment_status = 'Inqueue' OR appointment_status = 'Referred') AND (appoint_date = '$date_today')" );
+            $p_result = mysqli_query($con, "SELECT * FROM appointment WHERE patient_id LIKE '$patient' AND (appointment_status = 'Inqueue' OR appointment_status = 'Referred') AND (appoint_date = '$tomorrow')" );
         ?>
         <!-- navigation -->
         <?php 
@@ -88,8 +88,8 @@
                         <li class="dropdown active">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Appointments <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">Today</a></li>
-                                <li><a href="appointment_tom.php">Tomorrow</a></li>
+                                <li><a href="appointment.php">Today</a></li>
+                                <li><a href="#">Tomorrow</a></li>
                                 <li><a href="appointment_week.php">This Week</a></li>
                                 <li><a href="appointment_month.php">This Month</a></li>
                             </ul>
@@ -103,7 +103,7 @@
         <div class="container-fluid" id="appointments-user">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="text-center row-header-fff">&mdash; Today &mdash;</h1>
+                    <h1 class="text-center row-header-fff">&mdash; Tomorrow &mdash;</h1>
                 </div>
                 <?php
                     while ($d_row = mysqli_fetch_array($p_result)){

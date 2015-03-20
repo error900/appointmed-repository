@@ -78,9 +78,9 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Appointments <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="appointment.php">Today</a></li>
-                                <li><a href="#">Tomorrow</a></li>
-                                <li><a href="#">This Week</a></li>
-                                <li><a href="#">This Month</a></li>
+                                <li><a href="appointment_tom.php">Tomorrow</a></li>
+                                <li><a href="appointment_week.php">This Week</a></li>
+                                <li><a href="appointment_month.php">This Month</a></li>
                             </ul>
                         </li>
                         <li><a href="notifications.php">Notifications <span class="badge">22</span></a></li>
