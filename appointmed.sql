@@ -3,8 +3,8 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 19, 2015 at 02:29 AM
--- Server version: 5.6.17
+-- Generation Time: Mar 19, 2015 at 11:44 AM
+-- Server version: 5.6.17-log
 -- PHP Version: 5.5.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -19,7 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `appointmed`
 --
-
+CREATE DATABASE IF NOT EXISTS `appointmed` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `appointmed`;
 -- --------------------------------------------------------
 
 --
@@ -39,17 +40,13 @@ CREATE TABLE IF NOT EXISTS `account` (
 --
 
 INSERT INTO `account` (`username`, `password`, `account_type`, `account_status`) VALUES
-('', 'd9e1b51ac9805a3979ca7c91a3c612b2d5875949c994c5c0bc07947886b76eed', 'Doctor', 'active'),
 ('AbeMacion', 'korniks', 'Doctor', 'active'),
 ('Admin', 'admin', 'Admin', 'active'),
 ('agaton', '014a84c91500d9e40f3388b13ff8ec7ef6398911c720ef8852c5f7b8c9ef4325', 'Doctor', 'active'),
-('Alabama00', 'b43cde468a03951d2e1ca4f15a703f93bf75ba479f48d7680f740f2ec3d583dc', 'Patient', 'active'),
 ('ana', '24d4b96f58da6d4a8512313bbd02a28ebf0ca95dec6e4c86ef78ce7f01e788ac', 'Doctor', 'active'),
 ('annie', '71be92cbdfe91357146afad81827a981ec58f5a3e69e9bd4527acd74b1927938', 'Doctor', 'active'),
 ('antonio', '4ee3679892e6ac5a5b513eba7fd529d363d7a96508421c5dbd44b01b349cf514', 'Doctor', 'active'),
 ('arlene', '382b34d681fca561eea04996874976b654ca18fbd502aad5f84de38ddf79b456', 'Doctor', 'active'),
-('ASDASASD', 'b43cde468a03951d2e1ca4f15a703f93bf75ba479f48d7680f740f2ec3d583dc', 'Patient', 'active'),
-('asdasdasd', '02a21e16756fdf05c57d3c5c1a12beef0e6afd05a1d842d94347e524530b74c9', 'Doctor', 'active'),
 ('aurora', '9b89025ce7a6d932b28f6e15132a70d402f723874a425e9b4c7cc3b179fa66ce', 'Doctor', 'active'),
 ('baby', 'a3ca38ef0e8554b39ce6fd34b011f9aa197cda1f17e2b08b1816142c4bc67199', 'Doctor', 'active'),
 ('bernadette', 'bbe7a727217b335afc5aa51084477fb693269a2a09e7c2e6d009594c8820baaa', 'Doctor', 'active'),
@@ -86,12 +83,8 @@ INSERT INTO `account` (`username`, `password`, `account_type`, `account_status`)
 ('Jurmainer', '0853509b8c4d042252367fea7c1d16b94a466dab405944bc4a8c59ab99b69f8c', 'Patient', 'active'),
 ('Justiniano', '94bcdcb5093e0fe1fc0e711b525098ebcc9f7c5a38c731477b4a78004b129cdf', 'Doctor', 'active'),
 ('karla', '1cfcffbd0d0536e2b354a0bbe9a0df8f7c15b26293e99ce5bd468e1716154295', 'Doctor', 'active'),
-('KingCobra', 'kingcobra', 'Doctor', 'active'),
-('Leviii', '1dd469f240b53c1ae2fd1518ec2ec5f58770bf51c6f16c592baf6f98f52447d5', 'Patient', 'active'),
 ('lizada', '1e19535438153d57d829b8ee88bfffe04d7adedc58c4face9c0393f52066ea11', 'Doctor', 'active'),
-('manicrivera', '0e178c5af6fd5ab02ce673717a2cbe6210b310b926446b3e6b57c87f5f841a8f', 'Patient', 'inactive'),
 ('mapalo', '5515fab1be482bbd7c50a150ca69e51deb1904b86272d14c8488b521b72b1b99', 'Doctor', 'active'),
-('MarCarey', 'b43cde468a03951d2e1ca4f15a703f93bf75ba479f48d7680f740f2ec3d583dc', 'Patient', 'active'),
 ('margaret', '522ce7057fd0523adcd6672db24bb671d09d1ffa2f1e7c97c13e6c68ae6fcb13', 'Doctor', 'active'),
 ('marie', 'c6d17a3613b9914e68707fcfac8410f097643bc5840681bb533030d73cbb18f8', 'Doctor', 'active'),
 ('mark', '6201eb4dccc956cc4fa3a78dca0c2888177ec52efd48f125df214f046eb43138', 'Doctor', 'active'),
@@ -99,23 +92,17 @@ INSERT INTO `account` (`username`, `password`, `account_type`, `account_status`)
 ('matthew', '68be7550846ecd878947b4eb0ac13d3cca3cf6c4940c94d90163e0a15e947203', 'Doctor', 'active'),
 ('melanie', 'dfef5e53f9848472560a3e680a310d097ecc75919740646df38d31cab7aa07ac', 'Doctor', 'active'),
 ('melissa', '8def3bf5d78abb247b4829e87b52b10d79b1cd0e2aec529930ed692ee8d1cd2c', 'Doctor', 'active'),
-('Mikasa22', '13f5f20cc67f6910674614b8a03a24622f74b2ca5cd1f11fb9f0ae7f28dc77b7', 'Patient', 'active'),
 ('nadine', '3af8e4b69bdc2acdabfabc682417cc1d53b84d0437aeb3787a054bfc68d9b2d4', 'Doctor', 'active'),
 ('neil', '4bbfa1f1b0462b4844b74c34fdd297aba2a82ac2355e64308578f5acf1f5e8bf', 'Doctor', 'active'),
 ('orlando', '05ef130c628dac6868d8ab9a08049009d414ceaae8b90e2b0ebb3c5d4c80da6f', 'Doctor', 'active'),
 ('pakoy', '64023c9da41b8ef288d5d907350586a2741914cc2fed1577d56cafcfdceb8c6d', 'Doctor', 'active'),
 ('Palmen', '3f8e72dc3b29137c9c29f715fb7f39bed57b6043c8b2f0d57bdbae20331ec850', 'Patient', 'active'),
 ('pamela', 'cbbcacaf0d582e760874a68b44c572218102a1d24fa262b00dc7f090c7257302', 'Doctor', 'active'),
-('Qwerty', '73d5b2f4ba82d59c723c16a909524559d8f31e33c5d8fdcfc57065dca5c9f189', 'Patient', 'active'),
-('Qwertyasdas', '73d5b2f4ba82d59c723c16a909524559d8f31e33c5d8fdcfc57065dca5c9f189', 'Patient', 'active'),
 ('ranelyn', '579a5959c740f72f662e68419f5ba68ce4dad72e07e727d3d9338f11766eec83', 'Doctor', 'active'),
 ('rosario', 'db26ce04fc0e235ae037a334d7e939ea6dedc4ff234fc5e5578fda274d578550', 'Doctor', 'active'),
 ('rosemarie', '457ad6a394a743ca81ec1a72b159016bc86094b14925e349799fbbcb166940a1', 'Doctor', 'active'),
-('sadasas', '91a9795588a24c150b4f2417a7ece8539c65dd5c456d51bf4d3210fe2f4bd3bb', 'Patient', 'active'),
-('SarahGeronimo', 'kilometro', 'Doctor', 'active'),
 ('sheila', '8d20e19b8fc57df7cf425bb96337dd498403f13124ffc22bcd1cba5d9e8445d2', 'Doctor', 'active'),
 ('sylva', 'c0d294b7085be2e8cdce3894934b38b65eec19eff2a2c032f0f3c9d31447e461', 'Doctor', 'active'),
-('tyuiop', '43c9b542b26db17f11605e97630e1799dce0cf79a1d7c00cdb0ad59e94e0bf2b', 'Patient', 'active'),
 ('vanadero', '4a54d8018198dc4a80d0f0f7adf6d3d5aeafc4153ff090e3be79bb453b7de12f', 'Doctor', 'active'),
 ('victoria', 'ab1cb712f2dca756105160805501f4d6d8657d93d40b16eee4ecb5fd048d26eb', 'Doctor', 'active'),
 ('virginia', '0a4992ea442b53e3dca861deac09a8d4987004a8483079b12861080ea4aa1b52', 'Doctor', 'active'),
@@ -139,7 +126,7 @@ CREATE TABLE IF NOT EXISTS `appointment` (
   KEY `doctor_id` (`doctor_id`,`patient_id`),
   KEY `patient_id` (`patient_id`),
   KEY `clinic_id` (`clinic_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=103 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=102 ;
 
 --
 -- Dumping data for table `appointment`
@@ -148,35 +135,27 @@ CREATE TABLE IF NOT EXISTS `appointment` (
 INSERT INTO `appointment` (`appointment_id`, `remarks`, `doctor_id`, `patient_id`, `appoint_date`, `appointment_status`, `clinic_id`) VALUES
 (1, 'for mr. macion', '2015Macion', '2015Macam', '0000-00-00', 'Completed', 295),
 (2, 'finished', '2015Quinitip', '2015Tayab', '0000-00-00', 'Completed', 294),
-(3, 'for sarahg', '2015Geronimo', '2015Vargas', '0000-00-00', 'Inqueue', 293),
 (7, 'sdadasd', '2015Macion', '2015Tayab', '0000-00-00', 'Cancelled', 293),
 (10, 'i love you', '2015Macion', '2015Tayab', '0000-00-00', 'Cancelled', 292),
-(39, '', '2015Quinitip', '2015Macam', '0000-00-00', 'Cancelled', 291),
-(70, '', '2015Geronimo', '2015Vargas', '0000-00-00', 'Cancelled', 295),
 (71, '', '2015Quinitip', '2015Vargas', '0000-00-00', 'Cancelled', 293),
 (73, '', '2015Quinitip', '2015Vargas', '0000-00-00', 'Cancelled', 293),
 (74, '', '2015Quinitip', '2015Tayab', '0000-00-00', 'Cancelled', 293),
-(75, '', '2015Geronimo', '2015Tayab', '0000-00-00', 'Cancelled', 291),
 (76, '', '2015Macion', '2015Vargas', '0000-00-00', 'Cancelled', 295),
 (77, '', '2015Macion', '2015Vargas', '2015-03-11', 'Cancelled', 295),
 (78, '', '2015Macion', '2015Vargas', '2015-03-12', 'Cancelled', 292),
 (79, '', '2015Macion', '2015Vargas', '2015-03-14', 'Cancelled', 294),
-(80, '', '2015Geronimo', '2015Vargas', '0000-00-00', 'Referred', 295),
 (81, '', '2015Macion', '2015Vargas', '0000-00-00', 'Cancelled', 295),
 (82, '', '2015Quinitip', '2015Vargas', '0000-00-00', 'Inqueue', 293),
 (83, '', '2015Macion', '2015Vargas', '0000-00-00', 'Cancelled', 295),
 (84, '', '2015Macion', '2015Vargas', '0000-00-00', 'Cancelled', 295),
-(85, '', '2015Geronimo', '2015Vargas', '0000-00-00', 'Inqueue', 291),
 (86, '', '2015Macion', '2015Macam', '0000-00-00', 'Inqueue', 295),
 (87, '', '2015Macion', '2015Vargas', '2015-03-20', 'Cancelled', 292),
 (88, '', '2015Macion', '2015Vargas', '2015-03-20', 'Cancelled', 292),
 (89, '', '2015Quinitip', '2015Vargas', '0000-00-00', 'Inqueue', 293),
 (90, '', '2015Macion', '2015Vargas', '0000-00-00', 'Cancelled', 292),
 (91, '', '2015Macion', '2015Vargas', '2015-03-17', 'Cancelled', 294),
-(92, '', '2015Geronimo', '2015Vargas', '2015-03-17', 'Cancelled', 291),
 (93, '', '2015Macion', '2015Tayab', '2016-12-22', 'Inqueue', 292),
-(101, '', '2015Macion', '2015Vargas', '2015-03-26', 'Inqueue', 294),
-(102, '', '2015Geronimo', '2015Vargas', '2015-03-23', 'Inqueue', 291);
+(101, '', '2015Macion', '2015Vargas', '2015-03-26', 'Inqueue', 294);
 
 -- --------------------------------------------------------
 
@@ -201,8 +180,6 @@ CREATE TABLE IF NOT EXISTS `appointment_history` (
 --
 
 INSERT INTO `appointment_history` (`appointment_history_id`, `appointment_status`, `doctor_id`, `patient_id`, `appointment_id`) VALUES
-(34, 'Cancelled', '2015Quinitip', '2015Macam', 39),
-(36, 'Cancelled', '2015Quinitip', '2015Macam', 39),
 (51, 'Cancelled', '2015Quinitip', '2015Vargas', 71),
 (52, 'Cancelled', '2015Macion', '2015Tayab', 10),
 (53, 'Cancelled', '2015Macion', '2015Tayab', 10),
@@ -212,13 +189,10 @@ INSERT INTO `appointment_history` (`appointment_history_id`, `appointment_status
 (57, 'Cancelled', '2015Macion', '2015Vargas', 79),
 (58, 'Cancelled', '2015Macion', '2015Vargas', 78),
 (59, 'Cancelled', '2015Macion', '2015Vargas', 81),
-(60, 'Cancelled', '2015Geronimo', '2015Vargas', 70),
 (61, 'Cancelled', '2015Macion', '2015Vargas', 83),
 (62, 'Cancelled', '2015Macion', '2015Vargas', 84),
 (63, 'Cancelled', '2015Macion', '2015Vargas', 90),
 (64, 'Cancelled', '2015Macion', '2015Vargas', 91),
-(65, 'Cancelled', '2015Geronimo', '2015Vargas', 92),
-(66, 'Cancelled', '2015Geronimo', '2015Tayab', 75),
 (67, 'Cancelled', '2015Macion', '2015Vargas', 87),
 (68, 'Cancelled', '2015Macion', '2015Vargas', 88),
 (69, 'Cancelled', '2015Quinitip', '2015Vargas', 73);
@@ -244,8 +218,6 @@ CREATE TABLE IF NOT EXISTS `clinic` (
 --
 
 INSERT INTO `clinic` (`clinic_id`, `clinic_location`, `clinic_name`, `clinic_contact`, `doctor_id`) VALUES
-(290, 'General Luna, Baguio City', '', '422-5467', '2015Geronimo'),
-(291, 'Lower Session, Baguio City', '', '422-1239', '2015Geronimo'),
 (292, 'Engineer''s Hill, Baguio City', 'MacionLovesYou', '421-3459', '2015Macion'),
 (293, 'Benguet Labs, Baguio City', '', '422-1311', '2015Quinitip'),
 (294, 'Tuba', 'Mancion', '876543', '2015Macion'),
@@ -276,15 +248,12 @@ INSERT INTO `doctor` (`doctor_id`, `doctor_name`, `specialization`, `doctor_stat
 ('05fc9cf', 'Justiniano Bai', 'Orthopedics', 'In', 'null', 'Justiniano'),
 ('06240c1', 'Gene Estandian', 'Constructive Surgery', 'In', 'null', 'gene'),
 ('062a78c', 'Nadine Tello', 'Opthalmology', 'Out', 'null', 'nadine'),
-('070f07e', 'Ana Asdasd', 'asd', 'In', 'asdasad', 'asdasdasd'),
 ('099b2aa', 'Arlene Baguilat', 'Pediatrician', 'In', 'null', 'arlene'),
 ('0a8acd3', 'Mary Gay Buliyat', 'Oncology', 'In', 'null', 'mary'),
 ('0e4f4ea', 'Marie Ellaine Velasquez', 'Gastroeneterology', 'In', 'null', 'marie'),
-('0ec3553', 'Marcelo Gomez', 'Dentistry', '', '', ''),
 ('1070dad', 'Ana Claire Pagnas', 'FM/GP/PCOM', 'Out', 'null', 'ana'),
 ('12b62e2', 'Genuino', 'Cardiology', 'Out', 'null', 'genuino'),
 ('1ba74a2', 'Pamela Chu', 'OB Gyne', 'Out', 'null', 'pamela'),
-('2015Geronimo', 'Sarah Geronimo', 'Dentistry', 'In', 'null', 'SarahGeronimo'),
 ('2015Macion', 'Bernabe Macion', 'Dentistry', 'In', '', 'AbeMacion'),
 ('2015Quinitip', 'Junet Quinitip', 'Cardiology', 'Out', 'null', 'JunetQuinitip'),
 ('2b0cfe3', 'Pakoy', 'GP/Animal Bite', 'In', 'null', 'pakoy'),
@@ -332,8 +301,7 @@ INSERT INTO `doctor` (`doctor_id`, `doctor_name`, `specialization`, `doctor_stat
 ('eb8c770', 'Margaret Apolinar', 'Infectious Disease', 'In', 'null', 'margaret'),
 ('f1a7b69', 'Sylva Tsuchiya', 'Neuro-Psychiatry', 'In', 'null', 'sylva'),
 ('f39e62a', 'Florence Dela Pena', 'CFP/PCOM', 'Out', 'null', 'florence'),
-('fd312ea', 'James Luz', 'Opthalmology', 'In', 'null', 'james'),
-('KingCobra', 'KingCobra', 'Dentistry', 'Sick Leave', 'kings@gmail.com', 'KingCobra');
+('fd312ea', 'James Luz', 'Opthalmology', 'In', 'null', 'james');
 
 -- --------------------------------------------------------
 
@@ -361,12 +329,9 @@ CREATE TABLE IF NOT EXISTS `notification` (
 
 INSERT INTO `notification` (`notification_id`, `indicator`, `doctor_id`, `patient_id`, `legend_id`, `notification_date`, `notification`) VALUES
 (19, 'patient', '2015Macion', '2015Vargas', 'n1004', '2015-03-17', 'A patient has requested an appointment.'),
-(20, 'patient', '2015Geronimo', '2015Vargas', 'n1004', '2015-03-17', 'A patient has requested an appointment.'),
 (21, 'patient', '2015Macion', '2015Vargas', 'n1004', '2015-03-16', 'A patient has cancelled his appointment.'),
 (22, 'patient', '2015Macion', '2015Vargas', 'n1004', '2015-03-16', 'A patient has cancelled his appointment.'),
 (23, 'doctor', '2015Macion', '2015Vargas', 'n1002', '2015-03-16', 'You have been referred by doctor Bernabe Macion to doctor Sarah Geronimo'),
-(24, 'patient', '2015Geronimo', '2015Vargas', 'n1004', '2015-03-17', 'A patient has cancelled his appointment.'),
-(25, 'patient', '2015Geronimo', '2015Tayab', 'n1004', '2015-03-18', 'A patient has cancelled his appointment.'),
 (26, 'patient', '2015Macion', '2015Tayab', 'n1004', '2016-12-22', 'A patient has requested an appointment.'),
 (27, 'patient', '2015Macion', '2015Vargas', 'n1004', '2015-03-20', 'A patient has requested an appointment.'),
 (28, 'patient', '2015Macion', '2015Vargas', 'n1004', '2015-03-27', 'A patient has requested an appointment.'),
@@ -377,7 +342,6 @@ INSERT INTO `notification` (`notification_id`, `indicator`, `doctor_id`, `patien
 (33, 'patient', '2015Macion', '2015Vargas', 'n1004', '2015-03-19', 'A patient has cancelled his appointment.'),
 (34, 'patient', '2015Macion', '2015Vargas', 'n1004', '2015-03-22', 'A patient has requested an appointment.'),
 (35, 'patient', '2015Macion', '2015Vargas', 'n1004', '2015-03-26', 'A patient has requested an appointment.'),
-(36, 'patient', '2015Geronimo', '2015Vargas', 'n1004', '2015-03-23', 'A patient has requested an appointment.'),
 (37, 'patient', '2015Quinitip', '2015Vargas', 'n1004', '2015-03-19', 'A patient has cancelled his appointment.');
 
 -- --------------------------------------------------------
@@ -463,25 +427,6 @@ CREATE TABLE IF NOT EXISTS `referred` (
   KEY `referred_id` (`referred_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `referred`
---
-
-INSERT INTO `referred` (`referred_id`, `patient_id`, `doctor_id`) VALUES
-('KingCobra', '2015Vargas', '2015Macion'),
-('KingCobra', '2015Vargas', '2015Macion'),
-('2015Geronimo', '2015Vargas', 'KingCobra'),
-('2015Macion', '2015Vargas', 'KingCobra'),
-('2015Macion', '2015Vargas', '2015Geronimo'),
-('2015Geronimo', '2015Vargas', '2015Macion'),
-('KingCobra', '2015Vargas', '2015Macion'),
-('2015Geronimo', '2015Vargas', '2015Macion'),
-('2015Geronimo', '2015Vargas', '2015Macion'),
-('2015Macion', '2015Vargas', '2015Geronimo'),
-('2015Geronimo', '2015Vargas', '2015Macion'),
-('KingCobra', '2015Vargas', '2015Macion'),
-('2015Geronimo', '2015Vargas', '2015Macion');
-
 -- --------------------------------------------------------
 
 --
@@ -526,11 +471,11 @@ CREATE TABLE IF NOT EXISTS `subscribe` (
 
 INSERT INTO `subscribe` (`doctor_id`, `patient_id`) VALUES
 ('2015Quinitip', '2015Vargas'),
-('KingCobra', '2015Vargas'),
 ('1070dad', '2015Vargas'),
 ('ccf908b', '2015Vargas'),
 ('a3d1f76', '2015Vargas'),
-('2015Macion', '2015Vargas');
+('2015Macion', '2015Vargas'),
+('959bcfd', '2015Tayab');
 
 --
 -- Constraints for dumped tables

@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
     <style>
-
 #divResult
         {
             position:absolute;
@@ -46,14 +44,15 @@
         $title = "Appointments";
         include 'include/head.php';
         include 'connectdatabase.php';
-        include 'include/scripts.php';
-        include 'include/scrolltop.php';
+        //include 'include/scripts.php';
+        //include 'include/scrolltop.php';
     ?>
     
      <script type="text/javascript">
      $(document).ready(function(){
            $(".appo").click(function(){
              $("#appo_id").val($(this).data('id'));
+             $("#doc_id").val($(this).data('doctor-id'));
            });
      });
     </script>
@@ -120,13 +119,14 @@
                             <div class=\"panel-body\">";
                             echo '<p class="appointment-dr-name">Dr. ' . $doc['doctor_name'] . '</p>';
                             echo "</div><div class='appmnt-pnl-btn'>
-                            <a class='btn btn-block btn-inverse appo tooltip' data-toggle='modal' data-target='.bs-example-modal-sm' data-id='".$app_id."' title='edit this appointment'><i class='fa fa-edit fa-lg'></i> Edit</a>";
+                            <a class='btn btn-block btn-inverse appo tooltip' data-toggle='modal' data-target='.bs-example-modal-sm' data-id='".$app_id."' data-doctor-id='".$doctor."' title='edit this appointment'><span title='asdsad'><i class='fa fa-edit fa-lg'></i></span> Edit</a>";
                             echo '<p class="appointment-specs">' . $doc['specialization'] . '</p></div></div>';
                     echo '</div>';
                     }
                 ?>
             </div>
         </div>
+<<<<<<< HEAD
                <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-sm">
                 <div class="modal-content">
@@ -155,6 +155,13 @@
         <?php
 
         ?>
+=======
+        <?php 
+            include 'include/edit-modal.php';
+            include 'include/scripts.php';
+            include 'include/scrolltop.php';
+        ?>  
+>>>>>>> origin/master
         <script type="text/javascript" src="js/search.js"></script>
         <script type="text/javascript" src="js/scrolltop.js"></script>
     </div> <!-- /container -->

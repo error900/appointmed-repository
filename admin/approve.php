@@ -88,7 +88,7 @@
 		  <ul class="nav nav-sidebar">
 			<li><a href="popdoc.php">Add Doctor</a></li>
 			<li><a href="remove_user.php">Remove user</a></li>
-			<li><a href="">Notification</a></li>
+			<li><a href="notifications.php">Notification</a></li>
 		  </ul>
 		  <ul class="nav nav-sidebar">
 			<li class="active"><a href="#">Approve Users</a></li>
