@@ -5,8 +5,6 @@ if(isset($_POST['submit'])){
 	$pat = $_POST['patient_id'];
 	$doc = $_POST['doctor_id'];
 	$appid = $_POST['appointment_id'];
-	$appdate = date('m/d/Y', strtotime($appdate));
-	$current_date = date('m/d/Y');
 	$appdate = date('Y-m-d', strtotime($appdate));
 	$current_date = date('Y-m-d');
 	$message="A patient has rescheduled his appointment to you.";
@@ -15,8 +13,6 @@ if(isset($_POST['submit'])){
 
 	if($appdate >= $current_date){
 		$sql = "UPDATE appointment SET appoint_date = '$appdate' WHERE appointment_id= $appid";
-
-		if (!(mysqli_query($con, $sql))) {
 
 		$notif = "INSERT INTO notification (indicator, doctor_id, patient_id, legend_id, notification_date, notification) 
 		VALUES('$indicator','$doc', '$pat', '$n_id', '$current_date', '$message')";
@@ -27,4 +23,10 @@ if(isset($_POST['submit'])){
 		  	die('Error: ' . mysqli_error($con));
 		}
 		header("location: appointment.php");
+	}else{
+		echo '<script>alert("Please change the date")</script>';
+		echo "<script> location.replace('appointment.php') </script>";
+	}
+}else
+	mysqli_close($con);
 ?>

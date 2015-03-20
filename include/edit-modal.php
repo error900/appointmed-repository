@@ -9,8 +9,10 @@
                 <div class="form-group">
                     <form class="form-input"  method="post" action="editappointment.php">
                         <label for="inputDate">Choose new date: </label>                                
-                        <input type="date" name="appdate" value="<?php echo date('m/d/Y');?>" required/>
+                        <input type="date" name="appdate" value="<?php echo date('Y-m-d');?>" required/>
                         <input type="hidden" id="appo_id" name="appointment_id" value="">
+                        <input type="hidden" id="doc_id"  name="doctor_id" value="">
+                                <input type="hidden" name="patient_id" value="<?php echo $patient; ?>">
                         <?php            
                             echo '<div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>';
