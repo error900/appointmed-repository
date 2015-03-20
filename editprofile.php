@@ -109,7 +109,7 @@
                         <input type="hidden" value="<?php echo $patient_id?>" name="patient_id">
                         <input type="submit" value="Upload" name="submit">
                     </form>
-                        <form method='post' action="edit_this.">
+                        <form method='post' action="edit_this.php">
                             <div class="input-group">
                                 <?php 
                                 ?>

@@ -140,7 +140,7 @@
                         if ($n_color['color'] == 'blue'){
                         echo '<div class="col-xs-12 col-md-8 col-md-offset-2">
                             <div class="panel panel-notif panel-info">
-                                <div class="panel-heading">'.$doc['doctor_name'].'
+                                <div class="panel-heading">'.$doc['doctor_name'].' '.$n_row['notification_date'].'
                                     <a href="#" title="cancel"><i class="fa fa-remove delete-btn x-btn"></i></a>
                                 </div>
                                 <div class="panel-body">

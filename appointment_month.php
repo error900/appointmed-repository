@@ -92,7 +92,7 @@
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="appointment.php">Today</a></li>
                                 <li><a href="appointment_tom.php">Tomorrow</a></li>
-                                <li><a href="appointment_week">This Week</a></li>
+                                <li><a href="appointment_week.php">This Week</a></li>
                                 <li><a href="#">This Month</a></li>
                             </ul>
                         </li>

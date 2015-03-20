@@ -42,12 +42,7 @@
                         <li class="active"><a href="#">Home</a></li>
                         <li><a href="companyprofile.php">About</a></li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Clinics &amp; Hospitals <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="index.html">Benguet Laboratories</a></li>
-                                <li><a href="bgh.html">Baguio General Hospital</a></li>
-                                <li><a href="#">SLU Hospital</a></li>
-                            </ul>
+        
                         </li>
                         <li><a href="doctors.php">Doctors</a></li>
                         <li><a href="signup.php">Signup</a></li>
