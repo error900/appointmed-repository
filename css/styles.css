@@ -402,9 +402,6 @@ nav > div > div > ul > li > a:hover {
 }
 
 .appmnt-pnl-btn button {
-	position: absolute;
-	bottom: 23px;
-	left: 18px;
 	width: 30%;
 	background: transparent;
 	text-transform: lowercase;
@@ -413,7 +410,7 @@ nav > div > div > ul > li > a:hover {
 }
 
 .appmnt-pnl-btn a {
-	color: #fff !important;
+	margin: 5px;
 	font-size: 14px;
 	text-transform: lowercase;
 	text-decoration: none;

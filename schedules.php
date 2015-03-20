@@ -44,9 +44,10 @@
     ?>
                 <ul class="nav navbar-nav">
                     <li class="active dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Appointments <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Schedules <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="schedules.php">Tomorrow</a></li>
+                            <li><a href="schedules.php">Today</a></li>
+                            <li><a href="#">Tomorrow</a></li>
                             <li><a href="#">This Week</a></li>
                             <li><a href="#">This Month</a></li>
                         </ul>
@@ -149,6 +150,8 @@
         include 'include/scripts.php';
         include 'include/scrolltop.php';
     ?>
+        <script type="text/javascript" src="js/search.js"></script>
+        <script type="text/javascript" src="js/scrolltop.js"></script>
     </div>
   </body>
 </html>

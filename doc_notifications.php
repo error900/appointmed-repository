@@ -7,8 +7,6 @@
         $title = "Notifications";
         include 'include/head.php';
         include 'connectdatabase.php';
-              include 'include/scripts.php';
-            include 'include/scrolltop.php';
     ?>
     <script type="text/javascript">
      $(document).ready(function(){
@@ -48,18 +46,25 @@
             include 'include/dc-nav-start.php';
         ?>
                     <ul class="nav navbar-nav">
-                        <li >
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Today <span class="caret"></span></a>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Schedules <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="schedules.php">Tomorrow</a></li>
+                                <li><a href="schedules.php">Today</a></li>
+                                <li><a href="#">Tomorrow</a></li>
                                 <li><a href="#">This Week</a></li>
                                 <li><a href="#">This Month</a></li>
                             </ul>
                         </li>
-                        <li class="active dropdown"><a href="doc_notifications.php">Notifications <span class="badge">1</span></a></li>
+                        <li class="active"><a href="doc_notifications.php">Notifications <span class="badge">1</span></a></li>
                         <li><a href="completed.php">Completed</a></li>
                         <li><a href="removed.php">Removed</a></li>
                         <li><a href="referred.php">Referred</a></li>
+                        <li class="export-schedules">
+                            <form action="export.php" method="post">
+                                <input type="hidden" name="doctor_id" value="<?php echo $doctor_id?>">
+                                <input type="submit" class="btn btn-default export-btn btn-noborder" value="Export Todays Schedule" name="submit">
+                            </form>
+                        </li>
         <?php 
             include 'include/dc-nav-end.php';
         ?>
@@ -88,7 +93,7 @@
                             echo '<div class="col-xs-12 col-md-8 col-md-offset-2">
                                 <div class="panel panel-notif panel-danger">
                                     <div class="panel-heading">'.$n_name['patient_name'].' '.$n_row['notification_date'].'
-                                        <a href="#" title="cancel"><i class="fa fa-remove delete-btn"></i></a>
+                                        <a href="#" title="cancel"><i class="fa fa-remove delete-btn x-btn"></i></a>
                                     </div>
                                     <div class="panel-body">
                                         '.$n_row['notification'].'
@@ -99,7 +104,7 @@
                             echo '<div class="col-xs-12 col-md-8 col-md-offset-2">
                                 <div class="panel panel-notif panel-warning">
                                     <div class="panel-heading">'.$n_name['patient_name'].' '.$n_row['notification_date'].'
-                                        <a href="#" title="cancel"><i class="fa fa-remove delete-btn"></i></a>
+                                        <a href="#" title="cancel"><i class="fa fa-remove delete-btn x-btn"></i></a>
                                     </div>
                                     <div class="panel-body">
                                         '.$n_row['notification'].'
@@ -110,7 +115,7 @@
                             echo '<div class="col-xs-12 col-md-8 col-md-offset-2">
                                 <div class="panel panel-notif panel-success">
                                     <div class="panel-heading">'.$n_name['patient_name'].' '.$n_row['notification_date'].'
-                                        <a href="#" title="cancel"><i class="fa fa-remove delete-btn"></i></a>
+                                        <a href="#" title="cancel"><i class="fa fa-remove delete-btn x-btn"></i></a>
                                     </div>
                                     <div class="panel-body">
                                         '.$n_row['notification'].'
@@ -121,7 +126,7 @@
                             echo '<div class="col-xs-12 col-md-8 col-md-offset-2">
                                 <div class="panel panel-notif panel-info">
                                     <div class="panel-heading">'.$n_name['patient_name'].' '.$n_row['notification_date'].'
-                                        <a href="#" title="cancel"><i class="fa fa-remove delete-btn"></i></a>
+                                        <a href="#" title="cancel"><i class="fa fa-remove delete-btn x-btn"></i></a>
                                     </div>
                                     <div class="panel-body">
                                         '.$n_row['notification'].'
@@ -135,6 +140,12 @@
                     ?>
                 </div>
             </div>
+            <?php 
+                include 'include/scripts.php';
+                include 'include/scrolltop.php';
+            ?>
+        <script type="text/javascript" src="js/search.js"></script>
+        <script type="text/javascript" src="js/scrolltop.js"></script>
         </div> <!-- /container -->
   </body>
 </html>
