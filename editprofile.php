@@ -61,13 +61,13 @@
             
             //patient
             $username = $_SESSION['username'];
-            $result = mysqli_query($con, "SELECT * FROM patient WHERE username LIKE '$username'" );
+            $result = mysqli_query($con, "SELECT * FROM patient WHERE username LIKE '$username'" ) or die(mysqli_error());
             $row =  mysqli_fetch_array($result);
             $patient_id = $row['patient_id'];
             $patient_n = $row['patient_name'];
-            $p_result = mysqli_query($con, "SELECT * FROM appointment WHERE patient_id LIKE '$patient_id'" );
+            $p_result = mysqli_query($con, "SELECT * FROM appointment WHERE patient_id LIKE '$patient_id'" ) or die(mysqli_error());
             $p_row =  mysqli_fetch_array($p_result);
-            $n_result = mysqli_query($con, "SELECT * FROM notification WHERE patient_id LIKE '$patient_id'" );
+            $n_result = mysqli_query($con, "SELECT * FROM notification WHERE patient_id LIKE '$patient_id'" ) or die(mysqli_error());
         ?>
         <!-- navigation -->
         <?php 
@@ -109,11 +109,13 @@
                         <input type="hidden" value="<?php echo $patient_id?>" name="patient_id">
                         <input type="submit" value="Upload" name="submit">
                     </form>
-                        <form method='post' action="">
+                        <form method='post' action="edit_this.">
                             <div class="input-group">
-                                <input type="text" class="form-control" name="lastname" placeholder="Last Name" required=""/>
-                                <input type="text" class="form-control" name="contact" placeholder="Contact Number" required=""/>
-                                <input type="text" class="form-control" name="occupation" placeholder="Occupation" required=""/>
+                                <?php 
+                                ?>
+                                <input type="text" class="form-control" name="lastname" placeholder="Last Name" required="" value="<?php echo $patient_n?>"/>
+                                <input type="text" class="form-control" name="contact" placeholder="Contact Number" required="" value="<?php echo $row['patient_contact']?>" />
+                                <input type="text" class="form-control" name="occupation" placeholder="Occupation" required="" value="<?php echo $row['occupation']?>" />
                                 <input class="btn btn-default login-btn btn-noborder" type="submit" value="Submit" name="submit"/>
                             </div>
                         </form>

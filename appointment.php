@@ -140,9 +140,8 @@
                             <form class="form-input"  method="post" action="editappointment.php">
                                
                                    <label for="inputDate">Choose new date: </label>                                
-                                  <input type="date" name="appdate" value="<?php echo date('m/d/Y');?>" required/>
+                                  <input type="date" name="appdate" value="<?php echo date('Y-m-d');?>" required/>
                                   <input type="hidden" id="appo_id" name="appointment_id" value="">
-            
 
                            <?php            
                                 echo '<div class="modal-footer">

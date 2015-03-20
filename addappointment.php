@@ -10,9 +10,12 @@ if(isset($_POST['submit'])){
 	$message="A patient has requested an appointment.";
 	$legend_id="n1004";
 	$indicator="patient";
+
 	$date = date('Y-m-d', strtotime($date));
 	$date_today = date('Y-m-d');
-	
+
+	echo $date;
+
 	if($date >= $date_today){
 		$sql = "INSERT INTO appointment (doctor_id, patient_id, appoint_date, appointment_status, remarks, clinic_id) 
 		VALUES('$doctor_id', '$patient_id', '$date', '$appointment_status', '$remarks','$clinic_id')";
@@ -20,7 +23,7 @@ if(isset($_POST['submit'])){
 		$notif = "INSERT INTO notification (indicator, doctor_id, patient_id, legend_id, notification_date, notification) 
 		VALUES('$indicator', '$doctor_id', '$patient_id', '$legend_id', '$date','$message')";
 
-		if (!(mysqli_query($con, $sql)) & !(mysqli_query($con, $notif)) ) {
+		if (!(mysqli_query($con, $sql)) || !(mysqli_query($con, $notif)) ) {
 		  	die('Error: ' . mysqli_error($con));
 		}
 		header("location: appointment.php");
@@ -29,7 +32,8 @@ if(isset($_POST['submit'])){
 		echo "<script> location.replace('doctor.php?id=".$doctor_id."') </script>";
 	}
 
-}else
+}else{
 	echo "<script>alert('Error')</script>";
 	mysqli_close($con);
+}
 ?>

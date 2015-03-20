@@ -40,22 +40,26 @@
             cursor: pointer;
         }
     </style>
-    </style>
 </head>
     <?php
         $title = "Doctor Profile";
         include 'include/head.php';
         include 'connectdatabase.php';
-        include 'include/scripts.php';
         include 'include/datepicker.php';
+        include 'include/scrolltop.php';
+        include 'include/scripts.php';
     ?>
-    <script type="text/javascript">
-     $(document).ready(function(){
-           $(".clinic").click(function(){
-             $("#clinic_id").val($(this).data('id'));
-           });
-     });
+         <script type="text/javascript">
+             $(document).ready(function(){
+                   $(".clinic").click(function(){
+                     $("#clinic_id").val($(this).data('id'));
+                   });
+             });
     </script>
+     <script type="text/javascript" src="js/subscribeButton.js"></script>
+    <script type="text/javascript" src="js/search.js"></script>
+
+
   <body>
     <div class="container">
         <?php 
@@ -128,7 +132,7 @@
                     <div class="d-info">
                         <ul>
                             <li><i class="fa fa-user-md"></i>Dr. <?php echo strtoupper($d_row['doctor_name']); ?></li>
-                            <li><i class="fa fa-medkit"></i><?php echo $d_row['specialization']; ?>y</li>
+                            <li><i class="fa fa-medkit"></i><?php echo $d_row['specialization']; ?></li>
                             <br>
                             <li><i class="fa fa-h-square"></i>Benguet Laboratory Incorporated</li>
                             <li><i class="fa fa-angle-double-right"></i> Plastic Surgery, Cosmetic Surgery</li>
@@ -146,7 +150,7 @@
                             <input type="hidden" name="doctor" value="<?php echo $d_row['doctor_id']?>">
                             <input type="hidden" name="patient" value="<?php echo $p_row['patient_id']?>">
                             <input type="submit" class="btn btn-default subscribe-btn btn-noborder" name="subs" value="Subscribe">
-                            <input type="submit" class="btn btn-default subscribe-btn btn-noborder hide" name="unsubs" value="Unsubscribe">
+                            <input type="submit" class="btn btn-default subscribe-btn btn-noborder" name="unsubs" value="Unsubscribe">
                         </form>
                     </div>
                 </div>            
@@ -165,7 +169,7 @@
                         echo '<h2>' . $c_row['clinic_name'] . '<span>' .$count. '</span></h2>';
                         echo '<p>'. $c_row['clinic_location']. '</p>' ;
                         echo '<p>'. $c_row['clinic_contact'] .'</p>';
-                        echo ' <button type="button" class="btn btn-default create-btn btn-noborder clinic" data-toggle="modal" data-target=".bs-example-modal-sm" data-id="'.$c_row['clinic_id'].'">
+                        echo ' <button type="button" class="btn btn-default clinic create-btn btn-noborder clinic" data-toggle="modal" data-target=".bs-example-modal-sm" data-id="'.$c_row['clinic_id'].'">
                             <span class="fui-new"> </span>Create Appointment</button>';
                                                echo '</div>';
                         echo '</div>';
@@ -204,12 +208,7 @@
                 </div>
             </div>
         </div>
-        <?php
-          //  include 'include/footer.php';
-            include 'include/scrolltop.php';
-            include 'include/scripts.php';
-        ?>
-        <script type="text/javascript" src="js/subscribeButton.js"></script>
+
     </div>
   </body>
 </html>

@@ -6,12 +6,14 @@
 		$uploadOk = 1; 
 		$target_file = $target_dir . basename($_FILES['profile_pic']['name']);
 		$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-		$file_size = getimagesize($_FILES['profile_pic']['name']);
-		$width = $file_size[0];
-		$height = $file_size[1];
 
 		if(isset($_POST["submit"])) {
-		    $check = getimagesize($_FILES["profile_pic"]["tmp_name"]);
+			if(!($_FILES["profile_pic"]["tmp_name"])){
+				echo '<script>alert("Error! No file selected");</script>';	
+				echo "<script> location.replace('editprofile.php') </script>";
+			}else
+			 	$check = getimagesize($_FILES["profile_pic"]["tmp_name"]);
+
 		    if($check !== false) {
 		        echo "File is an image - " . $check["mime"] . ".";
 		        $uploadOk = 1;
@@ -19,8 +21,8 @@
 		        echo "File is not an image.";
 		        $uploadOk = 0;
 		    }
-		}
-	
+		}	
+
 		if($imageFileType != "jpg") {
 		    echo "<script> alert('Sorry, only .jpg files are allowed'); </script>";
 		    echo "<script> location.replace('editprofile.php') </script>";

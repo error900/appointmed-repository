@@ -1,5 +1,6 @@
 <?php 
    include 'connectdatabase.php';
+    
     $doc = $_POST['doctor'];
     $pat = $_POST['patient'];
 
@@ -8,13 +9,16 @@
 
     if($count >= 1){
         //echo "<script> alert('you are already subscribed to this doctor');</script>";
-        header("location: doctor.php?id=".$doc);
+
+        echo "<script> alert('You are already subscribed'); </script>";
+        echo "<script> location.replace('doctor.php?id=".$doc."') </script>";
+
     } else {
         $sql = "INSERT INTO subscribe (doctor_id, patient_id) 
         VALUES ('$doc', '$pat')";
         
         mysqli_query($con, $sql) or die (mysqli_error());
-        header("location: doctor.php");
+        header("location: doctor.php?id=".$doc);
         //echo "<script> alert('you are subscribed');</script>";
 
         //echo "<script> alert('you are subscribed');</script>";

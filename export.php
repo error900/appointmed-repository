@@ -2,7 +2,7 @@
 if(isset($_POST['submit'])){
 	$doctor_id = $_POST['doctor_id'];
 	include 'connectdatabase.php';
-	$date = date('m/d/Y');
+	$date = date('Y-m-d');
 	$appoint_sql = mysqli_query($con, "SELECT patient_id, appointment_id FROM appointment 
 		WHERE doctor_id = '$doctor_id' AND appointment_status = 'Inqueue' AND appoint_date = '$date'
 		ORDER BY appointment_id");
