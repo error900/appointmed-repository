@@ -126,7 +126,7 @@
                 ?>
             </div>
         </div>
-<<<<<<< HEAD
+
                <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-sm">
                 <div class="modal-content">
@@ -155,13 +155,13 @@
         <?php
 
         ?>
-=======
+
         <?php 
             include 'include/edit-modal.php';
             include 'include/scripts.php';
             include 'include/scrolltop.php';
         ?>  
->>>>>>> origin/master
+
         <script type="text/javascript" src="js/search.js"></script>
         <script type="text/javascript" src="js/scrolltop.js"></script>
     </div> <!-- /container -->
