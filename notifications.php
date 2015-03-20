@@ -71,6 +71,10 @@
             //$d_result = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_id LIKE '$doctor'" );
             //$doc =  mysqli_fetch_array($d_result);
             $n_result = mysqli_query($con, "SELECT * FROM notification WHERE patient_id LIKE '$patient_id' ORDER BY 6 DESC" );
+
+            $count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE patient_id LIKE '$patient_id'" );
+            $count_row = mysqli_fetch_array($count_result);
+            $notif_count =  $count_row['count'];
         ?>
         <?php 
             include 'include/pt-nav-start.php';
@@ -85,7 +89,7 @@
                                 <li><a href="#">This Month</a></li>
                             </ul>
                         </li>
-                        <li class="active"><a href="notifications.php">Notifications <span class="badge">22</span></a></li>
+                        <li class="active"><a href="notifications.php">Notifications <span class="badge"><?php echo $notif_count?></span></a></li>
                         <li><a href="history.php">History</a></li>
         <?php 
             include 'include/pt-nav-end.php';
