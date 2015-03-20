@@ -102,8 +102,11 @@ h1, h2, h3, h4 {
 }
 
 .e4e8e9-bg {
-	/* background-color: #ecf0f1 !important; */
 	background: #e4e8e9 url('../img/background_opcion2.jpg') repeat left top !important;
+}
+
+.background-pt {
+	background: #e4e8e9 url('../img/background-pt.png') repeat left top !important;
 }
 
 i.fa.fa-power-off {
@@ -323,6 +326,10 @@ nav > div > div > ul > li > a:hover {
 .panel-heading .delete-btn:hover {
 	color: #34495E;
 	transition: 0.4s;
+}
+
+.x-btn {
+	top: 4px !important;
 }
 
 .queue-num {
@@ -901,11 +908,11 @@ nav > div > div > ul > li > a:hover {
 
 #doctor-info,
 #patient-info {
-	margin: 20px 0;
+	margin: 20px 0 3px 0;
 	padding-bottom: 20px;
 	color: #ECF0F1;
 	font-size: 14px;
-	border-bottom: 2px solid #95A5A6;
+	border-bottom: 2px solid #34495E;
 }
 
 #doctor-info img,
@@ -920,6 +927,11 @@ nav > div > div > ul > li > a:hover {
 
 #patient-info img {
 	border: 8px solid #D35400 !important;
+}
+
+.patient-activity {
+	padding-bottom: 25px;
+	background: rgba(44, 62, 80, 0.8);
 }
 
 .d-info ul,
