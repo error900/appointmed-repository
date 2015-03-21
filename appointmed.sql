@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 21, 2015 at 03:03 AM
+-- Generation Time: Mar 21, 2015 at 05:01 AM
 -- Server version: 5.6.17-log
 -- PHP Version: 5.5.12
 
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `account` (
 INSERT INTO `account` (`username`, `password`, `account_type`, `account_status`) VALUES
 ('AbeMacion', 'korniks', 'Doctor', 'active'),
 ('Admin', 'admin', 'Admin', 'active'),
-('agaton', '014a84c91500d9e40f3388b13ff8ec', 'Doctor', 'active'),
+('agaton', 'agaton', 'Doctor', 'active'),
 ('ana', '24d4b96f58da6d4a8512313bbd02a2', 'Doctor', 'active'),
 ('annie', '71be92cbdfe91357146afad81827a9', 'Doctor', 'active'),
 ('antonio', '4ee3679892e6ac5a5b513eba7fd529', 'Doctor', 'active'),
@@ -125,7 +125,7 @@ CREATE TABLE IF NOT EXISTS `appointment` (
   KEY `doctor_id_2` (`doctor_id`),
   KEY `patient_id` (`patient_id`),
   KEY `clinic_id` (`clinic_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=80 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=85 ;
 
 --
 -- Dumping data for table `appointment`
@@ -140,9 +140,14 @@ INSERT INTO `appointment` (`appointment_id`, `remarks`, `doctor_id`, `patient_id
 (73, '', '2015Quinitip', '2015Vargas', '0000-00-00', 'Inqueue', '293'),
 (74, '', '2015Quinitip', '2015Tayab', '0000-00-00', 'Cancelled', '293'),
 (76, '', '2015Macion', '2015Vargas', '0000-00-00', 'Inqueue', '295'),
-(77, '', '2015Macion', '2015Tayab', '2015-03-21', 'Inqueue', '292'),
+(77, '', '2015Macion', '2015Tayab', '2015-03-21', 'Cancelled', '292'),
 (78, '', '2015Quinitip', '2015Tayab', '2015-03-22', 'Cancelled', '293'),
-(79, '', '2015Quinitip', '2015Tayab', '2015-03-22', 'Inqueue', '293');
+(79, '', '2015Quinitip', '2015Tayab', '2015-03-22', 'Cancelled', '293'),
+(80, '', '2015Macion', '2015Tayab', '2015-03-21', 'Cancelled', '292'),
+(81, '', '2015Macion', '2015Tayab', '2015-03-22', 'Inqueue', '294'),
+(82, '', '2015Macion', '2015Tayab', '2015-03-21', 'Cancelled', '292'),
+(83, '', '2015Quinitip', '2015Tayab', '2015-03-23', 'Cancelled', '293'),
+(84, '', '2015Quinitip', '2015Tayab', '2015-03-23', 'Cancelled', '293');
 
 -- --------------------------------------------------------
 
@@ -153,26 +158,27 @@ INSERT INTO `appointment` (`appointment_id`, `remarks`, `doctor_id`, `patient_id
 CREATE TABLE IF NOT EXISTS `appointment_history` (
   `appointment_history_id` int(30) NOT NULL AUTO_INCREMENT,
   `appointment_status` enum('Cancelled','Completed','Referred','Unattended') NOT NULL,
-  `doctor_id` varchar(30) NOT NULL,
-  `patient_id` varchar(30) NOT NULL,
   `appointment_id` int(30) NOT NULL,
   PRIMARY KEY (`appointment_history_id`),
   KEY `appointment_id` (`appointment_id`),
-  KEY `doctor_id` (`doctor_id`,`patient_id`,`appointment_id`),
-  KEY `patient_id` (`patient_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=56 ;
+  KEY `doctor_id` (`appointment_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=62 ;
 
 --
 -- Dumping data for table `appointment_history`
 --
 
-INSERT INTO `appointment_history` (`appointment_history_id`, `appointment_status`, `doctor_id`, `patient_id`, `appointment_id`) VALUES
-(34, 'Cancelled', '2015Quinitip', '2015Macam', 39),
-(36, 'Cancelled', '2015Quinitip', '2015Macam', 39),
-(51, 'Cancelled', '2015Quinitip', '2015Vargas', 71),
-(52, 'Cancelled', '2015Macion', '2015Tayab', 10),
-(53, 'Cancelled', '2015Macion', '2015Tayab', 10),
-(54, 'Cancelled', '2015Quinitip', '2015Tayab', 74);
+INSERT INTO `appointment_history` (`appointment_history_id`, `appointment_status`, `appointment_id`) VALUES
+(34, 'Cancelled', 39),
+(36, 'Cancelled', 39),
+(51, 'Cancelled', 71),
+(52, 'Cancelled', 10),
+(53, 'Cancelled', 10),
+(54, 'Cancelled', 74),
+(58, 'Cancelled', 80),
+(59, 'Cancelled', 83),
+(60, 'Cancelled', 82),
+(61, 'Cancelled', 84);
 
 -- --------------------------------------------------------
 
@@ -298,60 +304,30 @@ CREATE TABLE IF NOT EXISTS `notification` (
   KEY `patient_id` (`patient_id`),
   KEY `notif_id` (`legend_id`),
   FULLTEXT KEY `doctor_id` (`doctor_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=47 ;
-
---
--- Dumping data for table `notification`
---
-
-INSERT INTO `notification` (`notification_id`, `indicator`, `doctor_id`, `patient_id`, `legend_id`, `notification_date`, `notification`) VALUES
-(19, 'patient', '2015Macion', '2015Vargas', 'n1004', '2015-03-17', 'A patient has requested an appointment.'),
-(21, 'patient', '2015Macion', '2015Vargas', 'n1004', '2015-03-16', 'A patient has cancelled his appointment.'),
-(22, 'patient', '2015Macion', '2015Vargas', 'n1004', '2015-03-16', 'A patient has cancelled his appointment.'),
-(23, 'doctor', '2015Macion', '2015Vargas', 'n1002', '2015-03-16', 'You have been referred by doctor Bernabe Macion to doctor Sarah Geronimo'),
-(26, 'patient', '2015Macion', '2015Tayab', 'n1004', '2016-12-22', 'A patient has requested an appointment.'),
-(27, 'patient', '2015Macion', '2015Vargas', 'n1004', '2015-03-20', 'A patient has requested an appointment.'),
-(28, 'patient', '2015Macion', '2015Vargas', 'n1004', '2015-03-27', 'A patient has requested an appointment.'),
-(29, 'patient', '2015Macion', '2015Vargas', 'n1004', '2015-03-20', 'A patient has requested an appointment.'),
-(30, 'patient', '2015Macion', '2015Vargas', 'n1004', '2015-03-21', 'A patient has requested an appointment.'),
-(31, 'patient', '2015Macion', '2015Vargas', 'n1004', '2015-03-24', 'A patient has requested an appointment.'),
-(32, 'patient', '2015Macion', '2015Vargas', 'n1004', '2015-03-19', 'A patient has cancelled his appointment.'),
-(33, 'patient', '2015Macion', '2015Vargas', 'n1004', '2015-03-19', 'A patient has cancelled his appointment.'),
-(34, 'patient', '2015Macion', '2015Vargas', 'n1004', '2015-03-22', 'A patient has requested an appointment.'),
-(35, 'patient', '2015Macion', '2015Vargas', 'n1004', '2015-03-26', 'A patient has requested an appointment.'),
-(37, 'patient', '2015Quinitip', '2015Vargas', 'n1004', '2015-03-19', 'A patient has cancelled his appointment.'),
-(38, 'patient', '2015Macion', '2015Tayab', 'n1004', '2015-03-20', 'A patient has cancelled his appointment.'),
-(39, 'patient', '2015Macion', '2015Tayab', 'n1004', '2015-03-21', 'A patient has requested an appointment.'),
-(40, 'patient', '2015Macion', '2015Tayab', 'n1004', '2015-03-21', 'A patient has requested an appointment.'),
-(41, 'patient', '2015Macion', '2015Tayab', 'n1004', '2015-03-21', 'A patient has requested an appointment.'),
-(42, 'patient', '2015Macion', '2015Tayab', 'n1004', '2015-03-21', 'A patient has requested an appointment.'),
-(43, 'patient', '2015Quinitip', '2015Tayab', 'n1004', '2015-03-21', 'A patient has requested an appointment.'),
-(44, 'patient', '2015Quinitip', '2015Tayab', 'n1004', '2015-03-21', 'A patient has requested an appointment.'),
-(45, 'patient', '2015Quinitip', '2015Tayab', 'n1002', '2015-03-21', 'A patient has rescheduled his appointment to you.'),
-(46, 'patient', '2015Quinitip', '2015Tayab', 'n1004', '2015-03-21', 'A patient has cancelled his appointment.');
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `notif_legend`
+-- Table structure for table `notification_legend`
 --
 
-CREATE TABLE IF NOT EXISTS `notif_legend` (
-  `notif_id` varchar(10) NOT NULL,
-  `color` enum('red','orange','green','blue') NOT NULL,
+CREATE TABLE IF NOT EXISTS `notification_legend` (
+  `legend_id` varchar(100) NOT NULL,
+  `color` text NOT NULL,
   `explanation` text NOT NULL,
-  PRIMARY KEY (`notif_id`)
+  PRIMARY KEY (`legend_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `notif_legend`
+-- Dumping data for table `notification_legend`
 --
 
-INSERT INTO `notif_legend` (`notif_id`, `color`, `explanation`) VALUES
-('n1001', 'red', 'warning'),
-('n1002', 'orange', 'semi-warning'),
-('n1003', 'green', 'completed'),
-('n1004', 'blue', 'information');
+INSERT INTO `notification_legend` (`legend_id`, `color`, `explanation`) VALUES
+('n1001', 'red', ''),
+('n1002', 'orange', ''),
+('n1003', 'green', ''),
+('n1004', 'blue', '');
 
 -- --------------------------------------------------------
 
@@ -396,6 +372,20 @@ CREATE TABLE IF NOT EXISTS `queue_number` (
   KEY `queue_id` (`queue_id`,`appointmed_id`),
   KEY `doctor_id` (`doctor_id`,`patient_id`),
   KEY `patient_id` (`patient_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `referrals`
+--
+
+CREATE TABLE IF NOT EXISTS `referrals` (
+  `referring_id` varchar(30) NOT NULL,
+  `specialization` text NOT NULL,
+  `patient_id` varchar(30) NOT NULL,
+  `doctor_id` varchar(30) NOT NULL,
+  KEY `referring_id` (`referring_id`,`patient_id`,`doctor_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -469,16 +459,9 @@ INSERT INTO `subscribe` (`doctor_id`, `patient_id`) VALUES
 -- Constraints for table `appointment`
 --
 ALTER TABLE `appointment`
-  ADD CONSTRAINT `appointment_ibfk_3` FOREIGN KEY (`clinic_id`) REFERENCES `clinic` (`clinic_id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `appointment_ibfk_3` FOREIGN KEY (`clinic_id`) REFERENCES `clinic` (`clinic_id`),
   ADD CONSTRAINT `appointment_ibfk_4` FOREIGN KEY (`doctor_id`) REFERENCES `doctor` (`doctor_id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `appointment_ibfk_5` FOREIGN KEY (`patient_id`) REFERENCES `patient` (`patient_id`) ON UPDATE CASCADE;
-
---
--- Constraints for table `appointment_history`
---
-ALTER TABLE `appointment_history`
-  ADD CONSTRAINT `appointment_history_ibfk_3` FOREIGN KEY (`doctor_id`) REFERENCES `doctor` (`doctor_id`),
-  ADD CONSTRAINT `appointment_history_ibfk_4` FOREIGN KEY (`patient_id`) REFERENCES `patient` (`patient_id`);
 
 --
 -- Constraints for table `patient`
