@@ -117,9 +117,9 @@
                             <div class="input-group">
                                 <?php 
                                 ?>
-                                <input type="text" class="form-control" name="name" placeholder="Name" required="" value="<?php echo $patient_n?>"/>
-                                <input type="text" class="form-control" name="contact" placeholder="Contact Number" required="" value="<?php echo $row['patient_contact']?>" />
-                                <input type="text" class="form-control" name="occupation" placeholder="Occupation" required="" value="<?php echo $row['occupation']?>" />
+                                <input type="text" class="" name="name" placeholder="Name" required="" value="<?php echo $patient_n?>"/>
+                                <input type="text" class="" name="contact" placeholder="Contact Number" required="" value="<?php echo $row['patient_contact']?>" />
+                                <input type="text" class="" name="occupation" placeholder="Occupation" required="" value="<?php echo $row['occupation']?>" />
                                 <input type="hidden" value="<?php echo $patient_id ?>" name="patient_id">
                                 <input class="btn btn-default login-btn btn-noborder" type="submit" value="Submit" name="submit"/>
                             </div>
