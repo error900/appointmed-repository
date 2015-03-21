@@ -44,8 +44,8 @@
         $title = "Appointments";
         include 'include/head.php';
         include 'connectdatabase.php';
-        //include 'include/scripts.php';
-        //include 'include/scrolltop.php';
+        include 'include/scripts.php';
+        include 'include/scrolltop.php';
     ?>
     
      <script type="text/javascript">
@@ -136,8 +136,7 @@
 
         <?php 
             include 'include/edit-modal.php';
-            include 'include/scripts.php';
-            include 'include/scrolltop.php';
+   
         ?>  
 
         <script type="text/javascript" src="js/search.js"></script>

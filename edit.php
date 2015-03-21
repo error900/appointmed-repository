@@ -46,6 +46,8 @@
         $title = "Edit Appointment";
         include 'include/head.php';
         include 'connectdatabase.php';
+        include 'include/scripts.php';
+        include 'include/scrolltop.php';
     ?>
 
   <body>
@@ -115,10 +117,7 @@
                 </div>
             </div>
         </div>
-        <?php
-            include 'include/scripts.php';
-            include 'include/scrolltop.php';
-        ?>
+
         <script type="text/javascript" src="js/search.js"></script>
         <script type="text/javascript" src="js/scrolltop.js"></script>
     </div> <!-- /container -->
