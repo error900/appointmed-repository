@@ -146,7 +146,7 @@
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-7 company-profile">
-                    <h2 class="row-header2">Company Profile</h2>
+                    <h2>Company Profile</h2>
                     <p>BenguetCorp Laboratories Inc. Is a wholly owned subsidiary of publicly listed company Benguet Corporation. Benguet Corporation has more than a 100 year old history and tradition in the mining industry and is considered the industry leader. It has since branched into non-mining concerns, foremost of which is its foray into the healthcare industry.</p>
                     <p>BenguetCorp Laboratories Inc. Operates a chain of outpatient medical and health facilities under the trade name Med Central. Med Central has three operating healthcare clinics: SM Baguio, Centermall Baguio and SM San Fernando, Pampanga.</p>
                     <p class="text-right more-btn">

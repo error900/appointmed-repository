@@ -246,7 +246,7 @@ nav > div > div > ul > li > a:hover {
 
 .appointment-date {
 	margin: 0;
-	font-size: 16px !important;
+	font-size: 18px !important;
 	font-weight: 600 !important;
 }
 
@@ -263,28 +263,18 @@ nav > div > div > ul > li > a:hover {
 	text-transform: lowercase;
 }
 
-.row-header,
-.row-header2 {
-	margin: 25px 0px;
-	text-transform: uppercase;
-	font-size: 20px;
-}
-
+.row-header2,
+.row-header2,
 .row-header-lc,
-.row-header-fff,
-.row-header2-fff {
-	margin: 25px 0px;
-	font-size: 18px;
+.row-header-fff {
+	font-family: 'Lato', sans-serif;
+	margin: 30px 0 35px 0;
+	font-size: 24px;
 	text-transform: uppercase;
 }
 
 .row-header2 {
-	text-transform: none;
-}
-
-.row-header2-fff {
-	color: #ECF0F1;
-	text-transform: none;
+	color: #95A5A6;
 }
 
 .row-header-lc {
@@ -296,7 +286,7 @@ nav > div > div > ul > li > a:hover {
 	font-size: 18px;
 }
 
-.date-header {
+.notif-h {
 	padding-left: 20px;
 	color: #ECF0F1;
 	font-size: 18px;
@@ -338,15 +328,6 @@ nav > div > div > ul > li > a:hover {
 	transition: 0.4s;
 }
 
-.panel-heading span {
-	padding-left: 20px;
-	position: absolute;
-	left: 10px;
-}
-
-.panel-heading span:last-child {
-
-}
 .x-btn {
 	top: 4px !important;
 }
@@ -378,8 +359,8 @@ nav > div > div > ul > li > a:hover {
 }
 
 .panel-notif > .panel-body {
-	padding: 10px 15px;
-	font-size: 14px;
+	padding: 10px 20px;
+	font-size: 16px;
 }
 
 .panel-notif.panel-success {
@@ -770,7 +751,7 @@ nav > div > div > ul > li > a:hover {
 .login-link {
 	display: block;
 	margin-top: 15px;
-	font-size: 12px;
+	font-size: 16px;
 	color: #7F8C8D !important;
 	text-align: center;
 }
@@ -971,7 +952,7 @@ nav > div > div > ul > li > a:hover {
 
 .p-info ul li:hover,
 .d-info ul li:hover {
-	color: #1ABC9C;
+	background: #34495E;
 }
 
 .d-info span {
