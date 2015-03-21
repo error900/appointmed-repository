@@ -68,6 +68,10 @@
             $p_result = mysqli_query($con, "SELECT * FROM appointment WHERE patient_id LIKE '$patient_id'" ) or die(mysqli_error());
             $p_row =  mysqli_fetch_array($p_result);
             $n_result = mysqli_query($con, "SELECT * FROM notification WHERE patient_id LIKE '$patient_id'" ) or die(mysqli_error());
+        
+            $count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE patient_id LIKE '$patient_id' AND indicator = 'doctor'" );
+            $count_row = mysqli_fetch_array($count_result);
+            $notif_count =  $count_row['count'];
         ?>
         <!-- navigation -->
         <?php 
@@ -83,7 +87,7 @@
                                 <li><a href="appointment_month.php">This Month</a></li>
                             </ul>
                         </li>
-                        <li><a href="notifications.php">Notifications <span class="badge">22</span></a></li>
+                        <li><a href="notifications.php">Notifications <span class="badge"><?php echo $notif_count?></span></a></li>
                         <li><a href="history.php">History</a></li>
         <?php 
             include 'include/pt-nav-end.php';
@@ -113,9 +117,10 @@
                             <div class="input-group">
                                 <?php 
                                 ?>
-                                <input type="text" class="form-control" name="lastname" placeholder="Last Name" required="" value="<?php echo $patient_n?>"/>
+                                <input type="text" class="form-control" name="name" placeholder="Name" required="" value="<?php echo $patient_n?>"/>
                                 <input type="text" class="form-control" name="contact" placeholder="Contact Number" required="" value="<?php echo $row['patient_contact']?>" />
                                 <input type="text" class="form-control" name="occupation" placeholder="Occupation" required="" value="<?php echo $row['occupation']?>" />
+                                <input type="hidden" value="<?php echo $patient_id ?>" name="patient_id">
                                 <input class="btn btn-default login-btn btn-noborder" type="submit" value="Submit" name="submit"/>
                             </div>
                         </form>

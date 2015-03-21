@@ -68,6 +68,10 @@
             $p_result = mysqli_query($con, "SELECT * FROM appointment WHERE patient_id LIKE '$patient_id'" ) or die(mysqli_error());
             $p_row =  mysqli_fetch_array($p_result);
             $n_result = mysqli_query($con, "SELECT * FROM notification WHERE patient_id LIKE '$patient_id'" ) or die(mysqli_error());
+        
+            $count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE patient_id LIKE '$patient_id' AND indicator = 'doctor'" );
+            $count_row = mysqli_fetch_array($count_result);
+            $notif_count =  $count_row['count'];
         ?>
         <!-- navigation -->
         <?php 
@@ -83,7 +87,7 @@
                                 <li><a href="appointment_month.php">This Month</a></li>
                             </ul>
                         </li>
-                        <li><a href="notifications.php">Notifications <span class="badge">22</span></a></li>
+                        <li><a href="notifications.php">Notifications <span class="badge"><?php echo $notif_count?></span></a></li>
                         <li><a href="history.php">History</a></li>
         <?php 
             include 'include/pt-nav-end.php';

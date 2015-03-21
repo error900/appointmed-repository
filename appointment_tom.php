@@ -79,6 +79,10 @@
             $patient = $row['patient_id'];
             $patient_n = $row['patient_name'];
             $p_result = mysqli_query($con, "SELECT * FROM appointment WHERE patient_id LIKE '$patient' AND (appointment_status = 'Inqueue' OR appointment_status = 'Referred') AND (appoint_date = '$tomorrow')" );
+       
+            $count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE patient_id LIKE '$patient' AND indicator = 'doctor'" );
+            $count_row = mysqli_fetch_array($count_result);
+            $notif_count =  $count_row['count'];
         ?>
         <!-- navigation -->
         <?php 
@@ -94,7 +98,7 @@
                                 <li><a href="appointment_month.php">This Month</a></li>
                             </ul>
                         </li>
-                        <li><a href="notifications.php">Notifications <span class="badge">22</span></a></li>
+                        <li><a href="notifications.php">Notifications <span class="badge"><?php echo $notif_count?></span></a></li>
                         <li><a href="history.php">History</a></li>
         <?php 
             include 'include/pt-nav-end.php';

@@ -72,7 +72,7 @@
             //$doc =  mysqli_fetch_array($d_result);
             $n_result = mysqli_query($con, "SELECT * FROM notification WHERE patient_id LIKE '$patient_id' ORDER BY 6 DESC" );
 
-            $count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE patient_id LIKE '$patient_id'" );
+            $count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE patient_id LIKE '$patient_id' AND indicator = 'doctor'" );
             $count_row = mysqli_fetch_array($count_result);
             $notif_count =  $count_row['count'];
         ?>
