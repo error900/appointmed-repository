@@ -55,7 +55,7 @@ if(isset($_POST['submit'])){
 		VALUES('$patientid','$username','$email', '$contact','$occupation','$birthdate','$patientname')";
 
 	$notif = "INSERT INTO notification (indicator, doctor_id, patient_id, legend_id, notification_date, notification) 
-	VALUES('$indicator','', '', '$n_id', '$date', '$message')";
+	VALUES('$indicator','$doc', '$pat', '$n_id', '$date', '$message')";
 	mysqli_query($con, $notif) or die (mysqli_error($con));
 
 
