@@ -126,7 +126,7 @@
         <div class="container-fluid patient-activity">
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">
-                    <h1 class="text-center row-header2">Recent Activity</h1>
+                    <h1 class="text-center row-header2-fff">Recent Activity</h1>
                 </div>
                 <?php
                 while ($n_row =  mysqli_fetch_array($n_result)){
@@ -144,7 +144,7 @@
                         if ($n_color['color'] == 'blue'){
                         echo '<div class="col-xs-12 col-md-8 col-md-offset-2">
                             <div class="panel panel-notif panel-info">
-                                <div class="panel-heading">'.$doc['doctor_name'].' '.$n_row['notification_date'].'
+                                <div class="panel-heading"><span>' . $doc['doctor_name'] . '</span>' . $n_row['notification_date'] . '
                                     <a href="#" title="cancel"><i class="fa fa-remove delete-btn x-btn"></i></a>
                                 </div>
                                 <div class="panel-body">
