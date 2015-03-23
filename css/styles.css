@@ -141,7 +141,8 @@ nav > div > div > ul > li > a:hover {
 }
 
 .navbar-nav i {
-	padding-right: 6px;
+	padding-right: 6px !important;
+	font-size: 13px;
 }
 
 .navbar-default{
@@ -213,11 +214,6 @@ nav > div > div > ul > li > a:hover {
 	border-left: 0;
 }
 
-button i {
-	padding-left: 6px;
-	padding-right: 0px !important;
-}
-
 .signedin {
 	margin-top: 5px;
 }
@@ -256,7 +252,6 @@ button i {
 .appointment-date {
 	margin: 0;
 	font-size: 16px !important;
-	font-weight: 600 !important;
 }
 
 .appointment-dr-name {
@@ -427,15 +422,16 @@ button i {
 }
 
 .appmnt-pnl-btn button {
+	margin: 0;
+	padding: 0;
 	width: 30%;
 	background: transparent;
 	text-transform: lowercase;
 	font-size: 16px;
-	margin: 0;
 }
 
 .appmnt-pnl-btn a {
-	margin: 5px;
+	color: #fff !important;
 	font-size: 14px;
 	text-transform: lowercase;
 	text-decoration: none;
@@ -452,7 +448,7 @@ button i {
 }
 
 .appmnt-pnl-btn i {
-	padding-right: 3px;
+	padding-left: 3px;
 }
 
 .panel-arrows {
@@ -519,7 +515,7 @@ button i {
 }
 
 .sched-panel {
-	border: 2px solid #ECF0F1;
+	border: 2px solid transparent;
 	background-color: rgba(236, 240, 241, 0.3);
 }
 
@@ -692,7 +688,8 @@ button i {
 }
 
 .login-modal-btn,
-.export-btn {
+.export-btn,
+.edit-profile-btn {
 	margin-top: 10px;
 	background: #16A085 !important;
 	color: #fff;
@@ -703,6 +700,8 @@ button i {
 
 .login-modal-btn:hover,
 .login-modal-btn:focus,
+.edit-profile-btn:hover,
+.edit-profile-btn:focus,
 .export-btn:hover,
 .export-btn:focus {
 	color: #fff !important;

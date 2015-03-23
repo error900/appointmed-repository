@@ -40,9 +40,6 @@
                         <ul class="nav navbar-nav">
                             <li class="active"><a href="#"><i class="fa fa-home"></i>Home</a></li>
                             <li><a href="companyprofile.php"><i class="fa fa-building"></i>Company Profile</a></li>
-                            <li class="dropdown">
-
-                            </li>
                             <li><a href="doctors.php"><i class="fa fa-users"></i>Doctors</a></li>
                             <li><a href="signup.php"><i class="fa fa-pencil-square-o"></i>Sign-up</a></li>
                         </ul>

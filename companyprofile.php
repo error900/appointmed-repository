@@ -36,13 +36,10 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li><a href="index.php">Home</a></li>
-                        <li class="active"><a href="companyprofile.php">About</a></li>
-                        <li class="dropdown">
-                          
-                        </li>
-                        <li><a href="doctors.php">Doctors</a></li>
-                        <li><a href="signup.php">Signup</a></li>
+                        <li><a href="index.php"><i class="fa fa-home"></i>Home</a></li>
+                        <li class="active"><a href="companyprofile.php"><i class="fa fa-building"></i>Company Profile</a></li>
+                        <li><a href="doctors.php"><i class="fa fa-users"></i>Doctors</a></li>
+                        <li><a href="signup.php"><i class="fa fa-pencil-square-o"></i>Sign-up</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right hidden-xs hidden-sm">
                         <button type="button" class="btn btn-default login-modal-btn btn-noborder" data-toggle="modal" data-target=".bs-example-modal-sm">Login</button>

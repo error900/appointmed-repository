@@ -132,8 +132,8 @@
 
                  echo'  <div class="appmnt-pnl-btn">
                         <a href="#"><i class="fa fa-comment"></i> Remarks</a>
-                        <button type="button" class="btn btn-block btn-inverse appo byn-noborder" data-toggle="modal" data-target=".bs-example-modal-sm" data-id="'.$appointment_id.'" data-patient-id="'.$patient.'">
-                        <i class="fa fa-mail-forward"></i>Refer</button>
+                        <button type="button" class="btn btn-default btn-inverse appo btn-noborder" data-toggle="modal" data-target=".bs-example-modal-sm" data-id="'.$appointment_id.'" data-patient-id="'.$patient.'">
+                        Refer<i class="fa fa-hand-o-right"></i></button>
                     </div>
                  </div>
                </div>';
