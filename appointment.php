@@ -102,6 +102,10 @@
                         </li>
                         <li><a href="notifications.php">Notifications <span class="badge"><?php echo $notif_count?></span></a></li>
                         <li><a href="history.php">History</a></li>
+                        <li class="nav-button">
+                            <button type="button" class="btn btn-block btn-default btn-noborder" data-toggle="modal" data-target=".bs-edit-profile-modal-sm" data-id="'.$appointment_id.'" data-patient-id="'.$patient.'">
+                            <i class="fa fa-edit"></i>Edit Profile</button>
+                        </li>
         <?php 
             include 'include/pt-nav-end.php';
         ?>     
@@ -136,6 +140,7 @@
 
         <?php 
             include 'include/edit-modal.php';
+            include 'include/edit-profile-modal.php';
    
         ?>  
 

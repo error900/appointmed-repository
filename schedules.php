@@ -1,14 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-
-
     <?php
         $title = "Schedules";
         include 'include/head.php';
         include 'connectdatabase.php';
-        include 'include/scripts.php';
-        include 'include/scrolltop.php';
     ?>
     <script type="text/javascript">
      $(document).ready(function(){
@@ -58,7 +53,7 @@
                     <li><a href="completed.php">Completed</a></li>
                     <li><a href="removed.php">Removed</a></li>
                     <li><a href="referred.php">Referred</a></li>
-                    <li class="export-schedules">
+                    <li class="nav-button">
                         <form action="export.php" method="post">
                             <input type="hidden" name="doctor_id" value="<?php echo $doctor_id?>">
                             <input type="submit" class="btn btn-default export-btn btn-noborder" value="Export Todays Schedule" name="submit">
@@ -149,7 +144,10 @@
         </div>
     </div>
     <?php 
+        include 'include/scrolltop.php';
         include 'include/refer-modal.php';
+        include 'include/scripts.php';
+
     ?>
         <script type="text/javascript" src="js/search.js"></script>
         <script type="text/javascript" src="js/scrolltop.js"></script>
