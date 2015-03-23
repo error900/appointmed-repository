@@ -55,7 +55,7 @@
                 <div class="col-xs-12 col-md-12">
                     <h1 class="text-center row-header">Company Profile</h1>
                 </div>
-                <div class="col-xs-12 col-md-7 company-profile">
+                <div class="col-xs-12 col-md-8 company-profile">
                     <p><span>BenguetCorp Laboratories Inc.</span> Is a wholly owned subsidiary of publicly listed company Benguet Corporation. Benguet Corporation has more than a 100 year old history and tradition in the mining industry and is considered the industry leader. It has since branched into non-mining concerns, foremost of which is its foray into the healthcare industry.</p>
                     <p><span>BenguetCorp Laboratories Inc.</span> Operates a chain of outpatient medical and health facilities under the trade name Med Central. Med Central has three operating healthcare clinics: SM Baguio, Centermall Baguio and SM San Fernando, Pampanga.</p>
                     <p>Med Central’s branch in SM San Ferndo Pampanga is strategically located on the 2nd floor across the food court area. Two other branches in SM City Baguio and Centermall Baguio have been operational under the name Benguet Laboratories and has been the leading provider of medical services in the area.</p>
@@ -65,7 +65,7 @@
                     <p><span>1. The MedCentral Oncology Center</span> – dedicated to providing cancer patients and their families with medical consultations, outpatient treatment and wellness & counseling programs.</p>
                     <p>BCLI’s head office is located at the heart of the commercial business district of Makati with address at the 6th Floor of Universal- Re Building, 106 Paseo De Roxas Avenue corner Perea Street, Makati City. For inquiries, you may contact us at: Tel Nos: 8121380 loc. 241 and 7520717.</p>
                 </div>
-                <div class="col-xs-12 col-md-5 company-profile-img">
+                <div class="col-xs-12 col-md-4 company-profile-img">
                     <img src="img/lab.jpg" class="img-responsive" alt="Responsive image">
                 </div>
             </div>
