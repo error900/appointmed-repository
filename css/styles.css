@@ -142,6 +142,7 @@ nav > div > div > ul > li > a:hover {
 
 .navbar-nav i {
 	padding-right: 6px !important;
+	padding-left: 6px;
 	font-size: 13px;
 }
 

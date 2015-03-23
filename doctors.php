@@ -54,16 +54,15 @@
                     <h1 class="text-center row-header">Doctors List</h1>
                 </div>
             </div>
+            <?php 
+                $result = mysqli_query($con, "SELECT * FROM doctor ORDER BY specialization" );
+                while($d_row =  mysqli_fetch_array($result)){
+                    $doctor_id = $d_row['doctor_id'];
+                    $doctor_name = $d_row['doctor_name'];
+                    $specialization = $d_row['specialization'];
+            ?>  
             <div class="row"> 
                 <div class="doctors-full-list">
-              
-                    <?php 
-                        $result = mysqli_query($con, "SELECT * FROM doctor ORDER BY specialization" );
-                        while($d_row =  mysqli_fetch_array($result)){
-                            $doctor_id = $d_row['doctor_id'];
-                            $doctor_name = $d_row['doctor_name'];
-                            $specialization = $d_row['specialization'];
-                    ?>   
                     <div class="col-xs-12 col-md-12">
                         <h2 class="specialization-header"><?php echo $specialization?></h2>
                     </div>
@@ -82,9 +81,9 @@
                         <ul>
                             <li><span><?php echo $doctor_name?></span></li>
                     </div>
-                   <?php } ?>
                     </div>
                 </div>
+                   <?php } ?>
 
 
         <?php
