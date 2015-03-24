@@ -76,11 +76,11 @@
             }
             $result = mysqli_query($con, "SELECT * FROM patient WHERE username LIKE '$username'" );
             $row =  mysqli_fetch_array($result);
-            $patient = $row['patient_id'];
+            $patient_id = $row['patient_id'];
             $patient_n = $row['patient_name'];
-            $p_result = mysqli_query($con, "SELECT * FROM appointment WHERE patient_id LIKE '$patient' AND (appointment_status = 'Inqueue' OR appointment_status = 'Referred') AND (appoint_date = '$tomorrow')" );
+            $p_result = mysqli_query($con, "SELECT * FROM appointment WHERE patient_id LIKE '$patient_id' AND (appointment_status = 'Inqueue' OR appointment_status = 'Referred') AND (appoint_date = '$tomorrow')" );
        
-            $count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE patient_id LIKE '$patient' AND indicator = 'doctor'" );
+            $count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE patient_id LIKE '$patient_id' AND indicator = 'doctor'" );
             $count_row = mysqli_fetch_array($count_result);
             $notif_count =  $count_row['count'];
         ?>
@@ -100,6 +100,10 @@
                         </li>
                         <li><a href="notifications.php">Notifications <span class="badge"><?php echo $notif_count?></span></a></li>
                         <li><a href="history.php">History</a></li>
+                         <li class="nav-button navbar-right">
+                            <button type="button" class="btn btn-default btn-noborder edit-profile-btn" data-toggle="modal" data-target=".bs-pt-edit-profile-modal-lg" data-id="'.$appointment_id.'" data-patient-id="'.$patient_id.'">
+                            <i class="fa fa-pencil"></i>Edit Profile</button>
+                        </li>
         <?php 
             include 'include/pt-nav-end.php';
         ?>     
@@ -120,7 +124,7 @@
                     echo '<div class="col-xs-12 col-md-6 col-lg-3" id="'.$d_row['appointment_id'].'">';
                     echo "<div class='panel panel-default' id='asd'><div class='panel-heading appointment-date' >";
                             echo $date;
-                            echo "<a href=\"close.php?id=$d_row[appointment_id]&doc=$doctor&pat=$patient\" onclick='return confirm(\"Do you want to cancel this appointment?\")' title=\"Cancel\"><i class=\"fa fa-remove fa-lg delete-btn\"></i></a></div>
+                            echo "<a href=\"close.php?id=$d_row[appointment_id]&doc=$doctor&pat=$patient_id\" onclick='return confirm(\"Do you want to cancel this appointment?\")' title=\"Cancel\"><i class=\"fa fa-remove fa-lg delete-btn\"></i></a></div>
                             <div class=\"panel-body\">";
                             echo '<p class="appointment-dr-name">Dr. ' . $doc['doctor_name'] . '</p>';
                             echo "</div><div class='appmnt-pnl-btn'>
@@ -134,6 +138,7 @@
 
         <?php 
             include 'include/edit-modal.php';
+            include 'include/edit-profile-modal.php';
         ?>  
 
         <script type="text/javascript" src="js/search.js"></script>

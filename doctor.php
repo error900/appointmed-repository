@@ -48,6 +48,7 @@
         include 'include/datepicker.php';
         include 'include/scrolltop.php';
         include 'include/scripts.php';
+
     ?>
          <script type="text/javascript">
              $(document).ready(function(){
@@ -80,9 +81,9 @@
             $doctor_id= mysqli_real_escape_string($con, $_GET['id']);
             //patient
             $result = mysqli_query($con, "SELECT * FROM patient WHERE username LIKE '$username'" );
-            $p_row =  mysqli_fetch_array($result);
-            $patient = $p_row['patient_id'];
-            $patient_n = $p_row['patient_name'];
+            $row =  mysqli_fetch_array($result);
+            $patient_id = $row['patient_id'];
+            $patient_n = $row['patient_name'];
 
             //clinic
             $c_result = mysqli_query($con, "SELECT * FROM clinic WHERE doctor_id LIKE '$doctor_id'");
@@ -97,7 +98,7 @@
             $email = $d_row['email'];
             $specialization = $d_row['specialization'];
 
-            $count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE patient_id LIKE '$patient' AND indicator = 'doctor'" );
+            $count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE patient_id LIKE '$patient_id' AND indicator = 'doctor'" );
             $count_row = mysqli_fetch_array($count_result);
             $notif_count =  $count_row['count'];
         ?>
@@ -117,6 +118,10 @@
                         </li>
                         <li><a href="notifications.php">Notifications <span class="badge"><?php echo $notif_count?></span></a></li>
                         <li><a href="history.php">History</a></li>
+                        <li class="nav-button navbar-right">
+                            <button type="button" class="btn btn-default btn-noborder edit-profile-btn" data-toggle="modal" data-target=".bs-pt-edit-profile-modal-lg" data-id="'.$appointment_id.'" data-patient-id="'.$patient_id.'">
+                            <i class="fa fa-pencil"></i>Edit Profile</button>
+                        </li>
         <?php 
             include 'include/pt-nav-end.php';
         ?>     
@@ -149,19 +154,19 @@
                             <li class="doc-status">The Doctor is: <span><?php echo($d_row['doctor_status']);?></span></li>
                             <li class="email"><?php echo $d_row['email']; ?></li>
                         </ul>
-                        <?php $sql = mysqli_query($con, "SELECT * FROM subscribe WHERE patient_id LIKE '$patient' AND doctor_id LIKE '$doctor_id'") or die(mysqli_error());
+                        <?php $sql = mysqli_query($con, "SELECT * FROM subscribe WHERE patient_id LIKE '$patient_id' AND doctor_id LIKE '$doctor_id'") or die(mysqli_error());
                                      
                        
                         if(mysqli_num_rows($sql) ==0){
                             echo '<form action="subscribe.php" method="post" class="subs">';
                             echo  '<input type="hidden" name="doctor" value="'.$d_row["doctor_id"].'">
-                            <input type="hidden" name="patient" value="'.$p_row["patient_id"].'">';
+                            <input type="hidden" name="patient" value="'.$row["patient_id"].'">';
                             echo  '<input type="submit" class="btn btn-default subscribe-btn btn-noborder" name="subs" value="Subscribe">';
                             echo '</form> '; 
                         }else{
                             echo '<form action="unsubscribe.php" method="post" class="subs">';
                             echo  '<input type="hidden" name="doctor" value="'.$d_row["doctor_id"].'">
-                            <input type="hidden" name="patient" value="'.$p_row["patient_id"].'">';
+                            <input type="hidden" name="patient" value="'.$row["patient_id"].'">';
                             echo '<input type="submit" class="btn btn-default subscribe-btn btn-noborder" name="unsubs" value="Unsubscribe">';
                             echo '</form> '; 
                             }     
@@ -224,5 +229,8 @@
         </div>
 
     </div>
+    <?php 
+            include 'include/edit-profile-modal.php';
+    ?>
   </body>
 </html>

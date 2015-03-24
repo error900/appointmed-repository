@@ -75,10 +75,10 @@
             }
             $result = mysqli_query($con, "SELECT * FROM patient WHERE username LIKE '$username'" );
             $row =  mysqli_fetch_array($result);
-            $patient = $row['patient_id'];
+            $patient_id = $row['patient_id'];
             $patient_n = $row['patient_name'];
 
-            $count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE patient_id LIKE '$patient' AND indicator = 'doctor'" );
+            $count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE patient_id LIKE '$patient_id' AND indicator = 'doctor'" );
             $count_row = mysqli_fetch_array($count_result);
             $notif_count =  $count_row['count'];
   //          $p_result = mysqli_query($con, "SELECT * FROM appointment WHERE patient_id LIKE '$patient' AND (appointment_status = 'Inqueue' OR appointment_status = 'Referred') AND (appoint_date = '$date_today')" );
@@ -99,8 +99,8 @@
                         </li>
                         <li><a href="notifications.php">Notifications <span class="badge"><?php echo $notif_count?></span></a></li>
                         <li class="dropdown active"><a href="history.php">History</a></li>
-                        <li class="nav-button navbar-right">
-                            <button type="button" class="btn btn-default btn-noborder edit-profile-btn" data-toggle="modal" data-target=".bs-edit-profile-modal-lg" data-id="'.$appointment_id.'" data-patient-id="'.$patient_id.'">
+                          <li class="nav-button navbar-right">
+                            <button type="button" class="btn btn-default btn-noborder edit-profile-btn" data-toggle="modal" data-target=".bs-pt-edit-profile-modal-lg" data-id="'.$appointment_id.'" data-patient-id="'.$patient_id.'">
                             <i class="fa fa-pencil"></i>Edit Profile</button>
                         </li>
         <?php 
@@ -111,6 +111,8 @@
          <?php 
             include 'include/scripts.php';
             include 'include/scrolltop.php';
+            include 'include/edit-profile-modal.php';
+
         ?>  
 
         <script type="text/javascript" src="js/search.js"></script>

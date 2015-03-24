@@ -89,6 +89,10 @@
                         </li>
                         <li><a href="notifications.php">Notifications <span class="badge"><?php echo $notif_count?></span></a></li>
                         <li><a href="history.php">History</a></li>
+                        <li class="nav-button navbar-right">
+                            <button type="button" class="btn btn-default btn-noborder edit-profile-btn" data-toggle="modal" data-target=".bs-pt-edit-profile-modal-lg" data-id="'.$appointment_id.'" data-patient-id="'.$patient_id.'">
+                            <i class="fa fa-pencil"></i>Edit Profile</button>
+                        </li>
         <?php 
             include 'include/pt-nav-end.php';
         ?>     
@@ -162,6 +166,7 @@
 
         <?php
             include 'include/scripts.php';
+            include 'include/edit-profile-modal.php';
         ?>
         <script type="text/javascript" src="js/search.js"></script>
     </div>
