@@ -15,9 +15,7 @@
             border-bottom-left-radius: 6px;
             -moz-border-bottom-right-radius: 6px;
             -moz-border-bottom-left-radius: 6px;
-            box-shadow: 0px 0px 5px #999;
             border-width: 3px 1px 1px;
-            border-style: solid;
             border-color: #333 #DEDEDE #DEDEDE;
             background-color: white;
         }
