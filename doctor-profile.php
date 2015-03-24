@@ -153,10 +153,10 @@
               
                         $count++;
                         echo '<div class="col-xs-12 col-md-3">';
-                        echo '<div class="clinic-box">';
+                        echo '<div class="clinic-box dc-profile-sched-panel">';
                         echo '<h2>' . $c_row['clinic_name'] . '<span>' .$count. '</span></h2>';
-                        echo '<p>'. $c_row['clinic_location']. '</p>' ;
-                        echo '<p>'. $c_row['clinic_contact'] .'</p>';
+                        echo '<p><i class="fa fa-location-arrow"></i>'. $c_row['clinic_location']. '</p>' ;
+                        echo '<p><i class="fa fa-phone"></i>'. $c_row['clinic_contact'] .'</p>';
                                                echo '</div>';
                         echo '</div>';
                         $clinic = $c_row['clinic_id'];
