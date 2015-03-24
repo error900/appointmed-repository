@@ -78,7 +78,7 @@
 	<div class="col-sm-9 col-sm-offset-3 col-md-4 col-md-offset-2 main">
 	<h1 class="page-header">Export</h1>
 	<form method="post" action="export_to_file.php">
-		<input type="submit" name="export" value="Export Users List">
+		<input type="submit" class="btn btn-default export-btn btn-noborder" name="export" value="Export Users List">
 	</form>
 </body>
 </html>

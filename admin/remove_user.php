@@ -83,7 +83,7 @@
 		</div>
 	</div>
 	</div>
-	<div class="col-sm-9 col-sm-offset-3 col-md-4 col-md-offset-2 main">
+	<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 		<h1 class="page-header">Remove User(s)</h1>
 			<table class="table table-striped">
 			  <thead>
@@ -112,7 +112,7 @@
 					echo '</tr>';
 				}
 			?>
-			<input type="submit" name="submit" value="Set as Inactive">
+			<input type="submit" class="btn btn-default export-btn btn-noborder" name="submit" value="Set as Inactive">
 		</form>
 	</table>
 	</div>

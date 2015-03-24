@@ -81,7 +81,7 @@
                         <h1 class="text-center row-header">Your Notifications</h1>
                     </div>
                     <div class="col-md-12">
-                        <h2 class="text-left notif-h">Today</h2>
+                        <h2 class="text-left date-header-000">Today</h2>
                     </div>
                     <?php
                     while ($n_row =  mysqli_fetch_array($n_result)){

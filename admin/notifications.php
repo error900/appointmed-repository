@@ -71,9 +71,10 @@
 	</div>
 	<div class="container-fluid" id="notification">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-9 col-md-offset-2">
                 <h1 class="text-center row-header">Your Notifications</h1>
             </div>
+            <div class="col-md-9 col-md-offset-2">
                 <?php
                     while ($n_row =  mysqli_fetch_array($n_result)){
                         if($n_row['indicator'] == 'admin'){
@@ -86,7 +87,7 @@
                             echo '<div class="col-xs-12 col-md-8 col-md-offset-2">
                                 <div class="panel panel-notif panel-danger">
                                     <div class="panel-heading">'.$n_row['notification_date'].'
-                                        <a href="#" title="cancel"><i class="fa fa-remove delete-btn"></i></a>
+                                        <a href="#" title="cancel"><i class="fa fa-remove delete-btn x-btn"></i></a>
                                     </div>
                                     <div class="panel-body">
                                         '.$n_row['notification'].'
@@ -97,7 +98,7 @@
                             echo '<div class="col-xs-12 col-md-8 col-md-offset-2">
                                 <div class="panel panel-notif panel-warning">
                                     <div class="panel-heading">'.$n_row['notification_date'].'
-                                        <a href="#" title="cancel"><i class="fa fa-remove delete-btn"></i></a>
+                                        <a href="#" title="cancel"><i class="fa fa-remove delete-btn x-btn"></i></a>
                                     </div>
                                     <div class="panel-body">
                                         '.$n_row['notification'].'
@@ -108,7 +109,7 @@
                             echo '<div class="col-xs-12 col-md-8 col-md-offset-2">
                                 <div class="panel panel-notif panel-success">
                                     <div class="panel-heading">'.$n_row['notification_date'].'
-                                        <a href="#" title="cancel"><i class="fa fa-remove delete-btn"></i></a>
+                                        <a href="#" title="cancel"><i class="fa fa-remove delete-btn x-btn"></i></a>
                                     </div>
                                     <div class="panel-body">
                                         '.$n_row['notification'].'
@@ -119,7 +120,7 @@
                             echo '<div class="col-xs-12 col-md-8 col-md-offset-2">
                                 <div class="panel panel-notif panel-info">
                                     <div class="panel-heading">'.$n_row['notification_date'].'
-                                        <a href="#" title="cancel"><i class="fa fa-remove delete-btn"></i></a>
+                                        <a href="#" title="cancel"><i class="fa fa-remove delete-btn xbtn"></i></a>
                                     </div>
                                     <div class="panel-body">
                                         '.$n_row['notification'].'

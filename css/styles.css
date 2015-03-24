@@ -319,10 +319,15 @@ nav > div > div > ul > li > a:hover {
 	text-transform: none;
 }
 
-.date-header {
+.date-header,
+.date-header-000 {
 	padding-left: 20px;
 	color: #ECF0F1;
 	font-size: 18px;
+}
+
+.date-header-000 {
+	color: #34495E;
 }
 
 .panel-default {
