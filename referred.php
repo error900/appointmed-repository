@@ -76,9 +76,6 @@
                 echo '<p>' . $c_row['clinic_location'] . '</p>';
     
                 echo '</div>
-                    <div class="appmnt-pnl-btn">
-                        <a href="#"><i class="fa fa-comment"></i> Remarks</a>
-                    </div>
                  </div>
                </div>';
             }

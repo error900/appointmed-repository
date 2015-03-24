@@ -11,14 +11,15 @@
                         <div class="col-xs-12 col-md-4 upload-photo">
                             <form method="post" action="edit_data.php" enctype="multipart/form-data">
                                 <div class="input-group">
-                                    <img src="img/profile/<?php 
+                                    <div>
+                                        <img src="img/profile/<?php 
                                             $file = "img/profile/".$patient_id.".jpg";
                                             if(file_exists($file)){
                                                 echo $patient_id;
                                             }else{
                                                 echo 'profile_patient';
                                             } ?>.jpg" class="img-responsive">
-                                        
+                                    </div>
                                     <input type="file" class="file-upload" name="profile_pic">
                                     <input type="hidden" value="<?php echo $patient_id?>" name="patient_id">
                                     <input type="submit" class="btn btn-default upload-btn btn-noborder" class="btn btn-default login-btn btn-noborder"  value="Save" name="submit">
@@ -26,7 +27,7 @@
                             </form>
                         </div>
                         <div class="col-xs-12 col-md-5 col-md-offset-2 profile-data-edit">
-                            <h1 class="text-center row-header">Edit Data</h1>
+                            <h1 class="text-center row-header3">Current Data</h1>
                             <form method='post' action="edit_this.php">
                                 <div class="input-group">
                                         <input type="text" class="form-control" name="name" placeholder="Name" required="" value="<?php echo $patient_n?>"/>
