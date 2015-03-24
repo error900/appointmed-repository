@@ -107,7 +107,7 @@
                             </p>
                         </div>
                         <p class="text-right more-btn">
-                            <a href="companyprofile.php" class="more-btn">show more <i class="fa fa-plus"></i></a>
+                            <a href="" class="more-btn">show more <i class="fa fa-plus"></i></a>
                         </p>
                     </div>
                 </div>
@@ -117,27 +117,27 @@
                     <div class="col-xs-12 col-md-12">
                         <h1 class="text-center row-header">About</h1>
                     </div>
-                    <div class="col-xs-6 col-md-3">
+                    <div class="col-xs-12 col-md-3">
                         <div class="about-icons text-center">
-                            <img src="img/startup.png" alt="">
+                            <img src="img/icons/calendar.png" alt="">
                             <p><span>Schedule Your Appointment</span> Schedule your appointments online from home or from where you are in the country.</p>
                         </div>
                     </div>
-                    <div class="col-xs-6 col-md-3">
+                    <div class="col-xs-12 col-md-3">
                         <div class="about-icons text-center">
-                            <img src="img/lab.png" alt="">
+                            <img src="img/icons/message.png" alt="">
                             <p><span>Get Notifications</span> Get notifications via text message. Get Updates from your clinic and your doctor via text message. </p>
                         </div>
                     </div>
-                    <div class="col-xs-6 col-md-3">
+                    <div class="col-xs-12 col-md-3">
                         <div class="about-icons text-center">
-                            <img src="img/responsive.png" alt="">
+                            <img src="img/icons/users.png" alt="">
                             <p><span>View Doctors</span> View available doctors. See if your doctor is available.</p>
                         </div>
                     </div>
-                    <div class="col-xs-6 col-md-3">
+                    <div class="col-xs-12 col-md-3">
                         <div class="about-icons text-center">
-                            <img src="img/website.png" alt="">
+                            <img src="img/icons/settings.png" alt="">
                             <p><span>Settings</span> Configure set up. Our Doctors can configure their settings at their convenience.</p>
                         </div>
                     </div>

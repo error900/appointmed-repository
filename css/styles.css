@@ -610,8 +610,18 @@ nav > div > div > ul > li > a:hover {
 	padding: 10px;
 }
 
-.signup-ad {
-	font-size: 16px;
+.signup-ad p {
+	margin-bottom: 20px;
+}
+
+.signup-ad span {
+	font-size: 14px;
+}
+
+.signup-ad img {
+	height: 64px;
+	width: 64px;
+	margin: 10px;
 }
 
 .signup-form input.form-control,
@@ -836,10 +846,7 @@ nav > div > div > ul > li > a:hover {
 }
 
 .company-profile {
-	padding: 20px 40px;
 	font-size: 14px;
-	-webkit-columns: 100px 2;
-	-moz-columns: 100px 2;
 }
 
 .company-profile span {
@@ -874,12 +881,14 @@ nav > div > div > ul > li > a:hover {
 .about-icons p {
 	padding: 10px 0;
 	font-size: 14px;
+	line-height: 22px;
 }
 
 .about-icons span {
 	display: block;
+	margin-bottom: 8px;
+	font-size: 16px;
 	font-weight: 600;
-	font-size: 18px;
 }
 
 .g-map {

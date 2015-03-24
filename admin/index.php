@@ -18,11 +18,11 @@
 
         }
     ?>
-  <body class="ecf0f1-bg">
+  <body class="e4e8e9-bg">
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-12 col-md-4 col-md-offset-4">
-                 <h1 class="text-center">Admin &amp; Doctor Login</h1>
+                 <h1 class="text-center row-header">Login</h1>
                 <div class="usr-login">
                     <div class="input-group">
                     <form method="post" action ="login.php">

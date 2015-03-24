@@ -44,7 +44,7 @@
                         <li class="active"><a href="signup.php"><i class="fa fa-pencil-square-o"></i>Sign-up</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right hidden-xs hidden-sm">
-                        <button type="button" class="btn btn-default login-modal-btn btn-noborder" data-toggle="modal" data-target=".bs-example-modal-sm">Login</button>
+                        <button type="button" class="btn btn-default login-modal-btn btn-noborder" data-toggle="modal" data-target=".bs-example-modal-sm">Login<i class="fa fa-sign-in"></i></button>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
@@ -54,9 +54,9 @@
                 <div class="col-xs-12 col-md-4 col-md-offset-1 hidden-sm hidden-xs">
                     <h1 class="text-center row-header-lc">Signup and create appointments online!</h1>
                     <div class="signup-ad">
-                        <p>Look for available clinics and doctors online</p>
-                        <p>Be the first on the list by creating appointments</p>
-                        <p>Get notifications from your doctor via text</p>
+                        <p><img src="img/icons/users.png" alt=""><span>Look for available clinics and doctors online</span></p>
+                        <p><img src="img/icons/schedule.png" alt=""><span>Be the first on the list by creating appointments</span></p>
+                        <p><img src="img/icons/message.png" alt=""><span>Get notifications from your doctor via text</span></p>
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-4 col-md-offset-1">
