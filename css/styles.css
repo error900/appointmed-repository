@@ -436,7 +436,8 @@ nav > div > div > ul > li > a:hover {
 	font-size: 16px;
 }
 
-.appmnt-pnl-btn a {
+.appmnt-pnl-btn a,
+.appmnt-pnl-btn button {
 	color: #fff !important;
 	font-size: 14px;
 	text-transform: lowercase;
@@ -444,6 +445,14 @@ nav > div > div > ul > li > a:hover {
 	width: 30%;
 	float: right;
 	z-index: 1;
+}
+
+.appmnt-pnl-btn button {
+	float: none;
+}
+
+.appmnt-pnl-btn button:last-child {
+	float: right !important;
 }
 
 .appmnt-pnl-btn a:hover,
