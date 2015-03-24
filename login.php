@@ -10,9 +10,9 @@ $account_type = '';
 $username = mysqli_real_escape_string($con, $username);
 $password = mysqli_real_escape_string($con, $password);
 
-//$password = hash('sha256', $password);
+$password = hash('sha256', $password);
 
-$result = mysqli_query($con,"SELECT * FROM account WHERE BINARY username = '$username' AND BINARY password = '$password' AND account_status = 'active'");
+$result = mysqli_query($con,"SELECT * FROM account WHERE BINARY username = '$username' AND  password = '$password' AND account_status = 'active'");
 $count=mysqli_num_rows($result);
 $row = mysqli_fetch_array($result);
 

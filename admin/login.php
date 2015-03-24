@@ -10,6 +10,7 @@
 	$username = stripslashes($username);
 	$password = stripslashes($password);
 
+//	$password = hash('sha256', $password);
 
 	$result = mysqli_query($con,"SELECT * FROM account WHERE BINARY username = '$username' AND BINARY password = '$password' ");
 	$count=mysqli_num_rows($result);
