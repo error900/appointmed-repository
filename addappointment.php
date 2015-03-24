@@ -33,7 +33,7 @@ if(isset($_POST['submit'])){
 		$notif = "INSERT INTO notification (indicator, doctor_id, patient_id, legend_id, notification_date, notification) 
 		VALUES('$indicator', '$doctor_id', '$patient_id', '$legend_id', '$date_today','$message')";
 
-		if (!(mysqli_query($con, $sql)) & !(mysqli_query($con, $notif)) ) {
+		if (!(mysqli_query($con, $sql)) && !(mysqli_query($con, $notif)) ) {
 		  	die('Error: ' . mysqli_error($con));
 		}
 		header("location: appointment.php");
