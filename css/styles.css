@@ -222,6 +222,7 @@ nav > div > div > ul > li > a:hover {
 .signedin button {
 	font-size: 16px;
 	margin-left: 10px;
+	float: none !important;
 }
 
 .signedin button i {
@@ -240,6 +241,18 @@ nav > div > div > ul > li > a:hover {
 	border-color: none !important;
 	box-shadow: none;
 }
+
+.signedin-photo {
+	float: left;
+	margin: 0 10px 0 0;
+}
+
+.signedin-photo img {
+	height: 24px;
+	border-radius: 50%;
+}
+
+
 
 .badge {
 	padding: 2px 7px;

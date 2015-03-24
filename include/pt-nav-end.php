@@ -12,7 +12,16 @@
                     <ul class="nav navbar-nav navbar-right">
                         <div class="btn-group navbar-right signedin">
                             <button type="button" class="btn btn-default btn-lg btn-noborder dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                <i class="fa fa-user"></i><?php echo $patient_n ?>
+                                <div class="signedin-photo">
+                                    <img src="img/profile/<?php 
+                                    $file = "img/profile/".$patient_id.".jpg";
+                                    if(file_exists($file)){
+                                        echo $patient_id;
+                                    }else{
+                                        echo 'profile_patient';
+                                    } ?>.jpg" class="img-responsive">
+                                </div>
+                                <?php echo $patient_n ?>
                                 <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu" role="menu">
