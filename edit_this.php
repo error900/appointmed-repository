@@ -10,10 +10,10 @@
 		if (!(mysqli_query($con, $update_sql))) {
 	  		die('Error: ' . mysqli_error($con));
 		}
-		header("location: editprofile.php");
+		header("location: patient.php");
 	}else{
 		echo "<script> alert('Error'); </script>";
-		echo "<script> location.replace('editprofile.php') </script>";
+		echo "<script> location.replace('patient.php') </script>";
 	}
 mysqli_close($con);
 

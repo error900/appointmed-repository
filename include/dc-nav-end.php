@@ -6,8 +6,8 @@
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Profile</a></li>
-                            <li><a href="#">Something else here</a></li>
+                            <li><a href="doctor-profile.php">Profile</a></li>
+                            <li><a href="changepassword.php">Change Password</a></li>
                             <li class="divider"></li>
                             <li><a href="admin/logout.php"><i class="fa fa-power-off"></i>logout</a></li>
                         </ul>
