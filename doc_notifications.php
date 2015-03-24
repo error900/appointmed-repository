@@ -53,9 +53,9 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Schedules <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="schedules.php">Today</a></li>
-                                <li><a href="#">Tomorrow</a></li>
-                                <li><a href="#">This Week</a></li>
-                                <li><a href="#">This Month</a></li>
+                                <li><a href="schedules_tom.php">Tomorrow</a></li>
+                                <li><a href="schedules_week.php">This Week</a></li>
+                                <li><a href="schedules_month.php">This Month</a></li>
                             </ul>
                         </li>
                         <li class="active"><a href="doc_notifications.php">Notifications <span class="badge"><?php echo $notif_count?></span></a></li>
