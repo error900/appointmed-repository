@@ -56,7 +56,7 @@
            });
      });
     </script>
-    <body class="background-pt">
+  <body>
     <div class="container">
         <?php 
             session_start();

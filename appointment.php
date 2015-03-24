@@ -44,8 +44,10 @@
     $title = "Appointments";
     include 'include/head.php';
     include 'connectdatabase.php';
+    //include 'include/scripts.php';
     include 'include/scripts.php';
     include 'include/scrolltop.php';
+    //include 'include/scrolltop.php';
     ?>
 
     <script type="text/javascript">
@@ -56,7 +58,7 @@
             });
         });
     </script>
-    <body class="background-pt">
+    <body>
         <div class="container">
             <?php
             session_start();
