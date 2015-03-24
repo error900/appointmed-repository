@@ -9,7 +9,7 @@
                 <div class="modal-body">
                     <div class="form-group">
                             <label for="inputDate">Choose Doctor: </label>
-                            <select name="referred_id" required>
+                            <select name="referred_id">
                                 <?php 
                                 while ($row2 = mysqli_fetch_array($sqls)){
                                 ?>
