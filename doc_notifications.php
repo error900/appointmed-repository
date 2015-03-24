@@ -65,7 +65,7 @@
                         <li class="export-schedules">
                             <form action="export.php" method="post">
                                 <input type="hidden" name="doctor_id" value="<?php echo $doctor_id?>">
-                                <input type="submit" class="btn btn-default export-btn btn-noborder" value="Export Todays Schedule" name="submit">
+                                <input type="submit" class="btn btn-default export-btn btn-noborder" value="Export" name="submit">
                             </form>
                         </li>
         <?php 

@@ -338,7 +338,7 @@ nav > div > div > ul > li > a:hover {
 .panel-heading .delete-btn {
 	color: #fff;
 	position: absolute;
-
+	top: 13px;
 	right: 30px;
 	font-size: 26px;
 }
@@ -443,6 +443,7 @@ nav > div > div > ul > li > a:hover {
 	text-decoration: none;
 	width: 30%;
 	float: right;
+	z-index: 1;
 }
 
 .appmnt-pnl-btn a:hover,
@@ -687,7 +688,7 @@ nav > div > div > ul > li > a:hover {
 	text-transform: uppercase;
 }
 
-.btn-default.login-tbn:hover,
+.btn-default.login-btn:hover,
 .btn-default.login-btn:focus {
 	color: #fff;
 	background-color: #E67E22;
@@ -956,7 +957,7 @@ nav > div > div > ul > li > a:hover {
 	padding-bottom: 20px;
 	color: #ECF0F1;
 	font-size: 14px;
-	border-bottom: 2px solid #34495E;
+	border-bottom: 2px solid #7F8C8D;
 }
 
 #doctor-info img,
@@ -965,7 +966,7 @@ nav > div > div > ul > li > a:hover {
 	height: 136px;
 	width: 136px;
 	margin: 0 auto;
-	border: 8px solid #16A085;
+	border: 10px solid #16A085;
 	border-radius: 50%;
 }
 
@@ -1005,6 +1006,10 @@ nav > div > div > ul > li > a:hover {
 	list-style: none;
 	text-transform: uppercase;
 	font-weight: 600;
+}
+
+.d-info .profile-info {
+	color: #34495E;
 }
 
 .p-info ul i,

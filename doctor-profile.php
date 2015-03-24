@@ -75,7 +75,7 @@
         $c_row = mysqli_fetch_array($c_result);
         $a_result = mysqli_query($con, "SELECT * FROM appointment WHERE doctor_id = '$doctor_id' AND (appointment_status = 'inqueue' OR appointment_status = 'Referred') ORDER BY appointment_id");
         $sqls = mysqli_query($con, "SELECT * FROM doctor WHERE specialization LIKE '$specialization' AND doctor_id <> '$doctor_id'" );
-?>
+    ?>
 <body class="e4e8e9-bg">
     <div class="container">        
     <?php 
@@ -98,7 +98,7 @@
                     <li class="nav-button">
                         <form action="export.php" method="post">
                             <input type="hidden" name="doctor_id" value="<?php echo $doctor_id?>">
-                            <input type="submit" class="btn btn-default export-btn btn-noborder" value="Export Todays Schedule" name="submit">
+                            <input type="submit" class="btn btn-default export-btn btn-noborder" value="Export" name="submit">
                         </form>
                     </li>
     <?php 
@@ -118,7 +118,7 @@
                 </div>
                 <div class="col-xs-12 col-md-4 col-md-offset-1">
                     <div class="d-info">
-                        <ul>
+                        <ul class="profile-info">
                             <li><i class="fa fa-user-md"></i>Dr. <?php echo strtoupper($d_row['doctor_name']); ?></li>
                             <li><i class="fa fa-medkit"></i><?php echo $d_row['specialization']; ?>y</li>
                             <br>
@@ -130,7 +130,6 @@
                 <div class="col-md-2 text-right">
                     <div class="d-info">
                         <ul>
-                            <li class="doc-status">The Doctor is: <span><?php echo($d_row['doctor_status']);?></span></li>
                             <li class="email"><?php echo $d_row['email']; ?></li>
                         </ul>
                     </div>
@@ -141,7 +140,7 @@
         <div class="container-fluid" id="clinics">
             <div class="row">
                 <?php 
-                          $count = 0;
+                    $count = 0;
                     while($c_row = mysqli_fetch_array($c_result)){
               
                         $count++;
@@ -150,8 +149,6 @@
                         echo '<h2>' . $c_row['clinic_name'] . '<span>' .$count. '</span></h2>';
                         echo '<p>'. $c_row['clinic_location']. '</p>' ;
                         echo '<p>'. $c_row['clinic_contact'] .'</p>';
-                        echo ' <button type="button" class="btn btn-default clinic create-btn btn-noborder clinic" data-toggle="modal" data-target=".bs-example-modal-sm" data-id="'.$c_row['clinic_id'].'">
-                            <span class="fui-new"> </span>Create Appointment</button>';
                                                echo '</div>';
                         echo '</div>';
                         $clinic = $c_row['clinic_id'];
