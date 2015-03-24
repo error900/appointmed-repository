@@ -68,6 +68,10 @@
                                 <input type="submit" class="btn btn-default export-btn btn-noborder" value="Export" name="submit">
                             </form>
                         </li>
+                        <li class="nav-button navbar-right">
+                            <button type="button" class="btn btn-default btn-noborder edit-profile-btn" data-toggle="modal" data-target=".bs-dc-edit-profile-modal-lg" data-id="'.$appointment_id.'" data-patient-id="'.$patient_id.'">
+                            <i class="fa fa-pencil"></i>Edit Profile</button>
+                        </li>
         <?php 
             include 'include/dc-nav-end.php';
         ?>
@@ -146,6 +150,7 @@
             <?php 
                 include 'include/scripts.php';
                 include 'include/scrolltop.php';
+                include 'include/edit-profile-modal.php';
             ?>
         <script type="text/javascript" src="js/search.js"></script>
         <script type="text/javascript" src="js/scrolltop.js"></script>

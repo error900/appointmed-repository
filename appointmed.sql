@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 24, 2015 at 09:28 AM
+-- Generation Time: Mar 24, 2015 at 12:30 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `account` (
-  `username` varchar(100) NOT NULL,
+  `username` varchar(30) NOT NULL,
   `password` varchar(100) NOT NULL,
   `account_type` enum('Doctor','Patient','Secretary','Admin') NOT NULL,
   `account_status` enum('active','inactive') NOT NULL,
@@ -39,6 +39,7 @@ CREATE TABLE IF NOT EXISTS `account` (
 --
 
 INSERT INTO `account` (`username`, `password`, `account_type`, `account_status`) VALUES
+('AbeMacion', 'korniks', 'Doctor', 'active'),
 ('Admin', 'admin', 'Admin', 'active'),
 ('agaton', 'agaton', 'Doctor', 'active'),
 ('ana', '24d4b96f58da6d4a8512313bbd02a2', 'Doctor', 'active'),
@@ -50,6 +51,7 @@ INSERT INTO `account` (`username`, `password`, `account_type`, `account_status`)
 ('bernadette', 'bbe7a727217b335afc5aa51084477f', 'Doctor', 'active'),
 ('cherrie', '58b644a5d21d950e877b4aaecf36a7', 'Doctor', 'active'),
 ('CJTayab', 'secretlang', 'Patient', 'active'),
+('CJTayabin', '582e2c101742dcb179a712c1dc5fb4', 'Patient', 'active'),
 ('ClaudineGutierrez', 'Anakngpating', 'Secretary', 'active'),
 ('damaso', 'bd19408422fea7f08db51acb869712', 'Doctor', 'active'),
 ('DenmarkMacam', 'Adik4Abe', 'Patient', 'active'),
@@ -73,12 +75,12 @@ INSERT INTO `account` (`username`, `password`, `account_type`, `account_status`)
 ('jeane', '04e8a9695736d4ba268b099b921f56', 'Doctor', 'active'),
 ('jeanette', '853dbc39c711e07347cfb240f4dd49', 'Doctor', 'active'),
 ('josie', 'd118e41faea4e000917a87021e4945', 'Doctor', 'active'),
-('Jude', 'b43cde468a03951d2e1ca4f15a703f', 'Patient', 'active'),
-('Judelyn', 'b43cde468a03951d2e1ca4f15a703f', 'Patient', 'active'),
 ('JudeVargas', 'bbb', 'Patient', 'active'),
+('JudVargas', '582e2c101742dcb179a712c1dc5fb4f7e30c796254b3739751a263db171b27f1', 'Patient', 'active'),
 ('julieta', 'f7e49508125cdd4865a9336abbb85e', 'Doctor', 'active'),
 ('julio', '901be86d450c504e8555ffeeeab1e0', 'Doctor', 'active'),
-('justiniano', '94bcdcb5093e0fe1fc0e711b525098', 'Doctor', 'active'),
+('JunetQuinitip', 'sundaymorning', 'Doctor', 'active'),
+('Justiniano', '94bcdcb5093e0fe1fc0e711b525098', 'Doctor', 'active'),
 ('karla', '1cfcffbd0d0536e2b354a0bbe9a0df', 'Doctor', 'active'),
 ('lizada', '1e19535438153d57d829b8ee88bfff', 'Doctor', 'active'),
 ('mapalo', '5515fab1be482bbd7c50a150ca69e5', 'Doctor', 'active'),
@@ -94,7 +96,6 @@ INSERT INTO `account` (`username`, `password`, `account_type`, `account_status`)
 ('orlando', '05ef130c628dac6868d8ab9a080490', 'Doctor', 'active'),
 ('pakoy', '64023c9da41b8ef288d5d907350586', 'Doctor', 'active'),
 ('pamela', 'cbbcacaf0d582e760874a68b44c572', 'Doctor', 'active'),
-('Ram', '5eec0dc419aa8337bf725f026fda9c', 'Patient', 'active'),
 ('ranelyn', '579a5959c740f72f662e68419f5ba6', 'Doctor', 'active'),
 ('rosario', 'db26ce04fc0e235ae037a334d7e939', 'Doctor', 'active'),
 ('rosemarie', '457ad6a394a743ca81ec1a72b15901', 'Doctor', 'active'),
@@ -118,12 +119,38 @@ CREATE TABLE IF NOT EXISTS `appointment` (
   `patient_id` varchar(30) NOT NULL,
   `appoint_date` date NOT NULL,
   `appointment_status` enum('Cancelled','Completed','Referred','Inqueue') NOT NULL,
-  `clinic_id` int(30) NOT NULL,
+  `clinic_id` varchar(30) NOT NULL,
   PRIMARY KEY (`appointment_id`),
   KEY `doctor_id_2` (`doctor_id`),
   KEY `patient_id` (`patient_id`),
   KEY `clinic_id` (`clinic_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=85 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=89 ;
+
+--
+-- Dumping data for table `appointment`
+--
+
+INSERT INTO `appointment` (`appointment_id`, `remarks`, `doctor_id`, `patient_id`, `appoint_date`, `appointment_status`, `clinic_id`) VALUES
+(2, 'finished', '2015Quinitip', '2015Tayab', '0000-00-00', 'Completed', '294'),
+(7, 'sdadasd', '2015Macion', '2015Tayab', '0000-00-00', 'Cancelled', '293'),
+(70, '', '2015Macion', '2015Vargas', '0000-00-00', 'Inqueue', '295'),
+(71, '', '2015Quinitip', '2015Vargas', '0000-00-00', 'Cancelled', '293'),
+(72, '', '2015Macion', '2015Vargas', '0000-00-00', 'Referred', '295'),
+(73, '', '2015Quinitip', '2015Vargas', '0000-00-00', 'Inqueue', '293'),
+(74, '', '2015Quinitip', '2015Tayab', '0000-00-00', 'Cancelled', '293'),
+(76, '', '2015Macion', '2015Vargas', '0000-00-00', 'Inqueue', '295'),
+(77, '', '2015Macion', '2015Tayab', '2015-03-21', 'Cancelled', '292'),
+(78, '', '2015Quinitip', '2015Tayab', '2015-03-22', 'Cancelled', '293'),
+(79, '', '2015Quinitip', '2015Tayab', '2015-03-22', 'Cancelled', '293'),
+(80, '', '2015Macion', '2015Tayab', '2015-03-21', 'Cancelled', '292'),
+(81, '', '23Ssad', '2015Tayab', '2015-03-22', 'Referred', '294'),
+(82, '', '2015Macion', '2015Tayab', '2015-03-21', 'Cancelled', '292'),
+(83, '', '2015Quinitip', '2015Tayab', '2015-03-23', 'Cancelled', '293'),
+(84, '', '2015Quinitip', '2015Tayab', '2015-03-23', 'Cancelled', '293'),
+(85, '', '12b62e2', '2015Vargas', '2015-03-24', 'Referred', '293'),
+(86, '', '2015Macion', '2015Vargas', '2015-03-24', 'Inqueue', '292'),
+(87, '', '2015Quinitip', '2015Vargas', '2015-03-24', 'Inqueue', '293'),
+(88, '', '2015Macion', 'bd7e5a9', '2015-03-24', 'Inqueue', '292');
 
 -- --------------------------------------------------------
 
@@ -163,16 +190,24 @@ INSERT INTO `appointment_history` (`appointment_history_id`, `appointment_status
 --
 
 CREATE TABLE IF NOT EXISTS `clinic` (
-  `clinic_id` int(30) NOT NULL AUTO_INCREMENT,
+  `clinic_id` varchar(30) NOT NULL,
   `clinic_location` varchar(200) NOT NULL,
   `clinic_name` varchar(50) NOT NULL,
   `clinic_contact` varchar(50) NOT NULL,
   `doctor_id` varchar(30) NOT NULL,
-  `secretary_id` varchar(30) NOT NULL,
   PRIMARY KEY (`clinic_id`),
-  KEY `doctor_id` (`doctor_id`),
-  KEY `secretary_id` (`secretary_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  KEY `doctor_id` (`doctor_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `clinic`
+--
+
+INSERT INTO `clinic` (`clinic_id`, `clinic_location`, `clinic_name`, `clinic_contact`, `doctor_id`) VALUES
+('292', 'Engineer''s Hill, Baguio City', 'MacionLovesYou', '421-3459', '2015Macion'),
+('293', 'Benguet Labs, Baguio City', '', '422-1311', '2015Quinitip'),
+('294', 'Tuba', 'Mancion', '876543', '2015Macion'),
+('295', 'Gisad', 'The Macioninator', '76543', '2015Macion');
 
 -- --------------------------------------------------------
 
@@ -196,6 +231,8 @@ CREATE TABLE IF NOT EXISTS `doctor` (
 --
 
 INSERT INTO `doctor` (`doctor_id`, `doctor_name`, `specialization`, `doctor_status`, `email`, `username`) VALUES
+('', 'Kelly Clarkson', 'Dentistry', 'In', 'kelly@gmail.com', 'KellyC'),
+('05fc9cf', 'Justiniano Bai', 'Orthopedics', 'In', 'null', 'Justiniano'),
 ('06240c1', 'Gene Estandian', 'Constructive Surgery', 'In', 'null', 'gene'),
 ('062a78c', 'Nadine Tello', 'Opthalmology', 'Out', 'null', 'nadine'),
 ('099b2aa', 'Arlene Baguilat', 'Pediatrician', 'In', 'null', 'arlene'),
@@ -204,6 +241,9 @@ INSERT INTO `doctor` (`doctor_id`, `doctor_name`, `specialization`, `doctor_stat
 ('1070dad', 'Ana Claire Pagnas', 'FM/GP/PCOM', 'Out', 'null', 'ana'),
 ('12b62e2', 'Genuino', 'Cardiology', 'Out', 'null', 'genuino'),
 ('1ba74a2', 'Pamela Chu', 'OB Gyne', 'Out', 'null', 'pamela'),
+('2015Macion', 'Bernabe Macion', 'Dentistry', 'In', '', 'AbeMacion'),
+('2015Quinitip', 'Junet Quinitip', 'Cardiology', 'Out', 'null', 'JunetQuinitip'),
+('23Ssad', 'FionaMalam', 'Dentistry', 'In', 'asdas@gmail.com', 'Malaman'),
 ('2b0cfe3', 'Pakoy', 'GP/Animal Bite', 'In', 'null', 'pakoy'),
 ('2d55d42', 'Bernadette Lizada', 'OB Gyne', 'Out', 'null', 'lizada'),
 ('39bc1d7', 'Eva Quiano', 'FM/GP/IM', 'In', 'null', 'eva'),
@@ -220,7 +260,6 @@ INSERT INTO `doctor` (`doctor_id`, `doctor_name`, `specialization`, `doctor_stat
 ('6195417', 'Rosemarie Raper', 'Pediatrician', 'Out', 'null', 'rosemarie'),
 ('61b8301', 'Mark Valdez', 'GP', 'In', 'null', 'mark'),
 ('61d4e33', 'Bernadette Arzadon', 'FM/GP/PCOM', 'Out', 'null', 'bernadette'),
-('657e833', 'Justiniano Bai', 'Orthopedics', 'In', 'null', 'justiniano'),
 ('6a14471', 'Melanie Clemente', 'FM/GP/PCOM', 'Out', 'null', 'melanie'),
 ('6b38136', 'Mari Grace Yabut', 'Pediatrician', 'Out', 'null', 'grace'),
 ('777fb0c', 'Orlando Aragon', 'UTZ', 'In', 'null', 'orlando'),
@@ -270,7 +309,22 @@ CREATE TABLE IF NOT EXISTS `notification` (
   KEY `patient_id` (`patient_id`),
   KEY `notif_id` (`legend_id`),
   FULLTEXT KEY `doctor_id` (`doctor_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=28 ;
+
+--
+-- Dumping data for table `notification`
+--
+
+INSERT INTO `notification` (`notification_id`, `indicator`, `doctor_id`, `patient_id`, `legend_id`, `notification_date`, `notification`) VALUES
+(19, 'doctor', '2015Macion', '2015Tayab', 'n1002', '2015-03-24', 'You have been referred by doctor Bernabe Macion to doctor FionaMalam'),
+(20, 'patient', '2015Quinitip', '2015Vargas', 'n1004', '2015-03-24', 'A patient has requested an appointment.'),
+(21, 'patient', '2015Macion', '2015Vargas', 'n1004', '2015-03-24', 'A patient has requested an appointment.'),
+(22, 'patient', '2015Quinitip', '2015Vargas', 'n1004', '2015-03-24', 'A patient has requested an appointment.'),
+(23, 'doctor', '2015Quinitip', '2015Vargas', 'n1002', '2015-03-24', 'You have been referred by doctor Junet Quinitip to doctor Genuino'),
+(24, 'admin', '', '', 'n1002', '2015-03-24', 'A user has registered to the system.'),
+(25, 'admin', '', '', 'n1002', '2015-03-24', 'A user has registered to the system.'),
+(26, 'admin', '', '', 'n1002', '2015-03-24', 'A user has registered to the system.'),
+(27, 'patient', '2015Macion', 'bd7e5a9', 'n1004', '2015-03-24', 'A patient has requested an appointment.');
 
 -- --------------------------------------------------------
 
@@ -305,10 +359,10 @@ CREATE TABLE IF NOT EXISTS `patient` (
   `patient_id` varchar(30) NOT NULL,
   `patient_name` varchar(30) NOT NULL,
   `patient_contact` varchar(20) NOT NULL,
-  `date` varchar(20) NOT NULL,
+  `birthdate` date NOT NULL,
   `email` varchar(30) NOT NULL,
   `username` varchar(30) NOT NULL,
-  `patient_occupation` varchar(30) DEFAULT NULL,
+  `occupation` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`patient_id`),
   KEY `username` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -317,11 +371,12 @@ CREATE TABLE IF NOT EXISTS `patient` (
 -- Dumping data for table `patient`
 --
 
-INSERT INTO `patient` (`patient_id`, `patient_name`, `patient_contact`, `date`, `email`, `username`, `patient_occupation`) VALUES
-('2015Macam', 'Denmark Macam', '09202324249', '05/11/95', 'adikforabe@yahoo.com', 'DenmarkMacam', NULL),
-('2015Pinzon', 'Franxen Pinzon', '09221494297', '02/21/95', 'fxss@yahoo.com', 'FranxenPinzon', NULL),
-('2015Tayab', 'Christine Joy Tayab', '09090923021', '12/22/94', 'cj.tayab@gmail.com', 'CJTayab', NULL),
-('2015Vargas', 'Judelyn Vargas', '09213224590', '10/28/94', 'judefvargas@gmail.com', 'JudeVargas', 'student');
+INSERT INTO `patient` (`patient_id`, `patient_name`, `patient_contact`, `birthdate`, `email`, `username`, `occupation`) VALUES
+('2015Macam', 'Denmark Macam', '09202324249', '0000-00-00', 'adikforabe@yahoo.com', 'DenmarkMacam', NULL),
+('2015Pinzon', 'Franxen Pinzon', '09221494297', '0000-00-00', 'fxss@yahoo.com', 'FranxenPinzon', NULL),
+('2015Tayab', 'Christine Joy Tayab', '09090923021', '0000-00-00', 'cj.tayab@gmail.com', 'CJTayab', NULL),
+('2015Vargas', 'Judelyn Vargas', '09213224590', '1994-10-28', 'judefvargas@gmail.com', 'JudeVargas', 'student'),
+('bd7e5a9', 'Judes Vars', '09213421411', '1994-10-28', 'judefvargas@gmail.com', 'JudVargas', 'Student');
 
 -- --------------------------------------------------------
 
@@ -337,8 +392,7 @@ CREATE TABLE IF NOT EXISTS `queue_number` (
   PRIMARY KEY (`queue_id`),
   KEY `queue_id` (`queue_id`,`appointmed_id`),
   KEY `doctor_id` (`doctor_id`,`patient_id`),
-  KEY `patient_id` (`patient_id`),
-  KEY `appointmed_id` (`appointmed_id`)
+  KEY `patient_id` (`patient_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -370,6 +424,14 @@ CREATE TABLE IF NOT EXISTS `referred` (
   KEY `referred_id` (`referred_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `referred`
+--
+
+INSERT INTO `referred` (`referred_id`, `patient_id`, `doctor_id`) VALUES
+('23Ssad', '2015Tayab', '2015Macion'),
+('12b62e2', '2015Vargas', '2015Quinitip');
+
 -- --------------------------------------------------------
 
 --
@@ -392,8 +454,8 @@ CREATE TABLE IF NOT EXISTS `secretary` (
 --
 
 INSERT INTO `secretary` (`secretary_id`, `secretary_name`, `email`, `doctor_id`, `username`) VALUES
-('2015Gutierrez', 'Claudine Gutierrez', 'clauds_22@hotmail.com', '0a8acd3', 'ClaudineGutierrez'),
-('2015Ragadio', 'Dianne Ragadio', 'ian.ragadio@gmail.com', '1070dad', 'DianneRagadio');
+('2015Gutierrez', 'Claudine Gutierrez', 'clauds_22@hotmail.com', '2015Quinitip', 'ClaudineGutierrez'),
+('2015Ragadio', 'Dianne Ragadio', 'ian.ragadio@gmail.com', '2015Macion', 'DianneRagadio');
 
 -- --------------------------------------------------------
 
@@ -413,6 +475,7 @@ CREATE TABLE IF NOT EXISTS `subscribe` (
 --
 
 INSERT INTO `subscribe` (`doctor_id`, `patient_id`) VALUES
+('2015Quinitip', '2015Vargas'),
 ('1070dad', '2015Vargas'),
 ('ccf908b', '2015Vargas'),
 ('a3d1f76', '2015Vargas');
@@ -425,21 +488,9 @@ INSERT INTO `subscribe` (`doctor_id`, `patient_id`) VALUES
 -- Constraints for table `appointment`
 --
 ALTER TABLE `appointment`
-  ADD CONSTRAINT `appointment_ibfk_6` FOREIGN KEY (`clinic_id`) REFERENCES `clinic` (`clinic_id`),
-  ADD CONSTRAINT `appointment_ibfk_4` FOREIGN KEY (`doctor_id`) REFERENCES `doctor` (`doctor_id`),
-  ADD CONSTRAINT `appointment_ibfk_5` FOREIGN KEY (`patient_id`) REFERENCES `patient` (`patient_id`);
-
---
--- Constraints for table `clinic`
---
-ALTER TABLE `clinic`
-  ADD CONSTRAINT `clinic_ibfk_1` FOREIGN KEY (`doctor_id`) REFERENCES `doctor` (`doctor_id`);
-
---
--- Constraints for table `doctor`
---
-ALTER TABLE `doctor`
-  ADD CONSTRAINT `doctor_ibfk_1` FOREIGN KEY (`username`) REFERENCES `account` (`username`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `appointment_ibfk_3` FOREIGN KEY (`clinic_id`) REFERENCES `clinic` (`clinic_id`),
+  ADD CONSTRAINT `appointment_ibfk_4` FOREIGN KEY (`doctor_id`) REFERENCES `doctor` (`doctor_id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `appointment_ibfk_5` FOREIGN KEY (`patient_id`) REFERENCES `patient` (`patient_id`) ON UPDATE CASCADE;
 
 --
 -- Constraints for table `patient`
@@ -448,33 +499,26 @@ ALTER TABLE `patient`
   ADD CONSTRAINT `patient_ibfk_1` FOREIGN KEY (`username`) REFERENCES `account` (`username`);
 
 --
--- Constraints for table `queue_number`
---
-ALTER TABLE `queue_number`
-  ADD CONSTRAINT `queue_number_ibfk_1` FOREIGN KEY (`doctor_id`) REFERENCES `doctor` (`doctor_id`),
-  ADD CONSTRAINT `queue_number_ibfk_2` FOREIGN KEY (`patient_id`) REFERENCES `patient` (`patient_id`);
-
---
 -- Constraints for table `referred`
 --
 ALTER TABLE `referred`
+  ADD CONSTRAINT `referred_ibfk_5` FOREIGN KEY (`patient_id`) REFERENCES `patient` (`patient_id`),
   ADD CONSTRAINT `referred_ibfk_3` FOREIGN KEY (`referred_id`) REFERENCES `doctor` (`doctor_id`),
-  ADD CONSTRAINT `referred_ibfk_4` FOREIGN KEY (`doctor_id`) REFERENCES `doctor` (`doctor_id`),
-  ADD CONSTRAINT `referred_ibfk_5` FOREIGN KEY (`patient_id`) REFERENCES `patient` (`patient_id`);
+  ADD CONSTRAINT `referred_ibfk_4` FOREIGN KEY (`doctor_id`) REFERENCES `doctor` (`doctor_id`);
 
 --
 -- Constraints for table `secretary`
 --
 ALTER TABLE `secretary`
-  ADD CONSTRAINT `secretary_ibfk_1` FOREIGN KEY (`username`) REFERENCES `account` (`username`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `secretary_ibfk_2` FOREIGN KEY (`doctor_id`) REFERENCES `doctor` (`doctor_id`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `secretary_ibfk_2` FOREIGN KEY (`doctor_id`) REFERENCES `doctor` (`doctor_id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `secretary_ibfk_1` FOREIGN KEY (`username`) REFERENCES `account` (`username`) ON UPDATE CASCADE;
 
 --
 -- Constraints for table `subscribe`
 --
 ALTER TABLE `subscribe`
-  ADD CONSTRAINT `subscribe_ibfk_3` FOREIGN KEY (`doctor_id`) REFERENCES `doctor` (`doctor_id`),
-  ADD CONSTRAINT `subscribe_ibfk_4` FOREIGN KEY (`patient_id`) REFERENCES `patient` (`patient_id`);
+  ADD CONSTRAINT `subscribe_ibfk_4` FOREIGN KEY (`patient_id`) REFERENCES `patient` (`patient_id`),
+  ADD CONSTRAINT `subscribe_ibfk_3` FOREIGN KEY (`doctor_id`) REFERENCES `doctor` (`doctor_id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
