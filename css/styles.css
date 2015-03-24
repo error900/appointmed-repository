@@ -673,7 +673,8 @@ nav > div > div > ul > li > a:hover {
 	box-shadow: none;
 }
 
-.btn-default.login-btn {
+.btn-default.login-btn,
+.btn-default.upload-btn {
 	width: 100%;
 	padding: 10px 19px;
 	color: #fff !important;
@@ -681,7 +682,7 @@ nav > div > div > ul > li > a:hover {
 	text-transform: uppercase;
 }
 
-.btn-default.login-btn:hover,
+.btn-default.login-tbn:hover,
 .btn-default.login-btn:focus {
 	color: #fff;
 	background-color: #E67E22;
@@ -697,6 +698,11 @@ nav > div > div > ul > li > a:hover {
 	font-size: 12px;
 	font-weight: 600;
 	text-transform: uppercase;
+	text-shadow: 1px 1px 1px #34495E;
+}
+
+.upload-btn {
+	background: #2C3E50 !important;
 }
 
 .login-modal-btn:hover,
@@ -708,6 +714,13 @@ nav > div > div > ul > li > a:hover {
 	color: #fff !important;
 	background: #1ABC9C !important;
 }
+
+.upload-btn:hover,
+.upload-btn:focus {
+	color: #fff !important;
+	background: #34495E !important;
+}
+
 
 .btn-default.create-btn {
 	width: 100%;
@@ -958,6 +971,24 @@ nav > div > div > ul > li > a:hover {
 .patient-activity {
 	padding-bottom: 25px;
 	background: rgba(44, 62, 80, 0.8);
+}
+
+.upload-photo {
+	padding: 0 15%;
+}
+
+.upload-photo .img-responsive {
+	border: 10px solid #7F8C8D;
+	border-radius: 50%;
+}
+
+.upload-photo .file-upload {
+	font-size: 14px;
+	margin: 10px 0;
+}
+
+.profile-data-edit input.form-control {
+	margin-bottom: 8px;
 }
 
 .d-info ul,

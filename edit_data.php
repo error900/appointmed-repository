@@ -10,7 +10,7 @@
 		if(isset($_POST["submit"])) {
 			if(!($_FILES["profile_pic"]["tmp_name"])){
 				echo '<script>alert("Error! No file selected");</script>';	
-				echo "<script> location.replace('editprofile.php') </script>";
+				echo "<script> location.replace('patient.php') </script>";
 			}else
 			 	$check = getimagesize($_FILES["profile_pic"]["tmp_name"]);
 
@@ -25,7 +25,7 @@
 
 		if($imageFileType != "jpg") {
 		    echo "<script> alert('Sorry, only .jpg files are allowed'); </script>";
-		    echo "<script> location.replace('editprofile.php') </script>";
+		    echo "<script> location.replace('patient.php') </script>";
 		    $uploadOk = 0;
 		}
 		if ($uploadOk == 0) {
@@ -34,15 +34,15 @@
 		    if (move_uploaded_file($_FILES["profile_pic"]["tmp_name"], $target_file)) {
 		        echo "The file ". basename( $_FILES["profile_pic"]["name"]). " has been uploaded.";
 		        rename($target_file, "img/profile/".$patient_id.".jpg");
-		        header("location: editprofile.php");
+		        header("location: patient.php");
 		    } else {
 		        echo "<script> alert('Sorry, there was an error uploading your file.'); </script>";
-		        echo "<script> location.replace('editprofile.php') </script>";
+		        echo "<script> location.replace('patient.php') </script>";
 		    }
 		}
 	}else{
 		echo "<script> alert('Error!); </script>";
-		echo "<script> location.replace('editprofile.php') </script>";
+		echo "<script> location.replace('patient.php') </script>";
 		die();
 	}
 ?>
