@@ -247,7 +247,6 @@ nav > div > div > ul > li > a:hover {
 }
 
 #appointments-user {
-	background-color: #2C3E50;
 }
 
 .appointment-date {
@@ -314,11 +313,12 @@ nav > div > div > ul > li > a:hover {
 
 .panel-default {
 	color: #fff;
-	background-color: #1ABC9C;
+	background-color: rgba(26, 188, 156, 0.5);
 	font-size: 14px;
-	border: 2px solid #2C3E50;
+	border: 2px solid transparent;
 	border-radius: 0;
 	text-transform: uppercase;
+	text-shadow: 1px 1px 1px rgba(52, 73, 94, 0.5);
 	transition: border 0.20s ease;
 }
 
@@ -430,7 +430,7 @@ nav > div > div > ul > li > a:hover {
 .appmnt-pnl-btn button {
 	margin: 0;
 	padding: 0;
-	width: 30%;
+	width: 35%;
 	background: transparent;
 	text-transform: lowercase;
 	font-size: 16px;
@@ -464,7 +464,7 @@ nav > div > div > ul > li > a:hover {
 }
 
 .appmnt-pnl-btn i {
-	padding-left: 3px;
+	padding-left: 6px;
 }
 
 .panel-arrows {
@@ -530,9 +530,10 @@ nav > div > div > ul > li > a:hover {
 #schedules-md {
 }
 
-.sched-panel {
+.sched-panel,
+.dc-profile-sched-panel {
 	border: 2px solid transparent;
-	background-color: rgba(236, 240, 241, 0.3);
+	background-color: rgba(236, 240, 241, 0.3) !important;
 }
 
 .sched-panel .panel-body,
@@ -545,6 +546,20 @@ nav > div > div > ul > li > a:hover {
 .sched-panel .appmnt-pnl-btn button:hover,
 .sched-panel .appmnt-pnl-btn a:hover {
 	color: #16A085 !important;
+}
+
+.dc-profile-sched-panel {
+	border: 2px solid #7F8C8D !important;
+}
+
+.dc-profile-sched-panel h2,
+.dc-profile-sched-panel span,
+.dc-profile-sched-panel p {
+	color: #34495E !important;
+}
+
+.dc-profile-sched-panel i {
+	padding-right: 5px;
 }
 
 .sched-h {
@@ -994,7 +1009,7 @@ nav > div > div > ul > li > a:hover {
 
 .patient-activity {
 	padding-bottom: 25px;
-	background: rgba(44, 62, 80, 0.8);
+	background: rgba(44, 62, 80, 0.1);
 }
 
 .upload-photo {
@@ -1033,17 +1048,14 @@ nav > div > div > ul > li > a:hover {
 .p-info ul i,
 .d-info ul i {
 	padding-right: 10px;
+	text-shadow: 1px 1px 1px #34495E;
 }
 
 .p-info ul li,
 .d-info ul li {
 	margin: 0 10px;
 	padding: 0 10px;
-}
-
-.p-info ul li:hover,
-.d-info ul li:hover {
-	color: #1ABC9C;
+	text-shadow: 1px 1px 1px #34495E;
 }
 
 .d-info span {
@@ -1139,6 +1151,8 @@ nav > div > div > ul > li > a:hover {
 
 .clinic-box p {
 	color: #fff;
+	font-size: 12px;
+	font-weight: 600;
 	line-height: 12px;
 	text-transform: uppercase;
 }

@@ -48,7 +48,7 @@
         include 'include/head.php';
         include 'connectdatabase.php';
     ?>
-  <body>
+    <body class="background-pt">
     <div class="container">
         <?php 
             session_start();

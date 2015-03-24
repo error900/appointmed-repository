@@ -49,7 +49,7 @@
         include 'include/scripts.php';
     ?>
 
-  <body>
+    <body class="background-pt">
     <div class="container">
         <?php
             session_start();
