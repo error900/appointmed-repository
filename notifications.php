@@ -124,44 +124,44 @@
                         if($n_color['color'] == 'red'){
                         echo '<div class="col-xs-12 col-md-8 col-md-offset-2">
                             <div class="panel panel-notif panel-danger">
-                                <div class="panel-heading">'.$doc['doctor_name'].' '.$n_row['notification_date'].'
+                                <div class="panel-heading"><span class="hidden-xs hidden-sm">' . $doc['doctor_name'] . '</span>'.$n_row['notification_date'].'
                                     <a href="#" title="cancel"><i class="fa fa-remove delete-btn"></i></a>
                                 </div>
                                 <div class="panel-body">
-                                    '.$n_row['notification'].'
+                                    '.$n_row['notification'].'<span class="visible-xs visible-sm notif-name">&mdash; Dr. ' . $doc['doctor_name'] . '</span>
                                 </div>
                             </div>
                         </div>';
                         } else if ($n_color['color'] == 'orange'){
                         echo '<div class="col-xs-12 col-md-8 col-md-offset-2">
                             <div class="panel panel-notif panel-warning">
-                                <div class="panel-heading">'.$doc['doctor_name'].' '.$n_row['notification_date'].'
+                                <div class="panel-heading"><span class="hidden-xs hidden-sm">' . $doc['doctor_name'] . '</span>'.$n_row['notification_date'].'
                                     <a href="#" title="cancel"><i class="fa fa-remove delete-btn"></i></a>
                                 </div>
                                 <div class="panel-body">
-                                    '.$n_row['notification'].'
+                                    '.$n_row['notification'].'<span class="visible-xs visible-sm notif-name">&mdash; Dr. ' . $doc['doctor_name'] . '</span>
                                 </div>
                             </div>
                         </div>';
                         }else if ($n_color['color'] == 'green'){
                         echo '<div class="col-xs-12 col-md-8 col-md-offset-2">
                             <div class="panel panel-notif panel-success">
-                                <div class="panel-heading">'.$doc['doctor_name'].' '.$n_row['notification_date'].'
+                                <div class="panel-heading"><span class="hidden-xs hidden-sm">' . $doc['doctor_name'] . '</span>'.$n_row['notification_date'].'
                                     <a href="#" title="cancel"><i class="fa fa-remove delete-btn"></i></a>
                                 </div>
                                 <div class="panel-body">
-                                    '.$n_row['notification'].'
+                                    '.$n_row['notification'].'<span class="visible-xs visible-sm notif-name">&mdash; Dr. ' . $doc['doctor_name'] . '</span>
                                 </div>
                             </div>
                         </div>';
                         } else if ($n_color['color'] == 'blue'){
                         echo '<div class="col-xs-12 col-md-8 col-md-offset-2">
                             <div class="panel panel-notif panel-info">
-                                <div class="panel-heading">'.$doc['doctor_name'].' '.$n_row['notification_date'].'
+                                <div class="panel-heading"><span class="hidden-xs hidden-sm">' . $doc['doctor_name'] . '</span>'.$n_row['notification_date'].'
                                     <a href="#" title="cancel"><i class="fa fa-remove delete-btn"></i></a>
                                 </div>
                                 <div class="panel-body">
-                                    '.$n_row['notification'].'
+                                    '.$n_row['notification'].'<span class="visible-xs visible-sm notif-name">&mdash; Dr. ' . $doc['doctor_name'] . '</span>
                                 </div>
                             </div>
                         </div>';

@@ -398,7 +398,7 @@ nav > div > div > ul > li > a:hover {
 }
 
 .panel-notif > .panel-body {
-	padding: 10px 15px;
+	padding: 6px 15px;
 	font-size: 14px;
 }
 
@@ -434,6 +434,13 @@ nav > div > div > ul > li > a:hover {
 .panel-notif.panel-danger > .panel-heading {
 	background: #C0392B;
 	border-radius: 0;
+}
+
+.notif-name {
+	margin-top: 15px;
+	float: right;
+	font-weight: 600;
+	font-style: italic;
 }
 
 .appmnt-pnl-btn {
