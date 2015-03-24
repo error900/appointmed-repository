@@ -142,7 +142,7 @@
     
 
                  echo'  <div class="appmnt-pnl-btn">
-                        <button type="button" class="btn btn-default btn-inverse appo btn-noborder" data-toggle="modal" data-target=".bs-remarks-modal-sm">Remarks<i class="fa fa-comment"></i></button>
+                        <button type="button" class="btn btn-default btn-inverse appo btn-noborder" data-toggle="modal" data-target=".bs-remarks-modal-sm" data-id="'.$appointment_id.'" data-patient-id="'.$patient.'">Remarks<i class="fa fa-comment"></i></button>
                         <button type="button" class="btn btn-default btn-inverse appo btn-noborder" data-toggle="modal" data-target=".bs-example-modal-sm" data-id="'.$appointment_id.'" data-patient-id="'.$patient.'">
                         Refer<i class="fa fa-hand-o-right"></i></button>
                     </div>

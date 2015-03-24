@@ -21,7 +21,7 @@ if(isset($_POST['submit'])){
     $single_count =  $single_row['count'];
 
     if($limit_row >= 7){
-		echo '<script>alert("Reached the maximum number of patient for the day. Please change the date")</script>';
+		echo '<script>alert("Reached the maximum number of patients for the day. Please change the date")</script>';
 		echo "<script> location.replace('doctor.php?id=".$doctor_id."') </script>";
 	} else if($single_count != 0){
 		echo '<script>alert("Cannot schedule for the same doctor in a single day. Please change the date")</script>';

@@ -15,6 +15,8 @@
                                         <option value="Ongoing">Ongoing</option> 
                                         <option value="Complete">Complete</option>
                                     </select>
+                                    <input type="text" value="" id="appo_id" name="appointment_id">
+                                    <input type="text" id="pat_id" value="" name="patient_id">
                                     <input class="btn btn-default login-btn btn-noborder" type="submit" value="Submit" name="submit"/>
                             </div>
                         </div>
