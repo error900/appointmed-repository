@@ -54,36 +54,175 @@
                     <h1 class="text-center row-header">Doctors List</h1>
                 </div>
             </div>
-            <?php 
-                $result = mysqli_query($con, "SELECT * FROM doctor ORDER BY specialization" );
+            
+            <div class="row"> 
+                <div class="col-xs-12 col-md-12">
+                    <h2 class="specialization-header">Cardiology</h2>
+                </div>
+                <?php 
+                $result = mysqli_query($con, "SELECT * FROM doctor WHERE specialization = 'Cardiology'" );
                 while($d_row =  mysqli_fetch_array($result)){
                     $doctor_id = $d_row['doctor_id'];
                     $doctor_name = $d_row['doctor_name'];
-                    $specialization = $d_row['specialization'];
-            ?>  
-            <div class="row"> 
+                ?>
                 <div class="doctors-full-list">
-                    <div class="col-xs-12 col-md-12">
-                        <h2 class="specialization-header"><?php echo $specialization?></h2>
+                    <div class="col-xs-12 col-md-2">
+                        <img class="img-responsive" src="img/profile/<?php 
+                        $file = "img/profile/".$doctor_id.".jpg";
+                        if(file_exists($file)){
+                        echo $doctor_id;
+                        }else{
+                        echo 'profile';
+                        } ?>.jpg">
                     </div>
                     <div class="col-xs-12 col-md-2">
-                            <img src="img/profile/<?php 
-                            $file = "img/profile/".$doctor_id.".jpg";
-                            if(file_exists($file)){
-                                echo $doctor_id;
-                            }else{
-                                echo 'profile';
-                            } ?>.jpg">
-                        
-                   </div>
-                      
-                     <div class="col-xs-12 col-md-2">
                         <ul>
                             <li><span><?php echo $doctor_name?></span></li>
-                    </div>
+                        </ul>
                     </div>
                 </div>
-                   <?php } ?>
+                <?php } ?>
+            </div>
+            <div class="row"> 
+                <div class="col-xs-12 col-md-12">
+                    <h2 class="specialization-header">CFP/PCOM</h2>
+                </div>
+                <?php 
+                $result = mysqli_query($con, "SELECT * FROM doctor WHERE specialization = 'CFP/PCOM'" );
+                while($d_row =  mysqli_fetch_array($result)){
+                    $doctor_id = $d_row['doctor_id'];
+                    $doctor_name = $d_row['doctor_name'];
+                ?>
+                <div class="doctors-full-list">
+                    <div class="col-xs-12 col-md-2">
+                        <img class="img-responsive" src="img/profile/<?php 
+                        $file = "img/profile/".$doctor_id.".jpg";
+                        if(file_exists($file)){
+                        echo $doctor_id;
+                        }else{
+                        echo 'profile';
+                        } ?>.jpg">
+                    </div>
+                    <div class="col-xs-12 col-md-2">
+                        <ul>
+                            <li><span><?php echo $doctor_name?></span></li>
+                        </ul>
+                    </div>
+                </div>
+                <?php } ?>
+            </div>
+            <div class="row"> 
+                <div class="col-xs-12 col-md-12">
+                    <h2 class="specialization-header">Clinical Pathology</h2>
+                </div>
+                <?php 
+                $result = mysqli_query($con, "SELECT * FROM doctor WHERE specialization = 'Clinical Pathology'" );
+                while($d_row =  mysqli_fetch_array($result)){
+                    $doctor_id = $d_row['doctor_id'];
+                    $doctor_name = $d_row['doctor_name'];
+                ?>
+                <div class="doctors-full-list">
+                    <div class="col-xs-12 col-md-2">
+                        <img class="img-responsive" src="img/profile/<?php 
+                        $file = "img/profile/".$doctor_id.".jpg";
+                        if(file_exists($file)){
+                        echo $doctor_id;
+                        }else{
+                        echo 'profile';
+                        } ?>.jpg">
+                    </div>
+                    <div class="col-xs-12 col-md-2">
+                        <ul>
+                            <li><span><?php echo $doctor_name?></span></li>
+                        </ul>
+                    </div>
+                </div>
+                <?php } ?>
+            </div>
+            <div class="row"> 
+                <div class="col-xs-12 col-md-12">
+                    <h2 class="specialization-header">Constructive Surgery</h2>
+                </div>
+                <?php 
+                $result = mysqli_query($con, "SELECT * FROM doctor WHERE specialization = 'Constructive Surgery'" );
+                while($d_row =  mysqli_fetch_array($result)){
+                    $doctor_id = $d_row['doctor_id'];
+                    $doctor_name = $d_row['doctor_name'];
+                ?>
+                <div class="doctors-full-list">
+                    <div class="col-xs-12 col-md-2">
+                        <img class="img-responsive" src="img/profile/<?php 
+                        $file = "img/profile/".$doctor_id.".jpg";
+                        if(file_exists($file)){
+                        echo $doctor_id;
+                        }else{
+                        echo 'profile';
+                        } ?>.jpg">
+                    </div>
+                    <div class="col-xs-12 col-md-2">
+                        <ul>
+                            <li><span><?php echo $doctor_name?></span></li>
+                        </ul>
+                    </div>
+                </div>
+                <?php } ?>
+            </div>
+            <div class="row"> 
+                <div class="col-xs-12 col-md-12">
+                    <h2 class="specialization-header">Dentistry</h2>
+                </div>
+                <?php 
+                $result = mysqli_query($con, "SELECT * FROM doctor WHERE specialization = 'Dentistry'" );
+                while($d_row =  mysqli_fetch_array($result)){
+                    $doctor_id = $d_row['doctor_id'];
+                    $doctor_name = $d_row['doctor_name'];
+                ?>
+                <div class="doctors-full-list">
+                    <div class="col-xs-12 col-md-2">
+                        <img class="img-responsive" src="img/profile/<?php 
+                        $file = "img/profile/".$doctor_id.".jpg";
+                        if(file_exists($file)){
+                        echo $doctor_id;
+                        }else{
+                        echo 'profile';
+                        } ?>.jpg">
+                    </div>
+                    <div class="col-xs-12 col-md-2">
+                        <ul>
+                            <li><span><?php echo $doctor_name?></span></li>
+                        </ul>
+                    </div>
+                </div>
+                <?php } ?>
+            </div>
+            <div class="row"> 
+                <div class="col-xs-12 col-md-12">
+                    <h2 class="specialization-header">Dermatology</h2>
+                </div>
+                <?php 
+                $result = mysqli_query($con, "SELECT * FROM doctor WHERE specialization = 'Dermatology'" );
+                while($d_row =  mysqli_fetch_array($result)){
+                    $doctor_id = $d_row['doctor_id'];
+                    $doctor_name = $d_row['doctor_name'];
+                ?>
+                <div class="doctors-full-list">
+                    <div class="col-xs-12 col-md-2">
+                        <img class="img-responsive" src="img/profile/<?php 
+                        $file = "img/profile/".$doctor_id.".jpg";
+                        if(file_exists($file)){
+                        echo $doctor_id;
+                        }else{
+                        echo 'profile';
+                        } ?>.jpg">
+                    </div>
+                    <div class="col-xs-12 col-md-2">
+                        <ul>
+                            <li><span><?php echo $doctor_name?></span></li>
+                        </ul>
+                    </div>
+                </div>
+                <?php } ?>
+            </div>
 
 
         <?php
