@@ -120,7 +120,7 @@
                     <div class="d-info">
                         <ul class="profile-info">
                             <li><i class="fa fa-user-md"></i>Dr. <?php echo strtoupper($d_row['doctor_name']); ?></li>
-                            <li><i class="fa fa-medkit"></i><?php echo $d_row['specialization']; ?>y</li>
+                            <li><i class="fa fa-medkit"></i><?php echo $d_row['specialization']; ?></li>
                             <br>
                             <li><i class="fa fa-h-square"></i>Benguet Laboratory Incorporated</li>
                             <li><i class="fa fa-angle-double-right"></i> Plastic Surgery, Cosmetic Surgery</li>

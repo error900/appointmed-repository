@@ -63,7 +63,7 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-xs-12 col-md-4 upload-photo">
-                            <form method="post" action="" enctype="multipart/form-data">
+                            <form method="post" action="edit_pic_doc.php" enctype="multipart/form-data">
                                 <div class="input-group">
                                     <div>
                                         <img src="img/profile/<?php 
@@ -82,11 +82,11 @@
                         </div>
                         <div class="col-xs-12 col-md-5 col-md-offset-2 profile-data-edit">
                             <h1 class="text-center row-header3">Current Data</h1>
-                            <form method='post' action="">
+                            <form method='post' action="edit_profile_doc.php">
                                 <div class="input-group">
                                     <input type="text" class="form-control" name="name" placeholder="Name" required="" value="<?php echo $doctor?>"/>
-                                    <input type="text" class="form-control" name="specialization" placeholder="Specialization" required="" value="<?php echo $row['specialization']?>" />
-                                    <input type="text" class="form-control" name="email" placeholder="Email Address" required="" value="<?php echo $row['email']?>" />
+                                    <input type="text" class="form-control" name="specialization" placeholder="Specialization" required="" value="<?php echo $specialization?>" />
+                                    <input type="text" class="form-control" name="email" placeholder="Email Address" required="" value="<?php echo $email?>" />
                                     <input type="hidden" value="<?php echo $doctor_id?>" name="doctor_id">
                                     <input class="btn btn-default login-btn btn-noborder" type="submit" value="Submit" name="submit"/>
                                 </div>
