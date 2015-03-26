@@ -103,7 +103,7 @@
                                         <a href="#" title="cancel"><i class="fa fa-remove delete-btn x-btn"></i></a>
                                     </div>
                                     <div class="panel-body">
-                                        '.$n_row['notification'].'<span class="visible-xs visible-sm notif-name">&mdash; Dr. ' . $n_name['patient_name'] . '</span>
+                                        '.$n_row['notification'].'<span class="visible-xs visible-sm notif-name">&mdash; ' . $n_name['patient_name'] . '</span>
                                     </div>
                                 </div>
                             </div>';
@@ -114,7 +114,7 @@
                                         <a href="#" title="cancel"><i class="fa fa-remove delete-btn x-btn"></i></a>
                                     </div>
                                     <div class="panel-body">
-                                        '.$n_row['notification'].'<span class="visible-xs visible-sm notif-name">&mdash; Dr. ' . $n_name['patient_name'] . '</span>
+                                        '.$n_row['notification'].'<span class="visible-xs visible-sm notif-name">&mdash; ' . $n_name['patient_name'] . '</span>
                                     </div>
                                 </div>
                             </div>';
@@ -125,7 +125,7 @@
                                         <a href="#" title="cancel"><i class="fa fa-remove delete-btn x-btn"></i></a>
                                     </div>
                                     <div class="panel-body">
-                                        '.$n_row['notification'].'<span class="visible-xs visible-sm notif-name">&mdash; Dr. ' . $n_name['patient_name'] . '</span>
+                                        '.$n_row['notification'].'<span class="visible-xs visible-sm notif-name">&mdash; ' . $n_name['patient_name'] . '</span>
                                     </div>
                                 </div>
                             </div>';
@@ -136,7 +136,7 @@
                                         <a href="#" title="cancel"><i class="fa fa-remove delete-btn x-btn"></i></a>
                                     </div>
                                     <div class="panel-body">
-                                        '.$n_row['notification'].'<span class="visible-xs visible-sm notif-name">&mdash; Dr. ' . $n_name['patient_name'] . '</span>
+                                        '.$n_row['notification'].'<span class="visible-xs visible-sm notif-name">&mdash; ' . $n_name['patient_name'] . '</span>
                                     </div>
                                 </div>
                             </div>';
