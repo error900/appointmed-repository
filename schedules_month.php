@@ -26,6 +26,7 @@
 
         $start = date("Y-m-1");
         $end = date("Y-m-t");
+        $date = date("Y-m-d");
         $username = $_SESSION['username'];
         $result = mysqli_query($con, "SELECT * FROM doctor WHERE username LIKE '$username'" );
         $row =  mysqli_fetch_array($result);
@@ -87,7 +88,7 @@
             <div class="col-xs-6 col-md-2 col-md-offset-1">
                 <div class="text-center circle inqueue">
                     <?php 
-                        $count_row = mysqli_query($con, "SELECT COUNT(*) AS Appointments FROM appointment WHERE doctor_id = '$doctor_id' AND (appointment_status = 'Inqueue' OR appointment_status = 'Referred') ");
+                        $count_row = mysqli_query($con, "SELECT COUNT(*) AS Appointments FROM appointment WHERE doctor_id = '$doctor_id' AND (appointment_status = 'Inqueue' OR appointment_status = 'Referred') AND appoint_date = '$date' ");
                         $count = mysqli_fetch_assoc($count_row);
                         if($count == 0)
                             echo '<p>'.'0'.'</p>';

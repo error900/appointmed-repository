@@ -12,8 +12,11 @@
            $(".appo").click(function(){ // Click to only happen on announce links
              $("#appo_id").val($(this).data('id'));
              $("#pat_id").val($(this).data('patient-id'));
+             $("#appoint_id").val($(this).data('a-id'));
            });
-     });
+
+    });
+
     </script>
     <?php 
         session_start();
@@ -85,7 +88,7 @@
             <div class="col-xs-6 col-md-2 col-md-offset-1">
                 <div class="text-center circle inqueue">
                     <?php 
-                        $count_row = mysqli_query($con, "SELECT COUNT(*) AS Appointments FROM appointment WHERE doctor_id = '$doctor_id' AND (appointment_status = 'Inqueue' OR appointment_status = 'Referred') ");
+                        $count_row = mysqli_query($con, "SELECT COUNT(*) AS Appointments FROM appointment WHERE doctor_id = '$doctor_id' AND (appointment_status = 'Inqueue' OR appointment_status = 'Referred') AND appoint_date = '$date' ");
                         $count = mysqli_fetch_assoc($count_row);
                         if($count == 0)
                             echo '<p>'.'0'.'</p>';
@@ -142,10 +145,13 @@
     
 
                  echo'  <div class="appmnt-pnl-btn">
-                        <button type="button" class="btn btn-default btn-inverse appo btn-noborder" data-toggle="modal" data-target=".bs-remarks-modal-sm" data-id="'.$appointment_id.'" data-patient-id="'.$patient.'">Remarks<i class="fa fa-comment"></i></button>
-                        <button type="button" class="btn btn-default btn-inverse appo btn-noborder" data-toggle="modal" data-target=".bs-example-modal-sm" data-id="'.$appointment_id.'" data-patient-id="'.$patient.'">
-                        Refer<i class="fa fa-hand-o-right"></i></button>
-                    </div>
+                            <button type="button" class="btn btn-default btn-inverse appo btn-noborder" data-toggle="modal" data-target=".bs-example-modal-sm" data-id="'.$appointment_id.'" data-patient-id="'.$patient.'">
+                            Refer<i class="fa fa-hand-o-right"></i></button> 
+                        </div>
+                        <div class="appmnt-pnl-btn-2">
+                           <button type="button" class="btn btn-default btn-inverse appo btn-noborder" data-toggle="modal" data-target=".bs-remarks-modal-sm" data-a-id="'.$appointment_id.'" data-patient-id="'.$patient.'">
+                           Remarks<i class="fa fa-comment"></i></button>
+                        </div>
                  </div>
                </div>';
             }

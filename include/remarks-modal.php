@@ -12,12 +12,11 @@
                             <div class="input-group">
                                     <textarea class="form-control" rows="3" name="remarks"></textarea>
                                     <select name="isComplete" class="form-control">
-                                        <option value="Ongoing">Ongoing</option> 
-                                        <option value="Complete">Complete</option>
+                                        <option value="Inqueue">Ongoing</option> 
+                                        <option value="Completed">Completed</option>
                                     </select>
-                                    <input type="text" value="" id="appo_id" name="appointment_id">
-                                    <input type="text" id="pat_id" value="" name="patient_id">
-                                    <input class="btn btn-default login-btn btn-noborder" type="submit" value="Submit" name="submit"/>
+                                    <input type="hidden" value="" id="appoint_id" name="appointment_id">
+    
                             </div>
                         </div>
                     </div>
@@ -25,7 +24,7 @@
                 <div class="modal-footer">
                     <?php
                         echo '<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>';
-                        echo "<button type=\"submit\" class=\"btn btn-primary\" name=\"submit\">Done</button>";
+                        echo "<button type=\"submit\" class=\"btn btn-primary\" name=\"submit\">Save</button>";
                     ?>
                 </div>
             </form>
