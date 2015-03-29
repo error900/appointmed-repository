@@ -86,7 +86,7 @@
         include 'include/dc-nav-start.php';
     ?>
                 <ul class="nav navbar-nav">
-                    <li class="active dropdown">
+                    <li>
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Schedules <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="schedules.php">Today</a></li>

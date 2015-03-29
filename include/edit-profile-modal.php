@@ -84,11 +84,10 @@
                             <h1 class="text-center row-header3">Current Data</h1>
                             <form method='post' action="edit_profile_doc.php">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" name="name" placeholder="Name" required="" value="<?php echo $doctor?>"/>
                                     <input type="text" class="form-control" name="specialization" placeholder="Specialization" required="" value="<?php echo $specialization?>" />
                                     <input type="text" class="form-control" name="email" placeholder="Email Address" required="" value="<?php echo $email?>" />
                                      
-                                     <div id="clinics"><input type="button" id="hideshow" value="Add Clinics"></div>
+                                    <div id="clinics"><input type="button" id="hideshow" value="Add Clinics"></div>
                                     <input type="text" class="form-control" name="email" placeholder="Add Clinic" required="" />
                                     <input type="hidden" value="<?php echo $doctor_id?>" name="doctor_id">
                                     <input class="btn btn-default login-btn btn-noborder" type="submit" value="Submit" name="submit"/>
