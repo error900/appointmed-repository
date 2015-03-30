@@ -88,9 +88,13 @@
                                     <input type="text" class="form-control" name="specialization" placeholder="Specialization" required="" value="<?php echo $specialization?>" />
                                     <input type="text" class="form-control" name="email" placeholder="Email Address" required="" value="<?php echo $email?>" />
                                     <input type="hidden" value="<?php echo $doctor_id?>" name="doctor_id">
+                                     <div class="col-xs-6 col-md-6 add-form">
+                                        <input type="button" class="btn btn-default btn-noborder" id="hideshow" value="Add Clinic">
+                                     </div>
+                                     <div class="col-xs-6 col-md-6 add-form">
+                                        <input type="button" class="btn btn-default btn-noborder" id="showsec" value="Add Secretary">
+                                     </div>
                                      
-                                     <input type="button" id="hideshow" value="Add Clinic">
-                                   <input type="button" id="showsec" value="Add Secretary">
                                    <div id="clinics" style="display:none">
                                         <p>Clinic</p>
                                         <input type="text" class="form-control" name="clinic_name" placeholder="Clinic Name"/>
