@@ -138,12 +138,19 @@
                 echo' <div class="panel-body">';
                 echo $pat['patient_contact'];
                 echo '<p> Queue Number: <span>' . $appointment_id . '</span></p>';
-                 echo '</div>';
+                
+             
+                 echo ' 
+                         </div>';
+    
+
                  echo'  <div class="appmnt-pnl-btn">
                             <button type="button" class="btn btn-default btn-inverse appo btn-noborder" data-toggle="modal" data-target=".bs-example-modal-sm" data-id="'.$appointment_id.'" data-patient-id="'.$patient.'">
                             Refer<i class="fa fa-hand-o-right"></i></button> 
-                            <button type="button" class="btn btn-default btn-inverse appo btn-noborder" data-toggle="modal" data-target=".bs-remarks-modal-sm" data-a-id="'.$appointment_id.'" data-patient-id="'.$patient.'">
-                            Remarks<i class="fa fa-comment"></i></button>
+                        </div>
+                        <div class="appmnt-pnl-btn-2">
+                           <button type="button" class="btn btn-default btn-inverse appo btn-noborder" data-toggle="modal" data-target=".bs-remarks-modal-sm" data-a-id="'.$appointment_id.'" data-patient-id="'.$patient.'">
+                           Remarks<i class="fa fa-comment"></i></button>
                         </div>
                  </div>
                </div>';
@@ -155,6 +162,7 @@
         include 'include/refer-modal.php';
         include 'include/edit-profile-modal.php';
         include 'include/remarks-modal.php';
+
     ?>
         <script type="text/javascript" src="js/search.js"></script>
         <script type="text/javascript" src="js/scrolltop.js"></script>
