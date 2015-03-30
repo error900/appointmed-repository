@@ -29,15 +29,15 @@
             header("location: admin/index.php");
         
         $username = $_SESSION['username'];
-        $result = mysqli_query($con, "SELECT * FROM doctor WHERE username LIKE '$username'" );
+        $result = mysqli_query($con, "SELECT * FROM doctor WHERE username LIKE '$username'" ) or die(mysqli_error());
         $d_row =  mysqli_fetch_array($result);
         $doctor = $d_row['doctor_name'];
         $specialization = $d_row['specialization'];
         $email = $d_row['email'];
         $doctor_id = $d_row['doctor_id'];
-        $c_result = mysqli_query($con, "SELECT * FROM clinic WHERE doctor_id LIKE '$doctor_id'");
+        $c_result = mysqli_query($con, "SELECT * FROM clinic WHERE doctor_id LIKE '$doctor_id'") or die(mysqli_error());
 
-        $count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE doctor_id LIKE '$doctor_id' AND indicator = 'Patient'" );
+        $count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE doctor_id LIKE '$doctor_id' AND indicator = 'Patient'" ) or die(mysqli_error());
         $count_row = mysqli_fetch_array($count_result);
         $notif_count =  $count_row['count'];
     ?>

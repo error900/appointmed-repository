@@ -29,18 +29,18 @@
             header("location: admin/index.php");
         
         $username = $_SESSION['username'];
-        $result = mysqli_query($con, "SELECT * FROM doctor WHERE username LIKE '$username'" );
+        $result = mysqli_query($con, "SELECT * FROM doctor WHERE username LIKE '$username'" ) or die(mysqli_error());
         $row =  mysqli_fetch_array($result);
         $doctor = $row['doctor_name'];
         $email = $row['email'];
         $doctor_id = $row['doctor_id'];
         $specialization = $row['specialization'];
 
-        $c_result = mysqli_query($con, "SELECT * FROM clinic WHERE doctor_id LIKE '$doctor_id'");
+        $c_result = mysqli_query($con, "SELECT * FROM clinic WHERE doctor_id LIKE '$doctor_id'") or die(mysqli_error());
         $c_row = mysqli_fetch_array($c_result);
-        $a_result = mysqli_query($con, "SELECT * FROM appointment WHERE doctor_id LIKE '$doctor_id' AND appointment_status = 'Cancelled' ORDER BY appointment_id");
+        $a_result = mysqli_query($con, "SELECT * FROM appointment WHERE doctor_id LIKE '$doctor_id' AND appointment_status = 'Cancelled' ORDER BY appointment_id") or die(mysqli_error());
     
-        $count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE doctor_id LIKE '$doctor_id' AND indicator = 'Patient'" );
+        $count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE doctor_id LIKE '$doctor_id' AND indicator = 'Patient'" ) or die(mysqli_error());
         $count_row = mysqli_fetch_array($count_result);
         $notif_count =  $count_row['count'];
     ?>
