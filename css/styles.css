@@ -591,7 +591,8 @@ nav > div > div > ul > li > a:hover {
 	resize: none;
 }
 
-.remarks select {
+.remarks select,
+.refer-modal select {
 	height: 38px;
 }
 

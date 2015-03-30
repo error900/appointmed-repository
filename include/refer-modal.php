@@ -7,9 +7,9 @@
                     <h4 class="modal-title" id="myModalLabel">Refer</h4>
                 </div>
                 <div class="modal-body">
-                    <div class="form-group">
+                    <div class="input-group refer-modal">
                             <label for="inputDate">Choose Doctor: </label>
-                            <select name="referred_id">
+                            <select class="form-control" name="referred_id">
                                 <?php 
                                 while ($row2 = mysqli_fetch_array($sqls)){
                                 ?>

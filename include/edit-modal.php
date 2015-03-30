@@ -7,9 +7,9 @@
                     <h4 class="modal-title" id="myModalLabel">Edit</h4>
                 </div>
                 <div class="modal-body">
-                    <div class="form-group">
+                    <div class="input-group">
                             <label for="inputDate">Choose new date: </label>                                
-                            <input type="date" name="appdate" value="<?php echo date('Y-m-d');?>" required/>
+                            <input type="date" class="form-control" name="appdate" value="<?php echo date('Y-m-d');?>" required/>
                             <input type="hidden" id="appo_id" name="appointment_id" value="">
                             <input type="hidden" id="doc_id"  name="doctor_id" value="">
                                     <input type="hidden" name="patient_id" value="<?php echo $patient_id; ?>">
