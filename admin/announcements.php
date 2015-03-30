@@ -20,11 +20,11 @@
         $account_sql = mysqli_query($con, "SELECT * FROM account ");
     //    $account_row = mysqli_fetch_array($account_sql);
 
-/*
+
         if (isset($_POST['submitted'])){
    			 print_r($_POST);
 		}	
-*/
+
       ?>
 
 

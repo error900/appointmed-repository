@@ -1,15 +1,15 @@
 
 <?php
 if(isset($_POST['submit'])){
-	$username = mysqli_real_escape_string($con, $_POST['username']);
-	$password = mysqli_real_escape_string($_POST['password']);
-	$email = mysqli_real_escape_string($con, $_POST['email']);
-	$contact = mysqli_real_escape_string($con, $_POST['contact']);
-	$occupation = mysqli_real_escape_string($con, $_POST['occupation']);
+	$username = $_POST['username'];
+	$password = $_POST['password'];
+	$email = $_POST['email'];
+	$contact = $_POST['contact'];
+	$occupation = $_POST['occupation'];
 	$firstname = strtolower($_POST['firstname']);
 	$lastname = strtolower($_POST['lastname']);
-	$firstname = mysqli_real_escape_string($con, ucfirst($firstname));
-	$lastname = mysqli_real_escape_string($con, ucfirst($lastname));
+	$firstname = ucfirst($firstname);
+	$lastname = ucfirst($lastname);
 	$patientname = $firstname . ' ' .$lastname;
 	$month = $_POST['birth_month'];
 	$day = $_POST['birth_day'];

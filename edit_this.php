@@ -1,9 +1,9 @@
 <?php
 	include 'connectdatabase.php';
 	if(isset($_POST['submit'])){
-		$name = mysql_real_escape_string($con, $_POST['name']);
-		$contact = mysql_real_escape_string($con, $_POST['contact']);
-		$occupation = mysql_real_escape_string($con, $_POST['occupation']);
+		$name = $_POST['name'];
+		$contact = $_POST['contact'];
+		$occupation = $_POST['occupation'];
 		$patient_id = $_POST['patient_id'];
 
 		$update_sql = "UPDATE patient SET patient_name = '$name',patient_contact = '$contact', occupation = '$occupation' WHERE patient_id = '$patient_id' ";

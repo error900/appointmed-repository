@@ -9,18 +9,14 @@
     ?>
     <script type="text/javascript">
      $(document).ready(function(){
-           $(".appo").click(function(){ 
+           $(".appo").click(function(){ // Click to only happen on announce links
              $("#appo_id").val($(this).data('id'));
              $("#pat_id").val($(this).data('patient-id'));
              $("#appoint_id").val($(this).data('a-id'));
            });
-           $('#hideshow').on('click',function(){  
-            $('#clinics').show();
-        });
-            $('#showsec').on('click',function(){  
-                $('#secretary').show();
-            });
+
     });
+
     </script>
     <?php 
         session_start();
@@ -168,6 +164,7 @@
         include 'include/remarks-modal.php';
 
     ?>
+        <script type="text/javascript" src="js/search.js"></script>
         <script type="text/javascript" src="js/scrolltop.js"></script>
     </div>
   </body>
