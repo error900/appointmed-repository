@@ -72,7 +72,7 @@
                             <li><a href="removed.php">Removed</a></li>
                             <li><a href="referred.php">Referred</a></li>
                         </ul>
-                    </li>
+                    </li>s
     <?php 
         include 'include/dc-nav-end.php';
     ?>
