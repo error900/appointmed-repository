@@ -4,18 +4,19 @@
 
 .main-nav-label {
 	margin-bottom: 0px;
+	color: #34495E;
 }
 
 .main-nav-label:first-child {
-	
+	border-top: 1px solid #BDC3C7;
 }
 
 .sidebar-list {
 	padding-top: 10px;
 	padding-bottom: 6px;
-	 border-bottom: 1px solid #95A5A6;
+	border-bottom: 1px solid #95A5A6;
 }
 
 .sidebar-items-list {
-
+	background: none !important;
 }

@@ -140,13 +140,12 @@
              
                  echo ' 
                          </div>';
-    
-
                  echo'  <div class="appmnt-pnl-btn">
-                        <a href="#"><i class="fa fa-comment"></i> Remarks</a>
-                        <button type="button" class="btn btn-default btn-inverse appo btn-noborder" data-toggle="modal" data-target=".bs-example-modal-sm" data-id="'.$appointment_id.'" data-patient-id="'.$patient.'">
-                        Refer<i class="fa fa-hand-o-right"></i></button>
-                    </div>
+                            <button type="button" class="btn btn-default btn-inverse appo btn-noborder" data-toggle="modal" data-target=".bs-example-modal-sm" data-id="'.$appointment_id.'" data-patient-id="'.$patient.'">
+                            Refer<i class="fa fa-hand-o-right"></i></button> 
+                            <button type="button" class="btn btn-default btn-inverse appo btn-noborder" data-toggle="modal" data-target=".bs-remarks-modal-sm" data-a-id="'.$appointment_id.'" data-patient-id="'.$patient.'">
+                            Remarks<i class="fa fa-comment"></i></button>
+                        </div>
                  </div>
                </div>';
             }

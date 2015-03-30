@@ -69,18 +69,10 @@ body {
 
 .nav-sidebar > li label {
   cursor: pointer;
-  color: #7F8C8D !important;
+  color: #34495E !important;
   text-transform: uppercase;
   font-size: 12px;
-}
-
-.nav-sidebar > li > a:hover {
-  color: #2980B9 !important;
-  background-image:
-    linear-gradient(
-      to right, 
-      transparent, #BDC3C7
-    );
+  font-weight: 900;
 }
 
 .nav-sidebar > .active > a,
