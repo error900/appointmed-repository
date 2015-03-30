@@ -216,15 +216,21 @@ nav > div > div > ul > li > a:hover {
 }
 
 .signedin {
-	text-align: center;
+	margin-top: 5px;
 }
 
 .signedin button {
-	margin: 0;
-	padding: 9px 0;
-	color: #16a085;
 	font-size: 16px;
-	line-height: 32px;
+	margin-left: 10px;
+	float: none !important;
+}
+
+.signedin button i {
+  padding-right: 7px;
+}
+
+.signedin .btn-noborder {
+	color: #16a085;
 }
 
 .signedin .btn-noborder:hover,
@@ -242,9 +248,11 @@ nav > div > div > ul > li > a:hover {
 }
 
 .signedin-photo img {
-	height: 34px;
+	height: 24px;
 	border-radius: 50%;
 }
+
+
 
 .badge {
 	padding: 2px 7px;
