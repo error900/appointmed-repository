@@ -1,6 +1,16 @@
+                    <li class="nav-button">
+                        <form action="export.php" method="post">
+                            <input type="hidden" name="doctor_id" value="<?php echo $doctor_id?>">
+                            <input type="submit" class="btn btn-default export-btn btn-noborder" value="Export" name="submit">
+                        </form>
+                    </li>
+                    <li class="nav-button navbar-right">
+                        <button type="button" class="btn btn-default btn-noborder edit-profile-btn" data-toggle="modal" data-target=".bs-dc-edit-profile-modal-lg" data-id="'.$appointment_id.'" data-patient-id="'.$patient_id.'">
+                        <i class="fa fa-pencil"></i>Edit Profile</button>
+                    </li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <div class="btn-group navbar-right signedin">
+                <ul class="nav navbar-nav navbar-right signedin">
+                    <div class="btn-group navbar-right">
                         <button type="button" class="btn btn-default btn-lg btn-noborder dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                             <div class="signedin-photo">
                                 <img class="img-responsive" src="img/profile/<?php 
