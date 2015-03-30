@@ -2,18 +2,24 @@
 <html lang="en">
   <head>
 
-
     <?php
         $title = "Notifications";
         include 'include/head.php';
         include 'connectdatabase.php';
+        include 'include/scripts.php';
     ?>
     <script type="text/javascript">
      $(document).ready(function(){
-           $(".appo").click(function(){ // Click to only happen on announce links
+           $(".appo").click(function(){ 
              $("#appo_id").val($(this).data('id'));
              $("#pat_id").val($(this).data('patient-id'));
            });
+           $('#hideshow').on('click',function(){  
+                $('#clinics').show();
+            });
+            $('#showsec').on('click',function(){  
+                $('#secretary').show();
+            });
      });
     </script>
     <?php
@@ -143,7 +149,7 @@
                 </div>
             </div>
             <?php 
-                include 'include/scripts.php';
+
                 include 'include/scrolltop.php';
                 include 'include/edit-profile-modal.php';
             ?>

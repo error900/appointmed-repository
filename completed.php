@@ -5,7 +5,19 @@
         $title = "Schedules";
         include 'include/head.php';
         include 'connectdatabase.php';
+        include 'include/scripts.php';
     ?>
+    <script type="text/javascript">
+     $(document).ready(function(){
+        $('#hideshow').on('click',function(){  
+            $('#clinics').show();
+       });
+        $('#showsec').on('click',function(){  
+            $('#secretary').show();
+        });
+
+    });
+    </script>
      <?php 
         session_start();
         $loggedIn = $_SESSION['loggedIn'];
@@ -88,7 +100,6 @@
 
         </div><!-- /.container-fluid -->
      <?php
-            include 'include/scripts.php';
             include 'include/scrolltop.php';
             include 'include/edit-profile-modal.php';
         ?>

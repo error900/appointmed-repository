@@ -4,7 +4,8 @@
         $title = "Doctor Profile";
         include 'include/head.php';
         include 'connectdatabase.php';
-        include 'include/datepicker.php';
+        include 'include/scripts.php';
+        include 'include/scrolltop.php';
     ?>
     <script type="text/javascript">
      $(document).ready(function(){
@@ -46,13 +47,13 @@
         include 'include/dc-nav-start.php';
     ?>
                 <ul class="nav navbar-nav">
-                    <li class="active dropdown">
+                    <li>
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Schedules <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="schedules.php">Today</a></li>
-                            <li><a href="#">Tomorrow</a></li>
-                            <li><a href="#">This Week</a></li>
-                            <li><a href="#">This Month</a></li>
+                            <li><a href="schedules_tom.php">Tomorrow</a></li>
+                            <li><a href="schedules_week.php">This Week</a></li>
+                            <li><a href="schedules_month.php">This Month</a></li>
                         </ul>
                     </li>
                     <li><a href="doc_notifications.php">Notifications <span class="badge"><?php echo $notif_count?></span></a></li>
@@ -82,21 +83,14 @@
                 <div class="col-xs-12 col-md-4 col-md-offset-1">
                     <div class="d-info">
                         <ul class="profile-info">
-                            <li><i class="fa fa-user-md"></i>Dr. <?php echo strtoupper($d_row['doctor_name']); ?></li>
-                            <li><i class="fa fa-medkit"></i><?php echo $d_row['specialization']; ?></li>
+                            <li><i class="fa fa-user-md"></i>Dr. <?php echo strtoupper($doctor); ?></li>
+                            <li><i class="fa fa-medkit"></i><?php echo $specialization; ?></li>
                             <br>
                             <li><i class="fa fa-h-square"></i>Benguet Laboratory Incorporated</li>
-                            <li><i class="fa fa-angle-double-right"></i> Plastic Surgery, Cosmetic Surgery</li>
+                            <li><i class="fa fa-angle-double-right"></i><?php echo $email; ?></li>
                         </ul>
                     </div>
-                </div>
-                <div class="col-md-2 text-right">
-                    <div class="d-info">
-                        <ul>
-                            <li class="email"><?php echo $d_row['email']; ?></li>
-                        </ul>
-                    </div>
-                </div>            
+                </div>          
             </div>
 
         </div>
@@ -151,12 +145,10 @@
         </div>
 
     <?php 
-        include 'include/scrolltop.php';
+
         include 'include/refer-modal.php';
-        include 'include/scripts.php';
         include 'include/edit-profile-modal.php';
     ?>
-        <script type="text/javascript" src="js/search.js"></script>
         <script type="text/javascript" src="js/scrolltop.js"></script>
     </div>
   </body>
