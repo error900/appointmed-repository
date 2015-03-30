@@ -3,16 +3,16 @@
 include '../connectdatabase.php';
 if (isset($_POST['submit'])) {
 
-    $firstname = $_POST['firstname'];
-    $lastname = $_POST['lastname'];
-    $specialization = $_POST['specialization'];
+    $firstname = mysqli_real_escape_string($con, $_POST['firstname']);
+    $lastname = mysqli_real_escape_string($con, $_POST['lastname']);
+    $specialization = mysqli_real_escape_string($con, $_POST['specialization']);
     $status = $_POST['status'];
-    $email = $_POST['email'];
-    $username = $_POST['username'];
+    $email = mysqli_real_escape_string($con, $_POST['email']);
+    $username = mysqli_real_escape_string($con, $_POST['username']);
     $firstname = strtolower($_POST['firstname']);
     $lastname = strtolower($_POST['lastname']);
-    $firstname = ucfirst($firstname);
-    $lastname = ucfirst($lastname);
+    $firstname = mysqli_real_escape_string($con, ucfirst($firstname));
+    $lastname = mysqli_real_escape_string($con, ucfirst($lastname));
     $name = $firstname . ' ' . $lastname;
     $password = $lastname;
     $password = hash('sha256', $password);

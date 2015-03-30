@@ -103,8 +103,8 @@
                                    </div>
                                     <div id="secretary" style="display:none">
                                         <p>Secretary</p>
-                                        <input type="text" class="form-control" name="first_name" placeholder="First Name"/>
-                                        <input type="text" class="form-control" name="last_name" placeholder="Last Name"/>
+                                        <input type="text" class="form-control" name="firstname" placeholder="First Name"/>
+                                        <input type="text" class="form-control" name="lastname" placeholder="Last Name"/>
                                     </div>
                                 
                                     <input class="btn btn-default login-btn btn-noborder" type="submit" value="Submit" name="submit"/>
