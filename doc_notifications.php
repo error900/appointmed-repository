@@ -59,7 +59,6 @@
                             </ul>
                         </li>
                         <li class="active"><a href="doc_notifications.php">Notifications <span class="badge"><?php echo $notif_count?></span></a></li>
-
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">dropdown <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
@@ -67,20 +66,6 @@
                                 <li><a href="removed.php">Removed</a></li>
                                 <li><a href="referred.php">Referred</a></li>
                             </ul>
-
-                        <li><a href="completed.php">Completed</a></li>
-                        <li><a href="removed.php">Removed</a></li>
-                        <li><a href="referred.php">Referred</a></li>
-                        <li class="export-schedules">
-                            <form action="export.php" method="post">
-                                <input type="hidden" name="doctor_id" value="<?php echo $doctor_id?>">
-                                <input type="submit" class="btn btn-default export-btn btn-noborder" value="Export" name="submit">
-                            </form>
-                        </li>
-                        <li class="nav-button navbar-right">
-                            <button type="button" class="btn btn-default btn-noborder edit-profile-btn" data-toggle="modal" data-target=".bs-dc-edit-profile-modal-lg" data-id="'.$appointment_id.'" data-patient-id="'.$patient_id.'">
-                            <i class="fa fa-pencil"></i>Edit Profile</button>
-
                         </li>
         <?php 
             include 'include/dc-nav-end.php';

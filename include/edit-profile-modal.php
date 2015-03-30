@@ -88,11 +88,7 @@
                                     <input type="text" class="form-control" name="specialization" placeholder="Specialization" required="" value="<?php echo $specialization?>" />
                                     <input type="text" class="form-control" name="email" placeholder="Email Address" required="" value="<?php echo $email?>" />
                                      
-<<<<<<< HEAD
                                      <div id="clinics"><input type="button" id="hideshow" value="Add Clinics"></div>
-=======
-                                    <div id="clinics"><input type="button" id="hideshow" value="Add Clinics"></div>
->>>>>>> parent of 7d40a82... Adding of clinics and some fixes
                                     <input type="text" class="form-control" name="email" placeholder="Add Clinic" required="" />
                                     <input type="hidden" value="<?php echo $doctor_id?>" name="doctor_id">
                                     <input class="btn btn-default login-btn btn-noborder" type="submit" value="Submit" name="submit"/>
