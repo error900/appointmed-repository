@@ -579,6 +579,7 @@ nav > div > div > ul > li > a:hover {
 .dc-profile-sched-panel span,
 .dc-profile-sched-panel p {
 	color: #34495E !important;
+	font-size: 14px;
 }
 
 .dc-profile-sched-panel i {
@@ -1019,7 +1020,7 @@ nav > div > div > ul > li > a:hover {
 
 #doctor-info,
 #patient-info {
-	margin: 20px 0 3px 0;
+	margin: 20px 0 15px 0;
 	padding-bottom: 20px;
 	color: #ECF0F1;
 	font-size: 14px;
