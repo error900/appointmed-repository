@@ -46,6 +46,7 @@
         include 'include/datepicker.php';
     ?>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <script type="text/javascript">
      $(document).ready(function(){
         $('#hideshow').on('click',function(){  
@@ -57,13 +58,18 @@
 
     });
 =======
+=======
+>>>>>>> parent of 7d40a82... Adding of clinics and some fixes
          <script type="text/javascript">
              $(document).ready(function(){
                    $(".clinic").click(function(){
                      $("#clinic_id").val($(this).data('id'));
                    });
              });
+<<<<<<< HEAD
 >>>>>>> origin/master
+=======
+>>>>>>> parent of 7d40a82... Adding of clinics and some fixes
     </script>
      <script type="text/javascript" src="js/subscribeButton.js"></script>
     <script type="text/javascript" src="js/search.js"></script>
