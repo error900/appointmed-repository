@@ -72,7 +72,7 @@
                             <li><a href="removed.php">Removed</a></li>
                             <li><a href="referred.php">Referred</a></li>
                         </ul>
-                    </li>s
+                    </li>
     <?php 
         include 'include/dc-nav-end.php';
     ?>
@@ -138,18 +138,11 @@
                 echo' <div class="panel-body">';
                 echo $pat['patient_contact'];
                 echo '<p> Queue Number: <span>' . $appointment_id . '</span></p>';
-                
-             
-                 echo ' 
-                         </div>';
-    
-
-                 echo'  div class="appmnt-pnl-btn">
+                 echo '</div>';
+                 echo'  <div class="appmnt-pnl-btn">
                             <button type="button" class="btn btn-default btn-inverse appo btn-noborder" data-toggle="modal" data-target=".bs-example-modal-sm" data-id="'.$appointment_id.'" data-patient-id="'.$patient.'">
-                            Refer<i class="fa fa-hand-o-right"></i></button> 
-                        </div>
-                        <div class="appmnt-pnl-btn-2">
-                           <button type="button" class="btn btn-default btn-inverse appo btn-noborder" data-toggle="modal" data-target=".bs-remarks-modal-sm" data-a-id="'.$appointment_id.'" data-patient-id="'.$patient.'">
+                            Refer<i class="fa fa-hand-o-right"></i></button>
+                            <button type="button" class="btn btn-default btn-inverse appo btn-noborder" data-toggle="modal" data-target=".bs-remarks-modal-sm" data-a-id="'.$appointment_id.'" data-patient-id="'.$patient.'">
                            Remarks<i class="fa fa-comment"></i></button>
                         </div>
                  </div>
