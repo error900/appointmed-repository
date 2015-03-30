@@ -144,7 +144,7 @@
                             <li><i class="fa fa-medkit"></i><?php echo $d_row['specialization']; ?></li>
                             <br>
                             <li><i class="fa fa-h-square"></i>Benguet Laboratory Incorporated</li>
-                            <li><i class="fa fa-angle-double-right"></i> Plastic Surgery, Cosmetic Surgery</li>
+                            <li><i class="fa fa-angle-double-right"></i> <?php echo $d_row['email']; ?></li> 
                         </ul>
                     </div>
                 </div>
@@ -152,7 +152,6 @@
                     <div class="d-info">
                         <ul>
                             <li class="doc-status">The Doctor is: <span><?php echo($d_row['doctor_status']);?></span></li>
-                            <li class="email"><?php echo $d_row['email']; ?></li>
                         </ul>
                         <?php $sql = mysqli_query($con, "SELECT * FROM subscribe WHERE patient_id LIKE '$patient_id' AND doctor_id LIKE '$doctor_id'") or die(mysqli_error());
                                      
@@ -179,7 +178,7 @@
         <div class="container-fluid" id="clinics">
             <div class="row">
                 <?php 
-                          $count = 0;
+                    $count = 0;
                     while($c_row = mysqli_fetch_array($c_result)){
               
                         $count++;

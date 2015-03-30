@@ -7,13 +7,20 @@
         $title = "Notifications";
         include 'include/head.php';
         include 'connectdatabase.php';
+        include 'include/scripts.php';
     ?>
     <script type="text/javascript">
      $(document).ready(function(){
-           $(".appo").click(function(){ // Click to only happen on announce links
+           $(".appo").click(function(){ 
              $("#appo_id").val($(this).data('id'));
              $("#pat_id").val($(this).data('patient-id'));
            });
+           $('#hideshow').on('click',function(){  
+                $('#clinics').show();
+            });
+            $('#showsec').on('click',function(){  
+                $('#secretary').show();
+            });
      });
     </script>
     <?php
@@ -58,7 +65,7 @@
                                 <li><a href="schedules_month.php">This Month</a></li>
                             </ul>
                         </li>
-                        <li class="active"><a href="doc_notifications.php">Notifications <span class="badge"><?php echo $notif_count?></span></a></li>
+                        <li class="active"><a href="#">Notifications <span class="badge"><?php echo $notif_count?></span></a></li>
                         <li><a href="completed.php">Completed</a></li>
                         <li><a href="removed.php">Removed</a></li>
                         <li><a href="referred.php">Referred</a></li>
@@ -148,11 +155,9 @@
                 </div>
             </div>
             <?php 
-                include 'include/scripts.php';
                 include 'include/scrolltop.php';
                 include 'include/edit-profile-modal.php';
             ?>
-        <script type="text/javascript" src="js/search.js"></script>
         <script type="text/javascript" src="js/scrolltop.js"></script>
         </div> <!-- /container -->
   </body>
