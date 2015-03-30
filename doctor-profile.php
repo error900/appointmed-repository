@@ -6,7 +6,7 @@
         include 'connectdatabase.php';
         include 'include/scripts.php';
     ?>
-     <script type="text/javascript">
+    <script type="text/javascript">
      $(document).ready(function(){
         $('#hideshow').on('click',function(){  
             $('#clinics').show();
@@ -97,7 +97,7 @@
             </div>
 
         </div>
-        <div class="container-fluid" id="clinics">
+        <div class="container-fluid">
             <div class="row">
                 <?php 
                     $count = 0;
