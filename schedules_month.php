@@ -60,18 +60,13 @@
                         </ul>
                     </li>
                     <li><a href="doc_notifications.php">Notifications <span class="badge"><?php echo $notif_count?></span></a></li>
-                    <li><a href="completed.php">Completed</a></li>
-                    <li><a href="removed.php">Removed</a></li>
-                    <li><a href="referred.php">Referred</a></li>
-                    <li class="nav-button">
-                        <form action="export.php" method="post">
-                            <input type="hidden" name="doctor_id" value="<?php echo $doctor_id?>">
-                            <input type="submit" class="btn btn-default export-btn btn-noborder" value="Export" name="submit">
-                        </form>
-                    </li>
-                    <li class="nav-button navbar-right">
-                        <button type="button" class="btn btn-default btn-noborder edit-profile-btn" data-toggle="modal" data-target=".bs-dc-edit-profile-modal-lg" data-id="'.$appointment_id.'" data-patient-id="'.$patient_id.'">
-                        <i class="fa fa-pencil"></i>Edit Profile</button>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="completed.php">Completed</a></li>
+                            <li><a href="removed.php">Removed</a></li>
+                            <li><a href="referred.php">Referred</a></li>
+                        </ul>
                     </li>
     <?php 
         include 'include/dc-nav-end.php';
@@ -138,19 +133,15 @@
                 echo' <div class="panel-body">';
                 echo $pat['patient_contact'];
                 echo '<p> Queue Number: <span>' . $appointment_id . '</span></p>';
-                
-             
-                 echo ' 
-                         </div>';
-    
-
-                 echo'  <div class="appmnt-pnl-btn">
-                        <a href="#"><i class="fa fa-comment"></i> Remarks</a>
-                        <button type="button" class="btn btn-default btn-inverse appo btn-noborder" data-toggle="modal" data-target=".bs-example-modal-sm" data-id="'.$appointment_id.'" data-patient-id="'.$patient.'">
-                        Refer<i class="fa fa-hand-o-right"></i></button>
-                    </div>
-                 </div>
-               </div>';
+                echo '</div>';
+                echo '<div class="appmnt-pnl-btn">
+                            <button type="button" class="btn btn-default btn-inverse appo btn-noborder" data-toggle="modal" data-target=".bs-example-modal-sm" data-id="'.$appointment_id.'" data-patient-id="'.$patient.'">
+                            Refer<i class="fa fa-hand-o-right"></i></button> 
+                            <button type="button" class="btn btn-default btn-inverse appo btn-noborder" data-toggle="modal" data-target=".bs-remarks-modal-sm" data-a-id="'.$appointment_id.'" data-patient-id="'.$patient.'">
+                            Remarks<i class="fa fa-comment"></i></button>
+                            </div>
+                        </div>
+                    </div>';
             }
         ?>
 
