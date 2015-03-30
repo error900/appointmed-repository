@@ -1,52 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-    <style>
-    #divResult
-        {
-            position:absolute;
-            width:210px;
-            display:none;
-            margin-top:40px;
-            border:solid 1px #dedede;
-            border-top:0px;
-            overflow:hidden;
-            border-bottom-right-radius: 6px;
-            border-bottom-left-radius: 6px;
-            -moz-border-bottom-right-radius: 6px;
-            -moz-border-bottom-left-radius: 6px;
-            border-width: 3px 1px 1px;
-            border-color: #333 #DEDEDE #DEDEDE;
-            background-color: white;
-        }
-        .display_box
-        {
-            padding:4px; border-top:solid 1px #dedede; 
-            font-size:12px;
-        
-        }
-        .display_box:hover
-        {
-            background:#3bb998;
-            color:#FFFFFF;
-            cursor:pointer;
-        }
-        a
-        {
-            text-decoration: none;
- 
-            background: #3bb998;
-            color:#FFFFFF;
-            cursor: pointer;
-        }
-    </style>
     <?php
         $title = "Doctor Profile";
         include 'include/head.php';
         include 'connectdatabase.php';
         include 'include/datepicker.php';
     ?>
-<<<<<<< HEAD
-<<<<<<< HEAD
     <script type="text/javascript">
      $(document).ready(function(){
         $('#hideshow').on('click',function(){  
@@ -57,22 +16,7 @@
         });
 
     });
-=======
-=======
->>>>>>> parent of 7d40a82... Adding of clinics and some fixes
-         <script type="text/javascript">
-             $(document).ready(function(){
-                   $(".clinic").click(function(){
-                     $("#clinic_id").val($(this).data('id'));
-                   });
-             });
-<<<<<<< HEAD
->>>>>>> origin/master
-=======
->>>>>>> parent of 7d40a82... Adding of clinics and some fixes
     </script>
-     <script type="text/javascript" src="js/subscribeButton.js"></script>
-    <script type="text/javascript" src="js/search.js"></script>
 
     <?php 
         session_start();
@@ -91,10 +35,7 @@
         $email = $d_row['email'];
         $doctor_id = $d_row['doctor_id'];
         $c_result = mysqli_query($con, "SELECT * FROM clinic WHERE doctor_id LIKE '$doctor_id'");
-        $c_row = mysqli_fetch_array($c_result);
-        $a_result = mysqli_query($con, "SELECT * FROM appointment WHERE doctor_id = '$doctor_id' AND (appointment_status = 'inqueue' OR appointment_status = 'Referred') ORDER BY appointment_id");
-        $sqls = mysqli_query($con, "SELECT * FROM doctor WHERE specialization LIKE '$specialization' AND doctor_id <> '$doctor_id'" );
-   
+
         $count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE doctor_id LIKE '$doctor_id' AND indicator = 'Patient'" );
         $count_row = mysqli_fetch_array($count_result);
         $notif_count =  $count_row['count'];

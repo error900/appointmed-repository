@@ -1,7 +1,7 @@
 <?php
 	include 'connectdatabase.php';
 	if(isset($_POST['submit'])){
-		$remarks = $_POST['remarks'];
+		$remarks = mysqli_real_escape_string($con, $_POST['remarks']);
 		$status = $_POST['isComplete'];
 		$appointment_id = $_POST['appointment_id'];
 		echo $appointment_id;
