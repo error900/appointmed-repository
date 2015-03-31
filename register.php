@@ -1,8 +1,9 @@
 
 <?php
+include 'connectdatabase.php';
 if(isset($_POST['submit'])){
 	$username = mysqli_real_escape_string($con, $_POST['username']);
-	$password = mysqli_real_escape_string($_POST['password']);
+	$password = mysqli_real_escape_string($con, $_POST['password']);
 	$email = mysqli_real_escape_string($con, $_POST['email']);
 	$contact = mysqli_real_escape_string($con, $_POST['contact']);
 	$occupation = mysqli_real_escape_string($con, $_POST['occupation']);
