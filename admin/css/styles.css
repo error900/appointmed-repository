@@ -1,3 +1,9 @@
+.h1-btn {
+	position: absolute;
+	top: 10px;
+	right: 40px;
+}
+
 .sidebar {
 	border-right: 2px solid #BDC3C7;
 }
@@ -19,3 +25,19 @@
 .sidebar-items-list {
 
 }
+
+.database {
+	margin: 15px;
+	font-size: 14px;
+}
+
+
+.database thead {
+	font-size: 16px !important;
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td, 
+.table-striped>tbody>tr:nth-child(odd)>th {
+	background-color: #ECF0F1;
+}
+
