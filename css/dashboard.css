@@ -89,6 +89,14 @@ body {
   padding-right: 10px;
 }
 
+.nav-sidebar:hover > li label i {
+  color: #1ABC9C;
+  -webkit-transition: .25s;
+          transition: .25s;
+}
+
+
+
 .nav-sidebar > .active > a,
 .nav-sidebar > .active > a:hover,
 .nav-sidebar > .active > a:focus {

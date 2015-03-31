@@ -4,6 +4,14 @@
 	right: 40px;
 }
 
+.nav-menu {
+	margin: 15px 0 10px -6px;
+	padding: 0;
+	color: #95A5A6;
+	font-size: 16px;
+	text-transform: uppercase;
+}
+
 .sidebar {
 	border-right: 2px solid #BDC3C7;
 }
@@ -12,8 +20,8 @@
 	margin-bottom: 0px;
 }
 
-.main-nav-label:first-child {
-	border-top: 1px solid #95A5A6;
+.main-nav-label.first {
+	border-top: 1px solid #95A5A6 !important;
 }
 
 .sidebar-list {
@@ -31,9 +39,13 @@
 	font-size: 14px;
 }
 
-
 .database thead {
 	font-size: 16px !important;
+}
+
+.database tr:hover {
+	color: #16A085;
+	cursor: pointer;
 }
 
 .table-striped>tbody>tr:nth-child(odd)>td, 

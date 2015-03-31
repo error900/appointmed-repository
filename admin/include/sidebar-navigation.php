@@ -1,5 +1,6 @@
 <div class="col-sm-3 col-md-2 sidebar">
-    <ul class="nav nav-sidebar main-nav-label">
+    <h1 class="page-header nav-menu">Menu</h1>
+    <ul class="nav nav-sidebar main-nav-label first">
         <li class="sidebar-list">
             <label><i class="fa fa-navicon"></i>Navigation item one</label>
             <ul class="nav nav-sidebar sidebar-items-list">
