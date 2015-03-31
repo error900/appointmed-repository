@@ -7,17 +7,17 @@ if(isset($_POST['submit'])){
 	$appid = $_POST['appointment_id'];
 	$appdate = date('Y-m-d', strtotime($appdate));
 	$current_date = date('Y-m-d');
-	
+	$patient_id = $_POST['patient_id'];
 
 	$message="A patient has rescheduled his appointment to you.";
 	$n_id="n1002";
 	$indicator="patient";
 
-	$limit_result = mysqli_query($con, "SELECT * FROM appointment WHERE doctor_id LIKE '$doctor_id' AND appoint_date LIKE '$date'" );
+	$limit_result = mysqli_query($con, "SELECT * FROM appointment WHERE doctor_id LIKE '$doctor_id' AND appoint_date LIKE '$appdate' AND appointment_status <> 'Cancelled'" );
 	$limit_row = mysqli_num_rows($limit_result);
 
 	$single_result = mysqli_query($con, "SELECT COUNT(*) AS count FROM appointment WHERE doctor_id LIKE '$doctor_id' 
-		AND patient_id LIKE '$patient_id' AND (appoint_date LIKE '$date' AND appointment_status <> 'Cancelled')" );
+		AND patient_id LIKE '$patient_id' AND (appoint_date LIKE '$appdate' AND appointment_status <> 'Cancelled')" );
     $single_row = mysqli_fetch_array($single_result);
     $single_count =  $single_row['count'];
 
