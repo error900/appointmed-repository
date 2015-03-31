@@ -139,13 +139,24 @@
                         $n_id = $n_row['legend_id'];
                         $n_did = $n_row['doctor_id'];
 
-                        $n_legend = mysqli_query($con, "SELECT * FROM notification_legend WHERE legend_id LIKE '$n_id'" );
+                        $n_legend = mysqli_query($con, "SELECT * FROM notification_legend WHERE legend_id LIKE '$n_id' LIMIT 10" );
                         $n_color =  mysqli_fetch_array($n_legend);
 
                         $d_result = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_id LIKE '$n_did'" );
                         $doc =  mysqli_fetch_array($d_result);
 
-                        if ($n_color['color'] == 'blue'){
+                        if ($n_color['color'] == 'orange'){
+                            echo '<div class="col-xs-12 col-md-8 col-md-offset-2">
+                                <div class="panel panel-notif panel-warning">
+                                    <div class="panel-heading"><span class="hidden-xs hidden-sm">' . $doc['doctor_name'] . '</span>' .$n_row['notification_date']. '
+                                        <a href="#" title="cancel"><i class="fa fa-remove delete-btn x-btn"></i></a>
+                                    </div>
+                                    <div class="panel-body">
+                                        You have rescheduled your appointment<span class="visible-xs visible-sm notif-name">&mdash; ' . $doc['doctor_name'] . '</span>
+                                    </div>
+                                </div>
+                            </div>';
+                            }else  if ($n_color['color'] == 'blue'){
                         echo '<div class="col-xs-12 col-md-8 col-md-offset-2">
                             <div class="panel panel-notif panel-info">
                                 <div class="panel-heading"><span class="hidden-xs hidden-sm">' . $doc['doctor_name'] . '</span>' . $n_row['notification_date'] . '
