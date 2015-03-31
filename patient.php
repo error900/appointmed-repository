@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
     <style>
 
 #divResult
@@ -42,7 +41,6 @@
         }
     </style>
 
-</head>
     <?php
         $title = "Patient Profile";
         include 'include/head.php';
@@ -67,7 +65,7 @@
             $patient_n = $row['patient_name'];
             $p_result = mysqli_query($con, "SELECT * FROM appointment WHERE patient_id LIKE '$patient_id'" ) or die(mysqli_error());
             $p_row =  mysqli_fetch_array($p_result);
-            $n_result = mysqli_query($con, "SELECT * FROM notification WHERE patient_id LIKE '$patient_id'" ) or die(mysqli_error());
+            $n_result = mysqli_query($con, "SELECT * FROM notification WHERE patient_id LIKE '$patient_id' LIMIT 10" ) or die(mysqli_error());
         
             $count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE patient_id LIKE '$patient_id' AND indicator = 'doctor'" );
             $count_row = mysqli_fetch_array($count_result);
@@ -139,7 +137,7 @@
                         $n_id = $n_row['legend_id'];
                         $n_did = $n_row['doctor_id'];
 
-                        $n_legend = mysqli_query($con, "SELECT * FROM notification_legend WHERE legend_id LIKE '$n_id' LIMIT 10" );
+                        $n_legend = mysqli_query($con, "SELECT * FROM notification_legend WHERE legend_id LIKE '$n_id'" );
                         $n_color =  mysqli_fetch_array($n_legend);
 
                         $d_result = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_id LIKE '$n_did'" );
