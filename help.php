@@ -91,9 +91,47 @@
                             <button type="button" class="btn btn-default btn-noborder edit-profile-btn" data-toggle="modal" data-target=".bs-pt-edit-profile-modal-lg" data-id="'.$appointment_id.'" data-patient-id="'.$patient_id.'">
                             <i class="fa fa-pencil"></i>Edit Profile</button>
                         </li>
+
         <?php 
             include 'include/pt-nav-end.php';
         ?>     
+        <div class="container-fluid" id="patient-info">
+            <div class="row">
+                  <div class="col-xs-12 col-md-5 col-md-offset-1">
+                    <h2>Appoint.med Manual</h2>
+
+                    <h3>Patient Help</h3>
+                    <h4>How to find your Doctor</h4>
+                            <p>
+                                 Type name of doctor or specialization in search bar above.
+                                </br>
+                                 Choose and click on the name of your doctor in the result/s shown below the search bar and it will lead you to your doctor's Profile. 
+                                </br>
+                                <img src="img/screenshots/s1.jpg" alt="" height="200px"/>
+                            </p>
+                            
+                    <h4>How to follow your Doctor</h4>
+                                 To get notifications about your doctor you must follow him Click on the follow button on your doctor's profile. Unfollow your doctor by clicking the same button.
+                                </br>
+                                <img src="img/screenshots/s2.jpg" alt="" height="200px"/>
+                                
+                    <h4>How to set an Appointment</h4>
+                                To create an appointment with your doctor go to his profile, choose  a clinic of his, and hit the create appointment button. 
+                                </br>
+                                After that, choose a date and time and hit the appoint.me button. 
+                                
+                    <h4>How to edit an Appointment</h4>
+                                View your appointments by clicking on the appointments link. Select the appointment you want to update and from there you can change the date and time of your appointment or you could just delete that appointment if you no longer wish to have it. 
+                    
+                    <h4>How to edit or update your Profile</h4>
+                                On your profile on the right corner, you will see a button. By clicking that button, you will now be able to edit your profile by changing the information on the forms. 
+                    <h4>How to view your appointments</h4>
+                    <h4>How to view your notifications</h4>
+                    <h4>How to know if your programmers are reviewing your code</h4>
+                    <h4>NIALL AND THE POTATOES</h4>
+                </div>
+            </div>
+        </div>
         <?php
             include 'include/edit-profile-modal.php';
         ?>
