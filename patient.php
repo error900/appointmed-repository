@@ -150,7 +150,7 @@
                                         <a href="#" title="cancel"><i class="fa fa-remove delete-btn x-btn"></i></a>
                                     </div>
                                     <div class="panel-body">
-                                        You have rescheduled your appointment<span class="visible-xs visible-sm notif-name">&mdash; ' . $doc['doctor_name'] . '</span>
+                                        You have rescheduled your appointment.<span class="visible-xs visible-sm notif-name">&mdash; ' . $doc['doctor_name'] . '</span>
                                     </div>
                                 </div>
                             </div>';
@@ -161,7 +161,7 @@
                                     <a href="#" title="cancel"><i class="fa fa-remove delete-btn x-btn"></i></a>
                                 </div>
                                 <div class="panel-body">
-                                    '.$n_row['notification'] .'<span class="visible-xs visible-sm notif-name">&mdash; Dr. ' . $doc['doctor_name'] . '</span>
+                                    You have requested an appointment.<span class="visible-xs visible-sm notif-name">&mdash; Dr. ' . $doc['doctor_name'] . '</span>
                                 </div>
                             </div>
                         </div>';

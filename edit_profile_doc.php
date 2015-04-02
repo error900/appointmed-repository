@@ -40,7 +40,7 @@
 			}
 		}
 
-		$update_sql = "UPDATE doctor SET doctor_name = '$name', specialization = '$specialization', email = '$email' WHERE doctor_id = '$doctor_id' ";
+		$update_sql = "UPDATE doctor SET doctor_name = '$name', specialization = '$specialization', email = '$email', doctor_status = '$doctor_status' WHERE doctor_id = '$doctor_id' ";
 		if (!(mysqli_query($con, $update_sql))) {
 	  		die('Error: ' . mysqli_error($con));
 		}
