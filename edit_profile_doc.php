@@ -5,6 +5,7 @@
 		$specialization = mysqli_real_escape_string($con, $_POST['specialization']);
 		$email = mysqli_real_escape_string($con, $_POST['email']);
 		$doctor_id = $_POST['doctor_id'];
+		$doctor_status = $_POST['doctor_status'];
 
 		$clinic_name = mysqli_real_escape_string($con, $_POST['clinic_name']);
 		$clinic_location = mysqli_real_escape_string($con, $_POST['clinic_location']);

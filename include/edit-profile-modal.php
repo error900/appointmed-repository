@@ -88,6 +88,11 @@
                                     <input type="text" class="form-control" name="specialization" placeholder="Specialization" required="" value="<?php echo $specialization?>" />
                                     <input type="text" class="form-control" name="email" placeholder="Email Address" required="" value="<?php echo $email?>" />
                                     <input type="hidden" value="<?php echo $doctor_id?>" name="doctor_id">
+                                    Change Status: <select name="doctor_status">
+                                        <option value="In">In</option>
+                                        <option value="Out">Out</option>
+                                        <option value="Break">Break</option>
+                                    </select>
                                      <div class="col-xs-6 col-md-6 add-form">
                                         <input type="button" class="btn btn-default btn-noborder" id="hideshow" value="Add Clinic">
                                      </div>
