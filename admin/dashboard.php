@@ -43,23 +43,23 @@
                     <div class="row placeholders">
                         <div class="col-xs-6 col-sm-3 placeholder">
                             <img data-src="holder.js/128x128/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
-                            <h4>Label</h4>
-                            <span class="text-muted">Something else</span>
+                            <h4>Total Number of Doctors</h4>
+                            <span class="text-muted">Date of last modified</span>
                         </div>
                         <div class="col-xs-6 col-sm-3 placeholder">
                             <img data-src="holder.js/128x128/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
-                            <h4>Label</h4>
-                            <span class="text-muted">Something else</span>
+                            <h4>Total Number of Patients</h4>
+                            <span class="text-muted">Date of last modified</span>
                         </div>
                         <div class="col-xs-6 col-sm-3 placeholder">
                             <img data-src="holder.js/128x128/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
-                            <h4>Label</h4>
-                            <span class="text-muted">Something else</span>
+                            <h4>Total Number of Active Users</h4>
+                            <span class="text-muted">Date of last modified</span>
                         </div>
                         <div class="col-xs-6 col-sm-3 placeholder">
                             <img data-src="holder.js/128x128/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
-                            <h4>Label</h4>
-                            <span class="text-muted">Something else</span>
+                            <h4>Total Number of Inactive Users</h4>
+                            <span class="text-muted">Date of last modified</span>
                         </div>
                     </div>
 

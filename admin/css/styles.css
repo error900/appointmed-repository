@@ -53,3 +53,23 @@
 	background-color: #ECF0F1;
 }
 
+.announcement-post textarea,
+.announcement-post input {
+  background: rgba(236, 240, 241, 0.6);
+  border-radius: 4px !important;
+  margin: 5px;
+}
+
+.announcement-post label {
+	float: left;
+	margin: 5px;
+}
+
+.announcement-post input[type=date] {
+	width: 25%;
+}
+
+.post-buttons button {
+	float: right; 
+	margin: 10px;
+}
