@@ -16,7 +16,8 @@
                                         <option value="Completed">Completed</option>
                                     </select>
                                     <input type="hidden" value="" id="appoint_id" name="appointment_id">
-    
+                                    <input type="hidden" value="" id="patient_id" name="patient_id">
+                                    <input type="hidden" value="<?php echo $doctor_id?>" name="doctor_id">    
                             </div>
                         </div>
                     </div>
