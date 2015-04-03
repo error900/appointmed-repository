@@ -44,7 +44,7 @@
         $title = "Appointments";
         include 'include/head.php';
         include 'connectdatabase.php';
-        //include 'include/scripts.php';
+        include 'include/scripts.php';
         //include 'include/scrolltop.php';
     ?>
     
@@ -78,6 +78,7 @@
             $patient_id = $row['patient_id'];
             $patient_n = $row['patient_name'];
 
+
             $count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE patient_id LIKE '$patient_id' AND indicator = 'doctor'" );
             $count_row = mysqli_fetch_array($count_result);
             $notif_count =  $count_row['count'];
@@ -107,9 +108,57 @@
             include 'include/pt-nav-end.php';
         ?>     
 
+        <div class="container-fluid" id="appointments-user">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="text-center row-header-fff">&mdash; Cancelled &mdash;</h1>
+                </div>
+                <?php
+                    $c_result = mysqli_query($con, "SELECT * FROM appointment WHERE patient_id LIKE '$patient_id' AND appointment_status = 'Cancelled' ORDER BY 5 DESC LIMIT 8") or die(mysqli_error());
+
+                    while ($d_row = mysqli_fetch_array($c_result)){
+                        $app_id = $d_row['appointment_id'];
+                        $doctor = $d_row['doctor_id'];
+                        $date = $d_row['appoint_date'];
+
+                        $d_result = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_id LIKE '$doctor'" );
+                        $doc =  mysqli_fetch_array($d_result);
+                        echo '<div class="col-xs-12 col-md-6 col-lg-3" id="'.$d_row['appointment_id'].'">';
+                        echo "<div class='panel panel-default' id='asd'><div class='panel-heading appointment-date' >";
+                                echo $date;
+                                echo '<p class="appointment-dr-name">Dr. ' . $doc['doctor_name'] . '</p>';
+                                echo '<p class="appointment-specs">' . $doc['specialization'] . '</p></div></div>';
+                        echo '</div>';
+                    }
+                ?>
+                <div class="col-md-12">
+                    <h1 class="text-center row-header-fff">&mdash; Completed &mdash;</h1>
+                </div>
+                <?php
+                    $a_result = mysqli_query($con, "SELECT * FROM appointment WHERE patient_id LIKE '$patient_id' AND appointment_status = 'Completed' ORDER BY 5 DESC LIMIT 8") or die(mysqli_error());
+
+                    while ($d_row = mysqli_fetch_array($a_result)){
+                        $app_id = $d_row['appointment_id'];
+                        $doctor = $d_row['doctor_id'];
+                        $date = $d_row['appoint_date'];
+
+                        $d_result = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_id LIKE '$doctor'" );
+                        $doc =  mysqli_fetch_array($d_result);
+                        echo '<div class="col-xs-12 col-md-6 col-lg-3" id="'.$d_row['appointment_id'].'">';
+                        echo "<div class='panel panel-default' id='asd'><div class='panel-heading appointment-date' >";
+                                echo $date;
+                                echo '<p class="appointment-dr-name">Dr. ' . $doc['doctor_name'] . '</p>';
+                                echo '<p class="appointment-specs">' . $doc['specialization'] . '</p></div></div>';
+                        echo '</div>';
+                    }
+                ?>
+                <div class="col-md-12">
+                    <h1 class="text-center row-header-fff">&mdash; Notifications &mdash;</h1>
+                </div>
+            </div>
+        </div>
 
          <?php 
-            include 'include/scripts.php';
             include 'include/scrolltop.php';
             include 'include/edit-profile-modal.php';
 

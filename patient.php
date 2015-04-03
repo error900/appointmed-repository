@@ -45,6 +45,7 @@
         $title = "Patient Profile";
         include 'include/head.php';
         include 'connectdatabase.php';
+              include 'include/scrolltop.php';
     ?>
   <body>
     <div class="container">
@@ -178,6 +179,8 @@
             include 'include/edit-profile-modal.php';
         ?>
         <script type="text/javascript" src="js/search.js"></script>
+        <script type="text/javascript" src="js/scrolltop.js"></script>
+
     </div>
   </body>
 </html>

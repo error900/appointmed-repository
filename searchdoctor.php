@@ -21,7 +21,7 @@
                     <br/>
                     <?php echo $final_specs; ?>
                 </div>
-                    
+                
         <?php
                 }
             }
