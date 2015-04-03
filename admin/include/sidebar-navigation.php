@@ -23,7 +23,7 @@
     </ul>
     <ul class="nav nav-sidebar main-nav-label">
         <li class="sidebar-list">
-            <label><i class="fa fa-navicon"></i>User Approval</label>
+            <label><i class="fa fa-navicon"></i>Registrations</label>
             <ul class="nav nav-sidebar sidebar-items-list">
                 <li><a href="approve.php">Approve Users</a></li>
             </ul>

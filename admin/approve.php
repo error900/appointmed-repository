@@ -67,7 +67,8 @@
         </div>
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
         <h1 class="page-header">Approve Users</h1>
-        <table class = "table table-striped">
+        <div class="table-responsive database">
+        <table class="table table-striped">
             <h2 class="row-header-lc">Patient</h2>
             <form method="post" action="approve_request.php" id="form1">
                 <?php
@@ -92,13 +93,19 @@
                         echo "<td><input type='checkbox' name='select[]' id='select' value='$row[username]'></td>";
                         echo '</tr>';
                     }
-                    echo '<input type="submit" value="Approve" name="submit">';
+                    echo '<input type="submit" class="btn btn-default aprrove-btn" value="Approve" name="submit">';
                 } else {
-                    echo '<p>No patient account to be activated</p>';
+                    echo '<div class="alert alert-info alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+  <span aria-hidden="true">&times;</span></button>
+  There are no pending <strong>patient registrations</strong>.
+</div>';
                 }
                 ?>
             </form>
         </table>
+        </div>
+        <div class="table-responsive database">
         <table class = "table table-striped">
             <h2 class="row-header-lc">Doctor</h2>
             <form method="post" action="doctor_request.php" id="form2">
@@ -125,13 +132,18 @@
                         echo "<td><input type='checkbox' name='select[]' id='select' value='$row[username]'></td>";
                         echo '</tr>';
                     }
-                    echo '<input type="submit" value="Approve" name="submit">';
+                    echo '<input type="submit" class="btn btn-default" value="Approve" name="submit">';
                 } else {
-                    echo '<p>No doctor account to be activated</p>';
+                                        echo '<div class="alert alert-info alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+  <span aria-hidden="true">&times;</span></button>
+  There are no pending <strong>doctor registrations</strong>.
+</div>';
                 }
                 ?>
             </form>
         </table>
+        </div>
     </div>
                     <?php
         include 'include/scripts.php';

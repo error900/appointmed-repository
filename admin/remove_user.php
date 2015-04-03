@@ -52,42 +52,41 @@
             </div>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-        <h1 class="page-header">Remove User(s)
-
-        </h1>
-        <div class="table-responsive database">
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Username</th>
-                    <th>Name</th>
-                    <th>Account Type</th>
-                    <th><input type="checkbox" value="Check All" id="checkallA" onClick="checkAll(form1)"></th>
-                </tr>
-            </thead>
-            <form method="post" action="removal.php" id="form1">
-                <?php
-                while ($row = mysqli_fetch_array($sql)) {
-                    $username = $row['username'];
-                    $result = mysqli_query($con, "SELECT patient_id, patient_name FROM patient WHERE username LIKE '$username' 
-                        UNION (SELECT doctor_id, doctor_name FROM doctor WHERE username LIKE '$username') 
-                        UNION (SELECT secretary_id, secretary_name FROM secretary WHERE username LIKE '$username')");
-                    $account = mysqli_fetch_array($result);
-                    echo '<tr>';
-                    echo '<td>' . $account['patient_id'] . '</td>';
-                    echo '<td>' . $row['username'] . '</td>';
-                    echo '<td>' . $account['patient_name'] . '</td>';
-                    echo '<td>' . $row['account_type'] . '</td>';
-                    echo "<td><input type='checkbox' name='select[]' id='select' value='$row[username]'></td>";
-                    echo '</tr>';
-                }
-                ?>
+            <h1 class="page-header">Remove User(s)
                 <span class="h1-btn">
-                    <input type="submit" class="btn btn-default export-btn btn-noborder" name="submit" value="Set as Inactive">
+                    <input type="submit" class="btn btn-default export-btn" name="submit" value="Inactive">
                 </span>
-            </form>
-        </table>
+            </h1>
+            <div class="table-responsive database">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Name</th>
+                        <th>Account Type</th>
+                        <th><input type="checkbox" value="Check All" id="checkallA" onClick="checkAll(form1)"></th>
+                    </tr>
+                </thead>
+                <form method="post" action="removal.php" id="form1">
+                    <?php
+                    while ($row = mysqli_fetch_array($sql)) {
+                        $username = $row['username'];
+                        $result = mysqli_query($con, "SELECT patient_id, patient_name FROM patient WHERE username LIKE '$username' 
+                            UNION (SELECT doctor_id, doctor_name FROM doctor WHERE username LIKE '$username') 
+                            UNION (SELECT secretary_id, secretary_name FROM secretary WHERE username LIKE '$username')");
+                        $account = mysqli_fetch_array($result);
+                        echo '<tr>';
+                        echo '<td>' . $account['patient_id'] . '</td>';
+                        echo '<td>' . $row['username'] . '</td>';
+                        echo '<td>' . $account['patient_name'] . '</td>';
+                        echo '<td>' . $row['account_type'] . '</td>';
+                        echo "<td><input type='checkbox' name='select[]' id='select' value='$row[username]'></td>";
+                        echo '</tr>';
+                    }
+                    ?>
+                </form>
+            </table>
         </div>
     </div>
         <?php

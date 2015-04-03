@@ -73,8 +73,10 @@
 
         <?php
         include 'include/scripts.php';
+        include '../include/scrolltop.php';
         ?>
         <script type="text/javascript" src="js/listslide.js"></script>
+        <script type="text/javascript" src="../js/scrolltop.js"></script>
 
     </body>
 </html>

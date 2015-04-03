@@ -122,7 +122,7 @@ nav > div > div > ul > li > a {
 	letter-spacing: 0.5px;
 	text-transform: lowercase;
 	border-bottom: 3px solid #f8f8f8;
-	text-shadow: 1px 0px 0px rgba(52, 73, 94, 0.3);
+	text-shadow: 1px 0px 0px #BDC3C7;
 }
 nav > div > div > ul > li > a:hover {
 	color: #D35400 !important;
@@ -222,8 +222,9 @@ nav > div > div > ul > li > a:hover {
 .signedin button {
 	margin: 0;
 	padding: 9px 0;
-	color: #16a085;
+	color: #34495F;
 	font-size: 16px;
+	font-weight: 800;
 	line-height: 32px;
 }
 
@@ -244,6 +245,7 @@ nav > div > div > ul > li > a:hover {
 .signedin-photo img {
 	height: 34px;
 	border-radius: 50%;
+	border: 1px solid #7F8C8D;
 }
 
 
@@ -332,6 +334,9 @@ nav > div > div > ul > li > a:hover {
 	border-radius: 0;
 	text-transform: uppercase;
 	transition: border 0.20s ease;
+	-webkit-box-shadow: 10px 17px 40px 0px rgba(0, 0, 0, 0.5);
+	-moz--box-shadow: 10px 17px 40px 0px rgba(0, 0, 0, 0.5);
+	box-shadow: 10px 17px 40px 0px rgba(0, 0, 0, 0.5);
 }
 
 .panel.panel-default:hover {
@@ -765,7 +770,8 @@ nav > div > div > ul > li > a:hover {
 
 .login-modal-btn,
 .export-btn,
-.edit-profile-btn {
+.edit-profile-btn,
+.post-btn {
 	margin-top: 10px;
 	margin-left: 10px;
 	background: #16A085 !important;
@@ -785,7 +791,9 @@ nav > div > div > ul > li > a:hover {
 .edit-profile-btn:hover,
 .edit-profile-btn:focus,
 .export-btn:hover,
-.export-btn:focus {
+.export-btn:focus,
+.post-btn:hover,
+.post-btn:focus {
 	color: #fff !important;
 	background: #1ABC9C !important;
 }
@@ -833,8 +841,11 @@ nav > div > div > ul > li > a:hover {
 
 #index-frw {
 	height: 305px;
-	background: url('../img/zayn2.jpg') no-repeat;
+	background: url('../img/benguet-laboratory-view.jpg') no-repeat;
 	margin:	10px 0 40px 0;
+	  -webkit-box-shadow: 10px 17px 40px 0px rgba(0, 0, 0, 0.5);
+		  -moz--box-shadow: 10px 17px 40px 0px rgba(0, 0, 0, 0.5);
+		  	box-shadow: 10px 17px 40px 0px rgba(0, 0, 0, 0.5);
 }
 
 .more-btn {
@@ -1189,6 +1200,16 @@ nav > div > div > ul > li > a:hover {
 }
 
 #notification {
+}
+
+.alert {
+	padding: 10px !important;
+}
+
+.alert-dismissable .close,
+.alert-dismissible .close {
+	top: 1px;
+	right: 0;
 }
 
 footer {

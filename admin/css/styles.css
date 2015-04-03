@@ -1,7 +1,11 @@
 .h1-btn {
-	position: absolute;
-	top: 10px;
-	right: 40px;
+	float: right;
+	margin-top: -14px;
+}
+
+.aprrove-btn {
+	float: right;
+	margin-top: -50px;
 }
 
 .nav-menu {
@@ -55,18 +59,25 @@
 
 .announcement-post textarea,
 .announcement-post input {
-  background: rgba(236, 240, 241, 0.6);
+  background: rgba(236, 240, 241, 0.8);
   border-radius: 4px !important;
   margin: 5px;
 }
 
-.announcement-post label {
-	float: left;
-	margin: 5px;
+.announcement-post textarea {
+	overflow: auto;
+	resize: none;
 }
 
-.announcement-post input[type=date] {
-	width: 25%;
+.announcement-post label {
+	margin: 7px 10px;
+	font-size: 14px;
+}
+
+.start-date,
+.end-date {
+	padding: 0;
+	text-align: center;
 }
 
 .post-buttons button {

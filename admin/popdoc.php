@@ -24,7 +24,7 @@
             <li><a href="#">Settings</a></li>
             <li><a href="#">Help</a></li>
             <li class="divider"></li>
-            <li><a href="logout.php"><i class="fa fa-power-off"></i>    logout</a></li>
+            <li><a href="logout.php"><i class="fa fa-power-off"></i> logout</a></li>
         </ul>
         <?php
         include 'include/admin-nav-end.php';
@@ -47,11 +47,11 @@
                             <input type="text" class="form-control" name="specialization" placeholder="Specialization" required="">
                             <label>Doctor Status:</label>
                             <select name="status" class="form-control">
-                                echo '<option value="In">In</option>';
-                                echo '<option value="Emergency">Emergency</option>';
-                                echo '<option value="On Leave">On Leave</option>';
-                                echo '<option value="Out">Out</option>';
-                                echo '<option value="Sick Leave">Sick Leave</option>';
+                                <option value="In">In</option>;
+                                <option value="Emergency">Emergency</option>;
+                                <option value="On Leave">On Leave</option>;
+                                <option value="Out">Out</option>;
+                                <option value="Sick Leave">Sick Leave</option>;
                             </select>
                             <input type="email" class="form-control" name="email" placeholder="Email" required="">   
                             <input type="text" class="form-control" name="username" placeholder="Username" required="" id="username">
