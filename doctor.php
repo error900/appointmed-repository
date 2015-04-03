@@ -45,7 +45,7 @@
         $title = "Doctor Profile";
         include 'include/head.php';
         include 'connectdatabase.php';
-        include 'include/datepicker.php';
+//        include 'include/datepicker.php';
         include 'include/scrolltop.php';
         include 'include/scripts.php';
 
@@ -57,7 +57,7 @@
                    });
              });
     </script>
-     <script type="text/javascript" src="js/subscribeButton.js"></script>
+   
     <script type="text/javascript" src="js/search.js"></script>
 
 

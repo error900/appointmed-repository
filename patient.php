@@ -128,10 +128,11 @@
         </div>
         <div class="container-fluid patient-activity">
             <div class="row">
-                <div class="col-md-6 col-md-offset-3">
-                    <h1 class="text-center row-header2-fff">Recent Activity</h1>
-                </div>
-                <?php
+                <?php if (mysqli_num_rows($n_result) >= 1) { 
+                    echo '<div class="col-md-6 col-md-offset-3">
+                        <h1 class="text-center row-header2-fff">Recent Activity</h1>
+                    </div>';
+              
                 while ($n_row =  mysqli_fetch_array($n_result)){
                     if($n_row['indicator'] == 'patient'){
                     if($n_row['patient_id'] == $patient_id){
@@ -145,32 +146,33 @@
                         $doc =  mysqli_fetch_array($d_result);
 
                         if ($n_color['color'] == 'orange'){
-                            echo '<div class="col-xs-12 col-md-8 col-md-offset-2">
-                                <div class="panel panel-notif panel-warning">
-                                    <div class="panel-heading"><span class="hidden-xs hidden-sm">' . $doc['doctor_name'] . '</span>' .$n_row['notification_date']. '
-                                        <a href="#" title="cancel"><i class="fa fa-remove delete-btn x-btn"></i></a>
-                                    </div>
-                                    <div class="panel-body">
-                                        You have rescheduled your appointment.<span class="visible-xs visible-sm notif-name">&mdash; ' . $doc['doctor_name'] . '</span>
-                                    </div>
+                        echo "<div class='col-xs-12 col-md-8 col-md-offset-2'>
+                            <div class='panel panel-notif panel-warning'>
+                                <div class='panel-heading'><span class='hidden-xs hidden-sm'>" . $doc["doctor_name"] . "</span>".$n_row["notification_date"]."
+                                    <a href=\"close_notif.php?nid=$n_row[notification_id]&desc=$n_row[notification]\" title='Close'><i class='fa fa-remove delete-btn x-btn'></i></a>
                                 </div>
-                            </div>';
-                            }else  if ($n_color['color'] == 'blue'){
-                        echo '<div class="col-xs-12 col-md-8 col-md-offset-2">
-                            <div class="panel panel-notif panel-info">
-                                <div class="panel-heading"><span class="hidden-xs hidden-sm">' . $doc['doctor_name'] . '</span>' . $n_row['notification_date'] . '
-                                    <a href="#" title="cancel"><i class="fa fa-remove delete-btn x-btn"></i></a>
-                                </div>
-                                <div class="panel-body">
-                                    You have requested an appointment.<span class="visible-xs visible-sm notif-name">&mdash; Dr. ' . $doc['doctor_name'] . '</span>
+                                <div class='panel-body'>
+                                     You have rescheduled your appointment.<span class='visible-xs visible-sm notif-name'>&mdash; Dr. " . $doc['doctor_name'] . "</span>
                                 </div>
                             </div>
-                        </div>';
+                        </div>";
+                        }else if ($n_color['color'] == 'blue'){
+                        echo "<div class='col-xs-12 col-md-8 col-md-offset-2'>
+                            <div class='panel panel-notif panel-info'>
+                                <div class='panel-heading'><span class='hidden-xs hidden-sm'>" . $doc["doctor_name"] . "</span>".$n_row["notification_date"]."
+                                    <a href=\"close_notif.php?nid=$n_row[notification_id]&desc=$n_row[notification]\" title='Close'><i class='fa fa-remove delete-btn x-btn'></i></a>
+                                </div>
+                                <div class='panel-body'>
+                                    ".$n_row['notification']."<span class='visible-xs visible-sm notif-name'>&mdash; Dr. " . $doc['doctor_name'] . "</span>
+                                </div>
+                            </div>
+                        </div>";
                         }
                     }
                 }
                 }
-                ?>
+          
+               }else  echo '<h1 class="text-center row-header2-fff">No Recent Activity</h1>';?>
             </div>
         </div>
 

@@ -44,10 +44,8 @@
     $title = "Appointments";
     include 'include/head.php';
     include 'connectdatabase.php';
-    //include 'include/scripts.php';
     include 'include/scripts.php';
     include 'include/scrolltop.php';
-    //include 'include/scrolltop.php';
     ?>
 
     <script type="text/javascript">
@@ -112,10 +110,11 @@
                 <!-- /navigation -->           
                 <div class="container-fluid" id="appointments-user">
                     <div class="row">
-                        <div class="col-md-12">
+                        <?php if (mysqli_num_rows($p_result) >= 1) { 
+                        echo '<div class="col-md-12">
                             <h1 class="text-center row-header-fff">&mdash; Today &mdash;</h1>
-                        </div>
-                        <?php
+                        </div>';
+                  
                         while ($d_row = mysqli_fetch_array($p_result)) {
                             $app_id = $d_row['appointment_id'];
                             $doctor = $d_row['doctor_id'];
@@ -133,6 +132,13 @@
                             <a class='btn btn-block btn-inverse appo tooltip' data-toggle='modal' data-target='.bs-example-modal-sm' data-id='" . $app_id . "' data-doctor-id='" . $doctor . "' title='edit this appointment'><span><i class='fa fa-pencil'></i></span> Edit</a>";
                             echo '<p class="appointment-specs">' . $doc['specialization'] . '</p></div></div>';
                             echo '</div>';
+                        }
+                        }else{
+                            echo "br/><div class='col-md-12'>
+                             <h1 class='text-center row-header2-fff'>No Appointments Set</h1>
+                             <h1 class='text-center row-header2-fff'>Don't know how to set appointments? Click
+                             <a href=\"help.php\">HERE</a> </h1>
+                            </div>";
                         }
                         ?>
                     </div>
