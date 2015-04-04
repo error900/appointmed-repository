@@ -1204,12 +1204,17 @@ nav > div > div > ul > li > a:hover {
 
 .alert {
 	padding: 10px !important;
+	font-size: 14px;
 }
 
 .alert-dismissable .close,
 .alert-dismissible .close {
 	top: 1px;
 	right: 0;
+}
+
+#help {
+	color: #ECF0F1;
 }
 
 footer {

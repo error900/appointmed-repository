@@ -1,6 +1,7 @@
                         <form class="navbar-form navbar-right" method="post" role="search">
                             <div class="input-group search-bar">
-                                    <div id="divResult"></div>
+                                    <ul class="dropdown-menu divResult" role="menu">
+                                    </ul>
                                 <input type="text" class="form-control" name="search" placeholder="search doctor" id="inputSearch">
 
                                 <span class="input-group-btn">
