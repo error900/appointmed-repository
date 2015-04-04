@@ -48,10 +48,8 @@
                             <label>Doctor Status:</label>
                             <select name="status" class="form-control">
                                 <option value="In">In</option>;
-                                <option value="Emergency">Emergency</option>;
-                                <option value="On Leave">On Leave</option>;
                                 <option value="Out">Out</option>;
-                                <option value="Sick Leave">Sick Leave</option>;
+                                <option value="Sick Leave">Break</option>;
                             </select>
                             <input type="email" class="form-control" name="email" placeholder="Email" required="">   
                             <input type="text" class="form-control" name="username" placeholder="Username" required="" id="username">
