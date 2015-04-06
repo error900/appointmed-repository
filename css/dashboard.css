@@ -4,8 +4,8 @@
 
 /* Move down content because we have a fixed navbar that is 50px tall */
 body {
-  padding-top: 50px !important;
-  background-color: #fff !important;
+    padding-top: 50px !important;
+    background-color: #fff !important;
 }
 
 
@@ -14,9 +14,9 @@ body {
  */
 
 .sub-header {
-  padding-bottom: 10px;
-  border-bottom: 1px solid #34495E;
-  font-size: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #34495E;
+    font-size: 18px;
 }
 
 /*
@@ -24,7 +24,7 @@ body {
  * Hide default border to remove 1px line.
  */
 .navbar-fixed-top {
-  border: 0;
+    border: 0;
 }
 
 /*
@@ -33,66 +33,66 @@ body {
 
 /* Hide for mobile, show later */
 .sidebar {
-  display: none;
+    display: none;
 }
 @media (min-width: 768px) {
-  .sidebar {
-    position: fixed;
-    top: 51px;
-    bottom: 0;
-    left: 0;
-    z-index: 1000;
-    display: block;
-    padding: 20px;
-    font-size: 16px;
-    font-weight: 800;
-    overflow-x: hidden;
-    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-    background-color: #ECF0F1;
-    border-right: 1px solid #eee;
-  }
+    .sidebar {
+        position: fixed;
+        top: 51px;
+        bottom: 0;
+        left: 0;
+        z-index: 1000;
+        display: block;
+        padding: 20px;
+        font-size: 16px;
+        font-weight: 800;
+        overflow-x: hidden;
+        overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+        background-color: #ECF0F1;
+        border-right: 1px solid #eee;
+    }
 }
 
 /* Sidebar navigation */
 .nav-sidebar,
 .main-nav-label {
-  margin-right: -21px; /* 20px padding + 1px border */
-  margin-bottom: 20px;
-  margin-left: -20px;
+    margin-right: -21px; /* 20px padding + 1px border */
+    margin-bottom: 20px;
+    margin-left: -20px;
 }
 
 .nav-sidebar > li > a {
-  padding: 5px 60px;
-  color: #34495E !important;
-  text-transform: uppercase;
-  font-size: 14px;
+    padding: 5px 60px;
+    color: #34495E !important;
+    text-transform: uppercase;
+    font-size: 14px;
 } 
 
 .sidebar-list > ul li:first-child {
-  margin-top: 10px;
+    margin-top: 10px;
 }
 
 .nav-sidebar > li > a:hover {
-  background: #BDC3C7;
+    background: #BDC3C7;
 }
 
 .nav-sidebar > li label {
-  padding-left: 15px;
-  cursor: pointer;
-  color: #34495E !important;
-  text-transform: uppercase;
-  font-size: 14px;
-  font-weight: 800;
+    padding-left: 15px;
+    cursor: pointer;
+    color: #34495E !important;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 800;
 }
 
 .nav-sidebar > li label i {
-  padding-right: 10px;
+    padding-right: 10px;
 }
 
 .nav-sidebar:hover > li label i {
-  color: #1ABC9C;
-  -webkit-transition: .25s;
-          transition: .25s;
+    color: #1ABC9C;
+    -webkit-transition: .25s;
+    transition: .25s;
 }
 
 
@@ -100,9 +100,9 @@ body {
 .nav-sidebar > .active > a,
 .nav-sidebar > .active > a:hover,
 .nav-sidebar > .active > a:focus {
-  color: #fff !important;
-  background-color: #428bca;
-  background-image: none;
+    color: #fff !important;
+    background-color: #428bca;
+    background-image: none;
 }
 
 
@@ -111,18 +111,18 @@ body {
  */
 
 .main {
-  padding: 20px;
+    padding: 20px;
 }
 @media (min-width: 768px) {
-  .main {
-    padding-right: 40px;
-    padding-left: 40px;
-  }
+    .main {
+        padding-right: 40px;
+        padding-left: 40px;
+    }
 }
 .main .page-header {
-  margin-top: 0;
-  font-size: 22px;
-  border-bottom: 1px solid #34495E !important;
+    margin-top: 0;
+    font-size: 22px;
+    border-bottom: 1px solid #34495E !important;
 }
 
 
@@ -131,16 +131,16 @@ body {
  */
 
 .placeholders {
-  margin-bottom: 30px;
-  text-align: center;
+    margin-bottom: 30px;
+    text-align: center;
 }
 .placeholders h4 {
-  margin-bottom: 0;
+    margin-bottom: 0;
 }
 .placeholder {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 .placeholder img {
-  display: inline-block;
-  border-radius: 50%;
+    display: inline-block;
+    border-radius: 50%;
 }

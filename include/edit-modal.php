@@ -8,17 +8,17 @@
                 </div>
                 <div class="modal-body">
                     <div class="input-group">
-                            <label for="inputDate">Choose new date: </label>                                
-                            <input type="date" class="form-control" name="appdate" value="<?php echo date('Y-m-d');?>" required/>
-                            <input type="hidden" id="appo_id" name="appointment_id" value="">
-                            <input type="hidden" id="doc_id"  name="doctor_id" value="">
-                                    <input type="hidden" name="patient_id" value="<?php echo $patient_id; ?>">
+                        <label for="inputDate">Choose new date: </label>                                
+                        <input type="date" class="form-control" name="appdate" value="<?php echo date('Y-m-d'); ?>" required/>
+                        <input type="hidden" id="appo_id" name="appointment_id" value="">
+                        <input type="hidden" id="doc_id"  name="doctor_id" value="">
+                        <input type="hidden" name="patient_id" value="<?php echo $patient_id; ?>">
                     </div>
                 </div>
                 <div class="modal-footer">
                     <?php
-                        echo '<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>';
-                        echo "<button type=\"submit\" class=\"btn btn-primary\" name=\"submit\">Done</button>";
+                    echo '<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>';
+                    echo "<button type=\"submit\" class=\"btn btn-primary\" name=\"submit\">Done</button>";
                     ?>
                 </div>
             </form>

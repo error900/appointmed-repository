@@ -32,9 +32,10 @@
     else if ($account_type != 'Doctor')
         header("location: admin/index.php");
 
-    $tomorrow = date("Y-m-d", time() + 86400);
-    $username = $_SESSION['username'];
+    $start = date("Y-m-1");
+    $end = date("Y-m-t");
     $date = date("Y-m-d");
+    $username = $_SESSION['username'];
     $result = mysqli_query($con, "SELECT * FROM doctor WHERE username LIKE '$username'");
     $row = mysqli_fetch_array($result);
     $doctor = $row['doctor_name'];
@@ -43,7 +44,7 @@
     $doctor_id = $row['doctor_id'];
     $c_result = mysqli_query($con, "SELECT * FROM clinic WHERE doctor_id LIKE '$doctor_id'");
     $c_row = mysqli_fetch_array($c_result);
-    $a_result = mysqli_query($con, "SELECT * FROM appointment WHERE doctor_id = '$doctor_id' AND (appointment_status = 'inqueue' OR appointment_status = 'Referred') AND (appoint_date = '$tomorrow') ORDER BY appointment_id");
+    $a_result = mysqli_query($con, "SELECT * FROM appointment WHERE doctor_id = '$doctor_id' AND (appointment_status = 'inqueue' OR appointment_status = 'Referred') AND (appoint_date >= '$start' AND appoint_date <= '$end') ORDER BY appointment_id");
     $sqls = mysqli_query($con, "SELECT * FROM doctor WHERE specialization LIKE '$specialization' AND doctor_id <> '$doctor_id'");
 
     $count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE doctor_id LIKE '$doctor_id' AND indicator = 'Patient'");
@@ -60,9 +61,9 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Schedules <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="schedules.php">Today</a></li>
-                        <li><a href="#">Tomorrow</a></li>
+                        <li><a href="schedules_tom.php">Tomorrow</a></li>
                         <li><a href="schedules_week.php">This Week</a></li>
-                        <li><a href="schedules_month.php">This Month</a></li>
+                        <li><a href="#">This Month</a></li>
                     </ul>
                 </li>
                 <li><a href="doc_notifications.php">Notifications <span class="badge"><?php echo $notif_count ?></span></a></li>
@@ -94,18 +95,19 @@
                 <div class="container-fluid" id="schedules-md">
                     <div class="row">
                         <div class="col-md-12">
-                            <h2 class="text-center row-header">&mdash; Tomorrow&mdash;</h2>
+                            <h2 class="text-center row-header">&mdash; This Month &mdash;</h2>
                         </div>
                         <?php
-                        include 'include/schedules-panel.php';
+                        include 'include/st-schedules-panel.php';
                         ?>
                     </div>
                 </div>
                 <?php
                 include 'include/refer-modal.php';
-                include 'include/remarks-modal.php';
                 include 'include/edit-profile-modal.php';
+                include 'include/remarks-modal.php';
                 ?>
+                <script type="text/javascript" src="js/search.js"></script>
                 <script type="text/javascript" src="js/scrolltop.js"></script>
         </div>
     </body>

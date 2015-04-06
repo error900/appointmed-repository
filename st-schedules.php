@@ -32,35 +32,34 @@
     else if ($account_type != 'Doctor')
         header("location: admin/index.php");
 
-    $tomorrow = date("Y-m-d", time() + 86400);
+    $date = date('Y-m-d');
     $username = $_SESSION['username'];
-    $date = date("Y-m-d");
-    $result = mysqli_query($con, "SELECT * FROM doctor WHERE username LIKE '$username'");
+    $result = mysqli_query($con, "SELECT * FROM doctor WHERE username LIKE '$username'") or die(mysqli_error());
     $row = mysqli_fetch_array($result);
     $doctor = $row['doctor_name'];
     $specialization = $row['specialization'];
     $email = $row['email'];
     $doctor_id = $row['doctor_id'];
-    $c_result = mysqli_query($con, "SELECT * FROM clinic WHERE doctor_id LIKE '$doctor_id'");
+    $c_result = mysqli_query($con, "SELECT * FROM clinic WHERE doctor_id LIKE '$doctor_id'") or die(mysqli_error());
     $c_row = mysqli_fetch_array($c_result);
-    $a_result = mysqli_query($con, "SELECT * FROM appointment WHERE doctor_id = '$doctor_id' AND (appointment_status = 'inqueue' OR appointment_status = 'Referred') AND (appoint_date = '$tomorrow') ORDER BY appointment_id");
-    $sqls = mysqli_query($con, "SELECT * FROM doctor WHERE specialization LIKE '$specialization' AND doctor_id <> '$doctor_id'");
+    $a_result = mysqli_query($con, "SELECT * FROM appointment WHERE doctor_id = '$doctor_id' AND (appointment_status = 'inqueue' OR appointment_status = 'Referred') AND (appoint_date = '$date') ORDER BY appointment_id") or die(mysqli_error());
+    $sqls = mysqli_query($con, "SELECT * FROM doctor WHERE specialization LIKE '$specialization' AND doctor_id <> '$doctor_id'") or die(mysqli_error());
 
-    $count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE doctor_id LIKE '$doctor_id' AND indicator = 'Patient'");
+    $count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE doctor_id LIKE '$doctor_id' AND indicator = 'Patient'") or die(mysqli_error());
     $count_row = mysqli_fetch_array($count_result);
     $notif_count = $count_row['count'];
     ?>
     <body class="e4e8e9-bg">
         <div class="container">        
             <?php
-            include 'include/dc-nav-start.php';
+            include 'include/st-nav-start.php';
             ?>
             <ul class="nav navbar-nav">
                 <li class="active dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Schedules <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="schedules.php">Today</a></li>
-                        <li><a href="#">Tomorrow</a></li>
+                        <li><a href="#">Today</a></li>
+                        <li><a href="schedules_tom.php">Tomorrow</a></li>
                         <li><a href="schedules_week.php">This Week</a></li>
                         <li><a href="schedules_month.php">This Month</a></li>
                     </ul>
@@ -75,7 +74,7 @@
                     </ul>
                 </li>
                 <?php
-                include 'include/dc-nav-end.php';
+                include 'include/st-nav-end.php';
                 ?>
                 <div class="container-fluid" id="user-md-frw">
                     <div class="row">
@@ -94,17 +93,18 @@
                 <div class="container-fluid" id="schedules-md">
                     <div class="row">
                         <div class="col-md-12">
-                            <h2 class="text-center row-header">&mdash; Tomorrow&mdash;</h2>
+                            <h2 class="text-center row-header">&mdash; Today &mdash;</h2>
                         </div>
+
                         <?php
-                        include 'include/schedules-panel.php';
+                        include 'include/st-schedules-panel.php';
                         ?>
                     </div>
                 </div>
                 <?php
                 include 'include/refer-modal.php';
-                include 'include/remarks-modal.php';
                 include 'include/edit-profile-modal.php';
+                include 'include/remarks-modal.php';
                 ?>
                 <script type="text/javascript" src="js/scrolltop.js"></script>
         </div>
