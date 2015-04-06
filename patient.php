@@ -1,46 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-    <style>
-
-#divResult
-        {
-            position:absolute;
-            width:210px;
-            display:none;
-            margin-top:40px;
-            border:solid 1px #dedede;
-            border-top:0px;
-            overflow:hidden;
-            border-bottom-right-radius: 6px;
-            border-bottom-left-radius: 6px;
-            -moz-border-bottom-right-radius: 6px;
-            -moz-border-bottom-left-radius: 6px;
-            border-width: 3px 1px 1px;
-            border-color: #333 #DEDEDE #DEDEDE;
-            background-color: white;
-        }
-        .display_box
-        {
-            padding:4px; border-top:solid 1px #dedede; 
-            font-size:12px;
-        
-        }
-        .display_box:hover
-        {
-            background:#3bb998;
-            color:#FFFFFF;
-            cursor:pointer;
-        }
-        a
-        {
-            text-decoration: none;
- 
-            background: #3bb998;
-            color:#FFFFFF;
-            cursor: pointer;
-        }
-    </style>
-
     <?php
         $title = "Patient Profile";
         include 'include/head.php';
@@ -86,7 +45,13 @@
                             </ul>
                         </li>
                         <li><a href="notifications.php">Notifications <span class="badge"><?php echo $notif_count?></span></a></li>
-                        <li><a href="history.php">History</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">History <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="appointments_done.php">Appointments Done</a></li>
+                                <li><a href="cancelled_appointments.php">Cancelled Appointments</a></li>
+                            </ul>
+                        </li>
                         <li class="nav-button navbar-right">
                             <button type="button" class="btn btn-default btn-noborder edit-profile-btn" data-toggle="modal" data-target=".bs-pt-edit-profile-modal-lg" data-id="'.$appointment_id.'" data-patient-id="'.$patient_id.'">
                             <i class="fa fa-pencil"></i>Edit Profile</button>
