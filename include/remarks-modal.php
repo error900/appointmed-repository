@@ -10,22 +10,22 @@
                     <div class="row">
                         <div class="col-xs-12 col-md-12 remarks">
                             <div class="input-group">
-                                    <textarea class="form-control" rows="3" name="remarks"></textarea>
-                                    <select name="isComplete" class="form-control">
-                                        <option value="Inqueue">Ongoing</option> 
-                                        <option value="Completed">Completed</option>
-                                    </select>
-                                    <input type="hidden" value="" id="appoint_id" name="appointment_id">
-                                    <input type="hidden" value="" id="patient_id" name="patient_id">
-                                    <input type="hidden" value="<?php echo $doctor_id?>" name="doctor_id">    
+                                <textarea class="form-control" rows="3" name="remarks"></textarea>
+                                <select name="isComplete" class="form-control">
+                                    <option value="Inqueue">Ongoing</option> 
+                                    <option value="Completed">Completed</option>
+                                </select>
+                                <input type="hidden" value="" id="appoint_id" name="appointment_id">
+                                <input type="hidden" value="" id="patient_id" name="patient_id">
+                                <input type="hidden" value="<?php echo $doctor_id ?>" name="doctor_id">    
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <?php
-                        echo '<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>';
-                        echo "<button type=\"submit\" class=\"btn btn-primary\" name=\"submit\">Save</button>";
+                    echo '<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>';
+                    echo "<button type=\"submit\" class=\"btn btn-primary\" name=\"submit\">Save</button>";
                     ?>
                 </div>
             </form>

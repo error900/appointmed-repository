@@ -113,7 +113,9 @@ i.fa.fa-power-off {
 	padding-right: 7px;
 }
 
-i.fa.fa-user-md {
+i.fa.fa-user-md,
+i.fa.fa-location-arrow,
+i.fa.fa-phone {
 	padding-right: 10px;
 }
 
@@ -381,6 +383,10 @@ nav > div > div > ul > li > a:hover {
 	right: 30px;
 	top: 1px;
 	font-size: 26px;
+}
+
+.panel-body {
+	padding: 12px;
 }
 
 .panel-default .panel-body p {
