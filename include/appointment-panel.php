@@ -8,13 +8,13 @@ if (mysqli_num_rows($p_result) >= 1) {
         $d_result = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_id LIKE '$doctor'");
         $doc = mysqli_fetch_array($d_result);
 
-        $cid_result = mysqli_query($con, "SELECT * FROM appointment WHERE appointment_id LIKE '$app_id'") or die(mysqli_error());
-        $c_id_row = mysqli_fetch_array($cid_result);
-        $c_id = $c_id_row['clinic_id'];
+        $appointment_result = mysqli_query($con, "SELECT * FROM appointment WHERE appointment_id LIKE '$app_id'") or die(mysqli_error());
+        $appointment_result_row = mysqli_fetch_array($appointment_result);
+        $c_id = $appointment_result_row['clinic_id'];
 
         $clinic_result = mysqli_query($con, "SELECT * FROM clinic WHERE doctor_id LIKE '$doctor' AND clinic_id LIKE '$c_id'") or die(mysqli_error());
-        $c_id_row = mysqli_fetch_array($clinic_result);
-        $clinic_name = $c_id_row['clinic_name'];
+        $clinic_result_row = mysqli_fetch_array($clinic_result);
+        $clinic_name = $clinic_result_row['clinic_name'];
 
         echo '<div class="col-xs-12 col-md-6 col-lg-3" id="' . $d_row['appointment_id'] . '">';
         echo "<div class='panel panel-default' id='asd'><div class='panel-heading appointment-date' >";

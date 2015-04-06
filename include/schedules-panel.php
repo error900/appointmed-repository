@@ -5,9 +5,17 @@ while ($row = mysqli_fetch_array($a_result)) {
     $p_result = mysqli_query($con, "SELECT * FROM patient WHERE patient_id LIKE '$patient'");
     $pat = mysqli_fetch_array($p_result);
 
-    $c_result = mysqli_query($con, "SELECT * FROM clinic WHERE doctor_id LIKE '$doctor_id'") or die(mysqli_error());
-    $clinic_name = mysqli_fetch_array($c_result);
     $appointment_id = $row['appointment_id'];
+
+    $appointment_result = mysqli_query($con, "SELECT * FROM appointment WHERE appointment_id LIKE '$appointment_id'") or die(mysqli_error());
+    $appointment_result_row = mysqli_fetch_array($appointment_result);
+    $c_id = $appointment_result_row['clinic_id'];
+    $sched_date = $appointment_result_row['appoint_date'];
+
+    $clinic_result = mysqli_query($con, "SELECT * FROM clinic WHERE clinic_id LIKE '$c_id'") or die(mysqli_error());
+    $clinic_result_row = mysqli_fetch_array($clinic_result);
+    $clinic_name = $clinic_result_row['clinic_name'];
+
     echo '<div class="col-xs-12 col-md-6 col-lg-3">
                 <div class="panel panel-default sched-panel">';
     echo'<div class="panel-heading">';
@@ -18,8 +26,9 @@ while ($row = mysqli_fetch_array($a_result)) {
     // <div class=\"panel-body\">";
     echo '</div>';
     echo' <div class="panel-body">';
+    echo '<p><i class="fa fa-calendar"></i>' . $sched_date . '</p>';
+    echo '<p><i class="fa fa-location-arrow"></i>' . $clinic_name . '</p>';
     echo '<p><i class="fa fa-phone"></i>' . $pat['patient_contact'] . '</p>';
-    echo '<p><i class="fa fa-location-arrow"></i>' . $clinic_name['clinic_name'] . '</p>';
     echo '</div>';
     echo'  <div class="appmnt-pnl-btn">
                             <button type="button" class="btn btn-default btn-inverse appo btn-noborder" data-toggle="modal" data-target=".bs-example-modal-sm" data-id="' . $appointment_id . '" data-patient-id="' . $patient . '">
