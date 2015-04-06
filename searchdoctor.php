@@ -15,7 +15,7 @@
 ?>
         <li>
             <?php 
-                echo "<a href=\"doctor.php?id=$doctor_id\">".$final_name."</a>";
+                echo '<a href=\"doctor.php?id=$doctor_id\"><i class="fa fa-user-md"></i>' . $final_name . '</a>';
                 echo '<p>' . $final_specs . '</p>';
             ?>
         </li>

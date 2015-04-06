@@ -86,16 +86,17 @@
                                 <input type="text" class="form-control" name="specialization" placeholder="Specialization" required="" value="<?php echo $specialization ?>" />
                                 <input type="text" class="form-control" name="email" placeholder="Email Address" required="" value="<?php echo $email ?>" />
                                 <input type="hidden" value="<?php echo $doctor_id ?>" name="doctor_id">
-                                Change Status: <select name="doctor_status">
+                                <label>Change Status:</label>
+                                <select name="doctor_status" class="form-control">
                                     <option value="In">In</option>
                                     <option value="Out">Out</option>
                                     <option value="Break">Break</option>
                                 </select>
                                 <div class="col-xs-6 col-md-6 add-form">
-                                    <input type="button" class="btn btn-default btn-noborder" id="hideshow" value="Add Clinic">
+                                    <input type="button" class="btn btn-default" id="hideshow" value="Add Clinic">
                                 </div>
                                 <div class="col-xs-6 col-md-6 add-form">
-                                    <input type="button" class="btn btn-default btn-noborder" id="showsec" value="Add Secretary">
+                                    <input type="button" class="btn btn-default" id="showsec" value="Add Secretary">
                                 </div>
                                 <div id="clinics" style="display:none">
                                     <p>Clinic</p>

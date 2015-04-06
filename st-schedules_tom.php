@@ -97,7 +97,7 @@
                             <h2 class="text-center row-header">&mdash; Tomorrow&mdash;</h2>
                         </div>
                         <?php
-                        include 'include/schedules-panel.php';
+                        include 'include/st-schedules-panel.php';
                         ?>
                     </div>
                 </div>

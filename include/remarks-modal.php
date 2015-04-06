@@ -10,7 +10,7 @@
                     <div class="row">
                         <div class="col-xs-12 col-md-12 remarks">
                             <div class="input-group">
-                                <textarea class="form-control" rows="3" name="remarks"></textarea>
+                                <textarea class="form-control" rows="3" name="remarks" placeholder="Remarks and Recommendations"></textarea>
                                 <select name="isComplete" class="form-control">
                                     <option value="Inqueue">Ongoing</option> 
                                     <option value="Completed">Completed</option>
