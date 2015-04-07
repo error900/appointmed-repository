@@ -29,21 +29,23 @@
     $account_type = $_SESSION['account_type'];
     if ($loggedIn == false)
         header("location: admin/index.php");
-    else if ($account_type != 'Doctor')
+    else if ($account_type != 'Secretary')
         header("location: admin/index.php");
 
     $date = date('Y-m-d');
     $username = $_SESSION['username'];
-    $result = mysqli_query($con, "SELECT * FROM doctor WHERE username LIKE '$username'") or die(mysqli_error());
+    $result = mysqli_query($con, "SELECT * FROM secretary WHERE username LIKE '$username'") or die(mysqli_error());
     $row = mysqli_fetch_array($result);
-    $doctor = $row['doctor_name'];
-    $specialization = $row['specialization'];
-    $email = $row['email'];
+    $secretary = $row['secretary_name'];
+    $secretary_id = $row['secretary_id'];
+
     $doctor_id = $row['doctor_id'];
+    $doctor = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_id LIKE '$doctor_id'") or die(mysqli_error());
+    $doctor_row = mysqli_fetch_array($doctor);
     $c_result = mysqli_query($con, "SELECT * FROM clinic WHERE doctor_id LIKE '$doctor_id'") or die(mysqli_error());
     $c_row = mysqli_fetch_array($c_result);
     $a_result = mysqli_query($con, "SELECT * FROM appointment WHERE doctor_id = '$doctor_id' AND (appointment_status = 'inqueue' OR appointment_status = 'Referred') AND (appoint_date = '$date') ORDER BY appointment_id") or die(mysqli_error());
-    $sqls = mysqli_query($con, "SELECT * FROM doctor WHERE specialization LIKE '$specialization' AND doctor_id <> '$doctor_id'") or die(mysqli_error());
+//    $sqls = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_id <> '$doctor_id'") or die(mysqli_error());
 
     $count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE doctor_id LIKE '$doctor_id' AND indicator = 'Patient'") or die(mysqli_error());
     $count_row = mysqli_fetch_array($count_result);
@@ -59,9 +61,9 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Schedules <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="#">Today</a></li>
-                        <li><a href="schedules_tom.php">Tomorrow</a></li>
-                        <li><a href="schedules_week.php">This Week</a></li>
-                        <li><a href="schedules_month.php">This Month</a></li>
+                        <li><a href="st-schedules_tom.php">Tomorrow</a></li>
+                        <li><a href="st-schedules_week.php">This Week</a></li>
+                        <li><a href="st-schedules_month.php">This Month</a></li>
                     </ul>
                 </li>
                 <li><a href="doc_notifications.php">Notifications <span class="badge"><?php echo $notif_count ?></span></a></li>
@@ -79,10 +81,9 @@
                 <div class="container-fluid" id="user-md-frw">
                     <div class="row">
                         <div class="col-md-12 col-md-4 col-md-offset-2 user-md">
-                            <h1><?php echo $doctor; ?></h1>
-                            <p><?php echo $row['specialization']; ?></p>
+                            <h1><?php echo $doctor_row['doctor_name']; ?></h1>
                             <p><?php echo $c_row['clinic_location']; ?></p>
-                            <p class="email"><?php echo $row['email']; ?></p>
+                            <p class="email"><?php echo $doctor_row['email']; ?></p>
                             <p><?php echo $c_row['clinic_contact']; ?></p>
                         </div>
                         <?php 

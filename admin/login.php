@@ -33,8 +33,11 @@
                 header("location: dashboard.php");
             } else if ($row['account_type'] == 'Patient') {
                 header("location: index.php");
-            } else
+            } else if ($row['account_type'] == 'Doctor'){
                 header("location: ../schedules.php");
+            } else
+                header("location: ../st-schedules.php");
+
         }
         mysqli_close($con);
         ?>

@@ -29,14 +29,14 @@
     $account_type = $_SESSION['account_type'];
     if ($loggedIn == false)
         header("location: admin/index.php");
-    else if ($account_type != 'Doctor')
+    else if ($account_type != 'Secretary')
         header("location: admin/index.php");
 
     $start = date("Y-m-d", strtotime('monday this week'));
     $end = date("Y-m-d", strtotime('sunday this week'));
     $date = date("Y-m-d");
     $username = $_SESSION['username'];
-    $result = mysqli_query($con, "SELECT * FROM doctor WHERE username LIKE '$username'");
+    $result = mysqli_query($con, "SELECT * FROM secretary WHERE username LIKE '$username'");
     $row = mysqli_fetch_array($result);
     $doctor = $row['doctor_name'];
     $specialization = $row['specialization'];
