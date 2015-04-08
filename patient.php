@@ -62,7 +62,7 @@
         <!-- /navigation -->
         <div class="container-fluid" id="patient-info">
             <div class="row">
-                <div class="col-xs-12 col-md-2 col-md-offset-2">
+                <div class="col-xs-12 col-md-2 col-md-offset-3">
                      <img src="img/profile/<?php 
                             $file = "img/profile/".$patient_id.".jpg";
                             if(file_exists($file)){
@@ -71,7 +71,7 @@
                                 echo 'profile_patient';
                             } ?>.jpg" class="img-responsive">
                 </div>
-                <div class="col-xs-12 col-md-5">
+                <div class="col-xs-12 col-md-5 col-md-offset-1">
                     <div class="p-info">
                         <ul>
                             <li><i class="fa fa-user"></i><?php echo $row['patient_name']; ?></li>
