@@ -89,7 +89,7 @@
         <!-- /navigation -->
         <div class="container-fluid" id="doctor-info">
             <div class="row">
-                <div class="col-xs-12 col-md-2 col-md-offset-3 d-pic">
+                <div class="col-xs-12 col-md-2 col-md-offset-2 doctor-photo">
                       <img class="img-responsive" src="img/profile/<?php 
                             $file = "img/profile/".$doctor_id.".jpg";
                             if(file_exists($file)){
@@ -98,41 +98,43 @@
                                 echo 'profile';
                             } ?>.jpg">
                 </div>
-                <div class="col-xs-12 col-md-4 col-md-offset-1">
+                <div class="col-xs-12 col-md-3">
                     <div class="d-info">
                         <ul>
                             <li><i class="fa fa-user-md"></i>Dr. <?php echo strtoupper($d_row['doctor_name']); ?></li>
                             <li><i class="fa fa-medkit"></i><?php echo $d_row['specialization']; ?></li>
+                            <li class="email"><i class="fa fa-envelope"></i> <?php echo $d_row['email']; ?></li>
                             <br>
-                            <li><i class="fa fa-h-square"></i>Benguet Laboratory Incorporated</li>
-                            <li><i class="fa fa-angle-double-right"></i> <?php echo $d_row['email']; ?></li>
+                            <li><i class="fa fa-h-square"></i>Benguet Laboratories</li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-2 text-right">
+                <div class="col-xs-12 col-md-3 text-center">
                     <div class="d-info">
                         <ul>
                             <li class="doc-status">The Doctor is: <span><?php echo($d_row['doctor_status']);?></span></li>
                         </ul>
-                        <?php $sql = mysqli_query($con, "SELECT * FROM subscribe WHERE patient_id LIKE '$patient_id' AND doctor_id LIKE '$doctor_id'") or die(mysqli_error());
-                                     
+                    </div>  
+                </div>
+                <div class="col-xs-12 col-md-2 text-center">
+                    <?php $sql = mysqli_query($con, "SELECT * FROM subscribe WHERE patient_id LIKE '$patient_id' AND doctor_id LIKE '$doctor_id'") or die(mysqli_error());
                        
-                        if(mysqli_num_rows($sql) ==0){
-                            echo '<form action="subscribe.php" method="post" class="subs">';
-                            echo  '<input type="hidden" name="doctor" value="'.$d_row["doctor_id"].'">
-                            <input type="hidden" name="patient" value="'.$row["patient_id"].'">';
-                            echo  '<input type="submit" class="btn btn-default subscribe-btn btn-noborder" name="subs" value="Subscribe">';
-                            echo '</form> '; 
-                        }else{
-                            echo '<form action="unsubscribe.php" method="post" class="subs">';
-                            echo  '<input type="hidden" name="doctor" value="'.$d_row["doctor_id"].'">
-                            <input type="hidden" name="patient" value="'.$row["patient_id"].'">';
-                            echo '<input type="submit" class="btn btn-default subscribe-btn btn-noborder" name="unsubs" value="Unsubscribe">';
-                            echo '</form> '; 
-                            }     
-                        ?>
-                    </div>
-                </div>            
+                    if(mysqli_num_rows($sql) ==0){
+                        echo '<form action="subscribe.php" method="post" class="subs">';
+                        echo '<input type="hidden" name="doctor" value="'.$d_row["doctor_id"].'">
+                        <input type="hidden" name="patient" value="'.$row["patient_id"].'">';
+                        echo '<input type="submit" class="btn btn-default subscribe-btn" name="subs" value="Subscribe">';
+                        echo '</form> '; 
+                    }else{
+                        echo '<form action="unsubscribe.php" method="post" class="subs">';
+                        echo '<input type="hidden" name="doctor" value="'.$d_row["doctor_id"].'">
+                        <input type="hidden" name="patient" value="'.$row["patient_id"].'">';
+                        echo '<input type="submit" class="btn btn-default subscribe-btns" name="unsubs" value="Unsubscribe">';
+                        echo '</form> '; 
+                        }     
+                    ?>
+                </div>
+                     
             </div>
 
         </div>
@@ -146,10 +148,10 @@
                         echo '<div class="col-xs-12 col-md-3">';
                         echo '<div class="clinic-box">';
                         echo '<h2>' . $c_row['clinic_name'] . '<span>' .$count. '</span></h2>';
-                        echo '<p>'. $c_row['clinic_location']. '</p>' ;
-                        echo '<p>'. $c_row['clinic_contact'] .'</p>';
-                        echo ' <button type="button" class="btn btn-default clinic create-btn btn-noborder clinic" data-toggle="modal" data-target=".bs-example-modal-sm" data-id="'.$c_row['clinic_id'].'">
-                            <span class="fui-new"> </span>Create Appointment</button>';
+                        echo '<p><i class="fa fa-location-arrow"></i>'. $c_row['clinic_location']. '</p>' ;
+                        echo '<p><i class="fa fa-phone"></i>'. $c_row['clinic_contact'] .'</p>';
+                        echo ' <button type="button" class="btn btn-default clinic create-btn btn-noborder tooltip" title="create appointment" data-toggle="modal" data-target=".bs-example-modal-sm" data-id="'.$c_row['clinic_id'].'">
+                            <i class="fa fa-edit fa-lg"></i></button>';
                                                echo '</div>';
                         echo '</div>';
                         $clinic = $c_row['clinic_id'];

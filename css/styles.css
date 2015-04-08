@@ -813,12 +813,13 @@ nav > div > div > ul > li > a:hover {
 
 
 .btn-default.create-btn {
-    width: 100%;
-    padding: 10px 19px;
+    position: absolute;
+    right: 30px;
+    bottom: 20px;
+    padding: 8px 12px;
     color: #fff !important;
-    background-color: #E74C3C;
-    font-weight: 800;
-    text-transform: uppercase;
+    font-size: 14px;
+    background-color: #E67E22;
     text-shadow: 1px 1px 1px #34495E;
 }
 
@@ -827,18 +828,21 @@ nav > div > div > ul > li > a:hover {
 }
 
 .subscribe-btn {
-    background-color: #27AE60 !important;
+    margin: 10px;
+    padding: 6px 5px;
+    background-color: #16A085 !important;
     color: #ECF0F1;
     width: 100px;
     font-size: 14px;
     font-weight: 600;
     text-transform: lowercase;
     text-shadow: 1px 1px 1px #34495E;
+    border: 2px solid transparent;
 }
 
 .subscribe-btn:hover {
     color: #fff;
-    background-color: #2ECC71 !important;
+    border: 2px solid #2C3E50;
 }
 
 .btn-noborder {
@@ -1037,6 +1041,10 @@ nav > div > div > ul > li > a:hover {
     list-style: none;
 }
 
+.doctor-photo {
+    margin-bottom: 10px;
+}
+
 #doctor-info,
 #patient-info {
     margin: 20px 0 15px 0;
@@ -1106,10 +1114,10 @@ nav > div > div > ul > li > a:hover {
 }
 
 .d-info span {
-    background-color: #2ECC71;
-    padding: 5px;
-    border-radius: 2px;
-    font-size: 14px;
+    background-color: #16A085;
+    padding: 16px;
+    border-radius: 50%;
+    font-size: 22px;
     text-shadow: 1px 1px 1px #34495E;
 }
 
@@ -1179,13 +1187,12 @@ nav > div > div > ul > li > a:hover {
     margin-bottom: 10px;
     padding: 10px 15px;
     background: #34495E;
-    border: 1px solid #545454;
-    border-radius: 4px;
+    min-height: 120px;
 }
 
 .clinic-box h2 {
     margin: 0 0 15px 0;
-    color: #E74C3C;
+    color: #1ABC9C;
     font-size: 16px;
     text-transform: uppercase;
 }
@@ -1198,8 +1205,9 @@ nav > div > div > ul > li > a:hover {
 
 .clinic-box p {
     color: #fff;
-    line-height: 12px;
+    line-height: 14px;
     text-transform: uppercase;
+    font-size: 12px;
 }
 
 .hide {
