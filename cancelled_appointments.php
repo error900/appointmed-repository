@@ -90,11 +90,14 @@
                             $d_result = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_id LIKE '$doctor'");
                             $doc = mysqli_fetch_array($d_result);
                             echo '<div class="col-xs-12 col-md-6 col-lg-3" id="' . $d_row['appointment_id'] . '">';
-                            echo "<div class='panel panel-default' id='asd'><div class='panel-heading appointment-date' >";
+                            echo '<div class="panel panel-default" id="asd">
+                            <div class="panel-heading appointment-date">';
                             echo $date;
                             echo '<p class="appointment-dr-name">Dr. ' . $doc['doctor_name'] . '</p>';
-                            echo '<p class="appointment-specs">' . $doc['specialization'] . '</p></div></div>';
-                            echo '</div>';
+                            echo '<p class="appointment-specs">' . $doc['specialization'] . '</p>
+                            </div>
+                            </div>
+                            </div>';
                         }
                         ?>
                     </div>
