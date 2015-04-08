@@ -71,7 +71,7 @@
         <!-- /navigation -->
         <div class="container-fluid" id="doctor-info">
             <div class="row">
-                <div class="col-xs-12 col-md-2 col-md-offset-3 d-pic">
+                <div class="col-xs-12 col-md-2 col-md-offset-2 doctor-photo">
                       <img class="img-responsive" src="img/profile/<?php 
                             $file = "img/profile/".$doctor_id.".jpg";
                             if(file_exists($file)){
@@ -80,14 +80,14 @@
                                 echo 'profile';
                             } ?>.jpg">
                 </div>
-                <div class="col-xs-12 col-md-4 col-md-offset-1">
+                <div class="col-xs-12 col-md-5">
                     <div class="d-info">
                         <ul class="profile-info">
                             <li><i class="fa fa-user-md"></i>Dr. <?php echo strtoupper($doctor); ?></li>
                             <li><i class="fa fa-medkit"></i><?php echo $specialization; ?></li>
+                            <li><i class="fa fa-envelope"></i><?php echo $email; ?></li>
                             <br>
-                            <li><i class="fa fa-h-square"></i>Benguet Laboratory Incorporated</li>
-                            <li><i class="fa fa-angle-double-right"></i><?php echo $email; ?></li>
+                            <li><i class="fa fa-h-square"></i>Benguet Laboratories</li>
                         </ul>
                     </div>
                 </div>          
