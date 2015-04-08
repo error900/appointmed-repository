@@ -68,7 +68,7 @@
                                     if (file_exists($file)) {
                                         echo $doctor_id;
                                     } else {
-                                        echo 'profile_patient';
+                                        echo 'profile';
                                     }
                                     ?>.jpg" class="img-responsive">
                                 </div>

@@ -31,7 +31,7 @@ while ($row = mysqli_fetch_array($a_result)) {
     echo '<p><i class="fa fa-phone"></i>' . $pat['patient_contact'] . '</p>';
     echo '</div>';
     echo'  <div class="appmnt-pnl-btn">
-                            <button type="button" class="btn btn-default btn-inverse appo btn-noborder" data-toggle="modal" data-target=".bs-remarks-modal-sm" data-a-id="' . $appointment_id . '" data-p-id="' . $patient . '">
+                            <button type="button" class="btn btn-default btn-inverse appo btn-noborder" data-toggle="modal" data-target=".bs-st-remarks-modal-sm" data-a-id="' . $appointment_id . '" data-p-id="' . $patient . '">
                            Remarks<i class="fa fa-comment"></i></button>
                         </div>
                  </div>

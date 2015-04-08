@@ -12,8 +12,8 @@
             $(".appo").click(function() { // Click to only happen on announce links
                 $("#appo_id").val($(this).data('id'));
                 $("#pat_id").val($(this).data('patient-id'));
-                $("#appoint_id").val($(this).data('a-id'));
-                $("#patient_id").val($(this).data('p-id'));
+                $("#app_id").val($(this).data('a-id'));
+                $("#pats_id").val($(this).data('p-id'));
             });
             $('#hideshow').on('click', function() {
                 $('#clinics').show();
@@ -38,6 +38,7 @@
     $row = mysqli_fetch_array($result);
     $secretary = $row['secretary_name'];
     $secretary_id = $row['secretary_id'];
+    $email = $row['email'];
 
     $doctor_id = $row['doctor_id'];
     $doctor = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_id LIKE '$doctor_id'") or die(mysqli_error());
@@ -72,7 +73,6 @@
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="completed.php">Completed</a></li>
                         <li><a href="removed.php">Removed</a></li>
-                        <li><a href="referred.php">Referred</a></li>
                     </ul>
                 </li>
                 <?php
@@ -103,9 +103,9 @@
                     </div>
                 </div>
                 <?php
-                include 'include/refer-modal.php';
-                include 'include/edit-profile-modal.php';
                 include 'include/remarks-modal.php';
+                include 'include/st-edit-profile-modal.php';
+
                 ?>
                 <script type="text/javascript" src="js/scrolltop.js"></script>
         </div>

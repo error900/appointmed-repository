@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
     <?php
     $title = "Schedules";
@@ -12,8 +12,8 @@
             $(".appo").click(function() { // Click to only happen on announce links
                 $("#appo_id").val($(this).data('id'));
                 $("#pat_id").val($(this).data('patient-id'));
-                $("#appoint_id").val($(this).data('a-id'));
-                $("#patient_id").val($(this).data('p-id'));
+                $("#app_id").val($(this).data('a-id'));
+                $("#pats_id").val($(this).data('p-id'));
             });
             $('#hideshow').on('click', function() {
                 $('#clinics').show();
@@ -32,11 +32,9 @@
     else if ($account_type != 'Secretary')
         header("location: admin/index.php");
 
-    $start = date("Y-m-d", strtotime('monday this week'));
-    $end = date("Y-m-d", strtotime('sunday this week'));
-    $date = date("Y-m-d");
+    $tomorrow = date("Y-m-d", time() + 86400);
     $username = $_SESSION['username'];
-
+    $date = date("Y-m-d");
     $result = mysqli_query($con, "SELECT * FROM secretary WHERE username LIKE '$username'") or die(mysqli_error());
     $row = mysqli_fetch_array($result);
     $secretary = $row['secretary_name'];
@@ -45,13 +43,12 @@
     $email = $row['email'];
     $doctor_id = $row['doctor_id'];
 
-    $doctor_id = $row['doctor_id'];
     $doctor = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_id LIKE '$doctor_id'") or die(mysqli_error());
     $doctor_row = mysqli_fetch_array($doctor);
     
     $c_result = mysqli_query($con, "SELECT * FROM clinic WHERE doctor_id LIKE '$doctor_id'");
     $c_row = mysqli_fetch_array($c_result);
-    $a_result = mysqli_query($con, "SELECT * FROM appointment WHERE doctor_id = '$doctor_id' AND (appointment_status = 'inqueue' OR appointment_status = 'Referred') AND (appoint_date >= '$start' AND appoint_date <= '$end') ORDER BY appointment_id");
+    $a_result = mysqli_query($con, "SELECT * FROM appointment WHERE doctor_id = '$doctor_id' AND (appointment_status = 'inqueue' OR appointment_status = 'Referred') AND (appoint_date = '$tomorrow') ORDER BY appointment_id");
 //    $sqls = mysqli_query($con, "SELECT * FROM doctor WHERE specialization LIKE '$specialization' AND doctor_id <> '$doctor_id'");
 
     $count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE doctor_id LIKE '$doctor_id' AND indicator = 'Patient'");
@@ -79,7 +76,6 @@
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="completed.php">Completed</a></li>
                         <li><a href="removed.php">Removed</a></li>
-                        <li><a href="referred.php">Referred</a></li>
                     </ul>
                 </li>
                 <?php
@@ -109,9 +105,8 @@
                     </div>
                 </div>
                 <?php
-                include 'include/refer-modal.php';
                 include 'include/remarks-modal.php';
-                include 'include/edit-profile-modal.php';
+                include 'include/st-edit-profile-modal.php';
                 ?>
                 <script type="text/javascript" src="js/scrolltop.js"></script>
         </div>
