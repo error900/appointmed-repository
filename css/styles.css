@@ -72,11 +72,11 @@ body {
     color: #34495e;
     font-size: 18px;
     line-height: 1.72222;
-    background-color: #2C3E50;
+    background-color: #35404F;
 }
 
 a {
-    color: #16a085 !important;
+    color: #0F5959 !important;
     -webkit-transition: .25s;
     transition: .25s;
 }
@@ -109,6 +109,10 @@ h1, h2, h3, h4 {
     background: #e4e8e9 url('../img/background-pt.png') repeat left top !important;
 }
 
+.fa-lg {
+      font-size: 1.33333333em !important;
+}
+
 i.fa.fa-power-off {
     padding-right: 7px;
 }
@@ -121,22 +125,38 @@ i.fa.fa-calendar {
 }
 
 nav > div > div > ul > li > a {
+    height: 53px;
+    width: 60px;
+    overflow: hidden;
     font-size: 16px;
     letter-spacing: 0.5px;
     text-transform: lowercase;
     border-bottom: 3px solid #f8f8f8;
-    text-shadow: 1px 0px 0px #BDC3C7;
+    text-shadow: 0px 1px 0px #7F8C8D;
 }
-nav > div > div > ul > li > a:hover {
-    color: #D35400 !important;
-    border-bottom: 3px solid #D35400;
+nav > div > div > ul > li > a:hover,
+nav > div > div > ul > li > a:focus {
+    color: #D93240 !important;
+    border-bottom: 3px solid #D93240;
 }
 
 .navbar-default .navbar-nav>.active>a,
 .navbar-default .navbar-nav>.active>a:hover {
-    color: #D35400 !important;
-    background-color: #f8f8f8;
-    border-bottom: 3px solid #D35400;
+    height: 53px;
+    width: 60px;
+    overflow: hidden;
+    color: #D93240 !important;
+    background-color: transparent;
+    border-bottom: 3px solid #D93240;
+}
+
+nav > div > div > ul > li > a > i,
+.navbar-default .navbar-nav>.active>a>i {
+    margin-bottom: 20px;
+}
+
+.dropdown-menu>li>a {
+    font-weight: 600 !important;
 }
 
 .active:hover {
@@ -233,7 +253,7 @@ nav > div > div > ul > li > a:hover {
 
 .signedin .btn-noborder:hover,
 .signedin .btn-noborder:focus {
-    color: #D35400 !important;
+    color: #D93240 !important;
     background: none;
     background-color: none !important;
     border-color: none !important;
@@ -248,18 +268,23 @@ nav > div > div > ul > li > a:hover {
 .signedin-photo img {
     height: 34px;
     border-radius: 50%;
-    border: 1px solid #7F8C8D;
+    border: 1px solid #35404F;
 }
 
-
-
 .badge {
-    padding: 2px 7px;
+    position: absolute;
+    top: 7px;
+    right: 5px;
+    padding: 2px 6px;
     background-color: #34495E;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: normal;
+    border-radius: 50%;
 }
 
 #appointments-user {
-    background-color: #2C3E50;
+    background-color: transparent;
 }
 
 .appointment-date {
@@ -331,7 +356,7 @@ nav > div > div > ul > li > a:hover {
 
 .panel-default {
     color: #fff;
-    background-color: #1ABC9C;
+    background-color: #0F5959;
     font-size: 14px;
     border: 2px solid #2C3E50;
     border-radius: 0;
@@ -342,17 +367,22 @@ nav > div > div > ul > li > a:hover {
     box-shadow: 10px 17px 40px 0px rgba(0, 0, 0, 0.5);
 }
 
+.panel-default:hover {
+    cursor: pointer;
+}
+
 .panel.panel-default:hover {
-    border: 2px solid #16A085;
+    border: 2px solid #17A697;
     border-radius: 2px;
 }
 
 .panel-default .panel-heading {
     color: #fff !important;
     font-weight: 800;
-    background-color: #16A085 !important;
+    background-color: #17A697 !important;
     border: none;
     border-radius: 0;
+    text-shadow: 1px 1px 1px #35404F;
 }
 
 .panel-heading .delete-btn {
@@ -418,7 +448,7 @@ nav > div > div > ul > li > a:hover {
 }
 
 .panel-notif.panel-info {
-    border-color: #2980B9;
+    border-color: #638CA6;
 }
 
 .panel-notif.panel-warning {
@@ -435,7 +465,7 @@ nav > div > div > ul > li > a:hover {
 }
 
 .panel-notif.panel-info > .panel-heading {
-    background: #2980B9;
+    background: #638CA6;
     border-radius: 0;
 }
 .panel-notif.panel-warning > .panel-heading {
@@ -639,15 +669,11 @@ nav > div > div > ul > li > a:hover {
     border-bottom-left-radius: 6px !important;
 }
 
-.search-bar .form-control:focus {
-    color: #16A085;
-    border-color: #16A085;
-}
-
-.search-bar .form-control:focus + .input-group-btn .btn {
-    color: #16A085;
-    border-color: #16A085;
-}
+.search-bar .form-control:focus,
+.search-bar .form-control:focus + .input-group-btn .btn  {
+    color: #0F5959;
+    border-color: #0F5959;
+}s
 
 .search-bar .form-control,
 .input-group-btn .btn {
@@ -775,13 +801,16 @@ nav > div > div > ul > li > a:hover {
     border-color: #E67E22;
 }
 
+.green-btn {
+    background: #17A697 !important;
+}
+
 .login-modal-btn,
 .export-btn,
-.edit-profile-btn,
+.green-btn,
 .post-btn {
     margin-top: 10px;
     margin-left: 10px;
-    background: #16A085 !important;
     color: #fff;
     font-size: 12px;
     font-weight: 600;
@@ -795,14 +824,15 @@ nav > div > div > ul > li > a:hover {
 
 .login-modal-btn:hover,
 .login-modal-btn:focus,
-.edit-profile-btn:hover,
-.edit-profile-btn:focus,
+.green-btn:hover,
+.green-btn:focus,
 .export-btn:hover,
 .export-btn:focus,
 .post-btn:hover,
 .post-btn:focus {
     color: #fff !important;
-    background: #1ABC9C !important;
+    background: #0F5959 !important;
+    transition: 0.5s;
 }
 
 .upload-btn:hover,
@@ -848,6 +878,10 @@ nav > div > div > ul > li > a:hover {
 .btn-noborder {
     border: 0;
     background: none;
+}
+
+.modal-content {
+    background-color: #ECF0F1;
 }
 
 #index-frw {
@@ -1060,13 +1094,13 @@ nav > div > div > ul > li > a:hover {
     height: 136px;
     width: 136px;
     margin: 0 auto;
-    border: 8px solid #16A085;
+    border: 8px solid #0F5959;
     border-radius: 50%;
 }
 
 .patient-activity {
     padding-bottom: 25px;
-    background: rgba(44, 62, 80, 0.8);
+    background: transparent;
 }
 
 .upload-photo {
