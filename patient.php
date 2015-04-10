@@ -108,6 +108,7 @@
                                     if ($n_row['patient_id'] == $patient_id) {
                                         $n_id = $n_row['legend_id'];
                                         $n_did = $n_row['doctor_id'];
+                                        $notif_date = date("F j , Y", strtotime($n_row["notification_date"]));
 
                                         $n_legend = mysqli_query($con, "SELECT * FROM notification_legend WHERE legend_id LIKE '$n_id'");
                                         $n_color = mysqli_fetch_array($n_legend);
@@ -118,7 +119,7 @@
                                         if ($n_color['color'] == 'orange') {
                                             echo "<div class='col-xs-12 col-md-8 col-md-offset-2'>
                             <div class='panel panel-notif panel-warning'>
-                                <div class='panel-heading'><span class='hidden-xs hidden-sm'>" . $doc["doctor_name"] . "</span>" . $n_row["notification_date"] . "
+                                <div class='panel-heading'><span class='hidden-xs hidden-sm'>" . $doc["doctor_name"] . "</span>" . $notif_date . "
                                     <a href=\"close_notif_prof.php?nid=$n_row[notification_id]&desc=$n_row[notification]\" title='Close'><i class='fa fa-remove delete-btn x-btn'></i></a>
                                 </div>
                                 <div class='panel-body'>
@@ -129,7 +130,7 @@
                                         } else if ($n_color['color'] == 'blue') {
                                             echo "<div class='col-xs-12 col-md-8 col-md-offset-2'>
                             <div class='panel panel-notif panel-info'>
-                                <div class='panel-heading'><span class='hidden-xs hidden-sm'>" . $doc["doctor_name"] . "</span>" . $n_row["notification_date"] . "
+                                <div class='panel-heading'><span class='hidden-xs hidden-sm'>" . $doc["doctor_name"] . "</span>" . $notif_date . "
                                     <a href=\"close_notif_prof.php?nid=$n_row[notification_id]&desc=$n_row[notification]\" title='Close'><i class='fa fa-remove delete-btn x-btn'></i></a>
                                 </div>
                                 <div class='panel-body'>

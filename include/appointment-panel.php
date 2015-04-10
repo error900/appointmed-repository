@@ -4,7 +4,6 @@ if (mysqli_num_rows($p_result) >= 1) {
         $app_id = $d_row['appointment_id'];
         $doctor = $d_row['doctor_id'];
         $date = $d_row['appoint_date'];
-
         $d_result = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_id LIKE '$doctor'");
         $doc = mysqli_fetch_array($d_result);
 

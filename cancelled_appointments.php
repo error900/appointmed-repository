@@ -90,7 +90,7 @@
                         while ($d_row = mysqli_fetch_array($c_result)) {
                             $app_id = $d_row['appointment_id'];
                             $doctor = $d_row['doctor_id'];
-                            $date = $d_row['appoint_date'];
+                            $date = date("F j , Y", strtotime($d_row['appoint_date']));
 
                             $d_result = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_id LIKE '$doctor'");
                             $doc = mysqli_fetch_array($d_result);
