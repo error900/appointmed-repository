@@ -49,7 +49,7 @@
             ?>
                     <ul class="nav navbar-nav">
                         <li class="dropdown active">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-calendar fa-lg"><span class="caret"></span></i>Appointments</a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-calendar fa-lg"></i>Appointments<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="appointment.php">Today</a></li>
                                 <li><a href="appointment_tom.php">Tomorrow</a></li>
@@ -70,7 +70,7 @@
                             </a>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-history fa-lg"><span class="caret"></span></i>History</a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-history fa-lg"></i>History<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="appointments_done.php">Appointments Done</a></li>
                                 <li><a href="cancelled_appointments.php">Cancelled Appointments</a></li>

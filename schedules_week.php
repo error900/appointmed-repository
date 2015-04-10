@@ -58,7 +58,7 @@
             ?>
             <ul class="nav navbar-nav">
                 <li class="active dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-clock-o fa-lg"><span class="caret"></span></i>Schedules <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-clock-o fa-lg"></i>Schedules <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="schedules.php">Today</a></li>
                         <li><a href="schedules_tom.php">Tomorrow</a></li>
@@ -79,7 +79,7 @@
                     </a>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-history fa-lg"><span class="caret"></span></i>History</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-history fa-lg"></i>History<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="completed.php">Done Schedules</a></li>
                         <li><a href="removed.php">Removed Schedules</a></li>
@@ -91,6 +91,12 @@
                 ?>
                 <div class="container-fluid" id="user-md-frw">
                     <div class="row">
+                    <div class="col-xs-12 hidden-lg hidden-md text-right">
+                            <form action="export.php" method="post">
+                                <input type="hidden" name="doctor_id" value="<?php echo $doctor_id ?>">
+                                <input type="submit" class="btn btn-default btn-noborder green-btn" value="Export" name="submit">
+                            </form>
+                        </div>
                         <div class="col-md-12 col-md-4 col-md-offset-2 user-md">
                             <h1><?php echo $doctor; ?></h1>
                             <p><?php echo $row['specialization']; ?></p>

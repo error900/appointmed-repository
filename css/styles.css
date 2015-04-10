@@ -67,7 +67,7 @@
 }
 
 body {
-    padding-top: 80px;
+    padding-top: 50px;
     font-family: "Lato", Arial, sans-serif;
     color: #34495e;
     font-size: 18px;
@@ -119,44 +119,72 @@ i.fa.fa-phone,
 i.fa.fa-calendar,
 i.fa.fa-pencil,
 i.fa.fa-power-off {
-    padding-left: 3px;
     padding-right: 10px;
 }
 
 nav > div > div > ul > li > a {
-    height: 53px;
-    width: auto;
+    height: 40px;
     overflow: hidden;
     font-size: 16px;
     letter-spacing: 0.5px;
     text-transform: lowercase;
-    border-bottom: 3px solid #f8f8f8;
     text-shadow: 0px 1px 0px #7F8C8D;
 }
-nav > div > div > ul > li > a:hover,
-nav > div > div > ul > li > a:focus {
-    color: #D93240 !important;
-    border-bottom: 3px solid #D93240;
-}
 
-.navbar-default .navbar-nav>.active>a,
-.navbar-default .navbar-nav>.active>a:hover {
-    height: 53px;
-    width: 60px;
+.navbar-default .navbar-nav>.active>a {
+    height: 40px;
+    width: auto;
     overflow: hidden;
     color: #D93240 !important;
     background-color: transparent;
-    border-bottom: 3px solid #D93240;
+}
+
+.nav-button.navbar-right {
+    text-align: center;
+}
+
+nav > div > div > ul > li > a:hover,
+.navbar-default .navbar-nav>.active>a:hover,
+nav > div > div > ul > li > a:focus,
+.navbar-default .navbar-nav>.active>a:focus {
+    color: #D93240 !important;
+    background-color: transparent !important;
 }
 
 nav > div > div > ul > li > a > i,
 .navbar-default .navbar-nav>.active>a>i {
+    width: 15%;
     margin-bottom: 20px;
+    padding-right: 10px;
 }
 
 @media (min-width:768px){
+
+    body {
+        padding-top: 80px;
+    }
+    
     nav > div > div > ul > li > a {
         width: 60px;
+    }
+    nav > div > div > ul > li > a {
+        height: 53px;
+        border-bottom: 3px solid transparent;
+    }
+    .navbar-default .navbar-nav>.active>a {
+        height: 53px;
+        width: 60px;
+        border-bottom: 3px solid #D93240;
+    }
+    .navbar-default .navbar-nav>.active>a:hover,
+    nav > div > div > ul > li > a:hover {
+        width: 60px;
+        border-bottom: 3px solid #D93240;
+    }
+
+    .badge {
+        top: 2px !important;
+        right: 5px !important;
     }
 }
 
@@ -276,12 +304,12 @@ nav > div > div > ul > li > a > i,
 }
 
 .badge {
+    padding: 2px;
     position: absolute;
     height: 24px;
     width: 24px;
-    top: 3px;
-    right: 4px;
-    padding: 2px;
+    top: 10px;
+    right: 20px;
     background-color: #C0392B;
     font-weight: normal;
     font-size: 10px;
@@ -834,7 +862,6 @@ nav > div > div > ul > li > a > i,
 .post-btn,
 .red-btn {
     margin-top: 10px;
-    margin-left: 10px;
     color: #fff;
     font-size: 12px;
     font-weight: 600;

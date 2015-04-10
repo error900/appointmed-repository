@@ -1,4 +1,4 @@
-            <li class="nav-button">
+            <li class="nav-button hidden-sm hidden-xs">
                 <form action="export.php" method="post">
                     <input type="hidden" name="doctor_id" value="<?php echo $doctor_id ?>">
                     <input type="submit" class="btn btn-default btn-noborder green-btn" value="Export" name="submit">

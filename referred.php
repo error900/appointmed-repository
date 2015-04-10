@@ -51,7 +51,7 @@
     ?>
                 <ul class="nav navbar-nav">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-clock-o fa-lg"><span class="caret"></span></i>Schedules <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-clock-o fa-lg"></i>Schedules <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="schedules.php">Today</a></li>
                         <li><a href="schedules_tom.php">Tomorrow</a></li>
@@ -71,8 +71,8 @@
                         </i>Notifications
                     </a>
                 </li>
-                <li class="active dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-history fa-lg"><span class="caret"></span></i>History</a>
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-history fa-lg"></i>History<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="completed.php">Done Schedules</a></li>
                         <li><a href="removed.php">Removed Schedules</a></li>
