@@ -122,6 +122,11 @@ i.fa.fa-power-off {
     padding-right: 10px;
 }
 
+.nav-parent > li.active > a,
+.nav-parent > li > a {
+  padding-left: 20px;
+}
+
 nav > div > div > ul > li > a {
     height: 40px;
     overflow: hidden;
@@ -163,7 +168,11 @@ nav > div > div > ul > li > a > i,
     body {
         padding-top: 80px;
     }
-    
+
+    i.fa.fa-dashboard {
+        padding-left: 5px;
+    }
+
     nav > div > div > ul > li > a {
         width: 60px;
     }
@@ -184,7 +193,11 @@ nav > div > div > ul > li > a > i,
 
     .badge {
         top: 2px !important;
-        right: 5px !important;
+        right: 10px !important;
+    }
+
+    .nav-button {
+        margin: 0 10px;
     }
 }
 
@@ -194,11 +207,6 @@ nav > div > div > ul > li > a > i,
 
 .active:hover {
     border-bottom: none;
-}
-
-.navbar-nav i {
-    padding-left: 6px;
-    font-size: 13px;
 }
 
 .navbar-default{
@@ -271,7 +279,7 @@ nav > div > div > ul > li > a > i,
 }
 
 .signedin {
-    text-align: center;
+    margin-left: 5px;
 }
 
 .signedin button {

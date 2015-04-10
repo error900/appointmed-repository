@@ -20,35 +20,35 @@
     <body class="e4e8e9-bg">
         <div class="container">
             <nav class="navbar navbar-default navbar-fixed-top">
-                <div class="container">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand hidden-lg hidden-md" href="#">benguet labs</a>
-                        <a class="navbar-brand logo-text hidden-sm hidden-xs" href="#">appoint.med</a>
-                        <div class="navbar-logo hidden-sm hidden-xs">
-                        </div>
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand hidden-lg hidden-md" href="#">benguet labs</a>
+                    <a class="navbar-brand logo-text hidden-sm hidden-xs" href="#">appoint.med</a>
+                    <div class="navbar-logo hidden-sm hidden-xs">
                     </div>
+                </div>
 
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav">
-                            <li class="active"><a href="#">Home</a></li>
-                            <li><a href="companyprofile.php">Company Profile</a></li>
-                            <li><a href="doctors.php">Doctors</a></li>
-                            <li><a href="signup.php">Sign-up</a></li>
-                        </ul>
-                        <ul class="nav navbar-nav navbar-right hidden-xs hidden-sm">
-                            <button type="button" class="btn btn-default login-modal-btn btn-noborder" data-toggle="modal" data-target=".bs-example-modal-sm">Login<i class="fa fa-sign-in"></i></button>
-                        </ul>
-                    </div><!-- /.navbar-collapse -->
-                </div><!-- /.container-fluid -->
-            </nav>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav nav-parent">
+                        <li class="active"><a href="index.php"><i class="fa fa-home fa-lg"></i>Home</a></li>
+                        <li><a href="companyprofile.php"><i class="fa fa-info-circle fa-lg"></i>Company Profile</a></li>
+                        <li><a href="doctors.php"><i class="fa fa-user-md fa-lg"></i>Doctors</a></li>
+                        <li><a href="signup.php"><i class="fa fa-pencil-square-o fa-lg"></i>Sign-up</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right hidden-xs hidden-sm">
+                        <button type="button" class="btn btn-default btn-noborder green-btn" data-toggle="modal" data-target=".bs-example-modal-sm">Login<i class="fa fa-sign-in"></i></button>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
 
             <div class="container-fluid" id="index-frw">
                 <div class="row">

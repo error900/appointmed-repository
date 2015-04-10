@@ -10,9 +10,9 @@
             <a class="navbar-brand" href="#">BenguetLabs</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right signedin">
-                <li><a href="dashboard.php">Dashboard</a></li>
-                <div class="btn-group navbar-right">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="dashboard.php"><i class="fa fa-dashboard fa-lg"></i>Dashboard</a></li>
+                <div class="btn-group navbar-right signedin">
                     <button type="button" class="btn btn-default btn-lg btn-noborder dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                         admin
                         <span class="caret"></span>
