@@ -72,7 +72,6 @@
                         <li><a href="#">This Month</a></li>
                     </ul>
                 </li>
-                <li><a href="doc_notifications.php">Notifications <span class="badge"><?php echo $notif_count ?></span></a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">dropdown <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">

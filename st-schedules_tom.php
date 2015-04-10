@@ -70,7 +70,10 @@
                         <li><a href="schedules_month.php">This Month</a></li>
                     </ul>
                 </li>
+<<<<<<< HEAD
                 <li><a href="doc_notifications.php"><i class="fa fa-bell fa-lg"><span class="badge"><?php echo $notif_count?></span></i>Notifications </a></li>
+=======
+>>>>>>> origin/master
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-history fa-lg"><span class="caret"></span></i>History</a>
                     <ul class="dropdown-menu" role="menu">
