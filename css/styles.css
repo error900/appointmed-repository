@@ -174,17 +174,19 @@ nav > div > div > ul > li > a > i,
     }
 
     nav > div > div > ul > li > a {
-        width: 60px;
-    }
-    nav > div > div > ul > li > a {
+        padding-left: 20px !important;
         height: 53px;
+        width: 60px;
         border-bottom: 3px solid transparent;
     }
+
     .navbar-default .navbar-nav>.active>a {
+        padding-left: 20px !important;
         height: 53px;
         width: 60px;
         border-bottom: 3px solid #D93240;
     }
+
     .navbar-default .navbar-nav>.active>a:hover,
     nav > div > div > ul > li > a:hover {
         width: 60px;
@@ -193,7 +195,7 @@ nav > div > div > ul > li > a > i,
 
     .badge {
         top: 2px !important;
-        right: 10px !important;
+        right: 6px !important;
     }
 
     .nav-button {
