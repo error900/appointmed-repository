@@ -10,7 +10,7 @@ while ($row = mysqli_fetch_array($a_result)) {
     $appointment_result = mysqli_query($con, "SELECT * FROM appointment WHERE appointment_id LIKE '$appointment_id'") or die(mysqli_error());
     $appointment_result_row = mysqli_fetch_array($appointment_result);
     $c_id = $appointment_result_row['clinic_id'];
-    $sched_date = $appointment_result_row['appoint_date'];
+    $sched_date = date("F j , Y", strtotime($appointment_result_row['appoint_date']));
 
     $clinic_result = mysqli_query($con, "SELECT * FROM clinic WHERE clinic_id LIKE '$c_id'") or die(mysqli_error());
     $clinic_result_row = mysqli_fetch_array($clinic_result);

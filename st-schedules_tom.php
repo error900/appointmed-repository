@@ -64,16 +64,15 @@
                 <li class="active dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-clock-o fa-lg"><span class="caret"></span></i>Schedules <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Today</a></li>
-                        <li><a href="schedules_tom.php">Tomorrow</a></li>
-                        <li><a href="schedules_week.php">This Week</a></li>
-                        <li><a href="schedules_month.php">This Month</a></li>
+                        <li><a href="st-schedules.php">Today</a></li>
+                        <li><a href="#">Tomorrow</a></li>
+                        <li><a href="st-schedules_week.php">This Week</a></li>
+                        <li><a href="st-schedules_month.php">This Month</a></li>
                     </ul>
                 </li>
-                <<<<<<< HEAD
-                <li><a href="doc_notifications.php"><i class="fa fa-bell fa-lg"><span class="badge"><?php echo $notif_count ?></span></i>Notifications </a></li>
-                =======
-                >>>>>>> origin/master
+
+          <!--      <li><a href="doc_notifications.php"><i class="fa fa-bell fa-lg"><span class="badge"><?php echo $notif_count ?></span></i>Notifications </a></li>-->
+      
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-history fa-lg"><span class="caret"></span></i>History</a>
                     <ul class="dropdown-menu" role="menu">

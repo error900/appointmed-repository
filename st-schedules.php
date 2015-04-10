@@ -59,7 +59,7 @@
             ?>
             <ul class="nav navbar-nav">
                 <li class="active dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Schedules <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-clock-o fa-lg"><span class="caret"></span></i>Schedules <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="#">Today</a></li>
                         <li><a href="st-schedules_tom.php">Tomorrow</a></li>
@@ -68,7 +68,7 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">dropdown <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-history fa-lg"><span class="caret"></span></i>History</a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="completed.php">Completed</a></li>
                         <li><a href="removed.php">Removed</a></li>
