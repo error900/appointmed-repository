@@ -42,7 +42,6 @@ while ($row = mysqli_fetch_array($a_result)) {
 } else {
     echo '<div class="col-xs-12 col-md-10 col-md-offset-1">
         <div class="alert alert-warning" role="alert">
-        <strong>There are no schedules.</strong> Better check yourself, youre not looking too good.</div>
         </div>';
     echo '<div class="col-xs-12 col-md-10 col-md-offset-1">
         <div class="alert alert-info alert-dismissible" role="alert">
