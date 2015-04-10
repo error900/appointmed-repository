@@ -1,10 +1,11 @@
 <?php
-//	include 'connectdatabase.php';
+	include 'connectdatabase.php';
 	echo 'asdasd';
-/*	if(isset($_POST['submit'])){
+	if(isset($_POST['submit'])){
 		$name = mysqli_real_escape_string($con, $_POST['name']);
 		$email = mysqli_real_escape_string($con, $_POST['email']);
 		$doctor_id = $_POST['doctor_id'];
+		$secretary_id = $_POST['secretary_id'];
 		$doctor_status = $_POST['doctor_status'];
 		$date = date('Y-m-d');
 
@@ -26,35 +27,20 @@
 			}
 		}
 		
-		//clinic
-		if(!($clinic_name == '' && $clinic_contact == '' && $clinic_location == '')){
-			$clinic_sql = "INSERT INTO clinic (clinic_location, clinic_name, clinic_contact, doctor_id) 
-			VALUES ('$clinic_location', '$clinic_name', '$clinic_contact','$doctor_id')";
-			if (!(mysqli_query($con, $clinic_sql))) {
-	  			die('Error: ' . mysqli_error($con));
-			}
-		}
-
-		//secretary
-		if(!($firstname == '' && $lastname == '')){
-		  	$sqlaccount = "INSERT INTO account (username, password, account_type, account_status)
-			VALUES('$username', '$password', 'Secretary', 'active')";
-			$secretary_sql = "INSERT INTO secretary (secretary_id, secretary_name, doctor_id, username) 
-			VALUES ('$secretary_id', '$secretary_name', '$doctor_id','$username')";
-			if (!(mysqli_query($con, $sqlaccount)) || !(mysqli_query($con, $secretary_sql))) {
-	  			die('Error: ' . mysqli_error($con));
-			}
-		}
-		$update_sql = "UPDATE doctor SET doctor_name = '$name', specialization = '$specialization', email = '$email', doctor_status = '$doctor_status' WHERE doctor_id = '$doctor_id' ";
+		$update_sql = "UPDATE secretary SET secretary_name = '$name', email = '$email'WHERE secretary_id = '$secretary_id' ";
 		if (!(mysqli_query($con, $update_sql))) {
 	  		die('Error: ' . mysqli_error($con));
 		}
+		$update_spec_sql = "UPDATE doctor SET doctor_status = '$doctor_status' ";
+		if (!(mysqli_query($con, $update_spec_sql))) {
+	  		die('Error: ' . mysqli_error($con));
+		}
 
-		header("location: doctor-profile.php");
+		header("location: secretary-profile.php");
 	}else{
 		echo "<script> alert('Error'); </script>";
-		echo "<script> location.replace('doctor-profile.php') </script>";
+		echo "<script> location.replace('secretary-profile.php') </script>";
 	}
 mysqli_close($con);
-*/
+
 ?>

@@ -34,6 +34,7 @@
                                 <input type="text" class="form-control" name="name" placeholder="Name" required="" value="<?php echo $secretary ?>"/>
                                 <input type="text" class="form-control" name="email" placeholder="Email Address" required="" value="<?php echo $email ?>" />
                                 <input type="hidden" value="<?php echo $doctor_id ?>" name="doctor_id">
+                                <input type="hidden" value="<?php echo $secretary_id ?>" name="secretary_id">
                                 <label>Change Status of Doctor <?php echo $doctor_row['doctor_name']?></label>
                                 <select name="doctor_status" class="form-control">
                                     <option value="In">In</option>
