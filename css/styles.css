@@ -113,20 +113,19 @@ h1, h2, h3, h4 {
       font-size: 1.33333333em !important;
 }
 
-i.fa.fa-power-off {
-    padding-right: 7px;
-}
-
 i.fa.fa-user-md,
 i.fa.fa-location-arrow,
 i.fa.fa-phone,
-i.fa.fa-calendar {
+i.fa.fa-calendar,
+i.fa.fa-pencil,
+i.fa.fa-power-off {
+    padding-left: 3px;
     padding-right: 10px;
 }
 
 nav > div > div > ul > li > a {
     height: 53px;
-    width: 60px;
+    width: auto;
     overflow: hidden;
     font-size: 16px;
     letter-spacing: 0.5px;
@@ -155,6 +154,12 @@ nav > div > div > ul > li > a > i,
     margin-bottom: 20px;
 }
 
+@media (min-width:768px){
+    nav > div > div > ul > li > a {
+        width: 60px;
+    }
+}
+
 .dropdown-menu>li>a {
     font-weight: 600 !important;
 }
@@ -164,7 +169,6 @@ nav > div > div > ul > li > a > i,
 }
 
 .navbar-nav i {
-    padding-right: 6px !important;
     padding-left: 6px;
     font-size: 13px;
 }
@@ -273,14 +277,20 @@ nav > div > div > ul > li > a > i,
 
 .badge {
     position: absolute;
-    top: 7px;
-    right: 5px;
-    padding: 2px 6px;
-    background-color: #34495E;
-    font-weight: 600;
+    height: 24px;
+    width: 24px;
+    top: 3px;
+    right: 4px;
+    padding: 2px;
+    background-color: #C0392B;
+    font-weight: normal;
     font-size: 10px;
-    line-height: normal;
+    line-height: 20px;
     border-radius: 50%;
+    -webkit-box-shadow: -1px 3px 3px 0px rgba(0, 0, 0, 0.5);
+    -moz--box-shadow: -1px 3px 3px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: -1px 3px 3px 0px rgba(0, 0, 0, 0.5);
+
 }
 
 #appointments-user {
@@ -376,6 +386,10 @@ nav > div > div > ul > li > a > i,
     border-radius: 2px;
 }
 
+.panel-heading {
+    text-shadow: 1px 1px 1px #35404F;
+}
+
 .panel-default .panel-heading {
     color: #fff !important;
     font-weight: 800;
@@ -444,7 +458,7 @@ nav > div > div > ul > li > a > i,
 }
 
 .panel-notif.panel-success {
-    border-color: #27AE60;
+    border-color: #A3D39C;
 }
 
 .panel-notif.panel-info {
@@ -452,7 +466,7 @@ nav > div > div > ul > li > a > i,
 }
 
 .panel-notif.panel-warning {
-    border-color: #D35400;
+    border-color: #E67E22;
 }
 
 .panel-notif.panel-danger {
@@ -460,7 +474,7 @@ nav > div > div > ul > li > a > i,
 }
 
 .panel-notif.panel-success > .panel-heading {
-    background: #27AE60;
+    background: #A3D39C;
     border-radius: 0;
 }
 
@@ -469,7 +483,7 @@ nav > div > div > ul > li > a > i,
     border-radius: 0;
 }
 .panel-notif.panel-warning > .panel-heading {
-    background: #D35400;
+    background: #E67E22;
     border-radius: 0;
 }
 .panel-notif.panel-danger > .panel-heading {
@@ -786,7 +800,7 @@ nav > div > div > ul > li > a > i,
 }
 
 .btn-default.login-btn,
-.btn-default.upload-btn {
+.btn-default.black-btn {
     width: 100%;
     padding: 10px 19px;
     color: #fff !important;
@@ -805,10 +819,20 @@ nav > div > div > ul > li > a > i,
     background: #17A697 !important;
 }
 
+.black-btn {
+    background: #2C3E50 !important;
+}
+
+.red-btn {
+    background: #E45F56 !important;
+    text-transform: lowercase;
+}
+
 .login-modal-btn,
 .export-btn,
 .green-btn,
-.post-btn {
+.post-btn,
+.red-btn {
     margin-top: 10px;
     margin-left: 10px;
     color: #fff;
@@ -816,10 +840,6 @@ nav > div > div > ul > li > a > i,
     font-weight: 600;
     text-transform: uppercase;
     text-shadow: 1px 1px 1px #34495E;
-}
-
-.upload-btn {
-    background: #2C3E50 !important;
 }
 
 .login-modal-btn:hover,
@@ -835,12 +855,19 @@ nav > div > div > ul > li > a > i,
     transition: 0.5s;
 }
 
-.upload-btn:hover,
-.upload-btn:focus {
+.black-btn:hover,
+.black-btn:focus {
     color: #fff !important;
     background: #34495E !important;
+    transition: 0.5s;
 }
 
+.red-btn:hover,
+.red-btn:focus {
+    color: #fff !important;
+    background: #D93240 !important;
+    transition: 0.5s;
+}
 
 .btn-default.create-btn {
     position: absolute;
@@ -855,24 +882,6 @@ nav > div > div > ul > li > a > i,
 
 .btn-default.create-btn:hover {
     background-color: #C0392B;
-}
-
-.subscribe-btn {
-    margin: 10px;
-    padding: 6px 5px;
-    background-color: #16A085 !important;
-    color: #ECF0F1;
-    width: 100px;
-    font-size: 14px;
-    font-weight: 600;
-    text-transform: lowercase;
-    text-shadow: 1px 1px 1px #34495E;
-    border: 2px solid transparent;
-}
-
-.subscribe-btn:hover {
-    color: #fff;
-    border: 2px solid #2C3E50;
 }
 
 .btn-noborder {
@@ -1104,7 +1113,6 @@ nav > div > div > ul > li > a > i,
 }
 
 .upload-photo {
-    padding: 0 15%;
 }
 
 .upload-photo .img-responsive {
@@ -1116,8 +1124,12 @@ nav > div > div > ul > li > a > i,
 }
 
 .upload-photo .file-upload {
-    font-size: 14px;
+    font-size: 14px !important;
     margin: 10px 0;
+}
+
+.profile-data-edit {
+    margin-top: 10px;
 }
 
 .profile-data-edit input.form-control {

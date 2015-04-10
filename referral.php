@@ -14,7 +14,7 @@ if(isset($_POST['submit'])){
 	$rd_row =  mysqli_fetch_array($rd_result);
 
 
-	$message="You have been referred by doctor ".$d_row['doctor_name']." to doctor ".$rd_row['doctor_name'];
+	$message="You have been referred by Dr. ".$d_row['doctor_name']." to <strong>Dr. ".$rd_row['doctor_name'] . '</strong>';
 	$n_id="n1002";
 	$indicator="doctor";
 	$notif = "INSERT INTO notification (indicator, doctor_id, patient_id, legend_id, notification_date, notification) 

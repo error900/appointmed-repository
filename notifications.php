@@ -47,17 +47,24 @@
                                 <li><a href="appointment_month.php">This Month</a></li>
                             </ul>
                         </li>
-                        <li class="active"><a href="notifications.php"><i class="fa fa-bell fa-lg"><span class="badge"><?php echo $notif_count?></span></i>Notifications </a></li>
+                        <li class="active">
+                            <a href="notifications.php">
+                                <i class="fa fa-bell fa-lg">
+                                    <?php 
+                                        if ($notif_count == 0) 
+                                        echo '<span class="badge hide">' . $notif_count . '</span>';
+                                        else
+                                        echo '<span class="badge">' . $notif_count . '</span>';
+                                    ?>
+                                </i>Notifications
+                            </a>
+                        </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-history fa-lg"><span class="caret"></span></i>History</a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="appointments_done.php">Appointments Done</a></li>
                                 <li><a href="cancelled_appointments.php">Cancelled Appointments</a></li>
                             </ul>
-                        </li>
-                         <li class="nav-button navbar-right">
-                            <button type="button" class="btn btn-default btn-noborder edit-profile-btn" data-toggle="modal" data-target=".bs-pt-edit-profile-modal-lg" data-id="'.$appointment_id.'" data-patient-id="'.$patient_id.'">
-                            <i class="fa fa-pencil"></i>Edit Profile</button>
                         </li>
         <?php 
             include 'include/pt-nav-end.php';
@@ -89,7 +96,7 @@
                         if($n_color['color'] == 'red'){
                         echo "<div class='col-xs-12 col-md-8 col-md-offset-2'>
                             <div class='panel panel-notif panel-danger'>
-                                <div class='panel-heading'><span class='hidden-xs hidden-sm'>" . $doc["doctor_name"] . "</span>".$n_row["notification_date"]."
+                                <div class='panel-heading'><span class='hidden-xs hidden-sm'>Dr. " . $doc["doctor_name"] . "</span>".$n_row["notification_date"]."
                                     <a href=\"close_notif.php?nid=$n_row[notification_id]&desc=$n_row[notification]\" title='Close'><i class='fa fa-remove delete-btn x-btn'></i></a>
                                 </div>
                                 <div class='panel-body'>
@@ -100,7 +107,7 @@
                         } else if ($n_color['color'] == 'orange'){
                         echo "<div class='col-xs-12 col-md-8 col-md-offset-2'>
                             <div class='panel panel-notif panel-warning'>
-                                <div class='panel-heading'><span class='hidden-xs hidden-sm'>" . $doc["doctor_name"] . "</span>".$n_row["notification_date"]."
+                                <div class='panel-heading'><span class='hidden-xs hidden-sm'>Dr. " . $doc["doctor_name"] . "</span>".$n_row["notification_date"]."
                                     <a href=\"close_notif.php?nid=$n_row[notification_id]&desc=$n_row[notification]\" title='Close'><i class='fa fa-remove delete-btn x-btn'></i></a>
                                 </div>
                                 <div class='panel-body'>
@@ -111,7 +118,7 @@
                         }else if ($n_color['color'] == 'green'){
                         echo "<div class='col-xs-12 col-md-8 col-md-offset-2'>
                             <div class='panel panel-notif panel-success'>
-                                <div class='panel-heading'><span class='hidden-xs hidden-sm'>" . $doc["doctor_name"] . "</span>".$n_row["notification_date"]."
+                                <div class='panel-heading'><span class='hidden-xs hidden-sm'>Dr. " . $doc["doctor_name"] . "</span>".$n_row["notification_date"]."
                                     <a href=\"close_notif.php?nid=$n_row[notification_id]&desc=$n_row[notification]\" title='Close'><i class='fa fa-remove delete-btn x-btn'></i></a>
                                 </div>
                                 <div class='panel-body'>
@@ -122,7 +129,7 @@
                         } else if ($n_color['color'] == 'blue'){
                         echo "<div class='col-xs-12 col-md-8 col-md-offset-2'>
                             <div class='panel panel-notif panel-info'>
-                                <div class='panel-heading'><span class='hidden-xs hidden-sm'>" . $doc["doctor_name"] . "</span>".$n_row["notification_date"]."
+                                <div class='panel-heading'><span class='hidden-xs hidden-sm'>Dr. " . $doc["doctor_name"] . "</span>".$n_row["notification_date"]."
                                     <a href=\"close_notif.php?nid=$n_row[notification_id]&desc=$n_row[notification]\" title='Close'><i class='fa fa-remove delete-btn x-btn'></i></a>
                                 </div>
                                 <div class='panel-body'>

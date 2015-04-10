@@ -1,12 +1,12 @@
             <li class="nav-button">
                 <form action="export.php" method="post">
                     <input type="hidden" name="doctor_id" value="<?php echo $doctor_id ?>">
-                    <input type="submit" class="btn btn-default export-btn btn-noborder" value="Export" name="submit">
+                    <input type="submit" class="btn btn-default btn-noborder green-btn" value="Export" name="submit">
                 </form>
             </li>
             <li class="nav-button navbar-right">
-                <button type="button" class="btn btn-default btn-noborder edit-profile-btn" data-toggle="modal" data-target=".bs-dc-edit-profile-modal-lg" data-id="'.$appointment_id.'" data-patient-id="'.$patient_id.'">
-                    <i class="fa fa-pencil"></i>Edit Profile</button>
+                <button type="button" class="btn btn-default btn-noborder green-btn" data-toggle="modal" data-target=".bs-dc-edit-profile-modal-lg" data-id="'.$appointment_id.'" data-patient-id="'.$patient_id.'">
+                <i class="fa fa-pencil"></i>Update Info</button>
             </li>
             </ul>
             <ul class="nav navbar-nav navbar-right signedin">
@@ -22,7 +22,7 @@
                             }
                             ?>.jpg">
                         </div>
-            <?php echo $doctor ?>
+                        <?php echo 'Dr. ' . $doctor ?>
                         <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" role="menu">

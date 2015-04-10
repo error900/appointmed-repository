@@ -16,7 +16,7 @@
 			$n_id = "n1003";
 			$message = "Your appointment is finished.";
 			if($remarks != ''){
-				$message = "Your appointment is finished. With remarks: ".$remarks;
+				$message = "<strong>Your appointment is done!</strong><br/><strong>Remarks:</strong>" . $remarks;
 			}
 			$notif = "INSERT INTO notification (indicator, doctor_id, patient_id, legend_id, notification_date, notification) 
 			VALUES('$indicator','$doc', '$pat', '$n_id', '$date', '$message')";	

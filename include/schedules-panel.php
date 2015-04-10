@@ -1,5 +1,5 @@
 <?php
-
+if (mysqli_num_rows($a_result) >= 1) {
 while ($row = mysqli_fetch_array($a_result)) {
     $patient = $row['patient_id'];
     $p_result = mysqli_query($con, "SELECT * FROM patient WHERE patient_id LIKE '$patient'");
@@ -38,5 +38,19 @@ while ($row = mysqli_fetch_array($a_result)) {
                         </div>
                  </div>
                </div>';
+}
+} else {
+    echo '<div class="col-xs-12 col-md-10 col-md-offset-1">
+        <div class="alert alert-warning" role="alert">
+        <strong>There are no schedules.</strong> Better check yourself, youre not looking too good.</div>
+        </div>';
+    echo '<div class="col-xs-12 col-md-10 col-md-offset-1">
+        <div class="alert alert-info alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span></button>
+    To know more about your schedules click
+    <strong> <a href="help.php" class="alert-link">here</a></strong>.
+    </div>
+    </div>';
 }
 ?>

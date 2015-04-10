@@ -7,7 +7,7 @@
             </div>
             <div class="modal-body">
                 <div class="row">
-                    <div class="col-xs-12 col-md-4 upload-photo">
+                    <div class="col-xs-12 col-md-4 col-md-offset-1 upload-photo">
                         <form method="post" action="edit_data.php" enctype="multipart/form-data">
                             <div class="input-group">
                                 <div>
@@ -20,21 +20,21 @@
                                     }
                                     ?>.jpg" class="img-responsive">
                                 </div>
-                                <input type="file" class="file-upload" name="profile_pic">
+                                <input type="file" class="form-control file-upload" name="profile_pic">
                                 <input type="hidden" value="<?php echo $patient_id ?>" name="patient_id">
-                                <input type="submit" class="btn btn-default upload-btn btn-noborder" class="btn btn-default login-btn btn-noborder"  value="Save" name="submit">
+                                <input type="submit" class="btn btn-default btn-noborder black-btn" value="Save" name="submit">
                             </div>
                         </form>
                     </div>
-                    <div class="col-xs-12 col-md-5 col-md-offset-2 profile-data-edit">
-                        <h1 class="text-center row-header3">Current Data</h1>
+                    <div class="col-xs-12 col-md-5 col-md-offset-1 profile-data-edit">
+                        <h1 class="text-center row-header3">Current Information</h1>
                         <form method='post' action="edit_this.php">
                             <div class="input-group">
                                 <input type="text" class="form-control" name="name" placeholder="Name" required="" value="<?php echo $patient_n ?>"/>
                                 <input type="text" class="form-control" name="contact" placeholder="Contact Number" required="" value="<?php echo $row['patient_contact'] ?>" />
                                 <input type="text" class="form-control" name="occupation" placeholder="Occupation" required="" value="<?php echo $row['occupation'] ?>" />
                                 <input type="hidden" value="<?php echo $patient_id ?>" name="patient_id">
-                                <input class="btn btn-default login-btn btn-noborder" type="submit" value="Submit" name="submit"/>
+                                <input class="btn btn-default btn-noborder black-btn" type="submit" value="Submit" name="submit"/>
                             </div>
                         </form>
 
@@ -59,7 +59,7 @@
             </div>
             <div class="modal-body">
                 <div class="row">
-                    <div class="col-xs-12 col-md-4 upload-photo">
+                    <div class="col-xs-12 col-md-4 col-md-offset-1 upload-photo">
                         <form method="post" action="edit_pic_doc.php" enctype="multipart/form-data">
                             <div class="input-group">
                                 <div>
@@ -72,13 +72,13 @@
                                     }
                                     ?>.jpg" class="img-responsive">
                                 </div>
-                                <input type="file" class="file-upload" name="profile_pic">
+                                <input type="file" class="form-control file-upload" name="profile_pic">
                                 <input type="hidden" value="<?php echo $doctor_id ?>" name="doctor_id">
-                                <input type="submit" class="btn btn-default upload-btn btn-noborder" class="btn btn-default login-btn btn-noborder"  value="Save" name="submit">
+                                <input class="btn btn-default btn-noborder black-btn" type="submit" value="Submit" name="submit"/>
                             </div>
                         </form>
                     </div>
-                    <div class="col-xs-12 col-md-5 col-md-offset-2 profile-data-edit">
+                    <div class="col-xs-12 col-md-5 col-md-offset-1 profile-data-edit">
                         <h1 class="text-center row-header3">Current Data</h1>
                         <form method='post' action="edit_profile_doc.php">
                             <div class="input-group">
@@ -110,7 +110,7 @@
                                     <input type="text" class="form-control" name="lastname" placeholder="Last Name"/>
                                 </div>
 
-                                <input class="btn btn-default login-btn btn-noborder" type="submit" value="Submit" name="submit"/>
+                                <input class="btn btn-default btn-noborder black-btn" type="submit" value="Submit" name="submit"/>
                             </div>
                         </form>
                     </div>
