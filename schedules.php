@@ -67,12 +67,12 @@
                 <li>
                     <a href="doc_notifications.php">
                         <i class="fa fa-bell fa-lg">
-                                <?php 
-                                    if ($notif_count == 0) 
-                                        echo '<span class="badge hide">' . $notif_count . '</span>';
-                                    else
-                                        echo '<span class="badge">' . $notif_count . '</span>';
-                                ?>
+                            <?php
+                            if ($notif_count == 0)
+                                echo '<span class="badge hide">' . $notif_count . '</span>';
+                            else
+                                echo '<span class="badge">' . $notif_count . '</span>';
+                            ?>
                         </i>Notifications
                     </a>
                 </li>
@@ -102,8 +102,8 @@
                             <p class="email"><?php echo $row['email']; ?></p>
                             <p><?php echo $c_row['clinic_contact']; ?></p>
                         </div>
-                        <?php 
-                            include 'include/inqueue_served.php';
+                        <?php
+                        include 'include/inqueue_served.php';
                         ?>
                     </div>
                 </div>

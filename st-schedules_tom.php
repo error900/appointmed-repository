@@ -45,7 +45,7 @@
 
     $doctor = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_id LIKE '$doctor_id'") or die(mysqli_error());
     $doctor_row = mysqli_fetch_array($doctor);
-    
+
     $c_result = mysqli_query($con, "SELECT * FROM clinic WHERE doctor_id LIKE '$doctor_id'");
     $c_row = mysqli_fetch_array($c_result);
     $a_result = mysqli_query($con, "SELECT * FROM appointment WHERE doctor_id = '$doctor_id' AND (appointment_status = 'inqueue' OR appointment_status = 'Referred') AND (appoint_date = '$tomorrow') ORDER BY appointment_id");
@@ -70,10 +70,10 @@
                         <li><a href="schedules_month.php">This Month</a></li>
                     </ul>
                 </li>
-<<<<<<< HEAD
-                <li><a href="doc_notifications.php"><i class="fa fa-bell fa-lg"><span class="badge"><?php echo $notif_count?></span></i>Notifications </a></li>
-=======
->>>>>>> origin/master
+                <<<<<<< HEAD
+                <li><a href="doc_notifications.php"><i class="fa fa-bell fa-lg"><span class="badge"><?php echo $notif_count ?></span></i>Notifications </a></li>
+                =======
+                >>>>>>> origin/master
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-history fa-lg"><span class="caret"></span></i>History</a>
                     <ul class="dropdown-menu" role="menu">
@@ -93,8 +93,8 @@
                             <p class="email"><?php echo $doctor_row['email']; ?></p>
                             <p><?php echo $c_row['clinic_contact']; ?></p>
                         </div>
-                        <?php 
-                            include 'include/inqueue_served.php';
+                        <?php
+                        include 'include/inqueue_served.php';
                         ?>
                     </div>
                 </div>

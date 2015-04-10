@@ -85,8 +85,8 @@
                             <p class="email"><?php echo $doctor_row['email']; ?></p>
                             <p><?php echo $c_row['clinic_contact']; ?></p>
                         </div>
-                        <?php 
-                            include 'include/inqueue_served.php';
+                        <?php
+                        include 'include/inqueue_served.php';
                         ?>
                     </div>
                 </div>
@@ -95,7 +95,6 @@
                         <div class="col-md-12">
                             <h2 class="text-center row-header">&mdash; Today &mdash;</h2>
                         </div>
-
                         <?php
                         include 'include/st-schedules-panel.php';
                         ?>
@@ -104,7 +103,6 @@
                 <?php
                 include 'include/remarks-modal.php';
                 include 'include/st-edit-profile-modal.php';
-
                 ?>
                 <script type="text/javascript" src="js/scrolltop.js"></script>
         </div>

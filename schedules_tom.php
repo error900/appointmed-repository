@@ -68,12 +68,12 @@
                 <li>
                     <a href="doc_notifications.php">
                         <i class="fa fa-bell fa-lg">
-                                <?php 
-                                    if ($notif_count == 0) 
-                                        echo '<span class="badge hide">' . $notif_count . '</span>';
-                                    else
-                                        echo '<span class="badge">' . $notif_count . '</span>';
-                                ?>
+                            <?php
+                            if ($notif_count == 0)
+                                echo '<span class="badge hide">' . $notif_count . '</span>';
+                            else
+                                echo '<span class="badge">' . $notif_count . '</span>';
+                            ?>
                         </i>Notifications
                     </a>
                 </li>
@@ -90,7 +90,7 @@
                 ?>
                 <div class="container-fluid" id="user-md-frw">
                     <div class="row">
-                    <div class="col-xs-12 hidden-lg hidden-md text-right">
+                        <div class="col-xs-12 hidden-lg hidden-md text-right">
                             <form action="export.php" method="post">
                                 <input type="hidden" name="doctor_id" value="<?php echo $doctor_id ?>">
                                 <input type="submit" class="btn btn-default btn-noborder green-btn" value="Export" name="submit">
@@ -103,8 +103,8 @@
                             <p class="email"><?php echo $row['email']; ?></p>
                             <p><?php echo $c_row['clinic_contact']; ?></p>
                         </div>
-                        <?php 
-                            include 'include/inqueue_served.php';
+                        <?php
+                        include 'include/inqueue_served.php';
                         ?>
                     </div>
                 </div>

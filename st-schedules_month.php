@@ -36,7 +36,7 @@
     $end = date("Y-m-t");
     $date = date("Y-m-d");
     $username = $_SESSION['username'];
-    
+
     $result = mysqli_query($con, "SELECT * FROM secretary WHERE username LIKE '$username'") or die(mysqli_error());
     $row = mysqli_fetch_array($result);
     $secretary = $row['secretary_name'];
@@ -47,7 +47,7 @@
 
     $doctor = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_id LIKE '$doctor_id'") or die(mysqli_error());
     $doctor_row = mysqli_fetch_array($doctor);
-    
+
     $c_result = mysqli_query($con, "SELECT * FROM clinic WHERE doctor_id LIKE '$doctor_id'");
     $c_row = mysqli_fetch_array($c_result);
     $a_result = mysqli_query($con, "SELECT * FROM appointment WHERE doctor_id = '$doctor_id' AND (appointment_status = 'inqueue' OR appointment_status = 'Referred') AND (appoint_date >= '$start' AND appoint_date <= '$end') ORDER BY appointment_id");
@@ -90,8 +90,8 @@
                             <p class="email"><?php echo $doctor_row['email']; ?></p>
                             <p><?php echo $c_row['clinic_contact']; ?></p>
                         </div>
-                        <?php 
-                            include 'include/inqueue_served.php';
+                        <?php
+                        include 'include/inqueue_served.php';
                         ?>
                     </div>
                 </div>
@@ -108,7 +108,6 @@
                 <?php
                 include 'include/remarks-modal.php';
                 include 'include/st-edit-profile-modal.php';
-
                 ?>
                 <script type="text/javascript" src="js/search.js"></script>
                 <script type="text/javascript" src="js/scrolltop.js"></script>
