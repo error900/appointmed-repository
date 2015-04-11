@@ -64,19 +64,20 @@
             ?>
             <ul class="nav navbar-nav">
                 <li class="active dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Schedules <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-clock-o fa-lg"></i>Schedules <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="st-schedules.php">Today</a></li>
                         <li><a href="st-schedules_tom.php">Tomorrow</a></li>
                         <li><a href="st-schedules_week.php">This Week</a></li>
-                        <li><a href="#">This Month</a></li>
+                        <li><a href="st-schedules_month.php">This Month</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">dropdown <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-history fa-lg"></i>History<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="completed.php">Completed</a></li>
-                        <li><a href="removed.php">Removed</a></li>
+                        <li><a href="completed.php">Done Schedules</a></li>
+                        <li><a href="removed.php">Removed Schedules</a></li>
+                        <li><a href="referred.php">Referred Schedules</a></li>
                     </ul>
                 </li>
                 <?php

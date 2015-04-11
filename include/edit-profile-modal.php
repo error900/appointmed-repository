@@ -92,11 +92,11 @@
                                     <option value="Out">Out</option>
                                     <option value="Break">Break</option>
                                 </select>
-                                <div class="col-xs-6 col-md-6 add-form">
-                                    <input type="button" class="btn btn-default" id="hideshow" value="Add Clinic">
+                                <div class="col-xs-6 col-md-6 add-form text-center">
+                                    <input type="button" class="btn btn-default btn-noborder green-btn" id="hideshow" value="Add Clinic">
                                 </div>
-                                <div class="col-xs-6 col-md-6 add-form">
-                                    <input type="button" class="btn btn-default" id="showsec" value="Add Secretary">
+                                <div class="col-xs-6 col-md-6 add-form text-center">
+                                    <input type="button" class="btn btn-default btn-noborder green-btn" id="showsec" value="Add Secretary">
                                 </div>
                                 <div id="clinics" style="display:none">
                                     <p>Clinic</p>

@@ -907,6 +907,7 @@ nav > div > div > ul > li > a > i,
 }
 
 .btn-default.create-btn {
+    z-index: 1;
     position: absolute;
     right: 30px;
     bottom: 20px;
@@ -915,6 +916,7 @@ nav > div > div > ul > li > a > i,
     font-size: 14px;
     background-color: #E67E22;
     text-shadow: 1px 1px 1px #34495E;
+    transition: 0.5s;
 }
 
 .btn-default.create-btn:hover {
@@ -1197,11 +1199,10 @@ nav > div > div > ul > li > a > i,
 }
 
 .d-info span {
-    background-color: #16A085;
-    padding: 16px;
-    border-radius: 50%;
-    font-size: 22px;
-    text-shadow: 1px 1px 1px #34495E;
+    color: #1ABC9C;
+    padding: 0px 15px;
+    font-size: 18px;
+    font-weight: 800;
 }
 
 .email {
