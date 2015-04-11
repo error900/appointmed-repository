@@ -108,7 +108,7 @@
                                             form1.password2.pattern = this.value;" required=""/>  
                                     <p class="passwordReq">Your password must contain uppercase and lowercase letters, and it should not be lower than 6 characters. </p>
 
-                                    <input type="password" title="Passwords do not matcch" class="form-control" name="password2" placeholder="Confirm Password" 
+                                    <input type="password" title="Passwords do not match" class="form-control" name="password2" placeholder="Confirm Password" 
                                            onchange=" this.setCustomValidity(this.validity.patternMismatch ? this.title : '');"
                                            />
                                     <input class="btn btn-default login-btn" type="submit" value="Submit" name="submit"/>

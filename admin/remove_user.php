@@ -54,7 +54,7 @@
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
             <h1 class="page-header">Remove User(s)
                 <span class="h1-btn">
-                    <input type="submit" class="btn btn-default export-btn" name="submit" value="Inactive">
+                    
                 </span>
             </h1>
             <div class="table-responsive database">
@@ -84,6 +84,7 @@
                         echo "<td><input type='checkbox' name='select[]' id='select' value='$row[username]'></td>";
                         echo '</tr>';
                     }
+                    echo '<input type="submit" class="btn btn-default export-btn" name="submit" value="Inactive">';
                     ?>
                 </form>
             </table>
