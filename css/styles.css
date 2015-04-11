@@ -498,7 +498,7 @@ nav > div > div > ul > li > a > i,
 }
 
 .panel-notif.panel-success {
-    border-color: #A3D39C;
+    border-color: #40B22F;
 }
 
 .panel-notif.panel-info {
@@ -514,7 +514,7 @@ nav > div > div > ul > li > a > i,
 }
 
 .panel-notif.panel-success > .panel-heading {
-    background: #A3D39C;
+    background: #40B22F;
     border-radius: 0;
 }
 
