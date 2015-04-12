@@ -27,8 +27,8 @@
                     </button>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="doctor-profile.php">Profile</a></li>
-                        <li><a href="doc_help.php">Help</a></li>
                         <li><a href="doc_changepassword.php">Change Password</a></li>
+                        <li><a href="doc_help.php">Help</a></li>
                         <li class="divider"></li>
                         <li><a href="admin/logout.php"><i class="fa fa-power-off"></i>logout</a></li>
                     </ul>

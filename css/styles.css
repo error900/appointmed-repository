@@ -498,7 +498,7 @@ nav > div > div > ul > li > a > i,
 }
 
 .panel-notif.panel-success {
-    border-color: #40B22F;
+    border-color: #27AE60;
 }
 
 .panel-notif.panel-info {
@@ -514,7 +514,7 @@ nav > div > div > ul > li > a > i,
 }
 
 .panel-notif.panel-success > .panel-heading {
-    background: #40B22F;
+    background: #27AE60;
     border-radius: 0;
 }
 
@@ -841,7 +841,7 @@ a.btn.btn-block.appo.tooltip-bottom {
     box-shadow: none;
 }
 
-.btn-default.login-btn,
+.btn-default.orange-btn,
 .btn-default.black-btn {
     width: 100%;
     padding: 10px 19px;
@@ -850,8 +850,8 @@ a.btn.btn-block.appo.tooltip-bottom {
     text-transform: uppercase;
 }
 
-.btn-default.login-btn:hover,
-.btn-default.login-btn:focus {
+.btn-default.orange-btn:hover,
+.btn-default.orange-btn:focus {
     color: #fff;
     background-color: #E67E22;
     border-color: #E67E22;

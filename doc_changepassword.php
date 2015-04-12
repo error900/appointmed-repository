@@ -87,25 +87,29 @@
                 <?php
                 include 'include/dc-nav-end.php';
                 ?>
-                <form method="post" action="change_doc_pass.php" name=form1>
-                <div>
-                    <input type="password"  class="form-control" name="old_password" placeholder="Enter old password"/>
-                        
-                                    <input type="hidden" name="username" value="<?php echo $username?>"/>
-                                    <input type="password" class="form-control" name="password" placeholder="Password"  
-                                           required pattern="(?=.*[a-z])(?=.*[A-Z]).{6,}" 
-                                           onchange="this.setCustomValidity(this.validity.patternMismatch ? this.title : '');
-                                        if (this.checkValidity())
-                                            form1.password2.pattern = this.value;" required=""/>  
-                                    <p class="passwordReq">Your password must contain uppercase and lowercase letters, and it should not be lower than 6 characters. </p>
+                <div class="col-xs-12 col-md-4 col-md-offset-4">
+                    <h1 class="text-center row-header-lc">Change Password</h1>
+                    <div class="signup-form">
+                        <form method="post" action="change_doc_pass.php" name="form1">
+                            <div class="input-group">
+                                <input type="password"  class="form-control" name="old_password" placeholder="Enter old password"/>
 
-                                    <input type="password" title="Passwords do not match" class="form-control" name="password2" placeholder="Confirm Password" 
-                                           onchange=" this.setCustomValidity(this.validity.patternMismatch ? this.title : '');"
-                                           />
-                    <input type="submit" value="Submit" name="submit"/>
+                                <input type="hidden" name="username" value="<?php echo $username?>"/>
+                                <input type="password" class="form-control" name="password" placeholder="Password"  
+                                required pattern="(?=.*[a-z])(?=.*[A-Z]).{6,}" 
+                                onchange="this.setCustomValidity(this.validity.patternMismatch ? this.title : '');
+                                if (this.checkValidity())
+                                form1.password2.pattern = this.value;" required=""/>  
+                                <p class="passwordReq">Your password must contain uppercase and lowercase letters, and it should not be lower than 6 characters. </p>
+
+                                <input type="password" title="Passwords do not match" class="form-control" name="password2" placeholder="Confirm Password" 
+                                onchange=" this.setCustomValidity(this.validity.patternMismatch ? this.title : '');"
+                                />
+                                <input type="submit" class="btn btn-default orange-btn" value="Submit" name="submit"/>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-            </form>
-            </div>
                 <?php
                 include 'include/refer-modal.php';
                 include 'include/edit-profile-modal.php';

@@ -111,7 +111,7 @@
                                     <input type="password" title="Passwords do not match" class="form-control" name="password2" placeholder="Confirm Password" 
                                            onchange=" this.setCustomValidity(this.validity.patternMismatch ? this.title : '');"
                                            />
-                                    <input class="btn btn-default login-btn" type="submit" value="Submit" name="submit"/>
+                                    <input class="btn btn-default orange-btn" type="submit" value="Submit" name="submit"/>
                                 </div>
                             </form>
                         </div>
