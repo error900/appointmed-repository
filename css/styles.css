@@ -442,7 +442,6 @@ nav > div > div > ul > li > a > i,
 .panel-heading .delete-btn {
     color: #fff;
     position: absolute;
-    top: 13px;
     right: 30px;
     font-size: 26px;
 }

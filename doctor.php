@@ -156,7 +156,7 @@
                             echo '<h2>' . $c_row['clinic_name'] . '<span>' . $count . '</span></h2>';
                             echo '<p><i class="fa fa-location-arrow"></i>' . $c_row['clinic_location'] . '</p>';
                             echo '<p><i class="fa fa-phone"></i>' . $c_row['clinic_contact'] . '</p>';
-                            echo ' <button type="button" class="btn btn-default clinic create-btn btn-noborder tooltip" title="create appointment" data-toggle="modal" data-target=".bs-example-modal-sm" data-id="' . $c_row['clinic_id'] . '">
+                            echo ' <button type="button" class="btn btn-default clinic create-btn btn-noborder tooltip-bottom" data-tooltip="create appointment" data-toggle="modal" data-target=".bs-example-modal-sm" data-id="' . $c_row['clinic_id'] . '">
                             <i class="fa fa-edit fa-lg"></i></button>';
                             echo '</div>';
                             echo '</div>';
