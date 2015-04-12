@@ -442,8 +442,9 @@ nav > div > div > ul > li > a > i,
 .panel-heading .delete-btn {
     color: #fff;
     position: absolute;
+    top: 13px;
     right: 30px;
-    font-size: 26px;
+    font-size: 26px !important;
 }
 
 .panel-heading .delete-btn:hover {
@@ -761,6 +762,12 @@ a.btn.btn-block.appo.tooltip-bottom {
     padding: 10px;
 }
 
+@media (min-width:768px){
+    .add-form {
+        padding: 0 350px;
+    }
+}
+
 .signup-ad p {
     margin-bottom: 20px;
 }
@@ -869,10 +876,13 @@ a.btn.btn-block.appo.tooltip-bottom {
     text-transform: lowercase;
 }
 
+.blue-btn {
+    background: #35404F;
+}
+
 .login-modal-btn,
-.export-btn,
 .green-btn,
-.post-btn,
+.blue-btn,
 .red-btn {
     margin-top: 10px;
     color: #fff;
@@ -885,11 +895,7 @@ a.btn.btn-block.appo.tooltip-bottom {
 .login-modal-btn:hover,
 .login-modal-btn:focus,
 .green-btn:hover,
-.green-btn:focus,
-.export-btn:hover,
-.export-btn:focus,
-.post-btn:hover,
-.post-btn:focus {
+.green-btn:focus {
     color: #fff !important;
     background: #0F5959 !important;
     transition: 0.5s;
@@ -906,6 +912,13 @@ a.btn.btn-block.appo.tooltip-bottom {
 .red-btn:focus {
     color: #fff !important;
     background: #D93240 !important;
+    transition: 0.5s;
+}
+
+.blue-btn:hover,
+.blue-btn:focus {
+    color: #fff !important;
+    background: #34495E !important;
     transition: 0.5s;
 }
 

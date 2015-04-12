@@ -65,7 +65,7 @@
                                     <input type="password" class="form-control login-field" name="password" placeholder="Password" required>
                                     <i class="fa fa-lock field-icon"></i>
                                 </div>
-                                <input class="btn btn-default login-btn btn-noborder" type="submit" value="Login" name="login"/>
+                                <input class="btn btn-default orange-btn btn-noborder" type="submit" value="Login" name="login"/>
                             </form>
                             <a class="login-link" href="signup.php">Don't have an account?</a>
                         </div>

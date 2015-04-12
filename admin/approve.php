@@ -93,7 +93,7 @@
                         echo "<td><input type='checkbox' name='select[]' id='select' value='$row[username]'></td>";
                         echo '</tr>';
                     }
-                    echo '<input type="submit" class="btn btn-default aprrove-btn" value="Approve" name="submit">';
+                    echo '<input type="submit" class="btn btn-default green-btn h1-btn" value="Approve" name="submit">';
                 } else {
                     echo '<div class="alert alert-info alert-dismissible" role="alert">
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -132,7 +132,7 @@
                         echo "<td><input type='checkbox' name='select[]' id='select' value='$row[username]'></td>";
                         echo '</tr>';
                     }
-                    echo '<input type="submit" class="btn btn-default" value="Approve" name="submit">';
+                    echo '<input type="submit" class="btn btn-default green-btn h1-btn" value="Approve" name="submit">';
                 } else {
                                         echo '<div class="alert alert-info alert-dismissible" role="alert">
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">

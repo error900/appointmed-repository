@@ -42,8 +42,8 @@
                 <div class="add-form">
                     <form method="post" action="adddoc.php">
                         <div class="input-group">
-                            <input type="text" class="form-control" name="firstname" placeholder="Firstname" required="">
-                            <input type="text" class="form-control" name="lastname" placeholder="Lastname" required=""><br/>
+                            <input type="text" class="form-control" name="firstname" placeholder="First Name" required="">
+                            <input type="text" class="form-control" name="lastname" placeholder="Last Name" required=""><br/>
                             <input type="text" class="form-control" name="specialization" placeholder="Specialization" required="">
                             <label>Doctor Status:</label>
                             <select name="status" class="form-control">
@@ -54,7 +54,7 @@
                             <input type="email" class="form-control" name="email" placeholder="Email" required="">   
                             <input type="text" class="form-control" name="username" placeholder="Username" required="" id="username">
 
-                            <input type="submit" class="btn btn-default login-btn" value="Submit" name="submit">
+                            <input type="submit" class="btn btn-default orange-btn" value="Submit" name="submit">
                         </div>
                     </form>
                 </div>

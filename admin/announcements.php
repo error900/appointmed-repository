@@ -63,7 +63,7 @@
                                 </div>
                                 <textarea class="form-control" rows="8" name="message" placeholder="Message"></textarea>
                                 <div class="post-buttons">
-                                    <button type="button" name="postButton" class="btn btn-default post-btn">post</button>
+                                    <button type="button" name="postButton" class="btn btn-default blue-btn">post</button>
                                 </div>
                             </div>
                         </form>

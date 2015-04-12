@@ -45,7 +45,7 @@
             <h1 class="page-header">Download Doctor and Patient Account Data
                 <span class="h1-btn">
                     <form method="post" action="export_to_file.php">
-                        <input type="submit" class="btn btn-default export-btn" name="export" value="Download">
+                        <input type="submit" class="btn btn-default green-btn" name="export" value="Download">
                     </form>
                 </span>
             </h1>
