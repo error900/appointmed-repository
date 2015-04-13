@@ -7,6 +7,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
     $account_type = '';
+    $date = date('Y-m-d');
 
     $username = mysqli_real_escape_string($con, $username);
     $password = mysqli_real_escape_string($con, $password);
@@ -22,6 +23,10 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
             echo "<script> alert('Enter a username and password');</script>";
             echo "<script> location.replace('index.php') </script>";
         }
+        if($row['username'] == $username && $row['password'] == $password  && $row['account_status'] == 'inactive'){
+            echo "<script> alert('Please wait for your account to be activated');</script>";
+            echo "<script> location.replace('index.php') </script>";
+        }
         echo "<script> alert('Incorrect Username/Password'); </script>";
         echo "<script> location.replace('index.php') </script>";
         $_SESSION['can_access'] = true;
@@ -35,6 +40,11 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
             header("location: admin/index.php");
         } else if ($row['account_type'] == 'Patient') {
             $_SESSION['loggedIn'] = true;
+           
+            $sql = "UPDATE account SET last_logged_in = '$date' WHERE username LIKE '$username'";
+            if (!(mysqli_query($con, $sql))) {
+                die('Error: ' . mysqli_error($con));
+            }
             header("location: appointment.php");
         } else {
             $_SESSION['loggedIn'] = false;

@@ -79,7 +79,7 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-history fa-lg"></i>History<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="completed.php">Done Schedules</a></li>
+                        <li><a href="completed.php">Finished Schedules</a></li>
                         <li><a href="removed.php">Removed Schedules</a></li>
                         <li><a href="referred.php">Referred Schedules</a></li>
                     </ul>
@@ -92,17 +92,17 @@
                     <div class="signup-form">
                         <form method="post" action="change_doc_pass.php" name="form1">
                             <div class="input-group">
-                                <input type="password"  class="form-control" name="old_password" placeholder="Enter old password"/>
+                                <input type="password"  class="form-control" required="" name="old_password" placeholder="Old password"/>
 
                                 <input type="hidden" name="username" value="<?php echo $username?>"/>
-                                <input type="password" class="form-control" name="password" placeholder="Password"  
+                                <input type="password" class="form-control" name="password" placeholder="New Password"  
                                 required pattern="(?=.*[a-z])(?=.*[A-Z]).{6,}" 
                                 onchange="this.setCustomValidity(this.validity.patternMismatch ? this.title : '');
                                 if (this.checkValidity())
                                 form1.password2.pattern = this.value;" required=""/>  
                                 <p class="passwordReq">Your password must contain uppercase and lowercase letters, and it should not be lower than 6 characters. </p>
 
-                                <input type="password" title="Passwords do not match" class="form-control" name="password2" placeholder="Confirm Password" 
+                                <input type="password" title="Passwords do not match" class="form-control" name="password2" placeholder="Confirm New Password" 
                                 onchange=" this.setCustomValidity(this.validity.patternMismatch ? this.title : '');"
                                 />
                                 <input type="submit" class="btn btn-default orange-btn" value="Submit" name="submit"/>
