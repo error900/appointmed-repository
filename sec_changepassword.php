@@ -32,28 +32,19 @@
     else if ($account_type != 'Secretary')
         header("location: admin/index.php");
 
-    $start = date("Y-m-1");
-    $end = date("Y-m-t");
-    $date = date("Y-m-d");
+    $date = date('Y-m-d');
     $username = $_SESSION['username'];
-
     $result = mysqli_query($con, "SELECT * FROM secretary WHERE username LIKE '$username'") or die(mysqli_error());
     $row = mysqli_fetch_array($result);
     $secretary = $row['secretary_name'];
     $secretary_id = $row['secretary_id'];
-
     $email = $row['email'];
-    $doctor_id = $row['doctor_id'];
 
+    $doctor_id = $row['doctor_id'];
     $doctor = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_id LIKE '$doctor_id'") or die(mysqli_error());
     $doctor_row = mysqli_fetch_array($doctor);
 
-    $c_result = mysqli_query($con, "SELECT * FROM clinic WHERE doctor_id LIKE '$doctor_id'");
-    $c_row = mysqli_fetch_array($c_result);
-    $a_result = mysqli_query($con, "SELECT * FROM appointment WHERE doctor_id = '$doctor_id' AND (appointment_status = 'inqueue' OR appointment_status = 'Referred') AND (appoint_date >= '$start' AND appoint_date <= '$end') ORDER BY appointment_id");
-//    $sqls = mysqli_query($con, "SELECT * FROM doctor WHERE specialization LIKE '$specialization' AND doctor_id <> '$doctor_id'");
-
-    $count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE doctor_id LIKE '$doctor_id' AND indicator = 'Patient'");
+    $count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE doctor_id LIKE '$doctor_id' AND indicator = 'Patient'") or die(mysqli_error());
     $count_row = mysqli_fetch_array($count_result);
     $notif_count = $count_row['count'];
     ?>
@@ -63,7 +54,7 @@
             include 'include/st-nav-start.php';
             ?>
             <ul class="nav navbar-nav">
-                <li class="active dropdown">
+                <li>
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-clock-o fa-lg"></i>Schedules <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="st-schedules.php">Today</a></li>
@@ -82,34 +73,33 @@
                 <?php
                 include 'include/st-nav-end.php';
                 ?>
-                <div class="container-fluid" id="user-md-frw">
-                    <div class="row">
-                        <div class="col-md-12 col-md-4 col-md-offset-2 user-md">
-                            <h1><?php echo $doctor_row['doctor_name']; ?></h1>
-                            <p><?php echo $c_row['clinic_location']; ?></p>
-                            <p class="email"><?php echo $doctor_row['email']; ?></p>
-                            <p><?php echo $c_row['clinic_contact']; ?></p>
-                        </div>
-                        <?php
-                        include 'include/inqueue_served.php';
-                        ?>
-                    </div>
-                </div>
-                <div class="container-fluid" id="schedules-md">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h2 class="text-center row-header">&mdash; This Month &mdash;</h2>
-                        </div>
-                        <?php
-                        include 'include/st-schedules-panel.php';
-                        ?>
+                <div class="col-xs-12 col-md-4 col-md-offset-4">
+                    <h1 class="text-center row-header-lc">Change Password</h1>
+                    <div class="signup-form">
+                        <form method="post" action="change_sec_pass.php" name="form1">
+                            <div class="input-group">
+                                <input type="password"  class="form-control" required="" name="old_password" placeholder="Old password"/>
+
+                                <input type="hidden" name="username" value="<?php echo $username?>"/>
+                                <input type="password" class="form-control" name="password" placeholder="New Password"  
+                                required pattern="(?=.*[a-z])(?=.*[A-Z]).{6,}" 
+                                onchange="this.setCustomValidity(this.validity.patternMismatch ? this.title : '');
+                                if (this.checkValidity())
+                                form1.password2.pattern = this.value;" required=""/>  
+                                <p class="passwordReq">Your password must contain uppercase and lowercase letters, and it should not be lower than 6 characters. </p>
+
+                                <input type="password" title="Passwords do not match" class="form-control" name="password2" placeholder="Confirm New Password" 
+                                onchange=" this.setCustomValidity(this.validity.patternMismatch ? this.title : '');"
+                                />
+                                <input type="submit" class="btn btn-default orange-btn" value="Submit" name="submit"/>
+                            </div>
+                        </form>
                     </div>
                 </div>
                 <?php
                 include 'include/remarks-modal.php';
                 include 'include/st-edit-profile-modal.php';
                 ?>
-                <script type="text/javascript" src="js/search.js"></script>
                 <script type="text/javascript" src="js/scrolltop.js"></script>
         </div>
     </body>
