@@ -71,7 +71,7 @@
                 <li class="dropdown active">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-history fa-lg"></i>History<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="completed.php">Done Schedules</a></li>
+                        <li><a href="completed.php">Finished Schedules</a></li>
                         <li><a href="removed.php">Removed Schedules</a></li>
                         <li><a href="referred.php">Referred Schedules</a></li>
                     </ul>
@@ -81,7 +81,7 @@
                 ?>
                 <div class="container-fluid" id="user-md-frw">
                     <div class="col-xs-12 col-md-12">
-                        <h2 class="text-center row-header">&mdash; Completed &mdash;</h2>
+                        <h2 class="text-center row-header">&mdash; Finished &mdash;</h2>
                     </div>
                     <?php
                     while ($row = mysqli_fetch_array($a_result)) {

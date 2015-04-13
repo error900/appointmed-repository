@@ -13,14 +13,14 @@ $old_password = hash('sha256', $old_password);
 
 if($old_password != $old_pass){
 	echo "<script> alert('Incorrect password!'); </script>";
-    echo "<script> location.replace('doc_changepassword.php') </script>";
+    echo "<script> location.replace('changepassword.php') </script>";
 }else{
 	$update_pass = "UPDATE account SET password = '$password' WHERE username LIKE '$username' ";
 	if (!(mysqli_query($con, $update_pass))) {
             die('Error: ' . mysqli_error($con));
     }
     echo "<script> alert('Successfully changed password'); </script>";
-    echo "<script> location.replace('doctor-profile.php') </script>";
+    echo "<script> location.replace('patient.php') </script>";
 }	
 
 

@@ -49,7 +49,7 @@ while ($row = mysqli_fetch_array($a_result)) {
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span></button>
     To know more about your schedules click
-    <strong> <a href="help.php" class="alert-link">here</a></strong>.
+    <strong> <a href="doc_help.php" class="alert-link">here</a></strong>.
     </div>
     </div>';
 }
