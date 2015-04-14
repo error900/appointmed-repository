@@ -79,7 +79,7 @@
                         </form>
                     </div>
                     <div class="col-xs-12 col-md-5 col-md-offset-1 profile-data-edit">
-                        <h1 class="text-center row-header3">Current Data</h1>
+                        <h1 class="text-center row-header3">Current Information</h1>
                         <form method='post' action="edit_profile_doc.php">
                             <div class="input-group">
                                 <input type="text" class="form-control" name="specialization" placeholder="Specialization" required="" value="<?php echo $specialization ?>" />
@@ -91,11 +91,11 @@
                                     <option value="Out">Out</option>
                                     <option value="Break">Break</option>
                                 </select>
-                                <div class="col-xs-6 col-md-6 add-form text-center">
-                                    <input type="button" class="btn btn-default btn-noborder green-btn" id="hideshow" value="Add Clinic">
+                                <div class="col-xs-12 col-md-6 text-center">
+                                    <input type="button" class="btn btn-default btn-noborder green-btn form-control" id="hideshow" value="Add Clinic">
                                 </div>
-                                <div class="col-xs-6 col-md-6 add-form text-center">
-                                    <input type="button" class="btn btn-default btn-noborder green-btn" id="showsec" value="Add Secretary">
+                                <div class="col-xs-12 col-md-6 text-center">
+                                    <input type="button" class="btn btn-default btn-noborder green-btn form-control" id="showsec" value="Add Secretary">
                                 </div>
                                 <div id="clinics" style="display:none">
                                     <p>Clinic</p>

@@ -73,6 +73,7 @@
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="appointments_done.php">Appointments Done</a></li>
                         <li><a href="cancelled_appointments.php">Cancelled Appointments</a></li>
+                        <li><a href="previous_appointments.php">Previous Appointments</a></li>
                     </ul>
                 </li>
                 <?php

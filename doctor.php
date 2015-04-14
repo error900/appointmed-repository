@@ -177,8 +177,14 @@
                                 <div class="modal-body">
                                     <div class="form-group">
                                         <label for="inputDate">Set Date</label>
-                                        <div class="input-group date" id="datetimepicker1">
+                                        <!-- <div class="input-group date" id="datetimepicker1">
                                             <input type="date" class="form-control" name="date" required/>
+                                        </div> -->
+                                        <div class="input-group date" id="datetimepicker1">
+                                            <span class="input-group-addon">
+                                                <span class="fui-calendar-solid"></span>
+                                            </span>
+                                            <input type="text" class="form-control" name="date" required/>
                                         </div>
                                         <input type="hidden" value="<?php echo $patient_id ?>" name="patient_id">
                                         <input type="hidden" value="<?php echo $doctor_id ?>" name="doctor_id">
@@ -198,7 +204,10 @@
         </div>
         <?php
         include 'include/edit-profile-modal.php';
+        include 'include/datepicker.php';
         ?>
-        <script type="text/javascript" src="js/search.js"></script>    
+        <script type="text/javascript" src="js/search.js"></script>
+        <script type="text/javascript" src="js/moment.js"></script>
+        <script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
     </body>
 </html>

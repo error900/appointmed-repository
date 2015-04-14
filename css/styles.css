@@ -97,16 +97,8 @@ h1, h2, h3, h4 {
     padding-right: 0 !important;
 }
 
-.fff-bg {
-    background-color: #fff !important;
-}
-
 .e4e8e9-bg {
-    background: #e4e8e9 url('../img/background_opcion2.jpg') repeat left top !important;
-}
-
-.background-pt {
-    background: #e4e8e9 url('../img/background-pt.png') repeat left top !important;
+    background: #ECF0F1 !important;
 }
 
 .fa-lg {
@@ -884,12 +876,14 @@ a.btn.btn-block.appo.tooltip-bottom {
 .green-btn,
 .blue-btn,
 .red-btn {
-    margin-top: 10px;
-    color: #fff;
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-    text-shadow: 1px 1px 1px #34495E;
+    width: 100%;
+    margin-top: 10px !important;
+    color: #fff !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    text-shadow: 1px 1px 1px #34495E !important;
+    border-radius: 4px !important; 
 }
 
 .login-modal-btn:hover,

@@ -78,25 +78,25 @@
                 <?php
                 include 'include/pt-nav-end.php';
                 ?>     
-                  <div class="col-xs-12 col-md-4 col-md-offset-4">
-                    <h1 class="text-center row-header-lc">Change Password</h1>
+                <div class="col-xs-12 col-md-4 col-md-offset-4">
+                    <h1 class="text-center row-header-fff">Change Password</h1>
                     <div class="signup-form">
                         <form method="post" action="change_pass.php" name="form1">
                             <div class="input-group">
-                                <input type="password"  required="" name="old_password" placeholder="Old password"/>
+                                <input type="password" class="form-control" required="" name="old_password" placeholder="Old password"/>
 
                                 <input type="hidden" name="username" value="<?php echo $username?>"/>
-                                <input type="password" name="password" placeholder="New Password"  
+                                <input type="password" class="form-control" name="password" placeholder="New Password"  
                                 required pattern="(?=.*[a-z])(?=.*[A-Z]).{6,}" 
                                 onchange="this.setCustomValidity(this.validity.patternMismatch ? this.title : '');
                                 if (this.checkValidity())
                                 form1.password2.pattern = this.value;" required=""/>  
                                 <p class="passwordReq">Your password must contain uppercase and lowercase letters, and it should not be lower than 6 characters. </p>
 
-                                <input type="password" title="Passwords do not match" name="password2" placeholder="Confirm New Password" 
+                                <input type="password" class="form-control" title="Passwords do not match" name="password2" placeholder="Confirm New Password" 
                                 onchange=" this.setCustomValidity(this.validity.patternMismatch ? this.title : '');"
                                 />
-                                <input type="submit" class="btn btn-default orange-btn" value="Submit" name="submit"/>
+                                <input type="submit" class="btn btn-default orange-btn btn-noborder" value="Submit" name="submit"/>
                             </div>
                         </form>
                     </div>
