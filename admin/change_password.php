@@ -18,7 +18,6 @@
     $account_sql = mysqli_query($con, "SELECT * FROM account ");
     //    $account_row = mysqli_fetch_array($account_sql);
     ?>
-
     <body class="e4e8e9-bg">
         <?php
         include 'include/admin-nav-start.php';
@@ -26,36 +25,30 @@
         <ul class="dropdown-menu" role="menu">
             <li><a href="#">Profile</a></li>
             <li><a href="change_password.php">Change Password</a></li>
-            <li><a href="help.php">Help</a></li>
+            <li><a href="#">Help</a></li>
             <li class="divider"></li>
-            <li><a href="logout.php"><i class="fa fa-power-off"></i> logout</a></li>
+            <li><a href="logout.php"><i class="fa fa-power-off"></i>    logout</a></li>
         </ul>
         <?php
         include 'include/admin-nav-end.php';
         ?>
-
         <div class="container-fluid">
             <div class="row">
                 <?php
                 include 'include/sidebar-navigation.php';
                 ?>
+                 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                    
+                 </div>
             </div>
         </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-            <h1 class="page-header">Download Doctor and Patient Account Data
-                <span class="h1-btn">
-                    <form method="post" action="export_to_file.php">
-                        <input type="submit" class="btn btn-default green-btn" name="export" value="Download">
-                    </form>
-                </span>
-            </h1>
-            <?php 
-                include 'include/database-table.php';
-            ?>
-        </div>
+
         <?php
         include 'include/scripts.php';
+        include '../include/scrolltop.php';
         ?>
         <script type="text/javascript" src="js/listslide.js"></script>
+        <script type="text/javascript" src="../js/scrolltop.js"></script>
+
     </body>
 </html>
