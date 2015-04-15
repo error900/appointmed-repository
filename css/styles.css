@@ -195,6 +195,13 @@ nav > div > div > ul > li > a > i,
     .nav-button {
         margin: 0 10px;
     }
+
+    .login-modal-btn,
+    .green-btn,
+    .blue-btn,
+    .red-btn {
+        width: 100%;
+    }
 }
 
 .dropdown-menu>li>a {
@@ -303,6 +310,7 @@ nav > div > div > ul > li > a > i,
 
 .signedin-photo img {
     height: 34px;
+    width: 34px;
     border-radius: 50%;
     border: 1px solid #35404F;
 }
@@ -876,7 +884,6 @@ a.btn.btn-block.appo.tooltip-bottom {
 .green-btn,
 .blue-btn,
 .red-btn {
-    width: 100%;
     margin-top: 10px !important;
     color: #fff !important;
     font-size: 12px !important;

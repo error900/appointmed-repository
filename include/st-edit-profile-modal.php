@@ -8,7 +8,7 @@
             </div>
             <div class="modal-body">
                 <div class="row">
-                    <div class="col-xs-12 col-md-4 upload-photo">
+                    <div class="col-xs-12 col-md-4 col-md-offset-1 upload-photo">
                         <form method="post" action="edit_pic_sec.php" enctype="multipart/form-data">
                             <div class="input-group">
                                 <div>
@@ -21,27 +21,27 @@
                                     }
                                     ?>.jpg" class="img-responsive">
                                 </div>
-                                <input type="file" class="file-upload" name="profile_pic">
+                                <input type="file" class="file-upload form-control" name="profile_pic">
                                 <input type="hidden" value="<?php echo $secretary_id ?>" name="secretary_id">
-                                <input type="submit" class="btn btn-default upload-btn btn-noborder" class="btn btn-default login-btn btn-noborder"  value="Save" name="submit">
+                                <input class="btn btn-default btn-noborder black-btn" type="submit" value="Submit" name="submit"/>
                             </div>
                         </form>
                     </div>
-                    <div class="col-xs-12 col-md-5 col-md-offset-2 profile-data-edit">
-                        <h1 class="text-center row-header3">Current Data</h1>
-                        <form method='post' action="edit_profile_sec.php">
+                    <div class="col-xs-12 col-md-5 col-md-offset-1 profile-data-edit">
+                        <h1 class="text-center row-header3">Current Information</h1>
+                        <form method="post" action="edit_profile_sec.php">
                             <div class="input-group">
                                 <input type="text" class="form-control" name="name" placeholder="Name" required="" value="<?php echo $secretary ?>"/>
-                                <input type="text" class="form-control" name="email" placeholder="Email Address" required="" value="<?php echo $email ?>" />
+                                <input type="text" class="form-control" name="email" placeholder="Email Address" required="" readonly="" value="<?php echo $email ?>" />
                                 <input type="hidden" value="<?php echo $doctor_id ?>" name="doctor_id">
                                 <input type="hidden" value="<?php echo $secretary_id ?>" name="secretary_id">
-                                <label>Change Status of Doctor <?php echo $doctor_row['doctor_name']?></label>
+                                <label>Change Status of Dr. <?php echo $doctor_row['doctor_name']?></label>
                                 <select name="doctor_status" class="form-control">
                                     <option value="In">In</option>
                                     <option value="Out">Out</option>
                                     <option value="Break">Break</option>
                                 </select>
-                                <input class="btn btn-default login-btn btn-noborder" type="submit" value="Submit" name="submit"/>
+                                <input class="btn btn-default btn-noborder black-btn" type="submit" value="Submit" name="submit"/>
                             </div>
                         </form>
                     </div>

@@ -83,7 +83,7 @@
                         <form method='post' action="edit_profile_doc.php">
                             <div class="input-group">
                                 <input type="text" class="form-control" name="specialization" placeholder="Specialization" required="" value="<?php echo $specialization ?>" />
-                                <input type="text" class="form-control" name="email" placeholder="Email Address" required="" value="<?php echo $email ?>" />
+                                <input type="text" class="form-control" name="email" placeholder="Email Address" required="" readonly="" value="<?php echo $email ?>" />
                                 <input type="hidden" value="<?php echo $doctor_id ?>" name="doctor_id">
                                 <label>Change Status:</label>
                                 <select name="doctor_status" class="form-control">

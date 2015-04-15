@@ -1,12 +1,12 @@
-            <li class="nav-button">
+            <li class="nav-button hidden-sm hidden-xs">
                 <form action="export.php" method="post">
                     <input type="hidden" name="doctor_id" value="<?php echo $doctor_id ?>">
-                    <input type="submit" class="btn btn-default green-btn btn-noborder" value="Export" name="submit">
+                    <input type="submit" class="btn btn-default btn-noborder green-btn" value="Export" name="submit">
                 </form>
             </li>
             <li class="nav-button navbar-right">
                 <button type="button" class="btn btn-default btn-noborder green-btn" data-toggle="modal" data-target=".bs-st-edit-profile-modal-lg" data-id="'.$appointment_id.'" data-patient-id="'.$patient_id.'">
-                    <i class="fa fa-pencil"></i>Edit Profile</button>
+                    <i class="fa fa-pencil"></i>Update Info</button>
             </li>
             </ul>
             <ul class="nav navbar-nav navbar-right signedin">
