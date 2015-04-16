@@ -16,18 +16,11 @@
         <li class="sidebar-list">
             <label><i class="fa fa-navicon"></i>User Management</label>
             <ul class="nav nav-sidebar sidebar-items-list">
-                <li><a href="popdoc.php">Add Doctor</a></li>
-                <li><a href="remove_user.php">Remove user</a></li>
-                <li><a href="inactive.php">Inactive users</a></li>
+                <li><a href="popdoc.php">Add Doctor</a></li> 
+                <li><a href="approve.php">Activate Users</a></li>
+                <li><a href="inactive.php">Warn Users</a></li>
+                <li><a href="remove_user.php">Deactivate Users</a></li>
             </ul>
         </li>
-    </ul>
-    <ul class="nav nav-sidebar main-nav-label">
-        <li class="sidebar-list">
-            <label><i class="fa fa-navicon"></i>Registrations</label>
-            <ul class="nav nav-sidebar sidebar-items-list">
-                <li><a href="approve.php">Approve Users</a></li>
-            </ul>
-        </li>
-    </ul>                   
+    </ul>                
 </div>

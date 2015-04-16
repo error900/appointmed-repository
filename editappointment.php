@@ -21,6 +21,11 @@ if (isset($_POST['submit'])) {
     $single_row = mysqli_fetch_array($single_result);
     $single_count = $single_row['count'];
 
+    $queue = mysqli_query($con, "SELECT * FROM queue_notif WHERE clinic_id LIKE '$clinic_id' AND appoint_date LIKE '$date'");
+    $queue_no = mysqli_fetch_array($queue);
+
+    $queue_id = (int)$queue_no['queue_id'];
+
     if ($limit_row >= 7) {
         echo '<script>alert("Reached the maximum number of patients for the day. Please change the date")</script>';
         echo "<script> location.replace('appointment.php') </script>";
@@ -36,6 +41,27 @@ if (isset($_POST['submit'])) {
         if (!(mysqli_query($con, $sql)) || !(mysqli_query($con, $notif))) {
             die('Error: ' . mysqli_error($con));
         }
+
+        //start
+        $sql_i = mysqli_query($con, "SELECT appointment_id FROM appointment WHERE doctor_id LIKE '$doctor_id' AND patient_id 
+            LIKE '$patient_id' AND appoint_date LIKE '$date' ");
+        $sql_fetch = mysqli_fetch_array($sql_i);
+        $appointment_id = $sql_fetch['appointment_id'];
+
+        if(mysqli_num_rows($queue)== 0){
+            $count = 1;
+            echo 'haan';
+        }else if(mysqli_num_rows($queue) !=0){
+            $count = $queue_id +1;
+            echo $count;
+        }
+        $queue_r = "INSERT INTO queue_notif (queue_id, clinic_id, appointment_id, appoint_date)
+                VALUES ('$count','$clinic_id','$appointment_id','$date')";
+
+        if (!(mysqli_query($con, $queue_r))) {
+            die('Error: ' . mysqli_error($con));
+        }        
+        //end
         header("location: appointment.php");
     } else {
         echo '<script>alert("Please change the date")</script>';
