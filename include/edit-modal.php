@@ -12,6 +12,7 @@
                         <input type="date" class="form-control" name="appdate" value="<?php echo date('Y-m-d'); ?>" required/>
                         <input type="hidden" id="appo_id" name="appointment_id" value="">
                         <input type="hidden" id="doc_id"  name="doctor_id" value="">
+                        <input type="hidden" id="clin_id"  name="clinic_id" value="">
                         <input type="hidden" name="patient_id" value="<?php echo $patient_id; ?>">
                     </div>
                 </div>

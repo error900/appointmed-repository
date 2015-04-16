@@ -51,10 +51,8 @@ if (isset($_POST['submit'])) {
 
         if(mysqli_num_rows($queue)== 0){
             $count = 1;
-            echo 'haan';
         }else if(mysqli_num_rows($queue) !=0){
             $count = $queue_id +1;
-            echo $count;
         }
         $queue_r = "INSERT INTO queue_notif (queue_id, clinic_id, appointment_id, appoint_date)
                 VALUES ('$count','$clinic_id','$appointment_id','$date')";

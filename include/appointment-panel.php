@@ -29,7 +29,7 @@ if (mysqli_num_rows($p_result) >= 1) {
         echo '<p><i class="fa fa-location-arrow"></i>' . $clinic_name . '</p>';
         echo '<p>Queue Number: '.$queue_id.'</p>';
         echo "</div><div class='appmnt-pnl-btn'>
-    <a class='btn btn-block appo tooltip-bottom' data-toggle='modal' data-target='.bs-example-modal-sm' data-id='" . $app_id . "' data-doctor-id='" . $doctor . "' data-tooltip='edit this appointment'><span><i class='fa fa-pencil'></i></span> Edit</a>";
+    <a class='btn btn-block appo tooltip-bottom' data-toggle='modal' data-target='.bs-example-modal-sm' data-id='" . $app_id . "' data-doctor-id='" . $doctor . "' data-clinic-id='" . $c_id . "'  data-tooltip='edit this appointment'><span><i class='fa fa-pencil'></i></span> Edit</a>";
         echo '<p class="appointment-specs">' . $doc['specialization'] . '</p></div></div>';
 
         echo '</div>';

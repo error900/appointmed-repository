@@ -11,6 +11,7 @@
             $(".appo").click(function() {
                 $("#appo_id").val($(this).data('id'));
                 $("#doc_id").val($(this).data('doctor-id'));
+                $("#clin_id").val($(this).data('clinic-id'));
             });
         });
     </script>
