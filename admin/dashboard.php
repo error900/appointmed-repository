@@ -23,9 +23,7 @@
         include 'include/admin-nav-start.php';
         ?>
         <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Profile</a></li>
             <li><a href="change_password.php">Change Password</a></li>
-            <li><a href="help.php">Help</a></li>
             <li class="divider"></li>
             <li><a href="logout.php"><i class="fa fa-power-off"></i>    logout</a></li>
         </ul>
@@ -39,6 +37,8 @@
                 ?>
                 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
                     <h1 class="page-header">Dashboard</h1>
+                    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+
 
                     <div class="row placeholders">
                         <div class="col-xs-6 col-sm-3 placeholder">
@@ -72,11 +72,46 @@
         </div>
 
         <?php
+        include 'include/scrolltop.php';
         include 'include/scripts.php';
-        include '../include/scrolltop.php';
         ?>
-        <script type="text/javascript" src="js/listslide.js"></script>
-        <script type="text/javascript" src="../js/scrolltop.js"></script>
 
+        <script type="text/javascript" src="js/googlejsapi.js"></script>
+        <script type="text/javascript">
+          google.load("visualization", "1", {packages:["corechart"]});
+          google.setOnLoadCallback(drawChart);
+          function drawChart() {
+            // var data = google.visualization.arrayToDataTable([
+            //   ['Task', 'Hours per Day'],
+            //   <?php 
+            //       $stringResult;
+            //       $i = 0;
+            //       $sql = "SELECT patient_id FROM patient";
+            //       $results1 = $this->db->query($sql);
+            //       //for($i=0; $i<10; ++$i)
+            //       {
+            //       $stringResult .= "data[" .$i. "] = { label:" .$results['name'].", data: ". $results['quantity'] ."}";
+            //        $i++;
+            //      // foreach($data as $v){
+            //        // echo ",['{$name}'],{$count}]\r\n";
+            //         return $stringResult;
+            //       }
+            //   ?>
+            // ]);
+            var data = google.visualization.arrayToDataTable([
+                ['Task', 'Hours per Day'],
+                ['Work',     11],
+                ['Eat',      2],
+                ['Commute',  2],
+                ['Watch TV', 2],
+                ['Sleep',    7]
+            ]);
+            var options = {
+              title: 'My Daily Activities'
+            };
+            var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+          }
+        </script>
     </body>
 </html>

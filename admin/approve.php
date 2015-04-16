@@ -145,9 +145,9 @@
         </table>
         </div>
     </div>
-                    <?php
+        <?php
+        include 'include/scrolltop.php';
         include 'include/scripts.php';
         ?>
-        <script type="text/javascript" src="js/listslide.js"></script>
 </body>
 </html>

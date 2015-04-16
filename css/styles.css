@@ -112,7 +112,8 @@ i.fa.fa-calendar,
 i.fa.fa-pencil,
 i.fa.fa-power-off,
 i.fa.fa-comment,
-i.fa.fa-hand-o-right {
+i.fa.fa-hand-o-right,
+i.fa.fa-envelope {
     padding-right: 8px;
 }
 
@@ -201,6 +202,10 @@ nav > div > div > ul > li > a > i,
     .blue-btn,
     .red-btn {
         width: 100%;
+    }
+
+    .docors-list-info li span {
+        padding-left: 0 !important;
     }
 }
 
@@ -1142,6 +1147,12 @@ a.btn.btn-block.appo.tooltip-bottom {
 
 .doctor-photo {
     margin-bottom: 10px;
+}
+
+.docors-list-info li span {
+    padding-left: 25px;
+    font-size: 14px;
+    font-weight: 600;
 }
 
 #doctor-info,

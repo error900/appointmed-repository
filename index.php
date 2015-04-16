@@ -94,7 +94,7 @@
                             </p>
                             <p>
                                 <i class="fa fa-map-marker fa-lg"></i>
-                                <a href="bgh.html">
+                                <a href="">
                                     Baguio General Hospital Driveway, Baguio City,Benguet, Philippines
                                 </a>
                             </p>

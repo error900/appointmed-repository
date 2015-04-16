@@ -51,7 +51,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-xs-12 col-md-12">
-                        <h1 class="text-center row-header">Doctors List</h1>
+                        <h1 class="text-center row-header">Benguet LAboratories</h1>
                     </div>
                 </div>
                 <div class="row"> 
@@ -63,6 +63,7 @@
                     while ($d_row = mysqli_fetch_array($result)) {
                         $doctor_id = $d_row['doctor_id'];
                         $doctor_name = $d_row['doctor_name'];
+                        $doctor_email = $d_row['email'];
                         ?>
                         <div class="doctors-full-list">
                             <div class="col-xs-12 col-md-2">
@@ -76,8 +77,9 @@
                                 ?>.jpg">
                             </div>
                             <div class="col-xs-12 col-md-2">
-                                <ul>
-                                    <li><span><?php echo $doctor_name ?></span></li>
+                                <ul class="docors-list-info">
+                                    <li><span><i class="fa fa-user-md"></i><?php echo $doctor_name ?></span></li>
+                                    <li><span><i class="fa fa-envelope"></i><?php echo $doctor_email ?></span></li>
                                 </ul>
                             </div>
                         </div>
@@ -92,6 +94,7 @@
                     while ($d_row = mysqli_fetch_array($result)) {
                         $doctor_id = $d_row['doctor_id'];
                         $doctor_name = $d_row['doctor_name'];
+                        $doctor_email = $d_row['email'];
                         ?>
                         <div class="doctors-full-list">
                             <div class="col-xs-12 col-md-2">
@@ -105,8 +108,9 @@
                                 ?>.jpg">
                             </div>
                             <div class="col-xs-12 col-md-2">
-                                <ul>
-                                    <li><span><?php echo $doctor_name ?></span></li>
+                                <ul class="docors-list-info">
+                                    <li><span><i class="fa fa-user-md"></i><?php echo $doctor_name ?></span></li>
+                                    <li><span><i class="fa fa-envelope"></i><?php echo $doctor_email ?></span></li>
                                 </ul>
                             </div>
                         </div>
@@ -121,6 +125,7 @@
                     while ($d_row = mysqli_fetch_array($result)) {
                         $doctor_id = $d_row['doctor_id'];
                         $doctor_name = $d_row['doctor_name'];
+                        $doctor_email = $d_row['email'];
                         ?>
                         <div class="doctors-full-list">
                             <div class="col-xs-12 col-md-2">
@@ -134,8 +139,9 @@
                                 ?>.jpg">
                             </div>
                             <div class="col-xs-12 col-md-2">
-                                <ul>
-                                    <li><span><?php echo $doctor_name ?></span></li>
+                                <ul class="docors-list-info">
+                                    <li><span><i class="fa fa-user-md"></i><?php echo $doctor_name ?></span></li>
+                                    <li><span><i class="fa fa-envelope"></i><?php echo $doctor_email ?></span></li>
                                 </ul>
                             </div>
                         </div>
@@ -150,6 +156,7 @@
                     while ($d_row = mysqli_fetch_array($result)) {
                         $doctor_id = $d_row['doctor_id'];
                         $doctor_name = $d_row['doctor_name'];
+                        $doctor_email = $d_row['email'];
                         ?>
                         <div class="doctors-full-list">
                             <div class="col-xs-12 col-md-2">
@@ -163,8 +170,9 @@
                                 ?>.jpg">
                             </div>
                             <div class="col-xs-12 col-md-2">
-                                <ul>
-                                    <li><span><?php echo $doctor_name ?></span></li>
+                                <ul class="docors-list-info">
+                                    <li><span><i class="fa fa-user-md"></i><?php echo $doctor_name ?></span></li>
+                                    <li><span><i class="fa fa-envelope"></i><?php echo $doctor_email ?></span></li>
                                 </ul>
                             </div>
                         </div>
@@ -179,6 +187,7 @@
                     while ($d_row = mysqli_fetch_array($result)) {
                         $doctor_id = $d_row['doctor_id'];
                         $doctor_name = $d_row['doctor_name'];
+                        $doctor_email = $d_row['email'];
                         ?>
                         <div class="doctors-full-list">
                             <div class="col-xs-12 col-md-2">
@@ -192,8 +201,9 @@
                                 ?>.jpg">
                             </div>
                             <div class="col-xs-12 col-md-2">
-                                <ul>
-                                    <li><span><?php echo $doctor_name ?></span></li>
+                                <ul class="docors-list-info">
+                                    <li><span><i class="fa fa-user-md"></i><?php echo $doctor_name ?></span></li>
+                                    <li><span><i class="fa fa-envelope"></i><?php echo $doctor_email ?></span></li>
                                 </ul>
                             </div>
                         </div>
@@ -208,6 +218,7 @@
                     while ($d_row = mysqli_fetch_array($result)) {
                         $doctor_id = $d_row['doctor_id'];
                         $doctor_name = $d_row['doctor_name'];
+                        $doctor_email = $d_row['email'];
                         ?>
                         <div class="doctors-full-list">
                             <div class="col-xs-12 col-md-2">
@@ -221,8 +232,9 @@
                                      ?>.jpg">
                             </div>
                             <div class="col-xs-12 col-md-2">
-                                <ul>
-                                    <li><span><?php echo $doctor_name ?></span></li>
+                                <ul class="docors-list-info">
+                                    <li><span><i class="fa fa-user-md"></i><?php echo $doctor_name ?></span></li>
+                                    <li><span><i class="fa fa-envelope"></i><?php echo $doctor_email ?></span></li>
                                 </ul>
                             </div>
                         </div>
