@@ -68,6 +68,6 @@ if (isset($_POST['submit'])) {
     }
 } else {
     echo "<script>alert('Error')</script>";
-    mysqli_close($con);
 }
+    mysqli_close($con);
 ?>

@@ -24,9 +24,14 @@ if (isset($_POST['submit'])) {
     $single_row = mysqli_fetch_array($single_result);
     $single_count = $single_row['count'];
 
+    $queue_fi = mysqli_query($con, "SELECT * FROM queue_notif WHERE appointment_id LIKE '$appid' ");
     $queue = mysqli_query($con, "SELECT * FROM queue_notif WHERE clinic_id LIKE '$clinic_id' AND appoint_date LIKE '$appdate'");
     $queue_no = mysqli_fetch_array($queue);
-    echo mysqli_num_rows($queue);
+
+    $queue_row = mysqli_fetch_array($queue_fi);
+    $queue_id = (int)$queue_no['queue_id'];
+    $queue_date = $queue_row['appoint_date'];
+    
     if ($limit_row >= 7) {
         echo '<script>alert("Reached the maximum number of patients for the day. Please change the date")</script>';
         echo "<script> location.replace('appointment.php') </script>";
@@ -44,19 +49,25 @@ if (isset($_POST['submit'])) {
         }
         
         //start
+
+        $sql_c = mysqli_query($con, "SELECT * FROM queue_notif 
+           WHERE clinic_id LIKE '$clinic_id' AND appoint_date LIKE '$queue_date' AND queue_id > '$queue_id' ");
+        if(mysqli_num_rows($sql_c)!= 0){
+            while($sql_notif = mysqli_fetch_array($sql_c)){
+                $count_r = (int) $sql_notif['queue_id'];
+                $appointment_id = $sql_notif['appointment_id'];
+                $count_r = $count_r -1;
+                $subtract_queue_number = "UPDATE queue_notif SET queue_id = '$count_r' 
+                WHERE appointment_id LIKE '$appointment_id'";
+                mysqli_query($con, $subtract_queue_number) or die(mysqli_error($con));
+            }
+        }
         if(mysqli_num_rows($queue)== 0){
             $count = 1;
-            echo $count;
-            echo 'haan';
         }else if(mysqli_num_rows($queue) !=0){
             $queue_id = (int)$queue_no['queue_id'];
             $count = $queue_id +1;
-            echo $count;
-            echo 'wen';
         }
-     //   $queue_r = "INSERT INTO queue_notif (queue_id, clinic_id, appointment_id, appoint_date)
-     //          VALUES ('$count','$clinic_id','$appointment_id','$date')";
-     //update query
         $queue_r = "UPDATE queue_notif SET queue_id = '$count', appoint_date = '$appdate' WHERE appointment_id LIKE '$appid' ";
         if (!(mysqli_query($con, $queue_r))) {
             die('Error: ' . mysqli_error($con));
