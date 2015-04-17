@@ -21,11 +21,10 @@ if (isset($_POST['submit'])) {
     $single_row = mysqli_fetch_array($single_result);
     $single_count = $single_row['count'];
 
-    $queue = mysqli_query($con, "SELECT * FROM queue_notif WHERE clinic_id LIKE '$clinic_id' AND appoint_date LIKE '$date'");
+    $queue = mysqli_query($con, "SELECT * FROM queue_notif WHERE clinic_id LIKE '$clinic_id' AND appoint_date LIKE '$date' ORDER BY queue_id DESC") or die(mysqli_error($con));
     $queue_no = mysqli_fetch_array($queue);
 
     $queue_id = (int)$queue_no['queue_id'];
-    
     if ($limit_row >= 7) {
         echo '<script>alert("Reached the maximum number of patients for the day. Please change the date")</script>';
         echo "<script> location.replace('doctor.php?id=" . $doctor_id . "') </script>";
@@ -61,7 +60,7 @@ if (isset($_POST['submit'])) {
             die('Error: ' . mysqli_error($con));
         }        
         //end
-       header("location: appointment.php");
+        header("location: appointment.php");
     } else {
         echo '<script>alert("Please change the date")</script>';
         echo "<script> location.replace('doctor.php?id=" . $doctor_id . "') </script>";

@@ -5,25 +5,22 @@ if (mysqli_num_rows($p_result) >= 1) {
         $doctor = $d_row['doctor_id'];
         $date = $d_row['appoint_date'];
         $date = date("F j , Y", strtotime($date));
-        $d_result = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_id LIKE '$doctor'");
+        $c_id = $d_row['clinic_id'];
+
+        $d_result = mysqli_query($con, "SELECT * FROM doctor NATURAL JOIN clinic WHERE doctor_id LIKE '$doctor' AND clinic_id LIKE '$c_id'");
         $doc = mysqli_fetch_array($d_result);
 
-        $appointment_result = mysqli_query($con, "SELECT * FROM appointment WHERE appointment_id LIKE '$app_id'") or die(mysqli_error());
-        $appointment_result_row = mysqli_fetch_array($appointment_result);
-        $c_id = $appointment_result_row['clinic_id'];
-
-        $clinic_result = mysqli_query($con, "SELECT * FROM clinic WHERE doctor_id LIKE '$doctor' AND clinic_id LIKE '$c_id'") or die(mysqli_error());
-        $clinic_result_row = mysqli_fetch_array($clinic_result);
-        $clinic_name = $clinic_result_row['clinic_name'];
+        $clinic_name = $doc['clinic_name'];
 
         $queue = mysqli_query($con, "SELECT * FROM queue_notif WHERE appointment_id LIKE '$app_id' ");
         $queue_row = mysqli_fetch_array($queue);
         $queue_id = $queue_row['queue_id'];
+        $queue_date = $queue_row['appoint_date'];
 
         echo '<div class="col-xs-12 col-md-6 col-lg-3" id="' . $d_row['appointment_id'] . '">';
         echo "<div class='panel panel-default' id='asd'><div class='panel-heading appointment-date' >";
         echo $date;
-        echo "<a href=\"close.php?id=$d_row[appointment_id]&doc=$doctor&pat=$patient_id\" onclick='return confirm(\"Do you want to cancel this appointment?\")' title=\"Cancel\"><i class=\"fa fa-remove fa-lg delete-btn\"></i></a></div>
+        echo "<a href=\"close.php?id=$d_row[appointment_id]&doc=$doctor&pat=$patient_id&cid=$c_id&qid=$queue_id&qd=$queue_date\" onclick='return confirm(\"Do you want to cancel this appointment?\")' title=\"Cancel\"><i class=\"fa fa-remove fa-lg delete-btn\"></i></a></div>
     <div class=\"panel-body\">";
         echo '<p class="appointment-dr-name"><i class="fa fa-user-md"></i>Dr. ' . $doc['doctor_name'] . '</p>';
         echo '<p><i class="fa fa-location-arrow"></i>' . $clinic_name . '</p>';
