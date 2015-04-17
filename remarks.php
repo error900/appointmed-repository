@@ -10,7 +10,7 @@ if (isset($_POST['submit'])) {
     echo $remarks;
     $sql = "UPDATE appointment SET remarks = '$remarks', appointment_status = '$status' WHERE appointment_id = '$appointment_id' ";
 
-    if ($status = 'Completed') {
+    if ($status == 'Completed') {
         $date = date("Y-m-d");
         $indicator = "doctor";
         $n_id = "n1003";

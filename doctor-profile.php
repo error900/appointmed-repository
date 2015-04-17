@@ -102,7 +102,14 @@
                                     <li><i class="fa fa-h-square"></i>Benguet Laboratories</li>
                                 </ul>
                             </div>
-                        </div>          
+                        </div>   
+                        <div>
+                            <div class="d-info">
+                                <ul>
+                                    <li class="profile-info">Status:<span><?php echo($d_row['doctor_status']); ?></span></li>
+                                </ul>
+                            </div>  
+                        </div>       
                     </div>
                 </div>
                 <div class="container-fluid">

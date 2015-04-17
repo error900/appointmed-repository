@@ -38,7 +38,7 @@
 
         $c_result = mysqli_query($con, "SELECT * FROM clinic WHERE doctor_id LIKE '$doctor_id'") or die(mysqli_error());
         $c_row = mysqli_fetch_array($c_result);
-        $a_result = mysqli_query($con, "SELECT * FROM referred WHERE doctor_id LIKE '$doctor_id'") or die(mysqli_error());
+        $a_result = mysqli_query($con, "SELECT * FROM refer_patient WHERE doctor_id LIKE '$doctor_id'") or die(mysqli_error());
 
         $count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE doctor_id LIKE '$doctor_id' AND indicator = 'Patient'") or die(mysqli_error());
         $count_row = mysqli_fetch_array($count_result);
