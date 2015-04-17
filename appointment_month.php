@@ -13,6 +13,7 @@
                 $("#appo_id").val($(this).data('id'));
                 $("#doc_id").val($(this).data('doctor-id'));
                 $("#clin_id").val($(this).data('clinic-id'));
+                $("#days").val($(this).data('days'));
             });
         });
     </script>

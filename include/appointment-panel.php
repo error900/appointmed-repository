@@ -7,10 +7,11 @@ if (mysqli_num_rows($p_result) >= 1) {
         $date = date("F j , Y", strtotime($date));
         $c_id = $d_row['clinic_id'];
 
-        $d_result = mysqli_query($con, "SELECT * FROM doctor NATURAL JOIN clinic WHERE doctor_id LIKE '$doctor' AND clinic_id LIKE '$c_id'");
+        $d_result = mysqli_query($con, "SELECT * FROM doctor NATURAL JOIN clinic NATURAL JOIN clinic_schedule WHERE doctor_id LIKE '$doctor' AND clinic_id LIKE '$c_id'");
         $doc = mysqli_fetch_array($d_result);
 
         $clinic_name = $doc['clinic_name'];
+        $days = $doc['days'];
 
         $queue = mysqli_query($con, "SELECT * FROM queue_notif WHERE appointment_id LIKE '$app_id' ");
         $queue_row = mysqli_fetch_array($queue);
@@ -26,7 +27,7 @@ if (mysqli_num_rows($p_result) >= 1) {
         echo '<p><i class="fa fa-location-arrow"></i>' . $clinic_name . '</p>';
         echo '<p><i class="fa fa-angle-double-right"></i>Queue Number: <span>'.$queue_id.'</span></p>';
         echo "</div><div class='appmnt-pnl-btn'>
-    <a class='btn btn-block appo tooltip-top' data-toggle='modal' data-target='.bs-example-modal-sm' data-id='" . $app_id . "' data-doctor-id='" . $doctor . "' data-clinic-id='" . $c_id . "'  data-tooltip='edit this appointment'><span><i class='fa fa-pencil'></i></span> Edit</a>";
+    <a class='btn btn-block appo tooltip-top' data-toggle='modal' data-target='.bs-example-modal-sm' data-id='" . $app_id . "' data-doctor-id='" . $doctor . "' data-clinic-id='" . $c_id . "' data-days='".$days."' data-tooltip='edit this appointment'><span><i class='fa fa-pencil'></i></span> Edit</a>";
         echo '<p class="appointment-specs">' . $doc['specialization'] . '</p></div></div>';
 
         echo '</div>';

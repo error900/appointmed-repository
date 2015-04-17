@@ -5,6 +5,7 @@ if (isset($_POST['submit'])) {
     $pat = $_POST['patient_id'];
     $doctor_id = $_POST['doctor_id'];
     $appid = $_POST['appointment_id'];
+    $days = $_POST['days'];
     $appdate = date('Y-m-d', strtotime($appdate));
     $current_date = date('Y-m-d');
     $patient_id = $_POST['patient_id'];
@@ -32,7 +33,12 @@ if (isset($_POST['submit'])) {
     $queue_id = (int)$queue_no['queue_id'];
     $queue_date = $queue_row['appoint_date'];
     
-    if ($limit_row >= 7) {
+    $days = explode('/', $days);
+    $check_date = date('D', strtotime($appdate));
+    if(!(in_array($check_date, $days))){
+        echo '<script>alert("The clinic is not available at the selected day. Please change the date")</script>';
+        echo "<script> location.replace('doctor.php?id=" . $doctor_id . "') </script>";
+    }else if ($limit_row >= 7) {
         echo '<script>alert("Reached the maximum number of patients for the day. Please change the date")</script>';
         echo "<script> location.replace('appointment.php') </script>";
     } else if ($single_count != 0) {
