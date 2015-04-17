@@ -36,13 +36,13 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav nav-parent">
-                            <li><a href="index.php"><i class="fa fa-home fa-lg"></i>Home</a></li>
-                            <li class="active"><a href="companyprofile.php"><i class="fa fa-info-circle fa-lg"></i>Company Profile</a></li>
-                            <li><a href="doctors.php"><i class="fa fa-user-md fa-lg"></i>Doctors</a></li>
-                            <li><a href="signup.php"><i class="fa fa-pencil-square-o fa-lg"></i>Sign-up</a></li>
+                            <li class="tooltip-bottom" data-tooltip="Home"><a href="index.php"><i class="fa fa-home fa-lg"></i>Home</a></li>
+                            <li class="active tooltip-bottom" data-tooltip="Company Profile"><a href="companyprofile.php"><i class="fa fa-info-circle fa-lg"></i>Company Profile</a></li>
+                            <li class="tooltip-bottom" data-tooltip="Doctors"><a href="doctors.php"><i class="fa fa-user-md fa-lg"></i>Doctors</a></li>
+                            <li class="tooltip-bottom" data-tooltip="Signup"><a href="signup.php"><i class="fa fa-pencil-square-o fa-lg"></i>Sign-up</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right hidden-xs hidden-sm">
-                            <button type="button" class="btn btn-default btn-noborder green-btn" data-toggle="modal" data-target=".bs-example-modal-sm">Login<i class="fa fa-sign-in"></i></button>
+                            <button type="button" class="btn btn-default btn-noborder green-btn" data-toggle="modal" data-target=".bs-example-modal-sm">Login</button>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </div><!-- /.container-fluid -->

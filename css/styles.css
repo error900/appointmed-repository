@@ -113,8 +113,13 @@ i.fa.fa-pencil,
 i.fa.fa-power-off,
 i.fa.fa-comment,
 i.fa.fa-hand-o-right,
-i.fa.fa-envelope {
+i.fa.fa-envelope,
+i.fa.fa-angle-double-right {
     padding-right: 8px;
+}
+
+i.fa.fa-angle-double-right span {
+    font-weight: 600;
 }
 
 .nav-parent > li.active > a,
@@ -557,6 +562,7 @@ nav > div > div > ul > li > a > i,
 
 .appmnt-pnl-btn a,
 .appmnt-pnl-btn button {
+    width: auto;
     color: #fff !important;
     font-size: 14px;
     text-transform: lowercase;

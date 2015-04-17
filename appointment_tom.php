@@ -49,7 +49,7 @@
             include 'include/pt-nav-start.php';
             ?>
             <ul class="nav navbar-nav">
-                <li class="dropdown active">
+                <li class="dropdown active tooltip-right" data-tooltip="Appointments">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-calendar fa-lg"></i>Appointments<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="appointment.php">Today</a></li>
@@ -58,7 +58,7 @@
                         <li><a href="appointment_month.php">This Month</a></li>
                     </ul>
                 </li>
-                <li>
+                <li class="tooltip-right" data-tooltip="Notifications">
                     <a href="notifications.php">
                         <i class="fa fa-bell fa-lg">
                             <?php
@@ -70,11 +70,12 @@
                         </i>Notifications
                     </a>
                 </li>
-                <li class="dropdown">
+                <li class="dropdown tooltip-right" data-tooltip="History">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-history fa-lg"></i>History<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="appointments_done.php">Appointments Done</a></li>
                         <li><a href="cancelled_appointments.php">Cancelled Appointments</a></li>
+                        <li><a href="previous_appointments.php">Previous Appointments</a></li>
                     </ul>
                 </li>
                 <?php

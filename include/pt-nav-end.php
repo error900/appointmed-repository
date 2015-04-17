@@ -15,7 +15,7 @@
             </form>
             </ul>
             <ul class="nav navbar-nav navbar-right signedin">
-                <div class="btn-group navbar-right">
+                <div class="btn-group navbar-right tooltip-left" data-tooltip="Me">
                     <button type="button" class="btn btn-default btn-lg btn-noborder dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                         <div class="signedin-photo">
                             <img src="img/profile/<?php

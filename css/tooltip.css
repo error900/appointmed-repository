@@ -62,15 +62,16 @@
 /* Base styles for the tooltip's content area */
 .tooltip:after,
 [data-tooltip]:after {
-  z-index: 1000;
+  z-index: 1002;
   padding: 8px;
-  width: 160px;
+  min-width: 120px;
   background-color: #000;
   background-color: hsla(0, 0%, 20%, 0.9);
   color: #fff;
   content: attr(data-tooltip);
   font-size: 14px;
   line-height: 1.2;
+  text-align: center;
 }
 
 /* Directions */
@@ -99,7 +100,7 @@
 [data-tooltip]:after,
 .tooltip:after,
 .tooltip-top:after {
-  margin-left: -80px;
+  margin-left: -60px;
 }
 
 [data-tooltip]:hover:before,
@@ -197,7 +198,7 @@
 /* Move directional arrows down a bit for left/right tooltips */
 .tooltip-left:before,
 .tooltip-right:before {
-  top: 3px;
+  top: 20px;
 }
 
 /* Vertically center tooltip content for left/right tooltips */
