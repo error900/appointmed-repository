@@ -36,15 +36,15 @@
     $end = date("Y-m-t");
     $date = date("Y-m-d");
     $username = $_SESSION['username'];
-    $result = mysqli_query($con, "SELECT * FROM doctor WHERE username LIKE '$username'");
+    $result = mysqli_query($con, "SELECT * FROM doctor NATURAL JOIN clinic WHERE username LIKE '$username'");
     $row = mysqli_fetch_array($result);
     $doctor = $row['doctor_name'];
     $specialization = $row['specialization'];
     $email = $row['email'];
     $doctor_id = $row['doctor_id'];
-    $c_result = mysqli_query($con, "SELECT * FROM clinic WHERE doctor_id LIKE '$doctor_id'");
-    $c_row = mysqli_fetch_array($c_result);
-    $a_result = mysqli_query($con, "SELECT * FROM appointment WHERE doctor_id = '$doctor_id' AND (appointment_status = 'inqueue' OR appointment_status = 'Referred') AND (appoint_date >= '$start' AND appoint_date <= '$end') ORDER BY appointment_id");
+ //   $c_result = mysqli_query($con, "SELECT * FROM clinic WHERE doctor_id LIKE '$doctor_id'");
+ //   $c_row = mysqli_fetch_array($c_result);
+    $a_result = mysqli_query($con, "SELECT * FROM appointment NATURAL JOIN queue_notif WHERE doctor_id = '$doctor_id' AND (appointment_status = 'inqueue' OR appointment_status = 'Referred') AND (appoint_date >= '$start' AND appoint_date <= '$end') ORDER BY appoint_date ASC");
     $sqls = mysqli_query($con, "SELECT * FROM doctor WHERE specialization LIKE '$specialization' AND doctor_id <> '$doctor_id'");
 
     $count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE doctor_id LIKE '$doctor_id' AND indicator = 'Patient'");
@@ -100,9 +100,9 @@
                         <div class="col-md-12 col-md-4 col-md-offset-2 user-md">
                             <h1><?php echo $doctor; ?></h1>
                             <p><?php echo $row['specialization']; ?></p>
-                            <p><?php echo $c_row['clinic_location']; ?></p>
+                            <p><?php echo $row['clinic_location']; ?></p>
                             <p class="email"><?php echo $row['email']; ?></p>
-                            <p><?php echo $c_row['clinic_contact']; ?></p>
+                            <p><?php echo $row['clinic_contact']; ?></p>
                         </div>
                         <?php
                         include 'include/inqueue_served.php';
