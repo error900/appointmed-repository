@@ -14,6 +14,11 @@
                 $("#clinic_id").val($(this).data('id'));
             });
         });
+         $(function () {
+            $('#datetimepicker1').datetimepicker({
+                pickTime: false
+            });
+        });
     </script>
     <body>
         <div class="container">
@@ -40,7 +45,7 @@
             $patient_n = $row['patient_name'];
 
             //clinic
-            $c_result = mysqli_query($con, "SELECT * FROM clinic WHERE doctor_id LIKE '$doctor_id'");
+            $c_result = mysqli_query($con, "SELECT * FROM clinic NATURAL JOIN clinic_schedule WHERE doctor_id LIKE '$doctor_id'");
 
             //appointment
             $a_result = mysqli_query($con, "SELECT * FROM appointment WHERE doctor_id = '$doctor_id' AND appointment_status = 'inqueue' ORDER BY appointment_id");
@@ -149,13 +154,14 @@
                         <?php
                         $count = 0;
                         while ($c_row = mysqli_fetch_array($c_result)) {
-
                             $count++;
+                            $days = $c_row['days'];
                             echo '<div class="col-xs-12 col-md-3">';
                             echo '<div class="clinic-box">';
                             echo '<h2>' . $c_row['clinic_name'] . '<span>' . $count . '</span></h2>';
                             echo '<p><i class="fa fa-location-arrow"></i>' . $c_row['clinic_location'] . '</p>';
                             echo '<p><i class="fa fa-phone"></i>' . $c_row['clinic_contact'] . '</p>';
+                            echo '<p> '.$c_row['time'].' '.$c_row['days'].'</p>';
                             echo ' <button type="button" class="btn btn-default clinic create-btn btn-noborder tooltip-bottom" data-tooltip="create appointment" data-toggle="modal" data-target=".bs-example-modal-sm" data-id="' . $c_row['clinic_id'] . '">
                             <i class="fa fa-edit fa-lg"></i></button>';
                             echo '</div>';
@@ -188,6 +194,7 @@
                                         </div>
                                         <input type="hidden" value="<?php echo $patient_id ?>" name="patient_id">
                                         <input type="hidden" value="<?php echo $doctor_id ?>" name="doctor_id">
+                                        <input type="hidden" value="<?php echo $days ?>" name="days">
                                         <input type="hidden" value="" id="clinic_id" name="clinic_id">
                                     </div>
                                 </div>
