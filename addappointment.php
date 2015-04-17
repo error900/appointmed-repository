@@ -5,6 +5,8 @@ if (isset($_POST['submit'])) {
     $patient_id = $_POST['patient_id'];
     $doctor_id = $_POST['doctor_id'];
     $clinic_id = $_POST['clinic_id'];
+    $days = $_POST['days'];
+
     $appointment_status = "Inqueue";
     $remarks = '';
     $message = "A patient has requested an appointment.";
@@ -25,6 +27,15 @@ if (isset($_POST['submit'])) {
     $queue_no = mysqli_fetch_array($queue);
 
     $queue_id = (int)$queue_no['queue_id'];
+
+    $days = explode('/', $days);
+    $check_date = date('D', strtotime($date));
+    if(in_array($check_date, $days)){
+        echo 'Match';
+    }else{
+        echo 'No Match';
+    }
+/*
     if ($limit_row >= 7) {
         echo '<script>alert("Reached the maximum number of patients for the day. Please change the date")</script>';
         echo "<script> location.replace('doctor.php?id=" . $doctor_id . "') </script>";
@@ -64,7 +75,7 @@ if (isset($_POST['submit'])) {
     } else {
         echo '<script>alert("Please change the date")</script>';
         echo "<script> location.replace('doctor.php?id=" . $doctor_id . "') </script>";
-    }
+    }*/
 } else {
     echo "<script>alert('Error')</script>";
 }
