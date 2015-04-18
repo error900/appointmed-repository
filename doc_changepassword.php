@@ -58,7 +58,7 @@
             include 'include/dc-nav-start.php';
             ?>
             <ul class="nav navbar-nav">
-                <li>
+                <li class="dropdown tooltip-right" data-tooltip="Schedules">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-clock-o fa-lg"></i>Schedules <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="schedules.php">Today</a></li>
@@ -67,7 +67,7 @@
                         <li><a href="schedules_month.php">This Month</a></li>
                     </ul>
                 </li>
-                <li>
+                <li class="tooltip-right" data-tooltip="Notifications">
                     <a href="doc_notifications.php">
                         <i class="fa fa-bell fa-lg">
                             <?php
@@ -79,7 +79,7 @@
                         </i>Notifications
                     </a>
                 </li>
-                <li class="dropdown">
+                <li class="dropdown tooltip-right" data-tooltip="History">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-history fa-lg"></i>History<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="completed.php">Finished Schedules</a></li>
