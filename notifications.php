@@ -88,8 +88,7 @@
                                     echo '<div class="col-xs-12 col-md-8 col-md-offset-2">
                                         <div class="panel panel-notif panel-danger">
                                             <div class="panel-heading">'.date("F j, Y", strtotime($a_result['start_publish'])).' '.$a_result['subject'].'
-                                                <a href="#" title="cancel"><i class="fa fa-remove delete-btn"></i></a>
-                                            </div>
+                                           </div>
                                             <div class="panel-body">
                                                 '.$a_result['announcement_details'].'
                                             </div>

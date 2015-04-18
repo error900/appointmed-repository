@@ -78,6 +78,8 @@
         </div>
         <?php
         include 'include/scripts.php';
+        include 'include/datepicker.php';
         ?>
+        <script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
     </body>
 </html>

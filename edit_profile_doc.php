@@ -52,7 +52,6 @@ if (isset($_POST['submit'])) {
 			VALUES ('$clinic_location', '$clinic_name', '$clinic_contact','$doctor_id')";
         mysqli_query($con, $clinic_sql) or die(mysqli_error($con));
         $clinic_gen_id = mysqli_insert_id($con);
-        echo $clinic_gen_id;
         $clinic_schedule_sql = "INSERT INTO clinic_schedule (clinic_id, doctor_id, days, time, room_number)
         VALUES ('$clinic_gen_id','$doctor_id','$clinic_days','$clinic_time','$clinic_room')";
         mysqli_query($con, $clinic_schedule_sql) or die(mysqli_error($con));
@@ -69,11 +68,8 @@ if (isset($_POST['submit'])) {
         if (!(mysqli_query($con, $sqlaccount)) || !(mysqli_query($con, $secretary_sql))) {
             die('Error: ' . mysqli_error($con));
         }
-        $select = mysqli_query($con, "SELECT * FROM clinic WHERE clinic_name  LIKE '$clinic_name'");
-        $select_row = mysqli_fetch_array($select);
-        $clinic_id= $select_row['clinic_id'];
 
-        $sec_clinic = "INSERT INTO clinic_sec (clinic_id, secretary_id) VALUES ('$clinic_id', '$secretary_id')";
+        $sec_clinic = "INSERT INTO clinic_sec (clinic_id, secretary_id) VALUES ('$clinic_gen_id', '$secretary_id')";
         mysqli_query($con, $sec_clinic) or die(mysqli_error($con));
     }
 

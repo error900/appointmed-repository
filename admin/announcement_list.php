@@ -47,13 +47,14 @@
                                 //$date =  date('M-d-Y', strtotime($announcement_row['start_publish']));
                                 echo '<div class="col-xs-12 col-md-8 col-md-offset-2">
                                     <div class="panel panel-notif panel-danger">
-                                        <div class="panel-heading">'.date('M-d-Y', strtotime($announcement_row['start_publish'])).'
-                                        '.$announcement_row['subject'].' '.date('M-d-Y', strtotime($announcement_row['end_publish'])).'
-                                            <a href="announcement_detail.php?id='.$announcement_row['announcement_id'].'" title="cancel"><i class="fa fa-edit delete-btn"></i></a>
+                                        <div class="panel-heading">'.date('M-d-Y', strtotime($announcement_row['start_publish'])).' to '
+                                        .date('M-d-Y', strtotime($announcement_row['end_publish'])).
+                                        '<a href="announcement_detail.php?id='.$announcement_row['announcement_id'].'" title="Edit"><i class="fa fa-edit delete-btn"></i></a>
                                         </div>
                                         <div class="panel-body">
-                                            '.$announcement_row['announcement_details'].'<br>
-                                            '.$announcement_row['send_to'].'
+                                         Title:'.$announcement_row['subject'].
+                                            $announcement_row['announcement_details'].'<br>
+                                         Sent to:   '.strtoupper($announcement_row['send_to']).'
                                         </div>
                                     </div>
                                 </div>';
