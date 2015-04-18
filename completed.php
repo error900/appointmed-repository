@@ -14,6 +14,9 @@
                 $('#showsec').on('click', function() {
                     $('#secretary').show();
                 });
+                $('#specs').on('click', function() {
+                    $('#specialization').show();
+                });
 
             });
         </script>
