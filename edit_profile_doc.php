@@ -8,14 +8,13 @@ if (isset($_POST['submit'])) {
     $date = date('Y-m-d');
     $old_specs = $_POST['previous_spec'];
 
-    $clinic_room = $_POST['clinic_room'];
-    $clinic_days = $_POST['clinic_days'];
-    $clinic_time = $_POST['clinic_time'];
-
     //clinic
     $clinic_name = mysqli_real_escape_string($con, $_POST['clinic_name']);
     $clinic_location = mysqli_real_escape_string($con, $_POST['clinic_location']);
     $clinic_contact = mysqli_real_escape_string($con, $_POST['clinic_contact']);
+    $clinic_room = mysqli_real_escape_string($con, $_POST['clinic_room']);
+    $clinic_days = mysqli_real_escape_string($con, $_POST['clinic_days']);
+    $clinic_time = mysqli_real_escape_string($con, $_POST['clinic_time']);
 
     //secretary
     $firstname = strtolower($_POST['firstname']);
@@ -48,12 +47,15 @@ if (isset($_POST['submit'])) {
     }
 
     //clinic
-    if (!($clinic_name == '' && $clinic_contact == '' && $clinic_location == '')) {
+    if (!($clinic_name == '' && $clinic_location == '' && $clinic_days=='' && $clinic_room=='' && $clinic_time=='')) {
         $clinic_sql = "INSERT INTO clinic (clinic_location, clinic_name, clinic_contact, doctor_id) 
 			VALUES ('$clinic_location', '$clinic_name', '$clinic_contact','$doctor_id')";
-        if (!(mysqli_query($con, $clinic_sql))) {
-            die('Error: ' . mysqli_error($con));
-        }
+        mysqli_query($con, $clinic_sql) or die(mysqli_error($con));
+        $clinic_gen_id = mysqli_insert_id($con);
+        echo $clinic_gen_id;
+        $clinic_schedule_sql = "INSERT INTO clinic_schedule (clinic_id, doctor_id, days, time, room_number)
+        VALUES ('$clinic_gen_id','$doctor_id','$clinic_days','$clinic_time','$clinic_room')";
+        mysqli_query($con, $clinic_schedule_sql) or die(mysqli_error($con));
     }
 
     //secretary

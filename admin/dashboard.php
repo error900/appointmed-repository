@@ -15,7 +15,7 @@
     else if ($account_type != 'Admin')
         header("location: index.php");
 
-    $account_sql = mysqli_query($con, "SELECT * FROM account ");
+    $account_sql = mysqli_query($con, "SELECT * FROM account WHERE username <> 'Admin' ");
     //    $account_row = mysqli_fetch_array($account_sql);
     ?>
     <body class="e4e8e9-bg">
@@ -83,20 +83,20 @@
           function drawChart() {
             var data = google.visualization.arrayToDataTable([
               ['Task', 'Hours per Day'],
-              <?php 
-                  $stringResult;
-                  $i = 0;
-                  $sql = "SELECT patient_id FROM patient";
-                  $results1 = $this->db->query($sql);
-                  //for($i=0; $i<10; ++$i)
-                  {
-                  $stringResult .= "data[" .$i. "] = { label:" .$results['name'].", data: ". $results['quantity'] ."}";
-                   $i++;
-                 // foreach($data as $v){
-                   // echo ",['{$name}'],{$count}]\r\n";
-                    return $stringResult;
-                  }
-              ?>
+              // <?php 
+              //     $stringResult;
+              //     $i = 0;
+              //     $sql = "SELECT patient_id FROM patient";
+              //     $results1 = $this->db->query($sql);
+              //     //for($i=0; $i<10; ++$i)
+              //     {
+              //     $stringResult .= "data[" .$i. "] = { label:" .$results['name'].", data: ". $results['quantity'] ."}";
+              //      $i++;
+              //    // foreach($data as $v){
+              //      // echo ",['{$name}'],{$count}]\r\n";
+              //       return $stringResult;
+              //     }
+              // ?>
             ]);
             var data = google.visualization.arrayToDataTable([
                 ['Task', 'Hours per Day'],

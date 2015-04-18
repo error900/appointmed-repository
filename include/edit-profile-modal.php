@@ -107,7 +107,7 @@
                                     <input type="text" class="form-control" name="clinic_location" placeholder="Clinic Location"/>
                                     <input type="text" class="form-control" name="clinic_contact" placeholder="Clinic Contact"/>
                                     <input type="text" class="form-control" name="clinic_room" placeholder="Clinic Room"/>
-                                    <input type="text" class="form-control" name="clinic_days" placeholder="Clinic Days"/>
+                                    <input type="text" class="form-control" name="clinic_days" placeholder="Clinic Days (e.g. Mon/Tue/Fri)"/>
                                     <input type="text" class="form-control" name="clinic_time" placeholder="Clinic Time"/>
                                     
                                     <div class="col-xs-12 col-md-6 text-center">

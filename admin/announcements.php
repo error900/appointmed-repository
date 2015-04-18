@@ -48,11 +48,6 @@
                     <div class="input-group announcement-post">
                         <form class="form-input" method="post" action="announcement.php">
                             <div class="col-sm-10">
-                                <select name="pick" class="form-control user-select" />
-                                    <option value="all">All</option>
-                                    <option value="doctor">Doctor</option>
-                                    <option value="patient">Patient</option>
-                                </select>
                                 <input type="text" class="form-control" name="title" placeholder="Title">
                                 <div class="col-xs-12 col-md-3 start-date">
                                     <label for="inputDate">Start Date:</label>
@@ -67,7 +62,11 @@
                                     <input type="date" class="form-control" name="end" required/>
                                 </div>
                                 <textarea class="form-control" rows="8" name="message" placeholder="Message"></textarea>
-                                
+                                <select name="pick" required/>
+                                  <option value="all">All</option>
+                                  <option value="doctor">Doctor</option>
+                                  <option value="patient">Patient</option>
+                                </select>
                                 <div class="post-buttons">
                                     <button type="submit" name="submit" class="btn btn-default blue-btn">post</button>
                                 </div>

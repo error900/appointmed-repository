@@ -36,6 +36,7 @@
             $count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE patient_id LIKE '$patient_id' AND indicator = 'doctor'");
             $count_row = mysqli_fetch_array($count_result);
             $notif_count = $count_row['count'];
+            $date_today = date('Y-m-d');
             ?>
             <?php
             include 'include/pt-nav-start.php';
@@ -86,7 +87,7 @@
                                 if($a_result['send_to'] == 'patient' || $a_result['send_to'] == 'all'){
                                     echo '<div class="col-xs-12 col-md-8 col-md-offset-2">
                                         <div class="panel panel-notif panel-danger">
-                                            <div class="panel-heading">'.$a_result['start_publish'].''.$a_result['subject'].'
+                                            <div class="panel-heading">'.date("F j, Y", strtotime($a_result['start_publish'])).' '.$a_result['subject'].'
                                                 <a href="#" title="cancel"><i class="fa fa-remove delete-btn"></i></a>
                                             </div>
                                             <div class="panel-body">

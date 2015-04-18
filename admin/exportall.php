@@ -15,7 +15,7 @@
     else if ($account_type != 'Admin')
         header("location: index.php");
 
-    $account_sql = mysqli_query($con, "SELECT * FROM account ");
+    $account_sql = mysqli_query($con, "SELECT * FROM account WHERE username <> 'Admin'");
     //    $account_row = mysqli_fetch_array($account_sql);
     ?>
 
@@ -41,7 +41,7 @@
             </div>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-            <h1 class="page-header">Download Doctor and Patient Account Data
+            <h1 class="page-header">Download User Account Data
                 <span class="h1-btn">
                     <form method="post" action="export_to_file.php">
                         <input type="submit" class="btn btn-default green-btn" name="export" value="Download">
