@@ -14,7 +14,7 @@
                         </div>
                         <div class="input-group date" id="datetimepicker1">
                             <span class="input-group-addon">
-                                <span class="fui-calendar-solid"></span>
+                                <span class="fa fa-calendar"></span>
                             </span>
                             <input type="text" class="form-control" name="date" required/>
                         </div>

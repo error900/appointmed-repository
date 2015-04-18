@@ -1,5 +1,5 @@
 $(function(){
-    $(".form-control").keyup(function(){ 
+    $("#inputSearch").keyup(function(){ 
     var inputSearch = $(this).val();
     var dataString = 'searchword='+ inputSearch;
     if(inputSearch!='') {
