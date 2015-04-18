@@ -24,6 +24,9 @@
             $patient_n = $row['patient_name'];
             $p_result = mysqli_query($con, "SELECT * FROM appointment WHERE patient_id LIKE '$patient_id'");
             $p_row = mysqli_fetch_array($p_result);
+
+            //announcement
+            $announcement = mysqli_query($con,"SELECT * FROM announcement ORDER BY 4 asc");
             //$doctor = $p_row['doctor_id'];
             //$date = $p_row['appoint_date'];
             //$d_result = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_id LIKE '$doctor'" );
@@ -75,9 +78,25 @@
                             <h1 class="text-center row-header-fff">&mdash; Your Notifications &mdash;</h1>
                         </div>
                         <div class="col-md-12">
-                            <!--                    <h2 class="text-left date-header">Today</h2>-->
+                            <!-- <h2 class="text-left date-header">Today</h2> -->
                         </div>
                         <?php
+                        while ($a_result = mysqli_fetch_array($announcement)){
+                            if(($date_today >= $a_result['start_publish']) && ($date_today <= $a_result['end_publish'])){
+                                if($a_result['send_to'] == 'patient' || $a_result['send_to'] == 'all'){
+                                    echo '<div class="col-xs-12 col-md-8 col-md-offset-2">
+                                        <div class="panel panel-notif panel-danger">
+                                            <div class="panel-heading">'.$a_result['start_publish'].''.$a_result['subject'].'
+                                                <a href="#" title="cancel"><i class="fa fa-remove delete-btn"></i></a>
+                                            </div>
+                                            <div class="panel-body">
+                                                '.$a_result['announcement_details'].'
+                                            </div>
+                                        </div>
+                                    </div>';
+                                }
+                            }
+                        }
                         while ($n_row = mysqli_fetch_array($n_result)) {
                             if ($n_row['indicator'] == 'doctor') {
                                 if ($n_row['patient_id'] == $patient_id) {
