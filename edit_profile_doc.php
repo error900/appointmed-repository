@@ -76,11 +76,13 @@ if (isset($_POST['submit'])) {
     if(!($specialization == '')){
         $new_specialization = $old_specs.'/'.$specialization;
         echo $new_specialization;
-        $spec_sql = "UPDATE doctor SET specialization = '$new_specialization', email = '$email', doctor_status = '$doctor_status' WHERE doctor_id = '$doctor_id' ";
-        if (!(mysqli_query($con, $spec_sql))) {
-            die('Error: ' . mysqli_error($con));
-        }
+        $spec_sql = "UPDATE doctor SET specialization = '$new_specialization' WHERE doctor_id = '$doctor_id' ";
+        mysqli_query($con, $spec_sql) or die(mysqli_error($con));
     }
+    
+    $update_sql = "UPDATE doctor SET email = '$email', doctor_status = '$doctor_status' WHERE doctor_id = '$doctor_id' ";
+    mysqli_query($con, $update_sql) or die(mysqli_error($con));
+
     header("location: doctor-profile.php");
 } else {
     echo "<script> alert('Error'); </script>";

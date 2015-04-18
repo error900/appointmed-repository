@@ -5,8 +5,8 @@ if(isset($_POST['submit'])){
 	$date = date('Y-m-d');
 	$start_publish = $_POST['publish'];
 	$end_publish = $_POST['end'];
-	$title = $_POST['title'];
-	$announcement = $_POST['message'];
+	$title = mysqli_real_escape_string($con, $_POST['title']);
+	$announcement = mysqli_real_escape_string($con, $_POST['message']);
 	$to_whom = $_POST['pick'];
 
 	if($date <= $start_publish && ($end_publish >= $start_publish)){

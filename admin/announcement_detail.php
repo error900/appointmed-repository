@@ -68,8 +68,8 @@
                                 </textarea>
                                 <select name="pick" required/>
                                   <option value="all">All</option>
-                                  <option value="doctor">Doctor</option>
-                                  <option value="patient">Patient</option>
+                                  <option value="doctor">Doctors</option>
+                                  <option value="patient">Patients</option>
                                 </select>
                                 <div class="post-buttons">
                                     <button type="submit" name="submit" class="btn btn-default post-btn">save</button>
