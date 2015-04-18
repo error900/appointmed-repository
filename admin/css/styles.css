@@ -1,6 +1,10 @@
 .h1-btn {
 }
 
+.user-select {
+	margin-left: 6px;
+}
+
 .aprrove-btn {
 	float: right;
 	margin-top: -50px;

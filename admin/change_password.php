@@ -23,7 +23,6 @@
         include 'include/admin-nav-start.php';
         ?>
         <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Profile</a></li>
             <li><a href="change_password.php">Change Password</a></li>
             <li><a href="#">Help</a></li>
             <li class="divider"></li>

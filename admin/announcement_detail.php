@@ -33,7 +33,6 @@
         include 'include/admin-nav-start.php';
         ?>
         <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Profile</a></li>
             <li><a href="#">Settings</a></li>
             <li><a href="#">Help</a></li>
             <li class="divider"></li>
@@ -84,6 +83,5 @@
         <?php
         include 'include/scripts.php';
         ?>
-        <script type="text/javascript" src="js/listslide.js"></script>
     </body>
 </html>
