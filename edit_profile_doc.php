@@ -6,6 +6,7 @@ if (isset($_POST['submit'])) {
     $doctor_id = $_POST['doctor_id'];
     $doctor_status = $_POST['doctor_status'];
     $date = date('Y-m-d');
+    $old_specs = $_POST['previous_spec'];
 
     //clinic
     $clinic_name = mysqli_real_escape_string($con, $_POST['clinic_name']);
@@ -23,7 +24,7 @@ if (isset($_POST['submit'])) {
     $username = $n . '' . $lastname;
     $password = $lastname;
     $password = hash('sha256', $password);
-
+/*
     //notification
     $status = mysqli_query($con, "SELECT doctor_status, doctor_name FROM doctor WHERE doctor_id LIKE '$doctor_id'");
     $subscribed = mysqli_query($con, "SELECT patient_id FROM subscribe WHERE doctor_id LIKE '$doctor_id'");
@@ -57,13 +58,26 @@ if (isset($_POST['submit'])) {
 			VALUES('$username', '$password', 'Secretary', 'active')";
         $secretary_sql = "INSERT INTO secretary (secretary_id, secretary_name, doctor_id, username) 
 			VALUES ('$secretary_id', '$secretary_name', '$doctor_id','$username')";
+  //      $sec_clinic = "INSERT INTO clinic_sec (clinic_id, secretary_id) VALUES ('$clinic_id', '$secretary_id')";
+
         if (!(mysqli_query($con, $sqlaccount)) || !(mysqli_query($con, $secretary_sql))) {
             die('Error: ' . mysqli_error($con));
         }
+        $select = mysqli_query($con, "SELECT * FROM clinic WHERE clinic_name  LIKE '$clinic_name'");
+        $select_row = mysqli_fetch_array($select);
+        $clinic_id= $select_row['clinic_id'];
+
+        $sec_clinic = "INSERT INTO clinic_sec (clinic_id, secretary_id) VALUES ('$clinic_id', '$secretary_id')";
+        mysqli_query($con, $sec_clinic) or die(mysqli_error($con));
     }
-    $update_sql = "UPDATE doctor SET specialization = '$specialization', email = '$email', doctor_status = '$doctor_status' WHERE doctor_id = '$doctor_id' ";
-    if (!(mysqli_query($con, $update_sql))) {
-        die('Error: ' . mysqli_error($con));
+*/
+    if(!($specialization == '')){
+        $new_specialization = $old_specs.'/'.$specialization;
+        echo $new_specialization;
+        $spec_sql = "UPDATE doctor SET specialization = '$new_specialization', email = '$email', doctor_status = '$doctor_status' WHERE doctor_id = '$doctor_id' ";
+        if (!(mysqli_query($con, $spec_sql))) {
+            die('Error: ' . mysqli_error($con));
+        }
     }
 
     header("location: doctor-profile.php");

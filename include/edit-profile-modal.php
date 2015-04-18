@@ -82,8 +82,8 @@
                         <h1 class="text-center row-header3">Current Information</h1>
                         <form method='post' action="edit_profile_doc.php">
                             <div class="input-group">
-                                <input type="text" class="form-control" name="specialization" placeholder="Specialization" readonly="readonly" required="" value="<?php echo $specialization ?>" />
-                                <input type="text" class="form-control" name="email" placeholder="Email Address" required="" readonly="readonly" value="<?php echo $email ?>" />
+                                <input type="text" class="form-control" name="previous_spec" placeholder="Specialization" readonly="readonly" required="" value="<?php echo $specialization ?>" />
+                                <input type="text" class="form-control" name="email" placeholder="Email Address" required="" value="<?php echo $email ?>" />
                                 <input type="hidden" value="<?php echo $doctor_id ?>" name="doctor_id">
                                 <label>Change Status:</label>
                                 <select name="doctor_status" class="form-control">
@@ -97,11 +97,19 @@
                                 <div class="col-xs-12 col-md-6 text-center">
                                     <input type="button" class="btn btn-default btn-noborder green-btn form-control" id="specs" value="Add Specialization">
                                 </div>
+                                <div id="specialization" style="display:none">
+                                    <p>Specialization</p>
+                                    <input type="text" class="form-control" name="specialization" placeholder="Specialization"/>
+                                </div>
                                 <div id="clinics" style="display:none">
                                     <p>Clinic</p>
                                     <input type="text" class="form-control" name="clinic_name" placeholder="Clinic Name"/>
                                     <input type="text" class="form-control" name="clinic_location" placeholder="Clinic Location"/>
                                     <input type="text" class="form-control" name="clinic_contact" placeholder="Clinic Contact"/>
+                                    <input type="text" class="form-control" name="clinic_room" placeholder="Clinic Room"/>
+                                    <input type="text" class="form-control" name="clinic_days" placeholder="Clinic Days"/>
+                                    <input type="text" class="form-control" name="clinic_time" placeholder="Clinic Time"/>
+                                    
                                     <div class="col-xs-12 col-md-6 text-center">
                                         <input type="button" class="btn btn-default btn-noborder green-btn form-control" id="showsec" value="Add Secretary">
                                     </div>
@@ -110,10 +118,8 @@
                                         <input type="text" class="form-control" name="lastname" placeholder="Last Name"/>
                                     </div>
                                 </div>
-                                <div id="specialization" style="display:none">
-                                    <p>Specialization</p>
-                                    <input type="text" class="form-control" name="specialization" placeholder="Specialization"/>
-                                </div>
+                                <br/>
+
                                 <input class="btn btn-default btn-noborder black-btn" type="submit" value="Submit" name="submit"/>
                             </div>
                         </form>

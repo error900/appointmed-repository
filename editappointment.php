@@ -37,7 +37,7 @@ if (isset($_POST['submit'])) {
     $check_date = date('D', strtotime($appdate));
     if(!(in_array($check_date, $days))){
         echo '<script>alert("The clinic is not available at the selected day. Please change the date")</script>';
-        echo "<script> location.replace('doctor.php?id=" . $doctor_id . "') </script>";
+        echo "<script> location.replace('appointment.php') </script>";
     }else if ($limit_row >= 7) {
         echo '<script>alert("Reached the maximum number of patients for the day. Please change the date")</script>';
         echo "<script> location.replace('appointment.php') </script>";
