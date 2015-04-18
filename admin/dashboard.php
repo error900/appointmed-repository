@@ -81,27 +81,27 @@
           google.load("visualization", "1", {packages:["corechart"]});
           google.setOnLoadCallback(drawChart);
           function drawChart() {
-            // var data = google.visualization.arrayToDataTable([
-            //   ['Task', 'Hours per Day'],
-            //   <?php 
-            //       $stringResult;
-            //       $i = 0;
-            //       $sql = "SELECT patient_id FROM patient";
-            //       $results1 = $this->db->query($sql);
-            //       //for($i=0; $i<10; ++$i)
-            //       {
-            //       $stringResult .= "data[" .$i. "] = { label:" .$results['name'].", data: ". $results['quantity'] ."}";
-            //        $i++;
-            //      // foreach($data as $v){
-            //        // echo ",['{$name}'],{$count}]\r\n";
-            //         return $stringResult;
-            //       }
-            //   ?>
-            // ]);
+            var data = google.visualization.arrayToDataTable([
+              ['Task', 'Hours per Day'],
+              <?php 
+                  $stringResult;
+                  $i = 0;
+                  $sql = "SELECT patient_id FROM patient";
+                  $results1 = $this->db->query($sql);
+                  //for($i=0; $i<10; ++$i)
+                  {
+                  $stringResult .= "data[" .$i. "] = { label:" .$results['name'].", data: ". $results['quantity'] ."}";
+                   $i++;
+                 // foreach($data as $v){
+                   // echo ",['{$name}'],{$count}]\r\n";
+                    return $stringResult;
+                  }
+              ?>
+            ]);
             var data = google.visualization.arrayToDataTable([
                 ['Task', 'Hours per Day'],
-                ['Work',     11],
-                ['Eat',      2],
+                ['Doctors',     11],
+                ['Patients',      2],
                 ['Commute',  2],
                 ['Watch TV', 2],
                 ['Sleep',    7]

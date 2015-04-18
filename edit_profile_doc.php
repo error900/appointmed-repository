@@ -8,6 +8,10 @@ if (isset($_POST['submit'])) {
     $date = date('Y-m-d');
     $old_specs = $_POST['previous_spec'];
 
+    $clinic_room = $_POST['clinic_room'];
+    $clinic_days = $_POST['clinic_days'];
+    $clinic_time = $_POST['clinic_time'];
+
     //clinic
     $clinic_name = mysqli_real_escape_string($con, $_POST['clinic_name']);
     $clinic_location = mysqli_real_escape_string($con, $_POST['clinic_location']);
@@ -24,7 +28,7 @@ if (isset($_POST['submit'])) {
     $username = $n . '' . $lastname;
     $password = $lastname;
     $password = hash('sha256', $password);
-/*
+
     //notification
     $status = mysqli_query($con, "SELECT doctor_status, doctor_name FROM doctor WHERE doctor_id LIKE '$doctor_id'");
     $subscribed = mysqli_query($con, "SELECT patient_id FROM subscribe WHERE doctor_id LIKE '$doctor_id'");
@@ -70,7 +74,7 @@ if (isset($_POST['submit'])) {
         $sec_clinic = "INSERT INTO clinic_sec (clinic_id, secretary_id) VALUES ('$clinic_id', '$secretary_id')";
         mysqli_query($con, $sec_clinic) or die(mysqli_error($con));
     }
-*/
+
     if(!($specialization == '')){
         $new_specialization = $old_specs.'/'.$specialization;
         echo $new_specialization;
@@ -79,7 +83,6 @@ if (isset($_POST['submit'])) {
             die('Error: ' . mysqli_error($con));
         }
     }
-
     header("location: doctor-profile.php");
 } else {
     echo "<script> alert('Error'); </script>";
