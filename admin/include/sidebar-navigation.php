@@ -6,6 +6,7 @@
             <ul class="nav nav-sidebar sidebar-items-list">
                 <li><a href="dashboard.php">Dashboard</a></li>
                 <li><a href="announcements.php">Announcements</a></li>
+                <li><a href="announcement_list.php">Announcements List</a></li>
                 <li><a href="notifications.php">Notification</a></li>
                 <li><a href="#">Import</a></li>
                 <li><a href="exportall.php">Export</a></li>
