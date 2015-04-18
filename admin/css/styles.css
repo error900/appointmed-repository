@@ -1,6 +1,4 @@
 .h1-btn {
-	float: right;
-	margin-top: -14px;
 }
 
 .aprrove-btn {
@@ -70,8 +68,9 @@
 }
 
 .announcement-post label {
-	margin: 7px 10px;
+	margin: 5px 6px;
 	font-size: 14px;
+	float: left;
 }
 
 .start-date,
@@ -81,6 +80,29 @@
 }
 
 .post-buttons button {
-	float: right; 
-	margin: 10px;
+	float: right;
+	margin-right: -5px;
+}
+
+@media (min-width:768px){
+	.h1-btn {
+		position: absolute;
+		width: 10% !important;
+		top: 5px;
+		right: 55px;
+	}
+
+	.h2-btn {
+		width: 10% !important;
+		width: 10% !important;
+		margin-top: -10px !important;
+		margin-bottom: 10px !important;
+	}
+
+	.announcement-post input[type=date] {
+	}
+
+	.announcement-post label  {
+		margin: 10px 0 10px 80px;
+	}
 }

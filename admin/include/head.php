@@ -12,6 +12,7 @@
 
     <link href="../css/styles.css" rel="stylesheet">
     <link href="../css/tooltip.css" rel="stylesheet">
+    <link href="css/scrolltop.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
     <link rel="shortcut icon" href="../img/favicon.ico">
 </head>

@@ -30,7 +30,7 @@
             <li><a href="change_password.php">Change Password</a></li>
             <li><a href="help.php">Help</a></li>
             <li class="divider"></li>
-            <li><a href="logout.php"><i class="fa fa-power-off"></i>    logout</a></li>
+            <li><a href="logout.php"><i class="fa fa-power-off"></i> logout</a></li>
         </ul>
         <?php
         include 'include/admin-nav-end.php';
@@ -72,7 +72,7 @@
                         echo "<td><input type='checkbox' name='select[]' id='select' value='$row[username]'></td>";
                         echo '</tr>';
                     }
-                    echo '<input type="submit" class="btn btn-default green-btn h1-btn" name="submit" value="Inactive">';
+                    echo '<input type="submit" class="btn btn-default red-btn h1-btn" name="submit" value="Inactive">';
                     ?>
                 </form>
             </table>

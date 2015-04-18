@@ -206,7 +206,8 @@ nav > div > div > ul > li > a > i,
     .green-btn,
     .blue-btn,
     .red-btn {
-        width: 100%;
+        margin: 0 !important;
+        width: 15% !important;
     }
 
     .docors-list-info li span {
@@ -895,6 +896,7 @@ a.btn.btn-block.appo.tooltip-bottom {
 .green-btn,
 .blue-btn,
 .red-btn {
+    width: 100% !important;
     margin-top: 10px !important;
     color: #fff !important;
     font-size: 12px !important;

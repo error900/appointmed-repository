@@ -20,7 +20,7 @@
                 <div class="modal-footer">
                     <?php
                     echo '<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>';
-                    echo "<button type=\"submit\" class=\"btn btn-primary\" name=\"submit\">Done</button>";
+                    echo "<button type='submit' class='btn btn-primary' name='submit'>Done</button>";
                     ?>
                 </div>
             </form>
