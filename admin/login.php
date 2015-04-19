@@ -7,8 +7,8 @@
         $password = $_POST['password'];
         $account_type = '';
 
-        $username = stripslashes($username);
-        $password = stripslashes($password);
+        $username = mysqli_real_escape_string($con, $username);
+        $password = mysqli_real_escape_string($con, $password);
 
         $password = hash('sha256', $password);
 

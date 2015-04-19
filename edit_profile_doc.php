@@ -55,22 +55,23 @@ if (isset($_POST['submit'])) {
         $clinic_schedule_sql = "INSERT INTO clinic_schedule (clinic_id, doctor_id, days, time, room_number)
         VALUES ('$clinic_gen_id','$doctor_id','$clinic_days','$clinic_time','$clinic_room')";
         mysqli_query($con, $clinic_schedule_sql) or die(mysqli_error($con));
-    }
+
 
     //secretary
-    if (!($firstname == '' && $lastname == '')) {
-        $sqlaccount = "INSERT INTO account (username, password, account_type, account_status)
-			VALUES('$username', '$password', 'Secretary', 'active')";
-        $secretary_sql = "INSERT INTO secretary (secretary_id, secretary_name, doctor_id, username) 
-			VALUES ('$secretary_id', '$secretary_name', '$doctor_id','$username')";
-  //      $sec_clinic = "INSERT INTO clinic_sec (clinic_id, secretary_id) VALUES ('$clinic_id', '$secretary_id')";
+        if (!($firstname == '' && $lastname == '')) {
+            $sqlaccount = "INSERT INTO account (username, password, account_type, account_status)
+    			VALUES('$username', '$password', 'Secretary', 'active')";
+            $secretary_sql = "INSERT INTO secretary (secretary_id, secretary_name, doctor_id, username) 
+    			VALUES ('$secretary_id', '$secretary_name', '$doctor_id','$username')";
+      //      $sec_clinic = "INSERT INTO clinic_sec (clinic_id, secretary_id) VALUES ('$clinic_id', '$secretary_id')";
 
-        if (!(mysqli_query($con, $sqlaccount)) || !(mysqli_query($con, $secretary_sql))) {
-            die('Error: ' . mysqli_error($con));
+            if (!(mysqli_query($con, $sqlaccount)) || !(mysqli_query($con, $secretary_sql))) {
+                die('Error: ' . mysqli_error($con));
+            }
+
+            $sec_clinic = "INSERT INTO clinic_sec (clinic_id, secretary_id) VALUES ('$clinic_gen_id', '$secretary_id')";
+            mysqli_query($con, $sec_clinic) or die(mysqli_error($con));
         }
-
-        $sec_clinic = "INSERT INTO clinic_sec (clinic_id, secretary_id) VALUES ('$clinic_gen_id', '$secretary_id')";
-        mysqli_query($con, $sec_clinic) or die(mysqli_error($con));
     }
 
     if(!($specialization == '')){

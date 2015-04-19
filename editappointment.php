@@ -34,6 +34,10 @@ if (isset($_POST['submit'])) {
     $queue_date = $queue_row['appoint_date'];
     
     $days = explode('/', $days);
+    foreach($days as $value){
+        $val = (ucfirst(strtolower($value)));
+        array_push($days, $val);
+    }
     $check_date = date('D', strtotime($appdate));
     if(!(in_array($check_date, $days))){
         echo '<script>alert("The clinic is not available at the selected day. Please change the date")</script>';

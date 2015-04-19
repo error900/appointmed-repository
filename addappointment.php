@@ -75,7 +75,7 @@ if (isset($_POST['submit'])) {
             die('Error: ' . mysqli_error($con));
         }        
         //end
-        // header("location: appointment.php");
+        header("location: appointment.php");
     } else {
         echo '<script>alert("Please change the date")</script>';
         echo "<script> location.replace('doctor.php?id=" . $doctor_id . "') </script>";
