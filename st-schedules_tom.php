@@ -48,7 +48,8 @@
 
     $c_result = mysqli_query($con, "SELECT * FROM clinic NATURAL JOIN clinic_sec WHERE secretary_id LIKE '$secretary_id'") or die(mysqli_error());
     $c_row = mysqli_fetch_array($c_result);
-    $a_result = mysqli_query($con, "SELECT * FROM appointment NATURAL JOIN queue_notif WHERE doctor_id = '$doctor_id' AND (appointment_status = 'inqueue' OR appointment_status = 'Referred') AND (appoint_date = '$tomorrow') ORDER BY 2 ASC, 8 ASC");
+    $clinic_id = $c_row['clinic_id'];
+    $a_result = mysqli_query($con, "SELECT * FROM appointment NATURAL JOIN queue_notif WHERE doctor_id = '$doctor_id' AND clinic_id = '$clinic_id' AND (appointment_status = 'inqueue' OR appointment_status = 'Referred') AND (appoint_date = '$tomorrow') ORDER BY 2 ASC, 8 ASC");
 //    $sqls = mysqli_query($con, "SELECT * FROM doctor WHERE specialization LIKE '$specialization' AND doctor_id <> '$doctor_id'");
 
     $count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE doctor_id LIKE '$doctor_id' AND indicator = 'Patient'");
@@ -85,7 +86,7 @@
                         <div class="col-md-12 col-md-4 col-md-offset-2 user-md">
                             <h1><?php echo $doctor_row['doctor_name']; ?></h1>
                             <p><?php echo $c_row['clinic_location']; ?></p>
-                            <p class="email"><?php echo $doctor_row['email']; ?></p>
+                            <p class="email"><?php echo $c_row['clinic_name'];; ?></p>
                             <p><?php echo $c_row['clinic_contact']; ?></p>
                         </div>
                         <?php

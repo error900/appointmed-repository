@@ -47,8 +47,6 @@
     $c_row = mysqli_fetch_array($c_result);
     $a_result = mysqli_query($con, "SELECT * FROM appointment WHERE doctor_id LIKE '$doctor_id' AND appointment_status = 'Cancelled' ORDER BY appointment_id") or die(mysqli_error());
 
-//    $sqls = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_id <> '$doctor_id'") or die(mysqli_error());
-
     $count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE doctor_id LIKE '$doctor_id' AND indicator = 'Patient'") or die(mysqli_error());
     $count_row = mysqli_fetch_array($count_result);
     $notif_count = $count_row['count'];
@@ -80,25 +78,32 @@
                 ?>
                  <div class="container-fluid" id="user-md-frw">
                     <div class="col-xs-12 col-md-12">
-                        <h2 class="text-center row-header">&mdash; Removed &mdash;</h2>
+                        <h2 class="text-center row-header">&mdash; Cancelled &mdash;</h2>
                     </div>
                     <?php
-                    while ($row = mysqli_fetch_array($a_result)) {
-                        $patient = $row['patient_id'];
-                        $p_result = mysqli_query($con, "SELECT * FROM patient WHERE patient_id LIKE '$patient'");
-                        $pat = mysqli_fetch_array($p_result);
-                        echo '<div class="col-xs-12 col-md-6 col-lg-3">
-                <div class="panel panel-default sched-panel">';
-                        echo'<div class="panel-heading">';
-                        echo $pat['patient_name'];
-                        echo '</div>';
-                        echo' <div class="panel-body">';
-                        echo '<p>' . $pat['patient_contact'] . '</p>';
-                        echo '<p>' . $c_row['clinic_location'] . '</p>';
-                        echo '<p> Queue Number: ' . $row['appointment_id'] . '</p>';
-                        echo '</div>
-                 </div>
-               </div>';
+                    if(mysqli_num_rows($a_result)>=1){
+                        while ($row = mysqli_fetch_array($a_result)) {
+                            $patient = $row['patient_id'];
+                            $p_result = mysqli_query($con, "SELECT * FROM patient WHERE patient_id LIKE '$patient'");
+                            $pat = mysqli_fetch_array($p_result);
+                            echo '<div class="col-xs-12 col-md-6 col-lg-3">
+                        <div class="panel panel-default sched-panel">';
+                            echo'<div class="panel-heading">';
+                            echo $pat['patient_name'];
+                            echo '</div>';
+                            echo' <div class="panel-body">';
+                            echo '<p>' . $pat['patient_contact'] . '</p>';
+                            echo '<p>' . $c_row['clinic_location'] . '</p>';
+                            echo '<p> Queue Number: ' . $row['appointment_id'] . '</p>';
+                            echo '</div>
+                         </div>
+                       </div>';
+                        }
+                    }else{
+                        echo '<div class="col-xs-12 col-md-10 col-md-offset-1">
+                        <div class="alert alert-warning" role="alert">
+                        <strong>There are currently no cancelled schedules.</strong></div>
+                        </div>';
                     }
                     ?>
                 </div>

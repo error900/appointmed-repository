@@ -32,7 +32,7 @@
                         <form method="post" action="edit_profile_sec.php">
                             <div class="input-group">
                                 <input type="text" class="form-control" name="name" placeholder="Name" required="" value="<?php echo $secretary ?>"/>
-                                <input type="text" class="form-control" name="email" placeholder="Email Address" required="" readonly="" value="<?php echo $email ?>" />
+                                <input type="text" class="form-control" name="email" placeholder="Email Address" required="" value="<?php echo $email ?>" />
                                 <input type="hidden" value="<?php echo $doctor_id ?>" name="doctor_id">
                                 <input type="hidden" value="<?php echo $secretary_id ?>" name="secretary_id">
                                 <label>Change Status of Dr. <?php echo $doctor_row['doctor_name']?></label>
