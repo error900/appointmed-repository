@@ -71,7 +71,7 @@
                         echo "<td><input type='checkbox' name='select[]' id='select' value='$row[username]'></td>";
                         echo '</tr>';
                     }
-                    echo '<input type="submit" class="btn btn-default red-btn h1-btn" name="submit" value="Inactive">';
+                    echo '<input type="submit" class="btn btn-default red-btn h1-btn" name="submit" value="Notify">';
                     ?>
                 </form>
             </table>
