@@ -194,7 +194,7 @@
                                         </div>
                                         <input type="hidden" value="<?php echo $patient_id ?>" name="patient_id">
                                         <input type="hidden" value="<?php echo $doctor_id ?>" name="doctor_id">
-                                        <input type="hidden" value="<?php echo $days ?>" name="days">
+              <!--                           <input type="hidden" value="<?php echo $days ?>" name="days"> -->
                                         <input type="hidden" value="" id="clinic_id" name="clinic_id">
                                     </div>
                                 </div>

@@ -38,7 +38,7 @@
             $row = mysqli_fetch_array($result);
             $patient_id = $row['patient_id'];
             $patient_n = $row['patient_name'];
-            $p_result = mysqli_query($con, "SELECT * FROM appointment WHERE patient_id LIKE '$patient_id' AND (appointment_status = 'Inqueue' OR appointment_status = 'Referred') AND (appoint_date = '$date_today')");
+            $p_result = mysqli_query($con, "SELECT * FROM appointment WHERE patient_id LIKE '$patient_id' AND (appointment_status = 'Inqueue' OR appointment_status = 'Referred') AND (appoint_date = '$date_today') ORDER BY 2");
 
             $count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE patient_id LIKE '$patient_id' AND indicator = 'doctor'");
             $count_row = mysqli_fetch_array($count_result);

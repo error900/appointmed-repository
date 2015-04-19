@@ -5,7 +5,6 @@ if (isset($_POST['submit'])) {
     $patient_id = $_POST['patient_id'];
     $doctor_id = $_POST['doctor_id'];
     $clinic_id = $_POST['clinic_id'];
-    $days = $_POST['days'];
 
     $appointment_status = "Inqueue";
     $remarks = '';
@@ -14,6 +13,10 @@ if (isset($_POST['submit'])) {
     $indicator = "patient";
     $date = date('Y-m-d', strtotime($date));
     $date_today = date('Y-m-d');
+
+    $select_clinic = mysqli_query($con, "SELECT * FROM clinic_schedule WHERE clinic_id LIKE '$clinic_id'");
+    $select_clinic_rows = mysqli_fetch_array($select_clinic);
+    $days = $select_clinic_rows['days'];
 
     $limit_result = mysqli_query($con, "SELECT * FROM appointment WHERE doctor_id LIKE '$doctor_id' AND appoint_date LIKE '$date'");
     $limit_row = mysqli_num_rows($limit_result);
@@ -27,10 +30,13 @@ if (isset($_POST['submit'])) {
     $queue_no = mysqli_fetch_array($queue);
 
     $queue_id = (int)$queue_no['queue_id'];
-
-
     $days = explode('/', $days);
+    foreach($days as $value){
+        $val = (ucfirst(strtolower($value)));
+        array_push($days, $val);
+    }
     $check_date = date('D', strtotime($date));
+
     if(!(in_array($check_date, $days))){
         echo '<script>alert("The clinic is not available at the selected day. Please change the date")</script>';
         echo "<script> location.replace('doctor.php?id=" . $doctor_id . "') </script>";
@@ -69,7 +75,7 @@ if (isset($_POST['submit'])) {
             die('Error: ' . mysqli_error($con));
         }        
         //end
-        header("location: appointment.php");
+        // header("location: appointment.php");
     } else {
         echo '<script>alert("Please change the date")</script>';
         echo "<script> location.replace('doctor.php?id=" . $doctor_id . "') </script>";
