@@ -279,8 +279,10 @@ nav > div > div > ul > li > a > i,
 
 .navbar-logo {
     background: url('../img/logo.png') no-repeat;
-    height: 129px;
-    width: 156px;
+    background-size: 153px 45px;
+    background-position: -10px 6px;
+    height: 53px;
+    width: 140px;
     position: absolute;
     z-index: 999999;
     margin: 0 25px;
