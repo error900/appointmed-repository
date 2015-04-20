@@ -25,18 +25,8 @@
     ?>
 
     <body class="e4e8e9-bg">
-        <?php
-        include 'include/admin-nav-start.php';
-        ?>
-        <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Profile</a></li>
-            <li><a href="change_password.php">Change Password</a></li>
-            <li><a href="help.php">Help</a></li>
-            <li class="divider"></li>
-            <li><a href="logout.php"><i class="fa fa-power-off"></i>logout</a></li>
-        </ul>
-        <?php
-        include 'include/admin-nav-end.php';
+        <?php 
+            include 'include/admin-nav.php';
         ?>
         <div class="container-fluid">
             <div class="row">

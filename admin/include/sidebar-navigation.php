@@ -38,7 +38,7 @@
     </ul>
     <ul class="nav nav-sidebar main-nav-label">
         <li class="sidebar-list">
-            <label><i class="fa fa-navicon"></i>Current Database</label>
+            <label><i class="fa fa-navicon"></i>Current Data</label>
             <ul class="nav nav-sidebar sidebar-items-list">
                 <li><a href="#">Import</a></li>
                 <li><a href="exportall.php">Export</a></li>

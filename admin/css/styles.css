@@ -1,6 +1,10 @@
 .h1-btn {
 }
 
+.navicon-link {
+	padding: 15px !important; 
+}
+
 .user-select {
 	margin-left: 6px;
 }

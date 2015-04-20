@@ -10,7 +10,7 @@ google.load("visualization", "1", {packages:["corechart"]});
       ['Sleep',    7]
     ]);
     var options = {
-      title: 'My Daily Activities'
+      title: 'Pie Chart'
     };
     var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
     chart.draw(data, options);

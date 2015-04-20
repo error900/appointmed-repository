@@ -1,18 +1,18 @@
-            <li class="nav-button navbar-right">
-                <button type="button" class="btn btn-default btn-noborder green-btn" data-toggle="modal" data-target=".bs-pt-edit-profile-modal-lg" data-id="'.$appointment_id.'" data-patient-id="'.$patient_id.'">
-                <i class="fa fa-pencil"></i>Update Info</button>
-            </li>
-            <form class="navbar-form navbar-right" method="post" role="search">
-                <div class="input-group search-bar">
-                    <ul class="dropdown-menu divResult" role="menu">
-                    </ul>
-                    <input type="text" class="form-control" name="search" placeholder="search doctor" id="inputSearch">
+                <li class="nav-button navbar-right">
+                    <button type="button" class="btn btn-default btn-noborder green-btn" data-toggle="modal" data-target=".bs-pt-edit-profile-modal-lg" data-id="'.$appointment_id.'" data-patient-id="'.$patient_id.'">
+                    <i class="fa fa-pencil"></i>Update Info</button>
+                </li>
+                <form class="navbar-form navbar-right" method="post" role="search">
+                    <div class="input-group search-bar">
+                        <ul class="dropdown-menu divResult" role="menu">
+                        </ul>
+                        <input type="text" class="form-control" name="search" placeholder="search doctor" id="inputSearch">
 
-                    <span class="input-group-btn">
-                        <button type="submit" class="btn"><i class="fa fa-search"></i></button>
-                    </span>
-                </div>
-            </form>
+                        <span class="input-group-btn">
+                            <button type="submit" class="btn"><i class="fa fa-search"></i></button>
+                        </span>
+                    </div>
+                </form>
             </ul>
             <ul class="nav navbar-nav navbar-right signedin">
                 <div class="btn-group navbar-right tooltip-left" data-tooltip="Me">
