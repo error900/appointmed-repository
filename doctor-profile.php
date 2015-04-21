@@ -9,6 +9,9 @@
     ?>
     <script type="text/javascript">
         $(document).ready(function() {
+            $(".appo").click(function() { // Click to only happen on announce links
+                $("#clinic_id").val($(this).data('id'));
+            });
             $('#hideshow').on('click', function() {
                 $('#clinics').show();
             });
@@ -127,7 +130,8 @@
                             echo '<h2>' . $c_row['clinic_name'] . '<span>' . $count . '</span></h2>';
                             echo '<p><i class="fa fa-location-arrow"></i>' . $c_row['clinic_location'] . '</p>';
                             echo '<p><i class="fa fa-phone"></i>' . $c_row['clinic_contact'] . '</p>';
-                            echo ' <button type="button" class="btn btn-default clinic create-btn btn-noborder tooltip-bottom" data-tooltip="Set limit" data-toggle="modal" data-target=".bs-example-modal-sm" data-id="' . $c_row['clinic_id'] . '">
+                            echo '<p>Cut off: <i></i>' . $c_row['cut_off_no'] . '</p>';
+                            echo ' <button type="button" class="btn btn-default appo create-btn btn-noborder tooltip-bottom" data-tooltip="Set patient limit" data-toggle="modal" data-target=".bs-example-modal-sm" data-id="' . $c_row['clinic_id'] . '">
                             <i class="fa fa-edit fa-lg"></i></button>';
                             echo '</div>';
                             echo '</div>';
@@ -140,16 +144,16 @@
                 <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-sm">
                         <div class="modal-content">
-                            <form class="form-input"  method="post" action="addappointment.php">
+                            <form class="form-input"  method="post" action="cut_off.php">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                    <h4 class="modal-title" id="myModalLabel">Set limit</h4>
+                                    <h4 class="modal-title" id="myModalLabel">Set patient limit</h4>
                                 </div>
                                 <div class="modal-body">
                                     <div class="form-group">
                                         <label for="inputDate">Number of patients you can accomodate for the clinic</label>
-                                    <select name="limit_no" class="form-control">
-                                        <option selected>Year
+                                    <select name="cut_off_no" class="form-control">
+                                        <option selected>Number of patients
                                             <?php for ($i = 50; $i >= 5; $i--) { ?>
                                             <option value="<?php echo $i; ?>">
                                                 <?php echo $i; ?>
@@ -171,7 +175,6 @@
                     </div>
                 </div>
                 <?php
-             //   include 'include/refer-modal.php';
                 include 'include/edit-profile-modal.php';
                 ?>
                 <script type="text/javascript" src="js/scrolltop.js"></script>

@@ -48,8 +48,8 @@ if (isset($_POST['submit'])) {
 
     //clinic
     if (!($clinic_name == '' && $clinic_location == '' && $clinic_days=='' && $clinic_room=='' && $clinic_time=='')) {
-        $clinic_sql = "INSERT INTO clinic (clinic_location, clinic_name, clinic_contact, doctor_id) 
-			VALUES ('$clinic_location', '$clinic_name', '$clinic_contact','$doctor_id')";
+        $clinic_sql = "INSERT INTO clinic (clinic_location, clinic_name, clinic_contact, doctor_id, cut_off_no) 
+			VALUES ('$clinic_location', '$clinic_name', '$clinic_contact','$doctor_id', '50')";
         mysqli_query($con, $clinic_sql) or die(mysqli_error($con));
         $clinic_gen_id = mysqli_insert_id($con);
         $clinic_schedule_sql = "INSERT INTO clinic_schedule (clinic_id, doctor_id, days, time, room_number)
