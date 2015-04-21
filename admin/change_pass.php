@@ -1,5 +1,5 @@
 <?php
-include 'connectdatabase.php';
+include '../connectdatabase.php';
 $old_password = mysqli_real_escape_string($con, $_POST['old_password']);
 $password = mysqli_real_escape_string($con, $_POST['password']);
 $username = mysqli_real_escape_string($con, $_POST['username']);
@@ -13,14 +13,14 @@ $old_password = hash('sha256', $old_password);
 
 if($old_password != $old_pass){
 	echo "<script> alert('Incorrect password!'); </script>";
-    echo "<script> location.replace('change_pass.php') </script>";
+    echo "<script> location.replace('change_password.php') </script>";
 }else{
 	$update_pass = "UPDATE account SET password = '$password' WHERE username LIKE '$username' ";
 	if (!(mysqli_query($con, $update_pass))) {
             die('Error: ' . mysqli_error($con));
     }
     echo "<script> alert('Successfully changed password'); </script>";
-    echo "<script> location.replace('patient.php') </script>";
+    echo "<script> location.replace('change_password.php') </script>";
 }	
 
 

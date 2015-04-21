@@ -10,6 +10,7 @@
     session_start();
     $loggedIn = $_SESSION['loggedIn'];
     $account_type = $_SESSION['account_type'];
+    $username = $_SESSION['username'];
     if ($loggedIn == false)
         header("location: index.php");
     else if ($account_type != 'Admin')
@@ -31,7 +32,7 @@
                     <div class="col-xs-12 col-md-5 col-md-offset-3">
                         <h1 class="text-center row-header-black">Change Password</h1>
                         <div class="signup-form">
-                            <form method="post" action="change_doc_pass.php" name="form1">
+                            <form method="post" action="change_pass.php" name="form1">
                                 <div class="input-group">
                                     <input type="password" class="form-control" required="" name="old_password" placeholder="Old password"/>
 

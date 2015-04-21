@@ -35,7 +35,10 @@
 
             $count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE patient_id LIKE '$patient_id' AND indicator = 'doctor'");
             $count_row = mysqli_fetch_array($count_result);
+            $count_announcement = mysqli_query($con, "SELECT * FROM announcement");
             $notif_count = $count_row['count'];
+            $announcement_count = mysqli_num_rows($count_announcement);
+            $notif_count2 = $notif_count + $announcement_count;
             $date_today = date('Y-m-d');
             ?>
             <?php
@@ -55,10 +58,10 @@
                     <a href="notifications.php">
                         <i class="fa fa-bell fa-lg">
                             <?php
-                            if ($notif_count == 0)
-                                echo '<span class="badge hide">' . $notif_count . '</span>';
+                            if ($notif_count2 == 0)
+                                echo '<span class="badge hide">' . $notif_count2 . '</span>';
                             else
-                                echo '<span class="badge">' . $notif_count . '</span>';
+                                echo '<span class="badge">' . $notif_count2 . '</span>';
                             ?>
                         </i>Notifications
                     </a>
@@ -82,84 +85,92 @@
                             <!-- <h2 class="text-left date-header">Today</h2> -->
                         </div>
                         <?php
-                        while ($a_result = mysqli_fetch_array($announcement)){
-                            if(($date_today >= $a_result['start_publish']) && ($date_today <= $a_result['end_publish'])){
-                                if($a_result['send_to'] == 'patient' || $a_result['send_to'] == 'all'){
-                                    echo '<div class="col-xs-12 col-md-8 col-md-offset-2">
-                                        <div class="panel panel-notif panel-danger">
-                                            <div class="panel-heading">'.date("F j, Y", strtotime($a_result['start_publish'])).' '.$a_result['subject'].'
-                                           </div>
-                                            <div class="panel-body">
-                                                '.$a_result['announcement_details'].'
+                        if($notif_count2 >=1){
+                            while ($a_result = mysqli_fetch_array($announcement)){
+                                if(($date_today >= $a_result['start_publish']) && ($date_today <= $a_result['end_publish'])){
+                                    if($a_result['send_to'] == 'patient' || $a_result['send_to'] == 'all'){
+                                        echo '<div class="col-xs-12 col-md-8 col-md-offset-2">
+                                            <div class="panel panel-notif panel-danger">
+                                                <div class="panel-heading">'.date("F j, Y", strtotime($a_result['start_publish'])).' '.$a_result['subject'].'
+                                               </div>
+                                                <div class="panel-body">
+                                                    '.$a_result['announcement_details'].'
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>';
-                                }
-                            }
-                        }
-                        while ($n_row = mysqli_fetch_array($n_result)) {
-                            if ($n_row['indicator'] == 'doctor') {
-                                if ($n_row['patient_id'] == $patient_id) {
-                                    $n_id = $n_row['legend_id'];
-                                    $n_did = $n_row['doctor_id'];
-                                    $notif_date = date("F j , Y", strtotime($n_row["notification_date"]));
-
-                                    $n_legend = mysqli_query($con, "SELECT * FROM notification_legend WHERE legend_id LIKE '$n_id'");
-                                    $n_color = mysqli_fetch_array($n_legend);
-
-                                    $d_result = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_id LIKE '$n_did'");
-                                    $doc = mysqli_fetch_array($d_result);
-
-                                    //$n_patient = mysqli_query($con, "SELECT * FROM patient WHERE patient_id LIKE '$n_did'" );
-                                    //$n_name =  mysqli_fetch_array($n_patient);
-
-                                    if ($n_color['color'] == 'red') {
-                                        echo "<div class='col-xs-12 col-md-8 col-md-offset-2'>
-                            <div class='panel panel-notif panel-danger'>
-                                <div class='panel-heading'><span class='hidden-xs hidden-sm'>Dr. " . $doc["doctor_name"] . "</span>" . $notif_date . "
-                                    <a href=\"close_notif.php?nid=$n_row[notification_id]&desc=$n_row[notification]\" title='Close'><i class='fa fa-remove delete-btn x-btn'></i></a>
-                                </div>
-                                <div class='panel-body'>
-                                    " . $n_row['notification'] . "<span class='visible-xs visible-sm notif-name'>&mdash; Dr. " . $doc['doctor_name'] . "</span>
-                                </div>
-                            </div>
-                        </div>";
-                                    } else if ($n_color['color'] == 'orange') {
-                                        echo "<div class='col-xs-12 col-md-8 col-md-offset-2'>
-                            <div class='panel panel-notif panel-warning'>
-                                <div class='panel-heading'><span class='hidden-xs hidden-sm'>Dr. " . $doc["doctor_name"] . "</span>" . $notif_date  . "
-                                    <a href=\"close_notif.php?nid=$n_row[notification_id]&desc=$n_row[notification]\" title='Close'><i class='fa fa-remove delete-btn x-btn'></i></a>
-                                </div>
-                                <div class='panel-body'>
-                                    " . $n_row['notification'] . "<span class='visible-xs visible-sm notif-name'>&mdash; Dr. " . $doc['doctor_name'] . "</span>
-                                </div>
-                            </div>
-                        </div>";
-                                    } else if ($n_color['color'] == 'green') {
-                                        echo "<div class='col-xs-12 col-md-8 col-md-offset-2'>
-                            <div class='panel panel-notif panel-success'>
-                                <div class='panel-heading'><span class='hidden-xs hidden-sm'>Dr. " . $doc["doctor_name"] . "</span>" . $notif_date  . "
-                                    <a href=\"close_notif.php?nid=$n_row[notification_id]&desc=$n_row[notification]\" title='Close'><i class='fa fa-remove delete-btn x-btn'></i></a>
-                                </div>
-                                <div class='panel-body'>
-                                    " . $n_row['notification'] . "<span class='visible-xs visible-sm notif-name'>&mdash; Dr. " . $doc['doctor_name'] . "</span>
-                                </div>
-                            </div>
-                        </div>";
-                                    } else if ($n_color['color'] == 'blue') {
-                                        echo "<div class='col-xs-12 col-md-8 col-md-offset-2'>
-                            <div class='panel panel-notif panel-info'>
-                                <div class='panel-heading'><span class='hidden-xs hidden-sm'>Dr. " . $doc["doctor_name"] . "</span>" . $notif_date  . "
-                                    <a href=\"close_notif.php?nid=$n_row[notification_id]&desc=$n_row[notification]\" title='Close'><i class='fa fa-remove delete-btn x-btn'></i></a>
-                                </div>
-                                <div class='panel-body'>
-                                    " . $n_row['notification'] . "<span class='visible-xs visible-sm notif-name'>&mdash; Dr. " . $doc['doctor_name'] . "</span>
-                                </div>
-                            </div>
-                        </div>";
+                                        </div>';
                                     }
                                 }
                             }
+
+                            while ($n_row = mysqli_fetch_array($n_result)) {
+                                if ($n_row['indicator'] == 'doctor') {
+                                    if ($n_row['patient_id'] == $patient_id) {
+                                        $n_id = $n_row['legend_id'];
+                                        $n_did = $n_row['doctor_id'];
+                                        $notif_date = date("F j , Y", strtotime($n_row["notification_date"]));
+
+                                        $n_legend = mysqli_query($con, "SELECT * FROM notification_legend WHERE legend_id LIKE '$n_id'");
+                                        $n_color = mysqli_fetch_array($n_legend);
+
+                                        $d_result = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_id LIKE '$n_did'");
+                                        $doc = mysqli_fetch_array($d_result);
+
+                                        //$n_patient = mysqli_query($con, "SELECT * FROM patient WHERE patient_id LIKE '$n_did'" );
+                                        //$n_name =  mysqli_fetch_array($n_patient);
+
+                                        if ($n_color['color'] == 'red') {
+                                            echo "<div class='col-xs-12 col-md-8 col-md-offset-2'>
+                                <div class='panel panel-notif panel-danger'>
+                                    <div class='panel-heading'><span class='hidden-xs hidden-sm'>Dr. " . $doc["doctor_name"] . "</span>" . $notif_date . "
+                                        <a href=\"close_notif.php?nid=$n_row[notification_id]&desc=$n_row[notification]\" title='Close'><i class='fa fa-remove delete-btn x-btn'></i></a>
+                                    </div>
+                                    <div class='panel-body'>
+                                        " . $n_row['notification'] . "<span class='visible-xs visible-sm notif-name'>&mdash; Dr. " . $doc['doctor_name'] . "</span>
+                                    </div>
+                                </div>
+                            </div>";
+                                        } else if ($n_color['color'] == 'orange') {
+                                            echo "<div class='col-xs-12 col-md-8 col-md-offset-2'>
+                                <div class='panel panel-notif panel-warning'>
+                                    <div class='panel-heading'><span class='hidden-xs hidden-sm'>Dr. " . $doc["doctor_name"] . "</span>" . $notif_date  . "
+                                        <a href=\"close_notif.php?nid=$n_row[notification_id]&desc=$n_row[notification]\" title='Close'><i class='fa fa-remove delete-btn x-btn'></i></a>
+                                    </div>
+                                    <div class='panel-body'>
+                                        " . $n_row['notification'] . "<span class='visible-xs visible-sm notif-name'>&mdash; Dr. " . $doc['doctor_name'] . "</span>
+                                    </div>
+                                </div>
+                            </div>";
+                                        } else if ($n_color['color'] == 'green') {
+                                            echo "<div class='col-xs-12 col-md-8 col-md-offset-2'>
+                                <div class='panel panel-notif panel-success'>
+                                    <div class='panel-heading'><span class='hidden-xs hidden-sm'>Dr. " . $doc["doctor_name"] . "</span>" . $notif_date  . "
+                                        <a href=\"close_notif.php?nid=$n_row[notification_id]&desc=$n_row[notification]\" title='Close'><i class='fa fa-remove delete-btn x-btn'></i></a>
+                                    </div>
+                                    <div class='panel-body'>
+                                        " . $n_row['notification'] . "<span class='visible-xs visible-sm notif-name'>&mdash; Dr. " . $doc['doctor_name'] . "</span>
+                                    </div>
+                                </div>
+                            </div>";
+                                        } else if ($n_color['color'] == 'blue') {
+                                            echo "<div class='col-xs-12 col-md-8 col-md-offset-2'>
+                                <div class='panel panel-notif panel-info'>
+                                    <div class='panel-heading'><span class='hidden-xs hidden-sm'>Dr. " . $doc["doctor_name"] . "</span>" . $notif_date  . "
+                                        <a href=\"close_notif.php?nid=$n_row[notification_id]&desc=$n_row[notification]\" title='Close'><i class='fa fa-remove delete-btn x-btn'></i></a>
+                                    </div>
+                                    <div class='panel-body'>
+                                        " . $n_row['notification'] . "<span class='visible-xs visible-sm notif-name'>&mdash; Dr. " . $doc['doctor_name'] . "</span>
+                                    </div>
+                                </div>
+                            </div>";
+                                        }
+                                    }
+                                }
+                            }
+                        }else{
+                            echo '<div class="col-xs-12 col-md-10 col-md-offset-1">
+                            <div class="alert alert-warning" role="alert">
+                            <strong>You have no notifications.</strong></div>
+                            </div>';
                         }
                         ?>
                     </div>
