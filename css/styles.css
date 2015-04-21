@@ -119,12 +119,19 @@ i.fa.fa-power-off,
 i.fa.fa-comment,
 i.fa.fa-hand-o-right,
 i.fa.fa-envelope,
-i.fa.fa-angle-double-right {
+i.fa.fa-angle-double-right,
+i.fa.fa-clock-o,
+i.fa.fa-calendar-o
+ {
     padding-right: 8px;
 }
 
 i.fa.fa-angle-double-right span {
     font-weight: 600;
+}
+
+i.fa.fa-calendar.d-picker {
+    padding: 0;
 }
 
 .hr-line {
@@ -219,7 +226,7 @@ nav > div > div > ul > li > a > i,
     .blue-btn,
     .red-btn {
         margin: 0 !important;
-        width: 15% !important;
+        width: 100% !important;
     }
 
     .docors-list-info li span {
@@ -942,7 +949,6 @@ a.btn.btn-block.appo.tooltip-bottom {
 .green-btn,
 .blue-btn,
 .red-btn {
-    width: 100% !important;
     margin-top: 10px !important;
     color: #fff !important;
     font-size: 12px !important;
@@ -1237,6 +1243,10 @@ a.btn.btn-block.appo.tooltip-bottom {
     border-radius: 50%;
 }
 
+.subscribeUnsubscribe {
+    width: 60% !important;
+}
+
 .patient-activity {
     padding-bottom: 25px;
     background: transparent;
@@ -1280,7 +1290,7 @@ a.btn.btn-block.appo.tooltip-bottom {
     font-weight: 600;
 }
 
-.d-info .profile-info {
+.d-info .text-black {
     color: #34495E;
 }
 
@@ -1306,6 +1316,9 @@ a.btn.btn-block.appo.tooltip-bottom {
 
 .email {
     text-transform: lowercase !important;
+}
+
+.d-status {
 }
 
 .doc-status {
@@ -1388,25 +1401,27 @@ a.btn.btn-block.appo.tooltip-bottom {
 
 .clinic-box p {
     color: #fff;
-    line-height: 18px;
-    text-transform: uppercase;
-    font-size: 12px;
+    line-height: 20px;
+    font-size: 13px;
     font-weight: 600;
+}
+
+.clinic-box i.fa.fa-calendar-o {
+    font-size: 14px !important;
 }
 
 .clinic-days,
 .clinic-times {
     margin: 0;
     padding: 0;
+    font-weight: 600;
 }
 .clinic-days {
-    font-size: 14px !important;
-    font-weight: 600;
+    font-size: 17px !important;
 }
 
 .clinic-times {
-    font-size: 20px !important;
-    font-weight: 600;
+    font-size: 14px !important;
 }
 
 .clinic-info {

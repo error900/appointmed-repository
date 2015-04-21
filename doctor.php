@@ -110,10 +110,10 @@
                                 }
                                 ?>.jpg">
                         </div>
-                        <div class="col-xs-12 col-md-3">
-                            <div class="s-info">
+                        <div class="col-xs-12 col-md-5">
+                            <div class="d-info">
                                 <ul>
-                                    <li><i class="fa fa-user-md"></i>Dr. <?php echo strtoupper($d_row['doctor_name']); ?></li>
+                                    <li><i class="fa fa-user-md"></i>Dr. <?php echo ($d_row['doctor_name']); ?></li>
                                     <li><i class="fa fa-medkit"></i><?php echo $d_row['specialization']; ?></li>
                                     <li class="email"><i class="fa fa-envelope"></i> <?php echo $d_row['email']; ?></li>
                                     <br>
@@ -126,9 +126,6 @@
                                 <ul>
                                     <li class="doc-status">The Doctor is: <span><?php echo($d_row['doctor_status']); ?></span></li>
                                 </ul>
-                            </div>  
-                        </div>
-                        <div class="col-xs-12 col-md-2 text-center">
                             <?php
                             $sql = mysqli_query($con, "SELECT * FROM subscribe WHERE patient_id LIKE '$patient_id' AND doctor_id LIKE '$doctor_id'") or die(mysqli_error());
 
@@ -136,16 +133,17 @@
                                 echo '<form action="subscribe.php" method="post" class="subs">';
                                 echo '<input type="hidden" name="doctor" value="' . $d_row["doctor_id"] . '">
                         <input type="hidden" name="patient" value="' . $row["patient_id"] . '">';
-                                echo '<input type="submit" class="btn btn-default red-btn btn-noborder" name="subs" value="Follow">';
+                                echo '<input type="submit" class="btn btn-default red-btn btn-noborder subscribeUnsubscribe" name="subs" value="Follow">';
                                 echo '</form> ';
                             } else {
                                 echo '<form action="unsubscribe.php" method="post" class="subs">';
                                 echo '<input type="hidden" name="doctor" value="' . $d_row["doctor_id"] . '">
                         <input type="hidden" name="patient" value="' . $row["patient_id"] . '">';
-                                echo '<input type="submit" class="btn btn-default red-btn btn-noborder" name="unsubs" value="Unfollow">';
+                                echo '<input type="submit" class="btn btn-default red-btn btn-noborder subscribeUnsubscribe" name="unsubs" value="Unfollow">';
                                 echo '</form> ';
                             }
                             ?>
+                            </div>  
                         </div>
                     </div>
                 </div>
@@ -159,8 +157,8 @@
                             echo '<div class="col-xs-12 col-md-3">';
                             echo '<div class="clinic-box">';
                             echo '<h2>' . $c_row['clinic_name'] . '<span>' . $count . '</span></h2>';
-                            echo '<p class="clinic-times">' . $c_row['time'] . '</p>';
-                            echo '<p class="clinic-days">' . $c_row['days'] . '</p>';
+                            echo '<p class="clinic-days"><i class="fa fa-calendar-o"></i>' . $c_row['days'] . '</p>';
+                            echo '<p class="clinic-times"><i class="fa fa-clock-o"></i>' . $c_row['time'] . '</p>';
                             echo '<p class="clinic-info"><i class="fa fa-location-arrow"></i>' . $c_row['clinic_location'] . '</p>';
                             echo '<p class="clinic-info"><i class="fa fa-phone"></i>' . $c_row['clinic_contact'] . '</p>';
                             echo ' <button type="button" class="btn btn-default clinic create-btn btn-noborder tooltip-bottom" data-tooltip="create appointment" data-toggle="modal" data-target=".bs-example-modal-sm" data-id="' . $c_row['clinic_id'] . '">

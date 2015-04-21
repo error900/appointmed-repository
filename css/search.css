@@ -8,7 +8,6 @@
 .divResult > li > a,
 .divResult > li > p {
     text-transform: uppercase;
-    text-transform: uppercase;
     font-size: 12px;
     font-weight: 600;
 }
@@ -16,7 +15,5 @@
 .divResult > li > p {
     padding: 0 0 0 30px;
     font-style: italic;
-    font-size: 12px;
-    font-weight: 600;
     text-transform: none;
 }

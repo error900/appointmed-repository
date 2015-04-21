@@ -100,7 +100,7 @@
                         </div>
                         <div class="col-xs-12 col-md-5">
                             <div class="d-info">
-                                <ul class="profile-info">
+                                <ul class="text-black">
                                     <li><i class="fa fa-user-md"></i>Dr. <?php echo strtoupper($doctor); ?></li>
                                     <li><i class="fa fa-medkit"></i><?php echo $specialization; ?></li>
                                     <li class="email"><i class="fa fa-envelope"></i><?php echo $email; ?></li>
@@ -109,10 +109,10 @@
                                 </ul>
                             </div>
                         </div>   
-                        <div>
+                        <div class="col-xs-12 col-md-3 text-center">
                             <div class="d-info">
                                 <ul>
-                                    <li class="profile-info">Status:<span><?php echo($d_row['doctor_status']); ?></span></li>
+                                    <li class="text-black">Status:<span><?php echo($d_row['doctor_status']); ?></span></li>
                                 </ul>
                             </div>  
                         </div>       
