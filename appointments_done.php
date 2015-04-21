@@ -86,20 +86,26 @@
                         </div>
                         <?php
                         $a_result = mysqli_query($con, "SELECT * FROM appointment WHERE patient_id LIKE '$patient_id' AND appointment_status = 'Completed' ORDER BY 5 DESC LIMIT 8") or die(mysqli_error());
+                        if(mysqli_num_rows($a_result)>=1){
+                            while ($d_row = mysqli_fetch_array($a_result)) {
+                                $app_id = $d_row['appointment_id'];
+                                $doctor = $d_row['doctor_id'];
+                                $date = date("F j , Y",strtotime($d_row['appoint_date']));
 
-                        while ($d_row = mysqli_fetch_array($a_result)) {
-                            $app_id = $d_row['appointment_id'];
-                            $doctor = $d_row['doctor_id'];
-                            $date = date("F j , Y",strtotime($d_row['appoint_date']));
-
-                            $d_result = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_id LIKE '$doctor'");
-                            $doc = mysqli_fetch_array($d_result);
-                            echo '<div class="col-xs-12 col-md-6 col-lg-3" id="' . $d_row['appointment_id'] . '">';
-                            echo "<div class='panel panel-default' id='asd'><div class='panel-heading appointment-date' >";
-                            echo $date;
-                            echo '<p class="appointment-dr-name">Dr. ' . $doc['doctor_name'] . '</p>';
-                            echo '<p class="appointment-specs">' . $doc['specialization'] . '</p></div></div>';
-                            echo '</div>';
+                                $d_result = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_id LIKE '$doctor'");
+                                $doc = mysqli_fetch_array($d_result);
+                                echo '<div class="col-xs-12 col-md-6 col-lg-3" id="' . $d_row['appointment_id'] . '">';
+                                echo "<div class='panel panel-default' id='asd'><div class='panel-heading appointment-date' >";
+                                echo $date;
+                                echo '<p class="appointment-dr-name">Dr. ' . $doc['doctor_name'] . '</p>';
+                                echo '<p class="appointment-specs">' . $doc['specialization'] . '</p></div></div>';
+                                echo '</div>';
+                            }
+                        }else{
+                            echo '<div class="col-xs-12 col-md-10 col-md-offset-1">
+                            <div class="alert alert-warning" role="alert">
+                            <strong>You currently have no finished appointments.</strong></div>
+                            </div>';
                         }
                         ?>
                     </div>

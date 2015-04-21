@@ -14,9 +14,10 @@ if (isset($_POST['submit'])) {
     $date = date('Y-m-d', strtotime($date));
     $date_today = date('Y-m-d');
 
-    $select_clinic = mysqli_query($con, "SELECT * FROM clinic_schedule WHERE clinic_id LIKE '$clinic_id'");
+    $select_clinic = mysqli_query($con, "SELECT * FROM clinic_schedule NATURAL JOIN clinic WHERE clinic_id LIKE '$clinic_id'");
     $select_clinic_rows = mysqli_fetch_array($select_clinic);
     $days = $select_clinic_rows['days'];
+    $cut_off_no = $select_clinic_rows['cut_off_no'];
 
     $limit_result = mysqli_query($con, "SELECT * FROM appointment WHERE doctor_id LIKE '$doctor_id' AND appoint_date LIKE '$date'");
     $limit_row = mysqli_num_rows($limit_result);
@@ -40,7 +41,7 @@ if (isset($_POST['submit'])) {
     if(!(in_array($check_date, $days))){
         echo '<script>alert("The clinic is not available at the selected day. Please change the date")</script>';
         echo "<script> location.replace('doctor.php?id=" . $doctor_id . "') </script>";
-    }else if ($limit_row >= 7) {
+    }else if ($limit_row >= $cut_off_no) {
         echo '<script>alert("Reached the maximum number of patients for the day. Please change the date")</script>';
         echo "<script> location.replace('doctor.php?id=" . $doctor_id . "') </script>";
     } else if ($single_count != 0) {
