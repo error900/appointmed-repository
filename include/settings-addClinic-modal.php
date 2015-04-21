@@ -19,7 +19,7 @@
                             <?php } ?>
                         </select>
                         <input type="hidden" value="<?php echo $doctor_id ?>" name="doctor_id">
-                        <input type="text" value="" id="clinic_id" name="clinic_id">
+                        <input type="hidden" value="" id="clinic_id" name="clinic_id">
 
                         <div class="hr-line"></div>
                             <input type="button" class="btn btn-default btn-noborder green-btn form-control" id="showsec" value="Add Secretary">
@@ -50,14 +50,21 @@
                 </div>
                 <div class="modal-body">
                     <div class="input-group">
-                        <input type="text" class="form-control" name="clinic_name" placeholder="Clinic Name"/>
-                        <input type="text" class="form-control" name="clinic_location" placeholder="Clinic Location"/>
-                        <input type="text" class="form-control" name="clinic_contact" placeholder="Clinic Contact"/>
-                        <input type="text" class="form-control" name="clinic_room" placeholder="Clinic Room"/>
-                        <input type="text" class="form-control" name="clinic_days" placeholder="Clinic Days (e.g. Mon/Tue/Fri)"/>
-                        <input type="text" class="form-control" name="clinic_time" placeholder="Clinic Time"/>
-                        <input type="text" value="<?php echo $doctor_id?>" name="doctor_id">
-                        <input type="text" value="" id="clin_id" name="clinic_id">
+                        <input type="text" class="form-control" name="clinic_name" placeholder="Clinic Name" required/>
+                        <input type="text" class="form-control" name="clinic_location" placeholder="Clinic Location" required/>
+                        <input type="text" class="form-control" name="clinic_contact" placeholder="Clinic Contact" required/>
+                        <input type="text" class="form-control" name="clinic_room" placeholder="Clinic Room" required/>
+                        <!-- <input type="text" class="form-control" name="clinic_days" placeholder="Clinic Days (e.g. Mon/Tue/Fri)"/> -->
+                        Clinic Days
+                        <input type="checkbox" value="Mon" name="days[]"><label>Mon</label>
+                        <input type="checkbox" value="Tue" name="days[]"><label>Tue</label>
+                        <input type="checkbox" value="Wed" name="days[]"><label>Wed</label>
+                        <input type="checkbox" value="Thu" name="days[]"><label>Thu</label>
+                        <input type="checkbox" value="Fri" name="days[]"><label>Fri</label>
+                        <input type="checkbox" value="Sat" name="days[]"><label>Sat</label>
+                        <input type="checkbox" value="Sun" name="days[]"><label>Sun</label>
+                        <input type="text" class="form-control" name="clinic_time" placeholder="Clinic Time" required/>
+                        <input type="hidden" value="<?php echo $doctor_id?>" name="doctor_id">
 
                     </div>
                 </div>

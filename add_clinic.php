@@ -5,10 +5,18 @@ if(isset($_POST['submit'])){
     $clinic_location = mysqli_real_escape_string($con, $_POST['clinic_location']);
     $clinic_contact = mysqli_real_escape_string($con, $_POST['clinic_contact']);
     $clinic_room = mysqli_real_escape_string($con, $_POST['clinic_room']);
-    $clinic_days = mysqli_real_escape_string($con, $_POST['clinic_days']);
+    $clinic_days = mysqli_real_escape_string($con, $_POST['days']);
     $clinic_time = mysqli_real_escape_string($con, $_POST['clinic_time']);
+    $doctor_id = $_POST['doctor_id'];
 
-    //clinic
+    if(isset($_POST['days'])){
+        $days = array();
+        foreach($_POST['days'] as $value){
+            $days[] = $value;
+        }
+        $clinic_days = implode("/", $days);
+    }
+
     if (!($clinic_name == '' && $clinic_location == '' && $clinic_days=='' && $clinic_room=='' && $clinic_time=='')) {
         $clinic_sql = "INSERT INTO clinic (clinic_location, clinic_name, clinic_contact, doctor_id, cut_off_no) 
 			VALUES ('$clinic_location', '$clinic_name', '$clinic_contact','$doctor_id', '50')";

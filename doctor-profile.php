@@ -9,15 +9,9 @@
     ?>
     <script type="text/javascript">
         $(document).ready(function() {
-            $(".appo").click(function() { // Click to only happen on announce links
+            $(".appo").click(function() { 
                 $("#clinic_id").val($(this).data('id'));
-            });
-            $(".clinic").click(function() { // Click to only happen on announce links
-                $("#clinic_id").val($(this).data('id'));
-            });            
-            $('#hideshow').on('click', function() {
-                $('#clinics').show();
-            });
+            });        
             $('#showsec').on('click', function() {
                 $('#secretary').show();
             });
@@ -46,9 +40,13 @@
     $doctor_id = $d_row['doctor_id'];
     $c_result = mysqli_query($con, "SELECT * FROM clinic WHERE doctor_id LIKE '$doctor_id'") or die(mysqli_error());
 
-    $count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE doctor_id LIKE '$doctor_id' AND indicator = 'Patient'") or die(mysqli_error());
+    $count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE doctor_id LIKE '$doctor_id' AND indicator = 'Patient'");
     $count_row = mysqli_fetch_array($count_result);
+    $count_announcement = mysqli_query($con, "SELECT * FROM announcement");
     $notif_count = $count_row['count'];
+    $announcement_count = mysqli_num_rows($count_announcement);
+    $notif_count2 = $notif_count + $announcement_count;
+    $date_today = date('Y-m-d');
     ?>
     <body class="e4e8e9-bg">
         <div class="container">        
@@ -69,10 +67,10 @@
                     <a href="doc_notifications.php">
                         <i class="fa fa-bell fa-lg">
                             <?php
-                            if ($notif_count == 0)
-                                echo '<span class="badge hide">' . $notif_count . '</span>';
+                            if ($notif_count2 == 0)
+                                echo '<span class="badge hide">' . $notif_count2 . '</span>';
                             else
-                                echo '<span class="badge">' . $notif_count . '</span>';
+                                echo '<span class="badge">' . $notif_count2 . '</span>';
                             ?>
                         </i>Notifications
                     </a>
@@ -144,8 +142,8 @@
                         <div class="col-xs-12 col-md-3">
                             <div>
                               <?php  
-                              echo '<button type="button" class="btn btn-default clinic btn-noborder add-clinic-btn tooltip-right" data-tooltip="Add Clinic" data-toggle="modal" data-target=".addClinic-modal-sm" data-id="'. $c_row['clinic_id'] .'">';
-                              ?>  <i class="fa fa-plus"></i></button>
+                              echo '<button type="button" class="btn btn-default appo btn-noborder add-clinic-btn tooltip-right" data-tooltip="Add Clinic" data-toggle="modal" data-target=".addClinic-modal-sm" data-c-id="'. $clinic .'"><i class="fa fa-plus"></i></button>';
+                              ?>  
                             </div>
                         </div>
                     </div>

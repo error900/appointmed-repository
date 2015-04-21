@@ -40,7 +40,11 @@
 
             $count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE patient_id LIKE '$patient_id' AND indicator = 'doctor'");
             $count_row = mysqli_fetch_array($count_result);
+            $count_announcement = mysqli_query($con, "SELECT * FROM announcement");
             $notif_count = $count_row['count'];
+            $announcement_count = mysqli_num_rows($count_announcement);
+            $notif_count2 = $notif_count + $announcement_count;
+            $date_today = date('Y-m-d');
             ?>
             <!-- navigation -->
             <?php
@@ -60,10 +64,10 @@
                     <a href="notifications.php">
                         <i class="fa fa-bell fa-lg">
                             <?php
-                            if ($notif_count == 0)
-                                echo '<span class="badge hide">' . $notif_count . '</span>';
+                            if ($notif_count2 == 0)
+                                echo '<span class="badge hide">' . $notif_count2 . '</span>';
                             else
-                                echo '<span class="badge">' . $notif_count . '</span>';
+                                echo '<span class="badge">' . $notif_count2 . '</span>';
                             ?>
                         </i>Notifications
                     </a>

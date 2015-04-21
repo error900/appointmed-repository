@@ -27,6 +27,7 @@ if (isset($_POST['submit'])) {
     }
 
     if(!($specialization == '')){
+        $specialization = ucfirst(strtolower($specialization));
         $new_specialization = $old_specs.'/'.$specialization;
         echo $new_specialization;
         $spec_sql = "UPDATE doctor SET specialization = '$new_specialization' WHERE doctor_id = '$doctor_id' ";
