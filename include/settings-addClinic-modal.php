@@ -19,17 +19,20 @@
                             <?php } ?>
                         </select>
                         <input type="hidden" value="<?php echo $doctor_id ?>" name="doctor_id">
-                        <input type="hidden" value="" id="clinic_id" name="clinic_id">
+                        <input type="text" value="" id="clinic_id" name="clinic_id">
 
                         <div class="hr-line"></div>
-                        <!-- Add Secretary -->
-                        <input type="submit" class="btn btn-default green-btn btn-noborder" name="" value="Add Secretary">
+                            <input type="button" class="btn btn-default btn-noborder green-btn form-control" id="showsec" value="Add Secretary">
+                            <div id="secretary" style="display:none">
+                                <input type="text" class="form-control" name="firstname" placeholder="First Name"/>
+                                <input type="text" class="form-control" name="lastname" placeholder="Last Name"/>
+                            </div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <?php
                     echo '<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>';
-                    echo "<button type=\"submit\" class=\"btn btn-primary\" name=\"submit\">Done</button>";
+                    echo "<button type=\"submit\" class=\"btn btn-primary\" name=\"submit\">Submit</button>";
                     ?>
                 </div>
             </form>
@@ -40,7 +43,7 @@
 <div class="modal fade addClinic-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm">
         <div class="modal-content addClinic">
-            <form class="form-input"  method="post" action="">
+            <form class="form-input"  method="post" action="add_clinic.php">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                     <h4 class="modal-title" id="myModalLabel">Add Clinic</h4>
@@ -53,6 +56,9 @@
                         <input type="text" class="form-control" name="clinic_room" placeholder="Clinic Room"/>
                         <input type="text" class="form-control" name="clinic_days" placeholder="Clinic Days (e.g. Mon/Tue/Fri)"/>
                         <input type="text" class="form-control" name="clinic_time" placeholder="Clinic Time"/>
+                        <input type="text" value="<?php echo $doctor_id?>" name="doctor_id">
+                        <input type="text" value="" id="clin_id" name="clinic_id">
+
                     </div>
                 </div>
                 <div class="modal-footer">

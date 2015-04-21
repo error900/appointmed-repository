@@ -12,6 +12,9 @@
             $(".appo").click(function() { // Click to only happen on announce links
                 $("#clinic_id").val($(this).data('id'));
             });
+            $(".clinic").click(function() { // Click to only happen on announce links
+                $("#clinic_id").val($(this).data('id'));
+            });            
             $('#hideshow').on('click', function() {
                 $('#clinics').show();
             });
@@ -140,8 +143,9 @@
                         ?>
                         <div class="col-xs-12 col-md-3">
                             <div>
-                                <button type="button" class="btn btn-default btn-noborder add-clinic-btn tooltip-right" data-tooltip="Add Clinic" data-toggle="modal" data-target=".addClinic-modal-sm" data-id="">
-                                <i class="fa fa-plus"></i></button>
+                              <?php  
+                              echo '<button type="button" class="btn btn-default clinic btn-noborder add-clinic-btn tooltip-right" data-tooltip="Add Clinic" data-toggle="modal" data-target=".addClinic-modal-sm" data-id="'. $c_row['clinic_id'] .'">';
+                              ?>  <i class="fa fa-plus"></i></button>
                             </div>
                         </div>
                     </div>

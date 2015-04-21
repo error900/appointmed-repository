@@ -91,34 +91,15 @@
                                     <option value="Out">Out</option>
                                     <option value="Break">Break</option>
                                 </select>
-                                <div class="col-xs-12 col-md-6 text-center">
+<!--                                 <div class="col-xs-12 col-md-6 text-center">
                                     <input type="button" class="btn btn-default btn-noborder green-btn form-control" id="hideshow" value="Add Clinic">
-                                </div>
+                                </div> -->
                                 <div class="col-xs-12 col-md-6 text-center">
                                     <input type="button" class="btn btn-default btn-noborder green-btn form-control" id="specs" value="Add Specialization">
                                 </div>
                                 <div id="specialization" style="display:none">
-                                    <p>Specialization</p>
                                     <input type="text" class="form-control" name="specialization" placeholder="Specialization"/>
                                 </div>
-                                <div id="clinics" style="display:none">
-                                    <p>Clinic</p>
-                                    <input type="text" class="form-control" name="clinic_name" placeholder="Clinic Name"/>
-                                    <input type="text" class="form-control" name="clinic_location" placeholder="Clinic Location"/>
-                                    <input type="text" class="form-control" name="clinic_contact" placeholder="Clinic Contact"/>
-                                    <input type="text" class="form-control" name="clinic_room" placeholder="Clinic Room"/>
-                                    <input type="text" class="form-control" name="clinic_days" placeholder="Clinic Days (e.g. Mon/Tue/Fri)"/>
-                                    <input type="text" class="form-control" name="clinic_time" placeholder="Clinic Time"/>
-                                    
-                                    <div class="col-xs-12 col-md-6 text-center">
-                                        <input type="button" class="btn btn-default btn-noborder green-btn form-control" id="showsec" value="Add Secretary">
-                                    </div>
-                                    <div id="secretary" style="display:none">
-                                        <input type="text" class="form-control" name="firstname" placeholder="First Name"/>
-                                        <input type="text" class="form-control" name="lastname" placeholder="Last Name"/>
-                                    </div>
-                                </div>
-                                <br/>
 
                                 <input class="btn btn-default btn-noborder black-btn" type="submit" value="Submit" name="submit"/>
                             </div>
