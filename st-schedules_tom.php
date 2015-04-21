@@ -56,7 +56,7 @@
     $count_row = mysqli_fetch_array($count_result);
     $notif_count = $count_row['count'];
     ?>
-    <body class="e4e8e9-bg">
+    <body class="secretary-bg">
         <div class="container">        
             <?php
             include 'include/st-nav-start.php';

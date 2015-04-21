@@ -53,7 +53,7 @@
     $count_row = mysqli_fetch_array($count_result);
     $notif_count = $count_row['count'];
     ?>
-    <body class="e4e8e9-bg">
+    <body class="secretary-bg">
         <div class="container">        
             <?php
             include 'include/st-nav-start.php';
@@ -89,7 +89,8 @@
                         <div class="col-md-12 col-md-4 col-md-offset-2 user-md">
                             <h1><?php echo $doctor_row['doctor_name']; ?></h1>
                             <p><?php echo $c_row['clinic_location']; ?></p>
-                            <p class="email"><?php echo $c_row['clinic_name'];; ?></p>
+                            <p><?php echo $c_row['clinic_name'];; ?></p>
+                            <p class="email"><?php echo $row['email']; ?></p>
                             <p><?php echo $c_row['clinic_contact']; ?></p>
                         </div>
                         <?php

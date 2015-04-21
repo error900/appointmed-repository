@@ -100,7 +100,7 @@
                                 <ul class="profile-info">
                                     <li><i class="fa fa-user-md"></i>Dr. <?php echo strtoupper($doctor); ?></li>
                                     <li><i class="fa fa-medkit"></i><?php echo $specialization; ?></li>
-                                    <li><i class="fa fa-envelope"></i><?php echo $email; ?></li>
+                                    <li class="email"><i class="fa fa-envelope"></i><?php echo $email; ?></li>
                                     <br>
                                     <li><i class="fa fa-h-square"></i>Benguet Laboratories</li>
                                 </ul>
