@@ -8,7 +8,8 @@ if(isset($_POST['submit'])){
 	$title = mysqli_real_escape_string($con, $_POST['title']);
 	$announcement = mysqli_real_escape_string($con, $_POST['message']);
 	$to_whom = $_POST['pick'];
-
+	$start_publish = date('Y-m-d', strtotime($start_publish));
+	$end_publish = date('Y-m-d', strtotime($end_publish));
 	if($date <= $start_publish && ($end_publish >= $start_publish)){
 		$update_announcement = "UPDATE announcement SET send_to = '$to_whom', date_created = '$date', 
 		start_publish = '$start_publish', end_publish = '$end_publish', subject = '$title', announcement_details = '$announcement'

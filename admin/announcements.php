@@ -5,8 +5,18 @@
     $title = "Admin | Announcements";
     include 'include/head.php';
     include '../connectdatabase.php';
+    include 'include/scripts.php';
     ?>
-
+    <script type="text/javascript">
+         $(function () {
+            $('#datetimepicker1').datetimepicker({
+                pickTime: false
+            });
+            $('#datetimepicker2').datetimepicker({
+                pickTime: false
+            });
+        })
+    </script>
     <?php
     session_start();
     $loggedIn = $_SESSION['loggedIn'];
@@ -42,14 +52,20 @@
                                 <div class="col-xs-12 col-md-3 start-date">
                                     <label for="inputDate">Start Date:</label>
                                 </div>
-                                <div class="col-xs-12 col-md-3 start-date">
-                                    <input type="date" class="form-control" name="publish" required/>
+                                 <div class="col-xs-12 col-md-3 start-date" id="datetimepicker1">
+                                    <span class="input-group date">
+                                        <i class="fa fa-calendar"></i>
+                                    </span>
+                                    <input type="text" class="form-control" name="publish" required/>
                                 </div>
                                 <div class="col-xs-12 col-md-3 end-date">
                                     <label for="inputDate">End Date:</label>
                                 </div>
-                                <div class="col-xs-12 col-md-3 end-date">
-                                    <input type="date" class="form-control" name="end" required/>
+                                <div class="col-xs-12 col-md-3 end-date" id="datetimepicker2">
+                                    <span class="input-group date">
+                                        <i class="fa fa-calendar"></i>
+                                    </span>
+                                    <input type="text" class="form-control" name="end" required/>
                                 </div>
                                 <textarea class="form-control" rows="8" name="message" placeholder="Message"></textarea>
                                 <select name="pick" required/>
@@ -67,7 +83,6 @@
             </div>
         </div>
         <?php
-        include 'include/scripts.php';
         include 'include/datepicker.php';
         ?>
         <script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>

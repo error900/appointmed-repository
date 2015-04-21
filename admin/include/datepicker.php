@@ -4,6 +4,8 @@
 <script type="text/javascript">
     $(function() {
         $('#datetimepicker1').datetimepicker();
+        format: 'dd-mm-yyyy';
+         $('#datetimepicker2').datetimepicker();
         format: 'dd-mm-yyyy'
     });
 </script>
