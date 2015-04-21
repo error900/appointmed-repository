@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <?php
-    $title = "Appointments";
+    $title = "Cancelled";
     include 'include/head.php';
     include 'connectdatabase.php';
     include 'include/scripts.php';

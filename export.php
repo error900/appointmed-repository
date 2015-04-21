@@ -13,6 +13,7 @@ if (isset($_POST['submit'])) {
 
     $file_ending = "xls";
     $filename = "Schedule_List:  " . $date . ".xls";
+    if(mysqli_num_rows($appoint_sql)>=1){
     echo '<table>';
     echo '<tr><td>Patient list for </td>';
     echo '<td>' . $date . '</td></tr>';
@@ -36,7 +37,10 @@ if (isset($_POST['submit'])) {
         //	fwrite($file, $patients);
     }
     echo '</table>';
-
+    }else{
+        echo '<table><tr>No appointments for today</tr></table>';
+    }  
+    if(mysqli_num_rows($appoint2_sql)){ 
      echo '<table>';
     echo '<tr><td>Patient list for </td>';
     echo '<td>' . $tomorrow . '</td></tr>';
@@ -60,7 +64,9 @@ if (isset($_POST['submit'])) {
         //  fwrite($file, $patients);
     }
     echo '</table>';
-  
+  }else{
+        echo '<table><tr>No appointments for tomorrow</tr></table>';
+    }  
 } else {
     header("location: schedules.php");
     die();

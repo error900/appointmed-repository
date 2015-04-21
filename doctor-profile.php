@@ -127,6 +127,8 @@
                             echo '<h2>' . $c_row['clinic_name'] . '<span>' . $count . '</span></h2>';
                             echo '<p><i class="fa fa-location-arrow"></i>' . $c_row['clinic_location'] . '</p>';
                             echo '<p><i class="fa fa-phone"></i>' . $c_row['clinic_contact'] . '</p>';
+                            echo ' <button type="button" class="btn btn-default clinic create-btn btn-noborder tooltip-bottom" data-tooltip="Set limit" data-toggle="modal" data-target=".bs-example-modal-sm" data-id="' . $c_row['clinic_id'] . '">
+                            <i class="fa fa-edit fa-lg"></i></button>';
                             echo '</div>';
                             echo '</div>';
                             $clinic = $c_row['clinic_id'];
@@ -141,15 +143,19 @@
                             <form class="form-input"  method="post" action="addappointment.php">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                    <h4 class="modal-title" id="myModalLabel">Create</h4>
+                                    <h4 class="modal-title" id="myModalLabel">Set limit</h4>
                                 </div>
                                 <div class="modal-body">
                                     <div class="form-group">
-                                        <label for="inputDate">Set Date</label>
-                                        <div class="input-group date" id="datetimepicker1">
-                                            <input type="date" class="form-control" name="date" required/>
-                                        </div>
-                                        <input type="hidden" value="<?php echo $patient ?>" name="patient_id">
+                                        <label for="inputDate">Number of patients you can accomodate for the clinic</label>
+                                    <select name="limit_no" class="form-control">
+                                        <option selected>Year
+                                            <?php for ($i = 50; $i >= 5; $i--) { ?>
+                                            <option value="<?php echo $i; ?>">
+                                                <?php echo $i; ?>
+                                            </option> 
+                                        <?php } ?>
+                                    </select>
                                         <input type="hidden" value="<?php echo $doctor_id ?>" name="doctor_id">
                                         <input type="hidden" value="" id="clinic_id" name="clinic_id">
                                     </div>
@@ -165,7 +171,7 @@
                     </div>
                 </div>
                 <?php
-                include 'include/refer-modal.php';
+             //   include 'include/refer-modal.php';
                 include 'include/edit-profile-modal.php';
                 ?>
                 <script type="text/javascript" src="js/scrolltop.js"></script>

@@ -45,7 +45,7 @@ if(mysqli_num_rows($a_result)>=1){
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span></button>
     To know more about schedules click
-    <strong> <a href="doc_help.php" class="alert-link">here</a></strong>.
+    <strong> <a href="sec_help.php" class="alert-link">here</a></strong>.
     </div>
     </div>';
 }

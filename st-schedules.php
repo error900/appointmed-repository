@@ -93,7 +93,7 @@
                             <p><?php echo $c_row['clinic_contact']; ?></p>
                         </div>
                         <?php
-                        include 'include/inqueue_served.php';
+                        include 'include/st-inqueue_served.php';
                         ?>
                     </div>
                 </div>

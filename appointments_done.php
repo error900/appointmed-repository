@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <?php
-    $title = "Appointments";
+    $title = "Finished";
     include 'include/head.php';
     include 'connectdatabase.php';
     include 'include/scripts.php';
@@ -82,7 +82,7 @@
                 <div class="container-fluid" id="appointments-user">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1 class="text-center row-header-fff">&mdash; Completed Appointments &mdash;</h1>
+                            <h1 class="text-center row-header-fff">&mdash; Finished Appointments &mdash;</h1>
                         </div>
                         <?php
                         $a_result = mysqli_query($con, "SELECT * FROM appointment WHERE patient_id LIKE '$patient_id' AND appointment_status = 'Completed' ORDER BY 5 DESC LIMIT 8") or die(mysqli_error());
