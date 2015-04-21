@@ -1435,6 +1435,26 @@ a.btn.btn-block.appo.tooltip-bottom {
     font-weight: 800;
 }
 
+.addClinic input.form-control {
+    margin-bottom: 8px;
+}
+
+.add-clinic-btn {
+    margin: 37px;
+    padding: 15px;
+    height: 52px;
+    width: 52px;
+    font-size: 26px;
+    line-height: 1;
+    background: #BDC3C7;
+    border-radius: 50%;
+}
+
+.add-clinic-btn:hover {
+    background: #95A5A6;
+    transition: 0.5s;
+}
+
 .hide {
     display: none;
 }

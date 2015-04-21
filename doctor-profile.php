@@ -131,55 +131,24 @@
                             echo '<p><i class="fa fa-location-arrow"></i>' . $c_row['clinic_location'] . '</p>';
                             echo '<p><i class="fa fa-phone"></i>' . $c_row['clinic_contact'] . '</p>';
                             echo '<p class="cutoff">Cut off limit: <i></i>' . $c_row['cut_off_no'] . '</p>';
-                            echo ' <button type="button" class="btn btn-default appo red-btn2 btn-noborder tooltip-bottom" data-tooltip="Settings" data-toggle="modal" data-target=".bs-example-modal-sm" data-id="' . $c_row['clinic_id'] . '">
+                            echo ' <button type="button" class="btn btn-default appo red-btn2 btn-noborder tooltip-bottom" data-tooltip="Settings" data-toggle="modal" data-target=".settings-modal-sm" data-id="' . $c_row['clinic_id'] . '">
                             <i class="fa fa-gears"></i></button>';
                             echo '</div>';
                             echo '</div>';
                             $clinic = $c_row['clinic_id'];
                         }
                         ?>
-                    </div>
-                </div>
-                <!-- Modal -->
-                <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-sm">
-                        <div class="modal-content">
-                            <form class="form-input"  method="post" action="cut_off.php">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                    <h4 class="modal-title" id="myModalLabel">Clinic Settings</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="form-group cutoff-number">
-                                        <h5>Number of patients you can accomodate for the clinic</h5>
-                                        <select name="cut_off_no" class="form-control">
-                                            <option selected>Number of patients
-                                                <?php for ($i = 50; $i >= 5; $i--) { ?>
-                                                <option value="<?php echo $i; ?>">
-                                                    <?php echo $i; ?>
-                                                </option> 
-                                            <?php } ?>
-                                        </select>
-                                        <input type="hidden" value="<?php echo $doctor_id ?>" name="doctor_id">
-                                        <input type="hidden" value="" id="clinic_id" name="clinic_id">
-
-                                        <div class="hr-line"></div>
-                                        <!-- Add Secretary -->
-                                        <input type="submit" class="btn btn-default green-btn btn-noborder" name="" value="Add Secretary">
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <?php
-                                    echo '<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>';
-                                    echo "<button type=\"submit\" class=\"btn btn-primary\" name=\"submit\">Done</button>";
-                                    ?>
-                                </div>
-                            </form>
+                        <div class="col-xs-12 col-md-3">
+                            <div>
+                                <button type="button" class="btn btn-default btn-noborder add-clinic-btn tooltip-right" data-tooltip="Add Clinic" data-toggle="modal" data-target=".addClinic-modal-sm" data-id="">
+                                <i class="fa fa-plus"></i></button>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <?php
                 include 'include/edit-profile-modal.php';
+                include 'include/settings-addClinic-modal.php';
                 ?>
                 <script type="text/javascript" src="js/scrolltop.js"></script>
         </div>
