@@ -130,9 +130,9 @@
                             echo '<h2>' . $c_row['clinic_name'] . '<span>' . $count . '</span></h2>';
                             echo '<p><i class="fa fa-location-arrow"></i>' . $c_row['clinic_location'] . '</p>';
                             echo '<p><i class="fa fa-phone"></i>' . $c_row['clinic_contact'] . '</p>';
-                            echo '<p>Cut off: <i></i>' . $c_row['cut_off_no'] . '</p>';
-                            echo ' <button type="button" class="btn btn-default appo create-btn btn-noborder tooltip-bottom" data-tooltip="Set patient limit" data-toggle="modal" data-target=".bs-example-modal-sm" data-id="' . $c_row['clinic_id'] . '">
-                            <i class="fa fa-edit fa-lg"></i></button>';
+                            echo '<p class="cutoff">Cut off limit: <i></i>' . $c_row['cut_off_no'] . '</p>';
+                            echo ' <button type="button" class="btn btn-default appo red-btn2 btn-noborder tooltip-bottom" data-tooltip="Settings" data-toggle="modal" data-target=".bs-example-modal-sm" data-id="' . $c_row['clinic_id'] . '">
+                            <i class="fa fa-gears"></i></button>';
                             echo '</div>';
                             echo '</div>';
                             $clinic = $c_row['clinic_id'];
@@ -147,27 +147,31 @@
                             <form class="form-input"  method="post" action="cut_off.php">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                    <h4 class="modal-title" id="myModalLabel">Set patient limit</h4>
+                                    <h4 class="modal-title" id="myModalLabel">Clinic Settings</h4>
                                 </div>
                                 <div class="modal-body">
-                                    <div class="form-group">
-                                        <label for="inputDate">Number of patients you can accomodate for the clinic</label>
-                                    <select name="cut_off_no" class="form-control">
-                                        <option selected>Number of patients
-                                            <?php for ($i = 50; $i >= 5; $i--) { ?>
-                                            <option value="<?php echo $i; ?>">
-                                                <?php echo $i; ?>
-                                            </option> 
-                                        <?php } ?>
-                                    </select>
+                                    <div class="form-group cutoff-number">
+                                        <h5>Number of patients you can accomodate for the clinic</h5>
+                                        <select name="cut_off_no" class="form-control">
+                                            <option selected>Number of patients
+                                                <?php for ($i = 50; $i >= 5; $i--) { ?>
+                                                <option value="<?php echo $i; ?>">
+                                                    <?php echo $i; ?>
+                                                </option> 
+                                            <?php } ?>
+                                        </select>
                                         <input type="hidden" value="<?php echo $doctor_id ?>" name="doctor_id">
                                         <input type="hidden" value="" id="clinic_id" name="clinic_id">
+
+                                        <div class="hr-line"></div>
+                                        <!-- Add Secretary -->
+                                        <input type="submit" class="btn btn-default green-btn btn-noborder" name="" value="Add Secretary">
                                     </div>
                                 </div>
                                 <div class="modal-footer">
                                     <?php
                                     echo '<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>';
-                                    echo "<button type=\"submit\" class=\"btn btn-primary\" name=\"submit\">Appoint Me</button>";
+                                    echo "<button type=\"submit\" class=\"btn btn-primary\" name=\"submit\">Done</button>";
                                     ?>
                                 </div>
                             </form>

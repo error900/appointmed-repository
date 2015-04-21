@@ -91,7 +91,7 @@
                                 onchange="this.setCustomValidity(this.validity.patternMismatch ? this.title : '');
                                 if (this.checkValidity())
                                 form1.password2.pattern = this.value;" required=""/>  
-                                <p class="passwordReq">Your password must contain uppercase and lowercase letters, and it should not be lower than 6 characters. </p>
+                                <p class="password-format">Your password must contain uppercase and lowercase letters, and it should not be lower than 6 characters. </p>
 
                                 <input type="password" class="form-control" title="Passwords do not match" name="password2" placeholder="Confirm New Password" 
                                 onchange=" this.setCustomValidity(this.validity.patternMismatch ? this.title : '');"

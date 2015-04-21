@@ -127,6 +127,13 @@ i.fa.fa-angle-double-right span {
     font-weight: 600;
 }
 
+.hr-line {
+    height: 1px;
+    margin: 12px 0 0 0;
+    overflow: hidden;
+    background-color: #BDC3C7;
+}
+
 .nav-parent > li.active > a,
 .nav-parent > li > a {
   padding-left: 20px;
@@ -725,7 +732,6 @@ a.btn.btn-block.appo.tooltip-bottom {
 }
 
 .dc-profile-sched-panel i {
-    padding-right: 5px;
 }
 
 
@@ -734,7 +740,8 @@ a.btn.btn-block.appo.tooltip-bottom {
 }
 
 .remarks select,
-.refer-modal select {
+.refer-modal select,
+.cutoff-number select {
     height: 38px;
 }
 
@@ -870,6 +877,13 @@ a.btn.btn-block.appo.tooltip-bottom {
     line-height: 14px;
 }
 
+.password-format {
+    color:#fff;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 14px;
+}
+
 .input-group {
     width: 100%;
 }
@@ -968,7 +982,8 @@ a.btn.btn-block.appo.tooltip-bottom {
     transition: 0.5s;
 }
 
-.btn-default.create-btn {
+.btn-default.create-btn,
+.btn-default.red-btn2 {
     z-index: 1;
     position: absolute;
     right: 30px;
@@ -981,10 +996,18 @@ a.btn.btn-block.appo.tooltip-bottom {
     transition: 0.5s;
 }
 
+.btn-default.red-btn2 {
+    background-color: #C0392B !important;
+}
+
+
+.btn-default.red-btn2:hover {
+    background-color: #E74C3C !important;
+}
+
 .btn-default.create-btn:hover {
     background-color: #C0392B;
 }
-
 .btn-noborder {
     border: 0;
     background: none;
@@ -1233,6 +1256,7 @@ a.btn.btn-block.appo.tooltip-bottom {
 .upload-photo .file-upload {
     font-size: 14px !important;
     margin: 10px 0;
+    padding: 4px;
 }
 
 .profile-data-edit {
@@ -1364,22 +1388,36 @@ a.btn.btn-block.appo.tooltip-bottom {
 
 .clinic-box p {
     color: #fff;
-    line-height: 14px;
+    line-height: 18px;
     text-transform: uppercase;
     font-size: 12px;
+    font-weight: 600;
 }
 
+.clinic-days,
+.clinic-times {
+    margin: 0;
+    padding: 0;
+}
 .clinic-days {
-    margin: 5px 0;
     font-size: 14px !important;
     font-weight: 600;
 }
 
 .clinic-times {
-    padding: 5px 0;
-    margin: 2px 0;
     font-size: 20px !important;
     font-weight: 600;
+}
+
+.clinic-info {
+    width: 80%;
+    margin: 0;
+}
+
+.cutoff {
+    margin: 6px 0 0 0;
+    font-size: 12px;
+    font-weight: 800;
 }
 
 .hide {
