@@ -221,6 +221,10 @@ nav > div > div > ul > li > a > i,
         margin: 0 10px;
     }
 
+    .add-clinic-btn {
+        margin: 36px 35px 36px 0 !important;
+    }
+
     .login-modal-btn,
     .green-btn,
     .blue-btn,
@@ -237,6 +241,11 @@ nav > div > div > ul > li > a > i,
     .d-info {
         padding-left: 70px !important;
     }
+
+    .days-checkbox {
+          margin: 0 -1px !important;
+    }
+
 }
 
 .dropdown-menu>li>a {
@@ -699,6 +708,10 @@ a.btn.btn-block.appo.tooltip-bottom {
 
 .served {
     background-color: #E67E22;
+}
+
+#secretary input {
+    margin: 10px 0;
 }
 
 #schedules-md {
@@ -1381,7 +1394,7 @@ a.btn.btn-block.appo.tooltip-bottom {
 
 .clinic-box {
     margin-bottom: 10px;
-    padding: 10px 15px;
+    padding: 10px 12px;
     background: #34495E;
     min-height: 120px;
 }
@@ -1404,6 +1417,7 @@ a.btn.btn-block.appo.tooltip-bottom {
     line-height: 20px;
     font-size: 13px;
     font-weight: 600;
+    text-transform: uppercase;
 }
 
 .clinic-box i.fa.fa-calendar-o {
@@ -1439,9 +1453,21 @@ a.btn.btn-block.appo.tooltip-bottom {
     margin-bottom: 8px;
 }
 
+.days-checkbox {
+    margin: 0 -10px;
+}
+
+.days-checkbox input {
+    margin-right: 2px;
+}
+
+.days-checkbox label {
+    font-size: 12px;
+    height: 20px;
+}
+
 .add-clinic-btn {
-    margin: 37px;
-    padding: 15px;
+    margin: 20px 0;
     height: 52px;
     width: 52px;
     font-size: 26px;

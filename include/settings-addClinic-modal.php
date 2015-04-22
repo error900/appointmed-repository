@@ -22,11 +22,11 @@
                         <input type="hidden" value="" id="clinic_id" name="clinic_id">
 
                         <div class="hr-line"></div>
-                            <input type="button" class="btn btn-default btn-noborder green-btn form-control" id="showsec" value="Add Secretary">
-                            <div id="secretary" style="display:none">
-                                <input type="text" class="form-control" name="firstname" placeholder="First Name"/>
-                                <input type="text" class="form-control" name="lastname" placeholder="Last Name"/>
-                            </div>
+                        <input type="button" class="btn btn-default btn-noborder green-btn form-control" id="showsec" value="Add Secretary">
+                        <div id="secretary" style="display:none">
+                            <input type="text" class="form-control" name="firstname" placeholder="First Name"/>
+                            <input type="text" class="form-control" name="lastname" placeholder="Last Name"/>
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -55,15 +55,23 @@
                         <input type="text" class="form-control" name="clinic_contact" placeholder="Clinic Contact" required/>
                         <input type="text" class="form-control" name="clinic_room" placeholder="Clinic Room" required/>
                         <!-- <input type="text" class="form-control" name="clinic_days" placeholder="Clinic Days (e.g. Mon/Tue/Fri)"/> -->
-                        Clinic Days
-                        <input type="checkbox" value="Mon" name="days[]"><label>Mon</label>
-                        <input type="checkbox" value="Tue" name="days[]"><label>Tue</label>
-                        <input type="checkbox" value="Wed" name="days[]"><label>Wed</label>
-                        <input type="checkbox" value="Thu" name="days[]"><label>Thu</label>
-                        <input type="checkbox" value="Fri" name="days[]"><label>Fri</label>
-                        <input type="checkbox" value="Sat" name="days[]"><label>Sat</label>
-                        <input type="checkbox" value="Sun" name="days[]"><label>Sun</label>
-                        <input type="text" class="form-control" name="clinic_time" placeholder="Clinic Time" required/>
+                        <p>Available Days</p>
+                        <div class="days-checkbox">
+                            <input type="checkbox" value="Mon" name="days[]"><label>Mon</label>
+                            <input type="checkbox" value="Tue" name="days[]"><label>Tue</label>
+                            <input type="checkbox" value="Wed" name="days[]"><label>Wed</label>
+                            <input type="checkbox" value="Thu" name="days[]"><label>Thu</label>
+                            <input type="checkbox" value="Fri" name="days[]"><label>Fri</label>
+                            <input type="checkbox" value="Sat" name="days[]"><label>Sat</label>
+                            <input type="checkbox" value="Sun" name="days[]"><label>Sun</label>
+                        </div>
+                        <p>Available times</p>
+                        <div class="col-xs-6">
+                            <input type="text" class="form-control" name="clinic_time" placeholder="From" required/>
+                        </div>
+                        <div class="col-xs-6">
+                            <input type="text" class="form-control" name="clinic_time" placeholder="To" required/>
+                        </div>
                         <input type="hidden" value="<?php echo $doctor_id?>" name="doctor_id">
 
                     </div>

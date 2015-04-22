@@ -140,7 +140,7 @@
                         }
                         ?>
                         <div class="col-xs-12 col-md-3">
-                            <div>
+                            <div class="col-xs-6 col-xs-offset-3 text-center">
                               <?php  
                               echo '<button type="button" class="btn btn-default appo btn-noborder add-clinic-btn tooltip-right" data-tooltip="Add Clinic" data-toggle="modal" data-target=".addClinic-modal-sm" data-c-id="'. $clinic .'"><i class="fa fa-plus"></i></button>';
                               ?>  

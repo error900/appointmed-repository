@@ -17,6 +17,17 @@
 
     $account_sql = mysqli_query($con, "SELECT * FROM account WHERE username <> 'Admin' ");
     //    $account_row = mysqli_fetch_array($account_sql);
+
+    // Pie Chart Data
+    $count_doctor_result = mysqli_query($con, "SELECT COUNT(account_type) AS doctor FROM `account` WHERE account_type like 'doctor'");
+    $doctor_row = mysqli_fetch_array($count_doctor_result);
+    $doctors = $doctor_row['doctor'];
+    $count_patient_result = mysqli_query($con, "SELECT COUNT(account_type) AS patient FROM `account` WHERE account_type like 'patient'");
+    $patient_row = mysqli_fetch_array($count_patient_result);
+    $patients = $patient_row['patient'];
+    $count_active_result = mysqli_query($con, "SELECT COUNT(account_status) AS active FROM `account` WHERE account_status like 'active'");
+    $active_row = mysqli_fetch_array($count_active_result);
+    $active_user = $active_row['active'];
     ?>
     <body class="e4e8e9-bg">
         <?php 
@@ -29,28 +40,17 @@
                 ?>
                 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
                     <h1 class="page-header">Dashboard</h1>
-                    <div id="chart_div" style="width: 900px; height: 500px;"></div>
 
                     <div class="row placeholders">
-                        <div class="col-xs-6 col-sm-3 placeholder">
-                            <img data-src="holder.js/128x128/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
-                            <h4>Total Number of Doctors</h4>
+                        <div class="col-xs-12 col-sm-3 placeholder">
+                            <div id="canvas-holder">
+                                <canvas id="chart-area1"/>
+                            </div>
+                            <h4>Current Data</h4>
                             <span class="text-muted">Date of last modified</span>
                         </div>
-                        <div class="col-xs-6 col-sm-3 placeholder">
-                            <img data-src="holder.js/128x128/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
-                            <h4>Total Number of Patients</h4>
-                            <span class="text-muted">Date of last modified</span>
-                        </div>
-                        <div class="col-xs-6 col-sm-3 placeholder">
-                            <img data-src="holder.js/128x128/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
-                            <h4>Total Number of Active Users</h4>
-                            <span class="text-muted">Date of last modified</span>
-                        </div>
-                        <div class="col-xs-6 col-sm-3 placeholder">
-                            <img data-src="holder.js/128x128/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
-                            <h4>Total Number of Inactive Users</h4>
-                            <span class="text-muted">Date of last modified</span>
+                        <div class="col-xs-12 col-sm-3 placeholder">
+
                         </div>
                     </div>
 
@@ -66,43 +66,51 @@
         include 'include/scrolltop.php';
         include 'include/scripts.php';
         ?>
+        <script type="text/javascript" src="js/chart.js"></script>
+        <script>
+            var doctorPatientPopulation = [
+                <?php
+                    
 
-        <script type="text/javascript" src="js/googlejsapi.js"></script>
-        <script type="text/javascript">
-          google.load("visualization", "1", {packages:["corechart"]});
-          google.setOnLoadCallback(drawChart);
-          function drawChart() {
-            // var data = google.visualization.arrayToDataTable([
-            //   ['Task', 'Hours per Day'],
-            //   <?php 
-            //       $stringResult;
-            //       $i = 0;
-            //       $sql = "SELECT patient_id FROM patient";
-            //       $results1 = $this->db->query($sql);
-            //       //for($i=0; $i<10; ++$i)
-            //       {
-            //       $stringResult .= "data[" .$i. "] = { label:" .$results['name'].", data: ". $results['quantity'] ."}";
-            //        $i++;
-            //      // foreach($data as $v){
-            //        // echo ",['{$name}'],{$count}]\r\n";
-            //         return $stringResult;
-            //       }
-            //   ?>
-            // ]);
-            var data = google.visualization.arrayToDataTable([
-                ['User', 'Population'],
-                ['Doctors', 11],
-                ['Patients', 2],
-                ['Commute', 2],
-                ['Watch TV', 2],
-                ['Sleep', 7]
-            ]);
-            var options = {
-              title: 'Pie Chart'
-            };
-            var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-            chart.draw(data, options);
-          }
-        </script>
+                        echo '{';
+                            echo 'value: ' . $doctors . ',';
+                            echo 'color: "#F7464A",';
+                            echo 'highlight: "#FF5A5E",';
+                            echo 'label: "Doctors"';
+                        echo '},';
+                        echo '{';
+                            echo 'value: ' . $patients . ',';
+                            echo 'color: "#46BFBD",';
+                            echo 'highlight: "#5AD3D1",';
+                            echo 'label: "Patient"';
+                        echo '},';
+                        echo '{';
+                            echo 'value: ' . $active_user . ',';
+                            echo 'color: "#FDB45C",';
+                            echo 'highlight: "#FFC870",';
+                            echo 'label: "Active Users"';
+                        echo '},';
+                        echo '{';
+                            echo 'value: 2,';
+                            echo 'color: "#949FB1",';
+                            echo 'highlight: "#A8B3C5",';
+                            echo 'label: "Doctors"';
+                        echo '},';
+                        echo '{';
+                            echo 'value: 2,';
+                            echo 'color: "#4D5360",';
+                            echo 'highlight: "#616774",';
+                            echo 'label: "Doctors"';
+                        echo '}';
+                    ?>
+
+                ];
+
+                window.onload = function(){
+                    var ctx = document.getElementById("chart-area1").getContext("2d");
+                    window.myDoughnut = new Chart(ctx).Doughnut(doctorPatientPopulation, {responsive : true});
+                };
+
+    </script>
     </body>
 </html>
