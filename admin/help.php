@@ -19,8 +19,17 @@
     //    $account_row = mysqli_fetch_array($account_sql);
     ?>
     <body class="e4e8e9-bg">
-        <?php 
-            include 'include/admin-nav.php';
+        <?php
+        include 'include/admin-nav-start.php';
+        ?>
+        <ul class="dropdown-menu" role="menu">
+            <li><a href="change_password.php">Change Password</a></li>
+            <li><a href="#">Help</a></li>
+            <li class="divider"></li>
+            <li><a href="logout.php"><i class="fa fa-power-off"></i>    logout</a></li>
+        </ul>
+        <?php
+        include 'include/admin-nav-end.php';
         ?>
         <div class="container-fluid">
             <div class="row">
@@ -28,55 +37,71 @@
                 include 'include/sidebar-navigation.php';
                 ?>
                  <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                    <img src="img/dashboard.JPG" alt="LoginPage" style="width:650px;height:350px" align="left"> 
                     <h4>Signing in as an Admin</h4>
+
                             <p>
-                                
                                 There are 2 types of users that are able to login in the Admin login. It is the doctor and the Admin. This time, you are signed in as an admin.
+                                                               
                                 </br>
-                                
-                                Once we are logged in, we will be redirected to the dashboard of the Admin UI.
                                 </br>
-                               
-                                In the left part o the Admin UI, you can see the menu of the Admin Page namely General, User Management, and Registrations. 
+                                Once we are logged in, we will be redirected to the dashboard of the Admin UI. In the left part o the Admin UI, you can see the menu of the Admin Page namely General, User Management, and Registrations. 
                                 </br>
                             </p>
-                             </br>
+                            </br>
+                            </br>
                             <h4>GENERAL TAB MENU</h4>
                             <h4>Dashboard</h4>
-                            The dashboard is a submenu of the “General” tab menu. This shows you the overview of all the users currently registered in the system.
-                            The overview contains the User ID, Username, Name, E-mail and the account status of the user.  
+                            <img src="img/notification.JPG" alt="LoginPage" style="width:600px;height:250px" align="right"> 
+                            Underthe General Tab Menuis the "Dashboard" This shows you the overview of all the users currently registered in the system.
+                            The overview contains the User ID, Username, Name, E-mail and the account status of the user. 
                             </br>
-
-                            <h4>Announcements</h4>
-                            The Announcements tab is where the Admin will be posting positing announcements about events, or anything that needs to be announced.
-                            </br>
-                          
                             <h4>Notifications</h4>
                             Next is the Notification. Here, the admin will be notified if a user has registered or has signed up in the system.  
                             </br>
+                            </br>
 
-                            <h4>Import and Export</h4>
-                            In the Import menu, the Admin is able to import lists of users in Excel format. 
-                            In the Export menu, the Admin is able to export the list of users currently registered in the system. 
+                            <h4>ANNOUNCEMENTS</h4>
+                            <h4>_____</h4>
+                            The Announcements tab is where the Admin will be posting positing announcements about events, or anything that needs to be announced. this can be done in the menu
+                            
                             </br>
                             </br>
-                            <h4>USER MANAGEMENT TAB MENU </h4>
+
+                            <h4>USER MANAGEMENT </h4>
                             <h4>Add Doctor</h4>
-                            First in the submenu of USER MANAGEMENT is the Add Doctor Menu. 
+                            In the USER MANAGEMENT menu is the Add Doctor . 
                             The Admin is the one in charge of creating an account or adding a doctor to the system database. 
                             After Filling up the all text fields and selecting the status of the Doctor, click the SUBMIT button to finalize and add the doctor.
                             </br>
-
-                            <h4>Remove User</h4>
+                            <img src="img/deactivateUsers.JPG" alt="LoginPage" style="width:600px;height:250px" align="right"> 
+                            <h4>Deactivate Users</h4>
                             The list of active accounts in the system can be seen.  
                             In the right part of the Remove User menu are check boxes. The Admin will activate the check box of the account that will be marked as inactive.
-                            After selecting all accounts to be marked inactive, at the left top part of the page, is the INACTIVE button. Upon clicking the page, all selected accounts below will be marked inactive.
+                            After selecting all accounts to be marked inactive, at the left top part of the page, is the DEACTIVATE button. Upon clicking the page, all selected accounts below will be marked inactive.
                             </br>
 
-                            <h4>Inactive Users</h4>
-                            The list of inactive accounts in the system can be seen.  
+                            <h4>Idle Users</h4>
+                            The list of inactive accounts in the system can be seen. Users not active for over six monthes can be notified that they have not been active.
                             </br>
-                            
+                            </br>
+
+                            <h4>REGISTRATIONS</h4>
+                            <h4>Pending</h4>
+                            Pending accounts for confirmation are listed here. Pending accounts are categorized if it is a patient account or doctor.
+                            </br>
+                            </br>
+
+                            <h4>CURRENT DATABASE</h4>
+                            <h4>Import</h4>
+                            Tha admin may import a list of doctors to the database. Thiacan be used if there is an exesting databse of doctors.
+                            </br>
+                            <h4>Import</h4>
+                           The Admin ma also export the current database and it will be saved as an excel file.
+                            </br>
+                            </br>
+
+                           
                     </div>     
                 </div>
             </div>
