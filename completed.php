@@ -36,9 +36,8 @@
         $email = $row['email'];
         $doctor_id = $row['doctor_id'];
         $specialization = $row['specialization'];
-        $c_result = mysqli_query($con, "SELECT * FROM clinic WHERE doctor_id LIKE '$doctor_id'") or die(mysqli_error());
-        $c_row = mysqli_fetch_array($c_result);
-        $a_result = mysqli_query($con, "SELECT * FROM appointment NATURAL JOIN queue_notif WHERE doctor_id LIKE '$doctor_id' AND appointment_status = 'Completed' ORDER BY appointment_id") or die(mysqli_error());
+
+        $a_result = mysqli_query($con, "SELECT * FROM appointment NATURAL JOIN queue_notif NATURAL JOIN clinic WHERE doctor_id LIKE '$doctor_id' AND appointment_status = 'Completed' ORDER BY appointment_id") or die(mysqli_error());
         $date_today = date('Y-m-d');
         $count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE doctor_id LIKE '$doctor_id' AND indicator = 'Patient'");
         $count_row = mysqli_fetch_array($count_result);
@@ -103,7 +102,7 @@
                             echo '</div>';
                             echo' <div class="panel-body">';
                             echo '<p>' . $pat['patient_contact'] . '</p>';
-                            echo '<p>' . $c_row['clinic_location'] . '</p>';
+                            echo '<p>' . $row['clinic_location'] . '</p>';
                             echo '<p> Queue Number: ' . $row['queue_id'] . '</p>';
                             echo '</div>
                      </div>

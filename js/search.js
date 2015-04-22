@@ -19,9 +19,8 @@ $(function(){
      } return false;
     });
 
+    // $('#inputSearch').click(function(){
+    //     jQuery(".divResult").fadeIn(100);
 
-    $('#inputSearch').click(function(){
-        jQuery(".divResult").fadeIn(100);
-
-    });
+    // });
 });

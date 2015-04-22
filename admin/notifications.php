@@ -39,49 +39,49 @@
                         $n_color = mysqli_fetch_array($n_legend);
 
                         if ($n_color['color'] == 'red') {
-                            echo '<div class="col-xs-12 col-md-8 col-md-offset-2">
-                                <div class="panel panel-notif panel-danger">
-                                    <div class="panel-heading">' . $n_row['notification_date'] . '
-                                        <a href="#" title="cancel"><i class="fa fa-remove delete-btn x-btn"></i></a>
+                            echo "<div class='col-xs-12 col-md-8 col-md-offset-2'>
+                                <div class='panel panel-notif panel-danger'>
+                                    <div class='panel-heading'>" . $n_row['notification_date'] . "
+                                       <a href=\"close_notif.php?nid=$n_row[notification_id]&desc=$n_row[notification]\" title='Close'><i class='fa fa-remove delete-btn x-btn'></i></i></a>
                                     </div>
-                                    <div class="panel-body">
-                                        ' . $n_row['notification'] . '
+                                    <div class='panel-body'>
+                                        " . $n_row['notification'] . "
                                     </div>
                                 </div>
-                            </div>';
+                            </div>";
                         } else if ($n_color['color'] == 'orange') {
-                            echo '<div class="col-xs-12 col-md-8 col-md-offset-2">
-                                <div class="panel panel-notif panel-warning">
-                                    <div class="panel-heading">' . $n_row['notification_date'] . '
-                                        <a href="#" title="cancel"><i class="fa fa-remove delete-btn x-btn"></i></a>
+                            echo "<div class='col-xs-12 col-md-8 col-md-offset-2'>
+                                <div class='panel panel-notif panel-warning'>
+                                    <div class='panel-heading'>" . $n_row['notification_date'] . "
+                                       <a href=\"close_notif.php?nid=$n_row[notification_id]&desc=$n_row[notification]\" title='Close'><i class='fa fa-remove delete-btn x-btn'></i></i></a>
                                     </div>
-                                    <div class="panel-body">
-                                        ' . $n_row['notification'] . '
+                                    <div class='panel-body'>
+                                        " . $n_row['notification'] . "
                                     </div>
                                 </div>
-                            </div>';
+                            </div>";
                         } else if ($n_color['color'] == 'green') {
-                            echo '<div class="col-xs-12 col-md-8 col-md-offset-2">
-                                <div class="panel panel-notif panel-success">
-                                    <div class="panel-heading">' . $n_row['notification_date'] . '
-                                        <a href="#" title="cancel"><i class="fa fa-remove delete-btn x-btn"></i></a>
+                            echo "<div class='col-xs-12 col-md-8 col-md-offset-2'>
+                                <div class='panel panel-notif panel-success'>
+                                    <div class='panel-heading'>" . $n_row['notification_date'] . "
+                                       <a href=\"close_notif.php?nid=$n_row[notification_id]&desc=$n_row[notification]\" title='Close'><i class='fa fa-remove delete-btn x-btn'></i></i></a>
                                     </div>
-                                    <div class="panel-body">
-                                        ' . $n_row['notification'] . '
+                                    <div class='panel-body'>
+                                        " . $n_row['notification'] . "
                                     </div>
                                 </div>
-                            </div>';
+                            </div>";
                         } else if ($n_color['color'] == 'blue') {
-                            echo '<div class="col-xs-12 col-md-8 col-md-offset-2">
-                                <div class="panel panel-notif panel-info">
-                                    <div class="panel-heading">' . $n_row['notification_date'] . '
-                                        <a href="#" title="cancel"><i class="fa fa-remove delete-btn xbtn"></i></a>
+                            echo "<div class='col-xs-12 col-md-8 col-md-offset-2'>
+                                <div class='panel panel-notif panel-info'>
+                                    <div class='panel-heading'>" . $n_row['notification_date'] . "
+                                       <a href=\"close_notif.php?nid=$n_row[notification_id]&desc=$n_row[notification]\" title='Close'><i class='fa fa-remove delete-btn x-btn'></i></i></a>
                                     </div>
-                                    <div class="panel-body">
-                                        ' . $n_row['notification'] . '
+                                    <div class='panel-body'>
+                                        " . $n_row['notification'] . "
                                     </div>
                                 </div>
-                            </div>';
+                            </div>";
                         }
                     }
                 }

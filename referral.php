@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
     $rd_row = mysqli_fetch_array($rd_result);
 
     //patient notification
-    $message="You have been referred by Doctor ".$d_row['doctor_name']." to <a href=\"doctor.php?id=".$referred_id."\">Doctor ".$rd_row['doctor_name']."</a>";
+    $message="You have been referred by Dr. ".$d_row['doctor_name']." to <strong><a href=\"doctor.php?id=".$referred_id."\">Dr. ".$rd_row['doctor_name']."</a></strong>";
     $n_id="n1002";
     $indicator="doctor";
     $notif_patient = "INSERT INTO notification (indicator, doctor_id, patient_id, legend_id, notification_date, notification) 
@@ -34,7 +34,7 @@ if (isset($_POST['submit'])) {
     //doctor notification end
 
    $delete_appointment = "DELETE FROM appointment WHERE appointment_id = '$appointment_id'";
-    $sql = "INSERT INTO referpatient (patient_id, original_doctor, substitute_doctor) VALUES('$patient_id','$doctor_id', '$referred_id')";
+    $sql = "INSERT INTO refer_patient (patient_id, original_doctor, substitute_doctor) VALUES('$patient_id','$doctor_id', '$referred_id')";
 
     if (!(mysqli_query($con, $delete_appointment)) || !mysqli_query($con, $sql)) {
         die('Error: ' . mysqli_error($con));
