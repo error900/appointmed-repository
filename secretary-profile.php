@@ -74,7 +74,7 @@
                         </div>
                         <div class="col-xs-12 col-md-5">
                             <div class="d-info">
-                                <ul class="profile-info">
+                                <ul class="text-black">
                                     <li><i class="fa fa-user-md"></i><?php echo strtoupper($row['secretary_name']); ?></li>
                                     <li><i class="fa fa-medkit"></i>Dr. <?php echo $doctor_row['doctor_name']; ?></li>
                                     <br>

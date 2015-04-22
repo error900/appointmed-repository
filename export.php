@@ -4,12 +4,12 @@ if (isset($_POST['submit'])) {
     include 'connectdatabase.php';
     $date = date('Y-m-d');
     $tomorrow = date("Y-m-d", time() + 86400);
-    $appoint_sql = mysqli_query($con, "SELECT patient_id, appointment_id FROM appointment 
+    $appoint_sql = mysqli_query($con, "SELECT * FROM appointment NATURAL JOIN queue_notif 
 		WHERE doctor_id = '$doctor_id' AND appointment_status = 'Inqueue' AND appoint_date = '$date'
-		ORDER BY appointment_id");
-    $appoint2_sql = mysqli_query($con, "SELECT patient_id, appointment_id FROM appointment 
+		ORDER BY 8 ASC, 1 ASC");
+    $appoint2_sql = mysqli_query($con, "SELECT * FROM appointment NATURAL JOIN queue_notif 
         WHERE doctor_id = '$doctor_id' AND appointment_status = 'Inqueue' AND appoint_date = '$tomorrow'
-        ORDER BY appointment_id");
+        ORDER BY 8 ASC, 1 ASC");
 
     $file_ending = "xls";
     $filename = "Schedule_List:  " . $date . ".xls";
@@ -18,7 +18,7 @@ if (isset($_POST['submit'])) {
     echo '<tr><td>Patient list for </td>';
     echo '<td>' . $date . '</td></tr>';
     echo '<tr>';
-    echo '<th>Appointment ID</th>';
+    echo '<th>Queue No.</th>';
     echo '<th>Patient Name</th>';
     echo '<th>Patient Contact</th>';
     echo '</tr>';
@@ -29,7 +29,7 @@ if (isset($_POST['submit'])) {
         $patient_sql = mysqli_query($con, "SELECT * FROM patient WHERE patient_id = '$patient_id'");
         $pat_row = mysqli_fetch_array($patient_sql);
         echo '<tr>';
-        echo '<td>' . $app_row['appointment_id'] . '</td>';
+        echo '<td>' . $app_row['queue_id'] . '</td>';
         echo '<td>' . $pat_row['patient_name'] . '</td>';
         echo '<td>' . $pat_row['patient_contact'] . '</td>';
         echo '</tr>';
@@ -45,7 +45,7 @@ if (isset($_POST['submit'])) {
     echo '<tr><td>Patient list for </td>';
     echo '<td>' . $tomorrow . '</td></tr>';
     echo '<tr>';
-    echo '<th>Appointment ID</th>';
+    echo '<th>Queue No.</th>';
     echo '<th>Patient Name</th>';
     echo '<th>Patient Contact</th>';
     echo '</tr>';
@@ -56,7 +56,7 @@ if (isset($_POST['submit'])) {
         $patient_sql = mysqli_query($con, "SELECT * FROM patient WHERE patient_id = '$patient_id'");
         $pat_row = mysqli_fetch_array($patient_sql);
         echo '<tr>';
-        echo '<td>' . $app2_row['appointment_id'] . '</td>';
+        echo '<td>' . $app2_row['queue_id'] . '</td>';
         echo '<td>' . $pat_row['patient_name'] . '</td>';
         echo '<td>' . $pat_row['patient_contact'] . '</td>';
         echo '</tr>';
