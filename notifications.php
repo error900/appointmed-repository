@@ -24,7 +24,7 @@
             $patient_n = $row['patient_name'];
             $p_result = mysqli_query($con, "SELECT * FROM appointment WHERE patient_id LIKE '$patient_id'");
             $p_row = mysqli_fetch_array($p_result);
-
+            $date_today = date('Y-m-d');            
             //announcement
             $announcement = mysqli_query($con,"SELECT * FROM announcement ORDER BY 4 asc");
             //$doctor = $p_row['doctor_id'];
@@ -35,11 +35,10 @@
 
             $count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE patient_id LIKE '$patient_id' AND indicator = 'doctor'");
             $count_row = mysqli_fetch_array($count_result);
-            $count_announcement = mysqli_query($con, "SELECT * FROM announcement");
             $notif_count = $count_row['count'];
             $announcement_count = mysqli_num_rows($count_announcement);
             $notif_count2 = $notif_count + $announcement_count;
-            $date_today = date('Y-m-d');
+
             ?>
             <?php
             include 'include/pt-nav-start.php';
