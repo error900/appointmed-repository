@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <?php
-    $title = "Admin | Dashboard";
+    $title = "Admin | Inactive Users";
     include 'include/head.php';
     include '../connectdatabase.php';
     ?>
