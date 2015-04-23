@@ -39,6 +39,7 @@
     $email = $d_row['email'];
     $doctor_id = $d_row['doctor_id'];
     $c_result = mysqli_query($con, "SELECT * FROM clinic WHERE doctor_id LIKE '$doctor_id'") or die(mysqli_error());
+
     $date_today = date('Y-m-d');
     $count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE doctor_id LIKE '$doctor_id' AND indicator = 'Patient'");
     $count_row = mysqli_fetch_array($count_result);
@@ -124,18 +125,32 @@
                         <?php
                         $count = 0;
                         while ($c_row = mysqli_fetch_array($c_result)) {
+                            $clinic_id = $c_row['clinic_id'];
+                            $sec = mysqli_query($con, "SELECT secretary_id FROM clinic_sec WHERE clinic_id LIKE '$clinic_id' ");
 
-                            $count++;
-                            echo '<div class="col-xs-12 col-md-3">';
-                            echo '<div class="clinic-box dc-profile-sched-panel">';
-                            echo '<h2>' . $c_row['clinic_name'] . '<span>' . $count . '</span></h2>';
-                            echo '<p><i class="fa fa-location-arrow"></i>' . $c_row['clinic_location'] . '</p>';
-                            echo '<p><i class="fa fa-phone"></i>' . $c_row['clinic_contact'] . '</p>';
-                            echo '<p class="cutoff">Cut off limit: <i></i>' . $c_row['cut_off_no'] . '</p>';
+                                $count++;
+                                echo '<div class="col-xs-12 col-md-3">';
+                                echo '<div class="clinic-box dc-profile-sched-panel">';
+                                echo '<h2>' . $c_row['clinic_name'] . '<span>' . $count . '</span></h2>';
+                                echo '<p><i class="fa fa-location-arrow"></i>' . $c_row['clinic_location'] . '</p>';
+                                echo '<p><i class="fa fa-phone"></i>' . $c_row['clinic_contact'] . '</p>';
+                                echo '<p class="cutoff">Cut off limit: <i></i>' . $c_row['cut_off_no'] . '</p>';
+
+                                while($clinicsec = mysqli_fetch_array($sec)){
+                                    $secretary_id = $clinicsec['secretary_id'];
+                                    $clinic = mysqli_query($con, "SELECT * FROM secretary WHERE secretary_id LIKE '$secretary_id'");
+                                    $secretary = mysqli_fetch_array($clinic);
+
+                                    if(mysqli_num_rows($clinic)>=1){
+                                        echo $secretary['secretary_name']."<br/>";
+                                    }
+                                }
+
                             echo ' <button type="button" class="btn btn-default appo red-btn2 btn-noborder tooltip-bottom" data-tooltip="Settings" data-toggle="modal" data-target=".settings-modal-sm" data-id="' . $c_row['clinic_id'] . '">
                             <i class="fa fa-gears"></i></button>';
                             echo '</div>';
                             echo '</div>';
+                           
                             $clinic = $c_row['clinic_id'];
                         }
                         ?>

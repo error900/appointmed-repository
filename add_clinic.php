@@ -6,7 +6,10 @@ if(isset($_POST['submit'])){
     $clinic_contact = mysqli_real_escape_string($con, $_POST['clinic_contact']);
     $clinic_room = mysqli_real_escape_string($con, $_POST['clinic_room']);
     $clinic_days = mysqli_real_escape_string($con, $_POST['days']);
-    $clinic_time = mysqli_real_escape_string($con, $_POST['clinic_time']);
+    $from = mysqli_real_escape_string($con, $_POST['clinic_from']);
+    $to = mysqli_real_escape_string($con, $_POST['clinic_to']);
+    $clinic_time = $from ."-".$to;
+    // $clinic_time = mysqli_real_escape_string($con, $_POST['clinic_time']);
     $doctor_id = $_POST['doctor_id'];
 
     if(isset($_POST['days'])){

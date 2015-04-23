@@ -67,10 +67,10 @@
                         </div>
                         <p>Available times</p>
                         <div class="col-xs-6">
-                            <input type="text" class="form-control" name="clinic_time" placeholder="From" required/>
+                            <input type="text" class="form-control" name="clinic_from" placeholder="From" required/>
                         </div>
                         <div class="col-xs-6">
-                            <input type="text" class="form-control" name="clinic_time" placeholder="To" required/>
+                            <input type="text" class="form-control" name="clinic_to" placeholder="To" required/>
                         </div>
                         <input type="hidden" value="<?php echo $doctor_id?>" name="doctor_id">
 

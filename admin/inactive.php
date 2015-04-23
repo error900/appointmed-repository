@@ -52,6 +52,7 @@
                         <th>ID</th>
                         <th>Username</th>
                         <th>Name</th>
+                        <th>Last Logged In</th>
                         <th><input type="checkbox" value="Check All" id="checkallA" onClick="checkAll(form1)"></th>
                     </tr>
                 </thead>
@@ -61,7 +62,7 @@
                         $last = explode('-',$row['last_logged_in']);
                         $diff = (date("md", 
                         date("U", mktime(0, 0, 0, $last[1], $last[2], $last[0]))) > date("md") ? ((date("Y") - $last[0]) - 1) : (date("Y") - $last[0]));
-                        if($diff >= 1){
+                        if($diff >= 1 && ($last[0]!=0000)){
                             $username = $row['username'];
                             $result = mysqli_query($con, "SELECT patient_id, patient_name FROM patient WHERE username LIKE '$username' ");
                             $account = mysqli_fetch_array($result);
@@ -69,14 +70,9 @@
                             echo '<td>' . $account['patient_id'] . '</td>';
                             echo '<td>' . $row['username'] . '</td>';
                             echo '<td>' . $account['patient_name'] . '</td>';
+                            echo '<td>' . $row['last_logged_in'] . '</td>';
                             echo "<td><input type='checkbox' name='select[]' id='select' value='$row[username]'></td>";
                             echo '</tr>';
-                        }else{
-                           echo '<div class="alert alert-info alert-dismissible" role="alert">
-                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                          <span aria-hidden="true">&times;</span></button>
-                          There are no pending <strong>patient registrations</strong>.
-                        </div>'; 
                         }
                     }
                     echo '<input type="submit" class="btn btn-default red-btn h1-btn" name="submit" value="Notify">';

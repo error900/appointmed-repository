@@ -137,10 +137,10 @@
                                             echo "<div class='col-xs-12 col-md-8 col-md-offset-2'>
                                     <div class='panel panel-notif panel-danger'>
                                         <div class='panel-heading'><span class='hidden-xs hidden-sm'>" . $n_name['patient_name'] . '</span>' . $notif_date . "
-                                            <a href=\"close_notif_doc.php?nid=$n_row[notification_id]&desc=$n_row[notification]\" title='Close'><i class='fa fa-remove delete-btn x-btn'></i></a>
+                                            <a href=\"close_notif_doc.php?nid=$n_row[notification_id]&desc=$n_row[notification]\" title=\"Close\"><i class='fa fa-remove delete-btn x-btn'></i></a>
                                         </div>
                                         <div class='panel-body'>
-                                            " . $n_row['notification'] . '<span class="visible-xs visible-sm notif-name">&mdash; ' . $n_name['patient_name'] . "</span>
+                                            " . $n_row['notification'] . "<span class=\"visible-xs visible-sm notif-name\">&mdash; " . $n_name['patient_name'] . "</span>
                                         </div>
                                     </div>
                                 </div>";
