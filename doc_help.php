@@ -94,7 +94,31 @@
                 <?php
                 include 'include/dc-nav-end.php';
                 ?>
-                
+                            <h3 class="row-header">Doctor Help</h3>
+                            <h4>Signing in as a Doctor</h4>
+                            Type your username and password and click enter or press the login button to log-in. 
+                            
+                            <h4>Doctor Main Page</h4>
+                            After the Doctor has logged-in his account he is redirected to his main page where he can see his appointments and his profile. 
+                            
+                            <h4>Appointments</h4>
+                            In this page you will be able to see all your appointments categorized as today, tomorrow, this week and this month.
+                            
+                            <h4>Notifications</h4>
+                            This page shows you all the notifications regarding the changes in your appointments.
+                            
+                            <h4>Appointment History</h4>
+                            This page will show you all your past appointments. 
+                            
+                            <h4>Export</h4>
+                            This button exports all the list of your appointments. It will export the list to your computer or device as an xls file that you will be able to open in Microsoft excel.  
+                            
+                            <h4>Update Info</h4>
+                            This page allows you to edit or update your profile, specialization, email address ,status, add clinic, add specialization and add/change profile picture.
+                            
+                            <h4>Doctor Menu</h4>
+                            This shows a menu that you can navigate through. The Profile link directs you to your profile, change password, help link which will direct you to the help page, and log out which allows you to log out. 
+                            
                 <?php
                 include 'include/refer-modal.php';
                 include 'include/edit-profile-modal.php';
