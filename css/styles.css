@@ -246,6 +246,10 @@ nav > div > div > ul > li > a > i,
           margin: 0 -1px !important;
     }
 
+    .docors-list-info {
+        margin-left: 70px;
+    }
+
 }
 
 .dropdown-menu>li>a {
@@ -445,6 +449,11 @@ nav > div > div > ul > li > a > i,
     text-transform: none;
 }
 
+.modal-sub-header {
+    font-size: 14px;
+    font-weight: 600;
+}
+
 .date-header,
 .date-header-000 {
     padding-left: 20px;
@@ -520,6 +529,15 @@ nav > div > div > ul > li > a > i,
 
 .x-btn {
     top: 4px !important;
+}
+
+.pt-queue-number span {
+    padding: 2px;
+    font-weight: 600;
+    font-size: 15px;
+    background: #E74C3C;
+    border-radius: 0 2px;
+    text-shadow: 1px 1px 1px #34495E !important;
 }
 
 .queue-num {
@@ -1231,8 +1249,13 @@ a.btn.btn-block.appo.tooltip-bottom {
     margin-bottom: 10px;
 }
 
+.docors-list-info {
+    margin-top: 10px;
+    line-height: 1;
+}
+
 .docors-list-info li span {
-    padding-left: 25px;
+    padding-left: 20px;
     font-size: 14px;
     font-weight: 600;
 }
@@ -1445,8 +1468,8 @@ a.btn.btn-block.appo.tooltip-bottom {
 
 .cutoff {
     margin: 6px 0 0 0;
-    font-size: 12px;
-    font-weight: 800;
+    font-size: 12px !important;
+    font-weight: 800 !important;
 }
 
 .addClinic input.form-control {

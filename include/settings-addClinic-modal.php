@@ -55,7 +55,7 @@
                         <input type="text" class="form-control" name="clinic_contact" placeholder="Clinic Contact" required/>
                         <input type="text" class="form-control" name="clinic_room" placeholder="Clinic Room" required/>
                         <!-- <input type="text" class="form-control" name="clinic_days" placeholder="Clinic Days (e.g. Mon/Tue/Fri)"/> -->
-                        <p>Available Days</p>
+                        <p class="modal-sub-header">Available Days</p>
                         <div class="days-checkbox">
                             <input type="checkbox" value="Mon" name="days[]"><label>Mon</label>
                             <input type="checkbox" value="Tue" name="days[]"><label>Tue</label>
@@ -65,7 +65,8 @@
                             <input type="checkbox" value="Sat" name="days[]"><label>Sat</label>
                             <input type="checkbox" value="Sun" name="days[]"><label>Sun</label>
                         </div>
-                        <p>Available times</p>
+                        <div class=""></div>
+                        <p class="modal-sub-header">Available times</p>
                         <div class="col-xs-6">
                             <input type="text" class="form-control" name="clinic_from" placeholder="From" required/>
                         </div>
