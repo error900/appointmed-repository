@@ -104,10 +104,11 @@
                 <div class="container-fluid patient-activity">
                     <div class="row">
                         <div class="col-md-6 col-md-offset-3">
-                            <h1 class="text-center row-header2-fff">Recent Activity</h1>
+                          
                         </div>
                         <?php
                         if (mysqli_num_rows($n_result) >= 1) {
+                            echo '<h1 class="text-center row-header2-fff">Recent Activity</h1>';
                             while ($n_row = mysqli_fetch_array($n_result)) {
                                 if ($n_row['indicator'] == 'patient') {
                                     if ($n_row['patient_id'] == $patient_id) {

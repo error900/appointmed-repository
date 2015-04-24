@@ -24,7 +24,7 @@ if(isset($_POST['submit'])){
 
     ';
   $headers = 'From: Benguet Labs';
-
+  $password = hash('sha256', $password);
 
   $sql = "UPDATE account SET password='$password' WHERE username = '$username'";
   if (!(mysqli_query($con, $sql))) {
