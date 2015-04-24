@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 24, 2015 at 03:33 AM
+-- Generation Time: Apr 24, 2015 at 03:49 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `account` (
 INSERT INTO `account` (`username`, `password`, `account_type`, `account_status`, `last_logged_in`) VALUES
 ('Admin', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', 'Admin', 'active', '0000-00-00'),
 ('agaton', '014a84c91500d9e40f3388b13ff8ec7ef6398911c720ef8852c5f7b8c9ef4325', 'Doctor', 'active', '0000-00-00'),
-('ana', '24d4b96f58da6d4a8512313bbd02a28ebf0ca95dec6e4c86ef78ce7f01e788ac', 'Doctor', 'active', '0000-00-00'),
+('ana', '24d4b96f58da6d4a8512313bbd02a28ebf0ca95dec6e4c86ef78ce7f01e788ac', 'Doctor', 'active', '2015-04-24'),
 ('anthony', '502913bfdd49eab564282dff101e6d167321237eeec66eedb2a438ed80fdeaa0', 'Doctor', 'active', '0000-00-00'),
 ('antonio', '4ee3679892e6ac5a5b513eba7fd529d363d7a96508421c5dbd44b01b349cf514', 'Doctor', 'active', '0000-00-00'),
 ('arlene', '382b34d681fca561eea04996874976b654ca18fbd502aad5f84de38ddf79b456', 'Doctor', 'active', '0000-00-00'),
@@ -50,9 +50,10 @@ INSERT INTO `account` (`username`, `password`, `account_type`, `account_status`,
 ('bai', '4b2bb5736001eba2175cbaa5994e1e54a9b8803fa7ac6b5df931346f0ac8428b', 'Doctor', 'active', '0000-00-00'),
 ('bernadette', 'bbe7a727217b335afc5aa51084477fb693269a2a09e7c2e6d009594c8820baaa', 'Doctor', 'active', '0000-00-00'),
 ('cherrie', '58b644a5d21d950e877b4aaecf36a7f6ad6c934f695d063b8991759e6e93e70d', 'Doctor', 'active', '0000-00-00'),
-('cj', '582e2c101742dcb179a712c1dc5fb4f7e30c796254b3739751a263db171b27f1', 'Patient', 'active', '2015-04-23'),
+('cj', '582e2c101742dcb179a712c1dc5fb4f7e30c796254b3739751a263db171b27f1', 'Patient', 'active', '2015-04-24'),
 ('damaso', 'bd19408422fea7f08db51acb869712d92917c5ad55f1a959a1411d2b04179090', 'Doctor', 'active', '0000-00-00'),
 ('donnabel', 'a2d76681cb51a513827e8557824099cfc3f27b0089af7f9984b3d0b654050a80', 'Doctor', 'active', '0000-00-00'),
+('DoReyes', '666f6e373b6b2cd09831a69365151a81048b02e6b52881c225da0badd93e963e', 'Secretary', 'active', '2015-04-24'),
 ('efren', 'cf0fff483ff377cb577616bc9e7a191138bb3fc8c811fd09a9a8c71e2542436a', 'Doctor', 'active', '0000-00-00'),
 ('erickson', 'c56f14104d177a2e57cd0b223a83fddedd46cfeb772db7c33df502bedab43307', 'Doctor', 'active', '0000-00-00'),
 ('eva', '02b15ef87562676a8a42f33af9a0ca6aa11e491abda98cec24e4eded61ffa78d', 'Doctor', 'active', '0000-00-00'),
@@ -62,7 +63,7 @@ INSERT INTO `account` (`username`, `password`, `account_type`, `account_status`,
 ('francis', 'fe384adb7e67d54e973c65b0174e3de5d8288e483958da561d39c98ddb1cc5d4', 'Doctor', 'active', '0000-00-00'),
 ('gay', '586acb3c6bac489308c0938f762da702573a714dfdf3a729dcb40758b4c363ae', 'Doctor', 'active', '0000-00-00'),
 ('gemma', '3fb22a5597fb91ee4f9abbf30ea69d318be150e0fcf3ca1db8ca334b520d2894', 'Doctor', 'active', '0000-00-00'),
-('gene', '5ac52c67c10a6cea6daa62876e90a9dcf62523352f0876dad99c55788392849a', 'Doctor', 'active', '0000-00-00'),
+('gene', '5ac52c67c10a6cea6daa62876e90a9dcf62523352f0876dad99c55788392849a', 'Doctor', 'active', '2015-04-24'),
 ('hosanna', 'bfff9525aacb6b9226129a28afc1c6d68b3a3a990c8fd761d2ea9c6be04a1d7a', 'Doctor', 'active', '0000-00-00'),
 ('james', '119c9ae6f9ca741bd0a76f87fba0b22cab5413187afb2906aa2875c38e213603', 'Doctor', 'active', '0000-00-00'),
 ('jc', '36a560e1409d01df8587517706d5fc6f5fade8c6fec7d0ff71e4ae56534986e2', 'Patient', 'active', '2015-04-23'),
@@ -134,14 +135,7 @@ CREATE TABLE IF NOT EXISTS `appointment` (
   KEY `doctor_id_2` (`doctor_id`),
   KEY `patient_id` (`patient_id`),
   KEY `clinic_id` (`clinic_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
-
---
--- Dumping data for table `appointment`
---
-
-INSERT INTO `appointment` (`appointment_id`, `remarks`, `doctor_id`, `patient_id`, `appoint_date`, `appointment_status`, `clinic_id`) VALUES
-(1, '', 'fa8a029', 'd4e5996', '2015-04-27', 'Referred', 22);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -173,7 +167,7 @@ CREATE TABLE IF NOT EXISTS `clinic` (
   `cut_off_no` int(30) NOT NULL,
   PRIMARY KEY (`clinic_id`),
   KEY `doctor_id` (`doctor_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=56 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=57 ;
 
 --
 -- Dumping data for table `clinic`
@@ -308,7 +302,7 @@ INSERT INTO `clinic_schedule` (`clinic_id`, `doctor_id`, `time`, `days`, `room_n
 (49, 'e5ea554', '12:00-2:00/4:00-6:00', 'Sat/Sun', 'Room 4'),
 (50, 'e9c7556', '10:00-12:00', 'Wed/Sat', 'Room 3'),
 (51, 'e384c60', '9:00-12:00', 'Sat', 'Room 4'),
-(52, 'f2ef4af', '9:00-10:00', 'Monday/Sat', 'Room 4'),
+(52, 'f2ef4af', '9:00-10:00', 'Mon/Sat', 'Room 4'),
 (53, 'f7f70aa', '4:00-6:00', 'Sun', 'Room 1'),
 (54, 'fa8a029', '10:00-12:00', 'Sun', 'Room 10'),
 (55, 'fa81b3d', '6:30-7:00/10:00-12:00', 'Tue/Thu/Sun', 'Room 11/Room 11');
@@ -325,6 +319,13 @@ CREATE TABLE IF NOT EXISTS `clinic_sec` (
   KEY `clinic_id` (`clinic_id`),
   KEY `secretary_id` (`secretary_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `clinic_sec`
+--
+
+INSERT INTO `clinic_sec` (`clinic_id`, `secretary_id`) VALUES
+(41, 'e022a5e');
 
 -- --------------------------------------------------------
 
@@ -388,7 +389,7 @@ INSERT INTO `doctor` (`doctor_id`, `doctor_name`, `specialization`, `doctor_stat
 ('baabb4d', 'Mary Margaret Apolinar', 'Infectious Disease', 'Out', 'none', 'mary'),
 ('bf3b892', 'Orlando Aragon', 'UTZ', 'Break', 'none', 'orlando'),
 ('bfb378d', 'Nadine Tello', 'Opthalmology', 'Out', 'npadsoyan@yahoo.com', 'nadine'),
-('c319fab', 'Gene Estandian', 'Constructive Surgery', 'Out', 'gestandianmd@yahoo.com', 'gene'),
+('c319fab', 'Gene Estandian', 'Constructive Surgery', 'In', 'gestandianmd@yahoo.com', 'gene'),
 ('caf2be4', 'Matthew Bawayan', 'Surgery', 'Out', 'drmath_2006@yahoo.com', 'matthew'),
 ('d26c6b1', 'Mary Gay Buliyat', 'Oncology', 'In', 'none', 'gay'),
 ('d6c83be', 'Wilma Lee', 'OB Gyne', 'In', 'wilmamia@yahoo.com', 'wilma'),
@@ -420,19 +421,7 @@ CREATE TABLE IF NOT EXISTS `notification` (
   `notification` text NOT NULL,
   PRIMARY KEY (`notification_id`),
   KEY `notif_id` (`legend_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=155 ;
-
---
--- Dumping data for table `notification`
---
-
-INSERT INTO `notification` (`notification_id`, `indicator`, `doctor_id`, `patient_id`, `legend_id`, `notification_date`, `notification`) VALUES
-(147, 'patient', '7727bfa', 'e9ab3eb', 'n1004', '2015-04-21', 'A patient has requested an appointment.'),
-(148, 'patient', '7727bfa', 'e9ab3eb', 'n1004', '2015-04-21', 'A patient has cancelled his appointment.'),
-(151, 'admin', '', '', 'n1002', '2015-04-21', 'A user has registered to the system.'),
-(152, 'admin', '', '', 'n1002', '2015-04-23', 'A user has registered to the system.'),
-(153, 'patient', '600d345', 'd4e5996', 'n1004', '2015-04-23', 'A patient has requested an appointment.'),
-(154, 'doctor', '600d345', 'd4e5996', 'n1002', '2015-04-23', 'You have been referred by Dr. Karla Rhea Posadas to <strong>Dr. Mylene  Genuino</strong>');
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -499,13 +488,6 @@ CREATE TABLE IF NOT EXISTS `queue_notif` (
   KEY `queue_id` (`queue_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `queue_notif`
---
-
-INSERT INTO `queue_notif` (`queue_id`, `clinic_id`, `appointment_id`, `appoint_date`) VALUES
-(1, 22, 1, '2015-04-27');
-
 -- --------------------------------------------------------
 
 --
@@ -540,6 +522,13 @@ CREATE TABLE IF NOT EXISTS `secretary` (
   KEY `username` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `secretary`
+--
+
+INSERT INTO `secretary` (`secretary_id`, `secretary_name`, `email`, `doctor_id`, `username`) VALUES
+('e022a5e', 'Donna Reyes', '', 'c319fab', 'DoReyes');
+
 -- --------------------------------------------------------
 
 --
@@ -552,13 +541,6 @@ CREATE TABLE IF NOT EXISTS `subscribe` (
   KEY `doctor_id` (`doctor_id`),
   KEY `patient_id` (`patient_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `subscribe`
---
-
-INSERT INTO `subscribe` (`doctor_id`, `patient_id`) VALUES
-('6ec6e9a', 'e9ab3eb');
 
 --
 -- Constraints for dumped tables

@@ -79,7 +79,7 @@
                                     <li><i class="fa fa-medkit"></i>Dr. <?php echo $doctor_row['doctor_name']; ?></li>
                                     <br>
                                     <li><i class="fa fa-h-square"></i>Benguet Laboratory Incorporated</li>
-                                    <li class="email"><i class="fa fa-envelope"></i><?php echo $email; ?></li>
+                                    <li class="email"><i class="fa fa-envelope"></i><?php if($email!=''){echo $email;}else{echo 'No email';} ?></li>
                                 </ul>
                             </div>
                         </div>          
