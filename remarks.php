@@ -25,12 +25,11 @@ if (isset($_POST['submit'])) {
         $message = "Your appointment is finished.";
         if ($remarks != '') {
             $message = "<strong>Your appointment is done!</strong><br/><strong>Remarks:</strong>" . $remarks;
+            $sendmail = mail($email, $subject, $remarks, $headers);
         }
         $notif = "INSERT INTO notification (indicator, doctor_id, patient_id, legend_id, notification_date, notification) 
 			VALUES('$indicator','$doc', '$pat', '$n_id', '$date', '$message')";
         mysqli_query($con, $notif) or die(mysqli_error($con));
-
-        $sendmail = mail($email, $subject, $remarks, $headers);
     }
 
     if (!(mysqli_query($con, $sql))) {
