@@ -52,7 +52,7 @@
                     <div class="col-xs-12 col-md-4 col-md-offset-1">
                         <h1 class="text-center row-header-lc">Forgot Password?</h1>
                         <div class="forgot-password">
-                            <form method="post" action="" name="form1">
+                            <form method="post" action="forget_password.php" name="form1">
                                 <div class="input-group">
                                     <input type="email" class="form-control" name="email" placeholder="Email Address"/>
                                     
