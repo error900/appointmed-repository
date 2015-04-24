@@ -154,16 +154,6 @@
                         } else
                             echo '<h1 class="text-center row-header2-fff">No Recent Activity</h1>';
                         ?>
-                        <div class='col-xs-12 col-md-8 col-md-offset-2'>
-                            <div class='panel panel-notif panel-warning'>
-                                <div class='panel-heading'><span class='hidden-xs hidden-sm'>ghgjkg</span>sfsdfsf
-                                    <a href=\"close_notif_prof.php?nid=$n_row[notification_id]&desc=$n_row[notification]\" title='Close'><i class='fa fa-remove delete-btn x-btn'></i></a>
-                                </div>
-                                <div class='panel-body'>
-                                     You have rescheduled an appointment.<span class='visible-xs visible-sm notif-name'>&mdash; Dr. trytr</span>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <?php

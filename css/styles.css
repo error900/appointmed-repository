@@ -857,18 +857,13 @@ a.btn.btn-block.appo.tooltip-bottom {
     }
 }
 
-.signup-ad p {
-    margin-bottom: 20px;
+.forgot-password input {
+    margin-bottom: 10px !important;
 }
-
-.signup-ad span {
+.forgot-password .signup-ad {
+    margin-top: 40px;
+    line-height: 1;
     font-size: 14px;
-}
-
-.signup-ad img {
-    height: 64px;
-    width: 64px;
-    margin: 10px;
 }
 
 .signup-form input.form-control,
@@ -1093,7 +1088,7 @@ a.btn.btn-block.appo.tooltip-bottom {
 .login-link {
     display: block;
     margin-top: 15px;
-    font-size: 12px;
+    font-size: 14px;
     color: #7F8C8D !important;
     text-align: center;
 }

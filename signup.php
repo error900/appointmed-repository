@@ -49,12 +49,20 @@
             </nav>
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-xs-12 col-md-4 col-md-offset-1 hidden-sm hidden-xs">
-                        <h1 class="text-center row-header-lc">Signup and create appointments online!</h1>
-                        <div class="signup-ad">
-                            <p><img src="img/icons/users.png" alt=""><span>Look for available clinics and doctors online</span></p>
-                            <p><img src="img/icons/schedule.png" alt=""><span>Be the first on the list by creating appointments</span></p>
-                            <p><img src="img/icons/message.png" alt=""><span>Get notifications from your doctor via text</span></p>
+                    <div class="col-xs-12 col-md-4 col-md-offset-1">
+                        <h1 class="text-center row-header-lc">Forgot Password?</h1>
+                        <div class="forgot-password">
+                            <form method="post" action="" name="form1">
+                                <div class="input-group">
+                                    <input type="email" class="form-control" name="email" placeholder="Email Address"/>
+                                    
+                                    <input type="submit" class="btn btn-default orange-btn btn-noborder" value="Submit" name="submit"/>
+                                </div>
+                            </form>
+                            <div class="signup-ad hidden-xs hidden-sm">
+                                <p>Look for available clinics and doctors online</p>
+                                <p>Be the first on the list by creating appointments</p>
+                            </div>
                         </div>
                     </div>
                     <div class="col-xs-12 col-md-4 col-md-offset-1">
