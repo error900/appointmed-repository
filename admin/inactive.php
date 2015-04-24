@@ -56,7 +56,7 @@
                         <th><input type="checkbox" value="Check All" id="checkallA" onClick="checkAll(form1)"></th>
                     </tr>
                 </thead>
-                <form method="post" action="removal.php" id="form1">
+                <form method="post" action="inactive_users.php" id="form1">
                     <?php
                     while ($row = mysqli_fetch_array($sql)) {
                         $last = explode('-',$row['last_logged_in']);
@@ -68,6 +68,7 @@
                             $account = mysqli_fetch_array($result);
                             echo '<tr>';
                             echo '<td>' . $account['patient_id'] . '</td>';
+                            echo '<input type="hidden" value="'.$account['patient_id'].'" name="patient_id">';
                             echo '<td>' . $row['username'] . '</td>';
                             echo '<td>' . $account['patient_name'] . '</td>';
                             echo '<td>' . $row['last_logged_in'] . '</td>';
