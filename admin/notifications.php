@@ -15,6 +15,7 @@
         header("location: index.php");
     $sql = mysqli_query($con, "SELECT * FROM account WHERE account_status = 'Active' AND username <> 'Admin' ");
     $n_result = mysqli_query($con, "SELECT * FROM notification ORDER BY 6 DESC");
+    $count_rows = mysqli_query($con, "SELECT * FROM notification WHERE indicator = 'admin'");
     ?>
     <body class="e4e8e9-bg">
         <?php 
@@ -31,6 +32,7 @@
                 <h1 class="page-header">Your Notifications</h1>
 
                 <?php
+                if(mysqli_num_rows($count_rows)>=1){
                 while ($n_row = mysqli_fetch_array($n_result)) {
                     if ($n_row['indicator'] == 'admin') {
                         $n_id = $n_row['legend_id'];
@@ -84,6 +86,13 @@
                             </div>";
                         }
                     }
+                }
+                }else {
+                    echo '<div class="alert alert-info alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+                    You have no notifications.
+                    </div>';
                 }
                 ?>
             </div>

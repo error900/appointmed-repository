@@ -6,6 +6,7 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
         $account_type = '';
+        $date = date('Y-m-d');
 
         $username = mysqli_real_escape_string($con, $username);
         $password = mysqli_real_escape_string($con, $password);
@@ -34,10 +35,18 @@
             } else if ($row['account_type'] == 'Patient') {
                 header("location: index.php");
             } else if ($row['account_type'] == 'Doctor'){
+                $sql = "UPDATE account SET last_logged_in = '$date' WHERE username LIKE '$username'";
+                if (!(mysqli_query($con, $sql))) {
+                    die('Error: ' . mysqli_error($con));
+                }
                 header("location: ../schedules.php");
-            } else
+            } else{
+                $sql = "UPDATE account SET last_logged_in = '$date' WHERE username LIKE '$username'";
+                if (!(mysqli_query($con, $sql))) {
+                    die('Error: ' . mysqli_error($con));
+                }
                 header("location: ../st-schedules.php");
-
+            }
         }
         mysqli_close($con);
         ?>

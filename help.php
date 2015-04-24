@@ -81,7 +81,7 @@
                         <div class="col-xs-12 col-md-8 col-md-offset-2">
                             <h2 class="row-header-lc">Help</h2>
                             <h3 class="row-header">Patient Help</h3>
-                            <h4>How to find your Doctor</h4>
+                            <h4>Find your Doctor</h4>
                             <p>
                                 Type name of doctor or specialization in search bar above.
                                 </br>
@@ -89,24 +89,26 @@
                                 </br>
                             </p>
 
-                            <h4>How to follow your Doctor</h4>
+                            <h4>Follow your Doctor</h4>
                             To get notifications about your doctor you must follow him Click on the follow button on your doctor's profile. Unfollow your doctor by clicking the same button.
                             </br>
 
-                            <h4>How to set an Appointment</h4>
+                            <h4>Set an Appointment</h4>
                             To create an appointment with your doctor go to his profile, choose  a clinic of his, and hit the create appointment button. 
                             </br>
                             After that, choose a date and time and hit the appoint.me button. 
 
-                            <h4>How to edit an Appointment</h4>
+                            <h4>Edit an Appointment</h4>
                             View your appointments by clicking on the appointments link. Select the appointment you want to update and from there you can change the date and time of your appointment or you could just delete that appointment if you no longer wish to have it. 
 
-                            <h4>How to edit or update your Profile</h4>
+                            <h4>Update your Profile</h4>
                             On your profile on the right corner, you will see a button. By clicking that button, you will now be able to edit your profile by changing the information on the forms. 
-                            <h4>How to view your appointments</h4>
-                            <h4>How to view your notifications</h4>
-                            <h4>How to know if your programmers are reviewing your code</h4>
-                            <h4>NIALL AND THE POTATOES</h4>
+                            
+                            <h4>View your appointments</h4>
+                            Click on the appointments link on top of the page.
+                            
+                            <h4>View your notifications</h4>
+                            Click on the notifications link on top of the page.
                         </div>
                     </div>
                 </div>
