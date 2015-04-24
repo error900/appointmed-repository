@@ -532,11 +532,11 @@ nav > div > div > ul > li > a > i,
 }
 
 .pt-queue-number span {
-    padding: 2px;
+    padding: 1px 5px;
     font-weight: 600;
     font-size: 15px;
     background: #E74C3C;
-    border-radius: 0 2px;
+    border-radius: 3px;
     text-shadow: 1px 1px 1px #34495E !important;
 }
 
@@ -565,7 +565,7 @@ nav > div > div > ul > li > a > i,
 .panel-notif > .panel-heading {
     color: #fff;
     padding: 3px;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 800;
     text-align: center;
 }
@@ -1524,6 +1524,10 @@ a.btn.btn-block.appo.tooltip-bottom {
 
 #help {
     color: #ECF0F1;
+}
+
+.help-text {
+    font-size: 16px;
 }
 
 footer {

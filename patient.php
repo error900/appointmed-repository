@@ -103,11 +103,11 @@
                 </div>
                 <div class="container-fluid patient-activity">
                     <div class="row">
+                        <div class="col-md-6 col-md-offset-3">
+                            <h1 class="text-center row-header2-fff">Recent Activity</h1>
+                        </div>
                         <?php
                         if (mysqli_num_rows($n_result) >= 1) {
-                            echo '<div class="col-md-6 col-md-offset-3">
-                        <h1 class="text-center row-header2-fff">Recent Activity</h1>
-                    </div>';
                             while ($n_row = mysqli_fetch_array($n_result)) {
                                 if ($n_row['indicator'] == 'patient') {
                                     if ($n_row['patient_id'] == $patient_id) {
@@ -123,30 +123,30 @@
 
                                         if ($n_color['color'] == 'orange') {
                                             echo "<div class='col-xs-12 col-md-8 col-md-offset-2'>
-                            <div class='panel panel-notif panel-warning'>
-                                <div class='panel-heading'><span class='hidden-xs hidden-sm'>" . $doc["doctor_name"] . "</span>" . $notif_date . "
-                                    <a href=\"close_notif_prof.php?nid=$n_row[notification_id]&desc=$n_row[notification]\" title='Close'><i class='fa fa-remove delete-btn x-btn'></i></a>
-                                </div>
-                                <div class='panel-body'>
-                                     You have rescheduled an appointment.<span class='visible-xs visible-sm notif-name'>&mdash; Dr. " . $doc['doctor_name'] . "</span>
-                                </div>
-                            </div>
-                        </div>";
+                                                    <div class='panel panel-notif panel-warning'>
+                                                        <div class='panel-heading'><span class='hidden-xs hidden-sm'>" . $doc["doctor_name"] . "</span>" . $notif_date . "
+                                                            <a href=\"close_notif_prof.php?nid=$n_row[notification_id]&desc=$n_row[notification]\" title='Close'><i class='fa fa-remove delete-btn x-btn'></i></a>
+                                                        </div>
+                                                        <div class='panel-body'>
+                                                             You have rescheduled an appointment.<span class='visible-xs visible-sm notif-name'>&mdash; Dr. " . $doc['doctor_name'] . "</span>
+                                                        </div>
+                                                    </div>
+                                                </div>";
                                         } else if ($n_color['color'] == 'blue') {
                                             if($n_row['notification'] == 'A patient has requested an appointment.')
                                                 $notification_m = 'You have created an appointment.';
                                             else
                                                 $notification_m = 'You have cancelled an appointment.';
                                             echo "<div class='col-xs-12 col-md-8 col-md-offset-2'>
-                            <div class='panel panel-notif panel-info'>
-                                <div class='panel-heading'><span class='hidden-xs hidden-sm'>" . $doc["doctor_name"] . "</span>" . $notif_date . "
-                                    <a href=\"close_notif_prof.php?nid=$n_row[notification_id]&desc=$n_row[notification]\" title='Close'><i class='fa fa-remove delete-btn x-btn'></i></a>
-                                </div>
-                                <div class='panel-body'>
-                                    " . $notification_m . "<span class='visible-xs visible-sm notif-name'>&mdash; Dr. " . $doc['doctor_name'] . "</span>
-                                </div>
-                            </div>
-                        </div>";
+                                                    <div class='panel panel-notif panel-info'>
+                                                        <div class='panel-heading'><span class='hidden-xs hidden-sm'>" . $doc["doctor_name"] . "</span>" . $notif_date . "
+                                                            <a href=\"close_notif_prof.php?nid=$n_row[notification_id]&desc=$n_row[notification]\" title='Close'><i class='fa fa-remove delete-btn x-btn'></i></a>
+                                                        </div>
+                                                        <div class='panel-body'>
+                                                            " . $notification_m . "<span class='visible-xs visible-sm notif-name'>&mdash; Dr. " . $doc['doctor_name'] . "</span>
+                                                        </div>
+                                                    </div>
+                                                </div>";
                                         }
                                     }
                                 }
@@ -154,6 +154,16 @@
                         } else
                             echo '<h1 class="text-center row-header2-fff">No Recent Activity</h1>';
                         ?>
+                        <div class='col-xs-12 col-md-8 col-md-offset-2'>
+                            <div class='panel panel-notif panel-warning'>
+                                <div class='panel-heading'><span class='hidden-xs hidden-sm'>ghgjkg</span>sfsdfsf
+                                    <a href=\"close_notif_prof.php?nid=$n_row[notification_id]&desc=$n_row[notification]\" title='Close'><i class='fa fa-remove delete-btn x-btn'></i></a>
+                                </div>
+                                <div class='panel-body'>
+                                     You have rescheduled an appointment.<span class='visible-xs visible-sm notif-name'>&mdash; Dr. trytr</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <?php
