@@ -5,6 +5,8 @@ if (isset($_POST['submit'])) {
     if (isset($_POST['select'])) {
         $select = array();
         $password = substr(md5(uniqid(rand(), true)), 0, 7);
+        $password = hash("sha256", $password);
+        
         foreach ($_POST['select'] as $values) {
             $sql = "UPDATE account SET account_status='active', password='$password' WHERE username = '$values'";
 

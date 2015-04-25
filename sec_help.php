@@ -73,7 +73,22 @@
                 <?php
                 include 'include/st-nav-end.php';
                 ?>
-
+                <div class="col-xs-12  col-md-4">
+                    <h4>Checking the Doctor's Appointments</h4>
+                    <p>The doctor's appointment is categorized  into 4 namely today, tommorow, this week, and this month. the secretay can check how many appointments the docotr has.</p>
+                    <p>The secretatary can also view the finished appointments, and the appointments that were cancelled appointments.</p>
+                </div>
+                <div class="col-xs-12  col-md-4">
+                    <h4>Exporting the appointment list.</h4>
+                    <p>The secretary has also the option to edit their info. The status of the doctor may also be changed int he udpate info option. The secretary may also be set by uplaoding a desired picture, preferably 2x2 in size and in JPG image format.</p>
+                </div>
+                <div class="col-xs-12  col-md-4">
+                    <h4>Secretary Profile</h4>
+                    <p>The secretary's profile may be viewed by clicking the "Profile" button under the secretary's name. In the secretary's profile, you can see the infomation about the secretary and the clinics where they are employed.</p>
+                    <h4>Changing your pasword</h4>
+                    <p>The account password may be changed by clicking "Change Password"  under the secretary's name in the navigation bar.</p>
+                </div>
+                            
                 <?php
                 include 'include/remarks-modal.php';
                 include 'include/st-edit-profile-modal.php';

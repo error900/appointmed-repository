@@ -20,21 +20,31 @@ if(isset($_POST['submit'])){
     $password = $lastname;
     $password = hash('sha256', $password);
 
-    if (!($firstname == '' && $lastname == '')) {
-        $sqlaccount = "INSERT INTO account (username, password, account_type, account_status)
-			VALUES('$username', '$password', 'Secretary', 'active')";
-        $secretary_sql = "INSERT INTO secretary (secretary_id, secretary_name, doctor_id, username) 
-			VALUES ('$secretary_id', '$secretary_name', '$doctor_id','$username')";
-        if (!(mysqli_query($con, $sqlaccount)) || !(mysqli_query($con, $secretary_sql))) {
-            die('Error: ' . mysqli_error($con));
+    $sql = "SELECT * FROM account WHERE username LIKE '$username' AND password LIKE '$password' ";
+    $fetch_sql = mysqli_query($con, $sql);
+    if(mysqli_num_rows($fetch_sql)==0){
+        if (!($firstname == '' && $lastname == '')) {
+            $sqlaccount = "INSERT INTO account (username, password, account_type, account_status)
+    			VALUES('$username', '$password', 'Secretary', 'active')";
+            $secretary_sql = "INSERT INTO secretary (secretary_id, secretary_name, doctor_id, username) 
+    			VALUES ('$secretary_id', '$secretary_name', '$doctor_id','$username')";
+            if (!(mysqli_query($con, $sqlaccount)) || !(mysqli_query($con, $secretary_sql))) {
+                die('Error: ' . mysqli_error($con));
+            }
+            $sec_clinic = "INSERT INTO clinic_sec (clinic_id, secretary_id) VALUES ('$clinic_id', '$secretary_id')";
+            mysqli_query($con, $sec_clinic) or die(mysqli_error($con));
+            echo "<script> alert('Added secretary for clinic'); </script>";
+            echo "<script> location.replace('doctor-profile.php') </script>";   
         }
-
+    }else{ 
+        $sql = mysqli_query($con, "SELECT * FROM secretary WHERE username LIKE '$username'");
+        $fetch_sql = mysqli_fetch_array($sql);
+        $secretary_id = $fetch_sql['secretary_id'];
         $sec_clinic = "INSERT INTO clinic_sec (clinic_id, secretary_id) VALUES ('$clinic_id', '$secretary_id')";
         mysqli_query($con, $sec_clinic) or die(mysqli_error($con));
         echo "<script> alert('Added secretary for clinic'); </script>";
-
+        echo "<script> location.replace('doctor-profile.php') </script>";	
     }
-       echo "<script> location.replace('doctor-profile.php') </script>";	
 }else{
 	echo "<script> alert('Error!');</script>";
     echo "<script> location.replace('doctor-profile.php') </script>";

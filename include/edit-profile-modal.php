@@ -94,7 +94,7 @@
 <!--                                 <div class="col-xs-12 col-md-6 text-center">
                                     <input type="button" class="btn btn-default btn-noborder green-btn form-control" id="hideshow" value="Add Clinic">
                                 </div> -->
-                                <div class="col-xs-12 col-md-6 text-center">
+                                <div class="col-xs-12 col-md-6 text-center" style="width: 100% !important; margin: 10px 0;">
                                     <input type="button" class="btn btn-default btn-noborder green-btn form-control" id="specs" value="Add Specialization">
                                 </div>
                                 <div id="specialization" style="display:none">
@@ -115,3 +115,4 @@
         </div>
     </div>
 </div> <!-- /modal -->
+ 

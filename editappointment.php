@@ -48,7 +48,7 @@ if (isset($_POST['submit'])) {
     } else if ($single_count != 0) {
         echo '<script>alert("Cannot schedule for the same doctor in a single day. Please change the date")</script>';
         echo "<script> location.replace('appointment.php') </script>";
-    } else if (($appdate > $current_date) && (($limit_row < 7) && ($single_count == 0))) {
+    } else if (($appdate >= $current_date) && (($limit_row < 7) && ($single_count == 0))) {
         $sql = "UPDATE appointment SET appoint_date = '$appdate' WHERE appointment_id= $appid";
 
         $notif = "INSERT INTO notification (indicator, doctor_id, patient_id, legend_id, notification_date, notification) 
@@ -59,7 +59,6 @@ if (isset($_POST['submit'])) {
         }
         
         //start
-
         $sql_c = mysqli_query($con, "SELECT * FROM queue_notif 
            WHERE clinic_id LIKE '$clinic_id' AND appoint_date LIKE '$queue_date' AND queue_id > '$queue_id' ");
         if(mysqli_num_rows($sql_c)!= 0){

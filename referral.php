@@ -37,7 +37,7 @@ if (isset($_POST['submit'])) {
 
 
     // appointment_history
-    $appointment_history = "INSERT INTO appointment_history (appointment_status, appointment_id)
+    $appointment_history = "INSERT INTO appointment_history (description, appointment_id)
     VALUES('$status', '$appointment_id')";
 
 

@@ -134,7 +134,8 @@
                                 echo '<h2>' . $c_row['clinic_name'] . '<span>' . $count . '</span></h2>';
                                 echo '<p><i class="fa fa-location-arrow"></i>' . $c_row['clinic_location'] . '</p>';
                                 echo '<p><i class="fa fa-phone"></i>' . $c_row['clinic_contact'] . '</p>';
-                                echo '<p class="cutoff">Cut off limit: <i></i>' . $c_row['cut_off_no'] . '</p>';
+                                echo '<p class="cutoff">Cut off limit:' . $c_row['cut_off_no'] . '</p>';
+                                
 
                                 while($clinicsec = mysqli_fetch_array($sec)){
                                     $secretary_id = $clinicsec['secretary_id'];
@@ -142,7 +143,7 @@
                                     $secretary = mysqli_fetch_array($clinic);
 
                                     if(mysqli_num_rows($clinic)>=1){
-                                        echo $secretary['secretary_name']."<br/>";
+                                        echo '<p class="cutoff">Sec: ' . $secretary['secretary_name'].'<br/></p>';
                                     }
                                 }
 

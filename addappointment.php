@@ -47,7 +47,7 @@ if (isset($_POST['submit'])) {
     } else if ($single_count != 0) {
         echo '<script>alert("Cannot schedule for the same doctor in a single day. Please change the date")</script>';
         echo "<script> location.replace('doctor.php?id=" . $doctor_id . "') </script>";
-    } else if (($date > $date_today) && (($limit_row < 7) && ($single_count == 0))) {
+    } else if (($date >= $date_today) && (($limit_row < 7) && ($single_count == 0))) {
         $sql = "INSERT INTO appointment (doctor_id, patient_id, appoint_date, appointment_status, remarks, clinic_id) 
 		VALUES('$doctor_id', '$patient_id', '$date', '$appointment_status', '$remarks','$clinic_id')";
 
