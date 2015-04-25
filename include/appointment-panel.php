@@ -35,7 +35,7 @@ if (mysqli_num_rows($p_result) >= 1) {
 } else {
     echo '<div class="col-xs-12 col-md-10 col-md-offset-1">
         <div class="alert alert-warning" role="alert">
-        <strong>There are no appointments.</strong> Better check yourself, you\'re not looking too good.</div>
+        <strong>There are no appointments.</strong> Try searching doctors.</div>
         </div>';
     echo '<div class="col-xs-12 col-md-10 col-md-offset-1">
         <div class="alert alert-info alert-dismissible" role="alert">

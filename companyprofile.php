@@ -66,6 +66,136 @@
                         <img src="img/lab.jpg" class="img-responsive" alt="Benguet Laboratories">
                     </div>
                 </div>
+                <div class="row">
+                    <h1 class="row-header text-center">Other Services Offered:</h1>
+                    <div class="col-xs-12 col-md-6 other-services">
+                        <ul class="nav main-nav-label first">
+                            <li class="list">
+                                <label><i class="fa fa-stethoscope"></i>Clinical Loboratory</label>
+                                <ul class="nav items-list">
+                                    <li>Complete blood count</li>
+                                    <li>Complete blood chemistry</li>
+                                    <li>Pap's Smear</li>
+                                    <li>Urinalysis  / Fecalysis</li>
+                                    <li>Semen Analysis</li>
+                                    <li>HIV Testing</li>
+                                    <li>Dengue testing</li>
+                                    <li>Hepatitis Profile</li>
+                                    <li>Gram Staining</li>
+                                    <li>Widal Test / Typhidot</li>
+                                    <li>Pregnancy Test (Urine Serum)</li>
+                                    <li>TPHA / VDRL</li>
+                                    <li>Thyroid Profile</li>
+                                    <li>CRP , RF, ASOT</li>
+                                    <li>H Pyloriod Test</li>
+                                    <li>Rapid Screening Test</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="nav main-nav-label">
+                            <li class="list">
+                                <label><i class="fa fa-stethoscope"></i>Drug Testing</label>
+                                <ul class="nav items-list">
+                                    <li>Pre-employment Medical Exam</li>
+                                    <li>Annual Medical Exam</li>
+                                    <li>LTO Requirement</li>
+                                    <li>FireArm License</li>
+                                    <li>School Requirement</li>
+                                    <li>Post-Accident Evaluation</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="nav main-nav-label">
+                            <li class="list">
+                                <label><i class="fa fa-stethoscope"></i>Digital Radiology Imaging</label>
+                                <ul class="nav items-list">
+                                    <li>X-ray</li> 
+                                    <li>Mobile x-ray</li>
+                                    <li>Ultrasonography</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="nav main-nav-label first">
+                            <li class="list">
+                                <label><i class="fa fa-stethoscope"></i>Cardiolab</label>
+                                <ul class="nav items-list">
+                                    <li>Electrocardiogram (ECG)</li>
+                                    <li>Adult 2D Echo</li>
+                                    <li>Pedia 2D Echo</li>
+                                    <li>Arterial Duplex Study</li>
+                                    <li>Venous Duplex</li>
+                                    <li>Carotoid Duplex scan</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-md-6 other-services">
+                        <ul class="nav main-nav-label">
+                            <li class="list">
+                                <label><i class="fa fa-stethoscope"></i>Specialty Clinics</label>
+                                <ul class="nav items-list">
+                                    <li>ENT</li>
+                                    <li>Urology</li>
+                                    <li>Carddiology</li>
+                                    <li>Paediatrics</li>
+                                    <li>Nephrology</li>
+                                    <li>Pulmonology</li>
+                                    <li>Dermatology</li>
+                                    <li>Orthopaedics</li>
+                                    <li>Ophthalmology</li>
+                                    <li>Family Medicine</li>
+                                    <li>Neuropsychiatry</li>
+                                    <li>Internal Medicine</li>
+                                    <li>Gastroenterology</li>
+                                    <li>Clinical neurology</li>
+                                    <li>Infectious Diseases</li>
+                                    <li>Occupational Medicine</li>
+                                    <li>Rehabilitation Medicine</li>
+                                    <li>Obstetrics &amp; Gynaecology</li>
+                                    <li>Surgery
+                                        <span>General, colon, Retacl</span><br/>
+                                        <span>Aesthetic / Plastic</span><br/>
+                                        <span>Reconstructive</span><br/>
+                                    </li>
+                                    <li>Wellness clinic (vaccination)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="nav main-nav-label">
+                            <li class="list">
+                                <label><i class="fa fa-stethoscope"></i>Corporate Services</label>
+                                <ul class="nav items-list">
+                                    <li>Pre-employment Medical Exam</li> 
+                                    <li>Annual Medical Exam</li>
+                                    <li>On Site PE / APE Services (Mobile clinic)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="nav main-nav-label">
+                            <li class="list">
+                                <label><i class="fa fa-stethoscope"></i>Other services:</label>
+                                <ul class="nav items-list">
+                                    <li>Audiometry</li>
+                                    <li>Physical Therapy</li>
+                                    <li>Clinical psychology</li>
+                                    <li>Neuro-psychiatric Examination</li>
+                                    <li>Home Service (Blood Extraction, EcG, consultation)</li>
+                                    <li>Medical Mission Organizer</li>
+                                    <li>Medical Service Outsourcing</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="nav main-nav-label">
+                            <li class="list">
+                                <label><i class="fa fa-stethoscope"></i>Current Data</label>
+                                <ul class="nav items-list">
+                                    <li><a href="#">Import</a></li>
+                                    <li><a href="exportall.php">Export</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
             <?php
             include 'include/user-login.php';
@@ -74,6 +204,7 @@
             include 'include/scripts.php';
             ?>
             <script type="text/javascript" src="js/scrolltop.js"></script>
+            <script type="text/javascript" src="js/listslide.js"></script>
         </div> <!-- /container -->
     </body>
 </html>
