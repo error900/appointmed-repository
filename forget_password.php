@@ -29,10 +29,10 @@ if(isset($_POST['submit'])){
   $sql = "UPDATE account SET password='$password' WHERE username = '$username'";
   if (!(mysqli_query($con, $sql))) {
       die('Error: ' . mysqli_error($con));
+  } else {
+    $sendmail = mail($email, $subject, $message, $headers);
   }
 
-  $sendmail = mail($email, $subject, $message, $headers);
-  
   echo "<script> location.replace('signup.php') </script>";
 
 } else {
