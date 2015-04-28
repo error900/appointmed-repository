@@ -15,6 +15,29 @@ if (isset($_POST['submit'])) {
     $rd_result = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_id LIKE '$referred_id'");
     $rd_row = mysqli_fetch_array($rd_result);
 
+    //patient
+    $email = $p_row['email'];
+    $subject = 'Appointmed reffered to another Doctor';
+    $headers = 'From: Benguet Labs';
+    $p_message = '
+    '.$p_row['patient_name'].',
+
+    Your appointment with Dr. '.$d_row['doctor_name'].' has been cancelled. You have been referred to Dr. '.$rd_row['doctor_name'].'. 
+    You can create a new apoointment with Dr. '.$rd_row['doctor_name'].'.
+    ';
+
+    //doctor
+    $d_email = $rd_row['email'];
+    $d_subject = 'Patient referred';
+    $d_headers = 'From: Benguet Labs';
+    $d_message =  '
+    '.$rd_row['doctor_name'].',
+
+    A patient was referred to you by Dr. '.$d_row['doctor_name'].'.
+
+
+    ';
+
 
     //patient notification
     $message="You have been referred by Dr. ".$d_row['doctor_name']." to <strong><a href=\"doctor.php?id=".$referred_id."\">Dr. ".$rd_row['doctor_name']."</a></strong>";
@@ -47,6 +70,9 @@ if (isset($_POST['submit'])) {
 
     if (!(mysqli_query($con, $sql)) || !(mysqli_query($con, $appointment_history)) || !(mysqli_query($con, $update_appointment))) {
         die('Error: ' . mysqli_error($con));
+    } else {
+        $sendmail = mail($email, $subject, $p_message, $headers);
+        $d_sendmail = mail($d_email, $d_subject, $d_message, $d_headers);
     }
     header("location: schedules.php");
 } else
