@@ -125,20 +125,13 @@
                 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
                     <h1 class="page-header">Dashboard</h1>
 
-                    <div class="row placeholders">
-                        <div class="col-xs-12 col-sm-3 placeholder">
-                            <div id="canvas-holder">
-                                <canvas id="chart-area1"/>
+                    <div class="row placeholders hidden-xs hidden-sm">
+                        <div class="col-xs-12 col-sm-12 placeholder">
+                            <div class="bar-graph">
+                                <canvas id="canvasbar" height="120"></canvas>
                             </div>
-                            <h4>Doctor &amp; Patient Population</h4>
+                            <h4>Specialization</h4>
                         </div>
-                        <div class="col-xs-12 col-sm-3 placeholder">
-                            <div id="canvas-holder">
-                                <canvas id="chart-area2"/>
-                            </div>
-                            <h4>Specializations</h4>
-                        </div>
-
                     </div>
 
                     <h2 class="sub-header">Users List</h2>
@@ -155,26 +148,6 @@
         ?>
         <script type="text/javascript" src="js/chart.js"></script>
         <script>
-            var doctorPatientPopulation = [
-                <?php
-                    
-
-                        echo '{';
-                            echo 'value: ' . $doctors . ',';
-                            echo 'color: "#F7464A",';
-                            echo 'highlight: "#FF5A5E",';
-                            echo 'label: "Doctors"';
-                        echo '},';
-                        echo '{';
-                            echo 'value: ' . $patients . ',';
-                            echo 'color: "#46BFBD",';
-                            echo 'highlight: "#5AD3D1",';
-                            echo 'label: "Patient"';
-                        echo '}';
-                    ?>
-
-                ];
-
                 var specializations = [
                 <?php
                     echo '{';
@@ -320,8 +293,29 @@
 
     </script>
         <script>
-            
+        var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
 
-    </script>
+        var barChartData = {
+            labels : ["CARDIOLOGY","CFP/PCOM","CONSTRUCTIVE SURGERY","DERMATOLOGY","ENDOCRINOLOGY","ENT","EPIDEMIOLOGY", "FM/GP/IM", "FM/GP/PCOM", "GASTROENTEROLOGY", "GP", "GP/ANIMAL BITE", "INFECTIOUS DISEASE", "INTERNAL MEDICINE", "NEPHROLOGY", "NEURO-PSYCHIATRY", "NEUROLOGY", "OB GYNE", "ONCOLOGY", "OPTHALMOLOGY", "ORTHOPEDICS", "ORTHOPEDICS/GP", "PEDIATRICIAN", "PSYCHOLOGY", "PULMUNOLOGY", "SURGERY", "UROLOGY", "UTZ"],
+            datasets : [
+                {
+                    fillColor : "rgba(151,187,205,0.5)",
+                    strokeColor : "rgba(151,187,205,0.8)",
+                    highlightFill : "rgba(151,187,205,0.75)",
+                    highlightStroke : "rgba(151,187,205,1)",
+                    data : [10,randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+                }
+            ]
+
+        }
+        window.onload = function(){
+            var ctxbar = document.getElementById("canvasbar").getContext("2d");
+            window.myBar = new Chart(ctxbar).Bar(barChartData, {
+                responsive : true
+            });
+        }
+
+        </script>
+    </body>
     </body>
 </html>
