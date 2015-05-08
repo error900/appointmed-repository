@@ -46,6 +46,7 @@
     $count_ortho_result = mysqli_query($con, "SELECT COUNT(specialization) AS ortho FROM `doctor` WHERE specialization LIKE 'Orthopedics'");
     $count_orthogp_result = mysqli_query($con, "SELECT COUNT(specialization) AS orthogp FROM `doctor` WHERE specialization LIKE 'Orthopedics/GP'");
     $count_pedia_result = mysqli_query($con, "SELECT COUNT(specialization) AS pedia FROM `doctor` WHERE specialization LIKE 'Pediatrician'");
+    $count_psych_result = mysqli_query($con, "SELECT COUNT(specialization) AS psych FROM `doctor` WHERE specialization LIKE 'Psychology'");
     $count_pulmo_result = mysqli_query($con, "SELECT COUNT(specialization) AS pulmo FROM `doctor` WHERE specialization LIKE 'Pulmunology'");
     $count_surg_result = mysqli_query($con, "SELECT COUNT(specialization) AS surg FROM `doctor` WHERE specialization LIKE 'Surgery'");
     $count_uro_result = mysqli_query($con, "SELECT COUNT(specialization) AS uro FROM `doctor` WHERE specialization LIKE 'Urology'");
@@ -79,6 +80,7 @@
     $ortho_row = mysqli_fetch_array($count_ortho_result);
     $orthogp_row = mysqli_fetch_array($count_orthogp_result);
     $pedia_row = mysqli_fetch_array($count_pedia_result);
+    $psych_row = mysqli_fetch_array($count_psych_result);
     $pulmo_row = mysqli_fetch_array($count_pulmo_result);
     $surg_row = mysqli_fetch_array($count_surg_result);
     $uro_row = mysqli_fetch_array($count_uro_result);
@@ -111,6 +113,7 @@
     $ortho = $ortho_row['ortho'];
     $orthogp = $orthogp_row['orthogp'];
     $pedia = $pedia_row['pedia'];
+    $psych = $psych_row['psych'];
     $pulmo = $pulmo_row['pulmo'];
     $surg = $surg_row['surg'];
     $uro = $uro_row['uro'];
@@ -311,7 +314,7 @@
                     strokeColor : "rgba(151,187,205,0.8)",
                     highlightFill : "rgba(151,187,205,0.75)",
                     highlightStroke : "rgba(151,187,205,1)",
-                    data : [<?php echo $cardiology?>,<?php echo $cfp?>,<?php echo $cons?>,<?php echo $derm?>,<?php echo $endo?>,<?php echo $ent?>,<?php echo $epi?>,<?php echo $im?>,<?php echo $pcom?>,<?php echo $gastro?>,<?php echo $gp?>,<?php echo $bite?>,<?php echo $infec?>,<?php echo $inter?>,<?php echo $neph?>,<?php echo $neurop?>,<?php echo $neuro?>,<?php echo $ob?>,<?php echo $onco?>,<?php echo $opth?>,<?php echo $ortho?>,<?php echo $orthogp?>,<?php echo $pedia?>,<?php echo $pulmo?>,<?php echo $surg?>,<?php echo $uro?>,<?php echo $utz?>]
+                    data : [<?php echo $cardiology?>,<?php echo $cfp?>,<?php echo $cons?>,<?php echo $derm?>,<?php echo $endo?>,<?php echo $ent?>,<?php echo $epi?>,<?php echo $im?>,<?php echo $pcom?>,<?php echo $gastro?>,<?php echo $gp?>,<?php echo $bite?>,<?php echo $infec?>,<?php echo $inter?>,<?php echo $neph?>,<?php echo $neurop?>,<?php echo $neuro?>,<?php echo $ob?>,<?php echo $onco?>,<?php echo $opth?>,<?php echo $ortho?>,<?php echo $orthogp?>,<?php echo $pedia?>,<?php echo $psych?>,<?php echo $pulmo?>,<?php echo $surg?>,<?php echo $uro?>,<?php echo $utz?>]
                 }
             ]
 
