@@ -188,6 +188,7 @@
                 </div>
                 <?php
                 include 'include/edit-profile-modal.php';
+                include 'include/walkin.php';
                 ?>
                 <script type="text/javascript" src="js/search.js"></script>
         </div> <!-- /container -->

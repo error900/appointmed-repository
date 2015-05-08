@@ -1,6 +1,10 @@
                 <li class="nav-button navbar-right">
-                    <button type="button" class="btn btn-default btn-noborder green-btn" data-toggle="modal" data-target=".bs-pt-edit-profile-modal-lg" data-id="'.$appointment_id.'" data-patient-id="'.$patient_id.'">
+                    <button type="button" class="btn btn-default btn-noborder green-btn nav-modal-button" data-toggle="modal" data-target=".bs-pt-edit-profile-modal-lg" data-id="'.$appointment_id.'" data-patient-id="'.$patient_id.'">
                     <i class="fa fa-pencil"></i>Update Info</button>
+                </li>
+                <li class="nav-button navbar-right">
+                    <button type="button" class="btn btn-default btn-noborder red-btn nav-modal-button" data-toggle="modal" data-target=".bs-walk-in-modal-sm" data-id="'.$appointment_id.'" data-patient-id="'.$patient_id.'">
+                    <i class="fa fa-pencil"></i>Walk-in</button>
                 </li>
                 <form class="navbar-form navbar-right" method="post" role="search">
                     <div class="input-group search-bar">

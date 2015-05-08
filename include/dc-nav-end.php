@@ -5,7 +5,7 @@
                 </form>
             </li>
             <li class="nav-button navbar-right">
-                <button type="button" class="btn btn-default btn-noborder green-btn" data-toggle="modal" data-target=".bs-dc-edit-profile-modal-lg" data-id="'.$appointment_id.'" data-patient-id="'.$patient_id.'">
+                <button type="button" class="btn btn-default btn-noborder green-btn nav-modal-button" data-toggle="modal" data-target=".bs-dc-edit-profile-modal-lg" data-id="'.$appointment_id.'" data-patient-id="'.$patient_id.'">
                 <i class="fa fa-pencil"></i>Update Info</button>
             </li>
             </ul>

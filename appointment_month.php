@@ -102,6 +102,7 @@
                 <?php
                 include 'include/edit-modal.php';
                 include 'include/edit-profile-modal.php';
+                include 'include/walkin.php';
                 ?>  
                 <script type="text/javascript" src="js/search.js"></script>
                 <script type="text/javascript" src="js/scrolltop.js"></script>

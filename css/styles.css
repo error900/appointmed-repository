@@ -8,7 +8,6 @@
 
 /* font */
 
-
 @font-face {
     font-family: 'Lato';
     font-style: normal;
@@ -254,6 +253,11 @@ nav > div > div > ul > li > a > i,
         padding-left: 100px;
         margin: 30px 0;
     }
+
+    .nav-modal-button {
+        width: auto !important;
+        margin: 0 !important;
+    }
 }
 
 .dropdown-menu>li>a {
@@ -477,9 +481,9 @@ nav > div > div > ul > li > a > i,
     border-radius: 0;
     text-transform: uppercase;
     transition: border 0.20s ease;
-    -webkit-box-shadow: 10px 17px 40px 0px rgba(0, 0, 0, 0.5);
-    -moz--box-shadow: 10px 17px 40px 0px rgba(0, 0, 0, 0.5);
-    box-shadow: 10px 17px 40px 0px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 3px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    -moz--box-shadow: 3px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 3px 5px 10px 0px rgba(0, 0, 0, 0.5);
 }
 
 .panel-default:hover {
@@ -736,6 +740,10 @@ a.btn.btn-block.appo.tooltip-bottom {
     margin: 10px 0;
 }
 
+.secretary-list {
+    font-size: 15px;
+}
+
 #schedules-md {
 }
 
@@ -956,6 +964,11 @@ a.btn.btn-block.appo.tooltip-bottom {
     color: #fff;
     background-color: #E67E22;
     border-color: #E67E22;
+}
+
+.nav-modal-button {
+    width: 70%;
+    margin: auto;
 }
 
 .green-btn {

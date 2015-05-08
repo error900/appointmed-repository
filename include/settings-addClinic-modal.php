@@ -22,6 +22,22 @@
                         <input type="hidden" value="" id="clinic_id" name="clinic_id">
 
                         <div class="hr-line"></div>
+
+                        <div class="secretary-list">
+                            <h4 class="text-center">Secretaries</h4>
+                            <?php 
+                                while($clinicsec = mysqli_fetch_array($sec)){
+                                    $secretary_id = $clinicsec['secretary_id'];
+                                    $clinic = mysqli_query($con, "SELECT * FROM secretary WHERE secretary_id LIKE '$secretary_id'");
+                                    $secretary = mysqli_fetch_array($clinic);
+
+                                    if(mysqli_num_rows($clinic)>=1){
+                                    echo '<p>' . $secretary['secretary_name'].'<br/></p>';
+                                    }
+                                }
+                            ?>
+                        </div>
+
                         <input type="button" class="btn btn-default btn-noborder green-btn form-control" id="showsec" value="Add Secretary">
                         <div id="secretary" style="display:none">
                             <input type="text" class="form-control" name="firstname" placeholder="First Name"/>
