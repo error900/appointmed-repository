@@ -93,29 +93,36 @@
                 		<div class="col-md-12">
                 			<h1 class="text-center row-header-fff">&mdash; Search Doctor &mdash;</h1>
                 			<?php
-                			while ($row = mysqli_fetch_array($result)) {
-            					$doctor_id = $row['doctor_id'];
-        						$doctor_name = $row['doctor_name'];
-						        $specialization = $row['specialization'];
-						        $doctor_status = $row['doctor_status'];
-						        $c_username = $search;
-						        $b_username = $c_username;
-						        $final_name = str_ireplace($search, $b_username, $doctor_name);
-						        $final_specs = str_ireplace($search, $b_username, $specialization);
-						        echo "<a href=\"doctor.php?id=$doctor_id\">";
-						        ?>
-						        <img class="img-responsive" src="img/profile/<?php
-				                $file = "img/profile/" . $doctor_id . ".jpg";
-				                if (file_exists($file)) {
-				                    echo $doctor_id;
-				                } else {
-				                    echo 'profile';
-				                }
-				                ?>.jpg">
-				            <?php
-                				echo "<i class='fa fa-user-md fa-lg'></i>" . $final_name . '</a>';
-            					echo '<p>' . $final_specs . '</p>';
-                			}
+                			if(mysqli_num_rows($result)>=1){
+	                			while ($row = mysqli_fetch_array($result)) {
+	            					$doctor_id = $row['doctor_id'];
+	        						$doctor_name = $row['doctor_name'];
+							        $specialization = $row['specialization'];
+							        $doctor_status = $row['doctor_status'];
+							        $c_username = $search;
+							        $b_username = $c_username;
+							        $final_name = str_ireplace($search, $b_username, $doctor_name);
+							        $final_specs = str_ireplace($search, $b_username, $specialization);
+							        echo "<a href=\"doctor.php?id=$doctor_id\">";
+							        ?>
+							        <img class="img-responsive" src="img/profile/<?php
+					                $file = "img/profile/" . $doctor_id . ".jpg";
+					                if (file_exists($file)) {
+					                    echo $doctor_id;
+					                } else {
+					                    echo 'profile';
+					                }
+					                ?>.jpg">
+					            <?php
+	                				echo "<i class='fa fa-user-md fa-lg'></i>" . $final_name . '</a>';
+	            					echo '<p>' . $final_specs . '</p>';
+	                			}
+	                		}else{
+							    echo '<div class="col-xs-12 col-md-10 col-md-offset-1">
+						        <div class="alert alert-warning" role="alert">
+						        <strong>No matches found.</strong> Try another search.</div>
+						        </div>';
+	                		}
                 			?>
                 		</div>
                 	</div>
