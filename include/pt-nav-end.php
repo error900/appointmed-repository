@@ -2,7 +2,7 @@
                     <button type="button" class="btn btn-default btn-noborder green-btn" data-toggle="modal" data-target=".bs-pt-edit-profile-modal-lg" data-id="'.$appointment_id.'" data-patient-id="'.$patient_id.'">
                     <i class="fa fa-pencil"></i>Update Info</button>
                 </li>
-                <form class="navbar-form navbar-right" method="post" role="search">
+                <form class="navbar-form navbar-right" method="post" role="search" action="search.php">
                     <div class="input-group search-bar">
                         <ul class="dropdown-menu divResult" role="menu">
                         </ul>
