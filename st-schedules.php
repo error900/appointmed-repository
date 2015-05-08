@@ -86,6 +86,9 @@
                                 <input type="submit" class="btn btn-default btn-noborder green-btn" value="Export" name="submit">
                             </form>
                         </div>
+                        <button type="button" data-toggle="modal" data-target=".bs-st-walk-in-modal-sm">
+                            <i class=""></i>Add walk-in patient 
+                        </button>
                         <div class="col-md-12 col-md-4 col-md-offset-2 user-md">
                             <h1><?php echo $doctor_row['doctor_name']; ?></h1>
                             <p><?php echo $c_row['clinic_location']; ?></p>
@@ -93,6 +96,8 @@
                             <p class="email"><?php echo $row['email']; ?></p>
                             <p><?php echo $c_row['clinic_contact']; ?></p>
                         </div>
+
+
                         <?php
                         include 'include/st-inqueue_served.php';
                         ?>
@@ -111,6 +116,7 @@
                 <?php
                 include 'include/remarks-modal.php';
                 include 'include/st-edit-profile-modal.php';
+                include 'include/walk-in-modal.php';
                 ?>
                 <script type="text/javascript" src="js/scrolltop.js"></script>
         </div>
