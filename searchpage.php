@@ -50,7 +50,6 @@
             $date_today = date('Y-m-d');
 
             $result = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_name LIKE '%$search%' or specialization LIKE '%$search%' ORDER BY doctor_name");
-
             ?>
             <!-- navigation -->
             <?php
@@ -89,45 +88,51 @@
                 include 'include/pt-nav-end.php';
                 ?>  
                 <div class="container-fluid" id="appointments-user">
-                	<div class="row">
-                		<div class="col-md-12">
-                			<h1 class="text-center row-header-fff">&mdash; Search Doctor &mdash;</h1>
-                			<?php
-                			if(mysqli_num_rows($result)>=1){
-	                			while ($row = mysqli_fetch_array($result)) {
-	            					$doctor_id = $row['doctor_id'];
-	        						$doctor_name = $row['doctor_name'];
-							        $specialization = $row['specialization'];
-							        $doctor_status = $row['doctor_status'];
-							        $c_username = $search;
-							        $b_username = $c_username;
-							        $final_name = str_ireplace($search, $b_username, $doctor_name);
-							        $final_specs = str_ireplace($search, $b_username, $specialization);
-							        echo "<a href=\"doctor.php?id=$doctor_id\">";
-							        ?>
-							        <img class="img-responsive" src="img/profile/<?php
-					                $file = "img/profile/" . $doctor_id . ".jpg";
-					                if (file_exists($file)) {
-					                    echo $doctor_id;
-					                } else {
-					                    echo 'profile';
-					                }
-					                ?>.jpg">
-					            <?php
-	                				echo "<i class='fa fa-user-md fa-lg'></i>" . $final_name . '</a>';
-	            					echo '<p>' . $final_specs . '</p>';
-	                			}
-	                		}else{
-							    echo '<div class="col-xs-12 col-md-10 col-md-offset-1">
-						        <div class="alert alert-warning" role="alert">
-						        <strong>No matches found.</strong> Try another search.</div>
-						        </div>';
-	                		}
-                			?>
-                		</div>
-                	</div>
+                    <div class="row">
+                        <div class="col-md-12 search-link">
+                            <h1 class="text-center row-header-fff">&mdash; Results &mdash;</h1>
+                                <?php
+                                    if (mysqli_num_rows($result) >= 1) {
+                                        while ($row = mysqli_fetch_array($result)) {
+                                            $doctor_id = $row['doctor_id'];
+                                            $doctor_name = $row['doctor_name'];
+                                            $specialization = $row['specialization'];
+                                            $doctor_status = $row['doctor_status'];
+                                            $c_username = $search;
+                                            $b_username = $c_username;
+                                            $final_name = str_ireplace($search, $b_username, $doctor_name);
+                                            $final_specs = str_ireplace($search, $b_username, $specialization);
+                                            echo "<a href=\"doctor.php?id=$doctor_id\">";
+                                    ?>
+                                    <div class="col-xs-12 col-md-4">
+                                        <div class="search-doctor-result">
+                                            <img class="img-responsive" src="img/profile/<?php
+                                            $file = "img/profile/" . $doctor_id . ".jpg";
+                                            if (file_exists($file)) {
+                                            echo $doctor_id;
+                                            } else {
+                                            echo 'profile';
+                                            }
+                                            ?>.jpg">
+                                            <div class="search-doctor-info">
+                                            <p><i class='fa fa-user-md'></i>Dr. <?php echo $final_name ?></p>
+                                            <p class="search-specs"><?php echo $final_specs ?></p></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        <?php } ?>
+                                    <?php
+                                    } else {
+                                        echo '<div class="col-xs-12 col-md-4 col-md-offset-4">
+                                        <div class="alert alert-warning" role="alert">
+                                        <strong>No matches found.</strong> Try another search.</div>
+                                        </div>';
+                                    }
+                                    ?>
+                        </div>
+                    </div>
                 </div>
-             	<?php
+                <?php
                 include 'include/edit-modal.php';
                 include 'include/scrolltop.php';
                 include 'include/edit-profile-modal.php';

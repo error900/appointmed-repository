@@ -22,8 +22,9 @@ if ($_POST) {
             </li>
             <?php
         }
-    }else{
-        echo "<p>No matches found.</p>";
+    }  else{
+        echo '<p class="search-nomatch-text">No matches found.</p>';
     }
 }
 ?>
+

@@ -185,15 +185,6 @@
                                 </ul>
                             </li>
                         </ul>
-                        <ul class="nav main-nav-label">
-                            <li class="list">
-                                <label><i class="fa fa-stethoscope"></i>Current Data</label>
-                                <ul class="nav items-list">
-                                    <li><a href="#">Import</a></li>
-                                    <li><a href="exportall.php">Export</a></li>
-                                </ul>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>

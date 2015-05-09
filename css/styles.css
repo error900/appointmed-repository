@@ -258,6 +258,10 @@ nav > div > div > ul > li > a > i,
         width: auto !important;
         margin: 0 !important;
     }
+
+    .search-doctor-info p {
+        padding: 0 20px;
+    }
 }
 
 .dropdown-menu>li>a {
@@ -830,7 +834,7 @@ a.btn.btn-block.appo.tooltip-bottom {
 .search-bar .form-control:focus + .input-group-btn .btn  {
     color: #0F5959;
     border-color: #0F5959;
-}s
+}
 
 .search-bar .form-control,
 .input-group-btn .btn {
@@ -1133,6 +1137,48 @@ a.btn.btn-block.appo.tooltip-bottom {
 
 .search-bar {
     width: 195px;
+}
+
+.search-link a {
+    text-decoration: none;
+}
+
+.search-nomatch-text {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 0 10px;
+}
+
+.search-doctor-result {
+    padding: 0px 5px;
+}
+
+.search-doctor-result img {
+    margin: auto;
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    border: 8px solid #0F5959;
+
+}
+
+.search-doctor-result a:hover > img {
+  border: 8px solid #1abc9c !important;
+  -webkit-transition: .75s;
+    transition: .75s;
+}
+
+.search-doctor-info p {
+    margin: 10px 0;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.search-specs {
+    color: #f39c12 !important;
+    font-style: italic;
 }
 
 .export-schedules {
@@ -1465,7 +1511,7 @@ ul.nav.items-list li:hover {
 .clinic-box h2 {
     margin: 0 0 6px 0;
     color: #1ABC9C;
-    font-size: 16px;
+    font-size: 14px;
     text-transform: uppercase;
 }
 
@@ -1478,7 +1524,7 @@ ul.nav.items-list li:hover {
 .clinic-box p {
     color: #fff;
     line-height: 20px;
-    font-size: 13px;
+    font-size: 11px;
     font-weight: 600;
     text-transform: uppercase;
 }
