@@ -104,23 +104,24 @@
                                             $final_specs = str_ireplace($search, $b_username, $specialization);
                                             echo "<a href=\"doctor.php?id=$doctor_id\">";
                                     ?>
-                                    <div class="col-xs-12 col-md-4">
-                                        <div class="search-doctor-result">
-                                            <img class="img-responsive" src="img/profile/<?php
-                                            $file = "img/profile/" . $doctor_id . ".jpg";
-                                            if (file_exists($file)) {
-                                            echo $doctor_id;
-                                            } else {
-                                            echo 'profile';
-                                            }
-                                            ?>.jpg">
-                                            <div class="search-doctor-info">
+                                    <div class="col-xs-12 col-md-4 search-doctor-result">
+                                        <img class="img-responsive" src="img/profile/<?php
+                                        $file = "img/profile/" . $doctor_id . ".jpg";
+                                        if (file_exists($file)) {
+                                        echo $doctor_id;
+                                        } else {
+                                        echo 'profile';
+                                        }
+                                        ?>.jpg">
+                                        <div class="search-doctor-info">
                                             <p><i class='fa fa-user-md'></i>Dr. <?php echo $final_name ?></p>
-                                            <p class="search-specs"><?php echo $final_specs ?></p></a>
-                                            </div>
+                                            <p class="search-specs"><?php echo $final_specs ?></p>
                                         </div>
                                     </div>
-                                        <?php } ?>
+                                        <?php 
+                                        echo '</a>';
+                                        } 
+                                        ?>
                                     <?php
                                     } else {
                                         echo '<div class="col-xs-12 col-md-4 col-md-offset-4">
@@ -138,6 +139,7 @@
                 include 'include/edit-profile-modal.php';
                 ?>  
                 <script type="text/javascript" src="js/search.js"></script>
+                <script type="text/javascript" src="js/scrolltop.js"></script>
         </div> <!-- /container -->
     </body>
 </html>

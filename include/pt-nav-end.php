@@ -31,9 +31,9 @@
                         <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="patient.php">Profile</a></li>
-                        <li><a href="changepassword.php">Change Password</a></li>
-                        <li><a href="help.php">Help</a></li>
+                        <li><a href="patient.php"><i class="fa fa-user"></i>Profile</a></li>
+                        <li><a href="changepassword.php"><i class="fa fa-unlock-alt"></i>Change Password</a></li>
+                        <li><a href="help.php"><i class="fa fa-question-circle"></i>Help</a></li>
                         <li class="divider"></li>
                         <li><a href="logout.php"><i class="fa fa-power-off"></i>logout</a></li>
                     </ul>

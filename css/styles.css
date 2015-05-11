@@ -123,7 +123,10 @@ i.fa.fa-hand-o-right,
 i.fa.fa-envelope,
 i.fa.fa-angle-double-right,
 i.fa.fa-clock-o,
-i.fa.fa-calendar-o
+i.fa.fa-calendar-o,
+i.fa.fa-user,
+i.fa.fa-unlock-alt,
+i.fa.fa-question-circle
  {
     padding-right: 8px;
 }
@@ -263,7 +266,7 @@ nav > div > div > ul > li > a > i,
     }
 
     .search-doctor-info p {
-        padding: 0 20px;
+        padding: 0 30px;
     }
 }
 
@@ -1153,10 +1156,6 @@ a.btn.btn-block.appo.tooltip-bottom {
     padding: 0 10px;
 }
 
-.search-doctor-result {
-    padding: 0px 5px;
-}
-
 .search-doctor-result img {
     margin: auto;
     width: 128px;
@@ -1166,7 +1165,7 @@ a.btn.btn-block.appo.tooltip-bottom {
 
 }
 
-.search-doctor-result a:hover > img {
+.search-doctor-result:hover > img {
   border: 8px solid #1abc9c !important;
   -webkit-transition: .75s;
     transition: .75s;
