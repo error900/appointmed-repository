@@ -76,8 +76,11 @@ body {
 
 a {
     color: #0F5959 !important;
-    -webkit-transition: .25s;
-    transition: .25s;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -ms-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
 }
 
 /** a:hover {
@@ -661,10 +664,11 @@ nav > div > div > ul > li > a > i,
 
 .appmnt-pnl-btn a:hover,
 .appmnt-pnl-btn button:hover {
-    -webkit-transition-duration: 0.5s;
-    -moz-transition-duration: 0.5s;
-    -o-transition-duration: 0.5s;
-    transition-duration: 0.5s;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 
 a.btn.btn-block.appo.tooltip-bottom {
@@ -1011,28 +1015,28 @@ a.btn.btn-block.appo.tooltip-bottom {
 .green-btn:focus {
     color: #fff !important;
     background: #0F5959 !important;
-    transition: 0.5s;
+    transition: all 0.5s ease-in-out;
 }
 
 .black-btn:hover,
 .black-btn:focus {
     color: #fff !important;
     background: #34495E !important;
-    transition: 0.5s;
+    transition: all 0.5s ease-in-out;
 }
 
 .red-btn:hover,
 .red-btn:focus {
     color: #fff !important;
     background: #D93240 !important;
-    transition: 0.5s;
+    transition: all 0.5s ease-in-out;
 }
 
 .blue-btn:hover,
 .blue-btn:focus {
     color: #fff !important;
     background: #34495E !important;
-    transition: 0.5s;
+    transition: all 0.5s ease-in-out;
 }
 
 .btn-default.create-btn,
@@ -1046,7 +1050,7 @@ a.btn.btn-block.appo.tooltip-bottom {
     font-size: 14px;
     background-color: #E67E22;
     text-shadow: 1px 1px 1px #34495E;
-    transition: 0.5s;
+    transition: all 0.5s ease-in-out;
 }
 
 .btn-default.red-btn2 {
