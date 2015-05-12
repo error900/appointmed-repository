@@ -255,11 +255,6 @@ nav > div > div > ul > li > a > i,
         margin-left: 70px;
     }
 
-    .other-services {
-        padding-left: 100px;
-        margin: 30px 0;
-    }
-
     .nav-modal-button {
         width: auto !important;
         margin: 0 !important;
@@ -330,12 +325,14 @@ nav > div > div > ul > li > a > i,
 
 .logo-text {
     color: transparent !important;
+    text-indent: 30px;
 }
 
 .navbar-logo {
     background: url('../img/logo.png') no-repeat;
     background-size: 153px 45px;
     background-position: -10px 6px;
+    background-color: #f8f8f8;
     height: 53px;
     width: 140px;
     position: absolute;
@@ -1081,9 +1078,9 @@ a.btn.btn-block.appo.tooltip-bottom {
     height: 305px;
     background: url('../img/benguet-laboratory-view.jpg') no-repeat;
     margin:	10px 0 40px 0;
-    -webkit-box-shadow: 10px 17px 40px 0px rgba(0, 0, 0, 0.5);
-    -moz--box-shadow: 10px 17px 40px 0px rgba(0, 0, 0, 0.5);
-    box-shadow: 10px 17px 40px 0px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 3px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    -moz--box-shadow: 3px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 3px 5px 10px 0px rgba(0, 0, 0, 0.5);
 }
 
 .more-btn {
@@ -1205,10 +1202,6 @@ a.btn.btn-block.appo.tooltip-bottom {
     box-shadow: 0 0 0 10px hsl(0, 0%, 70%), 0 0 0 15px hsl(0, 0%, 80%);
 }
 
-.other-services {
-    margin: 10px 0 60px 0 !important;
-}
-
 .other-services label {
     text-transform: uppercase;
     font-size: 15px;
@@ -1221,7 +1214,7 @@ a.btn.btn-block.appo.tooltip-bottom {
 ul.nav.items-list li {
     margin-left: 20px;
     padding: 5px;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1;
     cursor: pointer;
 }
@@ -1233,8 +1226,8 @@ ul.nav.items-list li:hover {
 
 
 .about-icons img {
-    height: 128px;
-    border: 10px solid #95A5A6;
+    height: 100px;
+    border: 3px solid #95A5A6;
     border-radius: 50%;
     transition: 0.5s;
     filter: grayscale(1);
@@ -1260,8 +1253,7 @@ ul.nav.items-list li:hover {
 
 .about-icons span {
     display: block;
-    margin-bottom: 8px;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 600;
 }
 
@@ -1620,8 +1612,10 @@ ul.nav.items-list li:hover {
 }
 
 footer {
+
 }
 
-.footer-links {
-    padding: 10px;
+
+.footer-content img {
+    padding: 30px 10px;
 }

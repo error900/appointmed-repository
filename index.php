@@ -80,13 +80,13 @@
                     <div class="col-xs-12 col-md-12">
                         <h1 class="text-center row-header">Benguet Laboratories</h1>
                     </div>
-                    <div class="col-xs-12 col-md-8">
+                    <div class="col-xs-12 col-md-7">
                         <div class="g-map">
                             <iframe width="600" height="450" frameborder="0" style="border:0"
                                     src="https://www.google.com/maps/embed/v1/place?q=Benguet%20Laboratories%20-%20SM%20City%20Baguio%2C&key=AIzaSyCbweT-jLxTUhNFbJE8FJdFuiL8x2hiNww"></iframe>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-md-4">
+                    <div class="col-xs-12 col-md-5">
                         <div class="map-location">
                             <p>
                                 <i class="fa fa-location-arrow fa-2x"></i>
@@ -105,9 +105,6 @@
                                 </a>
                             </p>
                         </div>
-                        <p class="text-right more-btn">
-                            <a href="" class="more-btn">show more <i class="fa fa-plus"></i></a>
-                        </p>
                     </div>
                 </div>
             </div>
@@ -141,23 +138,20 @@
                         </div>
                     </div>
                     <div class="col-xs-12 col-md-12 company-profile">
-                        <h2 class="row-header2">Company Profile</h2>
+                        <h2 class="row-header2 text-center">Company Profile</h2>
                     </div>
-                    <div class="col-xs-12 col-md-8 company-profile">
+                    <div class="col-xs-12 col-md-8 col-md-offset-2 company-profile">
                         <p><span>BenguetCorp Laboratories Inc.</span> Is a wholly owned subsidiary of publicly listed company Benguet Corporation. Benguet Corporation has more than a 100 year old history and tradition in the mining industry and is considered the industry leader. It has since branched into non-mining concerns, foremost of which is its foray into the healthcare industry.</p>
                         <p><span>BenguetCorp Laboratories Inc.</span> Operates a chain of outpatient medical and health facilities under the trade name Med Central. Med Central has three operating healthcare clinics: SM Baguio, Centermall Baguio and SM San Fernando, Pampanga.</p>
-                        <p>Med Central’s branch in SM San Ferndo Pampanga is strategically located on the 2nd floor across the food court area.</p>
+                        <p>Med Central’s branch in SM San Fernando Pampanga is strategically located on the 2nd floor across the food court area.</p>
                         <p class="text-right">
                             <a href="companyprofile.php" class="more-btn">read more <i class="fa fa-arrow-right"></i></a>
                         </p>
                     </div>
-                    <div class="col-xs-12 col-md-4 company-profile-img">
-                        <img src="img/lab.jpg" class="img-responsive" alt="Responsive image">
-                    </div>
                 </div>
             </div>
             <?php
-            //  include 'include/footer.php';
+            include 'include/footer.php';
             include 'include/scrolltop.php';
             include 'include/scripts.php';
             ?>

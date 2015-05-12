@@ -23,7 +23,7 @@
                             if (file_exists($file)) {
                                 echo $patient_id;
                             } else {
-                                echo 'profile_patient';
+                                echo 'patient-avatar';
                             }
                             ?>.jpg" class="img-responsive">
                         </div>
