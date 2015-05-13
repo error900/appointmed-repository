@@ -6,17 +6,26 @@
                 <img src="img/logo.png" class="img-responsive" alt="logo">
             </div>
             <div class="col-xs-12 col-md-4">
-                <h4>Not a member?</h4>
-                <a href="signup.php" class="btn btn-default btn-noborder red-btn">Register</a>
-                <a href="signup.php" class="btn btn-default btn-noborder red-btn">Search Doctor</a>
-            </div>
-            <div class="col-xs-12 col-md-4">
-                <ul>
-                    <li>Home</li>
-                    <li>Company Profile</li>
-                    <li>Doctors</li>
-                    <li>SignupS</li>
+                <ul class="nav footer-nav">
+                    <li><a href="index.php"><i class="fa fa-link"></i>Home</a></li>
+                    <li><a href="companyprofile.php"><i class="fa fa-link"></i>Company Profile</a></li>
+                    <li><a href="doctors.php"><i class="fa fa-link"></i>Doctors</a></li>
+                    <li><a href="signup.php"><i class="fa fa-link"></i>Signup</a></li>
                 </ul>
+            </div>
+            <div class="col-xs-12 col-md-2 footer-buttons text-center">
+                <h4>Not a Member?</h4>
+                <a href="signup.php" class="btn btn-default btn-noborder register-btn">Register</a>
+            </div>
+           <div class="col-xs-12 col-md-2 footer-buttons text-center">
+                <h4>Already a Member?</h4>
+                <button class="btn btn-default btn-noborder ft-login-btn" data-toggle="modal" data-target=".bs-example-modal-sm">Login</button>
+            </div> 
+        </div>
+        <div class="row">
+            <div class="col-xs-12 hr-line"></div>
+            <div>
+                Benguet Laboratories Incorporated
             </div>
         </div>
     </div>
