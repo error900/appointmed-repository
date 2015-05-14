@@ -35,20 +35,23 @@
     else if ($account_type != 'Doctor')
         header("location: admin/index.php");
 
-    $tomorrow = date("Y-m-d", time() + 86400);
+    $month = date("m");
+    $next = $month+1;
+    $start = date("Y-".$next."-1");
+    $next_month = date("Y-".$next."-t");
+
+    $date = date('Y-m-d');
     $username = $_SESSION['username'];
-    $date = date("Y-m-d");
-    $result = mysqli_query($con, "SELECT * FROM doctor WHERE username LIKE '$username'");
+    $result = mysqli_query($con, "SELECT * FROM doctor WHERE username LIKE '$username'") or die(mysqli_error());
     $row = mysqli_fetch_array($result);
     $doctor = $row['doctor_name'];
     $specialization = $row['specialization'];
     $email = $row['email'];
     $doctor_id = $row['doctor_id'];
-    $c_result = mysqli_query($con, "SELECT * FROM clinic WHERE doctor_id LIKE '$doctor_id'");
+    $c_result = mysqli_query($con, "SELECT * FROM clinic WHERE doctor_id LIKE '$doctor_id'") or die(mysqli_error());
     $c_row = mysqli_fetch_array($c_result);
-    $a_result = mysqli_query($con, "SELECT * FROM appointment NATURAL JOIN queue_notif WHERE doctor_id = '$doctor_id' AND (appointment_status = 'inqueue') AND (appoint_date = '$tomorrow') ORDER BY 2 ASC, 8 ASC");
+    $a_result = mysqli_query($con, "SELECT * FROM appointment NATURAL JOIN queue_notif WHERE doctor_id = '$doctor_id' AND (appointment_status = 'inqueue') AND (appoint_date >= '$start' AND appoint_date <= '$next_month') ORDER BY 2 ASC, 8 ASC") or die(mysqli_error());
     $sqls = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_id <> '$doctor_id'") or die(mysqli_error());
-
     $date_today = date('Y-m-d');
     $count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE doctor_id LIKE '$doctor_id' AND indicator = 'Patient'");
     $count_row = mysqli_fetch_array($count_result);
@@ -108,8 +111,9 @@
                 <div class="container-fluid" id="schedules-md">
                     <div class="row">
                         <div class="col-md-12">
-                            <h2 class="text-center row-header">&mdash; Tomorrow&mdash;</h2>
+                            <h2 class="text-center row-header">&mdash; Next Month &mdash;</h2>
                         </div>
+
                         <?php
                         include 'include/schedules-panel.php';
                         ?>
@@ -117,8 +121,8 @@
                 </div>
                 <?php
                 include 'include/refer-modal.php';
-                include 'include/remarks-modal.php';
                 include 'include/edit-profile-modal.php';
+                include 'include/remarks-modal.php';
                 ?>
                 <script type="text/javascript" src="js/scrolltop.js"></script>
         </div>
