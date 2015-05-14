@@ -34,7 +34,7 @@
                 header("location: index.php");
                 die();
             }
-            $search = $_GET['q'];
+            $search = mysqli_real_escape_string($con, $_GET['q']);
             $result = mysqli_query($con, "SELECT * FROM patient WHERE username LIKE '$username'");
             $row = mysqli_fetch_array($result);
             $patient_id = $row['patient_id'];
@@ -110,7 +110,7 @@
                                         if (file_exists($file)) {
                                         echo $doctor_id;
                                         } else {
-                                        echo 'doctor-avatar';
+                                        echo 'profile';
                                         }
                                         ?>.jpg">
                                         <div class="search-doctor-info">

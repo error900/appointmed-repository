@@ -1,7 +1,7 @@
 <?php
 include 'connectdatabase.php';
 if ($_POST) {
-    $search = $_POST['searchword'];
+    $search = mysqli_real_escape_string($con, $_POST['searchword']);
     $result = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_name LIKE '%$search%' or specialization LIKE '%$search%' ORDER BY doctor_name LIMIT 5");
     if(mysqli_num_rows($result)>=1){
         while ($row = mysqli_fetch_array($result)) {
