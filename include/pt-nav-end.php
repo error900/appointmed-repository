@@ -1,8 +1,8 @@
                 <li class="nav-button navbar-right">
-                    <button type="button" class="btn btn-default btn-noborder green-btn" data-toggle="modal" data-target=".bs-pt-edit-profile-modal-lg" data-id="'.$appointment_id.'" data-patient-id="'.$patient_id.'">
+                    <button type="button" class="btn btn-default btn-noborder green-btn nav-modal-button" data-toggle="modal" data-target=".bs-pt-edit-profile-modal-lg" data-id="'.$appointment_id.'" data-patient-id="'.$patient_id.'">
                     <i class="fa fa-pencil"></i>Update Info</button>
                 </li>
-                <form class="navbar-form navbar-right" method="post" role="search">
+                <form class="navbar-form navbar-right" method="post" role="search" action="search.php">
                     <div class="input-group search-bar">
                         <ul class="dropdown-menu divResult" role="menu">
                         </ul>
@@ -31,9 +31,9 @@
                         <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="patient.php">Profile</a></li>
-                        <li><a href="changepassword.php">Change Password</a></li>
-                        <li><a href="help.php">Help</a></li>
+                        <li><a href="patient.php"><i class="fa fa-user"></i>Profile</a></li>
+                        <li><a href="changepassword.php"><i class="fa fa-unlock-alt"></i>Change Password</a></li>
+                        <li><a href="help.php"><i class="fa fa-question-circle"></i>Help</a></li>
                         <li class="divider"></li>
                         <li><a href="logout.php"><i class="fa fa-power-off"></i>logout</a></li>
                     </ul>

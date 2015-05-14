@@ -1,11 +1,11 @@
-            <li class="nav-button hidden-sm hidden-xs">
+            <li class="nav-button navbar-right hidden-sm hidden-xs">
                 <form action="export.php" method="post">
                     <input type="hidden" name="doctor_id" value="<?php echo $doctor_id ?>">
                     <input type="submit" class="btn btn-default btn-noborder green-btn" value="Export" name="submit">
                 </form>
             </li>
             <li class="nav-button navbar-right">
-                <button type="button" class="btn btn-default btn-noborder green-btn" data-toggle="modal" data-target=".bs-dc-edit-profile-modal-lg" data-id="'.$appointment_id.'" data-patient-id="'.$patient_id.'">
+                <button type="button" class="btn btn-default btn-noborder green-btn nav-modal-button" data-toggle="modal" data-target=".bs-dc-edit-profile-modal-lg" data-id="'.$appointment_id.'" data-patient-id="'.$patient_id.'">
                 <i class="fa fa-pencil"></i>Update Info</button>
             </li>
             </ul>
@@ -26,9 +26,9 @@
                         <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="doctor-profile.php">Profile</a></li>
-                        <li><a href="doc_changepassword.php">Change Password</a></li>
-                        <li><a href="doc_help.php">Help</a></li>
+                        <li><a href="doctor-profile.php"><i class="fa fa-user"></i>Profile</a></li>
+                        <li><a href="doc_changepassword.php"><i class="fa fa-unlock-alt"></i>Change Password</a></li>
+                        <li><a href="doc_help.php"><i class="fa fa-question-circle"></i>Help</a></li>
                         <li class="divider"></li>
                         <li><a href="admin/logout.php"><i class="fa fa-power-off"></i>logout</a></li>
                     </ul>

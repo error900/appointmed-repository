@@ -555,7 +555,7 @@
 </div>
 <div class="row"> 
     <?php 
-        $result = mysqli_query($con, "SELECT * FROM doctor WHERE specialization = 'Neuro-Psychiatr'");
+        $result = mysqli_query($con, "SELECT * FROM doctor WHERE specialization = 'Neuro-Psychiatry'");
         while ($d_row = mysqli_fetch_array($result)) {
             $specialization = $d_row['specialization'];
         }

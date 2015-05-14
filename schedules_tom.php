@@ -47,7 +47,7 @@
     $c_result = mysqli_query($con, "SELECT * FROM clinic WHERE doctor_id LIKE '$doctor_id'");
     $c_row = mysqli_fetch_array($c_result);
     $a_result = mysqli_query($con, "SELECT * FROM appointment NATURAL JOIN queue_notif WHERE doctor_id = '$doctor_id' AND (appointment_status = 'inqueue') AND (appoint_date = '$tomorrow') ORDER BY 2 ASC, 8 ASC");
-    $sqls = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_id <> '$doctor_id'") or die(mysqli_error());
+    $sqls = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_id <> '$doctor_id' ORDER BY specialization") or die(mysqli_error());
 
     $date_today = date('Y-m-d');
     $count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE doctor_id LIKE '$doctor_id' AND indicator = 'Patient'");

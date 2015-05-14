@@ -13,7 +13,7 @@
                             <?php
                             while ($row2 = mysqli_fetch_array($sqls)) {
                                 ?>
-                                <option value='<?php echo $row2['doctor_id'] ?>' ><?php echo $row2['doctor_name'] ?></option> ;
+                                <option value='<?php echo $row2['doctor_id'] ?>' ><?php echo $row2['doctor_name'].': ';echo $row2['specialization'] ?></option> ;
                             <?php } ?>
                         </select>                                      
                         <input type="hidden" id="pat_id" value="" name="patient_id">

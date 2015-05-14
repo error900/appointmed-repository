@@ -1,7 +1,7 @@
 <div class="col-xs-6 col-md-2 col-md-offset-1">
     <div class="text-center circle inqueue">
         <?php
-        $count_row = mysqli_query($con, "SELECT COUNT(*) AS Appointments FROM appointment WHERE doctor_id = '$doctor_id' AND (appointment_status = 'Inqueue' OR appointment_status = 'Referred') AND appoint_date = '$date' ");
+        $count_row = mysqli_query($con, "SELECT COUNT(*) AS Appointments FROM appointment NATURAL JOIN queue_notif  WHERE doctor_id = '$doctor_id' AND (appointment_status = 'Inqueue' OR appointment_status = 'Referred') AND appoint_date = '$date' ");
         $count = mysqli_fetch_assoc($count_row);
         if ($count == 0)
             echo '<p>' . '0' . '</p>';
@@ -14,7 +14,7 @@
 <div class="col-xs-6 col-md-2">
     <div class="text-center circle served">
         <?php
-        $count_row1 = mysqli_query($con, "SELECT COUNT(*) AS Appointments FROM appointment WHERE doctor_id = '$doctor_id' AND appointment_status = 'Completed' AND appoint_date = '$date' ");
+        $count_row1 = mysqli_query($con, "SELECT COUNT(*) AS Appointments FROM appointment NATURAL JOIN queue_notif  WHERE doctor_id = '$doctor_id' AND appointment_status = 'Completed' AND appoint_date = '$date' ");
         $count1 = mysqli_fetch_assoc($count_row1);
         if ($count1 == 0)
             echo '<p>' . '0' . '</p>';

@@ -2,7 +2,7 @@
 include 'connectdatabase.php';
 if (isset($_POST['submit'])) {
     $username = mysqli_real_escape_string($con, $_POST['username']);
-    //$password = mysqli_real_escape_string($con, $_POST['password']);
+    $password = mysqli_real_escape_string($con, $_POST['password']);
     $email = mysqli_real_escape_string($con, $_POST['email']);
     $contact = mysqli_real_escape_string($con, $_POST['contact']);
     $occupation = mysqli_real_escape_string($con, $_POST['occupation']);
@@ -53,12 +53,12 @@ if (isset($_POST['submit'])) {
     }
 
     //hash
-    //$password = hash('sha256', $password);
+    $password = hash('sha256', $password);
 
     //patient id
     $patientid = substr(md5(uniqid(rand(), true)), 0, 7);
 
-    $sqlaccount = "INSERT INTO account (username, password, account_type, account_status) VALUES('$username','', '$account_type','inactive')";
+    $sqlaccount = "INSERT INTO account (username, password, account_type, account_status) VALUES('$username','$password', '$account_type','inactive')";
     $sqlpatient = "INSERT INTO patient (patient_id, username, email, patient_contact, occupation, birthdate, patient_name) 
 		VALUES('$patientid','$username','$email', '$contact','$occupation','$birthdate','$patientname')";
 

@@ -101,7 +101,9 @@
                                     </select>
                                     <select name="birth_year" class="form-control">
                                         <option selected>Year
-                                            <?php for ($i = 1900; $i <= 2015; $i++) { ?>
+                                            <?php 
+                                                $year = date('Y');
+                                                for ($i = $year; $i >= 1900; $i--) { ?>
                                             <option value="<?php echo $i; ?>">
                                                 <?php echo $i; ?>
                                             </option> 
@@ -109,7 +111,7 @@
                                     </select>
                                     <input type="text" class="form-control" name="username" placeholder="Username" id="username" required=""/>  
                                     <span id="result"></span>        
-                                    <!--<input type="password" class="form-control" name="password" placeholder="Password"  
+                                    <input type="password" class="form-control" name="password" placeholder="Password"  
                                            required pattern="(?=.*[a-z])(?=.*[A-Z]).{6,}" 
                                            onchange="this.setCustomValidity(this.validity.patternMismatch ? this.title : '');
                                         if (this.checkValidity())
@@ -118,7 +120,7 @@
 
                                     <input type="password" title="Passwords do not match" class="form-control" name="password2" placeholder="Confirm Password" 
                                            onchange=" this.setCustomValidity(this.validity.patternMismatch ? this.title : '');"
-                                           />-->
+                                           />
                                     <input class="btn btn-default orange-btn" type="submit" value="Submit" name="submit"/>
                                 </div>
                             </form>

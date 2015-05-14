@@ -35,6 +35,7 @@
 	else if ($account_type != 'Doctor')
 		header("location: admin/index.php");
 
+<<<<<<< HEAD
 	$start = date("Y-m-1");
 	$end = date("Y-m-t");
 	$date = date("Y-m-d");
@@ -47,6 +48,22 @@
 	$doctor_id = $row['doctor_id'];
 	$a_result = mysqli_query($con, "SELECT * FROM appointment NATURAL JOIN queue_notif WHERE doctor_id = '$doctor_id' AND (appointment_status = 'inqueue') AND (appoint_date >= '$start' AND appoint_date <= '$end') ORDER BY 2 ASC, 8 ASC");
 	$sqls = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_id <> '$doctor_id'") or die(mysqli_error());
+=======
+    $start = date("Y-m-1");
+    $end = date("Y-m-t");
+    $date = date("Y-m-d");
+    $username = $_SESSION['username'];
+    $result = mysqli_query($con, "SELECT * FROM doctor NATURAL JOIN clinic WHERE username LIKE '$username'");
+    $row = mysqli_fetch_array($result);
+    $doctor = $row['doctor_name'];
+    $specialization = $row['specialization'];
+    $email = $row['email'];
+    $doctor_id = $row['doctor_id'];
+ //   $c_result = mysqli_query($con, "SELECT * FROM clinic WHERE doctor_id LIKE '$doctor_id'");
+ //   $c_row = mysqli_fetch_array($c_result);
+    $a_result = mysqli_query($con, "SELECT * FROM appointment NATURAL JOIN queue_notif WHERE doctor_id = '$doctor_id' AND (appointment_status = 'inqueue') AND (appoint_date >= '$start' AND appoint_date <= '$end') ORDER BY 2 ASC, 8 ASC");
+    $sqls = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_id <> '$doctor_id' ORDER BY specialization") or die(mysqli_error());
+>>>>>>> origin/master
 
 	$date_today = date('Y-m-d');
 	$count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE doctor_id LIKE '$doctor_id' AND indicator = 'Patient'");

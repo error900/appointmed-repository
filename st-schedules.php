@@ -47,7 +47,7 @@
     $c_row = mysqli_fetch_array($c_result);
     $clinic_id = $c_row['clinic_id'];
     $a_result = mysqli_query($con, "SELECT * FROM appointment NATURAL JOIN queue_notif WHERE doctor_id = '$doctor_id' AND clinic_id = '$clinic_id' AND (appointment_status = 'inqueue' OR appointment_status = 'Referred') AND (appoint_date = '$date') ORDER BY 2 ASC, 8 ASC") or die(mysqli_error());
-//    $sqls = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_id <> '$doctor_id'") or die(mysqli_error());
+    $sqls = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_id <> '$doctor_id' ORDER BY specialization") or die(mysqli_error());
 
     $count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE doctor_id LIKE '$doctor_id' AND indicator = 'Patient'") or die(mysqli_error());
     $count_row = mysqli_fetch_array($count_result);
@@ -86,6 +86,9 @@
                                 <input type="submit" class="btn btn-default btn-noborder green-btn" value="Export" name="submit">
                             </form>
                         </div>
+                        <button type="button" data-toggle="modal" data-target=".bs-st-walk-in-modal-sm">
+                            <i class=""></i>Add walk-in patient 
+                        </button>
                         <div class="col-md-12 col-md-4 col-md-offset-2 user-md">
                             <h1><?php echo $doctor_row['doctor_name']; ?></h1>
                             <p><?php echo $c_row['clinic_location']; ?></p>
@@ -93,6 +96,8 @@
                             <p class="email"><?php echo $row['email']; ?></p>
                             <p><?php echo $c_row['clinic_contact']; ?></p>
                         </div>
+
+
                         <?php
                         include 'include/st-inqueue_served.php';
                         ?>
@@ -111,6 +116,9 @@
                 <?php
                 include 'include/remarks-modal.php';
                 include 'include/st-edit-profile-modal.php';
+                include 'include/walk-in-modal.php';
+                include 'include/refer-modal.php';
+
                 ?>
                 <script type="text/javascript" src="js/scrolltop.js"></script>
         </div>
