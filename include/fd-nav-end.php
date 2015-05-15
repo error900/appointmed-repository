@@ -1,13 +1,14 @@
-            <li class="nav-button hidden-sm hidden-xs">
-                <form action="export.php" method="post">
-                    <input type="hidden" name="doctor_id" value="<?php echo $doctor_id ?>">
-                    <input type="submit" class="btn btn-default btn-noborder green-btn" value="Export" name="submit">
+                <form class="navbar-form navbar-right" method="post" role="search" action="search.php">
+                    <div class="input-group search-bar">
+                        <ul class="dropdown-menu divResult" role="menu">
+                        </ul>
+                        <input type="text" class="form-control" name="search" placeholder="search doctor" id="inputSearch">
+
+                        <span class="input-group-btn">
+                            <button type="submit" class="btn"><i class="fa fa-search"></i></button>
+                        </span>
+                    </div>
                 </form>
-            </li>
-            <li class="nav-button navbar-right">
-                <button type="button" class="btn btn-default btn-noborder green-btn nav-button" data-toggle="modal" data-target=".bs-st-edit-profile-modal-lg" data-id="'.$appointment_id.'" data-patient-id="'.$patient_id.'">
-                    <i class="fa fa-pencil"></i>Update Info</button>
-            </li>
             </ul>
             <ul class="nav navbar-nav navbar-right signedin">
                 <div class="btn-group navbar-right">
@@ -22,7 +23,7 @@
                             }
                             ?>.jpg">
                         </div>
-            <?php echo $secretary ?>
+            <?php echo "Juanita Dela Cruz"; ?>
                         <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" role="menu">

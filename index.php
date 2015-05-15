@@ -39,7 +39,7 @@
                         <ul class="nav navbar-nav nav-parent">
                             <li class="active tooltip-bottom" data-tooltip="Home"><a href="index.php"><i class="fa fa-home fa-lg"></i>Home</a></li>
                             <li class="tooltip-bottom" data-tooltip="Company Profile"><a href="companyprofile.php"><i class="fa fa-info-circle fa-lg"></i>Company Profile</a></li>
-                            <li class="tooltip-bottom" data-tooltip="Doctors"><a href="doctors.php"><i class="fa fa-user-md fa-lg"></i>Doctors</a></li>
+                            <li class="tooltip-bottom" data-tooltip="Doctors"><a href="doctors.php"><i class="fa fa-user-md fa-lg"></i>Doctors List</a></li>
                             <li class="tooltip-bottom" data-tooltip="Signup"><a href="signup.php"><i class="fa fa-pencil-square-o fa-lg"></i>Sign-up</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right hidden-xs hidden-sm">
@@ -77,6 +77,8 @@
             </div>
             <div class="container-fluid" id="clinics">
                 <div class="row">
+                    <div class="col-xs-12 hr-line">
+                    </div>
                     <div class="col-xs-12 col-md-12">
                         <h1 class="text-center row-header">Benguet Laboratories</h1>
                     </div>
@@ -110,6 +112,8 @@
             </div>
             <div class="container-fluid" id="about">
                 <div class="row">
+                    <div class="col-xs-12 hr-line">
+                    </div>
                     <div class="col-xs-12 col-md-12">
                         <h1 class="text-center row-header">About</h1>
                     </div>
@@ -136,6 +140,8 @@
                             <img src="img/icons/settings.png" alt="">
                             <p><span>Settings</span> Configure set up. Our Doctors can configure their settings at their convenience.</p>
                         </div>
+                    </div>
+                    <div class="col-xs-12 hr-line">
                     </div>
                     <div class="col-xs-12 col-md-12 company-profile">
                         <h2 class="row-header2 text-center">Company Profile</h2>

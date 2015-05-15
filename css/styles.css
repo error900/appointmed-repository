@@ -107,6 +107,10 @@ h1, h2, h3, h4 {
     background: rgba(231, 76, 60, 0.2) !important;
 }
 
+.frontdesk-bg {
+    background: rgba(231, 76, 60, 0.2) !important;
+}
+
 .fa-lg {
       font-size: 1.33333333em !important;
 }
@@ -412,11 +416,12 @@ nav > div > div > ul > li > a > i,
     font-weight: 600;
 }
 
-.appointment-specs {
+.appointment-specs,
+.doctor-panel-specs {
     margin: 0 0 0 5px;
     font-style: italic;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 18px !important;
     text-transform: lowercase;
 }
 
@@ -752,9 +757,6 @@ a.btn.btn-block.appo.tooltip-bottom {
     font-size: 15px;
 }
 
-#schedules-md {
-}
-
 .sched-panel,
 .dc-profile-sched-panel {
     min-height: 165px;
@@ -791,7 +793,6 @@ a.btn.btn-block.appo.tooltip-bottom {
 
 .dc-profile-sched-panel i {
 }
-
 
 .remarks textarea {
     resize: none;
@@ -1360,6 +1361,27 @@ ul.nav.items-list li:hover {
     border-radius: 50%;
 }
 
+.doctor-panel {
+    background-color: #F1C40F !important;
+}
+
+.doctor-panel .panel-heading {
+    background-color: #F39C12 !important;
+}
+
+.doctor-panel p {
+    line-height: 20px !important;
+}
+
+.doctor-panel .panel-body {
+    color: #2C3E50;
+    font-weight: 600;
+}
+
+.panel.panel-default.doctor-panel:hover {
+    border: 2px solid #F39C12;
+}
+
 .subscribeUnsubscribe {
     width: 60% !important;
 }
@@ -1644,6 +1666,11 @@ footer {
     padding: 20px 10px;
 }
 
+.footer-buttons h4 {
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
 .footer-buttons a,
 .footer-buttons button {
     margin-top: 15px;
@@ -1661,6 +1688,12 @@ footer {
 }
 
 .ft-login-btn    {
-    color: #16A085 !important;
-    border: 1px solid #16A085;
+    color: #0F5959 !important;
+    border: 1px solid #0F5959;
+}
+
+.copyright {
+    padding-top: 20px;
+    font-size: 12px;
+    font-weight: 600;
 }
