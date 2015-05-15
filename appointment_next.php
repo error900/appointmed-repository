@@ -34,11 +34,17 @@
                 header("location: index.php");
                 die();
             }
+
+            $month = date("m");
+            $next = $month+1;
+            $start = date("Y-".$next."-1");
+            $next_month = date("Y-".$next."-t");
+
             $result = mysqli_query($con, "SELECT * FROM patient WHERE username LIKE '$username'");
             $row = mysqli_fetch_array($result);
             $patient_id = $row['patient_id'];
             $patient_n = $row['patient_name'];
-            $p_result = mysqli_query($con, "SELECT * FROM appointment WHERE patient_id LIKE '$patient_id' AND (appointment_status = 'Inqueue') AND (appoint_date = '$date_today') ORDER BY 5");
+            $p_result = mysqli_query($con, "SELECT * FROM appointment WHERE patient_id LIKE '$patient_id' AND (appointment_status = 'Inqueue') AND (appoint_date >= '$start' AND appoint_date <= '$next_month') ORDER BY 5");
 
             $count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE patient_id LIKE '$patient_id' AND (indicator = 'doctor' OR indicator = 'admin')");
             $count_row = mysqli_fetch_array($count_result);
@@ -89,7 +95,7 @@
                 <div class="container-fluid" id="appointments-user">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1 class="text-center row-header-fff">&mdash; Today &mdash;</h1>
+                            <h1 class="text-center row-header-fff">&mdash; Next Month &mdash;</h1>
                         </div>
                         <?php
                         include 'include/appointment-panel.php';

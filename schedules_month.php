@@ -1,40 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-    <?php
-    $title = "Schedules";
-    include 'include/head.php';
-    include 'connectdatabase.php';
-    include 'include/scripts.php';
-    include 'include/scrolltop.php';
-    ?>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $(".appo").click(function() { // Click to only happen on announce links
-                $("#appo_id").val($(this).data('id'));
-                $("#pat_id").val($(this).data('patient-id'));
-                $("#appoint_id").val($(this).data('a-id'));
-                $("#patient_id").val($(this).data('p-id'));
-            });
-            $('#hideshow').on('click', function() {
-                $('#clinics').show();
-            });
-            $('#showsec').on('click', function() {
-                $('#secretary').show();
-            });
-            $('#specs').on('click', function() {
-                $('#specialization').show();
-            });
-        });
-    </script>
-    <?php
-    session_start();
-    $loggedIn = $_SESSION['loggedIn'];
-    $account_type = $_SESSION['account_type'];
-    if ($loggedIn == false)
-        header("location: admin/index.php");
-    else if ($account_type != 'Doctor')
-        header("location: admin/index.php");
+	<?php
+	$title = "Schedules";
+	include 'include/head.php';
+	include 'connectdatabase.php';
+	include 'include/scripts.php';
+	include 'include/scrolltop.php';
+	?>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$(".appo").click(function() { // Click to only happen on announce links
+				$("#appo_id").val($(this).data('id'));
+				$("#pat_id").val($(this).data('patient-id'));
+				$("#appoint_id").val($(this).data('a-id'));
+				$("#patient_id").val($(this).data('p-id'));
+			});
+			$('#hideshow').on('click', function() {
+				$('#clinics').show();
+			});
+			$('#showsec').on('click', function() {
+				$('#secretary').show();
+			});
+			$('#specs').on('click', function() {
+				$('#specialization').show();
+			});
+		});
+	</script>
+	<?php
+	session_start();
+	$loggedIn = $_SESSION['loggedIn'];
+	$account_type = $_SESSION['account_type'];
+	if ($loggedIn == false)
+		header("location: admin/index.php");
+	else if ($account_type != 'Doctor')
+		header("location: admin/index.php");
 
+<<<<<<< HEAD
+	$start = date("Y-m-1");
+	$end = date("Y-m-t");
+	$date = date("Y-m-d");
+	$username = $_SESSION['username'];
+	$result = mysqli_query($con, "SELECT * FROM doctor NATURAL JOIN clinic WHERE username LIKE '$username'");
+	$row = mysqli_fetch_array($result);
+	$doctor = $row['doctor_name'];
+	$specialization = $row['specialization'];
+	$email = $row['email'];
+	$doctor_id = $row['doctor_id'];
+	$a_result = mysqli_query($con, "SELECT * FROM appointment NATURAL JOIN queue_notif WHERE doctor_id = '$doctor_id' AND (appointment_status = 'inqueue') AND (appoint_date >= '$start' AND appoint_date <= '$end') ORDER BY 2 ASC, 8 ASC");
+	$sqls = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_id <> '$doctor_id'") or die(mysqli_error());
+=======
     $start = date("Y-m-1");
     $end = date("Y-m-t");
     $date = date("Y-m-d");
@@ -49,15 +63,17 @@
     $c_row = mysqli_fetch_array($c_result);
     $a_result = mysqli_query($con, "SELECT * FROM appointment NATURAL JOIN queue_notif WHERE doctor_id = '$doctor_id' AND (appointment_status = 'inqueue') AND (appoint_date >= '$start' AND appoint_date <= '$end') ORDER BY 2 ASC, 8 ASC");
     $sqls = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_id <> '$doctor_id' ORDER BY specialization") or die(mysqli_error());
+>>>>>>> origin/master
 
-    $date_today = date('Y-m-d');
-    $count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE doctor_id LIKE '$doctor_id' AND indicator = 'Patient'");
-    $count_row = mysqli_fetch_array($count_result);
-    $count_announcement = mysqli_query($con, "SELECT * FROM announcement WHERE start_publish <= '$date_today' AND end_publish >= '$date_today' AND (send_to = 'all' OR send_to = 'doctor')");
-    $notif_count = $count_row['count'];
-    $announcement_count = mysqli_num_rows($count_announcement);
-    $notif_count2 = $notif_count + $announcement_count;
+	$date_today = date('Y-m-d');
+	$count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE doctor_id LIKE '$doctor_id' AND indicator = 'Patient'");
+	$count_row = mysqli_fetch_array($count_result);
+	$count_announcement = mysqli_query($con, "SELECT * FROM announcement WHERE start_publish <= '$date_today' AND end_publish >= '$date_today' AND (send_to = 'all' OR send_to = 'doctor')");
+	$notif_count = $count_row['count'];
+	$announcement_count = mysqli_num_rows($count_announcement);
+	$notif_count2 = $notif_count + $announcement_count;
 
+<<<<<<< HEAD
     ?>
     <body class="e4e8e9-bg">
         <div class="container">        
@@ -124,4 +140,85 @@
                 <script type="text/javascript" src="js/scrolltop.js"></script>
         </div>
     </body>
+=======
+	?>
+	<body class="e4e8e9-bg">
+		<div class="container">        
+			<?php
+			include 'include/dc-nav-start.php';
+			?>
+			<ul class="nav navbar-nav">
+				<li class="active dropdown tooltip-right" data-tooltip="Schedules">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-clock-o fa-lg"></i>Schedules <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="schedules.php">Today</a></li>
+						<li><a href="schedules_tom.php">Tomorrow</a></li>
+						<li><a href="schedules_week.php">This Week</a></li>
+						<li><a href="schedules_month.php">This Month</a></li>
+						<li><a href="schedules_next.php">Next Month</a></li>
+					</ul>
+				</li>
+				<li class="tooltip-right" data-tooltip="Notifications">
+					<a href="doc_notifications.php">
+						<i class="fa fa-bell fa-lg">
+							<?php
+							if ($notif_count2 == 0)
+								echo '<span class="badge hide">' . $notif_count2 . '</span>';
+							else
+								echo '<span class="badge">' . $notif_count2 . '</span>';
+							?>
+						</i>Notifications
+					</a>
+				</li>
+				<li class="dropdown tooltip-right" data-tooltip="History">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-history fa-lg"></i>History<span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="completed.php">Finished Schedules</a></li>
+						<li><a href="removed.php">Removed Schedules</a></li>
+						<li><a href="referred.php">Referred Schedules</a></li>
+					</ul>
+				</li>
+				<?php
+				include 'include/dc-nav-end.php';
+				?>
+				<div class="container-fluid" id="user-md-frw">
+					<div class="row">
+						<div class="col-xs-12 hidden-lg hidden-md text-right">
+							<form action="export.php" method="post">
+								<input type="hidden" name="doctor_id" value="<?php echo $doctor_id ?>">
+								<input type="submit" class="btn btn-default btn-noborder green-btn" value="Export" name="submit">
+							</form>
+						</div>
+						<div class="col-md-12 col-md-4 col-md-offset-2 user-md">
+							<h1><?php echo $doctor; ?></h1>
+							<p><?php echo $row['specialization']; ?></p>
+							<p><?php echo $row['clinic_location']; ?></p>
+							<p class="email"><?php echo $row['email']; ?></p>
+							<p><?php echo $row['clinic_contact']; ?></p>
+						</div>
+						<?php
+						include 'include/inqueue_served.php';
+						?>
+					</div>
+				</div>
+				<div class="container-fluid" id="schedules-md">
+					<div class="row">
+						<div class="col-md-12">
+							<h2 class="text-center row-header">&mdash; This Month &mdash;</h2>
+						</div>
+						<?php
+						include 'include/schedules-panel.php';
+						?>
+					</div>
+				</div>
+				<?php
+				include 'include/refer-modal.php';
+				include 'include/edit-profile-modal.php';
+				include 'include/remarks-modal.php';
+				?>
+				<script type="text/javascript" src="js/search.js"></script>
+				<script type="text/javascript" src="js/scrolltop.js"></script>
+		</div>
+	</body>
+>>>>>>> origin/master
 </html>

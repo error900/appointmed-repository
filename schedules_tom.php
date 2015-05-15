@@ -71,6 +71,7 @@
                         <li><a href="schedules_tom.php">Tomorrow</a></li>
                         <li><a href="schedules_week.php">This Week</a></li>
                         <li><a href="schedules_month.php">This Month</a></li>
+                        <li><a href="schedules_next.php">Next Month</a></li>
                     </ul>
                 </li>
                 <li class="tooltip-right" data-tooltip="Notifications">
