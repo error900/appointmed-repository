@@ -45,8 +45,8 @@
     $specialization = $row['specialization'];
     $email = $row['email'];
     $doctor_id = $row['doctor_id'];
- //   $c_result = mysqli_query($con, "SELECT * FROM clinic WHERE doctor_id LIKE '$doctor_id'");
- //   $c_row = mysqli_fetch_array($c_result);
+    $c_result = mysqli_query($con, "SELECT * FROM clinic WHERE doctor_id LIKE '$doctor_id'");
+    $c_row = mysqli_fetch_array($c_result);
     $a_result = mysqli_query($con, "SELECT * FROM appointment NATURAL JOIN queue_notif WHERE doctor_id = '$doctor_id' AND (appointment_status = 'inqueue') AND (appoint_date >= '$start' AND appoint_date <= '$end') ORDER BY 2 ASC, 8 ASC");
     $sqls = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_id <> '$doctor_id' ORDER BY specialization") or die(mysqli_error());
 
@@ -99,20 +99,8 @@
                 ?>
                 <div class="container-fluid" id="user-md-frw">
                     <div class="row">
-                        <div class="col-xs-12 hidden-lg hidden-md text-right">
-                            <form action="export.php" method="post">
-                                <input type="hidden" name="doctor_id" value="<?php echo $doctor_id ?>">
-                                <input type="submit" class="btn btn-default btn-noborder green-btn" value="Export" name="submit">
-                            </form>
-                        </div>
-                        <div class="col-md-12 col-md-4 col-md-offset-2 user-md">
-                            <h1><?php echo $doctor; ?></h1>
-                            <p><?php echo $row['specialization']; ?></p>
-                            <p><?php echo $row['clinic_location']; ?></p>
-                            <p class="email"><?php echo $row['email']; ?></p>
-                            <p><?php echo $row['clinic_contact']; ?></p>
-                        </div>
                         <?php
+                        include 'include/user-md.php';
                         include 'include/inqueue_served.php';
                         ?>
                     </div>
