@@ -55,7 +55,7 @@
                     <div class="col-xs-12 col-md-8 company-profile">
                         <p><span>BenguetCorp Laboratories Inc.</span> Is a wholly owned subsidiary of publicly listed company Benguet Corporation. Benguet Corporation has more than a 100 year old history and tradition in the mining industry and is considered the industry leader. It has since branched into non-mining concerns, foremost of which is its foray into the healthcare industry.</p>
                         <p><span>BenguetCorp Laboratories Inc.</span> Operates a chain of outpatient medical and health facilities under the trade name Med Central. Med Central has three operating healthcare clinics: SM Baguio, Centermall Baguio and SM San Fernando, Pampanga.</p>
-                        <p>Med Central’s branch in SM San Fernando Pampanga is strategically located on the 2nd floor across the food court area. Two other branches in SM City Baguio and Centermall Baguio have been operational under the name Benguet Laboratories and has been the leading provider of medical services in the area.</p>
+                        <p>Med Central’s branch in SM San Ferndo Pampanga is strategically located on the 2nd floor across the food court area. Two other branches in SM City Baguio and Centermall Baguio have been operational under the name Benguet Laboratories and has been the leading provider of medical services in the area.</p>
                         <p>As part of its expansion program, we have just opened our SM Taytay clinic last December 2013.</p>
                         <p>Med Central offers complete medical and laboratory diagnostic tests, APE, Pre-employment exam, drug testing, audiometry test, x-ray, pulmonary function test, 2D echo, ultrasound and other services. Its designed clinics boast of an airy and spacious reception area allowing patients maximum comfort while waiting for their medical appointment or laboratory results. Med Central houses modern medical equipment and technology ensuring efficient and accurate medical results.</p>
                         <p>Apart from the Outpatient Clinic Facilities, BCLI  is also embarking on the following projects which delivers its vision of continuously upgrading the quality of medical services to the people it cares for – the patients, members of the medical community, local communities and its stakeholders. These projects are :</p>
@@ -68,10 +68,10 @@
                 </div>
                 <div class="row">
                     <h1 class="row-header text-center">Other Services Offered:</h1>
-                    <div class="col-xs-12 col-md-4 col-md-offset-2 other-services">
+                    <div class="col-xs-12 col-md-6 other-services">
                         <ul class="nav main-nav-label first">
                             <li class="list">
-                                <label><i class="fa fa-asterisk "></i>Clinical Loboratory</label>
+                                <label><i class="fa fa-stethoscope"></i>Clinical Loboratory</label>
                                 <ul class="nav items-list">
                                     <li>Complete blood count</li>
                                     <li>Complete blood chemistry</li>
@@ -94,7 +94,7 @@
                         </ul>
                         <ul class="nav main-nav-label">
                             <li class="list">
-                                <label><i class="fa fa-asterisk "></i>Drug Testing</label>
+                                <label><i class="fa fa-stethoscope"></i>Drug Testing</label>
                                 <ul class="nav items-list">
                                     <li>Pre-employment Medical Exam</li>
                                     <li>Annual Medical Exam</li>
@@ -107,7 +107,7 @@
                         </ul>
                         <ul class="nav main-nav-label">
                             <li class="list">
-                                <label><i class="fa fa-asterisk "></i>Digital Radiology Imaging</label>
+                                <label><i class="fa fa-stethoscope"></i>Digital Radiology Imaging</label>
                                 <ul class="nav items-list">
                                     <li>X-ray</li> 
                                     <li>Mobile x-ray</li>
@@ -117,7 +117,7 @@
                         </ul>
                         <ul class="nav main-nav-label first">
                             <li class="list">
-                                <label><i class="fa fa-asterisk "></i>Cardiolab</label>
+                                <label><i class="fa fa-stethoscope"></i>Cardiolab</label>
                                 <ul class="nav items-list">
                                     <li>Electrocardiogram (ECG)</li>
                                     <li>Adult 2D Echo</li>
@@ -132,7 +132,7 @@
                     <div class="col-xs-12 col-md-6 other-services">
                         <ul class="nav main-nav-label">
                             <li class="list">
-                                <label><i class="fa fa-asterisk "></i>Specialty Clinics</label>
+                                <label><i class="fa fa-stethoscope"></i>Specialty Clinics</label>
                                 <ul class="nav items-list">
                                     <li>ENT</li>
                                     <li>Urology</li>
@@ -163,7 +163,7 @@
                         </ul>
                         <ul class="nav main-nav-label">
                             <li class="list">
-                                <label><i class="fa fa-asterisk "></i>Corporate Services</label>
+                                <label><i class="fa fa-stethoscope"></i>Corporate Services</label>
                                 <ul class="nav items-list">
                                     <li>Pre-employment Medical Exam</li> 
                                     <li>Annual Medical Exam</li>
@@ -173,7 +173,7 @@
                         </ul>
                         <ul class="nav main-nav-label">
                             <li class="list">
-                                <label><i class="fa fa-asterisk "></i>Other services:</label>
+                                <label><i class="fa fa-stethoscope"></i>Other services:</label>
                                 <ul class="nav items-list">
                                     <li>Audiometry</li>
                                     <li>Physical Therapy</li>
@@ -182,6 +182,15 @@
                                     <li>Home Service (Blood Extraction, EcG, consultation)</li>
                                     <li>Medical Mission Organizer</li>
                                     <li>Medical Service Outsourcing</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="nav main-nav-label">
+                            <li class="list">
+                                <label><i class="fa fa-stethoscope"></i>Current Data</label>
+                                <ul class="nav items-list">
+                                    <li><a href="#">Import</a></li>
+                                    <li><a href="exportall.php">Export</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -195,6 +204,7 @@
             include 'include/scripts.php';
             ?>
             <script type="text/javascript" src="js/scrolltop.js"></script>
+            <script type="text/javascript" src="js/listslide.js"></script>
         </div> <!-- /container -->
     </body>
 </html>

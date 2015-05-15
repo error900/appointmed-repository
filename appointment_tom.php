@@ -62,6 +62,7 @@
                         <li><a href="appointment_tom.php">Tomorrow</a></li>
                         <li><a href="appointment_week.php">This Week</a></li>
                         <li><a href="appointment_month.php">This Month</a></li>
+                        <li><a href="appointment_next.php">Next Month</a></li>
                     </ul>
                 </li>
                 <li class="tooltip-right" data-tooltip="Notifications">

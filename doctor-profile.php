@@ -85,7 +85,7 @@
                     </ul>
                 </li>
                 <?php
-                include 'include/dc-nav-end.php';   
+                include 'include/dc-nav-end.php';
                 ?>    
                 <!-- /navigation -->
                 <div class="container-fluid" id="doctor-info">
@@ -135,6 +135,18 @@
                                 echo '<p><i class="fa fa-location-arrow"></i>' . $c_row['clinic_location'] . '</p>';
                                 echo '<p><i class="fa fa-phone"></i>' . $c_row['clinic_contact'] . '</p>';
                                 echo '<p class="cutoff">Cut off limit:' . $c_row['cut_off_no'] . '</p>';
+                                
+
+                                while($clinicsec = mysqli_fetch_array($sec)){
+                                    $secretary_id = $clinicsec['secretary_id'];
+                                    $clinic = mysqli_query($con, "SELECT * FROM secretary WHERE secretary_id LIKE '$secretary_id'");
+                                    $secretary = mysqli_fetch_array($clinic);
+
+                                    if(mysqli_num_rows($clinic)>=1){
+                                        echo '<p class="cutoff">Sec: ' . $secretary['secretary_name'].'<br/></p>';
+                                    }
+                                }
+
                             echo ' <button type="button" class="btn btn-default appo red-btn2 btn-noborder tooltip-bottom" data-tooltip="Settings" data-toggle="modal" data-target=".settings-modal-sm" data-id="' . $c_row['clinic_id'] . '">
                             <i class="fa fa-gears"></i></button>';
                             echo '</div>';
