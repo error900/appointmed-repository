@@ -60,28 +60,26 @@
                         </div>
                         <?php
                             while($row = mysqli_fetch_array($sql)){
-                            echo '<div class="col-xs-12 col-md-3">
-                                <div class="panel panel-default doctor-panel">
-                                    <div class="panel-heading">';
-                                    echo $row['doctor_name'];
+                                echo '<div class="col-xs-12 col-md-3">';
+                                    echo '<div class="panel panel-default doctor-panel">';
+                                        echo '<div class="panel-heading">';
+                                        echo $row['doctor_name'];
+                                        echo '</div>';
+                                        echo '<div class="panel-body">';
+                                            echo '<p class="clinic-days"></p>';
+                                            echo '<p class="clinic-info">2:00 - 4:00</p>
+                                            <p class="clinic-info">SM Luneta Hill, Baguio City</p>
+                                            <p class="clinic-info">09123456778</p>';
+                                        echo '</div>';
+                                        echo '<div class="doctor-panel-btns">';
+                                            echo '<p class="doctor-panel-specs">Cardiology</p>';
+                                        echo '</div>';
                                     echo '</div>';
-                                    echo '<div class="panel-body">';
-                                    echo '<p class="clinic-days"></p>';
-                                    echo '<p class="clinic-info">2:00 - 4:00</p>
-                                        <p class="clinic-info">SM Luneta Hill, Baguio City</p>
-                                        <p class="clinic-info">09123456778</p>
-                                        <p class="doctor-panel-specs">Cardiology</p>
-                                    </div>
-                                </div>
-                            </div>';
+                                echo '</div>';
                         }
                         ?>
                     </div>
                 </div>
-
-                <?php
-                 include 'include/fd-edit-profile-modal.php';
-                ?>
                 <script type="text/javascript" src="js/scrolltop.js"></script>
         </div>
     </body>

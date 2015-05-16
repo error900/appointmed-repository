@@ -526,6 +526,7 @@ nav > div > div > ul > li > a > i,
     border: none;
     border-radius: 0;
     text-shadow: 1px 1px 1px #35404F;
+    line-height: 14px;
 }
 
 .sched-panel .panel-heading {
@@ -1372,10 +1373,13 @@ ul.nav.items-list li:hover {
     border-top: 2px solid #F39C12;
     border-bottom: 2px solid rgba(44, 62, 80, 0.4);
     border-left: 2px solid transparent;
+    min-height: 142px;
+    word-wrap: break-word;
 }
 
 .doctor-panel .panel-heading {
     background-color: #F39C12 !important;
+    min-height: 48px;
 }
 
 .doctor-panel .panel-body {

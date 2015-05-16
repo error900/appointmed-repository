@@ -47,7 +47,7 @@
                 }
                 header("location: ../st-schedules.php");
             } else{
-                header("location: ../frontdesk/frontdesk.php");
+                header("location: ../frontdesk/index.php");
             }
         }
         mysqli_close($con);
