@@ -81,9 +81,11 @@
                                 </div>
                                 <div class="panel-body">
                                     <p class="clinic-days">Mon/Wed/Fri</p>
-                                    <p class="clinic-info">2:00 - 4:00</p>
-                                    <p class="clinic-info">SM Luneta Hill, Baguio City</p>
-                                    <p class="clinic-info">09123456778</p>
+                                    <p>2:00 - 4:00</p>
+                                    <p>SM Luneta Hill, Baguio City</p>
+                                    <p>09123456778</p>
+                                </div>
+                                <div class="doctor-panel-btns">
                                     <p class="doctor-panel-specs">Cardiology</p>
                                 </div>
                             </div>
@@ -95,9 +97,11 @@
                                 </div>
                                 <div class="panel-body">
                                     <p class="clinic-days">Mon/Wed/Fri</p>
-                                    <p class="clinic-info">2:00 - 4:00</p>
-                                    <p class="clinic-info">SM Luneta Hill, Baguio City</p>
-                                    <p class="clinic-info">09123456778</p>
+                                    <p>2:00 - 4:00</p>
+                                    <p>SM Luneta Hill, Baguio City</p>
+                                    <p>09123456778</p>
+                                </div>
+                                <div class="doctor-panel-btns">
                                     <p class="doctor-panel-specs">Cardiology</p>
                                 </div>
                             </div>
@@ -109,9 +113,11 @@
                                 </div>
                                 <div class="panel-body">
                                     <p class="clinic-days">Mon/Wed/Fri</p>
-                                    <p class="clinic-info">2:00 - 4:00</p>
-                                    <p class="clinic-info">SM Luneta Hill, Baguio City</p>
-                                    <p class="clinic-info">09123456778</p>
+                                    <p>2:00 - 4:00</p>
+                                    <p>SM Luneta Hill, Baguio City</p>
+                                    <p>09123456778</p>
+                                </div>
+                                <div class="doctor-panel-btns">
                                     <p class="doctor-panel-specs">Cardiology</p>
                                 </div>
                             </div>
@@ -123,9 +129,11 @@
                                 </div>
                                 <div class="panel-body">
                                     <p class="clinic-days">Mon/Wed/Fri</p>
-                                    <p class="clinic-info">2:00 - 4:00</p>
-                                    <p class="clinic-info">SM Luneta Hill, Baguio City</p>
-                                    <p class="clinic-info">09123456778</p>
+                                    <p>2:00 - 4:00</p>
+                                    <p>SM Luneta Hill, Baguio City</p>
+                                    <p>09123456778</p>
+                                </div>
+                                <div class="doctor-panel-btns">
                                     <p class="doctor-panel-specs">Cardiology</p>
                                 </div>
                             </div>

@@ -425,6 +425,10 @@ nav > div > div > ul > li > a > i,
     text-transform: lowercase;
 }
 
+.doctor-panel-specs {
+    text-shadow: 1px 1px 1px #35404F;
+}
+
 .row-header,
 .row-header2,
 .row-header3 {
@@ -636,7 +640,8 @@ nav > div > div > ul > li > a > i,
     font-style: italic;
 }
 
-.appmnt-pnl-btn {
+.appmnt-pnl-btns,
+.doctor-panel-btns {
     padding: 0 10px 5px 10px;
 }
 
@@ -1363,19 +1368,22 @@ ul.nav.items-list li:hover {
 
 .doctor-panel {
     background-color: #F1C40F !important;
+    border-right: 2px solid rgba(44, 62, 80, 0.4);
+    border-top: 2px solid #F39C12;
+    border-bottom: 2px solid rgba(44, 62, 80, 0.4);
+    border-left: 2px solid transparent;
 }
 
 .doctor-panel .panel-heading {
     background-color: #F39C12 !important;
 }
 
-.doctor-panel p {
-    line-height: 20px !important;
+.doctor-panel .panel-body {
+    color: #34495E;
+    font-weight: 600;
 }
 
-.doctor-panel .panel-body {
-    color: #2C3E50;
-    font-weight: 600;
+.doctor-panel p {
 }
 
 .panel.panel-default.doctor-panel:hover {
@@ -1558,6 +1566,7 @@ ul.nav.items-list li:hover {
 }
 .clinic-days {
     font-size: 17px !important;
+    word-wrap: break-word;
 }
 
 .clinic-times {
@@ -1567,6 +1576,7 @@ ul.nav.items-list li:hover {
 .clinic-info {
     width: 80%;
     margin: 0;
+    word-wrap: break-word;
 }
 
 .cutoff {
