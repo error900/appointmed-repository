@@ -40,12 +40,14 @@
                     die('Error: ' . mysqli_error($con));
                 }
                 header("location: ../schedules.php");
-            } else{
+            } else if($row['account_type'] == 'Secretary'){
                 $sql = "UPDATE account SET last_logged_in = '$date' WHERE username LIKE '$username'";
                 if (!(mysqli_query($con, $sql))) {
                     die('Error: ' . mysqli_error($con));
                 }
                 header("location: ../st-schedules.php");
+            } else{
+                header("location: ../frontdesk/frontdesk.php");
             }
         }
         mysqli_close($con);

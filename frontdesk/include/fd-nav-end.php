@@ -15,7 +15,7 @@
                     <button type="button" class="btn btn-default btn-lg btn-noborder dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                         <div class="signedin-photo">
                             <img class="img-responsive" src="img/profile/<?php
-                            $file = "img/profile/" . $secretary_id . ".jpg";
+                            $file = "img/profile/" . $username . ".jpg";
                             if (file_exists($file)) {
                                 echo $secretary_id;
                             } else {
@@ -23,13 +23,12 @@
                             }
                             ?>.jpg">
                         </div>
-            <?php echo "Juanita Dela Cruz"; ?>
+            <?php echo $username ?>
                         <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="secretary-profile.php"><i class="fa fa-user"></i>Profile</a></li>
-                        <li><a href="sec_changepassword.php"><i class="fa fa-unlock-alt"></i>Change Password</a></li>
-                        <li><a href="sec_help.php"><i class="fa fa-question-circle"></i>Help</a></li>
+                        <li><a href="fd_changepassword.php"><i class="fa fa-unlock-alt"></i>Change Password</a></li>
+                        <li><a href="fd_help.php"><i class="fa fa-question-circle"></i>Help</a></li>
                         <li class="divider"></li>
                         <li><a href="admin/logout.php"><i class="fa fa-power-off"></i>logout</a></li>
                     </ul>

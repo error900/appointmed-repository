@@ -14,6 +14,10 @@
             header("location: ../schedules.php");
         else if ($loggedIn == true && $account_type == 'Admin')
             header("location: dashboard.php");
+        else if ($loggedIn == true && $account_type == 'FrontDesk')
+            header("location: ../frontdesk/frontdesk.php");
+        else if ($loggedIn == true && $account_type == 'Secretary')
+            header("location: ../st-schedules.php");
     }
     ?>
     <body class="e4e8e9-bg">
