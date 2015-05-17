@@ -30,7 +30,7 @@
                         <li><a href="fd_changepassword.php"><i class="fa fa-unlock-alt"></i>Change Password</a></li>
                         <li><a href="fd_help.php"><i class="fa fa-question-circle"></i>Help</a></li>
                         <li class="divider"></li>
-                        <li><a href="admin/logout.php"><i class="fa fa-power-off"></i>logout</a></li>
+                        <li><a href="logout.php"><i class="fa fa-power-off"></i>logout</a></li>
                     </ul>
                 </div>
             </ul>
