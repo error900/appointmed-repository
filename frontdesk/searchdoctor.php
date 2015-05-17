@@ -18,7 +18,8 @@ if ($_POST) {
  ?>
             <li>
                 <?php
-                echo '<p>' . $final_specs . '</p> Days: ' .$days;
+                echo "<a href=\"doctor.php?id=$doctor_id\"><i class='fa fa-user-md fa-lg'></i>" . $final_name . '</a>';
+                echo '<p>' . $final_specs . '</p>';
                 ?>
             </li>
             <?php

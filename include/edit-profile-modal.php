@@ -16,7 +16,7 @@
                                     if (file_exists($file)) {
                                         echo $patient_id;
                                     } else {
-                                        echo 'profile_patient';
+                                        echo 'profile_avatar';
                                     }
                                     ?>.jpg" class="img-responsive">
                                 </div>

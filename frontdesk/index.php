@@ -25,12 +25,12 @@
     </script>
     <?php
     session_start();
-    $loggedIn = $_SESSION['loggedIn'];
-    $account_type = $_SESSION['account_type'];
-    if ($loggedIn == false)
-        header("location: ../admin/index.php");
-    else if ($account_type != 'FrontDesk')
-        header("location: ../admin/index.php");
+    // $loggedIn = $_SESSION['loggedIn'];
+    // $account_type = $_SESSION['account_type'];
+    // if ($loggedIn == false)
+    //     header("location: ../admin/index.php");
+    // else if ($account_type != 'FrontDesk')
+    //     header("location: ../admin/index.php");
 
     $date = date('Y-m-d');
     $username = $_SESSION['username'];
@@ -84,6 +84,7 @@
                     </div>
                 </div>
                 <script type="text/javascript" src="js/scrolltop.js"></script>
+                <script type="text/javascript" src="js/search.js"></script>
         </div>
     </body>
 </html>
