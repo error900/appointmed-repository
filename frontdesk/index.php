@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <?php
-    $title = "Schedules";
+    $title = "Available Doctors";
     include 'include/head.php';
     include 'connectdatabase.php';
     include 'include/scripts.php';
@@ -31,10 +31,27 @@
     //     header("location: ../admin/index.php");
     // else if ($account_type != 'FrontDesk')
     //     header("location: ../admin/index.php");
-
+    if(isset($_GET['page'])){
+         $page = (int)mysqli_real_escape_string($con, $_GET['page']);
+    }else{
+        $page =0;
+    }
+    if($page=="" || $page=="1"){
+        $page1 = 0;
+    }else{
+        $page1 = ($page*8)-8;
+    }
     $date = date('Y-m-d');
     $username = $_SESSION['username'];
-    $sql = mysqli_query($con, "SELECT * FROM doctor NATURAL JOIN clinic_schedule WHERE doctor_status = 'In' ORDER BY doctor_name");
+    if(is_int($page1)){
+        $sql = mysqli_query($con, "SELECT * FROM doctor NATURAL JOIN clinic_schedule WHERE doctor_status = 'In' ORDER BY 2 LIMIT $page1,8");
+    }else{
+        echo "<script> alert('Woops you seem lost, let me help you'); </script>";
+        echo "<script> location.replace('index.php') </script>";
+    }
+    $count_sql = mysqli_query($con, "SELECT * FROM doctor NATURAL JOIN clinic_schedule WHERE doctor_status = 'In' ORDER BY 2 ");
+    $count = mysqli_num_rows($count_sql);
+    $cout = ceil($count/8);
 
     ?>
     <body class="e4e8e9-bg">
@@ -46,8 +63,8 @@
                 <li class="active dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-asterisk fa-lg"></i>Schedules <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="st-schedules.php">sadsfsd</a></li>
-                        <li><a href="st-schedules_tom.php">sdfsdsf</a></li>
+                        <li><a href="index.php">sadsfsd</a></li>
+                        <li><a href="">sdfsdsf</a></li>
                     </ul>
                 </li>
                 <?php
@@ -77,14 +94,27 @@
                                         echo '<div class="doctor-panel-btns">';
                                             echo '<p class="doctor-panel-specs">'.$row['specialization'].'</p>';
                                         echo '</div>';
-                                    echo '</div>';
-                                echo '</div>';
-                        }
+                                        echo '
+                                        <div class="appmnt-pnl-btns">
+                                            <button type="button" class="btn btn-default btn-inverse appo btn-noborder" data-toggle="modal" data-target=".bs-add-modal-sm" ">
+                                            <i class="fa fa-comment"></i>Add to queue</button>
+                                        </div>';
+                               echo '</div>';
+                             echo '</div>';
+                            }
+                        echo '<div>';
+                        // echo 'Navigation  ';
+                            for($i=1; $i<=$cout; $i++){
+                                echo "<a href=\"index.php?page=".$i."\">".$i."  </a>";
+                            }
+
+                        echo '</div>';
                         ?>
                     </div>
                 </div>
                 <script type="text/javascript" src="js/scrolltop.js"></script>
                 <script type="text/javascript" src="js/search.js"></script>
+                <?php include 'include/add_to_queue.php';?>
         </div>
     </body>
 </html>
