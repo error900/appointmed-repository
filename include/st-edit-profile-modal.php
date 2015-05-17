@@ -17,7 +17,7 @@
                                     if (file_exists($file)) {
                                         echo $secretary_id;
                                     } else {
-                                        echo 'profile';
+                                        echo 'profile_avatar';
                                     }
                                     ?>.jpg" class="img-responsive">
                                 </div>

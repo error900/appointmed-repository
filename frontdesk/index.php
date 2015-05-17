@@ -34,7 +34,7 @@
 
     $date = date('Y-m-d');
     $username = $_SESSION['username'];
-    $sql = mysqli_query($con, "SELECT * FROM doctor");
+    $sql = mysqli_query($con, "SELECT * FROM doctor NATURAL JOIN clinic_schedule WHERE doctor_status = 'In' ORDER BY doctor_name");
 
     ?>
     <body class="e4e8e9-bg">
@@ -60,19 +60,22 @@
                         </div>
                         <?php
                             while($row = mysqli_fetch_array($sql)){
+                                $date = date('Y-m-d', strtotime($date));
+                                $available_days = explode("/", $row['days']);
+                                foreach($available_days as $values){
+
+                                } 
                                 echo '<div class="col-xs-12 col-md-3">';
                                     echo '<div class="panel panel-default doctor-panel">';
                                         echo '<div class="panel-heading">';
                                         echo $row['doctor_name'];
                                         echo '</div>';
                                         echo '<div class="panel-body">';
-                                            echo '<p class="clinic-days"></p>';
-                                            echo '<p class="clinic-info">2:00 - 4:00</p>
-                                            <p class="clinic-info">SM Luneta Hill, Baguio City</p>
-                                            <p class="clinic-info">09123456778</p>';
+                                            echo '<p class="clinic-days">'.$row['days'].'</p>';
+                                            echo '<p class="clinic-info">'.$row['time'].'</p>';
                                         echo '</div>';
                                         echo '<div class="doctor-panel-btns">';
-                                            echo '<p class="doctor-panel-specs">Cardiology</p>';
+                                            echo '<p class="doctor-panel-specs">'.$row['specialization'].'</p>';
                                         echo '</div>';
                                     echo '</div>';
                                 echo '</div>';
