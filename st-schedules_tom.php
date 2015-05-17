@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <?php
-    $title = "Schedules";
+    $title = "Queue For Tomorrow";
     include 'include/head.php';
     include 'connectdatabase.php';
     include 'include/scripts.php';
