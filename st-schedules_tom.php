@@ -83,13 +83,8 @@
                 ?>
                 <div class="container-fluid" id="user-md-frw">
                     <div class="row">
-                        <div class="col-md-12 col-md-4 col-md-offset-2 user-md">
-                            <h1><?php echo $doctor_row['doctor_name']; ?></h1>
-                            <p><?php echo $c_row['clinic_location']; ?></p>
-                            <p class="email"><?php echo $c_row['clinic_name'];; ?></p>
-                            <p><?php echo $c_row['clinic_contact']; ?></p>
-                        </div>
                         <?php
+                        include 'include/st-user-md.php';
                         include 'include/st-inqueue_served.php';
                         ?>
                     </div>

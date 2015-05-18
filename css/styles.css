@@ -646,7 +646,7 @@ nav > div > div > ul > li > a > i,
     padding: 0 10px;
 }
 
-.appmnt-pnl-btn button {
+.appmnt-pnl-btns button {
     margin: 0;
     padding: 0;
     background: transparent;
@@ -654,8 +654,10 @@ nav > div > div > ul > li > a > i,
     font-size: 16px;
 }
 
-.appmnt-pnl-btn a,
-.appmnt-pnl-btn button {
+.appmnt-pnl-btns a,
+.appmnt-pnl-btns button,
+.doctor-panel-btns a,
+.doctor-panel-btns button {
     width: auto;
     color: #fff !important;
     font-size: 14px;
@@ -665,17 +667,19 @@ nav > div > div > ul > li > a > i,
     z-index: 1;
 }
 
-.appmnt-pnl-btn button {
+.appmnt-pnl-btns button {
     float: none;
-    padding: 0 10px;
+    padding: 0 10px 10px;
 }
 
-.appmnt-pnl-btn button:last-child {
+.appmnt-pnl-btns button:last-child {
     float: right !important;
 }
 
-.appmnt-pnl-btn a:hover,
-.appmnt-pnl-btn button:hover {
+.appmnt-pnl-btns a:hover,
+.appmnt-pnl-btns button:hover,
+.doctor-panel-btns a:hover,
+.doctor-panel-btns button:hover {
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     -ms-transition: all 0.5s ease-in-out;
@@ -683,11 +687,17 @@ nav > div > div > ul > li > a > i,
     transition: all 0.5s ease-in-out;
 }
 
+.appmnt-pnl-btns a:focus,
+.appmnt-pnl-btns button:focus {
+    border: 0 !important;
+    background: 0 !important;
+}
+
 a.btn.btn-block.appo.tooltip-bottom {
   width: 30%;
 }
 
-.appmnt-pnl-btn i {
+.appmnt-pnl-btns i {
     padding-left: 3px;
 }
 
@@ -707,7 +717,13 @@ a.btn.btn-block.appo.tooltip-bottom {
     color: #F39C12 !important;
 }
 
-#user-md-frw {
+.user-md {
+    color: #2C3E50 !important;
+}
+
+.user-md h1,
+.user-md p {
+    line-height: 14px;
 }
 
 .user-md h1 {
@@ -716,7 +732,6 @@ a.btn.btn-block.appo.tooltip-bottom {
 
 .user-md p {
     margin-top: 10px;
-    line-height: 10px;
     font-size: 14px;
     text-transform: uppercase;
 }
@@ -776,14 +791,14 @@ a.btn.btn-block.appo.tooltip-bottom {
 }
 
 .sched-panel .panel-body,
-.sched-panel .appmnt-pnl-btn button,
-.sched-panel .appmnt-pnl-btn a {
+.sched-panel .appmnt-pnl-btns button,
+.sched-panel .appmnt-pnl-btns a {
     color: #2C3E50 !important;
     font-weight: 600;
 }
 
-.sched-panel .appmnt-pnl-btn button:hover,
-.sched-panel .appmnt-pnl-btn a:hover {
+.sched-panel .appmnt-pnl-btns button:hover,
+.sched-panel .appmnt-pnl-btns a:hover {
     color: #16A085 !important;
     background: transparent;
 }

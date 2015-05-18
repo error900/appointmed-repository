@@ -92,6 +92,7 @@
                                             echo '<p class="clinic-info">'.$row['time'].'</p>';
                                         echo '</div>';
                                         echo '<div class="doctor-panel-btns">';
+                                            echo '<button type="button" class="btn btn-default btn-inverse appo btn-noborder">Appoint</button>';
                                             echo '<p class="doctor-panel-specs">'.$row['specialization'].'</p>';
                                         echo '</div>';
                                         echo '

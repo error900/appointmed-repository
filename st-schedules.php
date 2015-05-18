@@ -80,25 +80,8 @@
                 ?>
                 <div class="container-fluid" id="user-md-frw">
                     <div class="row">
-                        <div class="col-xs-12 hidden-lg hidden-md text-right">
-                            <form action="export.php" method="post">
-                                <input type="hidden" name="doctor_id" value="<?php echo $doctor_id ?>">
-                                <input type="submit" class="btn btn-default btn-noborder green-btn" value="Export" name="submit">
-                            </form>
-                        </div>
-                        <button type="button" data-toggle="modal" data-target=".bs-st-walk-in-modal-sm">
-                            <i class=""></i>Add walk-in patient 
-                        </button>
-                        <div class="col-md-12 col-md-4 col-md-offset-2 user-md">
-                            <h1><?php echo $doctor_row['doctor_name']; ?></h1>
-                            <p><?php echo $c_row['clinic_location']; ?></p>
-                            <p><?php echo $c_row['clinic_name'];; ?></p>
-                            <p class="email"><?php echo $row['email']; ?></p>
-                            <p><?php echo $c_row['clinic_contact']; ?></p>
-                        </div>
-
-
                         <?php
+                        include 'include/st-user-md.php';
                         include 'include/st-inqueue_served.php';
                         ?>
                     </div>
@@ -116,7 +99,6 @@
                 <?php
                 include 'include/remarks-modal.php';
                 include 'include/st-edit-profile-modal.php';
-                include 'include/walk-in-modal.php';
                 include 'include/refer-modal.php';
 
                 ?>

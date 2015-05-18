@@ -100,15 +100,12 @@
                             }
                             ?>.jpg">
                         </div>
-                        <div class="col-xs-12 col-md-5">
+                        <div class="col-xs-12 col-md-5 user-md">
                             <div class="d-info">
-                                <ul class="text-black">
-                                    <li><i class="fa fa-user-md"></i>Dr. <?php echo strtoupper($doctor); ?></li>
-                                    <li><i class="fa fa-medkit"></i><?php echo $specialization; ?></li>
-                                    <li class="email"><i class="fa fa-envelope"></i><?php echo $email; ?></li>
-                                    <br>
-                                    <li><i class="fa fa-h-square"></i>Benguet Laboratories</li>
-                                </ul>
+                                    <h1>Dr. <?php echo $doctor ?></h1>
+                                    <p><?php echo $specialization; ?></p>
+                                    <p>Benguet Laboratory Incorporated</p>
+                                    <p class="email"><i class="fa fa-envelope"></i><?php echo $email; ?></p>
                             </div>
                         </div>   
                         <div class="col-xs-12 col-md-3 text-center">

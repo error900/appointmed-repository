@@ -72,15 +72,12 @@
                             }
                             ?>.jpg">
                         </div>
-                        <div class="col-xs-12 col-md-5">
+                        <div class="col-xs-12 col-md-5 user-md">
                             <div class="d-info">
-                                <ul class="text-black">
-                                    <li><i class="fa fa-user-md"></i><?php echo strtoupper($row['secretary_name']); ?></li>
-                                    <li><i class="fa fa-medkit"></i>Dr. <?php echo $doctor_row['doctor_name']; ?></li>
-                                    <br>
-                                    <li><i class="fa fa-h-square"></i>Benguet Laboratory Incorporated</li>
-                                    <li class="email"><i class="fa fa-envelope"></i><?php if($email!=''){echo $email;}else{echo 'No email';} ?></li>
-                                </ul>
+                                <h1>Dr. <?php echo $row['secretary_name']; ?></h1>
+                                <p><?php echo $doctor_row['doctor_name']; ?></p>
+                                <p>Benguet Laboratory Incorporated</p>
+                                <p class="email"><?php if($email!=''){echo $email;}else{echo 'No email';} ?></p>
                             </div>
                         </div>          
                     </div>

@@ -5,8 +5,9 @@
     </form>
 </div>
 <div class="col-md-12 col-md-4 col-md-offset-2 user-md">
-    <h1>Dr. <?php echo $doctor; ?></h1>
+    <h1>Dr. <?php echo $doctor_row['doctor_name']; ?></h1>
     <p><?php echo $c_row['clinic_location']; ?></p>
+    <p><?php echo $c_row['clinic_name'];; ?></p>
     <p class="email"><?php echo $row['email']; ?></p>
     <p><?php echo $c_row['clinic_contact']; ?></p>
 </div>

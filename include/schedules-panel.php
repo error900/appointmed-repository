@@ -26,14 +26,14 @@ if (mysqli_num_rows($a_result) >= 1) {
         echo '<p><i class="fa fa-location-arrow"></i>' . $clinic_name . '</p>';
         echo '<p><i class="fa fa-phone"></i>' . $pat['patient_contact'] . '</p>';
         echo '</div>';
-        echo'  <div class="appmnt-pnl-btns">
-                                <button type="button" class="btn btn-default btn-inverse appo btn-noborder tooltip-bottom" data-tooltip="refer to a doctor" data-toggle="modal" data-target=".bs-example-modal-sm" data-id="' . $appointment_id . '" data-patient-id="' . $patient . '">
-                                <i class="fa fa-hand-o-right"></i>Refer</button>
-                                <button type="button" class="btn btn-default btn-inverse appo btn-noborder" data-toggle="modal" data-target=".bs-remarks-modal-sm" data-a-id="' . $appointment_id . '" data-p-id="' . $patient . '">
-                               <i class="fa fa-comment"></i>Remarks</button>
-                            </div>
-                     </div>
-                   </div>';
+        echo '<div class="appmnt-pnl-btns">
+                    <button type="button" class="btn btn-default btn-inverse appo btn-noborder tooltip-bottom" data-tooltip="refer to a doctor" data-toggle="modal" data-target=".bs-example-modal-sm" data-id="' . $appointment_id . '" data-patient-id="' . $patient . '">
+                    <i class="fa fa-hand-o-right"></i>Refer</button>
+                    <button type="button" class="btn btn-default btn-inverse appo btn-noborder" data-toggle="modal" data-target=".bs-remarks-modal-sm" data-a-id="' . $appointment_id . '" data-p-id="' . $patient . '">
+                    <i class="fa fa-comment"></i>Remarks</button>
+                    </div>
+                </div>
+            </div>';
     }
     } else {
         echo '<div class="col-xs-12 col-md-10 col-md-offset-1">
