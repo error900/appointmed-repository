@@ -92,20 +92,16 @@
                                             echo '<p class="clinic-info">'.$row['time'].'</p>';
                                         echo '</div>';
                                         echo '<div class="doctor-panel-btns">';
-                                            echo '<button type="button" class="btn btn-default btn-inverse appo btn-noborder">Appoint</button>';
+                                            echo '<button type="button" class="btn btn-default btn-inverse appo btn-noborder" data-toggle="modal" data-target=".bs-add-modal-sm" ">
+                                            <i class="fa fa-plus"></i>appoint</button>';
                                             echo '<p class="doctor-panel-specs">'.$row['specialization'].'</p>';
                                         echo '</div>';
-                                        echo '
-                                        <div class="appmnt-pnl-btns">
-                                            <button type="button" class="btn btn-default btn-inverse appo btn-noborder" data-toggle="modal" data-target=".bs-add-modal-sm" ">
-                                            <i class="fa fa-comment"></i>Add to queue</button>
-                                        </div>';
                                echo '</div>';
                              echo '</div>';
                             }
                         echo '<div>';
                         // echo 'Navigation  ';
-                            for($i=1; $i<=$cout; $i++){
+                            for($i=1; $i<=$cout; $i++) {
                                 echo "<a href=\"index.php?page=".$i."\">".$i."  </a>";
                             }
 

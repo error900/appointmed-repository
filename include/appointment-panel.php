@@ -23,9 +23,9 @@ if (mysqli_num_rows($p_result) >= 1) {
         echo $date;
         echo "<a href=\"close.php?id=$d_row[appointment_id]&doc=$doctor&pat=$patient_id&cid=$c_id&qid=$queue_id&qd=$queue_date\" onclick='return confirm(\"Do you want to cancel this appointment?\")' title=\"Cancel\"><i class=\"fa fa-remove fa-lg delete-btn\"></i></a></div>
     <div class=\"panel-body\">";
-        echo '<p class="appointment-dr-name"><i class="fa fa-user-md"></i>Dr. ' . $doc['doctor_name'] . '</p>';
-        echo '<p><i class="fa fa-location-arrow"></i>' . $clinic_name . '</p>';
-        echo '<p class="pt-queue-number"><i class="fa fa-angle-double-right"></i>Queue Number: <span>'.$queue_id.'</span></p>';
+        echo '<p class="appointment-dr-name">Dr. ' . $doc['doctor_name'] . '</p>';
+        echo '<p>' . $clinic_name . '</p>';
+        echo '<p class="pt-queue-number"><span>'.$queue_id.'</span></p>';
         echo "</div><div class='appmnt-pnl-btns'>
     <a class='btn btn-block appo tooltip-top' data-toggle='modal' data-target='.bs-example-modal-sm' data-id='" . $app_id . "' data-doctor-id='" . $doctor . "' data-clinic-id='" . $c_id . "' data-days='".$days."' data-tooltip='edit this appointment'><span><i class='fa fa-pencil'></i></span> Edit</a>";
         echo '<p class="appointment-specs">' . $doc['specialization'] . '</p></div></div>';

@@ -130,7 +130,8 @@ i.fa.fa-clock-o,
 i.fa.fa-calendar-o,
 i.fa.fa-user,
 i.fa.fa-unlock-alt,
-i.fa.fa-question-circle
+i.fa.fa-question-circle,
+i.fa.fa-plus
  {
     padding-right: 8px;
 }
@@ -414,6 +415,7 @@ nav > div > div > ul > li > a > i,
 .appointment-dr-name {
     font-size: 14px !important;
     font-weight: 600;
+    line-height: 14px !important;
 }
 
 .appointment-specs,
@@ -502,6 +504,20 @@ nav > div > div > ul > li > a > i,
     box-shadow: 3px 5px 10px 0px rgba(0, 0, 0, 0.5);
 }
 
+.panel-default#asd {
+    min-height: 160px;
+}
+
+#asd .panel-body {
+    padding: 10px 0 10px 14px;
+}
+
+#asd .appmnt-pnl-btns {
+    width: 90%;
+    position: absolute;
+    bottom: 25px;
+}
+
 .panel-default:hover {
     cursor: pointer;
 }
@@ -536,9 +552,9 @@ nav > div > div > ul > li > a > i,
 .panel-heading .delete-btn {
     color: #fff;
     position: absolute;
-    top: 13px;
+    top: 10px;
     right: 30px;
-    font-size: 26px !important;
+    font-size: 24px !important;
 }
 
 .panel-heading .delete-btn:hover {
@@ -557,12 +573,12 @@ nav > div > div > ul > li > a > i,
 }
 
 .pt-queue-number span {
-    padding: 1px 5px;
-    font-weight: 600;
-    font-size: 15px;
-    background: #E74C3C;
-    border-radius: 3px;
-    text-shadow: 1px 1px 1px #34495E !important;
+    position: absolute;
+    top: 52px;
+    right: 28px;
+    font-weight: 800;
+    font-size: 20px;
+    color: #F1C40F;
 }
 
 .queue-num {
@@ -574,12 +590,12 @@ nav > div > div > ul > li > a > i,
 }
 
 .panel-body {
-    padding: 6px 0 6px 6px;
+    padding: 8px 0 8px 8px;
 }
 
 .panel-default .panel-body p {
     font-size: 12px;
-    line-height: 16px; 
+    line-height: 10px; 
 }
 
 .panel-notif {
@@ -641,12 +657,27 @@ nav > div > div > ul > li > a > i,
     font-style: italic;
 }
 
+.doctor-panel .doctor-panel-btns button{
+    color: #2C3E50 !important;
+}
+
+.doctor-panel-btns button {
+    font-weight: 600;
+    color: #2C3E50 !important;
+}
+
+.doctor-panel-btns button:hover {
+    background: none;
+    color: #C0392B !important;
+}
+
 .appmnt-pnl-btns,
 .doctor-panel-btns {
     padding: 0 10px;
 }
 
-.appmnt-pnl-btns button {
+.appmnt-pnl-btns button,
+.doctor-panel-btns button {
     margin: 0;
     padding: 0;
     background: transparent;
@@ -697,7 +728,8 @@ a.btn.btn-block.appo.tooltip-bottom {
   width: 30%;
 }
 
-.appmnt-pnl-btns i {
+.appmnt-pnl-btns i,
+.doctor-panel-btns i {
     padding-left: 3px;
 }
 
@@ -1408,7 +1440,8 @@ ul.nav.items-list li:hover {
     font-weight: 600;
 }
 
-.doctor-panel p {
+.doctor-panel .panel-body p {
+    line-height: 16px;
 }
 
 .panel.panel-default.doctor-panel:hover {
