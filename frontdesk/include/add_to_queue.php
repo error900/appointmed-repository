@@ -10,8 +10,8 @@
                     <div class="row">
                         <div class="col-xs-12 col-md-12 remarks">
                             <div class="input-group">
-                                <input type="text" placeholder="First name" name="firstname">
-                                <input type="text" placeholder="Last name" name="lastname">
+                                <!-- <input type="text" placeholder="First name" name="firstname">
+                                <input type="text" placeholder="Last name" name="lastname"> -->
                         <!--         <input type="hidden" value="<?php echo $doctor_id ?>" name="doctor_id">    --> 
                             </div>
                         </div>

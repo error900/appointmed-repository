@@ -25,12 +25,12 @@
     </script>
     <?php
     session_start();
-    // $loggedIn = $_SESSION['loggedIn'];
-    // $account_type = $_SESSION['account_type'];
-    // if ($loggedIn == false)
-    //     header("location: ../admin/index.php");
-    // else if ($account_type != 'FrontDesk')
-    //     header("location: ../admin/index.php");
+    $loggedIn = $_SESSION['loggedIn'];
+    $account_type = $_SESSION['account_type'];
+    if ($loggedIn == false)
+        header("location: ../admin/index.php");
+    else if ($account_type != 'FrontDesk')
+        header("location: ../admin/index.php");
     if(isset($_GET['page'])){
          $page = (int)mysqli_real_escape_string($con, $_GET['page']);
     }else{
@@ -77,6 +77,7 @@
                         </div>
                         <?php
                             while($row = mysqli_fetch_array($sql)){
+                                $doctor_id = $row['doctor_id'];
                                 $date = date('Y-m-d', strtotime($date));
                                 $available_days = explode("/", $row['days']);
                                 foreach($available_days as $values){
@@ -92,8 +93,8 @@
                                             echo '<p class="clinic-info">'.$row['time'].'</p>';
                                         echo '</div>';
                                         echo '<div class="doctor-panel-btns">';
-                                            echo '<button type="button" class="btn btn-default btn-inverse appo btn-noborder" data-toggle="modal" data-target=".bs-add-modal-sm" ">
-                                            <i class="fa fa-plus"></i>appoint</button>';
+                                             echo "<a href=\"walk_in.php?did=$doctor_id\" onclick='return confirm(\"Add patient to queue?\")' title=\"Add to Queue\"> <i class=\"fa fa-plus\"></i></a></div>
+                                                <div class=\"panel-body\">";
                                             echo '<p class="doctor-panel-specs">'.$row['specialization'].'</p>';
                                         echo '</div>';
                                echo '</div>';
