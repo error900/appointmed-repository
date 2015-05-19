@@ -512,7 +512,8 @@ nav > div > div > ul > li > a > i,
     padding: 10px 0 10px 14px;
 }
 
-#asd .appmnt-pnl-btns {
+#asd .appmnt-pnl-btns,
+.doctor-panel .doctor-panel-btns {
     width: 90%;
     position: absolute;
     bottom: 25px;
@@ -676,8 +677,7 @@ nav > div > div > ul > li > a > i,
     padding: 0 10px;
 }
 
-.appmnt-pnl-btns button,
-.doctor-panel-btns button {
+.appmnt-pnl-btns button {
     margin: 0;
     padding: 0;
     background: transparent;
@@ -719,7 +719,8 @@ nav > div > div > ul > li > a > i,
 }
 
 .appmnt-pnl-btns a:focus,
-.appmnt-pnl-btns button:focus {
+.appmnt-pnl-btns button:focus,
+.doctor-panel-btns button {
     border: 0 !important;
     background: 0 !important;
 }
@@ -1426,7 +1427,7 @@ ul.nav.items-list li:hover {
     border-top: 2px solid #F39C12;
     border-bottom: 2px solid rgba(44, 62, 80, 0.4);
     border-left: 2px solid transparent;
-    min-height: 135px;
+    min-height: 146px;
     word-wrap: break-word;
 }
 

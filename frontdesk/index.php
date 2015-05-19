@@ -99,19 +99,25 @@
                                echo '</div>';
                              echo '</div>';
                             }
-                        echo '<div>';
+                            echo '<div>';
+                        echo '</div>';
+                        ?>
+                        <div class="col-xs-12 col-md-6 col-md-offset-3">
+                        <?php 
                         // echo 'Navigation  ';
                             for($i=1; $i<=$cout; $i++) {
                                 echo "<a href=\"index.php?page=".$i."\">".$i."  </a>";
                             }
-
-                        echo '</div>';
                         ?>
+                            
+                        </div>
                     </div>
                 </div>
+                <?php 
+                include 'include/add_to_queue.php';
+                ?>
                 <script type="text/javascript" src="js/scrolltop.js"></script>
                 <script type="text/javascript" src="js/search.js"></script>
-                <?php include 'include/add_to_queue.php';?>
         </div>
     </body>
 </html>

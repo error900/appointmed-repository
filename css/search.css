@@ -13,7 +13,18 @@
 }
 
 .divResult > li > p {
-    padding: 0 0 0 30px;
-    font-style: italic;
-    text-transform: none;
+	padding: 0 0 0 40px;
+	font-style: italic;
+	text-transform: none;
+	line-height: 10px;
+}
+
+.specs-search {
+	margin-top: 4px;
+	font-size: 14px !important;
+}
+
+.days-search {
+	font-style: normal !important;
+	font-size: 13px !important;
 }

@@ -19,7 +19,8 @@ if ($_POST) {
             <li>
                 <?php
                 echo "<a href=\"doctor.php?id=$doctor_id\"><i class='fa fa-user-md fa-lg'></i>" . $final_name . '</a>';
-                echo '<p>' . $final_specs . '</p> Days: ' .$days;
+                echo '<p class="specs-search">' . $final_specs . '</p>';
+                echo '<p class="days-search">'. $days . '</p>';
                 ?>
             </li>
             <?php
