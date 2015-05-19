@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <?php
-    $title = "Available Doctors";
+    $title = "Front Desk | Available Doctors";
     include 'include/head.php';
     include 'connectdatabase.php';
     include 'include/scripts.php';
@@ -60,12 +60,8 @@
              include 'include/fd-nav-start.php';
             ?>
             <ul class="nav navbar-nav">
-                <li class="active dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-asterisk fa-lg"></i>Schedules <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="index.php">sadsfsd</a></li>
-                        <li><a href="">sdfsdsf</a></li>
-                    </ul>
+                <li class="tooltip-bottom" data-tooltip="On Deck">
+                    <a href="index.php"><i class="fa fa-users fa-lg"></i>On Deck</a>
                 </li>
                 <?php
                 include 'include/fd-nav-end.php';
@@ -104,20 +100,21 @@
                         echo '</div>';
                         ?>
                         <div class="col-xs-12 col-md-6 col-md-offset-3">
-                        <?php 
-                        // echo 'Navigation  ';
-                            for($i=1; $i<=$cout; $i++) {
-                                echo "<a href=\"index.php?page=".$i."\">".$i."  </a>";
-                            }
-                        ?>
-                            
+                            <nav>
+                                <ul class="pagination">
+                                <?php 
+                                    for($i=1; $i<=$cout; $i++) {
+                                        echo "<li><a href=\"index.php?page=".$i."\">".$i."  </a></li>";
+                                    }
+                                ?>
+                                </ul>
+                            </nav>
                         </div>
                     </div>
                 </div>
                 <?php 
                 include 'include/add_to_queue.php';
                 ?>
-                <script type="text/javascript" src="js/scrolltop.js"></script>
                 <script type="text/javascript" src="js/search.js"></script>
         </div>
     </body>

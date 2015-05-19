@@ -71,7 +71,7 @@ body {
     color: #34495e;
     font-size: 18px;
     line-height: 1.72222;
-    background-color: #35404F;
+    background-color: #4AAAA5;
 }
 
 a {
@@ -412,7 +412,7 @@ nav > div > div > ul > li > a > i,
     font-size: 16px !important;
 }
 
-.appointment-dr-name {
+.appointment-header {
     font-size: 14px !important;
     font-weight: 600;
     line-height: 14px !important;
@@ -495,7 +495,7 @@ nav > div > div > ul > li > a > i,
     color: #fff;
     background-color: #0F5959;
     font-size: 14px;
-    border: 2px solid #2C3E50;
+    border: 2px solid #0F5959;
     border-radius: 0;
     text-transform: uppercase;
     transition: border 0.20s ease;
@@ -537,6 +537,7 @@ nav > div > div > ul > li > a > i,
 }
 
 .panel-default .panel-heading {
+    margin: -2px;
     color: #fff !important;
     font-weight: 800;
     background-color: #17A697 !important;
@@ -548,6 +549,7 @@ nav > div > div > ul > li > a > i,
 
 .sched-panel .panel-heading {
     background-color: #35404F !important;
+    margin: 0 -2px;
 }
 
 .panel-heading .delete-btn {
@@ -817,10 +819,6 @@ a.btn.btn-block.appo.tooltip-bottom {
     min-height: 150px;
     border: 2px solid transparent;
     background-color: rgba(236, 240, 241, 0.3) !important;
-    border-right: 2px solid rgba(44, 62, 80, 0.7);
-    border-top: 2px solid #2C3E50;
-    border-bottom: 2px solid rgba(44, 62, 80, 0.7);
-    border-left: 2px solid transparent;
 }
 
 .sched-panel .panel-body,
