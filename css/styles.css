@@ -461,8 +461,9 @@ nav > div > div > ul > li > a > i,
 }
 
 .row-header-fff {
-    color: #ECF0F1;
-    font-size: 18px;
+    color: #fff;
+    font-size: 21px;
+    text-shadow: 0px 1px 0px #34495E;
 }
 
 .row-header-black {
@@ -471,8 +472,9 @@ nav > div > div > ul > li > a > i,
 }
 
 .row-header2-fff {
-    color: #ECF0F1;
+    color: #fff;
     text-transform: none;
+    text-shadow: 0px 1px 0px #34495E;
 }
 
 .modal-sub-header {
@@ -1233,10 +1235,16 @@ a.btn.btn-block.appo.tooltip-bottom {
     font-size: 14px;
     font-weight: 600;
     text-transform: uppercase;
+    text-shadow: 0px 1px 0px #34495E;
+}
+
+.search-doctor-info p:first-child {
+    font-size: 15px;
+    font-weight: 800;
+    text-transform: uppercase;
 }
 
 .search-specs {
-    color: #f39c12 !important;
     font-style: italic;
 }
 
@@ -1404,7 +1412,7 @@ ul.nav.items-list li:hover {
 #patient-info {
     margin: 20px 0 15px 0;
     padding-bottom: 20px;
-    color: #ECF0F1;
+    color: #fff;
     font-size: 14px;
     border-bottom: 2px solid #7F8C8D;
 }
@@ -1482,7 +1490,10 @@ ul.nav.items-list li:hover {
 }
 
 .p-info {
-    padding: 0; 
+    padding: 0;
+    color: #fff;
+    font-weight: 600;
+    text-shadow: 0px 1px 0px #34495E;
 }
 
 .d-info ul,
@@ -1512,7 +1523,7 @@ ul.nav.items-list li:hover {
 }
 
 .d-info span {
-    color: #1ABC9C;
+    color: #F1C40F;
     padding: 0px 15px;
     font-size: 18px;
     font-weight: 800;
@@ -1586,7 +1597,7 @@ ul.nav.items-list li:hover {
 .clinic-box {
     margin-bottom: 10px;
     padding: 10px 12px;
-    background: #34495E;
+    background: rgba(52, 73, 94, 0.7);
     min-height: 120px;
 }
 
@@ -1741,6 +1752,7 @@ footer {
 .footer-buttons a,
 .footer-buttons button {
     margin-top: 15px;
+    transition: all 0.25s ease-in-out;
 }
 
 .register-btn,

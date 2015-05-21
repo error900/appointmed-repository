@@ -47,6 +47,7 @@
                         <li><a href="appointment_tom.php">Tomorrow</a></li>
                         <li><a href="appointment_week.php">This Week</a></li>
                         <li><a href="appointment_month.php">This Month</a></li>
+                        <li><a href="appointment_next.php">Next Month</a></li>
                     </ul>
                 </li>
                 <li class="tooltip-bottom" data-tooltip="Notifications">
@@ -84,21 +85,19 @@
                             }
                             ?>.jpg" class="img-responsive">
                         </div>
-                        <div class="col-xs-12 col-md-5">
+                         <div class="col-xs-12 col-md-5 user-md">
                             <div class="p-info">
-                                <ul>
-                                    <li><i class="fa fa-user"></i><?php echo $row['patient_name']; ?></li>
+                                    <h1><?php echo $row['patient_name']; ?></h1>
                                     <?php
                                     $birthday = explode("-", $row['birthdate']);
                                     $age = (date("md", date("U", mktime(0, 0, 0, $birthday[1], $birthday[2], $birthday[0]))) > date("md") ? ((date("Y") - $birthday[0]) - 1) : (date("Y") - $birthday[0]));
                                     ?>
-                                    <li><i class="fa fa-birthday-cake"></i><?php echo $row['birthdate']; ?> &mdash; <?php echo $age; ?> years old</li>
-                                    <li><i class="fa fa-briefcase"></i><?php echo $row['occupation']; ?></li>
-                                    <li><i class="fa fa-phone"></i><?php echo $row['patient_contact']; ?></li>
-                                    <li class="email"><i class="fa fa-envelope"></i><?php echo $row['email']; ?></li>
-                                </ul>
+                                    <p><?php echo $row['birthdate']; ?> &mdash; <?php echo $age; ?> years old</p>
+                                    <p><?php echo $row['occupation']; ?></p>
+                                    <p><?php echo $row['patient_contact']; ?></p>
+                                    <p class="email"><?php echo $row['email']; ?></p>
                             </div>
-                        </div>   
+                        </div>  
                     </div>
                 </div>
                 <div class="container-fluid patient-activity">
@@ -125,7 +124,7 @@
                                         if ($n_color['color'] == 'orange') {
                                             echo "<div class='col-xs-12 col-md-8 col-md-offset-2'>
                                                     <div class='panel panel-notif panel-warning'>
-                                                        <div class='panel-heading'><span class='hidden-xs hidden-sm'>" . $doc["doctor_name"] . "</span>" . $notif_date . "
+                                                        <div class='panel-heading'><span class='hidden-xs hidden-sm'>Dr. " . $doc["doctor_name"] . "</span>" . $notif_date . "
                                                             <a href=\"close_notif_prof.php?nid=$n_row[notification_id]&desc=$n_row[notification]\" title='Close'><i class='fa fa-remove delete-btn x-btn'></i></a>
                                                         </div>
                                                         <div class='panel-body'>

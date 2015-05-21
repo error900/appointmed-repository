@@ -63,6 +63,7 @@
                         <li><a href="appointment_tom.php">Tomorrow</a></li>
                         <li><a href="appointment_week.php">This Week</a></li>
                         <li><a href="appointment_month.php">This Month</a></li>
+                        <li><a href="appointment_next.php">Next Month</a></li>
                     </ul>
                 </li>
                 <li class="tooltip-right" data-tooltip="Notifications">
@@ -114,7 +115,7 @@
                                         }
                                         ?>.jpg">
                                         <div class="search-doctor-info">
-                                            <p><i class='fa fa-user-md'></i>Dr. <?php echo $final_name ?></p>
+                                            <p>Dr. <?php echo $final_name ?></p>
                                             <p class="search-specs"><?php echo $final_specs ?></p>
                                         </div>
                                     </div>
