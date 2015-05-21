@@ -6,7 +6,7 @@ if (isset($_POST['submit'])) {
         $select = array();
 
         foreach ($_POST['select'] as $values) {
-            $sql = "UPDATE account SET account_status='active', password='$password' WHERE username = '$values'";
+            $sql = "UPDATE account SET account_status='active' WHERE username = '$values'";
 
             if (!(mysqli_query($con, $sql))) {
                 die('Error: ' . mysqli_error($con));

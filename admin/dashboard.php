@@ -14,11 +14,11 @@
         header("location: index.php");
     else if ($account_type != 'Admin')
         header("location: index.php");
-    $account_sql = mysqli_query($con, "SELECT * FROM account WHERE username <> 'Admin' ");
+    $account_sql = mysqli_query($con, "SELECT * FROM account WHERE username <> 'Admin' AND username <> 'Frontdesk' ");
 
     ?>
     <?php include 'include/table_data.php';?>
-    
+
     <body class="e4e8e9-bg">
         <?php 
             include 'include/admin-nav.php';
