@@ -115,6 +115,7 @@ h1, h2, h3, h4 {
       font-size: 1.33333333em !important;
 }
 
+i.fa.fa-user,
 i.fa.fa-user-md,
 i.fa.fa-location-arrow,
 i.fa.fa-phone,
@@ -907,6 +908,7 @@ a.btn.btn-block.appo.tooltip-bottom {
 }
 
 .usr-login .field-icon {
+    padding: 0 !important;
     position: absolute;
     z-index: 2;
     top: 13px;
@@ -1500,6 +1502,10 @@ ul.nav.items-list li:hover {
     text-shadow: 0px 1px 0px #34495E;
 }
 
+.d-info {
+    font-weight: 600;
+}
+
 .d-info ul,
 .p-info ul,
 .s-info ul {
@@ -1511,6 +1517,12 @@ ul.nav.items-list li:hover {
 
 .d-info .text-black {
     color: #34495E;
+}
+
+.result.d-info {
+    color: #fff;
+    text-shadow: 0px 1px 0px #34495E;
+    font-weight: 600;
 }
 
 .p-info ul i,
@@ -1527,7 +1539,7 @@ ul.nav.items-list li:hover {
 }
 
 .d-info span {
-    color: #F1C40F;
+    color: #0F5959;
     padding: 0px 15px;
     font-size: 18px;
     font-weight: 800;
@@ -1601,7 +1613,7 @@ ul.nav.items-list li:hover {
 .clinic-box {
     margin-bottom: 10px;
     padding: 10px 12px;
-    background: rgba(52, 73, 94, 0.7);
+    background: rgba(52, 73, 94, 0.6);
     min-height: 120px;
 }
 

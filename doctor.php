@@ -114,15 +114,13 @@
                                 }
                                 ?>.jpg">
                         </div>
-                        <div class="col-xs-12 col-md-5">
-                            <div class="d-info">
-                                <ul>
-                                    <li><i class="fa fa-user-md"></i>Dr. <?php echo ($d_row['doctor_name']); ?></li>
-                                    <li><i class="fa fa-medkit"></i><?php echo $d_row['specialization']; ?></li>
-                                    <li class="email"><i class="fa fa-envelope"></i> <?php echo $d_row['email']; ?></li>
-                                    <br>
-                                    <li><i class="fa fa-h-square"></i>Benguet Laboratories</li>
-                                </ul>
+                        <div class="col-xs-12 col-md-5 user-md">
+                            <div class="result d-info">
+                                <h1>Dr. <?php echo ($d_row['doctor_name']); ?></h1>
+                                <p><?php echo $d_row['specialization']; ?></p>
+                                <p class="email"><?php echo $d_row['email']; ?></p>
+                                <br/>
+                                <p>Benguet Laboratories Incorporated</p>
                             </div>
                         </div>
                         <div class="col-xs-12 col-md-3 text-center">
@@ -160,11 +158,11 @@
                             $days = $c_row['days'];
                             echo '<div class="col-xs-12 col-md-3">';
                             echo '<div class="clinic-box">';
+                            echo '<p class="clinic-days">' . $c_row['days'] . '</p>';
                             echo '<h2>' . $c_row['clinic_name'] . '<span>' . $count . '</span></h2>';
-                            echo '<p class="clinic-days"><i class="fa fa-calendar-o"></i>' . $c_row['days'] . '</p>';
-                            echo '<p class="clinic-times"><i class="fa fa-clock-o"></i>' . $c_row['time'] . '</p>';
-                            echo '<p class="clinic-info"><i class="fa fa-location-arrow"></i>' . $c_row['clinic_location'] . '</p>';
-                            echo '<p class="clinic-info"><i class="fa fa-phone"></i>' . $c_row['clinic_contact'] . '</p>';
+                            echo '<p class="clinic-times">' . $c_row['time'] . '</p>';
+                            echo '<p class="clinic-info">' . $c_row['clinic_location'] . '</p>';
+                            echo '<p class="clinic-info">' . $c_row['clinic_contact'] . '</p>';
                             echo ' <button type="button" class="btn btn-default clinic create-btn btn-noborder tooltip-bottom" data-tooltip="create appointment" data-toggle="modal" data-target=".bs-example-modal-sm" data-id="' . $c_row['clinic_id'] . '">
                             <i class="fa fa-edit fa-lg"></i></button>';
                             echo '</div>';

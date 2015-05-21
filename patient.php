@@ -85,7 +85,7 @@
                             }
                             ?>.jpg" class="img-responsive">
                         </div>
-                         <div class="col-xs-12 col-md-5 user-md">
+                        <div class="col-xs-12 col-md-5 user-md">
                             <div class="p-info">
                                     <h1><?php echo $row['patient_name']; ?></h1>
                                     <?php
