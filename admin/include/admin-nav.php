@@ -49,10 +49,10 @@
                         <li><a href="exportall.php">Export</a></li>
                     </ul>
                 </li>
-                <li class="hidden-sm hidden-xs tooltip-right" data-tooltip="Dashboard"><a href="dashboard.php" class="navicon-link"><i class="fa fa-dashboard fa-lg"></i>Dashboard</a></li>
+                <li class="hidden-sm hidden-xs tooltip-bottom" data-tooltip="Dashboard"><a href="dashboard.php" class="navicon-link"><i class="fa fa-dashboard fa-lg"></i>Dashboard</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right signedin">
-                <div class="btn-group tooltip-left" data-tooltip="Me">
+                <div class="btn-group tooltip-left" data-tooltip="You">
                     <button type="button" class="btn btn-default btn-lg btn-noborder dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                         admin
                         <span class="caret"></span>

@@ -55,12 +55,11 @@
                     </div>
                 </div>
                 <?php
-                    include 'include/doctors-full-list.php'; 
-                ?>
-                <?php
+                include 'include/doctors-full-list.php';
                 include 'include/user-login.php';
                 include 'include/scrolltop.php';
                 include 'include/scripts.php';
+                include 'include/footer.php';
                 ?>
                 <script type="text/javascript" src="js/scrolltop.js"></script>
             </div> <!-- /container -->

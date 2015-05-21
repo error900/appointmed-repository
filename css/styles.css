@@ -128,7 +128,6 @@ i.fa.fa-envelope,
 i.fa.fa-angle-double-right,
 i.fa.fa-clock-o,
 i.fa.fa-calendar-o,
-i.fa.fa-user,
 i.fa.fa-unlock-alt,
 i.fa.fa-question-circle,
 i.fa.fa-plus
@@ -913,7 +912,6 @@ a.btn.btn-block.appo.tooltip-bottom {
     top: 13px;
     right: 15px;
     color: #95A5A6;
-    border-right: ;
     -webkit-transition: all .25s;
     transition: all .25s;
 }
@@ -1171,13 +1169,18 @@ a.btn.btn-block.appo.tooltip-bottom {
     font-weight: 600;
 }
 
-.login-link {
+.login-link,
+.forgotpass-link {
     display: block;
     margin-top: 15px;
     margin-bottom: 0;
     font-size: 14px;
     color: #7F8C8D !important;
     text-align: center;
+}
+
+.forgotpass-link {
+    margin-top: 0 !important;
 }
 
 .login-link:hover {
@@ -1272,6 +1275,7 @@ a.btn.btn-block.appo.tooltip-bottom {
 .other-services label {
     text-transform: uppercase;
     font-size: 15px;
+    cursor: pointer;
 }
 
 .other-services label i {

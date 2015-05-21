@@ -68,6 +68,7 @@
                                 <input class="btn btn-default orange-btn btn-noborder" type="submit" value="Login" name="login"/>
                             </form>
                             <a class="login-link" href="signup.php">Don't have an account?</a>
+                            <a class="forgotpass-link" href="signup.php">Forgot password?</a>
                         </div>
                     </div>
                     <?php

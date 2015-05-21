@@ -89,7 +89,8 @@
 
 .post-buttons button {
 	float: right;
-	margin-right: -5px;
+	margin-right: -6px !important;
+	width: 10% !important;
 }
 
 @media (min-width:768px){
@@ -113,4 +114,21 @@
 	.announcement-post label  {
 		margin: 10px 0 10px 80px;
 	}
+}
+
+.field-icon {
+	position: absolute;
+	z-index: 2;
+	top: 13px;
+	right: -4px;
+	color: #95A5A6;
+	-webkit-transition: all .25s;
+	transition: all .25s;
+}
+
+.post-buttons select {
+	padding: 5px;
+	width: 15% !important;
+	border-radius: 4px !important;
+	margin: 10px 5px;
 }

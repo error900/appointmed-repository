@@ -130,9 +130,9 @@
             </div>
             <?php
             include 'include/user-login.php';
-            //    include 'include/footer.php';
             include 'include/scrolltop.php';
             include 'include/scripts.php';
+            include 'include/footer.php';
             ?>
             <script type="text/javascript" src="js/scrolltop.js"></script>
         </div> <!-- /container -->
