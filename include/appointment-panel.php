@@ -45,5 +45,10 @@ if (mysqli_num_rows($p_result) >= 1) {
     <strong> <a href="help.php" class="alert-link">instructions</a></strong>.
     </div>
     </div>';
+    echo '<div class="col-xs-12 col-md-10 col-md-offset-1">
+    <div class="alert alert-warning" role="alert">
+        Don\'t know which doctor to appoint to? Click <b><a href="doctor.php?id=6aa29f6">here</a></b>.
+    </div>
+    </div>';
 }
 ?>

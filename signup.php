@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <?php
-    $title = "appoint.med | Home";
+    $title = "appoint.med | Signup";
     include 'include/head.php';
     include 'connectdatabase.php';
     ?>

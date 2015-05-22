@@ -74,6 +74,7 @@
                         <?php
                             while($row = mysqli_fetch_array($sql)){
                                 $doctor_id = $row['doctor_id'];
+                                $clinic_id = $row['clinic_id'];
                                 $date = date('Y-m-d', strtotime($date));
                                 $available_days = explode("/", $row['days']);
                                 foreach($available_days as $values){
@@ -89,7 +90,7 @@
                                             echo '<p class="clinic-info">'.$row['time'].'</p>';
                                         echo '</div>';
                                         echo '<div class="doctor-panel-btns">';
-                                             echo "<a href=\"walk_in.php?did=$doctor_id\" onclick='return confirm(\"Add patient to queue?\")' title=\"Add to Queue\"> <i class=\"fa fa-plus\"></i></a></div>
+                                             echo "<a href=\"walk_in.php?did=$doctor_id&cid=$clinic_id\" onclick='return confirm(\"Add patient to queue?\")' title=\"Add to Queue\"> <i class=\"fa fa-plus\"></i></a></div>
                                                 <div class=\"panel-body\">";
                                             echo '<p class="doctor-panel-specs">'.$row['specialization'].'</p>';
                                         echo '</div>';
