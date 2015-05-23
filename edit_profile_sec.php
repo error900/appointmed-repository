@@ -1,6 +1,6 @@
 <?php
 include 'connectdatabase.php';
-echo 'asdasd';
+
 if (isset($_POST['submit'])) {
     $name = mysqli_real_escape_string($con, $_POST['name']);
     $email = mysqli_real_escape_string($con, $_POST['email']);
