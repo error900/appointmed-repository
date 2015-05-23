@@ -3,34 +3,18 @@
     <?php
     $title = "Search Results";
     include 'include/head.php';
-    include 'connectdatabase.php';
+    include '../connectdatabase.php';
     include 'include/scripts.php';
     include 'include/scrolltop.php';
     ?>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $(".appo").click(function() { // Click to only happen on announce links
-                $("#appo_id").val($(this).data('id'));
-                $("#pat_id").val($(this).data('patient-id'));
-                $("#app_id").val($(this).data('a-id'));
-                $("#pats_id").val($(this).data('p-id'));
-            });
-            $('#hideshow').on('click', function() {
-                $('#clinics').show();
-            });
-            $('#showsec').on('click', function() {
-                $('#secretary').show();
-            });
-        });
-    </script>
     <?php
     session_start();
-    // $loggedIn = $_SESSION['loggedIn'];
-    // $account_type = $_SESSION['account_type'];
-    // if ($loggedIn == false)
-    //     header("location: ../admin/index.php");
-    // else if ($account_type != 'FrontDesk')
-    //     header("location: ../admin/index.php");
+    $loggedIn = $_SESSION['loggedIn'];
+    $account_type = $_SESSION['account_type'];
+    if ($loggedIn == false)
+        header("location: ../admin/index.php");
+    else if ($account_type != 'FrontDesk')
+        header("location: ../admin/index.php");
     $search = mysqli_real_escape_string($con, $_GET['q']);
 
     $date = date('Y-m-d');

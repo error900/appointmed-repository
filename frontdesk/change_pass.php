@@ -1,5 +1,5 @@
 <?php
-include 'connectdatabase.php';
+include '../connectdatabase.php';
 $old_password = mysqli_real_escape_string($con, $_POST['old_password']);
 $password = mysqli_real_escape_string($con, $_POST['password']);
 $username = mysqli_real_escape_string($con, $_POST['username']);

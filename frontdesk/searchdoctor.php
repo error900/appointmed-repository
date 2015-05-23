@@ -1,5 +1,5 @@
 <?php
-include 'connectdatabase.php';
+include '../connectdatabase.php';
 if ($_POST) {
     $search = mysqli_real_escape_string($con, $_POST['searchword']);
     $result = mysqli_query($con, "SELECT * FROM doctor NATURAL JOIN clinic_schedule 
