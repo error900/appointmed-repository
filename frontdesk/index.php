@@ -60,12 +60,12 @@
              include 'include/fd-nav-start.php';
             ?>
             <ul class="nav navbar-nav">
-                <li class="tooltip-bottom" data-tooltip="On Deck">
+                <li class="tooltip-bottom" data-tooltip="Online Doctors">
                     <a href="index.php"><i class="fa fa-users fa-lg"></i>On Deck</a>
                 </li>
-                <?php
-                include 'include/fd-nav-end.php';
-                ?>
+            <?php
+            include 'include/fd-nav-end.php';
+            ?>
                 <div class="container-fluid" id="frontdesk-md">
                     <div class="row">
                         <div class="col-xs-12 col-md-12">
@@ -79,34 +79,31 @@
                                 foreach($available_days as $values){
 
                                 } 
-                                echo '<div class="col-xs-12 col-md-3">';
-                                    echo '<div class="panel panel-default doctor-panel">';
-                                        echo '<div class="panel-heading">';
+                            echo '<div class="col-xs-12 col-md-3">';
+                                echo '<div class="panel panel-default doctor-panel">';
+                                    echo '<div class="panel-heading">';
                                         echo $row['doctor_name'];
-                                        echo '</div>';
-                                        echo '<div class="panel-body">';
-                                            echo '<p class="clinic-days">'.$row['days'].'</p>';
-                                            echo '<p class="clinic-info">'.$row['time'].'</p>';
-                                        echo '</div>';
-                                        echo '<div class="doctor-panel-btns">';
-                                             echo "<a href=\"walk_in.php?did=$doctor_id\" onclick='return confirm(\"Add patient to queue?\")' title=\"Add to Queue\"> <i class=\"fa fa-plus\"></i></a></div>
-                                                <div class=\"panel-body\">";
+                                    echo '</div>';
+                                    echo '<div class="panel-body">';
+                                        echo '<p class="clinic-days">'.$row['days'].'</p>';
+                                        echo '<p class="clinic-info">'.$row['time'].'</p>';
+                                    echo '</div>';
+                                    echo '<div class="doctor-panel-btns">';
+                                            echo "<a href=\"walk_in.php?did=$doctor_id\" class='tooltip-bottom' data-tooltip='Add to queue'onclick='return confirm(\"Add patient to queue?\")' title=\"Add to Queue\"> <i class=\"fa fa-plus\"></i></a>";
                                             echo '<p class="doctor-panel-specs">'.$row['specialization'].'</p>';
-                                        echo '</div>';
-                               echo '</div>';
-                             echo '</div>';
+                                    echo '</div>';
+                                echo '</div>';
+                            echo '</div>';
                             }
-                            echo '<div>';
-                        echo '</div>';
                         ?>
                         <div class="col-xs-12 col-md-6 col-md-offset-3">
-                            <nav>
+                            <nav class="text-center">
                                 <ul class="pagination">
-                                <?php 
-                                    for($i=1; $i<=$cout; $i++) {
-                                        echo "<li><a href=\"index.php?page=".$i."\">".$i."  </a></li>";
-                                    }
-                                ?>
+                                    <?php 
+                                        for($i=1; $i<=$cout; $i++) {
+                                            echo "<li><a href=\"index.php?page=".$i."\" id='num-page'>" .$i. "</a></li>";
+                                        }
+                                    ?>
                                 </ul>
                             </nav>
                         </div>
@@ -116,6 +113,13 @@
                 include 'include/add_to_queue.php';
                 ?>
                 <script type="text/javascript" src="js/search.js"></script>
+                <script>
+                    $(document).ready(function() {
+                        $(".pagination a").on("click",function() {
+                                $(".pagination a").addClass("border-bottom");
+                        });
+                    });
+                </script>
         </div>
     </body>
 </html>

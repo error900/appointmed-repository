@@ -45,20 +45,16 @@
              include 'include/fd-nav-start.php';
             ?>
             <ul class="nav navbar-nav">
-                <li class="active dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-asterisk fa-lg"></i>Schedules <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="st-schedules.php">sadsfsd</a></li>
-                        <li><a href="st-schedules_tom.php">sdfsdsf</a></li>
-                    </ul>
+                <li class="tooltip-bottom" data-tooltip="Online Doctors">
+                    <a href="index.php"><i class="fa fa-users fa-lg"></i>On Deck</a>
                 </li>
-                <?php
-                include 'include/fd-nav-end.php';
-                ?>
+            <?php
+            include 'include/fd-nav-end.php';
+            ?>
                 <div class="container-fluid" id="frontdesk-md">
                     <div class="row">
                         <div class="col-md-12 search-link">
-                            <h1 class="text-center row-header-fff">&mdash; Results &mdash;</h1>
+                            <h1 class="text-center row-header-black">&mdash; Results &mdash;</h1>
                                 <?php
                                     if (mysqli_num_rows($result) >= 1) {
                                         while ($row = mysqli_fetch_array($result)) {

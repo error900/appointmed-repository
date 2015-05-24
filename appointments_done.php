@@ -101,7 +101,9 @@
                                 echo '<div class="col-xs-12 col-md-6 col-lg-3" id="' . $d_row['appointment_id'] . '">';
                                 echo "<div class='panel panel-default' id='asd'><div class='panel-heading appointment-date' >";
                                 echo $date;
-                                echo '<p class="appointment-dr-name">Dr. ' . $doc['doctor_name'] . '</p>';
+                                echo '</div><div class="panel-body">';
+                                echo '<p class="appointment-header">Dr. ' . $doc['doctor_name'] . '</p>';
+                                echo '</div><div class="appmnt-pnl-btns">';
                                 echo '<p class="appointment-specs">' . $doc['specialization'] . '</p></div></div>';
                                 echo '</div>';
                             }

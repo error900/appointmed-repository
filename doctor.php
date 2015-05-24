@@ -158,8 +158,8 @@
                             $days = $c_row['days'];
                             echo '<div class="col-xs-12 col-md-3">';
                             echo '<div class="clinic-box">';
-                            echo '<p class="clinic-days">' . $c_row['days'] . '</p>';
-                            echo '<h2>' . $c_row['clinic_name'] . '<span>' . $count . '</span></h2>';
+                            echo '<p class="clinic-days">' . $c_row['days'] . '<span>' . $count . '</span></p>';
+                            echo '<p class="clinic-name">' . $c_row['clinic_name'] . '</p>';
                             echo '<p class="clinic-times">' . $c_row['time'] . '</p>';
                             echo '<p class="clinic-info">' . $c_row['clinic_location'] . '</p>';
                             echo '<p class="clinic-info">' . $c_row['clinic_contact'] . '</p>';
