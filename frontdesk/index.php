@@ -3,26 +3,10 @@
     <?php
     $title = "Front Desk | Available Doctors";
     include 'include/head.php';
-    include 'connectdatabase.php';
+    include '../connectdatabase.php';
     include 'include/scripts.php';
     include 'include/scrolltop.php';
     ?>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $(".appo").click(function() { // Click to only happen on announce links
-                $("#appo_id").val($(this).data('id'));
-                $("#pat_id").val($(this).data('patient-id'));
-                $("#app_id").val($(this).data('a-id'));
-                $("#pats_id").val($(this).data('p-id'));
-            });
-            $('#hideshow').on('click', function() {
-                $('#clinics').show();
-            });
-            $('#showsec').on('click', function() {
-                $('#secretary').show();
-            });
-        });
-    </script>
     <?php
     session_start();
     $loggedIn = $_SESSION['loggedIn'];
@@ -74,11 +58,12 @@
                         <?php
                             while($row = mysqli_fetch_array($sql)){
                                 $doctor_id = $row['doctor_id'];
+                                $clinic_id = $row['clinic_id'];
                                 $date = date('Y-m-d', strtotime($date));
                                 $available_days = explode("/", $row['days']);
                                 foreach($available_days as $values){
 
-                                } 
+                                }
                             echo '<div class="col-xs-12 col-md-3">';
                                 echo '<div class="panel panel-default doctor-panel">';
                                     echo '<div class="panel-heading">';
@@ -89,7 +74,7 @@
                                         echo '<p class="clinic-info">'.$row['time'].'</p>';
                                     echo '</div>';
                                     echo '<div class="doctor-panel-btns">';
-                                            echo "<a href=\"walk_in.php?did=$doctor_id\" class='tooltip-bottom' data-tooltip='Add to queue'onclick='return confirm(\"Add patient to queue?\")' title=\"Add to Queue\"> <i class=\"fa fa-plus\"></i></a>";
+                                            echo "<a href=\"walk_in.php?did=$doctor_id&cid=$clinic_id\" class='tooltip-bottom' data-tooltip='Add to queue' onclick='return confirm(\"Add patient to queue?\")'><i class=\"fa fa-plus\"></i></a>";
                                             echo '<p class="doctor-panel-specs">'.$row['specialization'].'</p>';
                                     echo '</div>';
                                 echo '</div>';
