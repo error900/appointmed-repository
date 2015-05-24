@@ -1,5 +1,36 @@
 <?php
+include '../connectdatabase.php';
+if(isset($_GET['did']) && isset($_GET['cid'])){
 	$doctor_id = $_GET['did'];
-	echo $doctor_id;
+	$clinic_id = $_GET['cid'];
+	$date = date('Y-m-d');
+	$sql = mysqli_query($con, "SELECT * FROM queue_notif WHERE clinic_id LIKE '$clinic_id' 
+		AND appoint_date LIKE '$date' ORDER BY 1 DESC");
+	$row = mysqli_fetch_array($sql);
+
+	$walk = mysqli_query($con, "SELECT walk_in_id FROM walk_in  WHERE clinic_id LIKE '$clinic_id' 
+		AND appoint_date LIKE '$date' ORDER BY 1 DESC");
+	$row2 = mysqli_fetch_array($walk);
 	
+	$queue_id = $row['queue_id'];
+	$walk_in_id = $row2['walk_in_id'];
+	if(mysqli_num_rows($sql)== 0){
+    	$count = 1;
+    }else if(mysqli_num_rows($sql) !=0){
+    	$count = $queue_id +1;
+    }
+    $walk_in_id = $count;
+
+	$insert_sql = "INSERT INTO walk_in (walk_in_id, clinic_id, appoint_date, doctor_id) 
+	VALUES ('$walk_in_id','$clinic_id','$date','$doctor_id')";
+    if (!(mysqli_query($con, $insert_sql))) {
+    	die('Error: ' . mysqli_error($con));
+	}
+    echo "<script> alert('Added walk in patient');</script>";
+    echo "<script> location.replace('index.php') </script>";
+}else{
+	echo "<script> alert('Error!');</script>";
+    echo "<script> location.replace('index.php') </script>";
+}
+mysqli_close($con);
 ?>

@@ -15,7 +15,7 @@
         else if ($loggedIn == true && $account_type == 'Admin')
             header("location: dashboard.php");
         else if ($loggedIn == true && $account_type == 'FrontDesk')
-            header("location: ../frontdesk/frontdesk.php");
+            header("location: ../frontdesk/index.php");
         else if ($loggedIn == true && $account_type == 'Secretary')
             header("location: ../st-schedules.php");
     }

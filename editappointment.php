@@ -32,6 +32,11 @@ if (isset($_POST['submit'])) {
     $queue_row = mysqli_fetch_array($queue_fi);
     $queue_id = (int)$queue_no['queue_id'];
     $queue_date = $queue_row['appoint_date'];
+
+        //walk in
+    $walk_in = mysqli_query($con, "SELECT * FROM walk_in WHERE clinic_id LIKE '$clinic_id' AND appoint_date LIKE '$current_date' ORDER BY 1 DESC");
+    $walk_in_row = mysqli_fetch_array($walk_in);
+    $walk_in_id = $walk_in_row['walk_in_id']; 
     
     $days = explode('/', $days);
     foreach($days as $value){
@@ -71,10 +76,28 @@ if (isset($_POST['submit'])) {
                 mysqli_query($con, $subtract_queue_number) or die(mysqli_error($con));
             }
         }
+
+        $sql_d = mysqli_query($con, "SELECT * FROM walk_in WHERE clinic_id LIKE '$clinic_id' AND appoint_date 
+            LIKE '$queue_date' AND walk_in_id > '$queue_id' ");
+        if(mysqli_num_rows($sql_d)!= 0){
+            while($sql_walk_in = mysqli_fetch_array($sql_d)){
+                $count_r = (int) $sql_walk_in['walk_in_id'];
+                $walk_id = $sql_walk_in['walk_in'];
+                $count_r = $count_r -1;
+                $subtract_queue_number = "UPDATE walk_in SET walk_in_id = '$count_r' 
+                WHERE walk_in LIKE '$walk_id'";
+                mysqli_query($con, $subtract_queue_number) or die(mysqli_error($con));
+            }
+        }
+
         if(mysqli_num_rows($queue)== 0){
             $count = 1;
         }else if(mysqli_num_rows($queue) !=0){
-            $queue_id = (int)$queue_no['queue_id'];
+            if($queue_id < $walk_in_id){
+                $queue_id = $walk_in_id;
+            }else if($queue_id > $walk_in_id){
+                $queue_id = $queue_id;
+            }
             $count = $queue_id +1;
         }
         $queue_r = "UPDATE queue_notif SET queue_id = '$count', appoint_date = '$appdate' WHERE appointment_id LIKE '$appid' ";

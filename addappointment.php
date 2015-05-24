@@ -31,6 +31,13 @@ if (isset($_POST['submit'])) {
     $queue_no = mysqli_fetch_array($queue);
 
     $queue_id = (int)$queue_no['queue_id'];
+
+    //walk in
+    $walk_in = mysqli_query($con, "SELECT * FROM walk_in WHERE clinic_id LIKE '$clinic_id' AND appoint_date LIKE '$date' ORDER BY 1 DESC");
+    $walk_in_row = mysqli_fetch_array($walk_in);
+    $walk_in_id = $walk_in_row['walk_in_id']; 
+    //end
+
     $days = explode('/', $days);
     foreach($days as $value){
         $val = (ucfirst(strtolower($value)));
@@ -68,6 +75,11 @@ if (isset($_POST['submit'])) {
         if(mysqli_num_rows($queue)== 0){
             $count = 1;
         }else if(mysqli_num_rows($queue) !=0){
+            if($queue_id < $walk_in_id){
+                $queue_id = $walk_in_id;
+            }else if($queue_id > $walk_in_id){
+                $queue_id = $queue_id;
+            }
             $count = $queue_id +1;
         }
 
