@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <?php
-    $title = "Queue For Today";
+    $title = "Queue Next Month";
     include 'include/head.php';
     include 'connectdatabase.php';
     include 'include/scripts.php';
@@ -32,24 +32,34 @@
     else if ($account_type != 'Secretary')
         header("location: admin/index.php");
 
-    $date = date('Y-m-d');
+    $month = date("m");
+    $next = $month+1;
+    $start = date("Y-".$next."-1");
+    $next_month = date("Y-".$next."-t");
+
+    /*$start = date("Y-m-1");
+    $end = date("Y-m-t");
+    $date = date("Y-m-d");*/
     $username = $_SESSION['username'];
+
     $result = mysqli_query($con, "SELECT * FROM secretary WHERE username LIKE '$username'") or die(mysqli_error());
     $row = mysqli_fetch_array($result);
     $secretary = $row['secretary_name'];
     $secretary_id = $row['secretary_id'];
-    $email = $row['email'];
 
+    $email = $row['email'];
     $doctor_id = $row['doctor_id'];
+
     $doctor = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_id LIKE '$doctor_id'") or die(mysqli_error());
     $doctor_row = mysqli_fetch_array($doctor);
+
     $c_result = mysqli_query($con, "SELECT * FROM clinic NATURAL JOIN clinic_sec WHERE secretary_id LIKE '$secretary_id'") or die(mysqli_error());
     $c_row = mysqli_fetch_array($c_result);
     $clinic_id = $c_row['clinic_id'];
-    $a_result = mysqli_query($con, "SELECT * FROM appointment NATURAL JOIN queue_notif WHERE doctor_id = '$doctor_id' AND clinic_id = '$clinic_id' AND (appointment_status = 'inqueue' OR appointment_status = 'Referred') AND (appoint_date = '$date') ORDER BY 2 ASC, 8 ASC") or die(mysqli_error());
+    $a_result = mysqli_query($con, "SELECT * FROM appointment NATURAL JOIN queue_notif WHERE doctor_id = '$doctor_id' AND clinic_id = '$clinic_id' AND (appoint_date >= '$start' AND appoint_date <= '$next_month') ORDER BY 2 ASC, 8 ASC");
     $sqls = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_id <> '$doctor_id' ORDER BY specialization") or die(mysqli_error());
 
-    $count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE doctor_id LIKE '$doctor_id' AND indicator = 'Patient'") or die(mysqli_error());
+    $count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE doctor_id LIKE '$doctor_id' AND indicator = 'Patient'");
     $count_row = mysqli_fetch_array($count_result);
     $notif_count = $count_row['count'];
     ?>
@@ -90,7 +100,7 @@
                 <div class="container-fluid" id="schedules-md">
                     <div class="row">
                         <div class="col-md-12">
-                            <h2 class="text-center row-header">&mdash; Today &mdash;</h2>
+                            <h2 class="text-center row-header">&mdash; This Month &mdash;</h2>
                         </div>
                         <?php
                         include 'include/st-schedules-panel.php';
@@ -101,8 +111,8 @@
                 include 'include/remarks-modal.php';
                 include 'include/st-edit-profile-modal.php';
                 include 'include/refer-modal.php';
-
                 ?>
+                <script type="text/javascript" src="js/search.js"></script>
                 <script type="text/javascript" src="js/scrolltop.js"></script>
         </div>
     </body>

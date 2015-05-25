@@ -79,6 +79,6 @@
             });
         }
         </script>
-    </body>
+        <script type="text/javascript" src="js/sorttable.js"></script>
     </body>
 </html>

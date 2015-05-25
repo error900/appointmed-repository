@@ -1,5 +1,5 @@
 <div class="table-responsive database">
-    <table class="table table-striped">
+    <table class="table table-striped sortable">
         <thead>
             <tr>
                 <th>ID</th>
@@ -15,8 +15,8 @@
             while ($row = mysqli_fetch_array($account_sql)) {
                 $username = $row['username'];
                 $d_result = mysqli_query($con, "SELECT patient_id, email, patient_name FROM patient WHERE username LIKE '$username' 
-	UNION (SELECT doctor_id, email, doctor_name FROM doctor WHERE username LIKE '$username') 
-	UNION (SELECT secretary_id, email, secretary_name FROM secretary WHERE username LIKE '$username')");
+            	UNION (SELECT doctor_id, email, doctor_name FROM doctor WHERE username LIKE '$username') 
+            	UNION (SELECT secretary_id, email, secretary_name FROM secretary WHERE username LIKE '$username')");
                 $doc = mysqli_fetch_array($d_result);
                 echo '<tr>';
                 echo '<td>' . $doc['patient_id'] . '</td>';

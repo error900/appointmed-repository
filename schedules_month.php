@@ -35,7 +35,7 @@
 	else if ($account_type != 'Doctor')
 		header("location: admin/index.php");
 
-	$start = date("Y-m-1");
+	/*$start = date("Y-m-1");
 	$end = date("Y-m-t");
 	$date = date("Y-m-d");
 	$username = $_SESSION['username'];
@@ -47,6 +47,7 @@
 	$doctor_id = $row['doctor_id'];
 	$a_result = mysqli_query($con, "SELECT * FROM appointment NATURAL JOIN queue_notif WHERE doctor_id = '$doctor_id' AND (appointment_status = 'inqueue') AND (appoint_date >= '$start' AND appoint_date <= '$end') ORDER BY 2 ASC, 8 ASC");
 	$sqls = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_id <> '$doctor_id'") or die(mysqli_error());
+    */
 
     $start = date("Y-m-1");
     $end = date("Y-m-t");
@@ -86,6 +87,7 @@
                         <li><a href="schedules_tom.php">Tomorrow</a></li>
                         <li><a href="schedules_week.php">This Week</a></li>
                         <li><a href="schedules_month.php">This Month</a></li>
+                        <li><a href="schedules_next.php">Next Month</a></li>
                     </ul>
                 </li>
                 <li class="tooltip-bottom" data-tooltip="Notifications">
