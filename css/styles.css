@@ -1258,6 +1258,17 @@ a.btn.btn-block.appo.tooltip-bottom {
     font-style: italic;
 }
 
+.frontdesk .search-doctor-info p {
+    color: #0F5959;
+    text-shadow: none;
+}
+
+.frontdesk .search-doctor-info .addToQueueBtn {
+    position: absolute;
+    right: 20px;
+    bottom: 40px;
+}
+
 .export-schedules {
     padding-left: 10px;
 }
@@ -1465,6 +1476,9 @@ ul.nav.items-list li:hover {
 
 .subscribeUnsubscribe {
     width: 60% !important;
+    -webkit-box-shadow: 3px 4px 6px -2px rgba(0, 0, 0, 0.5);
+    -moz--box-shadow: 3px 4px 6px -2px rgba(0, 0, 0, 0.5);
+    box-shadow: 3px 4px 6px -2px rgba(0, 0, 0, 0.5);
 }
 
 .patient-activity {
@@ -1622,6 +1636,8 @@ ul.nav.items-list li:hover {
 
 .clinic-name {
     margin: 0;
+    font-size: 14px !important;
+    color: #F1C40F !important;
 }
 
 .clinic-box span {
@@ -1725,6 +1741,7 @@ ul.nav.items-list li:hover {
 
 .help-text {
     font-size: 16px;
+    text-shadow: 0px 1px 0px #34495E;
 }
 
 .pagination a {
