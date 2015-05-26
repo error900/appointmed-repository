@@ -24,9 +24,9 @@ if(mysqli_num_rows($a_result)>=1){
         // <div class=\"panel-body\">";
         echo '</div>';
         echo' <div class="panel-body">';
-        echo '<p><i class="fa fa-calendar"></i>' . $sched_date . '</p>';
-        echo '<p><i class="fa fa-location-arrow"></i>' . $clinic_name . '</p>';
-        echo '<p><i class="fa fa-phone"></i>' . $pat['patient_contact'] . '</p>';
+        echo '<p>' . $sched_date . '</p>';
+        echo '<p>' . $clinic_name . '</p>';
+        echo '<p>' . $pat['patient_contact'] . '</p>';
         echo '</div>';
         echo'  <div class="appmnt-pnl-btns">
                                 <button type="button" class="btn btn-default btn-inverse appo btn-noborder tooltip-bottom" data-tooltip="refer to a doctor" data-toggle="modal" data-target=".bs-example-modal-sm" data-id="' . $appointment_id . '" data-patient-id="' . $patient . '">

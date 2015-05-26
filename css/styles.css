@@ -847,6 +847,7 @@ a.btn.btn-block.appo.tooltip-bottom {
 
 .dc-profile-sched-panel {
     border: 2px solid #7F8C8D !important;
+    text-shadow: none !important;
 }
 
 .dc-profile-sched-panel h2,
@@ -854,6 +855,16 @@ a.btn.btn-block.appo.tooltip-bottom {
 .dc-profile-sched-panel p {
     color: #34495E !important;
     font-size: 14px;
+}
+
+.dc-profile-sched-panel h2 {
+    margin: 0 0 5px 0;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+.dc-profile-sched-panel p {
+    margin: 0;
 }
 
 .dc-profile-sched-panel i {
@@ -1680,7 +1691,7 @@ ul.nav.items-list li:hover {
 }
 
 .cutoff {
-    margin: 6px 0 0 0;
+    margin: 6px 0 0 0 !important;
     font-size: 12px !important;
     font-weight: 800 !important;
 }
@@ -1703,12 +1714,14 @@ ul.nav.items-list li:hover {
 }
 
 .add-clinic-btn {
-    margin: 20px 0;
+    margin: 20px 0 !important;
+    padding: 12px 14px;
     height: 52px;
     width: 52px;
-    font-size: 26px;
+    color: #34495E;
+    font-size: 29px;
     line-height: 1;
-    background: #BDC3C7;
+    background: #F39C12;
     border-radius: 50%;
 }
 
