@@ -10,6 +10,9 @@ if (mysqli_num_rows($a_result) >= 1) {
 
         $sched_date = date("F j , Y", strtotime($row['appoint_date']));
 
+        $walk_in = mysqli_query($con, "SELECT * FROM walk_in WHERE clinic_id LIKE '$clinic_id' AND appoint_date LIKE '$date'");
+
+        //clinic
         $clinic_result = mysqli_query($con, "SELECT * FROM clinic WHERE clinic_id LIKE '$c_id'") or die(mysqli_error());
         $clinic_result_row = mysqli_fetch_array($clinic_result);
         $clinic_name = $clinic_result_row['clinic_name'];
@@ -34,7 +37,30 @@ if (mysqli_num_rows($a_result) >= 1) {
                     </div>
                 </div>
             </div>';
-    }
+    } 
+        while($row2 = mysqli_fetch_array($walk_in)){
+            $c_id = $row2['clinic_id'];
+            $walk_in_i = $row2['walk_in'];
+            $sql_k = mysqli_query($con, "SELECT * FROM clinic WHERE clinic_id LIKE '$c_id'");
+            $sched_date = date("F j , Y", strtotime($row2['appoint_date']));
+            echo '<div class="col-xs-12 col-md-6 col-lg-3">
+                    <div class="panel panel-default sched-panel">';
+                echo'<div class="panel-heading">';
+                    echo 'Walk-in Patient';
+                    echo '<p class="queue-num">' . $row2['walk_in_id'] . '</p>';
+                    echo '<input type="text" id="walk_in" value="' . $walk_in_i . '" name="walk_in">';
+
+                echo '</div>';
+                echo '<div class="panel-body">';
+                    echo '<p class="appointment-header">' . $sched_date . '</p>';
+                    echo '<p>' . $clinic_name . '</p>';
+                echo '</div>';
+                echo '<div class="appmnt-pnl-btns">
+                    <button type="button" class="btn btn-default btn-inverse appo btn-noborder" data-toggle="modal" data-target=".bs-walk-remarks-modal-sm" data-a-id="' . $appointment_id . '" data-p-id="' . $patient . '">
+                    <i class="fa fa-comment"></i>Remarks</button>
+                    </div>';
+            echo '</div></div>';
+        }
     } else {
         echo '<div class="col-xs-12 col-md-10 col-md-offset-1">
             <div class="alert alert-warning" role="alert">
