@@ -9,12 +9,16 @@
     ?>
     <script type="text/javascript">
         $(document).ready(function() {
-            $(".appo").click(function() { // Click to only happen on announce links
+            $(".appo").click(function() { 
                 $("#appo_id").val($(this).data('id'));
                 $("#pat_id").val($(this).data('patient-id'));
                 $("#appoint_id").val($(this).data('a-id'));
                 $("#patient_id").val($(this).data('p-id'));
             });
+            $(".walk").click(function() { 
+                $("#walk_id").val($(this).data('walk-id'));
+            });
+
             $('#hideshow').on('click', function() {
                 $('#clinics').show();
             });

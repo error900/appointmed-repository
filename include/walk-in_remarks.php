@@ -15,7 +15,7 @@
                                     <option value="Completed">Completed</option>
                                 </select>
                                 <input type="hidden" value="<?php echo $doctor_id ?>" name="doctor_id">
-                                <input type="hidden" value="<?php echo $walk_in_i ?>" name="walk_in">
+                                <input type="hidden" value="" name="walk_in" id="walk_id">
 
                             </div>
                         </div>

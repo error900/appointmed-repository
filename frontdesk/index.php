@@ -61,9 +61,9 @@
                                 $clinic_id = $row['clinic_id'];
                                 $date = date('Y-m-d', strtotime($date));
                                 $available_days = explode("/", $row['days']);
-                                $count_app = mysqli_query($con, "SELECT * FROM appointment where clinic_id like '$clinic_id'");
+                                $count_app = mysqli_query($con, "SELECT * FROM appointment where clinic_id like '$clinic_id' AND appoint_date LIKE CURDATE()");
                                 $count_a= mysqli_num_rows($count_app);
-                                $count_walk_in = mysqli_query($con, "SELECT * FROM walk_in where clinic_id like '$clinic_id'");
+                                $count_walk_in = mysqli_query($con, "SELECT * FROM walk_in where clinic_id like '$clinic_id' AND appoint_date LIKE CURDATE()");
                                 $count_w = mysqli_num_rows($count_walk_in);
 
                                 $total_count = $count_a + $count_w;
