@@ -26,14 +26,10 @@
             <?php
              include 'include/fd-nav-start.php';
             ?>
-            <ul class="nav navbar-nav">
-                <li class="active dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-asterisk fa-lg"></i>Schedules <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="index.php">sadsfsd</a></li>
-                        <li><a href="">sdfsdsf</a></li>
-                    </ul>
-                </li>
+                <ul class="nav navbar-nav">
+                    <li class="tooltip-bottom" data-tooltip="Online Doctors">
+                        <a href="index.php"><i class="fa fa-users fa-lg"></i>On Deck</a>
+                    </li>
                 <?php
                 include 'include/fd-nav-end.php';
                 ?>

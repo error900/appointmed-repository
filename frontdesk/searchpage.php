@@ -20,7 +20,7 @@
     $date = date('Y-m-d');
     $username = $_SESSION['username'];
     $sql = mysqli_query($con, "SELECT * FROM doctor");
-    $result = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_name LIKE '%$search%' or specialization LIKE '%$search%' ORDER BY doctor_name");
+    $result = mysqli_query($con, "SELECT * FROM doctor natural join clinic_schedule WHERE doctor_name LIKE '%$search%' or specialization LIKE '%$search%' AND doctor_status = 'IN' ORDER BY 2 ");
 
     ?>
     <body class="e4e8e9-bg">
@@ -43,6 +43,7 @@
                                     if (mysqli_num_rows($result) >= 1) {
                                         while ($row = mysqli_fetch_array($result)) {
                                             $doctor_id = $row['doctor_id'];
+                                            $clinic_id = $row['clinic_id'];
                                             $doctor_name = $row['doctor_name'];
                                             $specialization = $row['specialization'];
                                             $doctor_status = $row['doctor_status'];
@@ -63,7 +64,9 @@
                                         <div class="search-doctor-info">
                                             <p><i class='fa fa-user-md'></i>Dr. <?php echo $final_name ?></p>
                                             <p class="search-specs"><?php echo $final_specs ?></p>
-                                            <a href="walk_in.php?did=$doctor_id&cid=$clinic_id" class='addToQueueBtn tooltip-bottom' data-tooltip='Add to queue' onclick='return confirm("Add patient to queue?")'><i class="fa fa-plus"></i></a>
+                                            <?php
+                                            echo "<a href=\"walk_in.php?did=$doctor_id&cid=$clinic_id\" class='addToQueueBtn tooltip-bottom' data-tooltip='Add to queue' onclick='return confirm(\"Add patient to queue?\")'><i class='fa fa-plus'></i></a>";
+                                            ?>
                                         </div>
                                     </div>
                                         <?php 
