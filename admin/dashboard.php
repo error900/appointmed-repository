@@ -5,7 +5,7 @@
     include 'include/head.php';
     include '../connectdatabase.php';
     ?>
-
+    <script type="text/javascript" src="js/sorttable.js"></script>
     <?php
     session_start();
     $loggedIn = $_SESSION['loggedIn'];
@@ -79,6 +79,6 @@
             });
         }
         </script>
-        <script type="text/javascript" src="js/sorttable.js"></script>
+
     </body>
 </html>

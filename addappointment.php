@@ -73,7 +73,10 @@ if (isset($_POST['submit'])) {
         $appointment_id = $sql_fetch['appointment_id'];
 
         if(mysqli_num_rows($queue)== 0){
-            $count = 1;
+            if((mysqli_num_rows($walk_in))>=1){
+                $count = $walk_in_id + 1;
+            }else
+                $count = 1;
         }else if(mysqli_num_rows($queue) !=0){
             if($queue_id < $walk_in_id){
                 $queue_id = $walk_in_id;

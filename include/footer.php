@@ -25,7 +25,7 @@
         <div class="row">
             <div class="col-xs-12 hr-line"></div>
             <div class="copyright text-right">
-                <p>Benguet Laboratories Incorporated | &copy; 2015</p>
+                <p>Appoint.med Lamby Team | &copy; 2015</p>
             </div>
         </div>
     </div>

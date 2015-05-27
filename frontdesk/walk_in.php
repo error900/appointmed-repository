@@ -15,14 +15,22 @@ if(isset($_GET['did']) && isset($_GET['cid'])){
 	$queue_id = $row['queue_id'];
 	$walk_in_id = $row2['walk_in_id'];
 	if(mysqli_num_rows($sql)== 0){
-    	$count = 1;
+		if(mysqli_num_rows($walk)>=1){
+			$count = $walk_in_id + 1;
+		}else
+    		$count = 1;
     }else if(mysqli_num_rows($sql) !=0){
+	    if($queue_id < $walk_in_id){
+            $queue_id = $walk_in_id;
+        }else if($queue_id > $walk_in_id){
+            $queue_id = $queue_id;
+        }
     	$count = $queue_id +1;
     }
     $walk_in_id = $count;
 
-	$insert_sql = "INSERT INTO walk_in (walk_in_id, clinic_id, appoint_date, doctor_id) 
-	VALUES ('$walk_in_id','$clinic_id','$date','$doctor_id')";
+	$insert_sql = "INSERT INTO walk_in (walk_in_id, clinic_id, appoint_date, doctor_id, appointment_status) 
+	VALUES ('$walk_in_id','$clinic_id','$date','$doctor_id','Inqueue')";
     if (!(mysqli_query($con, $insert_sql))) {
     	die('Error: ' . mysqli_error($con));
 	}

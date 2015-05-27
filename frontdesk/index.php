@@ -61,17 +61,33 @@
                                 $clinic_id = $row['clinic_id'];
                                 $date = date('Y-m-d', strtotime($date));
                                 $available_days = explode("/", $row['days']);
-                                foreach($available_days as $values){
+                                $count_app = mysqli_query($con, "SELECT * FROM appointment where clinic_id like '$clinic_id'");
+                                $count_a= mysqli_num_rows($count_app);
+                                $count_walk_in = mysqli_query($con, "SELECT * FROM walk_in where clinic_id like '$clinic_id'");
+                                $count_w = mysqli_num_rows($count_walk_in);
 
-                                }
+                                $total_count = $count_a + $count_w;
+                                
                             echo '<div class="col-xs-12 col-md-3">';
                                 echo '<div class="panel panel-default doctor-panel">';
                                     echo '<div class="panel-heading">';
-                                        echo $row['doctor_name'];
+                                        echo $row['doctor_name'];?>
+                                        <img class="img-responsive" src="img/profile/<?php
+                                        $file = "img/profile/" . $doctor_id . ".jpg";
+                                        if (file_exists($file)) {
+                                            echo $doctor_id;
+                                        } else {
+                                            echo 'profile';
+                                        }
+                                        ?>.jpg">
+                            <?php
                                     echo '</div>';
                                     echo '<div class="panel-body">';
                                         echo '<p class="clinic-days">'.$row['days'].'</p>';
                                         echo '<p class="clinic-info">'.$row['time'].'</p>';
+                                    echo '</div>';
+                                    echo '<div>';
+                                    echo 'Total patients in queue: '.$total_count;
                                     echo '</div>';
                                     echo '<div class="doctor-panel-btns">';
                                             echo "<a href=\"walk_in.php?did=$doctor_id&cid=$clinic_id\" class='tooltip-bottom' data-tooltip='Add to queue' onclick='return confirm(\"Add patient to queue?\")'><i class=\"fa fa-plus\"></i></a>";
