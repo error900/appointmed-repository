@@ -45,6 +45,11 @@ if (isset($_POST['submit'])) {
 
         $check_day = date('D', strtotime($date));
 
+        $queue = mysqli_query($con, "SELECT * FROM queue_notif WHERE clinic_id LIKE '$clinic_id' AND appoint_date LIKE '$date' ORDER BY queue_id DESC") or die(mysqli_error($con));
+        $queue_no = mysqli_fetch_array($queue);
+
+        $queue_id = (int)$queue_no['queue_id'];
+
         if(in_array($check_day, $days)){
             $key = array_search($check_day, $days);
             $next = $key+1;
@@ -58,6 +63,34 @@ if (isset($_POST['submit'])) {
 
                 $update_queue= "UPDATE queue_notif SET appoint_date = '$newdate' WHERE appointment_id LIKE '$app_id'";
                 mysqli_query($con, $update_queue) or die (mysqli_error($con));
+
+                //start
+                /*$sql_i = mysqli_query($con, "SELECT appointment_id FROM appointment WHERE doctor_id LIKE '$doctor_id' AND patient_id 
+                    LIKE '$patient_id' AND appoint_date LIKE '$date' ");
+                $sql_fetch = mysqli_fetch_array($sql_i);
+                $appointment_id = $sql_fetch['appointment_id'];*/
+
+                if(mysqli_num_rows($queue)== 0){
+                    if((mysqli_num_rows($walk_in))>=1){
+                        $count = $walk_in_id + 1;
+                    }else
+                        $count = 1;
+                }else if(mysqli_num_rows($queue) !=0){
+                    if($queue_id < $walk_in_id){
+                        $queue_id = $walk_in_id;
+                    }else if($queue_id > $walk_in_id){
+                        $queue_id = $queue_id;
+                    }
+                    $count = $queue_id +1;
+                }
+
+                $queue_r = "INSERT INTO queue_notif (queue_id, clinic_id, appointment_id, appoint_date)
+                        VALUES ('$count','$clinic_id','$app_id','$date')";
+
+                if (!(mysqli_query($con, $queue_r))) {
+                    die('Error: ' . mysqli_error($con));
+                }        
+                //end
             }
         }
     }
