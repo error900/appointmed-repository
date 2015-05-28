@@ -87,37 +87,41 @@
                 <li class="dropdown tooltip-bottom" data-tooltip="History">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-history fa-lg"></i>History<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="completed.php">Finished Schedules</a></li>
-                        <li><a href="removed.php">Removed Schedules</a></li>
-                        <li><a href="referred.php">Referred Schedules</a></li>
+                        <li><a href="completed.php">Finished Appointments</a></li>
+                        <li><a href="removed.php">Cancelled Appointments</a></li>
+                        <li><a href="referred.php">Referred Appointments</a></li>
                     </ul>
                 </li>
+                
                 <?php
                 include 'include/dc-nav-end.php';
                 ?>
+
                 <div class="row">
                     <h2 class="row-header text-center">Help</h2>
                     <div class="col-xs-12 col-md-4 help-text">
                         <h4>Signing in as a Doctor</h4>
-                        <p>Type your username and password and click enter or press the login button to log-in. </p>
+                        <p>Type your username and password and click enter or press the login button to log-in in the admin page.</p>
                         <h4>Doctor Main Page</h4>
-                        <p>After the Doctor has logged-in his account he is redirected to his main page where he can see his appointments and his profile.</p>
+                        <p>After the you have logged-in to you account,  you will then be redirected to your home page where you can see your profile and your appointments for the day below it.</p>
                         <h4>Appointments</h4>
-                        <p>In this page you will be able to see all your appointments categorized as today, tomorrow, this week and this month.</p>
+                        <p>In this page you will be able to see all your appointments categorized as today, tomorrow, this week, this month, and for the next month.</p>
                     </div>
+
                     <div class="col-xs-12 col-md-4 help-text">
                         <h4>Notifications</h4>
-                        <p>This page shows you all the notifications regarding the changes in your appointments.</p>
+                        <p>This page will show you all of your notifications regarding the changes in the appointments set by your registered patient/s. Notification details, like name of the patient, and the date when these changes are made, are located in the upper portion of the notification box. You can also remove or delete these notifications by clicking the 'x' button located at the upper right portion of the notification box.</p>
                         <h4>Appointment History</h4>
                         <p>This page will show you all your past appointments.</p>
-                        <h4>Export</h4>
-                        <p>This button exports all the list of your appointments. It will export the list to your computer or device as an xls file that you will be able to open in Microsoft excel.</p>
                     </div>
+
                     <div class="col-xs-12 col-md-4 help-text">
                         <h4>Update Info</h4>
                         <p>This page allows you to edit or update your profile, specialization, email address ,status, add clinic, add specialization and add/change profile picture.</p>
-                        <h4>Doctor Menu</h4>
+                        <h4>Doctor Navigation Menu</h4>
                         <p>This shows a menu that you can navigate through. The Profile link directs you to your profile, change password, help link which will direct you to the help page, and log out which allows you to log out.</p>
+                        <h4>Export</h4>
+                        <p>This button exports all the list of your appointments for the day. . The exported file will be an excel file and view it using Microsoft excel.</p>
                     </div>
                 </div>
                             
