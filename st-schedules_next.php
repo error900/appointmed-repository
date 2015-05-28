@@ -9,7 +9,7 @@
     ?>
     <script type="text/javascript">
         $(document).ready(function() {
-            $(".appo").click(function() { // Click to only happen on announce links
+            $(".appo").click(function() { 
                 $("#appo_id").val($(this).data('id'));
                 $("#pat_id").val($(this).data('patient-id'));
                 $("#app_id").val($(this).data('a-id'));
@@ -36,6 +36,8 @@
     $next = $month+1;
     $start = date("Y-".$next."-1");
     $next_month = date("Y-".$next."-t");
+    $date = date('Y-m-d');
+
 
     /*$start = date("Y-m-1");
     $end = date("Y-m-t");

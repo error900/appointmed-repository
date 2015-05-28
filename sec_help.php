@@ -74,10 +74,11 @@
                 <?php
                 include 'include/st-nav-end.php';
                 ?>
+                <h2 class="row-header text-center">Help</h2>
                 <div class="col-xs-12  col-md-4">
                     <h4>Checking the Doctor's Appointments</h4>
-                    <p>The doctor's appointment is categorized  into 4 namely today, tommorow, this week, and this month. the secretay can check how many appointments the docotr has.</p>
-                    <p>The secretatary can also view the finished appointments, and the appointments that were cancelled appointments.</p>
+                    <p>The doctor's appointment is categorized  into five (5) namely: today, tommorow, this week, and next month. The secretary will be able to monitor the appointments of the doctor.</p>
+                    <p>The secretary can also view the finished appointments, and the appointments that were cancelled appointments.</p>
                 </div>
                 <div class="col-xs-12  col-md-4">
                     <h4>Exporting the appointment list.</h4>

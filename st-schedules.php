@@ -9,7 +9,7 @@
     ?>
     <script type="text/javascript">
         $(document).ready(function() {
-            $(".appo").click(function() { // Click to only happen on announce links
+            $(".appo").click(function() {
                 $("#appo_id").val($(this).data('id'));
                 $("#pat_id").val($(this).data('patient-id'));
                 $("#app_id").val($(this).data('a-id'));
@@ -93,7 +93,7 @@
                             <h2 class="text-center row-header">&mdash; Today &mdash;</h2>
                         </div>
                         <?php
-                        include 'include/st-schedules-panel.php';
+                        include 'include/st-sched-schedules-panel.php';
                         ?>
                     </div>
                 </div>

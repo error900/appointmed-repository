@@ -1,12 +1,19 @@
 <div class="col-xs-6 col-md-2 col-md-offset-1">
     <div class="text-center circle inqueue">
-        <?php
-        $count_row = mysqli_query($con, "SELECT COUNT(*) AS Appointments FROM appointment NATURAL JOIN queue_notif WHERE doctor_id = '$doctor_id' AND clinic_id = '$clinic_id' AND (appointment_status = 'Inqueue' OR appointment_status = 'Referred') AND appoint_date = '$date' ");
-        $count = mysqli_fetch_assoc($count_row);
-        if ($count == 0)
+     <?php
+        $count_row = mysqli_query($con, "SELECT * FROM appointment NATURAL JOIN queue_notif  WHERE doctor_id = '$doctor_id' AND (appointment_status = 'Inqueue' OR appointment_status = 'Referred') AND appoint_date = '$date' ");
+        $count = mysqli_num_rows($count_row);
+        $count_walk_in = mysqli_query($con, "SELECT * FROM walk_in where clinic_id LIKE '$clinic_id' AND appoint_date LIKE '$date' AND appointment_status = 'Inqueue'");
+        $count_w = mysqli_num_rows($count_walk_in);
+        if($count == 0){
+            $total_count = $count_w;
+        }else
+            $total_count = $count + $count_w;
+            
+        if ($total_count == 0)
             echo '<p>' . '0' . '</p>';
         else
-            echo '<p>' . $count['Appointments'] . '</p>';
+            echo '<p>' . $total_count . '</p>';
         ?>
         <span>inqueue</span>
     </div>

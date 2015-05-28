@@ -116,7 +116,7 @@
                         </div>
 
                         <?php
-                        include 'include/schedules-panel.php';
+                        include 'include/sched-schedules-panel.php';
                         ?>
                     </div>
                 </div>

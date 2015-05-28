@@ -28,12 +28,12 @@
     $date = date('Y-m-d');
     $username = $_SESSION['username'];
     if(is_int($page1)){
-        $sql = mysqli_query($con, "SELECT * FROM doctor NATURAL JOIN clinic_schedule WHERE doctor_status = 'In' ORDER BY 2 LIMIT $page1,8");
+        $sql = mysqli_query($con, "SELECT * FROM doctor NATURAL JOIN clinic_schedule natural join clinic WHERE doctor_status = 'In' AND clinic_name='Benguet Laboratories' ORDER BY 3 LIMIT $page1,8");
     }else{
         echo "<script> alert('Woops you seem lost, let me help you'); </script>";
         echo "<script> location.replace('index.php') </script>";
     }
-    $count_sql = mysqli_query($con, "SELECT * FROM doctor NATURAL JOIN clinic_schedule WHERE doctor_status = 'In' ORDER BY 2 ");
+    $count_sql = mysqli_query($con, "SELECT * FROM doctor NATURAL JOIN clinic_schedule natural join clinic WHERE doctor_status = 'In' AND clinic_name='Benguet Laboratories' ORDER BY 3 ");
     $count = mysqli_num_rows($count_sql);
     $cout = ceil($count/8);
 
@@ -85,9 +85,9 @@
                                     echo '<div class="panel-body">';
                                         echo '<p class="clinic-days">'.$row['days'].'</p>';
                                         echo '<p class="clinic-info">'.$row['time'].'</p>';
+                                        echo '<p class="clinic-inqueue">Total patients in queue: <span>' . $total_count . '</span></p>';
                                     echo '</div>';
                                     echo '<div>';
-                                    echo 'Total patients in queue: '.$total_count;
                                     echo '</div>';
                                     echo '<div class="doctor-panel-btns">';
                                             echo "<a href=\"walk_in.php?did=$doctor_id&cid=$clinic_id\" class='tooltip-bottom' data-tooltip='Add to queue' onclick='return confirm(\"Add patient to queue?\")'><i class=\"fa fa-plus\"></i></a>";
