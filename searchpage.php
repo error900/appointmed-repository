@@ -81,7 +81,7 @@
                 <li class="dropdown tooltip-bottom" data-tooltip="History">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-history fa-lg"></i>History<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="appointments_done.php">Appointments Done</a></li>
+                        <li><a href="appointments_done.php">Finished Appointments</a></li>
                         <li><a href="cancelled_appointments.php">Cancelled Appointments</a></li>
                     </ul>
                 </li>

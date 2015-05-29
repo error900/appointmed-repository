@@ -94,9 +94,9 @@
                 <li class="dropdown tooltip-bottom" data-tooltip="History">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-history fa-lg"></i>History<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="completed.php">Finished Schedules</a></li>
-                        <li><a href="removed.php">Removed Schedules</a></li>
-                        <li><a href="referred.php">Referred Schedules</a></li>
+                        <li><a href="completed.php">Finished Appointments/a></li>
+                        <li><a href="removed.php">Cancelled Appointments</a></li>
+                        <li><a href="referred.php">Referred Appointments</a></li>
                     </ul>
                 </li>
                 <?php

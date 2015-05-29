@@ -70,8 +70,8 @@
                 <li class="dropdown active" >
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-history fa-lg"></i>History<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="st-completed.php">Finished Schedules</a></li>
-                        <li><a href="st-removed.php">Removed Schedules</a></li>
+                        <li><a href="st-completed.php">Finished Appointments</a></li>
+                        <li><a href="st-removed.php">Cancelled Appointments</a></li>
                     </ul>
                 </li>
                 <?php

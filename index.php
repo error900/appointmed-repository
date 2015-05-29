@@ -127,7 +127,7 @@
                     <div class="col-xs-12 col-md-3">
                         <div class="about-icons text-center">
                             <img src="img/icons/message.png" alt="">
-                            <p><span>Get Notifications</span> Get notifications via text message. Get Updates from your clinic and your doctor via text message. </p>
+                            <p><span>Get Notifications</span>Get notifications and be updated. </p>
                         </div>
                     </div>
                     <div class="col-xs-12 col-md-3">
