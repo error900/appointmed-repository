@@ -8,6 +8,11 @@
                 <button type="button" class="btn btn-default btn-noborder green-btn nav-button" data-toggle="modal" data-target=".bs-st-edit-profile-modal-lg" data-id="'.$appointment_id.'" data-patient-id="'.$patient_id.'">
                     <i class="fa fa-pencil"></i>Update Info</button>
             </li>
+            <li class="nav-button navbar-right">
+                <?php echo "<a href=\"walk_in.php?did=$doctor_id&cid=$clinic_id\" class='btn btn-default btn-noborder red-btn add-walkin-btn' onclick='return confirm(\"Add patient to queue?\")'>"; ?>
+                    <i class="fa fa-plus"></i>Add Walk-in
+                </a>
+            </li>
             </ul>
             <ul class="nav navbar-nav navbar-right signedin">
                 <div class="btn-group navbar-right tooltip-bottom" data-tooltip="You">

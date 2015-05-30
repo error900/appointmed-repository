@@ -1001,6 +1001,13 @@ a.btn.btn-block.appo.tooltip-bottom {
     line-height: 40px;
 }
 
+.add-walkin-btn {
+    width: 43%;
+    height: 30px;
+    margin: 0 auto;
+    padding: 5px 10px !important;
+}
+
 .passwordReq {
     font-size: 14px;
     font-weight: 600;

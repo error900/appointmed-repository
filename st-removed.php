@@ -45,6 +45,7 @@
     $doctor_row = mysqli_fetch_array($doctor);
     $c_result = mysqli_query($con, "SELECT * FROM clinic WHERE doctor_id LIKE '$doctor_id'") or die(mysqli_error());
     $c_row = mysqli_fetch_array($c_result);
+    $clinic_id = $c_row['clinic_id'];
     $a_result = mysqli_query($con, "SELECT * FROM appointment WHERE doctor_id LIKE '$doctor_id' AND appointment_status = 'Cancelled' ORDER BY appointment_id") or die(mysqli_error());
 
     $count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE doctor_id LIKE '$doctor_id' AND indicator = 'Patient'") or die(mysqli_error());

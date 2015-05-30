@@ -29,7 +29,9 @@
     $doctor_row = mysqli_fetch_array($doctor);
 
     $c_result = mysqli_query($con, "SELECT * FROM clinic NATURAL JOIN clinic_sec WHERE secretary_id LIKE '$secretary_id'") or die(mysqli_error());
-
+    $c_row = mysqli_fetch_array($c_result);
+    $clinic_id = $c_row['clinic_id'];
+    
     $count_result = mysqli_query($con, "SELECT COUNT(notification) AS count FROM notification WHERE doctor_id LIKE '$doctor_id' AND indicator = 'Patient'");
     $count_row = mysqli_fetch_array($count_result);
     $notif_count = $count_row['count'];

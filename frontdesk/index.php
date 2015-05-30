@@ -114,13 +114,6 @@
                 include 'include/add_to_queue.php';
                 ?>
                 <script type="text/javascript" src="js/search.js"></script>
-                <script>
-                    $(document).ready(function() {
-                        $(".pagination a").on("click",function() {
-                                $(".pagination a").addClass("border-bottom");
-                        });
-                    });
-                </script>
         </div>
     </body>
 </html>
