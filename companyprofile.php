@@ -63,7 +63,6 @@
                         <p>BCLI’s head office is located at the heart of the commercial business district of Makati with address at the 6th Floor of Universal- Re Building, 106 Paseo De Roxas Avenue corner Perea Street, Makati City. For inquiries, you may contact us at: Tel Nos: 8121380 loc. 241 and 7520717.</p>
                     </div>
                     <div class="col-xs-12 col-md-4 company-profile-img">
-                        <img src="img/lab.jpg" class="img-responsive" alt="Benguet Laboratories">
                     </div>
                 </div>
                 <div class="row">

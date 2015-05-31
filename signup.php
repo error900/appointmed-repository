@@ -50,23 +50,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-xs-12 col-md-4 col-md-offset-1">
-                        <h1 class="text-center row-header-lc">Forgot Password?</h1>
-                        <div class="forgot-password">
-                            <form method="post" action="forget_password.php" name="form1">
-                                <div class="input-group">
-                                    <input type="email" class="form-control" name="email" placeholder="Email Address"/>
-                                    
-                                    <input type="submit" class="btn btn-default orange-btn btn-noborder" value="Submit" name="submit"/>
-                                </div>
-                            </form>
-                            <div class="signup-ad hidden-xs hidden-sm">
-                                <p>Look for available clinics and doctors online</p>
-                                <p>Be the first on the list by creating appointments</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-md-4 col-md-offset-1">
-                        <h1 class="text-center row-header-lc hidden-lg hidden-md">Signup Now</h1>
+                        <h1 class="text-center row-header-lc">Signup Now</h1>
                         <div class="signup-form">
                             <form method='post' name='form1' action="register.php">
                                 <div class="input-group">
@@ -111,17 +95,29 @@
                                     </select>
                                     <input type="text" class="form-control" name="username" placeholder="Username" id="username" required=""/>  
                                     <span id="result"></span>        
+                                    <p class="passwordReq">Your password must contain uppercase and lowercase letters, and it should not be lower than 6 characters. </p>
                                     <input type="password" class="form-control" name="password" placeholder="Password"  
                                            required pattern="(?=.*[a-z])(?=.*[A-Z]).{6,}" 
                                            onchange="this.setCustomValidity(this.validity.patternMismatch ? this.title : '');
                                         if (this.checkValidity())
                                             form1.password2.pattern = this.value;" required=""/>  
-                                    <p class="passwordReq">Your password must contain uppercase and lowercase letters, and it should not be lower than 6 characters. </p>
 
                                     <input type="password" title="Passwords do not match" class="form-control" name="password2" placeholder="Confirm Password" 
                                            onchange=" this.setCustomValidity(this.validity.patternMismatch ? this.title : '');"
                                            />
                                     <input class="btn btn-default orange-btn" type="submit" value="Submit" name="submit"/>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-4 col-md-offset-1">
+                        <h1 class="text-center row-header-lc">Forgot Password?</h1>
+                        <div class="forgot-password">
+                            <form method="post" action="forget_password.php" name="form1">
+                                <div class="input-group">
+                                    <input type="email" class="form-control" name="email" placeholder="Email Address"/>
+                                    
+                                    <input type="submit" class="btn btn-default orange-btn btn-noborder" value="Submit" name="submit"/>
                                 </div>
                             </form>
                         </div>

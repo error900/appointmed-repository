@@ -27,7 +27,7 @@
                 ?>.jpg">
                 <div class="doctor-info">
                     <ul class="docors-list-info">
-                        <li><span><i class="fa fa-user-md"></i><?php echo $doctor_name ?></span></li>
+                        <li><span><i class="fa fa-user-md"></i>Dr. <?php echo $doctor_name ?></span></li>
                         <li><span><i class="fa fa-envelope"></i><?php echo $doctor_email ?></span></li>
                     </ul>
                 </div>
@@ -64,7 +64,7 @@
                 ?>.jpg">
                 <div class="doctor-info">
                     <ul class="docors-list-info">
-                        <li><span><i class="fa fa-user-md"></i><?php echo $doctor_name ?></span></li>
+                        <li><span><i class="fa fa-user-md"></i>Dr. <?php echo $doctor_name ?></span></li>
                         <li><span><i class="fa fa-envelope"></i><?php echo $doctor_email ?></span></li>
                     </ul>
                 </div>
@@ -101,7 +101,7 @@
                 ?>.jpg">
                 <div class="doctor-info">
                     <ul class="docors-list-info">
-                        <li><span><i class="fa fa-user-md"></i><?php echo $doctor_name ?></span></li>
+                        <li><span><i class="fa fa-user-md"></i>Dr. <?php echo $doctor_name ?></span></li>
                         <li><span><i class="fa fa-envelope"></i><?php echo $doctor_email ?></span></li>
                     </ul>
                 </div>
@@ -138,7 +138,7 @@
                 ?>.jpg">
                 <div class="doctor-info">
                     <ul class="docors-list-info">
-                        <li><span><i class="fa fa-user-md"></i><?php echo $doctor_name ?></span></li>
+                        <li><span><i class="fa fa-user-md"></i>Dr. <?php echo $doctor_name ?></span></li>
                         <li><span><i class="fa fa-envelope"></i><?php echo $doctor_email ?></span></li>
                     </ul>
                 </div>
@@ -175,7 +175,7 @@
                 ?>.jpg">
                 <div class="doctor-info">
                     <ul class="docors-list-info">
-                        <li><span><i class="fa fa-user-md"></i><?php echo $doctor_name ?></span></li>
+                        <li><span><i class="fa fa-user-md"></i>Dr. <?php echo $doctor_name ?></span></li>
                         <li><span><i class="fa fa-envelope"></i><?php echo $doctor_email ?></span></li>
                     </ul>
                 </div>
@@ -212,7 +212,7 @@
                      ?>.jpg">
                 <div class="doctor-info">
                     <ul class="docors-list-info">
-                        <li><span><i class="fa fa-user-md"></i><?php echo $doctor_name ?></span></li>
+                        <li><span><i class="fa fa-user-md"></i>Dr. <?php echo $doctor_name ?></span></li>
                         <li><span><i class="fa fa-envelope"></i><?php echo $doctor_email ?></span></li>
                     </ul>
                 </div>
@@ -249,7 +249,7 @@
                      ?>.jpg">
                 <div class="doctor-info">
                     <ul class="docors-list-info">
-                        <li><span><i class="fa fa-user-md"></i><?php echo $doctor_name ?></span></li>
+                        <li><span><i class="fa fa-user-md"></i>Dr. <?php echo $doctor_name ?></span></li>
                         <li><span><i class="fa fa-envelope"></i><?php echo $doctor_email ?></span></li>
                     </ul>
                 </div>
@@ -286,7 +286,7 @@
                      ?>.jpg">
                 <div class="doctor-info">
                     <ul class="docors-list-info">
-                        <li><span><i class="fa fa-user-md"></i><?php echo $doctor_name ?></span></li>
+                        <li><span><i class="fa fa-user-md"></i>Dr. <?php echo $doctor_name ?></span></li>
                         <li><span><i class="fa fa-envelope"></i><?php echo $doctor_email ?></span></li>
                     </ul>
                 </div>
@@ -323,7 +323,7 @@
                      ?>.jpg">
                 <div class="doctor-info">
                     <ul class="docors-list-info">
-                        <li><span><i class="fa fa-user-md"></i><?php echo $doctor_name ?></span></li>
+                        <li><span><i class="fa fa-user-md"></i>Dr. <?php echo $doctor_name ?></span></li>
                         <li><span><i class="fa fa-envelope"></i><?php echo $doctor_email ?></span></li>
                     </ul>
                 </div>
@@ -360,7 +360,7 @@
                      ?>.jpg">
                 <div class="doctor-info">
                     <ul class="docors-list-info">
-                        <li><span><i class="fa fa-user-md"></i><?php echo $doctor_name ?></span></li>
+                        <li><span><i class="fa fa-user-md"></i>Dr. <?php echo $doctor_name ?></span></li>
                         <li><span><i class="fa fa-envelope"></i><?php echo $doctor_email ?></span></li>
                     </ul>
                 </div>
@@ -397,7 +397,7 @@
                      ?>.jpg">
                 <div class="doctor-info">
                     <ul class="docors-list-info">
-                        <li><span><i class="fa fa-user-md"></i><?php echo $doctor_name ?></span></li>
+                        <li><span><i class="fa fa-user-md"></i>Dr. <?php echo $doctor_name ?></span></li>
                         <li><span><i class="fa fa-envelope"></i><?php echo $doctor_email ?></span></li>
                     </ul>
                 </div>
@@ -434,7 +434,7 @@
                      ?>.jpg">
                 <div class="doctor-info">
                     <ul class="docors-list-info">
-                        <li><span><i class="fa fa-user-md"></i><?php echo $doctor_name ?></span></li>
+                        <li><span><i class="fa fa-user-md"></i>Dr. <?php echo $doctor_name ?></span></li>
                         <li><span><i class="fa fa-envelope"></i><?php echo $doctor_email ?></span></li>
                     </ul>
                 </div>
@@ -471,7 +471,7 @@
                      ?>.jpg">
                 <div class="doctor-info">
                     <ul class="docors-list-info">
-                        <li><span><i class="fa fa-user-md"></i><?php echo $doctor_name ?></span></li>
+                        <li><span><i class="fa fa-user-md"></i>Dr. <?php echo $doctor_name ?></span></li>
                         <li><span><i class="fa fa-envelope"></i><?php echo $doctor_email ?></span></li>
                     </ul>
                 </div>
@@ -508,7 +508,7 @@
                      ?>.jpg">
                 <div class="doctor-info">
                     <ul class="docors-list-info">
-                        <li><span><i class="fa fa-user-md"></i><?php echo $doctor_name ?></span></li>
+                        <li><span><i class="fa fa-user-md"></i>Dr. <?php echo $doctor_name ?></span></li>
                         <li><span><i class="fa fa-envelope"></i><?php echo $doctor_email ?></span></li>
                     </ul>
                 </div>
@@ -545,7 +545,7 @@
                      ?>.jpg">
                 <div class="doctor-info">
                     <ul class="docors-list-info">
-                        <li><span><i class="fa fa-user-md"></i><?php echo $doctor_name ?></span></li>
+                        <li><span><i class="fa fa-user-md"></i>Dr. <?php echo $doctor_name ?></span></li>
                         <li><span><i class="fa fa-envelope"></i><?php echo $doctor_email ?></span></li>
                     </ul>
                 </div>
@@ -582,7 +582,7 @@
                      ?>.jpg">
                 <div class="doctor-info">
                     <ul class="docors-list-info">
-                        <li><span><i class="fa fa-user-md"></i><?php echo $doctor_name ?></span></li>
+                        <li><span><i class="fa fa-user-md"></i>Dr. <?php echo $doctor_name ?></span></li>
                         <li><span><i class="fa fa-envelope"></i><?php echo $doctor_email ?></span></li>
                     </ul>
                 </div>
@@ -619,7 +619,7 @@
                      ?>.jpg">
                 <div class="doctor-info">
                     <ul class="docors-list-info">
-                        <li><span><i class="fa fa-user-md"></i><?php echo $doctor_name ?></span></li>
+                        <li><span><i class="fa fa-user-md"></i>Dr. <?php echo $doctor_name ?></span></li>
                         <li><span><i class="fa fa-envelope"></i><?php echo $doctor_email ?></span></li>
                     </ul>
                 </div>
@@ -656,7 +656,7 @@
                      ?>.jpg">
                 <div class="doctor-info">
                     <ul class="docors-list-info">
-                        <li><span><i class="fa fa-user-md"></i><?php echo $doctor_name ?></span></li>
+                        <li><span><i class="fa fa-user-md"></i>Dr. <?php echo $doctor_name ?></span></li>
                         <li><span><i class="fa fa-envelope"></i><?php echo $doctor_email ?></span></li>
                     </ul>
                 </div>
@@ -693,7 +693,7 @@
                      ?>.jpg">
                 <div class="doctor-info">
                     <ul class="docors-list-info">
-                        <li><span><i class="fa fa-user-md"></i><?php echo $doctor_name ?></span></li>
+                        <li><span><i class="fa fa-user-md"></i>Dr. <?php echo $doctor_name ?></span></li>
                         <li><span><i class="fa fa-envelope"></i><?php echo $doctor_email ?></span></li>
                     </ul>
                 </div>
@@ -730,7 +730,7 @@
                      ?>.jpg">
                 <div class="doctor-info">
                     <ul class="docors-list-info">
-                        <li><span><i class="fa fa-user-md"></i><?php echo $doctor_name ?></span></li>
+                        <li><span><i class="fa fa-user-md"></i>Dr. <?php echo $doctor_name ?></span></li>
                         <li><span><i class="fa fa-envelope"></i><?php echo $doctor_email ?></span></li>
                     </ul>
                 </div>
@@ -767,7 +767,7 @@
                      ?>.jpg">
                 <div class="doctor-info">
                     <ul class="docors-list-info">
-                        <li><span><i class="fa fa-user-md"></i><?php echo $doctor_name ?></span></li>
+                        <li><span><i class="fa fa-user-md"></i>Dr. <?php echo $doctor_name ?></span></li>
                         <li><span><i class="fa fa-envelope"></i><?php echo $doctor_email ?></span></li>
                     </ul>
                 </div>
@@ -804,7 +804,7 @@
                      ?>.jpg">
                 <div class="doctor-info">
                     <ul class="docors-list-info">
-                        <li><span><i class="fa fa-user-md"></i><?php echo $doctor_name ?></span></li>
+                        <li><span><i class="fa fa-user-md"></i>Dr. <?php echo $doctor_name ?></span></li>
                         <li><span><i class="fa fa-envelope"></i><?php echo $doctor_email ?></span></li>
                     </ul>
                 </div>
@@ -841,7 +841,7 @@
                      ?>.jpg">
                 <div class="doctor-info">
                     <ul class="docors-list-info">
-                        <li><span><i class="fa fa-user-md"></i><?php echo $doctor_name ?></span></li>
+                        <li><span><i class="fa fa-user-md"></i>Dr. <?php echo $doctor_name ?></span></li>
                         <li><span><i class="fa fa-envelope"></i><?php echo $doctor_email ?></span></li>
                     </ul>
                 </div>
@@ -878,7 +878,7 @@
                      ?>.jpg">
                 <div class="doctor-info">
                     <ul class="docors-list-info">
-                        <li><span><i class="fa fa-user-md"></i><?php echo $doctor_name ?></span></li>
+                        <li><span><i class="fa fa-user-md"></i>Dr. <?php echo $doctor_name ?></span></li>
                         <li><span><i class="fa fa-envelope"></i><?php echo $doctor_email ?></span></li>
                     </ul>
                 </div>
@@ -915,7 +915,7 @@
                      ?>.jpg">
                 <div class="doctor-info">
                     <ul class="docors-list-info">
-                        <li><span><i class="fa fa-user-md"></i><?php echo $doctor_name ?></span></li>
+                        <li><span><i class="fa fa-user-md"></i>Dr. <?php echo $doctor_name ?></span></li>
                         <li><span><i class="fa fa-envelope"></i><?php echo $doctor_email ?></span></li>
                     </ul>
                 </div>
@@ -952,7 +952,7 @@
                      ?>.jpg">
                 <div class="doctor-info">
                     <ul class="docors-list-info">
-                        <li><span><i class="fa fa-user-md"></i><?php echo $doctor_name ?></span></li>
+                        <li><span><i class="fa fa-user-md"></i>Dr. <?php echo $doctor_name ?></span></li>
                         <li><span><i class="fa fa-envelope"></i><?php echo $doctor_email ?></span></li>
                     </ul>
                 </div>
@@ -989,7 +989,7 @@
                      ?>.jpg">
                 <div class="doctor-info">
                     <ul class="docors-list-info">
-                        <li><span><i class="fa fa-user-md"></i><?php echo $doctor_name ?></span></li>
+                        <li><span><i class="fa fa-user-md"></i>Dr. <?php echo $doctor_name ?></span></li>
                         <li><span><i class="fa fa-envelope"></i><?php echo $doctor_email ?></span></li>
                     </ul>
                 </div>
@@ -1026,7 +1026,7 @@
                      ?>.jpg">
                 <div class="doctor-info">
                     <ul class="docors-list-info">
-                        <li><span><i class="fa fa-user-md"></i><?php echo $doctor_name ?></span></li>
+                        <li><span><i class="fa fa-user-md"></i>Dr. <?php echo $doctor_name ?></span></li>
                         <li><span><i class="fa fa-envelope"></i><?php echo $doctor_email ?></span></li>
                     </ul>
                 </div>

@@ -948,6 +948,9 @@ a.btn.btn-block.appo.tooltip-bottom {
     padding: 10px;
 }
 
+.signup-form {
+    margin-top: -10px;
+}
 @media (min-width:768px){
     .add-form {
         padding: 0 350px;
@@ -968,7 +971,8 @@ a.btn.btn-block.appo.tooltip-bottom {
 .edit-form input.form-control,
 .edit-form select.form-control,
 .add-form input.form-control,
-.add-form select.form-control {
+.add-form select.form-control,
+.forgot-password input.form-control {
     height: 42px;
     margin-bottom: 15px;
     border-radius: 4px !important;
@@ -1338,7 +1342,6 @@ ul.nav.items-list li:hover {
 
 .about-icons img {
     height: 100px;
-    border: 3px solid #95A5A6;
     border-radius: 50%;
     transition: 0.5s;
     filter: grayscale(1);
