@@ -56,30 +56,30 @@
                                 <div class="col-xs-12 col-md-3 start-date">
                                     <label for="inputDate">Start Date:</label>
                                 </div>
-                               <div class="col-xs-12 col-md-3 start-date" id="datetimepicker1">
+                                <div class="col-xs-12 col-md-3 start-date" id="datetimepicker1">
                                     <span class="input-group date">
-                                        <i class="fa fa-calendar"></i>
+                                        <input type="text" class="form-control" name="publish" required/>
+                                        <i class="fa fa-calendar field-icon"></i>
                                     </span>
-                                    <input type="text" class="form-control" name="publish" required/>
                                 </div>
                                 <div class="col-xs-12 col-md-3 end-date">
                                     <label for="inputDate">End Date:</label>
                                 </div>
                                 <div class="col-xs-12 col-md-3 end-date" id="datetimepicker2">
                                     <span class="input-group date">
-                                        <i class="fa fa-calendar"></i>
+                                        <input type="text" class="form-control" name="end" required/>
+                                        <i class="fa fa-calendar field-icon"></i>
                                     </span>
-                                    <input type="text" class="form-control" name="end" required/>
                                 </div>
                                 <textarea class="form-control" rows="8" name="message" placeholder="Message"><?php echo $a_row['announcement_details']?>
                                 </textarea>
-                                <select name="pick" required/>
-                                  <option value="all">All</option>
-                                  <option value="doctor">Doctors</option>
-                                  <option value="patient">Patients</option>
-                                </select>
                                 <div class="post-buttons">
-                                    <button type="submit" name="submit" class="btn btn-default post-btn">save</button>
+                                    <select name="pick" class="form-control" required/>
+                                      <option value="all">All</option>
+                                      <option value="doctor">Doctors</option>
+                                      <option value="patient">Patients</option>
+                                    </select>
+                                    <button type="submit" name="submit" class="btn btn-default blue-btn">Save</button>
                                 </div>
                             </div>
                         </form>

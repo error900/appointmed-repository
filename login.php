@@ -21,14 +21,14 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     if (!($count == 1)) {
         if ($username == "" && $password == "") {
             echo "<script> alert('Enter a username and password');</script>";
-            echo "<script> location.replace('index.php') </script>";
+            echo "<script> location.replace('authenticate.php') </script>";
         }
         if($row['username'] == $username && $row['password'] == $password  && $row['account_status'] == 'inactive'){
             echo "<script> alert('Please wait for your account to be activated');</script>";
-            echo "<script> location.replace('index.php') </script>";
+            echo "<script> location.replace('authenticate.php') </script>";
         }
         echo "<script> alert('Incorrect Username/Password'); </script>";
-        echo "<script> location.replace('index.php') </script>";
+        echo "<script> location.replace('authenticate.php') </script>";
         $_SESSION['can_access'] = true;
         $_SESSION['loggedIn'] = false;
     } else {
@@ -37,7 +37,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         $_SESSION['account_type'] = $row['account_type'];
         if ($row['account_type'] == 'Admin') {
             $_SESSION['loggedIn'] = false;
-            header("location: admin/index.php");
+            header("location: admin/authenticate.php");
         } else if ($row['account_type'] == 'Patient') {
             $_SESSION['loggedIn'] = true;
            
@@ -48,7 +48,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
             header("location: appointment.php");
         } else {
             $_SESSION['loggedIn'] = false;
-            header("location: admin/index.php");
+            header("location: admin/authenticate.php");
         }
     }
     if (!(mysqli_query($con, $result))) {
@@ -56,7 +56,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     }
 } else {
     echo "<script> alert('Error!'); </script>";
-    echo "<script> location.replace('index.php') </script>";
+    echo "<script> location.replace('authenticate.php') </script>";
 }
 
 mysqli_close($con);

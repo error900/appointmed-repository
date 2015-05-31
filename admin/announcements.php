@@ -52,7 +52,7 @@
                                 <div class="col-xs-12 col-md-3 start-date">
                                     <label for="inputDate">Start Date:</label>
                                 </div>
-                                 <div class="col-xs-12 col-md-3 start-date" id="datetimepicker1">
+                                <div class="col-xs-12 col-md-3 start-date" id="datetimepicker1">
                                     <span class="input-group date">
                                         <input type="text" class="form-control" name="publish" required/>
                                         <i class="fa fa-calendar field-icon"></i>

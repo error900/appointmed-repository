@@ -566,6 +566,14 @@ nav > div > div > ul > li > a > i,
     transition: 0.4s;
 }
 
+.panel-heading .edit-btn {
+    color: #fff;
+    position: absolute;
+    top: 6px;
+    right: 30px;
+    font-size: 24px !important;
+}
+
 .panel-heading span {
     padding-left: 20px;
     position: absolute;

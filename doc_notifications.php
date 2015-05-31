@@ -110,10 +110,10 @@
                                     if($a_result['send_to'] == 'doctor' || $a_result['send_to'] == 'all'){
                                         echo '<div class="col-xs-12 col-md-8 col-md-offset-2">
                                             <div class="panel panel-notif panel-danger">
-                                                <div class="panel-heading">'.date("F j, Y", strtotime($a_result['start_publish'])).' '.$a_result['subject'].'
+                                                <div class="panel-heading"><span class="hidden-xs hidden-sm">' . $a_result['subject'] . '</span>' . date("F j, Y", strtotime($a_result['start_publish'])) . '
                                                 </div>
                                                 <div class="panel-body">
-                                                    '.$a_result['announcement_details'].'
+                                                    '.$a_result['announcement_details'] . '<span class="visible-xs visible-sm notif-name">' . $a_result['subject'] . '
                                                 </div>
                                             </div>
                                         </div>';

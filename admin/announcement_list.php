@@ -40,12 +40,13 @@
                                     <div class="panel panel-notif panel-danger">
                                         <div class="panel-heading">'.date('M-d-Y', strtotime($announcement_row['start_publish'])).' to '
                                         .date('M-d-Y', strtotime($announcement_row['end_publish'])).
-                                        '<a href="announcement_detail.php?id='.$announcement_row['announcement_id'].'" title="Edit"><i class="fa fa-edit delete-btn"></i></a>
+                                        '<a href="announcement_detail.php?id='.$announcement_row['announcement_id'].'" title="Edit"><i class="fa fa-edit edit-btn"></i></a>
                                         </div>
                                         <div class="panel-body">
-                                         Title:'.$announcement_row['subject'].
-                                            $announcement_row['announcement_details'].'<br>
-                                         Sent to:   '.strtoupper($announcement_row['send_to']).'
+                                            <div class="post-body">
+                                                <p>Subject: ' . $announcement_row['subject'] . '</p><p>' . $announcement_row['announcement_details'] . '</p>
+                                                <p>Posted to:   ' . strtoupper($announcement_row['send_to']) . '</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>';
