@@ -29,7 +29,7 @@
                 ?>
                 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
                      <div class="col-xs-12 col-md-7">
-                        <img src="img/dashboard.jpg" class="img-responsive" alt="help image"> 
+                        <img src="img/dashboard.png" class="img-responsive" alt="help image"> 
                      </div>
                      <div class="col-xs-12 col-md-5 help-text">
                         <h4>User signin</h4>
@@ -46,7 +46,7 @@
                         <p>The overview contains the User ID, Username, Name, E-mail and the account status of the user.</p>
                     </div>
                     <div class="col-xs-12 col-md-5">
-                        <img src="img/notification.jpg" class="img-responsive" alt="help image"> 
+                        <img src="img/notification.png" class="img-responsive" alt="help image"> 
                     </div>
                 </div>
             </div>
@@ -63,7 +63,7 @@
                             After filling up the all text fields and selecting the status of the Doctor, click the SUBMIT button to finalize and add the doctor.</p>
                      </div>
                      <div class="col-xs-12 col-md-6">
-                        <img src="img/deactivateUsers.JPG" class="img-responsive" alt="help image"> 
+                        <img src="img/deactivateUsers.png" class="img-responsive" alt="help image"> 
                      </div>
                 </div>
             </div>

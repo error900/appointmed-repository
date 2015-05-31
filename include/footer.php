@@ -9,8 +9,8 @@
                 <ul class="nav footer-nav">
                     <li><a href="index.php"><i class="fa fa-link"></i>Home</a></li>
                     <li><a href="companyprofile.php"><i class="fa fa-link"></i>Company Profile</a></li>
-                    <li><a href="doctors.php"><i class="fa fa-link"></i>Doctors List</a></li>
-                    <li><a href="signup.php"><i class="fa fa-link"></i>Signup</a></li>
+                   <li><a href="doctors.php"><i class="fa fa-link"></i>Doctors List</a></li>
+                   <li><a href="signup.php"><i class="fa fa-link"></i>Signup</a></li>
                 </ul>
             </div>
             <div class="col-xs-12 col-md-2 footer-buttons text-center">
@@ -25,7 +25,7 @@
         <div class="row">
             <div class="col-xs-12 hr-line"></div>
             <div class="copyright text-right">
-                <p>Appoint.med Lamby Team | &copy; 2015</p>
+                <p>Appoint.med Team | &copy; 2015</p>
             </div>
         </div>
     </div>
