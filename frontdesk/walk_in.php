@@ -9,7 +9,7 @@ if(isset($_GET['did']) && isset($_GET['cid'])){
 	$row = mysqli_fetch_array($sql);
 
 	$walk = mysqli_query($con, "SELECT walk_in_id FROM walk_in  WHERE clinic_id LIKE '$clinic_id' 
-		AND appoint_date LIKE '$date' ORDER BY 1 DESC");
+		AND appointW_date LIKE '$date' ORDER BY 1 DESC");
 	$row2 = mysqli_fetch_array($walk);
 	
 	$queue_id = $row['queue_id'];
@@ -29,7 +29,7 @@ if(isset($_GET['did']) && isset($_GET['cid'])){
     }
     $walk_in_id = $count;
 
-	$insert_sql = "INSERT INTO walk_in (walk_in_id, clinic_id, appoint_date, doctor_id, appointment_status) 
+	$insert_sql = "INSERT INTO walk_in (walk_in_id, clinic_id, appointW_date, doctor_id, appointmentW_status) 
 	VALUES ('$walk_in_id','$clinic_id','$date','$doctor_id','Inqueue')";
     if (!(mysqli_query($con, $insert_sql))) {
     	die('Error: ' . mysqli_error($con));

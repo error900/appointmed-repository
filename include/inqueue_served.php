@@ -3,7 +3,7 @@
         <?php
         $count_row = mysqli_query($con, "SELECT * FROM appointment NATURAL JOIN queue_notif  WHERE doctor_id = '$doctor_id' AND (appointment_status = 'Inqueue' OR appointment_status = 'Referred') AND appoint_date = '$date' ");
         $count = mysqli_num_rows($count_row);
-        $count_walk_in = mysqli_query($con, "SELECT * FROM walk_in where clinic_id LIKE '$clinic_id' AND appoint_date LIKE '$date' AND appointment_status = 'Inqueue'");
+        $count_walk_in = mysqli_query($con, "SELECT * FROM walk_in where clinic_id LIKE '$clinic_id' AND appointW_date LIKE '$date' AND appointmentW_status = 'Inqueue'");
         $count_w = mysqli_num_rows($count_walk_in);
         if($count == 0){
             $total_count = $count_w;
@@ -23,7 +23,7 @@
         <?php
         $count_row1 = mysqli_query($con, "SELECT * FROM appointment NATURAL JOIN queue_notif WHERE doctor_id = '$doctor_id' AND appointment_status = 'Completed' AND appoint_date = '$date' ");
         $count1 = mysqli_num_rows($count_row1);
-        $count_walk_in1 = mysqli_query($con, "SELECT * FROM walk_in WHERE clinic_id LIKE '$clinic_id' AND appoint_date LIKE '$date' AND appointment_status = 'Completed'");
+        $count_walk_in1 = mysqli_query($con, "SELECT * FROM walk_in WHERE clinic_id LIKE '$clinic_id' AND appointW_date LIKE '$date' AND appointmentW_status = 'Completed'");
         $count_w1 = mysqli_num_rows($count_walk_in1);
         if($count1 == 0){
             $total_count1 = $count_w1;

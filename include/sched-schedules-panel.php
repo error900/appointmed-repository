@@ -1,5 +1,5 @@
 <?php
-$walks = mysqli_query($con, "SELECT * FROM walk_in WHERE clinic_id LIKE '$clinic_id' AND appoint_date LIKE '$date' AND appointment_status LIKE 'Inqueue'");
+$walks = mysqli_query($con, "SELECT * FROM walk_in WHERE clinic_id LIKE '$clinic_id' AND appointW_date LIKE '$date' AND appointmentW_status LIKE 'Inqueue'");
 if (mysqli_num_rows($a_result) >= 1 || mysqli_num_rows($walks)>= 1) {
     while ($row = mysqli_fetch_array($a_result)) {
         $patient = $row['patient_id'];
@@ -43,7 +43,7 @@ if (mysqli_num_rows($a_result) >= 1 || mysqli_num_rows($walks)>= 1) {
             $sql_k = mysqli_query($con, "SELECT * FROM clinic WHERE clinic_id LIKE '$c_id'");
             $clinic = mysqli_fetch_array($sql_k);
             $clinic_name = $clinic['clinic_name'];
-            $sched_date = date("F j , Y", strtotime($row2['appoint_date']));
+            $sched_date = date("F j , Y", strtotime($row2['appointW_date']));
             echo '<div class="col-xs-12 col-md-6 col-lg-3">
                     <div class="panel panel-default sched-panel">';
                 echo'<div class="panel-heading">';
