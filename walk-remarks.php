@@ -11,7 +11,10 @@ if (isset($_POST['submit'])) {
     echo $status.'<br/>';
     echo $walk_in;
 
-    header("location: schedules.php");
+    if($account_type = 'Doctor')
+        header("location: schedules.php");
+    else
+        header("location: st-schedules.php");
 } else {
     echo "<script> alert('Error!); </script>";
     echo "<script> location.replace('schedules.php') </script>";

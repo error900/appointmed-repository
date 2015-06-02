@@ -15,6 +15,9 @@
                 $("#app_id").val($(this).data('a-id'));
                 $("#pats_id").val($(this).data('p-id'));
             });
+            $(".walk").click(function() { 
+                $("#walk_id").val($(this).data('walk-id'));
+            });
             $('#hideshow').on('click', function() {
                 $('#clinics').show();
             });
