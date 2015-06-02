@@ -54,7 +54,7 @@ if(isset($_GET['id'])){
     // $delete = "DELETE FROM appointment WHERE appointment_id LIKE '$app_id' AND appoint_date = '$queue_date'";
     // mysqli_query($con, $delete) or die(mysqli_error($con));
 
-    header("location: appointment.php");
+    header("location:".$_SERVER['HTTP_REFERER']);
     }else{
         echo "<script> alert('Error!');</script>";
         echo "<script> location.replace('appointment.php') </script>";

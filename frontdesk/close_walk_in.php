@@ -38,7 +38,7 @@ if(isset($_GET['wid'])){
     header("location: inqueue-details.php?did=".$doctor_id."&cid=".$clinic_id." ");
     }else{
         echo "<script> alert('Error!');</script>";
-        echo "<script> location.replace('inqueue-details.php') </script>";
+        echo "<script> location.replace('inqueue-details.php?did='".$doctor_id."&cid=".$clinic_id.") </script>";
     }
 mysqli_close($con);
 ?>

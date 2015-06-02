@@ -41,7 +41,7 @@ if(isset($_POST['submit'])){
     	die('Error: ' . mysqli_error($con));
 	}
     echo "<script> alert('Added walk in patient');</script>";
-    echo "<script> location.replace('index.php') </script>";
+    echo "<script> location.replace('".$_SERVER['HTTP_REFERER']."') </script>";
 
 } else {
     echo "<script> alert('Error!); </script>";

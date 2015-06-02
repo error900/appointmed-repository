@@ -12,7 +12,6 @@
                 <?php 
                 echo '<button type="button" class="btn btn-default btn-inverse walk btn-noborder red-btn" data-toggle="modal" data-target=".bs-walk-modal-sm" data-doc-id="'.$doctor_id.'" data-cli-id="'.$clinic_id.'"><i class="fa fa-plus"></i>add patient</button>';
                 ?>
-                </a>
             </li>
             </ul>
             <ul class="nav navbar-nav navbar-right signedin">
