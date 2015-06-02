@@ -249,7 +249,7 @@ nav > div > div > ul > li > a > i,
 
     .p-info,
     .d-info {
-        padding-left: 70px !important;
+        padding-left: 15px !important;
     }
 
     .days-checkbox {
@@ -1481,12 +1481,17 @@ ul.nav.items-list li:hover {
 
 #doctor-info img,
 #patient-info img,
+#frontdesk-md .doctor-photo img,
 .doctors-full-list img {
     height: 136px;
     width: 136px;
     margin: 0 auto;
     border: 8px solid #0F5959;
     border-radius: 50%;
+}
+
+#frontdesk-md .d-info {
+    padding-left: 10px !important;
 }
 
 .doctor-panel {
@@ -1571,7 +1576,7 @@ ul.nav.items-list li:hover {
 }
 
 .p-info {
-    padding: 0;
+    padding-left: 20px;
     color: #fff;
     font-weight: 600;
     text-shadow: 0px 1px 0px #34495E;
@@ -1579,6 +1584,7 @@ ul.nav.items-list li:hover {
 
 .d-info {
     font-weight: 600;
+    padding-left: 20px;
 }
 
 .d-info ul,

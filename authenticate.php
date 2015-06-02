@@ -48,7 +48,7 @@
 
             <div class="container-fluid" id="index-frw">
                 <div class="row">
-                    <div class="col-xs-12 col-md-7">
+                    <div class="col-xs-12 col-md-7 hidden-xs hidden-sm">
                         <p class="login-text"><span>appoint.med</span> ... an online scheduling system that allows you to create appointments to a doctor anywhere, anytime.</p>
                     </div>
                     <div class="col-xs-12 col-md-4">

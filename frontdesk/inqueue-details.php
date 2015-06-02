@@ -31,10 +31,70 @@
             ?>
                 <div class="container-fluid" id="frontdesk-md">
                     <div class="row">
+                        <div class="col-xs-12 col-md-2 col-md-offset-1 doctor-photo hidden-xs hidden-sm">
+                            <img class="img-responsive" src="img/profile/profile.jpg">
+                        </div>
+                        <div class="col-xs-12 col-md-5 user-md">
+                            <div class="d-info">
+                                    <h1>Dr. Juan Dela Cruz</h1>
+                                    <p class="clinic-days">Mon/Wed/Fri</p>
+                                    <p class="clinic-times">7:00-9:00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
                         <div class="col-xs-12 col-md-12">
                             <h1 class="text-center row-header-black">&mdash; Patients Inqueue &mdash;</h1>
                         </div>
-                        <div class="col-xs-12 col-md-12">
+                        <div class="col-xs-12 col-md-4">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item">
+                                    <h4 class="list-group-item-heading">Patient Name</h4>
+                                    <p class="list-group-item-text">Online</p>
+                                    <p class="list-group-item-text">Queue# 1</p>
+                                    <a href="#" class="list-group-item">cancel</a>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-4">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item">
+                                    <h4 class="list-group-item-heading">Patient Name</h4>
+                                    <p class="list-group-item-text">Walk-in</p>
+                                    <p class="list-group-item-text">Queue# 2</p>
+                                    <a href="#" class="list-group-item">cancel</a>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-4">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item">
+                                    <h4 class="list-group-item-heading">Patient Name</h4>
+                                    <p class="list-group-item-text">Walk-in</p>
+                                    <p class="list-group-item-text">Queue# 3</p>
+                                    <a href="#" class="list-group-item">cancel</a>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-4">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item">
+                                    <h4 class="list-group-item-heading">Patient Name</h4>
+                                    <p class="list-group-item-text">Online</p>
+                                    <p class="list-group-item-text">Queue# 4</p>
+                                    <a href="#" class="list-group-item">cancel</a>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-4">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item">
+                                    <h4 class="list-group-item-heading">Patient Name</h4>
+                                    <p class="list-group-item-text">Online</p>
+                                    <p class="list-group-item-text">Queue# 5</p>
+                                    <a href="#" class="list-group-item">cancel</a>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
