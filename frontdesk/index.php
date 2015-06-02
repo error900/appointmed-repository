@@ -71,26 +71,29 @@
                             echo '<div class="col-xs-12 col-md-3">';
                                 echo '<div class="panel panel-default doctor-panel">';
                                     echo '<div class="panel-heading">';
-                                        echo $row['doctor_name'];?>
-                                        <img class="img-responsive" src="img/profile/<?php
-                                        $file = "img/profile/" . $doctor_id . ".jpg";
-                                        if (file_exists($file)) {
-                                            echo $doctor_id;
-                                        } else {
-                                            echo 'profile';
-                                        }
-                                        ?>.jpg">
+                                        echo 'Dr. ' . $row['doctor_name'];
+                                        ?>
+                                        <div class="doctor-panel-photo">
+                                            <img class="img-responsive" src="img/profile/<?php
+                                            $file = "img/profile/" . $doctor_id . ".jpg";
+                                            if (file_exists($file)) {
+                                                echo $doctor_id;
+                                            } else {
+                                                echo 'profile';
+                                            }
+                                            ?>.jpg">
+                                        </div>
                             <?php
                                     echo '</div>';
                                     echo '<div class="panel-body">';
                                         echo '<p class="clinic-days">'.$row['days'].'</p>';
-                                        echo '<p class="clinic-info">'.$row['time'].'</p>';
+                                        echo '<p class="clinic-times">'.$row['time'].'</p>';
                                         echo '<p class="clinic-inqueue">Total patients in queue: <span>' . $total_count . '</span></p>';
                                     echo '</div>';
                                     echo '<div>';
                                     echo '</div>';
                                     echo '<div class="doctor-panel-btns">';
-                                            echo "<a href=\"walk_in.php?did=$doctor_id&cid=$clinic_id\" class='tooltip-bottom' data-tooltip='Add to queue' onclick='return confirm(\"Add patient to queue?\")'><i class=\"fa fa-plus\"></i></a>";
+                                            echo "<a href=\"walk_in.php?did=$doctor_id&cid=$clinic_id\" class='tooltip-bottom' data-tooltip='Add to queue' onclick='\return confirm(\"Add patient to queue?\")\'><i class=\"fa fa-plus\"></i></a>";
                                             echo '<p class="doctor-panel-specs">'.$row['specialization'].'</p>';
                                     echo '</div>';
                                 echo '</div>';

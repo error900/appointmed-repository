@@ -1492,6 +1492,16 @@ ul.nav.items-list li:hover {
 .doctor-panel .panel-heading {
     background-color: #F39C12 !important;
     min-height: 48px;
+    max-width: 215px !important;
+}
+
+.doctor-panel-photo {
+    background-color: #F39C12;
+    min-height: 48px;
+    width: 50px;
+    position: absolute;
+    top: 2px;
+    right: 17px;
 }
 
 .doctor-panel .panel-body {
@@ -1511,8 +1521,8 @@ ul.nav.items-list li:hover {
     position: absolute;
     height: 40px;
     width: 40px;
-    top: 6px;
-    right: 24px;
+    top: 4px;
+    right: 6px;
     border-radius: 50%;
 }
 
@@ -1712,7 +1722,7 @@ ul.nav.items-list li:hover {
 }
 
 .clinic-times {
-    font-size: 14px !important;
+    font-size: 16px !important;
 }
 
 .clinic-info {

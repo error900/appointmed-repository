@@ -65,7 +65,7 @@
                                             <p><i class='fa fa-user-md'></i>Dr. <?php echo $final_name ?></p>
                                             <p class="search-specs"><?php echo $final_specs ?></p>
                                             <?php
-                                            echo "<a href=\"walk_in.php?did=$doctor_id&cid=$clinic_id\" class='addToQueueBtn tooltip-bottom' data-tooltip='Add to queue' onclick='return confirm(\"Add patient to queue?\")'><i class='fa fa-plus'></i></a>";
+                                            echo "<a href=\"walk_in.php?did=$doctor_id&cid=$clinic_id\" class='addToQueueBtn tooltip-bottom' data-tooltip='Add to queue' onclick='\return confirm(\"Add patient to queue?\")\'><i class='fa fa-plus'></i></a>";
                                             ?>
                                         </div>
                                     </div>
