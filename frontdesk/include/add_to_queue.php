@@ -1,7 +1,7 @@
 <div class="modal fade bs-add-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
-            <form class="form-input"  method="post" action="">
+            <form class="form-input"  method="post" action="walk.php">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                     <h4 class="modal-title" id="myModalLabel">Add Patient</h4>
@@ -12,7 +12,8 @@
                             <div class="input-group">
                                 <input type="text" class="form-control" placeholder="First name" name="firstname">
                                 <input type="text" class="form-control" placeholder="Last name" name="lastname">
-                                <input type="hidden" value="<?php echo $doctor_id ?>" name="doctor_id"> 
+                                <input type="hidden" value="" name="doctor_id" id="doc_id"> 
+                                <input type="hidden" value="" name="clinic_id" id="cli_id"> 
                             </div>
                         </div>
                     </div>

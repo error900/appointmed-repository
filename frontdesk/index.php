@@ -7,6 +7,15 @@
     include 'include/scripts.php';
     include 'include/scrolltop.php';
     ?>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".walk").click(function() {
+                $("#doc_id").val($(this).data('doc-id'));
+                $("#cli_id").val($(this).data('cli-id'));
+            });
+        });
+    </script>
+
     <?php
     session_start();
     $loggedIn = $_SESSION['loggedIn'];
@@ -93,8 +102,8 @@
                                     echo '<div>';
                                     echo '</div>';
                                     echo '<div class="doctor-panel-btns">';
-                                            echo "<a href=\"walk_in.php?did=$doctor_id&cid=$clinic_id\" class='tooltip-bottom' data-tooltip='Add to queue' onclick='\return confirm(\"Add patient to queue?\")\'><i class=\"fa fa-plus\"></i></a>";
-                                            echo '<button type="button" class="tooltip-bottom" data-toggle="modal" data-target=".bs-add-modal-sm">add patient</button>';
+                                            // echo "<a href=\"walk_in.php?did=$doctor_id&cid=$clinic_id\" class='tooltip-bottom' data-tooltip='Add to queue' onclick='\return confirm(\"Add patient to queue?\")\'><i class=\"fa fa-plus\"></i></a>";
+                                            echo '<button type="button" class="btn btn-default btn-inverse walk btn-noborder tooltip-bottom" data-tooltip="Add to queue" data-toggle="modal" data-target=".bs-add-modal-sm" data-doc-id="'.$doctor_id.'" data-cli-id="'.$clinic_id.'">add patient</button>';
                                             echo '<p class="doctor-panel-specs">'.$row['specialization'].'</p>';
                                     echo '</div>';
                                 echo '</div>';

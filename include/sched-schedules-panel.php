@@ -47,12 +47,12 @@ if (mysqli_num_rows($a_result) >= 1 || mysqli_num_rows($walks)>= 1) {
             echo '<div class="col-xs-12 col-md-6 col-lg-3">
                     <div class="panel panel-default sched-panel">';
                 echo'<div class="panel-heading">';
-                    echo 'Walk-in Patient';
+                    echo $row2['walk_in_name'];
                     echo '<p class="queue-num">' . $row2['walk_in_id'] . '</p>';
                     echo '<input type="hidden" id="walk_in" value="' . $walk_in_i . '" name="walk_in">';
-
                 echo '</div>';
                 echo '<div class="panel-body">';
+                    echo 'Walk-in Patient';
                     echo '<p class="appointment-header">' . $sched_date . '</p>';
                     echo '<p>' . $clinic_name . '</p>';
                 echo '</div>';
