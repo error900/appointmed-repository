@@ -16,6 +16,13 @@
     else if ($account_type != 'FrontDesk')
         header("location: ../admin/index.php");
     $username = $_SESSION['username'];
+    $doctor_id = mysqli_real_escape_string($con, $_GET['did']);
+    $clinic_id = mysqli_real_escape_string($con, $_GET['cid']);
+
+    $sql = mysqli_query($con, "SELECT * FROM doctor NATURAL JOIN clinic_schedule WHERE doctor_id LIKE '$doctor_id'");
+    $doctor = mysqli_fetch_array($sql);
+    $appoints = mysqli_query($con, "SELECT * FROM appointment NATURAL JOIN queue_notif WHERE doctor_id LIKE '$doctor_id' AND appoint_date LIKE CURDATE()");
+
     ?>
     <body class="e4e8e9-bg">
         <div class="container">        
@@ -36,9 +43,9 @@
                         </div>
                         <div class="col-xs-12 col-md-5 user-md">
                             <div class="d-info">
-                                    <h1>Dr. Juan Dela Cruz</h1>
-                                    <p class="clinic-days">Mon/Wed/Fri</p>
-                                    <p class="clinic-times">7:00-9:00</p>
+                                    <h1>Dr. <?php echo $doctor['doctor_name']?></h1>
+                                    <p class="clinic-days"><?php echo $doctor['days']?></p>
+                                    <p class="clinic-times"><?php echo $doctor['time']?></p>
                             </div>
                         </div>
                         <div class="col-xs-12 col-md-2">
@@ -54,56 +61,39 @@
                         <div class="col-xs-12 col-md-12">
                             <h1 class="text-center row-header-black">&mdash; Patients Inqueue &mdash;</h1>
                         </div>
-                        <div class="col-xs-12 col-md-4">
-                            <div class="list-group">
-                                <a href="#" class="list-group-item">
-                                    <h4 class="list-group-item-heading">Patient Name</h4>
-                                    <p class="list-group-item-text">Online</p>
-                                    <p class="list-group-item-text">Queue# 1</p>
-                                    <a href="#" class="list-group-item">cancel</a>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-md-4">
-                            <div class="list-group">
-                                <a href="#" class="list-group-item">
-                                    <h4 class="list-group-item-heading">Patient Name</h4>
-                                    <p class="list-group-item-text">Walk-in</p>
-                                    <p class="list-group-item-text">Queue# 2</p>
-                                    <a href="#" class="list-group-item">cancel</a>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-md-4">
-                            <div class="list-group">
-                                <a href="#" class="list-group-item">
-                                    <h4 class="list-group-item-heading">Patient Name</h4>
-                                    <p class="list-group-item-text">Walk-in</p>
-                                    <p class="list-group-item-text">Queue# 3</p>
-                                    <a href="#" class="list-group-item">cancel</a>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-md-4">
-                            <div class="list-group">
-                                <a href="#" class="list-group-item">
-                                    <h4 class="list-group-item-heading">Patient Name</h4>
-                                    <p class="list-group-item-text">Online</p>
-                                    <p class="list-group-item-text">Queue# 4</p>
-                                    <a href="#" class="list-group-item">cancel</a>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-md-4">
-                            <div class="list-group">
-                                <a href="#" class="list-group-item">
-                                    <h4 class="list-group-item-heading">Patient Name</h4>
-                                    <p class="list-group-item-text">Online</p>
-                                    <p class="list-group-item-text">Queue# 5</p>
-                                    <a href="#" class="list-group-item">cancel</a>
-                                </a>
-                            </div>
-                        </div>
+                        <?php 
+                        $walks = mysqli_query($con, "SELECT * FROM walk_in WHERE clinic_id LIKE '$clinic_id' AND appointW_date LIKE CURDATE() AND appointmentW_status LIKE 'Inqueue'");
+                        while($appoint = mysqli_fetch_array($appoints)){
+                            $appointment_id = $appoint['appointment_id'];
+                            $queue_id = $appoint['queue_id'];
+                            $patient_id = $appoint['patient_id'];
+                            $p_sql = mysqli_query($con, "SELECT * FROM patient WHERE patient_id LIKE '$patient_id'");
+                            $p_result = mysqli_fetch_array($p_sql);
+                            echo '<div class="col-xs-12 col-md-4">
+                                <div class="list-group">
+                                    <a href="#" class="list-group-item">';
+                                echo ' <h4 class="list-group-item-heading">'.$p_result['patient_name'].'</h4>';
+                                echo ' <p class="list-group-item-text">Online</p>';
+                                echo ' <p class="list-group-item-text">Queue # '.$appoint['queue_id'].'</p>';
+                                echo "<a href=\"close.php?id=$appointment_id&doc=$doctor_id&pat=$patient_id&cid=$clinic_id&qid=$queue_id\" class=\"list-group-item\">cancel</a>";
+                            echo    '</a>
+                                </div>
+                            </div>';
+                        }
+                        while($walkin = mysqli_fetch_array($walks)){
+                            echo '<div class="col-xs-12 col-md-4">
+                                <div class="list-group">
+                                    <a href="#" class="list-group-item">';
+                                echo ' <h4 class="list-group-item-heading">'.$walkin['walk_in_name'].'</h4>';
+                                echo ' <p class="list-group-item-text">Walk In</p>';
+                                echo ' <p class="list-group-item-text">Queue # '.$walkin['walk_in_id'].'</p>';
+                                echo ' <a href="#" class="list-group-item">cancel</a>';
+                            echo    '</a>
+                                </div>
+                            </div>';
+                        }
+
+                        ?>
                     </div>
                 </div>
                 <?php 

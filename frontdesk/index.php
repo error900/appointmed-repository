@@ -76,11 +76,12 @@
                                 $count_w = mysqli_num_rows($count_walk_in);
 
                                 $total_count = $count_a + $count_w;
-                                
+                        echo "<a href=\"inqueue-details.php?did=$doctor_id&cid=$clinic_id\">";
                             echo '<div class="col-xs-12 col-md-3">';
                                 echo '<div class="panel panel-default doctor-panel">';
                                     echo '<div class="panel-heading">';
                                         echo 'Dr. ' . $row['doctor_name'];
+                                                 echo '</a>';
                                         ?>
                                         <div class="doctor-panel-photo">
                                             <img class="img-responsive" src="img/profile/<?php
@@ -108,6 +109,7 @@
                                     echo '</div>';
                                 echo '</div>';
                             echo '</div>';
+               
                             }
                         ?>
                         <div class="col-xs-12 col-md-6 col-md-offset-3">

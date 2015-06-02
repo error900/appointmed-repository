@@ -33,7 +33,7 @@ if (isset($_POST['submit'])) {
     $queue_id = (int)$queue_no['queue_id'];
 
     //walk in
-    $walk_in = mysqli_query($con, "SELECT * FROM walk_in WHERE clinic_id LIKE '$clinic_id' AND appoint_date LIKE '$date' ORDER BY 1 DESC");
+    $walk_in = mysqli_query($con, "SELECT * FROM walk_in WHERE clinic_id LIKE '$clinic_id' AND appointW_date LIKE '$date' ORDER BY 1 DESC");
     $walk_in_row = mysqli_fetch_array($walk_in);
     $walk_in_id = $walk_in_row['walk_in_id']; 
     //end

@@ -38,7 +38,7 @@ if(isset($_GET['id'])){
         }
     }
 
-    $delete_sql = "DELETE FROM queue_notif WHERE appointment_id = '$app_id'";
+    $delete_sql = "DELETE FROM queue_notif WHERE appointment_id = '$app_id' AND appoint_date = '$queue_date'";
     mysqli_query($con, $delete_sql) or die(mysqli_error($con));
 
     $notif = "INSERT INTO notification (indicator, doctor_id, patient_id, legend_id, notification_date, notification) 
