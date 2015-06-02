@@ -136,6 +136,8 @@
 
                             echo ' <button type="button" class="btn btn-default appo red-btn2 btn-noborder tooltip-bottom" data-tooltip="Settings" data-toggle="modal" data-target=".settings-modal-sm" data-id="' . $c_row['clinic_id'] . '">
                             <i class="fa fa-gears"></i></button>';
+                            echo ' <button type="button" class="btn btn-default appo red-btn2 editdaytime btn-noborder tooltip-bottom" data-tooltip="Days/Time" data-toggle="modal" data-target=".edit-days-time-sm" data-id="' . $c_row['clinic_id'] . '">
+                            <i class="fa fa-calendar"></i></button>';
                             echo '</div>';
                             echo '</div>';
                            

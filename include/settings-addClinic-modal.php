@@ -103,3 +103,46 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade edit-days-time-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content addClinic">
+            <form class="form-input"  method="post" action="">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Edit Days/Time</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group">
+                        <p class="modal-sub-header">Days Available</p>
+                        <div class="days-checkbox">
+                            <input type="checkbox" value="Mon" name="days[]"><label>Mon</label>
+                            <input type="checkbox" value="Tue" name="days[]"><label>Tue</label>
+                            <input type="checkbox" value="Wed" name="days[]"><label>Wed</label>
+                            <input type="checkbox" value="Thu" name="days[]"><label>Thu</label>
+                            <input type="checkbox" value="Fri" name="days[]"><label>Fri</label>
+                            <input type="checkbox" value="Sat" name="days[]"><label>Sat</label>
+                            <input type="checkbox" value="Sun" name="days[]"><label>Sun</label>
+                        </div>
+                        <div class=""></div>
+                        <p class="modal-sub-header">Hours Available</p>
+                        <div class="col-xs-6">
+                            <input type="text" class="form-control" name="clinic_from" placeholder="From" required/>
+                        </div>
+                        <div class="col-xs-6">
+                            <input type="text" class="form-control" name="clinic_to" placeholder="To" required/>
+                        </div>
+                        <input type="hidden" value="<?php echo $doctor_id?>" name="doctor_id">
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <?php
+                    echo '<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>';
+                    echo "<button type=\"submit\" class=\"btn btn-primary\" name=\"submit\">Done</button>";
+                    ?>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

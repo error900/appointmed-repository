@@ -1157,12 +1157,20 @@ a.btn.btn-block.appo.tooltip-bottom {
 }
 
 .btn-default.red-btn2 {
-    background-color: #C0392B !important;
+    background-color: #E74C3C !important;
+    font-size: 16px;
+    padding: 4px 9px;
+    width: 35px !important;
 }
 
 
 .btn-default.red-btn2:hover {
-    background-color: #E74C3C !important;
+    background-color: #C0392B !important;
+}
+
+.btn-default.red-btn2.editdaytime {
+    right: 70px;
+    width: 35px !important;
 }
 
 .btn-default.create-btn:hover {
@@ -1772,7 +1780,7 @@ ul.nav.items-list li:hover {
 }
 
 .add-clinic-btn {
-    margin: 20px 0 !important;
+    margin: 45px 0 !important;
     padding: 12px 14px;
     height: 52px;
     width: 52px;
