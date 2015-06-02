@@ -21,7 +21,7 @@
 
     $sql = mysqli_query($con, "SELECT * FROM doctor NATURAL JOIN clinic_schedule WHERE doctor_id LIKE '$doctor_id'");
     $doctor = mysqli_fetch_array($sql);
-    $appoints = mysqli_query($con, "SELECT * FROM appointment NATURAL JOIN queue_notif WHERE doctor_id LIKE '$doctor_id' AND appoint_date LIKE CURDATE()");
+    $appoints = mysqli_query($con, "SELECT * FROM appointment NATURAL JOIN queue_notif WHERE doctor_id LIKE '$doctor_id' AND appointment_status = 'Inqueue' AND appoint_date LIKE CURDATE()");
 
     ?>
     <body class="e4e8e9-bg">
@@ -87,7 +87,7 @@
                                 echo ' <h4 class="list-group-item-heading">'.$walkin['walk_in_name'].'</h4>';
                                 echo ' <p class="list-group-item-text">Walk In</p>';
                                 echo ' <p class="list-group-item-text">Queue # '.$walkin['walk_in_id'].'</p>';
-                                echo ' <a href="#" class="list-group-item">cancel</a>';
+                                echo  "<a href=\"close_walk_in.php?doc=$doctor_id&cid=$clinic_id&wid=$walkin[walk_in]\" class=\"list-group-item\">cancel</a>";
                             echo    '</a>
                                 </div>
                             </div>';

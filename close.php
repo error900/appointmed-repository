@@ -25,7 +25,7 @@ if(isset($_GET['id'])){
                 mysqli_query($con, $subtract_queue_number) or die(mysqli_error($con));
         	}
         }
-    $sql_d = mysqli_query($con, "SELECT * FROM walk_in WHERE clinic_id LIKE '$clinic_id' AND appoint_date 
+    $sql_d = mysqli_query($con, "SELECT * FROM walk_in WHERE clinic_id LIKE '$clinic_id' AND appointW_date 
         LIKE '$queue_date' AND walk_in_id > '$queue_id' ");
     if(mysqli_num_rows($sql_d)!= 0){
         while($sql_walk_in = mysqli_fetch_array($sql_d)){
@@ -50,6 +50,9 @@ if(isset($_GET['id'])){
     	VALUES ('Cancelled', '$app_id')";
     mysqli_query($con, $sql) or die(mysqli_error());
     mysqli_query($con, $sql2) or die(mysqli_error($con));
+
+    // $delete = "DELETE FROM appointment WHERE appointment_id LIKE '$app_id' AND appoint_date = '$queue_date'";
+    // mysqli_query($con, $delete) or die(mysqli_error($con));
 
     header("location: appointment.php");
     }else{
