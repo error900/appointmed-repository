@@ -21,6 +21,7 @@
             $('#showsec').on('click', function() {
                 $('#secretary').show();
             });
+            
         });
     </script>
     <?php
@@ -102,7 +103,7 @@
                 include 'include/st-edit-profile-modal.php';
                 include 'include/refer-modal.php';
                 include 'include/walk-in_remarks.php';
-
+                include 'include/add_to_queue.php';
                 ?>
                 <script type="text/javascript" src="js/scrolltop.js"></script>
         </div>

@@ -9,8 +9,9 @@
                     <i class="fa fa-pencil"></i>Update Info</button>
             </li>
             <li class="nav-button navbar-right">
-                <?php echo "<a href=\"walk_in.php?did=$doctor_id&cid=$clinic_id\" class='btn btn-default btn-noborder red-btn add-walkin-btn' onclick='return confirm(\"Add patient to queue?\")'>"; ?>
-                    <i class="fa fa-plus"></i>Add Walk-in
+                <?php 
+                echo '<button type="button" class="btn btn-default btn-inverse walk btn-noborder red-btn" data-toggle="modal" data-target=".bs-walk-modal-sm" data-doc-id="'.$doctor_id.'" data-cli-id="'.$clinic_id.'"><i class="fa fa-plus"></i>add patient</button>';
+                ?>
                 </a>
             </li>
             </ul>
