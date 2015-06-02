@@ -37,7 +37,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         $_SESSION['account_type'] = $row['account_type'];
         if ($row['account_type'] == 'Admin') {
             $_SESSION['loggedIn'] = false;
-            header("location: admin/authenticate.php");
+            header("location: admin/index.php");
         } else if ($row['account_type'] == 'Patient') {
             $_SESSION['loggedIn'] = true;
            
@@ -48,7 +48,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
             header("location: appointment.php");
         } else {
             $_SESSION['loggedIn'] = false;
-            header("location: admin/authenticate.php");
+            header("location: admin/index.php");
         }
     }
     if (!(mysqli_query($con, $result))) {
