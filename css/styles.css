@@ -959,6 +959,7 @@ a.btn.btn-block.appo.tooltip-bottom {
 .signup-form {
     margin-top: -10px;
 }
+
 @media (min-width:768px){
     .add-form {
         padding: 0 350px;
@@ -968,6 +969,7 @@ a.btn.btn-block.appo.tooltip-bottom {
 .forgot-password input {
     margin-bottom: 10px !important;
 }
+
 .forgot-password .signup-ad {
     margin-top: 40px;
     line-height: 1;
@@ -980,7 +982,8 @@ a.btn.btn-block.appo.tooltip-bottom {
 .edit-form select.form-control,
 .add-form input.form-control,
 .add-form select.form-control,
-.forgot-password input.form-control {
+.forgot-password input.form-control,
+.add-walkin-form input.form-control {
     height: 42px;
     margin-bottom: 15px;
     border-radius: 4px !important;
@@ -1011,6 +1014,10 @@ a.btn.btn-block.appo.tooltip-bottom {
 .add-form label {
     float: left;
     line-height: 40px;
+}
+
+.add-walkin-form {
+
 }
 
 .add-walkin-btn {
