@@ -37,12 +37,11 @@
                                 }
                             ?>
                         </div>
-
                         <input type="button" class="btn btn-default btn-noborder green-btn form-control" id="showsec" value="Add Secretary">
                         <div id="secretary" style="display:none">
                             <input type="text" class="form-control" name="firstname" placeholder="First Name"/>
                             <input type="text" class="form-control" name="lastname" placeholder="Last Name"/>
-                        </div>
+                        </div>                        
                     </div>
                 </div>
                 <div class="modal-footer">

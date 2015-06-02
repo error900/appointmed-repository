@@ -1173,6 +1173,16 @@ a.btn.btn-block.appo.tooltip-bottom {
     width: 35px !important;
 }
 
+.btn-default.red-btn2.deleteclinic {
+    right: 111px;
+    background-color: #34495E !important;
+    width: 35px !important;
+}
+
+.btn-default.red-btn2.deleteclinic:hover {
+    background-color: #2C3E50 !important;
+}
+
 .btn-default.create-btn:hover {
     background-color: #C0392B;
 }
