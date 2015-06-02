@@ -12,8 +12,8 @@
                             <div class="input-group">
                                 <input type="text" class="form-control" placeholder="First name" name="firstname">
                                 <input type="text" class="form-control" placeholder="Last name" name="lastname">
-                                <input type="text" value="" name="doctor_id" id="doc_id"> 
-                                <input type="text" value="" name="clinic_id" id="cli_id"> 
+                                <input type="hidden" value="" name="doctor_id" id="doc_id"> 
+                                <input type="hidden" value="" name="clinic_id" id="cli_id"> 
                             </div>
                         </div>
                     </div>

@@ -7,6 +7,14 @@
     include 'include/scripts.php';
     include 'include/scrolltop.php';
     ?>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".walk").click(function() {
+                $("#doc_id").val($(this).data('doc-id'));
+                $("#cli_id").val($(this).data('cli-id'));
+            });
+        });
+    </script>
     <?php
     session_start();
     $loggedIn = $_SESSION['loggedIn'];

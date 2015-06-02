@@ -21,7 +21,11 @@
             $('#showsec').on('click', function() {
                 $('#secretary').show();
             });
-            
+            $(".walk").click(function() {
+                $("#doc_id").val($(this).data('doc-id'));
+                $("#cli_id").val($(this).data('cli-id'));
+            });
+
         });
     </script>
     <?php

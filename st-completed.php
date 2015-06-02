@@ -9,7 +9,7 @@
     ?>
     <script type="text/javascript">
         $(document).ready(function() {
-            $(".appo").click(function() { // Click to only happen on announce links
+            $(".appo").click(function() { 
                 $("#appo_id").val($(this).data('id'));
                 $("#pat_id").val($(this).data('patient-id'));
                 $("#app_id").val($(this).data('a-id'));
@@ -20,6 +20,10 @@
             });
             $('#showsec').on('click', function() {
                 $('#secretary').show();
+            });
+            $(".walk").click(function() {
+                $("#doc_id").val($(this).data('doc-id'));
+                $("#cli_id").val($(this).data('cli-id'));
             });
         });
     </script>
