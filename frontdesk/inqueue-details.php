@@ -31,7 +31,7 @@
             ?>
                 <div class="container-fluid" id="frontdesk-md">
                     <div class="row">
-                        <div class="col-xs-12 col-md-2 col-md-offset-1 doctor-photo hidden-xs hidden-sm">
+                        <div class="col-xs-12 col-md-2 col-md-offset-2 doctor-photo hidden-xs hidden-sm">
                             <img class="img-responsive" src="img/profile/profile.jpg">
                         </div>
                         <div class="col-xs-12 col-md-5 user-md">
@@ -40,6 +40,14 @@
                                     <p class="clinic-days">Mon/Wed/Fri</p>
                                     <p class="clinic-times">7:00-9:00</p>
                             </div>
+                        </div>
+                        <div class="col-xs-12 col-md-2">
+                            <form action="" method="post">
+                                <input type="hidden" name="" value="">
+                                <input type="hidden" name="" value="">
+                                <input type="submit" class="btn btn-default red-btn btn-noborder" name="" value="Put Online">
+                                <input type="submit" class="btn btn-default red-btn btn-noborder" name="" value="Put Offline">
+                            </form>
                         </div>
                     </div>
                     <div class="row">
