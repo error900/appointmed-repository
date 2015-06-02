@@ -24,9 +24,11 @@
     else if ($account_type != 'FrontDesk')
         header("location: ../admin/index.php");
     $username = $_SESSION['username'];
-    $doctor_id = mysqli_real_escape_string($con, $_GET['did']);
-    $clinic_id = mysqli_real_escape_string($con, $_GET['cid']);
-
+    if(isset($_GET['did']) && isset($_GET['cid'])){
+        $doctor_id = mysqli_real_escape_string($con, $_GET['did']);
+        $clinic_id = mysqli_real_escape_string($con, $_GET['cid']);
+    }else
+        header("location: index.php");
     $sql = mysqli_query($con, "SELECT * FROM doctor NATURAL JOIN clinic_schedule WHERE doctor_id LIKE '$doctor_id'");
     $doctor = mysqli_fetch_array($sql);
     $appoints = mysqli_query($con, "SELECT * FROM appointment NATURAL JOIN queue_notif WHERE doctor_id LIKE '$doctor_id' AND appointment_status = 'Inqueue' AND appoint_date LIKE CURDATE()");
@@ -54,6 +56,7 @@
                                     <h1>Dr. <?php echo $doctor['doctor_name']?></h1>
                                     <p class="clinic-days"><?php echo $doctor['days']?></p>
                                     <p class="clinic-times"><?php echo $doctor['time']?></p>
+                                     <p class="clinic-times"><?php echo $doctor['doctor_status']?></p>
                             </div>
                         </div>
                         <li class="nav-button navbar-right">

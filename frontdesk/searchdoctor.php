@@ -7,6 +7,7 @@ if ($_POST) {
     if(mysqli_num_rows($result)>=1){
         while ($row = mysqli_fetch_array($result)) {
             $doctor_id = $row['doctor_id'];
+            $clinic_id = $row['clinic_id'];
             $doctor_name = $row['doctor_name'];
             $specialization = $row['specialization'];
             $doctor_status = $row['doctor_status'];
@@ -18,7 +19,7 @@ if ($_POST) {
  ?>
             <li>
                 <?php
-                echo "<a href=\"searchpage.php?q=".$search."\"><i class='fa fa-user-md fa-lg'></i>" . $final_name . '</a>';
+                echo "<a href=\"inqueue-details.php?did=$doctor_id&cid=$clinic_id\"><i class='fa fa-user-md fa-lg'></i>" . $final_name . '</a>';
                 echo '<p>' . $final_specs . '</p>';
                 ?>
             </li>

@@ -51,7 +51,9 @@
                                             $b_username = $c_username;
                                             $final_name = str_ireplace($search, $b_username, $doctor_name);
                                             $final_specs = str_ireplace($search, $b_username, $specialization);
+                                            echo "<a href=\"inqueue-details.php?did=$doctor_id&cid=$clinic_id\">";
                                     ?>
+
                                     <div class="col-xs-12 col-md-4 search-doctor-result frontdesk">
                                         <img class="img-responsive" src="img/profile/<?php
                                         $file = "img/profile/" . $doctor_id . ".jpg";
@@ -65,6 +67,7 @@
                                             <p><i class='fa fa-user-md'></i>Dr. <?php echo $final_name ?></p>
                                             <p class="search-specs"><?php echo $final_specs ?></p>
                                             <?php
+                                            echo "</a>";
                                             echo "<a href=\"walk_in.php?did=$doctor_id&cid=$clinic_id\" class='addToQueueBtn tooltip-bottom' data-tooltip='Add to queue' onclick='\return confirm(\"Add patient to queue?\")\'><i class='fa fa-plus'></i></a>";
                                             ?>
                                         </div>

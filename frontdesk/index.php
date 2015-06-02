@@ -70,9 +70,9 @@
                                 $clinic_id = $row['clinic_id'];
                                 $date = date('Y-m-d', strtotime($date));
                                 $available_days = explode("/", $row['days']);
-                                $count_app = mysqli_query($con, "SELECT * FROM appointment where clinic_id like '$clinic_id' AND appoint_date LIKE CURDATE()");
+                                $count_app = mysqli_query($con, "SELECT * FROM appointment where clinic_id like '$clinic_id' AND appoint_date LIKE CURDATE() AND appointment_status = 'Inqueue'");
                                 $count_a= mysqli_num_rows($count_app);
-                                $count_walk_in = mysqli_query($con, "SELECT * FROM walk_in where clinic_id like '$clinic_id' AND appointW_date LIKE CURDATE()");
+                                $count_walk_in = mysqli_query($con, "SELECT * FROM walk_in where clinic_id like '$clinic_id' AND appointW_date LIKE CURDATE() AND appointmentW_status = 'Inqueue'");
                                 $count_w = mysqli_num_rows($count_walk_in);
 
                                 $total_count = $count_a + $count_w;
@@ -81,7 +81,7 @@
                                 echo '<div class="panel panel-default doctor-panel">';
                                     echo '<div class="panel-heading">';
                                         echo 'Dr. ' . $row['doctor_name'];
-                                                 echo '</a>';
+                                               
                                         ?>
                                         <div class="doctor-panel-photo">
                                             <img class="img-responsive" src="img/profile/<?php
@@ -94,7 +94,9 @@
                                             ?>.jpg">
                                         </div>
                             <?php
-                                    echo '</div>';
+
+                            echo '</div>';
+                       echo '</a>';
                                     echo '<div class="panel-body">';
                                         echo '<p class="clinic-days">'.$row['days'].'</p>';
                                         echo '<p class="clinic-times">'.$row['time'].'</p>';
