@@ -56,7 +56,7 @@
                                     <h1>Dr. <?php echo $doctor['doctor_name']?></h1>
                                     <p class="clinic-days"><?php echo $doctor['days']?></p>
                                     <p class="clinic-times"><?php echo $doctor['time']?></p>
-                                     <p class="clinic-times"><?php echo $doctor['doctor_status']?></p>
+                                    <p class="clinic-times"><?php echo $doctor['doctor_status']?></p>
                             </div>
                         </div>
                         <li class="nav-button navbar-right">
@@ -64,12 +64,23 @@
                             ?>
                         </li>
                         <div class="col-xs-12 col-md-2">
-                            <form action="" method="post">
-                                <input type="hidden" name="" value="">
-                                <input type="hidden" name="" value="">
-                                <input type="submit" class="btn btn-default red-btn btn-noborder" name="" value="Put Online">
-                                <input type="submit" class="btn btn-default red-btn btn-noborder" name="" value="Put Offline">
-                            </form>
+                            <?php
+                            if($doctor['doctor_status'] == 'Out' || $doctor['doctor_status'] == 'Break'){
+                                echo '<form action="online.php" method="post">
+                                    <input type="hidden" name="doctor" value="'.$doctor_id.'">
+                                    <input type="hidden" name="clinic" value="'.$clinic_id.'">
+                                    <input type="hidden" name="doctor_status" value="In">
+                                    <input type="submit" class="btn btn-default red-btn btn-noborder" name="" value="Put Online">
+                                </form>';
+                            } else if ($doctor['doctor_status'] == 'In' || $doctor['doctor_status'] == 'Break') {
+                                echo '<form action="offline.php" method="post">
+                                    <input type="hidden" name="doctor" value="'.$doctor_id.'">
+                                    <input type="hidden" name="clinic" value="'.$clinic_id.'">
+                                    <input type="hidden" name="doctor_status" value="Out">
+                                    <input type="submit" class="btn btn-default red-btn btn-noborder" name="" value="Put Offline">
+                                </form>';
+                            }
+                            ?>
                         </div>
                     </div>
                     <div class="row">
