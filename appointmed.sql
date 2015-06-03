@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.14
+-- version 3.4.9
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Jun 02, 2015 at 01:05 AM
--- Server version: 5.6.17
--- PHP Version: 5.5.12
+-- Host: localhost
+-- Generation Time: Jun 03, 2015 at 02:31 AM
+-- Server version: 5.5.20
+-- PHP Version: 5.3.9
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `appointmed`
 --
-CREATE DATABASE IF NOT EXISTS `appointmed` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `appointmed`;
 
 -- --------------------------------------------------------
 
@@ -52,9 +50,9 @@ INSERT INTO `account` (`username`, `password`, `account_type`, `account_status`,
 ('bai', '4b2bb5736001eba2175cbaa5994e1e54a9b8803fa7ac6b5df931346f0ac8428b', 'Doctor', 'active', '0000-00-00'),
 ('bernadette', 'bbe7a727217b335afc5aa51084477fb693269a2a09e7c2e6d009594c8820baaa', 'Doctor', 'active', '0000-00-00'),
 ('cherrie', '58b644a5d21d950e877b4aaecf36a7f6ad6c934f695d063b8991759e6e93e70d', 'Doctor', 'active', '0000-00-00'),
-('cj', '582e2c101742dcb179a712c1dc5fb4f7e30c796254b3739751a263db171b27f1', 'Patient', 'active', '2015-06-02'),
+('cj', '582e2c101742dcb179a712c1dc5fb4f7e30c796254b3739751a263db171b27f1', 'Patient', 'active', '2015-06-03'),
 ('damaso', 'bd19408422fea7f08db51acb869712d92917c5ad55f1a959a1411d2b04179090', 'Doctor', 'active', '0000-00-00'),
-('dianski', 'd075b908d3afed217e2dbfc065c6ae825433df3487fc3a866f72a15dc3733964', 'Patient', 'active', '2015-05-26'),
+('dianski', 'd075b908d3afed217e2dbfc065c6ae825433df3487fc3a866f72a15dc3733964', 'Patient', 'active', '2015-06-03'),
 ('donnabel', 'a2d76681cb51a513827e8557824099cfc3f27b0089af7f9984b3d0b654050a80', 'Doctor', 'active', '0000-00-00'),
 ('DoReyes', '666f6e373b6b2cd09831a69365151a81048b02e6b52881c225da0badd93e963e', 'Secretary', 'active', '2015-06-02'),
 ('efren', 'cf0fff483ff377cb577616bc9e7a191138bb3fc8c811fd09a9a8c71e2542436a', 'Doctor', 'active', '0000-00-00'),
@@ -67,7 +65,7 @@ INSERT INTO `account` (`username`, `password`, `account_type`, `account_status`,
 ('Frontdesk', 'a300100818c74032b2bbcc4ef172702df27540fe737e49743a39ec2fba02c0a4', 'FrontDesk', 'active', '0000-00-00'),
 ('gay', '586acb3c6bac489308c0938f762da702573a714dfdf3a729dcb40758b4c363ae', 'Doctor', 'active', '0000-00-00'),
 ('gemma', '3fb22a5597fb91ee4f9abbf30ea69d318be150e0fcf3ca1db8ca334b520d2894', 'Doctor', 'active', '0000-00-00'),
-('gene', '5ac52c67c10a6cea6daa62876e90a9dcf62523352f0876dad99c55788392849a', 'Doctor', 'active', '2015-06-02'),
+('gene', '5ac52c67c10a6cea6daa62876e90a9dcf62523352f0876dad99c55788392849a', 'Doctor', 'active', '2015-06-03'),
 ('hosanna', 'bfff9525aacb6b9226129a28afc1c6d68b3a3a990c8fd761d2ea9c6be04a1d7a', 'Doctor', 'active', '0000-00-00'),
 ('james', '119c9ae6f9ca741bd0a76f87fba0b22cab5413187afb2906aa2875c38e213603', 'Doctor', 'active', '0000-00-00'),
 ('jc', '36a560e1409d01df8587517706d5fc6f5fade8c6fec7d0ff71e4ae56534986e2', 'Patient', 'active', '2015-04-23'),
@@ -139,7 +137,19 @@ CREATE TABLE IF NOT EXISTS `appointment` (
   KEY `doctor_id_2` (`doctor_id`),
   KEY `patient_id` (`patient_id`),
   KEY `clinic_id` (`clinic_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
+
+--
+-- Dumping data for table `appointment`
+--
+
+INSERT INTO `appointment` (`appointment_id`, `remarks`, `doctor_id`, `patient_id`, `appoint_date`, `appointment_status`, `clinic_id`) VALUES
+(8, '', 'e9c7556', 'e9ab3eb', '2015-06-03', 'Cancelled', 50),
+(9, '', 'e9c7556', '07033ef', '2015-06-03', 'Cancelled', 50),
+(10, '', 'e9c7556', 'e9ab3eb', '2015-06-03', 'Inqueue', 50),
+(11, '', '021137d', 'e9ab3eb', '2015-06-03', 'Cancelled', 32),
+(12, '', '6ec6e9a', 'e9ab3eb', '2015-06-03', 'Inqueue', 12),
+(13, '', '021137d', 'e9ab3eb', '2015-07-01', 'Cancelled', 32);
 
 -- --------------------------------------------------------
 
@@ -154,7 +164,17 @@ CREATE TABLE IF NOT EXISTS `appointment_history` (
   PRIMARY KEY (`appointment_history_id`),
   KEY `appointment_id` (`appointment_id`),
   KEY `doctor_id` (`appointment_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `appointment_history`
+--
+
+INSERT INTO `appointment_history` (`appointment_history_id`, `description`, `appointment_id`) VALUES
+(1, 'Cancelled', 8),
+(2, 'Cancelled', 9),
+(3, 'Cancelled', 11),
+(4, 'Cancelled', 13);
 
 -- --------------------------------------------------------
 
@@ -171,7 +191,7 @@ CREATE TABLE IF NOT EXISTS `clinic` (
   `cut_off_no` int(30) NOT NULL,
   PRIMARY KEY (`clinic_id`),
   KEY `doctor_id` (`doctor_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=57 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=58 ;
 
 --
 -- Dumping data for table `clinic`
@@ -233,7 +253,7 @@ INSERT INTO `clinic` (`clinic_id`, `clinic_location`, `clinic_name`, `clinic_con
 (53, 'Sm Luneta Hill, Baguio City', 'Benguet Laboratories', '124345', 'f7f70aa', 50),
 (54, 'Sm Luneta Hill, Baguio City', 'Benguet Laboratories', '124345', 'fa8a029', 50),
 (55, 'Sm Luneta Hill, Baguio City', 'Benguet Laboratories', '124345', 'fa81b3d', 50),
-(56, 'Teacher''s Camp', 'Happy Clinics', '422-4221', 'c319fab', 50);
+(57, 'Baguio', 'Happy Homes', '329423-323', 'c319fab', 50);
 
 -- --------------------------------------------------------
 
@@ -311,7 +331,7 @@ INSERT INTO `clinic_schedule` (`clinic_id`, `doctor_id`, `time`, `days`, `room_n
 (53, 'f7f70aa', '4:00-6:00', 'Sun', 'Room 1'),
 (54, 'fa8a029', '10:00-12:00', 'Sun', 'Room 10'),
 (55, 'fa81b3d', '6:30-7:00/10:00-12:00', 'Tue/Thu/Sun', 'Room 11/Room 11'),
-(56, 'c319fab', '3:00-4:00', 'Wed/Thu/Fri', 'S224');
+(57, 'c319fab', '4-5', 'Wed/Thu', 'S433');
 
 -- --------------------------------------------------------
 
@@ -331,8 +351,7 @@ CREATE TABLE IF NOT EXISTS `clinic_sec` (
 --
 
 INSERT INTO `clinic_sec` (`clinic_id`, `secretary_id`) VALUES
-(41, 'e022a5e'),
-(56, 'e022a5e');
+(41, 'e022a5e');
 
 -- --------------------------------------------------------
 
@@ -428,14 +447,37 @@ CREATE TABLE IF NOT EXISTS `notification` (
   `notification` text NOT NULL,
   PRIMARY KEY (`notification_id`),
   KEY `notif_id` (`legend_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=26 ;
 
 --
 -- Dumping data for table `notification`
 --
 
 INSERT INTO `notification` (`notification_id`, `indicator`, `doctor_id`, `patient_id`, `legend_id`, `notification_date`, `notification`) VALUES
-(2, 'patient', '2606b83', 'e9ab3eb', 'n1004', '2015-06-02', 'A patient has requested an appointment.');
+(2, 'patient', '2606b83', 'e9ab3eb', 'n1004', '2015-06-02', 'A patient has requested an appointment.'),
+(3, 'patient', '021137d', '07033ef', 'n1004', '2015-06-03', 'A patient has requested an appointment.'),
+(4, 'patient', '021137d', '07033ef', 'n1004', '2015-06-03', 'A patient has cancelled his appointment.'),
+(5, 'patient', '021137d', '07033ef', 'n1004', '2015-06-03', 'A patient has requested an appointment.'),
+(6, 'patient', '021137d', '07033ef', 'n1004', '2015-06-03', 'A patient has cancelled his appointment.'),
+(7, 'patient', 'e9c7556', '07033ef', 'n1004', '2015-06-03', 'A patient has requested an appointment.'),
+(8, 'patient', 'e9c7556', '07033ef', 'n1004', '2015-06-03', 'A patient has cancelled his appointment.'),
+(9, 'patient', 'e9c7556', '07033ef', 'n1004', '2015-06-03', 'A patient has requested an appointment.'),
+(10, 'patient', 'e9c7556', '07033ef', 'n1004', '2015-06-03', 'A patient has cancelled his appointment.'),
+(11, 'patient', 'e9c7556', '07033ef', 'n1004', '2015-06-03', 'A patient has requested an appointment.'),
+(12, 'patient', 'e9c7556', '07033ef', 'n1004', '2015-06-03', 'A patient has cancelled his appointment.'),
+(13, 'patient', '021137d', '07033ef', 'n1004', '2015-06-03', 'A patient has requested an appointment.'),
+(14, 'patient', '021137d', '07033ef', 'n1004', '2015-06-03', 'A patient has cancelled his appointment.'),
+(15, 'patient', 'e9c7556', 'e9ab3eb', 'n1004', '2015-06-03', 'A patient has requested an appointment.'),
+(16, 'patient', 'e9c7556', 'e9ab3eb', 'n1004', '2015-06-03', 'A patient has requested an appointment.'),
+(17, 'patient', 'e9c7556', '07033ef', 'n1004', '2015-06-03', 'A patient has requested an appointment.'),
+(18, 'patient', 'e9c7556', 'e9ab3eb', 'n1004', '2015-06-03', 'A patient has cancelled his appointment.'),
+(19, 'patient', 'e9c7556', '07033ef', 'n1004', '2015-06-03', 'A patient has cancelled his appointment.'),
+(20, 'patient', 'e9c7556', 'e9ab3eb', 'n1004', '2015-06-03', 'A patient has requested an appointment.'),
+(21, 'patient', '021137d', 'e9ab3eb', 'n1004', '2015-06-03', 'A patient has requested an appointment.'),
+(22, 'patient', '6ec6e9a', 'e9ab3eb', 'n1004', '2015-06-03', 'A patient has requested an appointment.'),
+(23, 'patient', '021137d', 'e9ab3eb', 'n1004', '2015-06-03', 'A patient has cancelled his appointment.'),
+(24, 'patient', '021137d', 'e9ab3eb', 'n1004', '2015-06-03', 'A patient has requested an appointment.'),
+(25, 'patient', '021137d', 'e9ab3eb', 'n1004', '2015-06-03', 'A patient has cancelled his appointment.');
 
 -- --------------------------------------------------------
 
@@ -503,6 +545,14 @@ CREATE TABLE IF NOT EXISTS `queue_notif` (
   KEY `queue_id` (`queue_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `queue_notif`
+--
+
+INSERT INTO `queue_notif` (`queue_id`, `clinic_id`, `appointment_id`, `appoint_date`) VALUES
+(4, 50, 8, '2015-06-03'),
+(1, 12, 12, '2015-06-03');
+
 -- --------------------------------------------------------
 
 --
@@ -569,11 +619,23 @@ CREATE TABLE IF NOT EXISTS `walk_in` (
   `appointW_date` date NOT NULL,
   `doctor_id` varchar(30) NOT NULL,
   `walk_in` int(30) NOT NULL AUTO_INCREMENT,
-  `appointmentW_status` enum('Inqueue','Completed','','') NOT NULL,
+  `appointmentW_status` enum('Inqueue','Completed','Cancelled') NOT NULL,
+  `walk_in_name` text NOT NULL,
   PRIMARY KEY (`walk_in`),
   KEY `doctor_id` (`doctor_id`),
   KEY `clinic_id` (`clinic_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `walk_in`
+--
+
+INSERT INTO `walk_in` (`walk_in_id`, `clinic_id`, `appointW_date`, `doctor_id`, `walk_in`, `appointmentW_status`, `walk_in_name`) VALUES
+(1, 50, '2015-06-03', 'e9c7556', 1, 'Cancelled', 'Dsf Sdfs'),
+(2, 50, '2015-06-03', 'e9c7556', 3, 'Inqueue', 'Sdfsd Fsdfs'),
+(3, 50, '2015-06-03', 'e9c7556', 4, 'Inqueue', 'Dfs Sdfds'),
+(1, 44, '2015-06-03', 'd8d431d', 5, 'Inqueue', 'Fdg Dg'),
+(5, 50, '2015-06-03', 'e9c7556', 6, 'Inqueue', 'Dfds Gfd');
 
 --
 -- Constraints for dumped tables
