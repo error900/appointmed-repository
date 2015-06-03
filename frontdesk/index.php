@@ -84,8 +84,8 @@
                                     $doctor = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_id LIKE '$doctor_id'");
                                     $doctor_rows = mysqli_fetch_array($doctor);
                                     //echo $doctor_rows['doctor_name'].'<br>';
-                            echo "<a href=\"inqueue-details.php?did=$doctor_id&cid=$clinic_id\">";
-                            echo '      <div class="col-xs-12 col-md-3">
+                                echo '<a href="inqueue-details.php?did=$doctor_id&cid=$clinic_id">
+                                        <div class="col-xs-12 col-md-3">
                                         <div class="panel panel-default doctor-panel">
                                         <div class="panel-heading">
                                         Dr. '. $doctor_rows["doctor_name"];                
