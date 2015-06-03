@@ -14,5 +14,5 @@
     <link href="../css/search.css" rel="stylesheet">
     <link href="../css/tooltip.css" rel="stylesheet">
     <link href="../css/scrolltop.css" rel="stylesheet">
-    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="shortcut icon" href="../img/favicon.ico">
 </head>
