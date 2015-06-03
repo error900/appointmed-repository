@@ -96,7 +96,6 @@
                             <?php
 
                             echo '</div>';
-                       echo '</a>';
                                     echo '<div class="panel-body">';
                                         echo '<p class="clinic-days">'.$row['days'].'</p>';
                                         echo '<p class="clinic-times">'.$row['time'].'</p>';
@@ -104,6 +103,7 @@
                                     echo '</div>';
                                     echo '<div>';
                                     echo '</div>';
+                       echo '</a>';
                                     echo '<div class="doctor-panel-btns">';
                                             // echo "<a href=\"walk_in.php?did=$doctor_id&cid=$clinic_id\" class='tooltip-bottom' data-tooltip='Add to queue' onclick='\return confirm(\"Add patient to queue?\")\'><i class=\"fa fa-plus\"></i></a>";
                                             echo '<button type="button" class="btn btn-default btn-inverse walk btn-noborder tooltip-bottom" data-tooltip="Add to queue" data-toggle="modal" data-target=".bs-add-modal-sm" data-doc-id="'.$doctor_id.'" data-cli-id="'.$clinic_id.'">add patient</button>';
