@@ -24,7 +24,7 @@
         header("location: ../admin/index.php");
     else if ($account_type != 'FrontDesk')
         header("location: ../admin/index.php");
-    if(isset($_GET['page'])){
+    /*if(isset($_GET['page'])){
          $page = (int)mysqli_real_escape_string($con, $_GET['page']);
     }else{
         $page =0;
@@ -33,18 +33,15 @@
         $page1 = 0;
     }else{
         $page1 = ($page*8)-8;
-    }
+    }*/
     $date = date('Y-m-d');
     $username = $_SESSION['username'];
-    if(is_int($page1)){
-        $sql = mysqli_query($con, "SELECT * FROM clinic_schedule natural join clinic WHERE clinic_name='Benguet Laboratories'");
-    }else{
-        echo "<script> alert('Woops you seem lost, let me help you'); </script>";
-        echo "<script> location.replace('index.php') </script>";
-    }
-    $count_sql = mysqli_query($con, "SELECT * FROM doctor NATURAL JOIN clinic_schedule natural join clinic WHERE doctor_status = 'In' AND clinic_name='Benguet Laboratories' ORDER BY 3 ");
-    $count = mysqli_num_rows($count_sql);
-    $cout = ceil($count/8);
+    // if(is_int($page1)){
+        $sql = mysqli_query($con, "SELECT * FROM clinic_schedule natural join clinic WHERE clinic_name='Benguet Laboratories' ORDER BY 1");
+    // }else{
+    //     echo "<script> alert('Woops you seem lost, let me help you'); </script>";
+    //     echo "<script> location.replace('index.php') </script>";
+    // }
     ?>
     <body class="e4e8e9-bg">
         <div class="container">        
@@ -81,8 +78,9 @@
                                 }
                                 if(in_array($check_day, $days)){
                                     $doctor_id = $row['doctor_id'];
-                                    $doctor = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_id LIKE '$doctor_id'");
+                                    $doctor = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_id LIKE '$doctor_id' ORDER BY 2");
                                     $doctor_rows = mysqli_fetch_array($doctor);
+
                                     //echo $doctor_rows['doctor_name'].'<br>';
                             echo "<a href=\"inqueue-details.php?did=$doctor_id&cid=$clinic_id\">";
                             echo '      <div class="col-xs-12 col-md-3">
@@ -124,7 +122,7 @@
                             }
                         ?>
 
-                        <div class="col-xs-12 col-md-6 col-md-offset-3">
+                       <!--  <div class="col-xs-12 col-md-6 col-md-offset-3">
                             <nav class="text-center">
                                 <ul class="pagination">
                                     <?php 
@@ -134,7 +132,7 @@
                                     ?>
                                 </ul>
                             </nav>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <?php 

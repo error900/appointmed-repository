@@ -32,6 +32,11 @@
     $sql = mysqli_query($con, "SELECT * FROM doctor NATURAL JOIN clinic_schedule WHERE doctor_id LIKE '$doctor_id'");
     $doctor = mysqli_fetch_array($sql);
     $appoints = mysqli_query($con, "SELECT * FROM appointment NATURAL JOIN queue_notif WHERE doctor_id LIKE '$doctor_id' AND appointment_status = 'Inqueue' AND appoint_date LIKE CURDATE()");
+    $walks= mysqli_query($con, "SELECT * FROM walk_in WHERE clinic_id LIKE '$clinic_id' AND appointW_date LIKE CURDATE() AND appointmentW_status LIKE 'Inqueue'");
+    
+    $total_online = mysqli_num_rows($appoints);
+    $total_walk_in = mysqli_num_rows($walks);
+    $total_count = $total_online + $total_walk_in;
 
     ?>
     <body class="e4e8e9-bg">
@@ -56,7 +61,14 @@
                             <h1 class="text-center row-header-black">&mdash; Patients Inqueue &mdash;</h1>
                         </div>
                         <div class="col-xs-12 col-md-2 col-md-offset-2 doctor-photo hidden-xs hidden-sm">
-                            <img class="img-responsive" src="img/profile/profile.jpg">
+                             <img src="img/profile/<?php
+                                    $file = "img/profile/" . $doctor_id . ".jpg";
+                                    if (file_exists($file)) {
+                                        echo $doctor_id;
+                                    } else {
+                                        echo 'profile';
+                                    }
+                                    ?>.jpg" class="img-responsive">
                         </div>
                         <div class="col-xs-12 col-md-5 user-md">
                             <div class="d-info">
@@ -88,7 +100,7 @@
                             ?>
                         </div>
                         <div class="col-xs-12 col-md-12">
-                            <h2 class="row-header-lc">Total Patients: ##</h2>
+                            <h2 class="row-header-lc">Total Patients: <?php echo $total_count;?></h2>
                         </div>
                     </div>
                     <div class="row">
@@ -127,7 +139,7 @@
                         }else {
                             echo '<div class="col-xs-12 col-md-10 col-md-offset-1">
                                 <div class="alert alert-warning" role="alert">
-                                <strong>There are no appointments inqueue.</strong></div>
+                                <strong>There are no appointments in queue.</strong></div>
                                 </div>';
                         }
                         ?>
