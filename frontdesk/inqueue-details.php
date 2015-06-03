@@ -93,7 +93,7 @@
                             ?>
                         </div>
                         <div class="col-xs-12 col-md-12">
-                            <h2 class="row-header-lc">Total Patients: ##</h2>
+                            <h2 class="row-header-lc">Total Patients: ## <br/>Cut off limit: ##</h2>
                         </div>
                     </div>
                     <div class="row">
@@ -110,7 +110,7 @@
                                     <div class="list-group">
                                         <a href="#" class="list-group-item">';
                                     echo ' <h4 class="list-group-item-heading">'.$p_result['patient_name'].'</h4>';
-                                    echo ' <p class="list-group-item-text">Online</p>';
+                                    echo ' <p class="list-group-item-text">Online appointment</p>';
                                     echo ' <p class="list-group-item-text">Queue # '.$appoint['queue_id'].'</p>';
                                     echo "<a href=\"close.php?id=$appointment_id&doc=$doctor_id&pat=$patient_id&cid=$clinic_id&qid=$queue_id\" class=\"list-group-item\">cancel<i class=\"fa fa-times\"></i></a>";
                                 echo    '</a>
@@ -122,7 +122,7 @@
                                     <div class="list-group">
                                         <a href="#" class="list-group-item">';
                                     echo ' <h4 class="list-group-item-heading">'.$walkin['walk_in_name'].'</h4>';
-                                    echo ' <p class="list-group-item-text">Walk In</p>';
+                                    echo ' <p class="list-group-item-text">Walk In appointment</p>';
                                     echo ' <p class="list-group-item-text">Queue # '.$walkin['walk_in_id'].'</p>';
                                     echo  "<a href=\"close_walk_in.php?doc=$doctor_id&cid=$clinic_id&wid=$walkin[walk_in]\" class=\"list-group-item\">cancel<i class=\"fa fa-times\"></i></a>";
                                 echo    '</a>
