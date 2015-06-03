@@ -61,9 +61,14 @@
                         <div class="col-xs-12 col-md-5 user-md">
                             <div class="d-info">
                                     <h1>Dr. <?php echo $doctor['doctor_name']?></h1>
-                                    <p class="clinic-days"><?php echo $doctor['days']?></p>
-                                    <p class="clinic-times"><?php echo $doctor['time']?></p>
-                                    <p class="clinic-times"><?php echo $doctor['doctor_status']?></p>
+                                    <p><?php echo $doctor['days']?></p>
+                                    <p><?php echo $doctor['time']?></p>
+                                    <?php
+                                    if ($doctor['doctor_status'] == 'In')
+                                        echo '<p class="d-status">' . $doctor['doctor_status'] . '<i class="fa fa-check"></i></p>';
+                                    else
+                                        echo '<p class="d-status">' . $doctor['doctor_status'] . '<i class="fa fa-times"></i></p>';
+                                    ?>
                             </div>
                         </div>
                         <div class="col-xs-12 col-md-2">

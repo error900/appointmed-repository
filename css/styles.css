@@ -275,7 +275,7 @@ nav > div > div > ul > li > a > i,
     }
 
     .putOnlineOffline i {
-        left: 35px !important;
+        left: 30px !important;
     }
 }
 
@@ -437,7 +437,10 @@ nav > div > div > ul > li > a > i,
 }
 
 .doctor-panel-specs {
-    text-shadow: 1px 1px 1px #35404F;
+    padding-top: 10px;
+    color: #2C3E50;
+    line-height: 16px;
+    word-wrap: break-word;
 }
 
 .row-header,
@@ -1627,6 +1630,7 @@ a.list-group-item:hover, a.list-group-item:focus {
 
 .putOnlineOffline i {
     position: absolute !important;
+    color: #fff !important;
     top: 15px;
     left: 80px;
     line-height: 24px;
@@ -1634,8 +1638,8 @@ a.list-group-item:hover, a.list-group-item:focus {
 
 .putOnlinebtn {
     padding: 10px 15px;
-    background-color: #95A5A6 !important;
-    color: inherit !important;
+    background-color: #34495E !important;
+    color: #fff !important;
     text-shadow: none !important;
     font-size: 14px !important;
     line-height: 1;
@@ -1643,8 +1647,8 @@ a.list-group-item:hover, a.list-group-item:focus {
 
 .putOfflinebtn {
     padding: 10px 15px;
-    background-color: #2ECC71 !important;
-    color: inherit !important;
+    background-color: #27AE60 !important;
+    color: #fff !important;
     text-shadow: none !important;
     font-size: 14px !important;
     line-height: 1;
@@ -1735,7 +1739,8 @@ a.list-group-item:hover, a.list-group-item:focus {
     text-transform: lowercase !important;
 }
 
-.d-status {
+.d-status i {
+    padding-left: 5px;
 }
 
 .doc-status {
