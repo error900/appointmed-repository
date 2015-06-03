@@ -84,7 +84,7 @@
                                     $doctor = mysqli_query($con, "SELECT * FROM doctor WHERE doctor_id LIKE '$doctor_id'");
                                     $doctor_rows = mysqli_fetch_array($doctor);
                                     //echo $doctor_rows['doctor_name'].'<br>';
-                            echo "<a href=\"inqueue-details.php?did=$doctor_id&cid=$clinic_id\">";
+                            echo "<a href=\"inqueue-details.php?did=$doctor_id&cid=$clinic_id\" class=\"panel-link\">";
                             echo '      <div class="col-xs-12 col-md-3">
                                         <div class="panel panel-default doctor-panel">
                                         <div class="panel-heading">
@@ -114,7 +114,7 @@
                                         </a>
                                         <div class="doctor-panel-btns">
                                                 
-                                        <button type="button" class="btn btn-default btn-inverse walk btn-noborder tooltip-bottom" data-tooltip="Add to queue" data-toggle="modal" data-target=".bs-add-modal-sm" data-doc-id="'.$doctor_id.'" data-cli-id="'.$clinic_id.'">add patient</button>
+                                        <button type="button" class="btn btn-default btn-inverse walk btn-noborder tooltip-bottom" data-tooltip="Add to queue" data-toggle="modal" data-target=".bs-add-modal-sm" data-doc-id="'.$doctor_id.'" data-cli-id="'.$clinic_id.'">walk-in</button>
                                         <p class="doctor-panel-specs">'.$doctor_rows['specialization'].'</p>
                                        </div>
                                     </div>

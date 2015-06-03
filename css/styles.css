@@ -1524,8 +1524,12 @@ ul.nav.items-list li:hover {
 .doctor-panel {
     background-color: #F1C40F !important;
     border: 2px solid transparent;
-    min-height: 146px;
+    min-height: 155px;
     word-wrap: break-word;
+}
+
+a.panel-link:hover {
+    text-decoration: none;
 }
 
 .doctor-panel .panel-heading {
@@ -1613,6 +1617,12 @@ a.list-group-item:hover, a.list-group-item:focus {
 
 .putOnlineOffline input[type=submit]{
     width: 100%;
+}
+
+.putOnlineOffline input[type=submit]:hover + i,
+.putOnlineOffline input[type=submit]:focus + i {
+    color: #fff !important;
+    transition: all 0.5s ease-in-out;
 }
 
 .putOnlineOffline i {
