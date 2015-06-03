@@ -29,7 +29,7 @@
         $clinic_id = mysqli_real_escape_string($con, $_GET['cid']);
     }else
         header("location: index.php");
-    $sql = mysqli_query($con, "SELECT * FROM doctor NATURAL JOIN clinic_schedule WHERE doctor_id LIKE '$doctor_id'");
+    $sql = mysqli_query($con, "SELECT * FROM doctor NATURAL JOIN clinic_schedule NATURAL JOIN clinic WHERE doctor_id LIKE '$doctor_id'");
     $doctor = mysqli_fetch_array($sql);
     $appoints = mysqli_query($con, "SELECT * FROM appointment NATURAL JOIN queue_notif WHERE doctor_id LIKE '$doctor_id' AND appointment_status = 'Inqueue' AND appoint_date LIKE CURDATE()");
     $walks= mysqli_query($con, "SELECT * FROM walk_in WHERE clinic_id LIKE '$clinic_id' AND appointW_date LIKE CURDATE() AND appointmentW_status LIKE 'Inqueue'");
@@ -105,11 +105,8 @@
                             ?>
                         </div>
                         <div class="col-xs-12 col-md-12">
-<<<<<<< HEAD
                             <h2 class="row-header-lc">Total Patients: <?php echo $total_count;?></h2>
-=======
-                            <h2 class="row-header-lc">Total Patients: ## <br/>Cut off limit: ##</h2>
->>>>>>> origin/master
+                            <h2 class="row-header-lc"><br/>Cut off limit: <?php echo $doctor['cut_off_no']?></h2>
                         </div>
                     </div>
                     <div class="row">
