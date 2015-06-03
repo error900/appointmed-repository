@@ -112,7 +112,7 @@
                         <?php 
                         $walks = mysqli_query($con, "SELECT * FROM walk_in WHERE clinic_id LIKE '$clinic_id' AND appointW_date LIKE CURDATE() AND appointmentW_status LIKE 'Inqueue'");
                         if (mysqli_num_rows($appoints) >= 1 || mysqli_num_rows($walks)>= 1) {
-                            while($appoint = mysqli_fetch_array($appoints)){
+                            while($appoint = mysqli_fetch_array($appoints)) {
                                 $appointment_id = $appoint['appointment_id'];
                                 $queue_id = $appoint['queue_id'];
                                 $patient_id = $appoint['patient_id'];
