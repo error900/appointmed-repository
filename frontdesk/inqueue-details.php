@@ -73,9 +73,14 @@
                         <div class="col-xs-12 col-md-5 user-md">
                             <div class="d-info">
                                     <h1>Dr. <?php echo $doctor['doctor_name']?></h1>
-                                    <p class="clinic-days"><?php echo $doctor['days']?></p>
-                                    <p class="clinic-times"><?php echo $doctor['time']?></p>
-                                    <p class="clinic-times"><?php echo $doctor['doctor_status']?></p>
+                                    <p><?php echo $doctor['days']?></p>
+                                    <p><?php echo $doctor['time']?></p>
+                                    <?php
+                                    if ($doctor['doctor_status'] == 'In')
+                                        echo '<p class="d-status">' . $doctor['doctor_status'] . '<i class="fa fa-check"></i></p>';
+                                    else
+                                        echo '<p class="d-status">' . $doctor['doctor_status'] . '<i class="fa fa-times"></i></p>';
+                                    ?>
                             </div>
                         </div>
                         <div class="col-xs-12 col-md-2">
@@ -100,7 +105,11 @@
                             ?>
                         </div>
                         <div class="col-xs-12 col-md-12">
+<<<<<<< HEAD
                             <h2 class="row-header-lc">Total Patients: <?php echo $total_count;?></h2>
+=======
+                            <h2 class="row-header-lc">Total Patients: ## <br/>Cut off limit: ##</h2>
+>>>>>>> origin/master
                         </div>
                     </div>
                     <div class="row">
@@ -117,7 +126,7 @@
                                     <div class="list-group">
                                         <a href="#" class="list-group-item">';
                                     echo ' <h4 class="list-group-item-heading">'.$p_result['patient_name'].'</h4>';
-                                    echo ' <p class="list-group-item-text">Online</p>';
+                                    echo ' <p class="list-group-item-text">Online appointment</p>';
                                     echo ' <p class="list-group-item-text">Queue # '.$appoint['queue_id'].'</p>';
                                     echo "<a href=\"close.php?id=$appointment_id&doc=$doctor_id&pat=$patient_id&cid=$clinic_id&qid=$queue_id\" class=\"list-group-item\">cancel<i class=\"fa fa-times\"></i></a>";
                                 echo    '</a>
@@ -129,7 +138,7 @@
                                     <div class="list-group">
                                         <a href="#" class="list-group-item">';
                                     echo ' <h4 class="list-group-item-heading">'.$walkin['walk_in_name'].'</h4>';
-                                    echo ' <p class="list-group-item-text">Walk In</p>';
+                                    echo ' <p class="list-group-item-text">Walk In appointment</p>';
                                     echo ' <p class="list-group-item-text">Queue # '.$walkin['walk_in_id'].'</p>';
                                     echo  "<a href=\"close_walk_in.php?doc=$doctor_id&cid=$clinic_id&wid=$walkin[walk_in]\" class=\"list-group-item\">cancel<i class=\"fa fa-times\"></i></a>";
                                 echo    '</a>
