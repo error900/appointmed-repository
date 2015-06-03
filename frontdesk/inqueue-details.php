@@ -69,18 +69,20 @@
                         <div class="col-xs-12 col-md-2">
                             <?php
                             if($doctor['doctor_status'] == 'Out' || $doctor['doctor_status'] == 'Break'){
-                                echo '<form action="online.php" method="post">
+                                echo '<form action="online.php" method="post" class="putOnlineOffline">
                                     <input type="hidden" name="doctor" value="'.$doctor_id.'">
                                     <input type="hidden" name="clinic" value="'.$clinic_id.'">
                                     <input type="hidden" name="doctor_status" value="In">
-                                    <input type="submit" class="btn btn-default red-btn btn-noborder" name="" value="Put Online">
+                                    <input type="submit" class="btn btn-default red-btn btn-noborder putOnlinebtn" name="" value="Put Online">
+                                    <i class="fa fa-check-circle"></i>
                                 </form>';
                             } else if ($doctor['doctor_status'] == 'In' || $doctor['doctor_status'] == 'Break') {
-                                echo '<form action="offline.php" method="post">
+                                echo '<form action="offline.php" method="post" class="putOnlineOffline">
                                     <input type="hidden" name="doctor" value="'.$doctor_id.'">
                                     <input type="hidden" name="clinic" value="'.$clinic_id.'">
                                     <input type="hidden" name="doctor_status" value="Out">
-                                    <input type="submit" class="btn btn-default red-btn btn-noborder" name="" value="Put Offline">
+                                    <input type="submit" class="btn btn-default red-btn btn-noborder putOfflinebtn" name="" value="Put Offline">
+                                    <i class="fa fa-times-circle"></i>
                                 </form>';
                             }
                             ?>

@@ -268,6 +268,15 @@ nav > div > div > ul > li > a > i,
     .search-doctor-info p {
         padding: 0 30px;
     }
+
+    .putOnlineOffline input[type=submit] {
+        width: 150px !important;
+        padding-right: 0px;
+    }
+
+    .putOnlineOffline i {
+        left: 35px !important;
+    }
 }
 
 .dropdown-menu>li>a {
@@ -1594,11 +1603,41 @@ a.list-group-item:hover, a.list-group-item:focus {
     transition: 0.5s;
 }
 
+
 .subscribeUnsubscribe {
     width: 60% !important;
     -webkit-box-shadow: 3px 4px 6px -2px rgba(0, 0, 0, 0.5);
     -moz--box-shadow: 3px 4px 6px -2px rgba(0, 0, 0, 0.5);
     box-shadow: 3px 4px 6px -2px rgba(0, 0, 0, 0.5);
+}
+
+.putOnlineOffline input[type=submit]{
+    width: 100%;
+}
+
+.putOnlineOffline i {
+    position: absolute !important;
+    top: 15px;
+    left: 80px;
+    line-height: 24px;
+}
+
+.putOnlinebtn {
+    padding: 10px 15px;
+    background-color: #95A5A6 !important;
+    color: inherit !important;
+    text-shadow: none !important;
+    font-size: 14px !important;
+    line-height: 1;
+}
+
+.putOfflinebtn {
+    padding: 10px 15px;
+    background-color: #2ECC71 !important;
+    color: inherit !important;
+    text-shadow: none !important;
+    font-size: 14px !important;
+    line-height: 1;
 }
 
 .patient-activity {
