@@ -106,7 +106,7 @@
 <div class="modal fade edit-days-time-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm">
         <div class="modal-content addClinic">
-            <form class="form-input"  method="post" action="">
+            <form class="form-input"  method="post" action="edit_clinic.php">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                     <h4 class="modal-title" id="myModalLabel">Edit Days/Time</h4>
@@ -132,6 +132,7 @@
                             <input type="text" class="form-control" name="clinic_to" placeholder="To" required/>
                         </div>
                         <input type="hidden" value="<?php echo $doctor_id?>" name="doctor_id">
+                        <input type="hidden" value="" name="clinic_id" id="clin_id">
 
                     </div>
                 </div>
