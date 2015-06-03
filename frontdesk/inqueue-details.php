@@ -105,8 +105,12 @@
                             ?>
                         </div>
                         <div class="col-xs-12 col-md-12">
+<<<<<<< HEAD
                             <h2 class="row-header-lc">Total Patients: <?php echo $total_count;?></h2>
                             <h2 class="row-header-lc"><br/>Cut off limit: <?php echo $doctor['cut_off_no']?></h2>
+=======
+                            <h2 class="row-header-lc">Total Patients: <?php echo $total_count;?> <br/>Cut off limit: ##</h2>
+>>>>>>> origin/master
                         </div>
                     </div>
                     <div class="row">
