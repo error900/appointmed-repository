@@ -142,6 +142,9 @@
 
                             echo ' <button type="button" class="btn btn-default appo red-btn2 deleteclinic btn-noborder tooltip-bottom" data-tooltip="Delete" data-toggle="modal" data-target=".edit-days-time-sm" data-id="' . $c_row['clinic_id'] . '">
                             <i class="fa fa-trash"></i></button>';
+
+                            echo "<a href=\"delete_clinic.php?did=$doctor_id&cid=$clinic_id\" class='btn btn-default appo red-btn2 deleteclinic btn-noborder tooltip-bottom' data-tooltip='Delete' onclick='return confirm(\"Do you want to delete this clinic?\")'><i class=\"fa fa-trash\"></i></a>";
+
                             
                             echo '</div>';
                             echo '</div>';
